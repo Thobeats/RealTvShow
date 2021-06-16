@@ -1,0 +1,36 @@
+.billboard {
+    position: relative;
+    display: block;
+
+    &__group {
+      position: absolute;
+      display: block;  
+    }
+
+    &__paragraph {
+        color: $color-white;
+        font-family: Poppins;
+        width: 65rem;
+        font-size: 3rem;
+        font-weight: 700;
+        padding: 3rem .1rem;
+        float: left;
+        top: 2rem;
+        left: 2rem;
+    }
+
+    &__link {
+        color: $color-secondary;
+    }
+    
+    &__img {
+        float: right;
+        height: max-height;
+        // padding-top: 5rem;
+        right: 15rem;
+        position: absolute;
+        width: 25rem;
+        
+    }
+}
+
