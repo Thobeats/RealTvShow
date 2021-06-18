@@ -9,7 +9,7 @@
 
     &__paragraph {
         color: $color-white;
-        font-family: Poppins;
+        font-family: POPPINS;
         width: 65rem;
         font-size: 3rem;
         font-weight: 700;
@@ -26,9 +26,11 @@
     &__img {
         float: right;
         height: max-height;
+        overflow: hidden;
         // padding-top: 5rem;
         right: 15rem;
         position: absolute;
+        display: block;
         width: 25rem;
         
     }
