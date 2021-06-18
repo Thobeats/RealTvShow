@@ -39,8 +39,8 @@
                 </div>
               </div>
               <div class="main-form">
-                <input type="email" name="email" placeholder="Email" />
-                <input type="password" name="password" placeholder="Password" />
+                <input class="main-form--input" type="email" name="email" placeholder="Email" />
+                <input class="main-form--input" type="password" name="password" placeholder="Password" />
                 <a href="#">I forgot my password?</a>
                 <button>Login</button>
               </div>

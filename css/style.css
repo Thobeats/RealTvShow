@@ -471,14 +471,15 @@ body {
 
 .billboard {
   position: relative;
-  display: block; }
+  display: block;
+  padding: 0 5rem; }
   .billboard__group {
     position: absolute;
     display: block; }
   .billboard__paragraph {
     color: #fff;
     font-family: POPPINS;
-    width: 65rem;
+    width: 80rem;
     font-size: 3rem;
     font-weight: 700;
     padding: 3rem .1rem;
@@ -491,7 +492,7 @@ body {
     float: right;
     height: max-height;
     overflow: hidden;
-    right: 15rem;
+    right: 10rem;
     position: absolute;
     display: block;
     width: 25rem; }
@@ -841,6 +842,17 @@ nav::after {
         transition: 0.3s ease-in-out; }
         .login__container .section-one .main-form a:hover {
           color: white; }
+      .login__container .section-one .main-form--input {
+        padding: 0.8rem 1rem;
+        width: 22rem;
+        border-radius: 0.2rem;
+        border: #a31a6a 0.01rem solid;
+        color: white;
+        background-color: #666666;
+        margin-bottom: 0.8rem;
+        font-size: medium; }
+        .login__container .section-one .main-form--input::placeholder {
+          color: rgba(255, 255, 255, 0.548); }
   .login__container .section-two {
     height: 20%;
     display: flex;
@@ -863,18 +875,6 @@ nav::after {
         background-color: #666600;
         background-size: 100%;
         transition: background 0s; }
-
-input {
-  padding: 0.8rem 1rem;
-  width: 22rem;
-  border-radius: 0.2rem;
-  border: #a31a6a 0.01rem solid;
-  color: white;
-  background-color: #666666;
-  margin-bottom: 0.8rem;
-  font-size: large; }
-  input::placeholder {
-    color: rgba(255, 255, 255, 0.548); }
 
 * {
   font-family: "Montserrat", sans-serif;
