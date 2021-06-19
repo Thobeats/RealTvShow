@@ -1,7 +1,7 @@
 .footer {
     width: 100%;
     background-color: $color-white;
-    padding: 2rem 0;
+    padding-top: 2rem;
     font-size: 1.5rem;
     color: $color-grey-light;
     position: relative;
@@ -18,32 +18,32 @@
     }
 
     &__heading {
-        top: 3rem;
-        text-align: left;
+        top: 7rem;
+        text-align: right;
         position: absolute;
-        left: 5rem;
+        right: 8.5rem;
 
         &-2 {
-            top: 3rem;
-            text-align: right;
+            top: 7rem;
+            text-align: left;
             position: absolute;
-            right: 95rem;
+            left: 95rem;
         }
 
         &-3 {
-            top: 3rem;
-            text-align: right;
+            top: 7rem;
+            text-align: left;
             position: absolute;
-            right: 78rem;
+            left: 75rem;
         }
     }
 
     &__logo-box {
-        top: 30rem;
+        top: 5rem;
         text-align: left;
         margin-bottom: 5rem;
         position: absolute;
-        left: 4rem;
+        left: 10rem;
 
         // @include respond(tab-port) {
         //     margin-bottom: 6rem;
@@ -52,14 +52,16 @@
     }
 
     &__logo {
-        height: 7.5rem;
-        width: 15.5rem;
-        padding-bottom: 2rem;
+        height: 20.5rem;
+        width: 50.5rem;
     }
 
     &__navigation {
-       padding-top: 2rem;
-       display: block;
+        top: 10rem;
+        padding-top: 2rem;
+        padding-bottom: .1rem;
+        margin-top: 15rem;
+        display: block;
 
     //    @include respond(tab-port) {
     //         width: 100%;
@@ -68,30 +70,30 @@
     }
 
     &__list {
-        top: 5rem;
+        top: 9rem;
         float: left;
         position: absolute;
-        left: 5rem;
+        left: 115rem;
 
         &-2 {
-            top: 5rem;
-            float: right;
+            top: 9rem;
+            float: left;
             position: absolute;
-            right: 90rem;
+            left: 95rem;
         }
 
         &-3 {
-            top: 5rem;
-            float: right;
+            top: 9rem;
+            float: left;
             position: absolute;
-            right: 75rem;
+            left: 75rem;
         }
     }
 
     &__item {
     display: block;
     margin-top: 1.5rem;
-    margin-left: 1.5rem;
+    margin-right: 1.5rem;
     }
 
     &__link {
@@ -122,12 +124,11 @@
     }
 
     &__copyright {
-        padding-top: 2rem;
+        padding: 2rem 50rem;
         color: $color-grey-light;
-        float: right;
-        font-size: 1.2rem;
+        text-align: center;
+        font-size: 1.5rem;
         position: absolute;
-        right: 4rem;
 
         // @include respond(tab-port) {
         //     width: 100%;
@@ -139,8 +140,11 @@
 .sprite {
     &__icon-box {
         display: flex;
-        align-items: center;
+        align-items: right;
         align-self: stretch;
+        width: 40rem;
+        margin-top: 17rem;
+        justify-content: space-evenly;
 
         & > * {
             padding: 0 .1rem;
@@ -160,9 +164,6 @@
     &__icon {
         height: 2.25rem;
         width: 2.25rem;
-        padding-top: 31rem;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-        bottom: 5rem;
+        margin-bottom: 2rem;
     }
 }
