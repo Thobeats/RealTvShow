@@ -45,6 +45,14 @@
                 <input type="firstname" name="firstname" placeholder="First Name" required/>
                 <input type="lastname" name="lastname" placeholder="Last Name" required/>
                 <input type="email" name="email" placeholder="Email" required/>
+            
+                <select name="role" id="">
+                  <option value="00000">Select Role</option>
+                  <option value="3">Contestant</option>
+                  <option value="2">Script Writer</option>
+                  <option value="1">Executive</option>
+                </select>
+                
                 <input type="password" name="password" placeholder="Password" required/>
                 <input type="password" name="password" placeholder="Confirm Password" required/>
 
