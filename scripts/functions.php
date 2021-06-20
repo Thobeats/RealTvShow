@@ -25,17 +25,17 @@ function set_message($type, $message, $title=null){
 
 
 
-function register_new_user($email, $password, $role_id){
+function register_new_user($firstname, $surname, $email, $password, $role_id){
 
     $password = hash('whirlpool', $password, TRUE);
     $token = hash('sha1', $email, TRUE);
-
+    $fullname = strtoupper($firstname) . " " . $surname;
 
     // Database connection
     $link = connect();   
 
-    $query = mysqli_query($link, "INSERT INTO `tbl_users`(`uname`,`status`, `role_id`,`email`,`password`,`activated`, `token`) VALUES ('$email','Active',
-                                 '2','$email','$password','0', '$token')");
+    $query = mysqli_query($link, "INSERT INTO `tbl_users`(`fname`,`sname`,`fullname`,`uname`,`status`, `role_id`,`email`,`password`,`activated`, `token`) VALUES ('$firstname','$surname','$fullname','$email','Active',
+                                 '$role_id','$email','$password','0', '$token')");
 
     if($query){
         set_message("success", "Registered Successfully");

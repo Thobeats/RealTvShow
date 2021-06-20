@@ -1,0 +1,35 @@
+.section-features {
+    padding: 20rem 6rem;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-grey-light, 0.3),
+        rgba($color-grey-dark, 0.3)),
+    url(../img/shoot0.jpg);
+    background-size: cover;
+    transform: skewY(-7deg);
+    margin-top: -8rem;
+
+    & > * {
+        transform: skewY(7deg);
+
+    }
+}
+
+.section-realities {
+    background-color: $color-secondary-dark;
+    padding: 20rem 0 25rem 0;
+    margin-top: -8rem;
+}
+
+.section-slideshows {
+    background-color: $color-white;
+    padding: 5rem 0 15rem 0;
+}
+
+.section-billboard {
+    background-color: $color-primary-dark;
+    padding: 5rem 5rem;
+    margin: 0 5rem;
+    border-radius: .5rem;
+    height: 45rem;
+}

@@ -1,0 +1,169 @@
+.footer {
+    width: 100%;
+    background-color: $color-white;
+    padding-top: 2rem;
+    font-size: 1.5rem;
+    color: $color-grey-light;
+    position: relative;
+    margin-top: 3rem;
+    
+
+    // @include respond(tab-port) {
+    //     padding: 8rem 0;
+    // }
+
+    &__high {
+        border-top: 1px solid $color-black;
+        border-width: 100%;
+    }
+
+    &__heading {
+        top: 7rem;
+        text-align: right;
+        position: absolute;
+        right: 8.5rem;
+
+        &-2 {
+            top: 7rem;
+            text-align: left;
+            position: absolute;
+            left: 95rem;
+        }
+
+        &-3 {
+            top: 7rem;
+            text-align: left;
+            position: absolute;
+            left: 75rem;
+        }
+    }
+
+    &__logo-box {
+        top: 5rem;
+        text-align: left;
+        margin-bottom: 5rem;
+        position: absolute;
+        left: 10rem;
+
+        // @include respond(tab-port) {
+        //     margin-bottom: 6rem;
+
+        // }
+    }
+
+    &__logo {
+        height: 20.5rem;
+        width: 50.5rem;
+    }
+
+    &__navigation {
+        top: 10rem;
+        padding-top: 2rem;
+        padding-bottom: .1rem;
+        margin-top: 15rem;
+        display: block;
+
+    //    @include respond(tab-port) {
+    //         width: 100%;
+    //         text-align: center;
+    //     }
+    }
+
+    &__list {
+        top: 9rem;
+        float: left;
+        position: absolute;
+        left: 115rem;
+
+        &-2 {
+            top: 9rem;
+            float: left;
+            position: absolute;
+            left: 95rem;
+        }
+
+        &-3 {
+            top: 9rem;
+            float: left;
+            position: absolute;
+            left: 75rem;
+        }
+    }
+
+    &__item {
+    display: block;
+    margin-top: 1.5rem;
+    margin-right: 1.5rem;
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            color: $color-grey;
+            text-decoration: none;
+            display: block;
+            transition: all .2s;
+            text-decoration: none;
+        }
+
+        &:hover,
+        &:active {
+            color: $color-grey;
+            // box-shadow: 0 1rem 2rem rgba($color-black, .4);
+            text-decoration: underline;
+        }
+    }
+
+    &__font {
+        padding-top: 2rem;
+        color: $color-black;
+        float: right;
+        font-size: 1.5rem;
+        position: absolute;
+        right: 10rem;
+    }
+
+    &__copyright {
+        padding: 2rem 50rem;
+        color: $color-grey-light;
+        text-align: center;
+        font-size: 1.5rem;
+        position: absolute;
+
+        // @include respond(tab-port) {
+        //     width: 100%;
+        //     float: none;
+        // }
+    }
+}
+
+.sprite {
+    &__icon-box {
+        display: flex;
+        align-items: right;
+        align-self: stretch;
+        width: 40rem;
+        margin-top: 17rem;
+        justify-content: space-evenly;
+
+        & > * {
+            padding: 0 .1rem;
+            cursor: pointer;
+        }
+
+        & > *:hover {
+            color: $color-grey;
+        }
+
+    }
+
+    &__user {
+        display: flex;
+    }
+
+    &__icon {
+        height: 2.25rem;
+        width: 2.25rem;
+        margin-bottom: 2rem;
+    }
+}
