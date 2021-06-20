@@ -14,7 +14,6 @@ function signUp($firstname, $lastname, $email, $role, $password){
 
     $password = hash("whirlpool", $password, true);
 
- //   mysqli_query($link, "insert")
 }
 
 
