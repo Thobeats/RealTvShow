@@ -1,0 +1,45 @@
+.project {
+    height: 95vh;
+    // background-image: linear-gradient(
+    //     to right bottom,
+    //     rgba($color-secondary-light, 0.6),
+    //     rgba($color-secondary-dark, 0.6)),
+    background-image: url(../img/shoot3.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+
+    // clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%)
+}
+
+
+// .project__logo {
+//     height: 6.5rem;
+//     width: 13.5rem;
+
+    .project__logo{
+        display: flex;
+        width: 100%;
+        padding-top: 1rem;
+        background-color: $color-white;
+        height: 10rem;
+        justify-content: space-around; 
+        position: relative;
+        z-index: 100;
+        }
+
+  
+.project__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.Projects__paragraph {
+    text-align: center;
+    text-decoration: bold;
+    color: $color-white;
+    font-size: 2rem;
+}
