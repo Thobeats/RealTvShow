@@ -1,6 +1,6 @@
 <?php 
 function connect(){
-    $link = mysqli_connect("localhost", "root", "", "rts_realtv");
+    $link = mysqli_connect("localhost", "u227522741_kayodeO", "", "u227522741_familyaffairs");
 
     if($link){
         return $link;
