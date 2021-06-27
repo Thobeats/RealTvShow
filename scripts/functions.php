@@ -1,22 +1,151 @@
-<?php 
-function connect(){
-    $link = mysqli_connect("localhost", "u227522741_kayodeO", "", "u227522741_familyaffairs");
+<?php
+ob_start();
+session_start();
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+
+require 'vendor/autoload.php';
+
+
+function connect(){ 
+    $link = mysqli_connect("127.0.0.1", "root", "", "realtvshow");
 
     if($link){
         return $link;
-    } else {
+    }else {
         return mysqli_connect_errno();
     }
 }
 
-function signUp($firstname, $lastname, $email, $role, $password){
-    $link = connect();
-
-    $password = hash("whirlpool", $password, true);
-
+function base_url(){
+    return "http://" . $_SERVER['SERVER_NAME']; 
 }
 
 
+function set_message($type, $message, $title=null){
+
+    $_SESSION[$type] = $message;
+   
+}
+
+function get_message($type){
+
+    if(isset($_SESSION[$type])){
+
+        $message = $_SESSION[$type]; $title = NULL;
+        $toastr = "toastr.$type('$message','$title', 
+        {
+            'closeButton': true, 
+            'showMethod' : 'slideDown', 
+            'hideMethod' : 'slideUp'
+        })";  
+
+
+        echo "<script>$toastr</script>";
+
+
+        unset($_SESSION[$type]);
+    }
+}
+
+function send_mail($toEmail, $subject, $body){
+    $mail = new PHPMailer(true);
+    try{
+        //Settings
+       // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = "tobiy23@gmail.com";
+        $mail->Password = "T3mil0luw4";
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $mail->Port = "465";
+
+        //Receiver
+        $mail->setFrom('RealtvShow@test.com', 'Mailer');
+        $mail->addAddress($toEmail);
+    
+        //Content
+        $mail->isHTML(true);
+        $mail->Subject = $subject;
+        $mail->Body = $body;
+        
+        $mail->send();
+        set_message("success", "Confirmation email sent");        
+        header("location: confirm.php");
+
+
+    }
+    catch(Exception $e){
+        set_message("error" , $mail->ErrorInfo);
+    }
+}
+
+function user_session($array){
+    foreach($array as $key => $value){
+        $_SESSION[$key] = $value;
+    }
+}
+
+function register_new_user($firstname, $surname, $email, $password, $role_id){
+
+    $password = md5($password);
+    $encode_password = utf8_encode($password);
+    $token = md5($email); $encode_token = utf8_encode($token);
+    $fullname = strtoupper($firstname) . " " . $surname;
+
+    // Database connection
+    $link = connect();   
+
+
+    $checkEmail = mysqli_query($link, "select * from realtv_users where email = '$email'");
+
+    if($checkEmail->num_rows == 1){
+        return false;
+    }
+
+    $query = mysqli_query($link, "INSERT INTO `realtv_users`(`firstname`,`lastname`,`fullname`,`username`,`status`, `role_id`,`email`,`password`,`activated`, `token`) VALUES ('$firstname','$surname','$fullname','$email','Active',
+                                 '$role_id','$email','$encode_password','0', '$encode_token')");
+
+    if($query){
+        $body = "<div style='padding: 5px; text-transform: capitalize;'>";
+        $body .= "<h4>Welcome to RealTv Show</h4>";
+        $body .= "<p>Confirm your email to activate your account. To confirm your email, click <a href='".base_url()."/confirm.php?email=$email&pass=$token'>here</a> </p>";
+        $body .= "</div>";
+        send_mail($email, "Email Confirmation", $body);
+    }else {
+        set_message("error", "Not Registered");
+        echo mysqli_error($link);    
+
+    }
+
+    
+
+}
+
+function log_in_user($email, $password){
+    $password = utf8_encode(md5($password));
+
+    $link = connect();
+
+    $loginQuery = mysqli_query($link, "select * from realtv_users where `email` = '$email' and `password` = '$password' and `activated` = '1'");
+    $num_row = $loginQuery->num_rows;
+
+    if($num_row == 1){
+        $user_details = mysqli_fetch_assoc($loginQuery); $userid = $user_details['id'];
+        user_session($user_details);
+        $date = date("Y/m/d h:i:s");
+        $updateUser = mysqli_query($link, "update realtv_users set last_logged_in = '$date', online = '1' where id = '$userid'");
+
+        set_message("success", "Login Success"); 
+        echo "Yes";
+    }else {
+        return false;
+    }
+}
 
 
 ?>
