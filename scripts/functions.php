@@ -20,9 +20,9 @@ function connect(){
     }
 }
 
-function base_url(){
-    return "http://" . $_SERVER['SERVER_NAME']; 
-}
+// function base_url(){
+//     return "http://" . $_SERVER['SERVER_NAME'] . "/realtv";
+// }
 
 
 function set_message($type, $message, $title=null){
@@ -146,6 +146,43 @@ function log_in_user($email, $password){
         return false;
     }
 }
+
+function handle_image($image){
+
+    if(!is_null($image)){
+        $uploads_dir = '/Users/firstlincoln/Documents/iyanu/RealTvShow/img/uploads/';
+        $extensions = ['jpg', 'png'];
+
+        $name = $image['name'];
+        $size = $image['size']; 
+        $ext = explode(".", $name)[1];
+
+        //echo $ext;
+
+        //check size 
+        if($size > 500000){
+            set_message("error", "file too large");
+            exit(0);
+        }
+
+        //check extension
+        if(!in_array($ext, $extensions)){
+            set_message("error", "invalid type, only jpg or png allowed");
+            exit(0);
+        }
+        $uploads_file = $uploads_dir . basename($name);
+
+        move_uploaded_file($image['tmp_name'], $uploads_file);
+        return $name;
+
+    }else{
+        return "No Image uploaded";
+    }
+
+}
+
+
+
 
 
 ?>
