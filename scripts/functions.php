@@ -45,5 +45,28 @@ function register_new_user($firstname, $surname, $email, $password, $role_id){
 
 }
 
+function login_user($email, $password){
+    $password = hash('whirlpool', $password, TRUE);
+
+    $link = connect();
+
+    $find_user = mysqli_query($link, "select * from tbl_users where email ='$email' and password='$password'");
+
+    $num_rows = $find_user->num_rows;
+
+    if($num_rows != 1){
+        return false;
+    }else {
+        $user_details = mysqli_fetch_assoc($find_user);
+        session_start();
+        $_SESSION = [
+            "user_id" => $user_details['id'],
+            'fullname' => $user_details['fullname'],
+            "role" => $user_details['role']
+
+        ];
+    }
+}
+
 
 ?>
