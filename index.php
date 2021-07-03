@@ -1,25 +1,29 @@
-<?php require "scripts/header.php"; ?>
-
+<?php   
+      require "scripts/functions.php"; 
+     require "scripts/header.php"; 
+   
+?>
+<?php get_message("error"); ?>
                 <section class="section-features">
                     <div class="row">
                         <div class="col-1-of-3">
                             <div class="feature-box">
                                 <img src="img/act4.jpg" alt="feature-pic" class="feature-box__img">
-                                <h2 class="heading-secondary"><a href="#" class="feature-box__img--text">CONTESTANT & TALENT REGISTRATION</a></h2>
+                                <h2 class="heading-secondary"><a href="signup.php" class="feature-box__img--text">CONTESTANT & TALENT REGISTRATION</a></h2>
                             </div>
                         </div>
 
                         <div class="col-1-of-3">
                             <div class="feature-box">
                                 <img src="img/shoot00.jpg" alt="feature-pic" class="feature-box__img">
-                                <h2 class="heading-secondary"><a href="#" class="feature-box__img--text">INDUSTRY TV EXECUTIVE REGISTRATION</a></h2>
+                                <h2 class="heading-secondary"><a href="signup.php" class="feature-box__img--text">INDUSTRY TV EXECUTIVE REGISTRATION</a></h2>
                             </div>
                         </div>
 
                         <div class="col-1-of-3">
                             <div class="feature-box">
                                 <img src="img/writer02.jpg" alt="feature-pic" class="feature-box__img">
-                                <h2 class="heading-secondary"><a href="#" class="feature-box__img--text">INDUSTRY WRITER'S REGISTRATION</a></h2>
+                                <h2 class="heading-secondary"><a href="signup.php" class="feature-box__img--text">INDUSTRY WRITER'S REGISTRATION</a></h2>
                             </div>
                         </div>
                     </div>
@@ -45,7 +49,7 @@
                                 </div>
                                 <div class="card__side card__side--back card__side--back-1">
                                     <div class="card__cta">
-                                        <a href="#" class="bttn bttn--white">Check It Out Now</a>
+                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
                                     </div> 
                                 </div>
                             </div>
@@ -62,7 +66,7 @@
                                 </div>
                                 <div class="card__side card__side--back card__side--back-2">
                                     <div class="card__cta">
-                                        <a href="#" class="bttn bttn--white">Check It Out Now</a>
+                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
                                     </div> 
                                 </div>
                             </div>
@@ -79,7 +83,7 @@
                                 </div>
                                 <div class="card__side card__side--back card__side--back-3">
                                     <div class="card__cta">
-                                        <a href="#" class="bttn bttn--white">Check It Out Now</a>
+                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
                                     </div> 
                                 </div>
                             </div>
@@ -99,7 +103,7 @@
                                 </div>
                                 <div class="card__side card__side--back card__side--back-4">
                                     <div class="card__cta">
-                                        <a href="#" class="bttn bttn--white">Check It Out Now</a>
+                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
                                     </div> 
                                 </div>
                             </div>
@@ -116,7 +120,7 @@
                                 </div>
                                 <div class="card__side card__side--back card__side--back-5">
                                     <div class="card__cta">
-                                        <a href="#" class="bttn bttn--white">Check It Out Now</a>
+                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
                                     </div> 
                                 </div>
                             </div>
@@ -133,7 +137,7 @@
                                 </div>
                                 <div class="card__side card__side--back card__side--back-6">
                                     <div class="card__cta"> 
-                                        <a href="#" class="bttn bttn--white">Check It Out Now</a>
+                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
                                     </div> 
                                 </div>
                             </div>
@@ -141,7 +145,7 @@
                     </div>
 
                     <div class="u-center-text u-margin-top-big">
-                        <a href="#" class="btnn bttn--blue">Discover all realities</a>
+                        <a href="projects.php" class="btnn bttn--blue">Discover all realities</a>
                     </div>
                 </section>
 
@@ -230,7 +234,7 @@
                                         Registered members have <i class="billboard__link">priority</i> to be selected as <i class="billboard__link">participants</i> and to be represented in our Reality TV promotional campaigns.
                                     </p>
                                     <div class="billboard__cta"> 
-                                        <a href="#" class="butn butn--white">Get Started</a>
+                                        <a href="signup.php" class="butn butn--white">Get Started</a>
                                     </div>
                                 </div> 
                             </div>

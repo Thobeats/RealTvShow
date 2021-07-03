@@ -6,13 +6,13 @@
         rgba($color-grey-dark, 0.3)),
     url(../img/shoot0.jpg);
     background-size: cover;
-    transform: skewY(-7deg);
+    // transform: skewY(-7deg);
     margin-top: -8rem;
 
-    & > * {
-        transform: skewY(7deg);
+    // & > * {
+    //     transform: skewY(7deg);
 
-    }
+    // }
 }
 
 .section-realities {
@@ -32,4 +32,11 @@
     margin: 0 5rem;
     border-radius: .5rem;
     height: 45rem;
+}
+
+.section-projects {
+    background-color: $color-grey-light;
+    padding: 10rem;
+    height: 30rem;
+    font-size: 2rem;    
 }

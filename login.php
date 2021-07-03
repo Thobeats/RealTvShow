@@ -1,3 +1,22 @@
+<?php 
+require_once "scripts/functions.php";
+$link = connect();
+// handle register
+if(isset($_POST['login_user'])){
+  $email = $_POST['email'];
+  $password = trim($_POST['password']);
+  
+
+
+  log_in_user($email, $password);
+
+
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -38,12 +57,14 @@
                   <span> LOGIN WITH TWITTER </span>
                 </div>
               </div>
+              <form action = "" method="POST">
               <div class="main-form">
                 <input class="main-form--input" type="email" name="email" placeholder="Email" />
                 <input class="main-form--input" type="password" name="password" placeholder="Password" />
                 <a href="#">I forgot my password?</a>
-                <button>Login</button>
+                <button name="login_user">Login</button>
               </div>
+              </form>
             </div>
       
             <div class="section-two">
