@@ -161,7 +161,7 @@ function handle_image($image){
 
         //check size 
         if($size > 500000){
-            set_message("error", "file too large");
+            set_message("error", "file too large, must not exceed 500KB");
             exit(0);
         }
 
@@ -179,6 +179,38 @@ function handle_image($image){
         return "No Image uploaded";
     }
 
+}
+
+function handle_video($video){
+    if(!is_null($image)){
+        $uploads_dir = '/Users/firstlincoln/Documents/iyanu/RealTvShow/img/uploads/';
+        $extensions = ['mp4', 'mkv', "avi"];
+
+        $name = $image['name'];
+        $size = $image['size']; 
+        $ext = explode(".", $name)[1];
+
+        //echo $ext;
+
+        //check size 
+        if($size > 5000000){
+            set_message("error", "file too large, must not exceed 5MB");
+            exit(0);
+        }
+
+        //check extension
+        if(!in_array($ext, $extensions)){
+            set_message("error", "invalid type, only mp4, mkv or avi are allowed");
+            exit(0);
+        }
+        $uploads_file = $uploads_dir . basename($name);
+
+        move_uploaded_file($image['tmp_name'], $uploads_file);
+        return $name;
+
+    }else{
+        return "No Image uploaded";
+    }
 }
 
 
