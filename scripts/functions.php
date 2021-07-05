@@ -20,10 +20,9 @@ function connect(){
     }
 }
 
-// function base_url(){
-//     return "http://" . $_SERVER['SERVER_NAME'] . "/realtv";
-// }
-
+function base_url(){
+    return "http://" . $_SERVER['SERVER_NAME'] . "/realtv";
+}
 
 function set_message($type, $message, $title=null){
 
@@ -150,8 +149,8 @@ function log_in_user($email, $password){
 function handle_image($image){
 
     if(!is_null($image)){
-        $uploads_dir = '/Users/firstlincoln/Documents/iyanu/RealTvShow/img/uploads/';
-        $extensions = ['jpg', 'png'];
+        $uploads_dir = 'C:/Users/user/Documents/Fiverr Projects/RealTvShow/img/uploads/';
+        $extensions = ['jpg', 'png',"jpeg"];
 
         $name = $image['name'];
         $size = $image['size']; 
@@ -161,14 +160,14 @@ function handle_image($image){
 
         //check size 
         if($size > 500000){
-            set_message("error", "file too large");
-            exit(0);
+           // set_message("error", "file too large");
+            return false;
         }
 
         //check extension
         if(!in_array($ext, $extensions)){
-            set_message("error", "invalid type, only jpg or png allowed");
-            exit(0);
+            //set_message("error", "invalid type, only jpg or png allowed");
+            return false;
         }
         $uploads_file = $uploads_dir . basename($name);
 
@@ -176,36 +175,29 @@ function handle_image($image){
         return $name;
 
     }else{
-        return "No Image uploaded";
+        exit("No Image uploaded");
     }
 
 }
 
-function login_user($email, $password){
-    $password = hash('whirlpool', $password, TRUE);
 
+function save_movie($movie_title, $movie_plot, $movie_pic){
     $link = connect();
 
-    $find_user = mysqli_query($link, "select * from tbl_users where email ='$email' and password='$password'");
+    $created_by = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : "00000000";
 
-    $num_rows = $find_user->num_rows;
+    $insert_pic = handle_image($movie_pic);
 
-    if($num_rows != 1){
-        return false;
-    }else {
-        $user_details = mysqli_fetch_assoc($find_user);
-        session_start();
-        $_SESSION = [
-            "user_id" => $user_details['id'],
-            'fullname' => $user_details['fullname'],
-            "role" => $user_details['role']
-
-        ];
-    }
+    if( mysqli_query($link, "INSERT INTO `realtv_movies`( `created_by`, `movie_pic`, `movie_title`, `movie_plot`, `status`) 
+                            VALUES ('$created_by','$insert_pic','$movie_title','$movie_plot','1')")){
+                                return 1;
+                            }else {
+                                return 0;
+                            }   
 }
 
 
 
-
+$link = connect();
 
 ?>

@@ -20,7 +20,7 @@
     <body>
         <main>
                 <header>
-                        <!-- <div class="navbar__logo-box">
+                    <!-- <div class="navbar__logo-box">
                             <img src="img/logo.png" alt="Logo" class="header__logo">
                         </div>
                         <div class="header">
@@ -104,12 +104,5 @@
                                     </div>
                                 </nav>
 
-                            <div class="header">
-                                <div class="header__text-box">
-                                    <h1 class="heading-primary">
-                                        <span class="heading-primary--main">Reality Tv</span>
-                                        <span class="heading-primary--sub">cache of unique formats & talent</span>
-                                    </h1>        
-                                </div>
-                            </div>  
+                           
                 </header>

@@ -4,6 +4,14 @@
    
 ?>
 <?php get_message("error"); ?>
+                        <div class="header">
+                            <div class="header__text-box">
+                                <h1 class="heading-primary">
+                                    <span class="heading-primary--main">Reality Tv</span>
+                                    <span class="heading-primary--sub">cache of unique formats & talent</span>
+                                </h1>        
+                            </div>
+                        </div>  
                 <section class="section-features">
                     <div class="row">
                         <div class="col-1-of-3">
@@ -37,14 +45,20 @@
                     </div>
 
                     <div class="row">
+                        <?php 
+                            $movie_query = mysqli_query($link, "Select * from realtv_movies");
+
+                            while($movies = mysqli_fetch_assoc($movie_query)):
+                                $img = $movies['movie_pic']; $title = $movies['movie_title'];
+                        ?>
                         <div class="col-1-of-3">
                             <div class="card">
                                 <div class="card__side card__side--front">
                                     <div class="card__picture card__picture--1">
-                                        <img src="img/soldiers1.jpg" alt="card-pic" class="card__img">
+                                        <img src="img/uploads/<?=$img ?>" alt="card-pic" class="card__img">
                                     </div>
                                     <h4 class="card__heading">
-                                        <span class="card__heading-span card__heading-span--1">Battle Grounds - Snipers at Large</span>    
+                                        <span class="card__heading-span card__heading-span--1"><?= $title ?></span>    
                                     </h4>
                                 </div>
                                 <div class="card__side card__side--back card__side--back-1">
@@ -54,7 +68,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-1-of-3">
+                        <?php 
+                                endwhile;
+                        ?>
+                        <!-- <div class="col-1-of-3">
                             <div class="card">
                                 <div class="card__side card__side--front">
                                     <div class="card__picture card__picture--2">
@@ -87,10 +104,10 @@
                                     </div> 
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-1-of-3">
                             <div class="card">
                                 <div class="card__side card__side--front">
@@ -142,7 +159,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="u-center-text u-margin-top-big">
                         <a href="projects.php" class="btnn bttn--blue">Discover all realities</a>
