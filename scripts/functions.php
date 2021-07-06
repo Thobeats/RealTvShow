@@ -149,7 +149,9 @@ function log_in_user($email, $password){
 function handle_image($image){
 
     if(!is_null($image)){
-        $uploads_dir = 'C:/Users/user/Documents/Fiverr Projects/RealTvShow/img/uploads/';
+       // $uploads_dir = 'C:/Users/user/Documents/Fiverr Projects/RealTvShow/img/uploads/';
+        $uploads_dir = '/Users/firstlincoln/Documents/iyanu/RealTvShow/img/uploads/';
+
         $extensions = ['jpg', 'png',"jpeg"];
 
         $name = $image['name'];
@@ -184,7 +186,9 @@ function handle_multi_images($images, $insertID){
 
     $link = connect();
     if(!is_null($images)){
-        $uploads_dir = 'C:/Users/user/Documents/Fiverr Projects/RealTvShow/img/uploads/';
+       // $uploads_dir = 'C:/Users/user/Documents/Fiverr Projects/RealTvShow/img/uploads/';
+       $uploads_dir = '/Users/firstlincoln/Documents/iyanu/RealTvShow/img/uploads/';
+
         $extensions = ['jpg', 'png',"jpeg"];     
 
         //check size 
