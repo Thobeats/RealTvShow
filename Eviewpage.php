@@ -85,7 +85,7 @@
                                 </nav>
 
 
-                            <div class="project">
+                            <div class="projecte">
                                 <div class="project__text-box">
                                     <h1 class="heading-primary">
                                         <span class="heading-primary--main">Reality Tv</span>
@@ -95,12 +95,42 @@
                             </div>                            
             </header>
 
-                
-                <section class="section-projects">
-                    <p class="Projects__paragraph">With great enthusiasm, RealityTVRegistry recommends these 15 projects. All have copyright 
-                        protection and are available for option and acquisition. Additional proposals are being 
-                        developed and may be viewable in mid-August.</p>
-                </section>
+            <section class="section-viewpage">
+                <div class="view">
+                    <h3 class="view__header"> Title:  Epic - Battles of Foreign Lands (Proposed filming in the US)</h3>
+                    <p class="view__paragraph">
+                        Logline: A troop of 30 Roman Soldiers are led to battle against 30 Celti Gauls in this historically
+                        significant encounter that occured, circa 525 BC. Among the destruction and burning ruins of a
+                        Roman settlement, the Celtics are observed boasting until they see a troop of Roman Soldiers
+                        charging at them. Combat is certain snd an Epic Battle of revenge ensues. A man-to-man clash of
+                        soldiers wielding gladius type weaponry soon intensifies as antiquated pistols are drawn. In the end
+                        either the Roman Soldiers or Celtic Gauls, will be declared victorious, and advanceto battle again.
+                        <h3 class="heading-secondary"> Note: Proprietary "BattleSafeWeaponry" is specially designed to insure non-injury conflicts)</h3>
+                    </p>
+
+                    <div class="view__text">
+                        <div class="view__text--parag">
+                            <p class="view__text--paragraph">Project:   Epic - Battles on Foreign Lands</p>
+                            <p class="view__text--paragraph">Copyright:   May4, 2021, - Title 17 Copyright</p>
+                            <p class="view__text--paragraph">Reality:   Formatted (12 ep. arc /self-cont.</p>
+                            <p class="view__text--paragraph">Option/Acquisition:   Negotiable/$225,000</p>
+                        </div>
+
+                        <div class="view__text--image">
+                            <img src="img/war.jpg" alt="card-pic" class="view__img" height="200rem" width="350rem">
+                        </div>
+                    </div>
+
+                    <p class="view__paragraph">
+                        Synopsis: A group of 50 individuals are divied into two troops having 25 members. One troop will compete
+                        as Roman soldiers and one as Celtic Gauls. A diverse inclusion of lawless scenarios and unique elements to
+                        overcome, are created to maintain a high level of interest. The arms utilized in this reality will include life like
+                        BattleSafeWeaponry and antiquated paintball pistols. They represent the most advanced and best likeness to authentic arms.
+                    </p>
+
+                </div>
+
+            </section>    
         </main>
 
         <footer class="footer">
@@ -142,13 +172,13 @@
                                     <use xlink:href="img/sprite.svg#icon-accessibility"></use>
                                 </svg>
                             <div class="sprite__user">
-                                <span class="sprite__icon">USD</span>
+                                <!-- <span class="sprite__icon">USD</span> -->
                                     <svg class="sprite__icon sprite__icon-text">
                                         <use xlink:href="img/sprite.svg#icon-credit"></use>
                                     </svg>
                             </div>
                             <div class="sprite__user">
-                                <span class="sprite__icon sprite__icon-text">English</span>
+                                <!-- <span class="sprite__icon sprite__icon-text">English</span> -->
                                 <svg class="sprite__icon sprite__icon-text">
                                     <use xlink:href="img/sprite.svg#icon-sphere"></use>
                                 </svg>

@@ -22,7 +22,7 @@
                                 <li class="footer__item"></li><a href="booking.html" class="footer__link">Events</a></li>
                                 <li class="footer__item"></li><a href="booking.html" class="footer__link">Podcasts</a></li>
                                 <li class="footer__item"></li><a href="booking.html" class="footer__link">SiteMap</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Commnity Standards</a></li>
+                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Community Standards</a></li>
                             </ul>
                         <h3 class="footer__heading-3"><b>Pages</b></h3>
                             <ul class="footer__list-3">
@@ -66,9 +66,9 @@
                         </div>
                     </div>
                 </div>
-                <p class="footer__copyright">
+                <div class="footer__copyright">
                         &copy;RealityTV International Limited 2021.
-                    </p>
+                    </div>
             </div>
         </footer>
     </body>

@@ -85,7 +85,7 @@
                                 </nav>
 
 
-                            <div class="project">
+                            <div class="projects">
                                 <div class="project__text-box">
                                     <h1 class="heading-primary">
                                         <span class="heading-primary--main">Reality Tv</span>
@@ -95,12 +95,8 @@
                             </div>                            
             </header>
 
-                
-                <section class="section-projects">
-                    <p class="Projects__paragraph">With great enthusiasm, RealityTVRegistry recommends these 15 projects. All have copyright 
-                        protection and are available for option and acquisition. Additional proposals are being 
-                        developed and may be viewable in mid-August.</p>
-                </section>
+
+            
         </main>
 
         <footer class="footer">
