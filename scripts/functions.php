@@ -180,6 +180,43 @@ function handle_image($image){
 
 }
 
+function handle_multi_images($images, $insertID){
+
+    $link = connect();
+    if(!is_null($images)){
+        $uploads_dir = 'C:/Users/user/Documents/Fiverr Projects/RealTvShow/img/uploads/';
+        $extensions = ['jpg', 'png',"jpeg"];     
+
+        //check size 
+        foreach($images['size'] as $size){
+            if($size > 1000000){
+                set_message("error", "file too large, must not exceed 1MB");
+                exit(0);
+            }
+
+        }
+
+        foreach($images['name'] as $key => $imagename){
+            $ext = explode(".", $imagename)[1];
+
+            //check extension
+            if(!in_array($ext, $extensions)){
+                //set_message("error", "invalid type, only jpg or png allowed");
+                return false;
+            }
+            $uploads_file = $uploads_dir . basename($imagename);
+
+            move_uploaded_file($images['tmp_name'][$key], $uploads_file);
+
+            mysqli_query($link, "INSERT INTO `realtv_movie_pics`(`movie_pic`, `movie_id`) VALUES ('$imagename', '$insertID')");
+        }
+        
+
+    }else{
+        exit("No Image uploaded");
+    }
+}
+
 function handle_video($video){
     if(!is_null($video)){
         $uploads_dir = '/Users/firstlincoln/Documents/iyanu/RealTvShow/img/uploads/';
@@ -213,7 +250,7 @@ function handle_video($video){
 }
 
 
-function save_movie($movie_title, $movie_plot, $movie_pic){
+function save_movie($movie_title, $movie_plot, $movie_pic, $movie_pics = NULL){
     $link = connect();
 
     $created_by = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : "00000000";
@@ -222,10 +259,23 @@ function save_movie($movie_title, $movie_plot, $movie_pic){
 
     if( mysqli_query($link, "INSERT INTO `realtv_movies`( `created_by`, `movie_pic`, `movie_title`, `movie_plot`, `status`) 
                             VALUES ('$created_by','$insert_pic','$movie_title','$movie_plot','1')")){
-                                return 1;
-                            }else {
-                                return 0;
-                            }   
+               
+
+        //GET Insert ID
+        $movie_insert_id = mysqli_insert_id($link);
+
+        if(!is_null($movie_pics)){
+        
+             handle_multi_images($movie_pics, $movie_insert_id);          
+          
+        }
+
+        return 1;
+    }else{
+        return 0;
+    }
+
+
 }
 
 
