@@ -1,0 +1,227 @@
+
+.dashcontainer {
+    max-width: 110rem;
+    margin: 4rem auto;
+    background-color: $color-grey-light-2;
+    box-shadow: 0 2rem 6rem rgba(0,0,0,.3);
+
+    min-height: 90rem;
+}
+
+.dash__logo{
+    display: flex;
+    width: 100%;
+    padding-top: 1rem;
+    background-color: $color-white;
+    height: 6rem;
+    justify-content: space-around; 
+    position: relative;
+    z-index: 100;
+    }
+
+.side-nav {
+    font-size: 1.4rem;
+    list-style: none;
+    margin-top: 2.5rem;
+    width: 25rem;
+    height: 100rem;
+    
+
+    &__item {
+        position: relative;
+
+        &:not(:last-child) {
+            margin-bottom: .5rem;
+        }
+    }
+
+
+    &__item::before
+     {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 3px;
+        background-color: $color-primary;
+        transform: scaleY(0); 
+        transition: transform .2s, 
+                    width .4s cubic-bezier(1,0,0,1) .2s;
+                    background-color: .1s;
+    }
+
+    &__item:hover::before,
+    &__item--active::before {
+        transform: scaleY(1);
+        width: 100%;
+    }
+
+    &__item--active::before {
+        background-color: $color-primary-dark;
+    }
+
+    &__link:link,
+    &__link:visited {
+        color: $color-grey-light-2;
+        text-decoration: none;
+        text-transform: uppercase;
+        display: block;
+        padding: .5rem 3rem;
+        position: relative;
+        z-index: 10;
+
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        fill: currentColor;
+        width: 1.75rem;
+        height: 1.75rem;
+        margin-right: 2rem;
+    }
+
+    &__dropdown,
+    &__dropdown:visited 
+    {
+        padding: .5rem 0;
+        text-decoration: none;
+        text-transform: uppercase;
+        display: block;
+        background-color: transparent;
+        color: $color-grey-light-2;
+        border: transparent;
+        position: relative;
+        z-index: 10;
+    }
+}
+
+
+
+/////////////////////////////////////
+//LEGAL TEXT
+.legal {
+    font-size: 1.2rem;
+    color: $color-grey-light-2;
+    text-align: center;
+    padding: 2.5rem;
+}
+
+
+//////////////////////////////////////
+///WRITEUP
+.writeup {
+    background-color: $color-white;
+    box-shadow: var($color-grey-light);
+    margin: 2rem 4.5rem;
+    padding: 3rem;
+    width: 75rem;
+    height: 20rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+    transform: skewX(20deg);
+    overflow: hidden;
+
+    &__main {
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+        transform: skewX(-20deg);
+    }
+
+    &__main-button {
+        width: 25rem;
+        align-items: center;
+        text-transform: uppercase;
+    }
+
+    &__movie {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transform: skewX(-10deg);
+    }
+
+    &__text {
+        width: 55rem;
+        padding-top: 1rem;
+    }
+
+    &__photo {
+        height: 9.5rem;
+        width: 18.5rem;
+        padding-top: 1rem;
+        padding-right: 1rem;
+        border-radius: 10%;
+        z-index: 10;
+        position: relative;
+    }
+
+    &__movie-box {
+        padding-top: 1rem;
+        padding-right: 13rem;
+    }
+
+    &__movie-nom {
+        font-size: 1.5rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+    }
+
+    &__movie-date {
+        font-size: 1.3rem;
+        color: $color-grey-dark;
+    }
+
+    &__movie-icon {
+        padding-top: 1rem;
+        padding-left: 5rem;
+
+    }
+
+    &__icon-box {
+        padding: 1rem;
+        align-items: center;
+        position: relative;
+    }
+
+    &__icon {
+        height: 2.25rem;
+        width: 2.25rem;
+        fill: $color-secondary-light;
+    }
+
+    &__movie-button-1 {
+        padding-top: 1rem;
+        padding-left: 9rem;
+    }
+
+    &__movie-button-3 {
+        align-content: center;
+        width: 60rem;
+        margin-top: 25rem;
+        margin-left: 18rem;
+    }
+
+    &__movie-button-2 {
+        align-self: center;
+        margin-bottom: 2rem;
+        margin-left: 35rem;
+
+    }
+
+    &::before {
+        content: "\201C";
+        position: absolute;
+        top: -2.75rem;
+        left: -1rem;
+        line-height: 1;
+        font-size: 15rem;
+        color: $color-grey-light-2;
+        font-family: sans-serif;
+        z-index: 1;
+    }
+
+}
