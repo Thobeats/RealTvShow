@@ -36,7 +36,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="side-nav__item">
-                                                    <a href="" class="side-nav__link">
+                                                    <a href="wdashboard.php" class="side-nav__link">
                                                         <svg class="side-nav__icon">
                                                             <use xlink:href="img/sprite.svg#icon-gauge"></use>
                                                         </svg>
@@ -44,7 +44,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="side-nav__item side-nav__item--active">
-                                                    <a href="profile.php" class="side-nav__link">
+                                                    <a href="wprofile.php" class="side-nav__link">
                                                             <svg class="side-nav__icon">
                                                                 <use xlink:href="img/sprite.svg#icon-v-card"></use>
                                                             </svg>
@@ -52,7 +52,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="side-nav__item">
-                                                    <a href="" class="side-nav__link">
+                                                    <a href="wpolicy.php" class="side-nav__link">
                                                         <svg class="side-nav__icon">
                                                             <use xlink:href="img/sprite.svg#icon-hour-glass"></use>
                                                         </svg>

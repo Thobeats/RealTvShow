@@ -24,7 +24,7 @@
                     <img src="img/logo.png" alt="Reality Tv Logo" class="project__logo-box">
                 </div>
 
-                                <nav class="clearfix navbox">
+                <nav class="clearfix navbox">
                                     <div class="navbar">
                                         <div class="dropdown">
                                             <button class="dropbtn"><a href="#">Home</a>
@@ -59,7 +59,7 @@
                                 </nav> 
 
 
-                            <div class="projects">
+                            <div class="projected">
                                 <div class="project__text-box">
                                     <h1 class="heading-primary">
                                         <span class="heading-primary--main">Reality Tv</span>
@@ -69,58 +69,83 @@
                             </div>                            
             </header>
 
-            <section class="section-viewpage">
-                <div class="view">
-                    <h3 class="view__header"> Title:  Epic - Battles of Foreign Lands (Proposed filming in the US)</h3>
-                    <p class="view__paragraph">
-                        Logline: A troop of 30 Roman Soldiers are led to battle against 30 Celti Gauls in this historically
-                        significant encounter that occured, circa 525 BC. Among the destruction and burning ruins of a
-                        Roman settlement, the Celtics are observed boasting until they see a troop of Roman Soldiers
-                        charging at them. Combat is certain snd an Epic Battle of revenge ensues. A man-to-man clash of
-                        soldiers wielding gladius type weaponry soon intensifies as antiquated pistols are drawn. In the end
-                        either the Roman Soldiers or Celtic Gauls, will be declared victorious, and advanceto battle again.
-                        <h3 class="heading-secondary"> Note: Proprietary "BattleSafeWeaponry" is specially designed to insure non-injury conflicts)</h3>
-                    </p>
+            <section class="aboutus-excercises">
+                <div>
 
-                    <div class="view__text">
-                        <div class="view__text--parag">
-                            <p class="view__text--paragraph">Proposal:   Epic - Battles on Foreign Lands [in the US]</p>
-                            <p class="view__text--paragraph">Proposal:   US Copywright Office Title 17 - April 27, 2021</p>
-                            <p class="view__text--paragraph">Reality:   Unscripted Format/12-episodes arc series</p>
-                            <p class="view__text--paragraph">Purpose:   Filming pre-production sizzle reels & qualifying</p>
-                            <p class="view__text--paragraph">When/where:   July 2021 - Los Angeles and Las Vegas</p>
-                            <p class="view__text--paragraph">Pay range:   Pre-production $50.00/hr. (TBD Re: prgrm</p>
-                            <p class="view__text--paragraph">Limited to:   350prospective contestants</p>
-                        </div>
+                    <h3 class="heading-secondary">Promoting You</h3>
 
-                        <div class="view__text--image">
-                            <img src="img/war.jpg" alt="card-pic" class="view__img" height="200rem" width="350rem">
-                        </div>
-                    </div>
+                        <p class="view__paragraph">
+                        Diverse groups of industry professionals gather here, to explore the possibility of discovery and growth. Casting companies are able to review the credentials of individuals registered for their interest in casting assignments and prospective rolls. 
+                        Identified as television industry's marketplace for talent and creation, the Reality TV Registry platform is accessed by decision-makers of leading Production Companies and TV Networks seeking talent and original TV programming ideas and scripts. Their scope of interest embraces all genres of Reality TV programming. 
+                        From the RTVR platform we promote your individual talents to producers, talent scouts, and network executives for all major networks and cable networks. Individuals from these companies have active casting assignments for a diversity of rolls to fill. The Reality TV Registry platform is just one of the many mediums implemented in our strategic approach to promotional campaigns. Social Media is one our mediums to fill casting assignments and rolls. 
+                        Yes, it is true that at times, the likelihood of one’s success may be hinged on who you know. This reality cannot be truer, in the entertainment industry. With this in mind, your potential success is greatly leveraged when we campaign on your behalf.  
+                        Have you ever experienced someone of great talent performing in an obscure or tiny venue and thought to yourself; why aren’t they performing in Vegas or in a pack filled arena. Or maybe on TV. Most often, the reason is simply that their talent wasn’t adequately promoted. 
+                        Assuming one has great skill, success generally stems from PROMOTION. 
+                        Performers, whether it be actors, musicians, dancers, special acts or routines are rarely schooled in effective marketing and promotional techniques. Consequently, some of the greatest talent is never cast or seen in acting rolls. 
+                        There are tens-of-thousands of individuals who are yet to break through and achieve recognition and success in which they are so deserving. 
+                        Meeting your expectations: When you register to be a member of the RealityTVRegistry, you expect that our firm will deliver as promised. As the founder of this company, it is my personal belief that our success will be directly measured by your success. There rests, our duty to perform.
+                        The Reality TV Registry site has been developed as a promotional platform that lists promising reality shows by promising writers. As a member, talent or contestant, you have first priority and opportunity to be participate in their productions.  Producers and Networks seek fresh ideas in programming and the talent associated in support of a successful show. 
+                        </p>
 
-                    <p class="view__paragraph">
-                        Seeking male and female, rough and tumble types to compete in real battle like clashes that
-                        transcend the usual Realty programming. Fitness and good marksmanship are a plus. You compete
-                        as either a Roman or Celtic. Replication of battle gladius (short swords) and chest armor were 
-                        specifically designed for this program and tested to be battle safe for non-injury contact. 
-                    </p>
-
-                    <div class="view__text-2">
-                        <div class="view__text-2.1">
-                            <img src="img/war.jpg" alt="card-pic" class="view__img" height="200rem" width="350rem">
-                        </div>
                         <div>
-                            <a href="cregistration.php" class="btn btn--white">Join our team!</br> <b>EZ $55</b> to Register</a>
-                        </div>
+                            <h3 class="heading-tertiary-small">Current Programs Having Open Participation</h3>
+                            <div class="promote--div">
+                                <div class="promote--div__paragraph">
+                                    <p class="view__paragraph"> 
+                                        Gold Fever – Quest for the Mother Lode
+                                    </p>
+                                    <p class="view__paragraph"> 
+                                        Imagine That
+                                    </p> 
+                                    <p class="view__paragraph"> 
+                                        Life Boat Unhinged 
+                                    </p>
+                                    <p class="view__paragraph"> 
+                                        Modeled to Market
+                                    </p> 
+                                    <p class="view__paragraph"> 
+                                        Encore - Matters oF ACTORS
+                                    </p>
+                                    <p class="view__paragraph"> 
+                                        Golf Squadron 
+                                    </p> 
+                                    <p class="view__paragraph"> 
+                                        Ovations - Sound of Music
+                                    </p>
+                                    <p class="view__paragraph"> 
+                                        Manipulated
+                                    </p> 
+                                </div>
 
-                        <div class="view__text-2.2">
-                            <img src="img/vikings.jpg" alt="card-pic" class="view__img" height="200rem" width="350rem">
-                        </div>
-                    </div>
-                    <h4 class="heading-tertiary-small-2"> As a Registered Member, We Campaign for Your Success</h4>
+                                <div class="promote--div__paragraph-2">
+                                    <p class="view__paragraph"> 
+                                        Epic – Battles of Foreign Lands				
+                                    </p>
+                                    <p class="view__paragraph"> 
+                                        Singles Yachting Society
+                                    </p> 
+                                    <p class="view__paragraph"> 
+                                        Living Aboard							
+                                    </p>
+                                    <p class="view__paragraph"> 
+                                        Pet Celebrity
+                                    </p> 
+                                    <p class="view__paragraph"> 
+                                        Battle	Grounds – Snipers at Large				
+                                    </p>
+                                    <p class="view__paragraph"> 
+                                        State Street Inventor 
+                                    </p> 
+                                    <p class="view__paragraph"> 
+                                        Sharks on Wallstreet
+                                    </p> 
+                                </div>
+                            </div>
+
+                        </div>        
                 </div>
-
-            </section>    
+            </section>
+            
         </main>
 
         <footer class="footer">
@@ -162,13 +187,11 @@
                                     <use xlink:href="img/sprite.svg#icon-accessibility"></use>
                                 </svg>
                             <div class="sprite__user">
-                                <!-- <span class="sprite__icon">USD</span> -->
                                     <svg class="sprite__icon sprite__icon-text">
                                         <use xlink:href="img/sprite.svg#icon-credit"></use>
                                     </svg>
                             </div>
                             <div class="sprite__user">
-                                <!-- <span class="sprite__icon sprite__icon-text">English</span> -->
                                 <svg class="sprite__icon sprite__icon-text">
                                     <use xlink:href="img/sprite.svg#icon-sphere"></use>
                                 </svg>

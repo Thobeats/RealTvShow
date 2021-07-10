@@ -24,7 +24,7 @@
                     <img src="img/logo.png" alt="Reality Tv Logo" class="project__logo-box">
                 </div>
 
-                                <nav class="clearfix navbox">
+                <nav class="clearfix navbox">
                                     <div class="navbar">
                                         <div class="dropdown">
                                             <button class="dropbtn"><a href="#">Home</a>
@@ -59,7 +59,7 @@
                                 </nav> 
 
 
-                            <div class="projects">
+                            <div class="projected">
                                 <div class="project__text-box">
                                     <h1 class="heading-primary">
                                         <span class="heading-primary--main">Reality Tv</span>
@@ -69,58 +69,50 @@
                             </div>                            
             </header>
 
-            <section class="section-viewpage">
-                <div class="view">
-                    <h3 class="view__header"> Title:  Epic - Battles of Foreign Lands (Proposed filming in the US)</h3>
+            <section class="aboutus-excercises">
+                <div>
+
+                    <h3 class="heading-secondary">Contestant/Talent and Writer Benefits</h3>
+
+                             
+ 
                     <p class="view__paragraph">
-                        Logline: A troop of 30 Roman Soldiers are led to battle against 30 Celti Gauls in this historically
-                        significant encounter that occured, circa 525 BC. Among the destruction and burning ruins of a
-                        Roman settlement, the Celtics are observed boasting until they see a troop of Roman Soldiers
-                        charging at them. Combat is certain snd an Epic Battle of revenge ensues. A man-to-man clash of
-                        soldiers wielding gladius type weaponry soon intensifies as antiquated pistols are drawn. In the end
-                        either the Roman Soldiers or Celtic Gauls, will be declared victorious, and advanceto battle again.
-                        <h3 class="heading-secondary"> Note: Proprietary "BattleSafeWeaponry" is specially designed to insure non-injury conflicts)</h3>
+                        Your benefits can start today. TV industry executives have 24-hour access to the RTVR platform 
+                        in which, to scout reality talent for casting and acting rolls, and to discover unique and 
+                        original material from writers who display reality TV projects. Through our promotional campaigns 
+                        RTVR members obtain a competitive advantage of being discovered.
+                    </br>
+                    Executive access is granted to Producers, Networks Executives and Casting Companies. 
+                    These individuals have full access privileges to proposed reality programming and talent credentials, that are submitted by registered individuals. 
                     </p>
 
-                    <div class="view__text">
-                        <div class="view__text--parag">
-                            <p class="view__text--paragraph">Proposal:   Epic - Battles on Foreign Lands [in the US]</p>
-                            <p class="view__text--paragraph">Proposal:   US Copywright Office Title 17 - April 27, 2021</p>
-                            <p class="view__text--paragraph">Reality:   Unscripted Format/12-episodes arc series</p>
-                            <p class="view__text--paragraph">Purpose:   Filming pre-production sizzle reels & qualifying</p>
-                            <p class="view__text--paragraph">When/where:   July 2021 - Los Angeles and Las Vegas</p>
-                            <p class="view__text--paragraph">Pay range:   Pre-production $50.00/hr. (TBD Re: prgrm</p>
-                            <p class="view__text--paragraph">Limited to:   350prospective contestants</p>
-                        </div>
+                    <ol class="view__paragraph">
+                        <h3 class="heading-tertiary-small">Contestant/Talent Benefits: </h3>                  
+                        <li>Big 93% advantage to be cast when promoted by RealityTVRegistry</li>
+                        <li>Priority status to participate in the Reality production of your choice</li> 
+                        <li>Your private account access, to view and edit your credentials</li>
+                        <li>We promote your individual talents to producers and TV executives</li> 
+                        <li>Casting companies can view your talents and contact you directly</li>
+                        <li>Exposure to talent scouts with opportunity to be discovered</li>
+                        <li>We keep you apprised of future Reality TV productions</li> 
+                    </ol>
 
-                        <div class="view__text--image">
-                            <img src="img/war.jpg" alt="card-pic" class="view__img" height="200rem" width="350rem">
-                        </div>
-                    </div>
+                    <ol class="view__paragraph">
+                        <h3 class="heading-tertiary-small">Writer Benefits:</h3>
+                        <li>Inclusion of <b class="paintme">Image Enhancement Pitches</b> on the RealityTVRegistry platform</li>
+                        <li>Advantage to be promoted via Business-To-Business approach</li>
+                        <li>Strict vetting process to verify legitimate industry TV executives</li> 
+                        <li>Your account access to identify companies who have viewed your material</li>
+                        <li>Account access to edit and upload additional reality proposals</li>
+                        <li>We promote your unique material to producers and TV executives</li> 
+                        <li>Producers and networks access your reality pitch and initiate contact</li>
+                        <li>We keep you apprised of future industry trade opportunities</li> 
+                    </0l>
 
-                    <p class="view__paragraph">
-                        Seeking male and female, rough and tumble types to compete in real battle like clashes that
-                        transcend the usual Realty programming. Fitness and good marksmanship are a plus. You compete
-                        as either a Roman or Celtic. Replication of battle gladius (short swords) and chest armor were 
-                        specifically designed for this program and tested to be battle safe for non-injury contact. 
-                    </p>
-
-                    <div class="view__text-2">
-                        <div class="view__text-2.1">
-                            <img src="img/war.jpg" alt="card-pic" class="view__img" height="200rem" width="350rem">
-                        </div>
-                        <div>
-                            <a href="cregistration.php" class="btn btn--white">Join our team!</br> <b>EZ $55</b> to Register</a>
-                        </div>
-
-                        <div class="view__text-2.2">
-                            <img src="img/vikings.jpg" alt="card-pic" class="view__img" height="200rem" width="350rem">
-                        </div>
-                    </div>
-                    <h4 class="heading-tertiary-small-2"> As a Registered Member, We Campaign for Your Success</h4>
                 </div>
-
-            </section>    
+ 
+            </section>
+            
         </main>
 
         <footer class="footer">
@@ -162,13 +154,11 @@
                                     <use xlink:href="img/sprite.svg#icon-accessibility"></use>
                                 </svg>
                             <div class="sprite__user">
-                                <!-- <span class="sprite__icon">USD</span> -->
                                     <svg class="sprite__icon sprite__icon-text">
                                         <use xlink:href="img/sprite.svg#icon-credit"></use>
                                     </svg>
                             </div>
                             <div class="sprite__user">
-                                <!-- <span class="sprite__icon sprite__icon-text">English</span> -->
                                 <svg class="sprite__icon sprite__icon-text">
                                     <use xlink:href="img/sprite.svg#icon-sphere"></use>
                                 </svg>

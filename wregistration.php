@@ -24,7 +24,7 @@
                     <img src="img/logo.png" alt="Reality Tv Logo" class="project__logo-box">
                 </div>
 
-                                <nav class="clearfix navbox">
+                <nav class="clearfix navbox">
                                     <div class="navbar">
                                         <div class="dropdown">
                                             <button class="dropbtn"><a href="#">Home</a>
@@ -59,7 +59,7 @@
                                 </nav> 
 
 
-                            <div class="projects">
+                            <div class="projectes">
                                 <div class="project__text-box">
                                     <h1 class="heading-primary">
                                         <span class="heading-primary--main">Reality Tv</span>
@@ -69,58 +69,66 @@
                             </div>                            
             </header>
 
-            <section class="section-viewpage">
-                <div class="view">
-                    <h3 class="view__header"> Title:  Epic - Battles of Foreign Lands (Proposed filming in the US)</h3>
-                    <p class="view__paragraph">
-                        Logline: A troop of 30 Roman Soldiers are led to battle against 30 Celti Gauls in this historically
-                        significant encounter that occured, circa 525 BC. Among the destruction and burning ruins of a
-                        Roman settlement, the Celtics are observed boasting until they see a troop of Roman Soldiers
-                        charging at them. Combat is certain snd an Epic Battle of revenge ensues. A man-to-man clash of
-                        soldiers wielding gladius type weaponry soon intensifies as antiquated pistols are drawn. In the end
-                        either the Roman Soldiers or Celtic Gauls, will be declared victorious, and advanceto battle again.
-                        <h3 class="heading-secondary"> Note: Proprietary "BattleSafeWeaponry" is specially designed to insure non-injury conflicts)</h3>
-                    </p>
-
-                    <div class="view__text">
-                        <div class="view__text--parag">
-                            <p class="view__text--paragraph">Proposal:   Epic - Battles on Foreign Lands [in the US]</p>
-                            <p class="view__text--paragraph">Proposal:   US Copywright Office Title 17 - April 27, 2021</p>
-                            <p class="view__text--paragraph">Reality:   Unscripted Format/12-episodes arc series</p>
-                            <p class="view__text--paragraph">Purpose:   Filming pre-production sizzle reels & qualifying</p>
-                            <p class="view__text--paragraph">When/where:   July 2021 - Los Angeles and Las Vegas</p>
-                            <p class="view__text--paragraph">Pay range:   Pre-production $50.00/hr. (TBD Re: prgrm</p>
-                            <p class="view__text--paragraph">Limited to:   350prospective contestants</p>
-                        </div>
-
-                        <div class="view__text--image">
-                            <img src="img/war.jpg" alt="card-pic" class="view__img" height="200rem" width="350rem">
-                        </div>
-                    </div>
-
-                    <p class="view__paragraph">
-                        Seeking male and female, rough and tumble types to compete in real battle like clashes that
-                        transcend the usual Realty programming. Fitness and good marksmanship are a plus. You compete
-                        as either a Roman or Celtic. Replication of battle gladius (short swords) and chest armor were 
-                        specifically designed for this program and tested to be battle safe for non-injury contact. 
-                    </p>
-
-                    <div class="view__text-2">
-                        <div class="view__text-2.1">
-                            <img src="img/war.jpg" alt="card-pic" class="view__img" height="200rem" width="350rem">
-                        </div>
-                        <div>
-                            <a href="cregistration.php" class="btn btn--white">Join our team!</br> <b>EZ $55</b> to Register</a>
-                        </div>
-
-                        <div class="view__text-2.2">
-                            <img src="img/vikings.jpg" alt="card-pic" class="view__img" height="200rem" width="350rem">
-                        </div>
-                    </div>
-                    <h4 class="heading-tertiary-small-2"> As a Registered Member, We Campaign for Your Success</h4>
+        <main>
+            <section class="contactus-excercises" id="contactus-excercises">
+                <div class="u-center-text u-margin-bottom-big">
+                    <h2 class="heading-secondary">
+                        Writer/Author Reality Pitch Submission and Registration
+                    </h2>
                 </div>
+            <!-- </section>
+                 
+            <section class="section-contactus"> -->
 
-            </section>    
+                    <div class="registration-divi">
+
+                        <label for="registration-divi__text">Email Address</label>
+                        <input class="registration-divi__input" id="pass" type="Email Address" name="Email Address" placeholder="Email Address" required/>
+                        <label for="registration-divi__text">Username</label>
+                        <input class="registration-divi__input" type="Username" name="Username" placeholder="Username" required/>
+                        <label for="registration-divi__text">Password</label>
+                        <input class="registration-divi__input" id="pass" type="password" name="password" placeholder="Password" required/>
+                        <label for="registration-divi__text">First Name</label>
+                        <input class="registration-divi__input" type="First Name" name="First Name" placeholder="First Name" required/>
+                        <label for="registration-divi__text">Last Name</label>
+                        <input class="registration-divi__input" type="Last Name" name="Last Name" placeholder="Last Name" required/>
+                        <label for="registration-divi__text">Phone Number</label>
+                        <input class="registration-divi__input" type="Phone Number" name="Phone Number" placeholder="Phone Number" required/>
+                        <label for="registration-divi__text">Address</label>
+                        <input class="registration-divi__input" type="Address" name="Address" placeholder="Address" required/>
+                        <label for="registration-divi__text">Project Title</label>
+                        <input class="registration-divi__input" id="text-input" type="text" />
+                        <label for="registration-divi__text">Logline</label>
+                        <input class="registration-divi__input" id="text-input" type="text" />
+                        <label for="registration-divi__text">Genre <a href="" class="paintme">open Genre to view selection</a></label>
+                        <input class="registration-divi__input" id="text-input" type="text" />
+                        <label for="registration-divi__text">Synopsis/Pitch Outline <span class="registration__paragraph">(In he box below please paste in the synopsis of your project, format, or story. (usually, 1 to 5 pages))</span></label>
+                        <input class="registration-divi__input-2" id="text-input" type="text" />
+
+                        <!-- <p class="view__paragraph paintme">When the individual registers for a specific Program it is identified on their credentials. 
+                            When TV execs view the individual he/she will be able to determine which Program they registered for. 
+                            Exec can see contact info. for the member.</p> -->
+
+                            <p class="registration__paragraph">Please review the RTVR Industry Executive NDA - Confidential Agreement, which is required to be signed 
+                                by any Industry TV Executive who views writer’s material, without exception. Thus, designed to protect all the written material of writers 
+                                who are registered to RTVR. Agreeing to the terms of the standard Material Release Form, is required for all submissions. By checking the 
+                                box below as my electronic and binding signature, I confirm that I have reviewed, understand and agree to RealityTVRegistry.com NDA/Confidential 
+                                Agreement and Standard Material Release Form and that the terms and conditions of such shall govern me and my use of RTVR and/or any of the 
+                                services provided by RTVR including but not limited to any submission by me as a writer or any review of the materials of others contained herein.
+                            </p>
+
+                            <div class="heading-tertiary-small-3">
+                                <div class="">
+                                    <label> <input class="checkbox" type="checkbox" checked="checked" name="remember"> Agree to our terms of services </label>
+                                </div>
+                            </div>
+                        <div class="registration-divi__btn">
+                            <a href="signup.php" class="btn btn--white">Register</a>
+                            <a href="signup.php" class="btn btn--white">Clear Form</a>
+                        </div> 
+                    </div>
+                </div>
+            </section>           
         </main>
 
         <footer class="footer">
@@ -162,13 +170,11 @@
                                     <use xlink:href="img/sprite.svg#icon-accessibility"></use>
                                 </svg>
                             <div class="sprite__user">
-                                <!-- <span class="sprite__icon">USD</span> -->
                                     <svg class="sprite__icon sprite__icon-text">
                                         <use xlink:href="img/sprite.svg#icon-credit"></use>
                                     </svg>
                             </div>
                             <div class="sprite__user">
-                                <!-- <span class="sprite__icon sprite__icon-text">English</span> -->
                                 <svg class="sprite__icon sprite__icon-text">
                                     <use xlink:href="img/sprite.svg#icon-sphere"></use>
                                 </svg>

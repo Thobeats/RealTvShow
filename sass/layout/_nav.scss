@@ -71,20 +71,25 @@ nav::after {
 //         padding: 8px;
 //         text-decoration: none;
 //         }
+
+        .navbox {
+          display: flex;
+        }
   
         .navbar {
           overflow: hidden;
           font-family: Arial;
-          font-weight: 600rem;
+          font-weight: 900rem;
           background-color: $color-secondary;
           display: flex;
-          justify-content: space-between; 
+          // justify-content: space-around; 
           width: 100%;
         }
         
         .navbar a {
-          float: center;
+          float: left;
           font-size: 1.5rem;
+          padding: 0 2rem;
           color: $color-white;
           text-align: center;
           text-decoration: none; 
@@ -94,9 +99,10 @@ nav::after {
           display: flex;
           width: 100%;
           padding-top: 1rem;
+          padding-left: 50rem;
           background-color: $color-white;
           height: 10rem;
-          justify-content: space-around; 
+          // justify-content: space-around; 
           position: relative;
           z-index: 100;
           }

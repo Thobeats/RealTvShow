@@ -44,43 +44,14 @@
                                     <img src="img/logo.png" alt="Reality Tv Logo" class="navbar__logo-box">
                                 </div>
 
-                                <nav class="clearfix">
+                                <nav class="clearfix navbox">
                                     <div class="navbar">
                                         <div class="dropdown">
                                             <button class="dropbtn"><a href="#">Home</a>
                                             <i class="fa fa-caret-down"></i>
                                             </button>
                                         </div>
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><a href="Cdashboard.php">Contestants</a>
-                                                <i class="fa fa-caret-down"></i>
-                                            </button>
-                                            <!-- <div class="dropdown-content">
-                                                <a href="Xdashboard.php">Privacy Policy - Contestant, Talent and Executive</a>
-                                            </div> -->
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><a href="Wdashboard.php">Writers</a>
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                            <!-- <div class="dropdown-content">
-                                                <a href="">NDA - Confidentiality Agreement</a>
-                                                <a href="">Writer/Author - Material Release | Terms of Service</a>
-                                                <a href="">Writer Tips and Pitching</a>
-
-                                            </div> -->
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><a href="Edashboard.php">Executives</a>
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                            <!-- <div class="dropdown-content">
-                                                <a href="">Current Talent and Submissions</a>
-                                                <a href="">Industry Executive Review of Reality TV Proposals</a>
-                                                <a href="">Privacy Policy - Executives and Contestants</a>
-
-                                            </div> -->
-                                        </div>
+                                        
                                         <div class="dropdown">
                                             <button class="dropbtn"><a href="Edashboard.php">About Us</a>
                                             <i class="fa fa-caret-down"></i>
@@ -98,6 +69,9 @@
                                             <i class="fa fa-caret-down"></i>
                                             </button>
                                         </div>
+                                    </div>
+
+                                    <div>
                                         <div class="buttons">
                                             <a href="signup.php" class="btn btn--white">SignUp</a>
                                         </div>

@@ -59,7 +59,7 @@
                                 </nav> 
 
 
-                            <div class="projects">
+                            <div class="projected">
                                 <div class="project__text-box">
                                     <h1 class="heading-primary">
                                         <span class="heading-primary--main">Reality Tv</span>
@@ -69,58 +69,62 @@
                             </div>                            
             </header>
 
-            <section class="section-viewpage">
-                <div class="view">
-                    <h3 class="view__header"> Title:  Epic - Battles of Foreign Lands (Proposed filming in the US)</h3>
-                    <p class="view__paragraph">
-                        Logline: A troop of 30 Roman Soldiers are led to battle against 30 Celti Gauls in this historically
-                        significant encounter that occured, circa 525 BC. Among the destruction and burning ruins of a
-                        Roman settlement, the Celtics are observed boasting until they see a troop of Roman Soldiers
-                        charging at them. Combat is certain snd an Epic Battle of revenge ensues. A man-to-man clash of
-                        soldiers wielding gladius type weaponry soon intensifies as antiquated pistols are drawn. In the end
-                        either the Roman Soldiers or Celtic Gauls, will be declared victorious, and advanceto battle again.
-                        <h3 class="heading-secondary"> Note: Proprietary "BattleSafeWeaponry" is specially designed to insure non-injury conflicts)</h3>
-                    </p>
+            <section class="aboutus-excercises">
+                <div>
 
-                    <div class="view__text">
-                        <div class="view__text--parag">
-                            <p class="view__text--paragraph">Proposal:   Epic - Battles on Foreign Lands [in the US]</p>
-                            <p class="view__text--paragraph">Proposal:   US Copywright Office Title 17 - April 27, 2021</p>
-                            <p class="view__text--paragraph">Reality:   Unscripted Format/12-episodes arc series</p>
-                            <p class="view__text--paragraph">Purpose:   Filming pre-production sizzle reels & qualifying</p>
-                            <p class="view__text--paragraph">When/where:   July 2021 - Los Angeles and Las Vegas</p>
-                            <p class="view__text--paragraph">Pay range:   Pre-production $50.00/hr. (TBD Re: prgrm</p>
-                            <p class="view__text--paragraph">Limited to:   350prospective contestants</p>
-                        </div>
-
-                        <div class="view__text--image">
-                            <img src="img/war.jpg" alt="card-pic" class="view__img" height="200rem" width="350rem">
-                        </div>
-                    </div>
+                    <h3 class="heading-secondary">Communications:</h3>
 
                     <p class="view__paragraph">
-                        Seeking male and female, rough and tumble types to compete in real battle like clashes that
-                        transcend the usual Realty programming. Fitness and good marksmanship are a plus. You compete
-                        as either a Roman or Celtic. Replication of battle gladius (short swords) and chest armor were 
-                        specifically designed for this program and tested to be battle safe for non-injury contact. 
-                    </p>
+                        The RealityTVRegistry implement <b class="paintme"> Form Mail and Send Mail</b> to deliver electronic notification to certain registered members relative to the activity on their private account. It also delivers specific notifications of member related news. Our staff manually sends all emails to those registered with our promotional services. We do not spam non-members. Registered members submit either a personal or business email address that is used to receive notifications from our office. We pledge to never sale, lend or exploit member emails or other personal data to third parties. 
+                        <p class="view__paragraph">
+                        <b class="paintme"> User Activity Monitored Password</b> protected access is provided to member writers. Thus, these members have access to <b class="paintme"> a personal project status page</b> where they are enabled to observe registered member executive reviews. The reviews are accessed for member writer related projects that are posted for review strictly for the access of the RTVR industry executive database. As registered industry executive examines or selects an applicable status for any project, that review/status is electronically sent and posted to the corresponding writer's project status page.  The information indicates the company name/ project title / date reviewed / and time. Industry executives have full discretion to select the status or the ability to change it at any time for any project that has been posted. The executive has no obligation to the corresponding writer. The review status logs are submitted to our registered member writers as a courtesy and service, and not to be construed as a right of information.
+                        </p>
 
-                    <div class="view__text-2">
-                        <div class="view__text-2.1">
-                            <img src="img/war.jpg" alt="card-pic" class="view__img" height="200rem" width="350rem">
-                        </div>
-                        <div>
-                            <a href="cregistration.php" class="btn btn--white">Join our team!</br> <b>EZ $55</b> to Register</a>
-                        </div>
+                        </br>
+                        <h3 class="heading-tertiary-small">Copyright Protection:</h3>
 
-                        <div class="view__text-2.2">
-                            <img src="img/vikings.jpg" alt="card-pic" class="view__img" height="200rem" width="350rem">
-                        </div>
-                    </div>
-                    <h4 class="heading-tertiary-small-2"> As a Registered Member, We Campaign for Your Success</h4>
+                        <p class="view__paragraph">
+                        It is highly recommended that all member writers of RealityTVRegistry who submit original written material 
+                        take the initiative to register for copyright protection. Your written material is considered intellectual property 
+                        and it is ultimately the responsibility of the Writer to take these measures in protecting their work.
+                        </br>
+
+                        To provide mutual protection and privacy of both industry executives and registered writers, we require all registering 
+                        industry executives to agree by electronic signature to an industry standard Non-Disclosure Agreement. Furthermore, 
+                        all registered writers are required to agree by electronic signature, to an industry standard Material Release Form.
+                        </p>
+
+
+                        <h3 class="heading-tertiary-small">Cookies:</h3>
+                        <p class="view__paragraph">
+                        Member names and passwords are stored as “cookies” on websites that we use. Cookies permit individuals to store and retrieve 
+                        login information through a user's browser. A cookie is a small data file that certain Web sites write to your hard drive 
+                        when you visit them. A cookie file generally contains information such as a user ID that the site exercises to track pages 
+                        that you have visited.
+                        </br>
+
+                        The RealityTVRegistry registration form requires users to provide contact information including name, email address, and 
+                        additional information. Our staff gathers customer contact information from the registration form to deliver user information 
+                        about our company as well as information concerning available projects and other acquisition related data. The member's 
+                        contact information is also used to contact the visitor when necessary.
+                        </br>
+
+                        Industry executives have the ability to contact registered members of RTVR to discuss their talent interests and projects, 
+                        therefore it is important that member contact data are current. If the RTVR member enlists an industry representative it is 
+                        imperative to so state and include the current contact data of the representative. *Writer contact information is not publicly 
+                        displayed on RTVR platform. Contact information is only released to a verified Industry Executive when a formal solicitation or 
+                        formal review of the talent or project is requested by the executive. At that time the executive may discuss project particulars 
+                        or a deal proposal. The executives and/or staff of RTVR may contact any member as deemed necessary.
+                        </br>
+
+                        Within the content of the RealityTVRegistry are links to related websites that are not under the policies of our company. 
+                        Therefore, RTVR cannot be held liable for the privacy practices or the content of these websites. The RTVR staff and executives 
+                        pledge to never sell, broker or otherwise distribute mailing lists, contact information or personal demographics information to 
+                        third party companies, members, or non-members.
+                        </p>                
                 </div>
-
-            </section>    
+            </section>
+            
         </main>
 
         <footer class="footer">
@@ -162,13 +166,11 @@
                                     <use xlink:href="img/sprite.svg#icon-accessibility"></use>
                                 </svg>
                             <div class="sprite__user">
-                                <!-- <span class="sprite__icon">USD</span> -->
                                     <svg class="sprite__icon sprite__icon-text">
                                         <use xlink:href="img/sprite.svg#icon-credit"></use>
                                     </svg>
                             </div>
                             <div class="sprite__user">
-                                <!-- <span class="sprite__icon sprite__icon-text">English</span> -->
                                 <svg class="sprite__icon sprite__icon-text">
                                     <use xlink:href="img/sprite.svg#icon-sphere"></use>
                                 </svg>

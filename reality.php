@@ -24,7 +24,7 @@
                     <img src="img/logo.png" alt="Reality Tv Logo" class="project__logo-box">
                 </div>
 
-                                <nav class="clearfix navbox">
+                <nav class="clearfix navbox">
                                     <div class="navbar">
                                         <div class="dropdown">
                                             <button class="dropbtn"><a href="#">Home</a>
@@ -59,7 +59,7 @@
                                 </nav> 
 
 
-                            <div class="projects">
+                            <div class="projected">
                                 <div class="project__text-box">
                                     <h1 class="heading-primary">
                                         <span class="heading-primary--main">Reality Tv</span>
@@ -69,58 +69,58 @@
                             </div>                            
             </header>
 
-            <section class="section-viewpage">
-                <div class="view">
-                    <h3 class="view__header"> Title:  Epic - Battles of Foreign Lands (Proposed filming in the US)</h3>
-                    <p class="view__paragraph">
-                        Logline: A troop of 30 Roman Soldiers are led to battle against 30 Celti Gauls in this historically
-                        significant encounter that occured, circa 525 BC. Among the destruction and burning ruins of a
-                        Roman settlement, the Celtics are observed boasting until they see a troop of Roman Soldiers
-                        charging at them. Combat is certain snd an Epic Battle of revenge ensues. A man-to-man clash of
-                        soldiers wielding gladius type weaponry soon intensifies as antiquated pistols are drawn. In the end
-                        either the Roman Soldiers or Celtic Gauls, will be declared victorious, and advanceto battle again.
-                        <h3 class="heading-secondary"> Note: Proprietary "BattleSafeWeaponry" is specially designed to insure non-injury conflicts)</h3>
-                    </p>
+            <section class="aboutus-excercises">
+                <div>
 
-                    <div class="view__text">
-                        <div class="view__text--parag">
-                            <p class="view__text--paragraph">Proposal:   Epic - Battles on Foreign Lands [in the US]</p>
-                            <p class="view__text--paragraph">Proposal:   US Copywright Office Title 17 - April 27, 2021</p>
-                            <p class="view__text--paragraph">Reality:   Unscripted Format/12-episodes arc series</p>
-                            <p class="view__text--paragraph">Purpose:   Filming pre-production sizzle reels & qualifying</p>
-                            <p class="view__text--paragraph">When/where:   July 2021 - Los Angeles and Las Vegas</p>
-                            <p class="view__text--paragraph">Pay range:   Pre-production $50.00/hr. (TBD Re: prgrm</p>
-                            <p class="view__text--paragraph">Limited to:   350prospective contestants</p>
-                        </div>
+                    <h3 class="heading-secondary">Reality TV </h3>
+                        <p class="view__paragraph">The writers associated with Reality TV Registry (RTVR) are committed in their focus to create 
+                            and promote Reality TV formats and docuseries to the film industry. Currently, RTVR has open participation in 15 proposed 
+                            reality TV submissions. These programs represent very promising shows that exhibit fresh and exciting formats and docuseries. 
+                            RTVR serves as an opportunity for individuals to register and be placed on the priority list for current and future casting 
+                            assignments and acting rolls of prospective Reality TV Formats and Docuseries. Opportunities are available in several locations, 
+                            coast-to-coast. </p>
 
-                        <div class="view__text--image">
-                            <img src="img/war.jpg" alt="card-pic" class="view__img" height="200rem" width="350rem">
-                        </div>
-                    </div>
+                        <h3 class="heading-tertiary-small">Formatted Reality:</h3>
+                        <p class="view__paragraph">
+                            The Formatted Reality TV type series exhibits a very clear structure, rules, and a progression to an ultimate winner.    
+                            Whether it is a relationship series, or competition series, it's all about creating the right elements that deliver key dramatic 
+                            moments. Formatted programming delivers the unique premise and agenda for the series. The most important aspect of creating this type of series 
+                            is to have a highly original hook that makes the show unlike anything we've seen. While the structure or subject may be derived from other popular 
+                            shows, the new show has a specific hook that is captivating and elevates its uniqueness. This type of reality has diverse casting and unique 
+                            writing opportunities.
+                        </p>
+                        </br>
+                        <p class="view__paragraph">
+                            Reality TV is Programmed as either Formatted or Documentary Style Concepts
+                            Formatted Reality displays very specific structure during the season’s episodes. It will rouse a dramatic and 
+                            compelling competition, generally resulting in a team or single person prevailing. Competitive Formats including 
+                            "Survivor", "Top Chef", "Wipe Out", and "The Bachelor" are typical examples of this type. Each consists of various 
+                            structures and premise. One is ultimately about survival, while others are about cooking, stunts, and romance and 
+                            relationships. 
+                            These series follow a progressive path over the course of a season (an arc). "Wipe Out" is considered a self-contained 
+                            format competition series. The first person to finish wins the show in each episode. Therefore, the series has self-contained 
+                            episodes, with new contestants and challenges during each show. This type of reality has diverse casting and unique writing 
+                            opportunities.
+                        </p>
+                        </br>
 
-                    <p class="view__paragraph">
-                        Seeking male and female, rough and tumble types to compete in real battle like clashes that
-                        transcend the usual Realty programming. Fitness and good marksmanship are a plus. You compete
-                        as either a Roman or Celtic. Replication of battle gladius (short swords) and chest armor were 
-                        specifically designed for this program and tested to be battle safe for non-injury contact. 
-                    </p>
+                        <p class="view__paragraph">
+                            Format type reality shows are distinguished as either a "Self-Contained" or "Arc Series".
+                            </br>
+                            "Self-Contained" means that each episode has a defined structure and story that has a conclusion in each week. These formats do not carry over to the following week and therefore, Syndicators like this type of format because they can air any block of episodes without needing the audience to follow season long series. Reality Formats including "Fear Factor", "Extreme Makeover", "American Pickers", "Hotel Impossible", "Wife Swap" and "Undercover Boss" are but a few examples of self-contained series. This type of reality has diverse casting and unique writing opportunities.
+                            </br>
+                            “Arc Series" formats may be viewed by audiences that see a single episode as rather conclusive in its self. However, the overall experience of an Arc Series will be that of the many episodes during the season that ultimately conclude with a winner, or revelation. 
+                            A most popular Arc Series, "Survivor" is a good example, in that each episode is infused with challenges participants face to win immunity, along with personal conflicts and strategies used between participants.  The progressive path of the episodes, evolve with the elimination of contestants. This type of reality has diverse casting and unique writing opportunities.
+                        </p>
 
-                    <div class="view__text-2">
-                        <div class="view__text-2.1">
-                            <img src="img/war.jpg" alt="card-pic" class="view__img" height="200rem" width="350rem">
-                        </div>
-                        <div>
-                            <a href="cregistration.php" class="btn btn--white">Join our team!</br> <b>EZ $55</b> to Register</a>
-                        </div>
-
-                        <div class="view__text-2.2">
-                            <img src="img/vikings.jpg" alt="card-pic" class="view__img" height="200rem" width="350rem">
-                        </div>
-                    </div>
-                    <h4 class="heading-tertiary-small-2"> As a Registered Member, We Campaign for Your Success</h4>
+                        <h3 class="heading-tertiary-small">Docuseries Reality TV </h3>
+                        <p class="view__paragraph"> 
+                        A Reality TV Docuseries shadows distinct individuals or groups of people and their preoccupation in genuine experiences and circumstances during a period of time. 
+                        Producers of Docuseries Formats have a keen interest to discover unique characters performing in the world of their existence. Real life docuseries are faced with the challenge to be high interest to its audience. They must be entertaining and interesting to watch. Docuseries may consist of unique professions or businesses, extreme lifestyles, adventurous journey’s and odd or humorous individuals and groups.  business, an odd or funny family, social groups, real people on an adventure, or any area of our lives that may be interesting to watch. This type of reality has diverse casting and unique writing opportunities.
+                        </p>
                 </div>
-
-            </section>    
+            </section>
+            
         </main>
 
         <footer class="footer">
@@ -162,13 +162,11 @@
                                     <use xlink:href="img/sprite.svg#icon-accessibility"></use>
                                 </svg>
                             <div class="sprite__user">
-                                <!-- <span class="sprite__icon">USD</span> -->
                                     <svg class="sprite__icon sprite__icon-text">
                                         <use xlink:href="img/sprite.svg#icon-credit"></use>
                                     </svg>
                             </div>
                             <div class="sprite__user">
-                                <!-- <span class="sprite__icon sprite__icon-text">English</span> -->
                                 <svg class="sprite__icon sprite__icon-text">
                                     <use xlink:href="img/sprite.svg#icon-sphere"></use>
                                 </svg>

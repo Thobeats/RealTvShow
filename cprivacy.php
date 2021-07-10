@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -24,10 +23,10 @@
                 <div class="dash__logo">
                     <img src="img/logo.png" alt="Reality Tv Logo" class="navbar__logo-box">
                 </div>
-                    <div class="headee user-nav">
+                    <div class="head user-nav">
                             <div class="user-nav__user">
                                 <div class="user-nav__user-1">
-                                    <img src="img/act001.jpg" alt="User photo" class="user-nav__user-photo">
+                                    <img src="img/write00.jpg" alt="User photo" class="user-nav__user-photo">
                                     <span class="user-nav__user-name">Sam Oniyilo</span>
                                 </div>
                                 <div class="user-nav__user-2">
@@ -37,7 +36,7 @@
                                     <span class="user-nav__user-mail-2">masterarcher6321@gmail.com</span>
                                 </div>
                             </div>
-                            <h1 class="user-nav__heading">Contestant</h1>
+                            <h1 class="user-nav__heading">Writer</h1>
                             <div class="user-nav__icon-main">
                                 <div class="user-nav__icon-main-1">
                                     <div class="user-nav__icon-box">
@@ -90,7 +89,21 @@
                                         <span>Dashboard</span>
                                     </a>
                                 </li>
-                                <li class="side-nav__item">
+                                <!-- <li class="side-nav__item">
+                                    <a href="" class="side-nav__link">
+                                            <svg class="side-nav__icon side-nav__dropdown__icon">
+                                                <use xlink:href="img/sprite.svg#icon-v-card"></use>
+                                            </svg>
+                                            <span>
+                                                <select class="side-nav__dropdown" name="role" id="" >
+                                                    <option value="00000" href="profile.php" class="side-nav__dropdown dropnav">Profile</option>
+                                                    <option value="1" href="editprofile.php" class="side-nav__dropdown-content">Edit Profile</option>
+                                                    
+                                                </select>
+                                            </span>
+                                    </a>
+                                </li> -->
+                                <li class="side-nav__item side-nav__item--active">
                                     <a href="Cprofile.php" class="side-nav__link">
                                         <svg class="side-nav__icon">
                                             <use xlink:href="img/sprite.svg#icon-v-card"></use>
@@ -99,7 +112,7 @@
                                     </a>
                                 </li>
                                 <!-- <li class="side-nav__item">
-                                    <a href="cpolicy.php" class="side-nav__link">
+                                    <a href="wpolicy.php" class="side-nav__link">
                                         <svg class="side-nav__icon">
                                             <use xlink:href="img/sprite.svg#icon-hour-glass"></use>
                                         </svg>
@@ -124,13 +137,12 @@
                                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
                                             Vitae, tempore sapiente aspernatur blanditiis ea voluptas 
                                             quam architecto.
-                                            <a href="https://www.youtube.com/watch?v=2fsMce1OvXY" class="writeup__link">https://www.youtube.com/watch?v=2fsMce1OvXY</a>
                                         </blockquote>
                                     </div>
                                     <figcaption class="writeup__movie">
                                         <div class="writeup__movie">
                                             <div class="writeup__movie-box">
-                                                <p class="writeup__movie-nom">My Drum Line</p>
+                                                <p class="writeup__movie-nom">Sound Of Music</p>
                                                 <p class="writeup__movie-date">Date: July 1st, 2021</p>
                                             </div>
                                             
@@ -162,10 +174,10 @@
                             </figure>
                             <div>
                                 <button class="btn-inline writeup__movie-button-2" href="signup.php">
-                                    Add Video<span>&rarr;</span>
+                                    Add Project<span>&rarr;</span>
                                 </button>
                             </div>
-                        </main>         
+                        </main>     
                     </div>
                 </div>
             </div>

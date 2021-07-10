@@ -79,7 +79,7 @@
                     </div>
                     <div class="signup__button">
                         <button><a href="Confirm.php">Register</a></button>
-                        <button><a href=#>Cancel</a></button>
+                        <button><a href=index.php>Cancel</a></button>
                     </div>
                   </div>
                 </div>

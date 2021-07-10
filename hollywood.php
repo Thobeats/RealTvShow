@@ -24,7 +24,7 @@
                     <img src="img/logo.png" alt="Reality Tv Logo" class="project__logo-box">
                 </div>
 
-                                <nav class="clearfix navbox">
+                <nav class="clearfix navbox">
                                     <div class="navbar">
                                         <div class="dropdown">
                                             <button class="dropbtn"><a href="#">Home</a>
@@ -66,61 +66,64 @@
                                         <span class="heading-primary--sub">cache of unique formats & talent</span>
                                     </h1>        
                                 </div>
+
+                                <div class="buttons-promoter">
+                                    <a href="promotingyou.php" class="butn butn--white buttons-promoter-you buttons-promoter-you">Promoting Your Material</a>
+                                    <a href="business.php" class="butn butn--white buttons-promoter-you buttons-promoter-you-2">Business of Writing</a>
+                                    <a href="pitching.php" class="butn butn--white buttons-promoter-you buttons-promoter-you-3">Pitching Reality</a>
+                                    <a href="sample.php" class="butn butn--white buttons-promoter-you buttons-promoter-you-4">Sample – Display Listing & Image Pitch</a>
+                                    <a href="business2.php" class="butn butn--white buttons-promoter-you buttons-promoter-you-5">Business of Options</a>
+                                    <a href="hollywood.php" class="butn butn--white buttons-promoter-you buttons-promoter-you-6">Hollywood Outsiders Pitched</a>
+                                </div>
                             </div>                            
             </header>
 
             <section class="section-viewpage">
-                <div class="view">
-                    <h3 class="view__header"> Title:  Epic - Battles of Foreign Lands (Proposed filming in the US)</h3>
-                    <p class="view__paragraph">
-                        Logline: A troop of 30 Roman Soldiers are led to battle against 30 Celti Gauls in this historically
-                        significant encounter that occured, circa 525 BC. Among the destruction and burning ruins of a
-                        Roman settlement, the Celtics are observed boasting until they see a troop of Roman Soldiers
-                        charging at them. Combat is certain snd an Epic Battle of revenge ensues. A man-to-man clash of
-                        soldiers wielding gladius type weaponry soon intensifies as antiquated pistols are drawn. In the end
-                        either the Roman Soldiers or Celtic Gauls, will be declared victorious, and advanceto battle again.
-                        <h3 class="heading-secondary"> Note: Proprietary "BattleSafeWeaponry" is specially designed to insure non-injury conflicts)</h3>
-                    </p>
+            <h2 class="heading-secondary">
+                Hollywood Outsiders Claim Success
+            </h2>
+                    <ul class="view__paragraph">
+                        <li>A few, recent success stories of individuals who pitched their unique material to 
+                        producers and then prospered from their efforts.</li>
+                        </br>
+                        <li>John Stewart of Deerfield, Illinois was a former professional wrestler. His program, 
+                        Bizarre World in Artifact Collection was sold to Fox TV Studios.</li>
+                        </br>
+                        <li>Steve Santini of Ontario, Canada created a Docuseries that was acquired by Buck
+                        Productions and aired on A&E Australia.</li>
+                        </br>
+                        <li>Stephan Reichel from Minnesota found his success when selling his Docuseries
+                        about Unique Professions. His program airs on Neon Television and Discovery
+                        Channel.</li>
+                        </br>
+                        <li>Leisa Naples created a Docuseries titled, Happily Ever After, with the Mullins. Her
+                        Success was found through Dick Clark Productions and Freemantle Media.</li>
+                        </br>
+                        <li>Dorie Genlesse was busy creating a variety of programs. Her success includes contracts 
+                        of seven programs with Smoke and Mirrors Productions and with Fox’s Mobbed TV 
+                        Series.</li>
+                        </br>
+                        <li>Steven Blanchard created and also stars in his Docuseries, Saw Dogs, acquired by
+                        Discovery International, and Chainsaw Sculptors acquired from the Velocity Channel
+                        and OLN</li>
+                        </br>
+                        <li>David Howe from Fredrick, Maryland sold an un-named Docuseries television concept
+                        to Buck Productions.</li>
+                        </br>
+                        <li>Kenny Rowlette from Rockton, Illinois found success when contracting with Kingfish
+                        Productions for his collaboration in an original reality television series.</li>
+                        </br>
+                        <li>Timothy Centner from a tiny rural town contracted with MDR Entertainment for his 
+                        original concepts in reality television programming.</li>
+                    </ul>
+            </section>
 
-                    <div class="view__text">
-                        <div class="view__text--parag">
-                            <p class="view__text--paragraph">Proposal:   Epic - Battles on Foreign Lands [in the US]</p>
-                            <p class="view__text--paragraph">Proposal:   US Copywright Office Title 17 - April 27, 2021</p>
-                            <p class="view__text--paragraph">Reality:   Unscripted Format/12-episodes arc series</p>
-                            <p class="view__text--paragraph">Purpose:   Filming pre-production sizzle reels & qualifying</p>
-                            <p class="view__text--paragraph">When/where:   July 2021 - Los Angeles and Las Vegas</p>
-                            <p class="view__text--paragraph">Pay range:   Pre-production $50.00/hr. (TBD Re: prgrm</p>
-                            <p class="view__text--paragraph">Limited to:   350prospective contestants</p>
-                        </div>
-
-                        <div class="view__text--image">
-                            <img src="img/war.jpg" alt="card-pic" class="view__img" height="200rem" width="350rem">
-                        </div>
-                    </div>
-
-                    <p class="view__paragraph">
-                        Seeking male and female, rough and tumble types to compete in real battle like clashes that
-                        transcend the usual Realty programming. Fitness and good marksmanship are a plus. You compete
-                        as either a Roman or Celtic. Replication of battle gladius (short swords) and chest armor were 
-                        specifically designed for this program and tested to be battle safe for non-injury contact. 
-                    </p>
-
-                    <div class="view__text-2">
-                        <div class="view__text-2.1">
-                            <img src="img/war.jpg" alt="card-pic" class="view__img" height="200rem" width="350rem">
-                        </div>
-                        <div>
-                            <a href="cregistration.php" class="btn btn--white">Join our team!</br> <b>EZ $55</b> to Register</a>
-                        </div>
-
-                        <div class="view__text-2.2">
-                            <img src="img/vikings.jpg" alt="card-pic" class="view__img" height="200rem" width="350rem">
-                        </div>
-                    </div>
-                    <h4 class="heading-tertiary-small-2"> As a Registered Member, We Campaign for Your Success</h4>
+            <section>
+                <div class="register-buttons">
+                    <a href="wregister.php" class="btn btn--white register-buttons-you register-buttons-you-1">Register Now</a>
                 </div>
-
-            </section>    
+            </section>
+            
         </main>
 
         <footer class="footer">
@@ -162,13 +165,11 @@
                                     <use xlink:href="img/sprite.svg#icon-accessibility"></use>
                                 </svg>
                             <div class="sprite__user">
-                                <!-- <span class="sprite__icon">USD</span> -->
                                     <svg class="sprite__icon sprite__icon-text">
                                         <use xlink:href="img/sprite.svg#icon-credit"></use>
                                     </svg>
                             </div>
                             <div class="sprite__user">
-                                <!-- <span class="sprite__icon sprite__icon-text">English</span> -->
                                 <svg class="sprite__icon sprite__icon-text">
                                     <use xlink:href="img/sprite.svg#icon-sphere"></use>
                                 </svg>

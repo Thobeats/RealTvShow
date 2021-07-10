@@ -24,7 +24,7 @@
                     <img src="img/logo.png" alt="Reality Tv Logo" class="project__logo-box">
                 </div>
 
-                                <nav class="clearfix navbox">
+                <nav class="clearfix navbox">
                                     <div class="navbar">
                                         <div class="dropdown">
                                             <button class="dropbtn"><a href="#">Home</a>
@@ -59,7 +59,7 @@
                                 </nav> 
 
 
-                            <div class="projects">
+                            <div class="projected">
                                 <div class="project__text-box">
                                     <h1 class="heading-primary">
                                         <span class="heading-primary--main">Reality Tv</span>
@@ -69,58 +69,51 @@
                             </div>                            
             </header>
 
-            <section class="section-viewpage">
-                <div class="view">
-                    <h3 class="view__header"> Title:  Epic - Battles of Foreign Lands (Proposed filming in the US)</h3>
-                    <p class="view__paragraph">
-                        Logline: A troop of 30 Roman Soldiers are led to battle against 30 Celti Gauls in this historically
-                        significant encounter that occured, circa 525 BC. Among the destruction and burning ruins of a
-                        Roman settlement, the Celtics are observed boasting until they see a troop of Roman Soldiers
-                        charging at them. Combat is certain snd an Epic Battle of revenge ensues. A man-to-man clash of
-                        soldiers wielding gladius type weaponry soon intensifies as antiquated pistols are drawn. In the end
-                        either the Roman Soldiers or Celtic Gauls, will be declared victorious, and advanceto battle again.
-                        <h3 class="heading-secondary"> Note: Proprietary "BattleSafeWeaponry" is specially designed to insure non-injury conflicts)</h3>
-                    </p>
+            <section class="aboutus-excercises">
+                <div>
 
-                    <div class="view__text">
-                        <div class="view__text--parag">
-                            <p class="view__text--paragraph">Proposal:   Epic - Battles on Foreign Lands [in the US]</p>
-                            <p class="view__text--paragraph">Proposal:   US Copywright Office Title 17 - April 27, 2021</p>
-                            <p class="view__text--paragraph">Reality:   Unscripted Format/12-episodes arc series</p>
-                            <p class="view__text--paragraph">Purpose:   Filming pre-production sizzle reels & qualifying</p>
-                            <p class="view__text--paragraph">When/where:   July 2021 - Los Angeles and Las Vegas</p>
-                            <p class="view__text--paragraph">Pay range:   Pre-production $50.00/hr. (TBD Re: prgrm</p>
-                            <p class="view__text--paragraph">Limited to:   350prospective contestants</p>
-                        </div>
+                    <h3 class="heading-secondary">FAQ’s</h3>
 
-                        <div class="view__text--image">
-                            <img src="img/war.jpg" alt="card-pic" class="view__img" height="200rem" width="350rem">
-                        </div>
-                    </div>
+                        <p class="view__paragraph">Please note – RTVR never collects a fee when matching individuals for casting 
+                            assignments and acting rolls. Likewise, we never collect fees when pairing writer’s material with TV 
+                            executives.
+                        </p>
 
-                    <p class="view__paragraph">
-                        Seeking male and female, rough and tumble types to compete in real battle like clashes that
-                        transcend the usual Realty programming. Fitness and good marksmanship are a plus. You compete
-                        as either a Roman or Celtic. Replication of battle gladius (short swords) and chest armor were 
-                        specifically designed for this program and tested to be battle safe for non-injury contact. 
-                    </p>
+                    <ul class="view__paragraph">
+                        <h3 class="heading-tertiary-small">Contestants & Talent</h3>
+                        <li>RTVR is a platform that TV industry executive’s access to fulfill casting assignments for acting rolls. Casting relates to general contestants and for specific talent. Your credentials are only available to executives who are seeking casting assignments, and are registered for access.</li>
+                        <li>RTVR employs several mix-media sources to promote your talents including, TV executive communications, magazine, industry publications, direct mail and opt-in emails </li>
+                        <li>The when/where date, posted on the Reality TV Program page is tentative. If selected, you will be informed of the exact time and exact location of pre-production events.</li> 
+                        <li>Pre-production event participation pays $50/hr. with 1099 tax status</li>
+                        <li>Pay scales for reality programming is subject to union levels and standards of the Networks </li>
+                        <li>Registration of a reality TV format insures; you will be given priority status in pre-production sizzle reels or for future casting of TV programming</li> 
+                        <li>We will always prioritize your participation in the reality program that you register for. If you wish, we will also consider adding you to the list of your second-choice reality at no additional fee. (providing your credentials qualify you for your second choice)</li>
+                        <li>Pre-production sizzle reels are short simulations of actual acts, competition segments and sample communications of characters in proposals.</li> 
+                    </ul>
 
-                    <div class="view__text-2">
-                        <div class="view__text-2.1">
-                            <img src="img/war.jpg" alt="card-pic" class="view__img" height="200rem" width="350rem">
-                        </div>
-                        <div>
-                            <a href="cregistration.php" class="btn btn--white">Join our team!</br> <b>EZ $55</b> to Register</a>
-                        </div>
+                    <ul class="view__paragraph">
+                        <h3 class="heading-tertiary-small">Writers</h3>
+                        <li>RTVR is a platform that TV industry executive’s access to fulfill casting assignments for acting rolls. Casting relates to general contestants and for specific talent. Your credentials are only available to executives who are seeking casting assignments, and are registered for access.</li>
+                        <li>RTVR functions as a viable resource destination for Industry TV Executives to review and discover unique Reality formats and the writers who have created the material </li>
+                        <li>Your Reality pitch or script is only available to industry TV executives who are registered as decision-makers with authority to review, option and acquire material </li> 
+                        <li>All Industry TV executive registrations are closely vetted to insure, legitimacy before granting their access </li>
+                        <li>RTVR employs several mix-media sources to promote your reality proposals, including, industry TV executive communications, magazine, industry publications, direct mail and opt-in emails </li>
+                        <li>Your account page displays a status report that indicates which executives and producers have reviewed your reality pitch on a certain date</li> 
+                        <li>Industry TV executives and producers have ability to contact you directly </li>
+                        <li>You have 24-hour access to edit and/or submit additional pitches</li> 
+                    </ul>
 
-                        <div class="view__text-2.2">
-                            <img src="img/vikings.jpg" alt="card-pic" class="view__img" height="200rem" width="350rem">
-                        </div>
-                    </div>
-                    <h4 class="heading-tertiary-small-2"> As a Registered Member, We Campaign for Your Success</h4>
+                    <ul class="view__paragraph">
+                        <h3 class="heading-tertiary-small">Industry TV Executives</h3>
+                        <li>RTVR functions as a viable resource destination for Industry TV Executives to review and discover unique Reality proposals, writers, special talent and contestants for reality TV programming and casting fulfillment</li>
+                        <li>After registration and vetting is complete, you have 24-hour access to review unique reality proposals, talent and contestants</li>
+                        <li>You are able to initiate contact with all registered writers, talent and contestants</li> 
+                        <li>We do not collect finder fees when contracts are executed with writers and talent</li>
+                        <li>As a fiduciary, all RTVR executives and staff will honor your privacy and confidentiality in all matters including discussions, option proposals and contracts with concerning individuals and companies</li>
+                    </ul> 
                 </div>
-
-            </section>    
+            </section>
+            
         </main>
 
         <footer class="footer">
@@ -162,13 +155,11 @@
                                     <use xlink:href="img/sprite.svg#icon-accessibility"></use>
                                 </svg>
                             <div class="sprite__user">
-                                <!-- <span class="sprite__icon">USD</span> -->
                                     <svg class="sprite__icon sprite__icon-text">
                                         <use xlink:href="img/sprite.svg#icon-credit"></use>
                                     </svg>
                             </div>
                             <div class="sprite__user">
-                                <!-- <span class="sprite__icon sprite__icon-text">English</span> -->
                                 <svg class="sprite__icon sprite__icon-text">
                                     <use xlink:href="img/sprite.svg#icon-sphere"></use>
                                 </svg>

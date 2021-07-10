@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -24,10 +23,10 @@
                 <div class="dash__logo">
                     <img src="img/logo.png" alt="Reality Tv Logo" class="navbar__logo-box">
                 </div>
-                    <div class="headee user-nav">
+                    <div class="head user-nav">
                             <div class="user-nav__user">
                                 <div class="user-nav__user-1">
-                                    <img src="img/act001.jpg" alt="User photo" class="user-nav__user-photo">
+                                    <img src="img/write00.jpg" alt="User photo" class="user-nav__user-photo">
                                     <span class="user-nav__user-name">Sam Oniyilo</span>
                                 </div>
                                 <div class="user-nav__user-2">
@@ -37,7 +36,7 @@
                                     <span class="user-nav__user-mail-2">masterarcher6321@gmail.com</span>
                                 </div>
                             </div>
-                            <h1 class="user-nav__heading">Contestant</h1>
+                            <h1 class="user-nav__heading">Writer</h1>
                             <div class="user-nav__icon-main">
                                 <div class="user-nav__icon-main-1">
                                     <div class="user-nav__icon-box">
@@ -82,24 +81,38 @@
                                         <span>Home</span>
                                     </a>
                                 </li>
-                                <li class="side-nav__item side-nav__item--active">
-                                    <a href="Cdashboard.php" class="side-nav__link">
+                                <li class="side-nav__item">
+                                    <a href="Wdashboard.php" class="side-nav__link">
                                         <svg class="side-nav__icon">
                                             <use xlink:href="img/sprite.svg#icon-gauge"></use>
                                         </svg>
                                         <span>Dashboard</span>
                                     </a>
                                 </li>
-                                <li class="side-nav__item">
-                                    <a href="Cprofile.php" class="side-nav__link">
+                                <!-- <li class="side-nav__item">
+                                    <a href="" class="side-nav__link">
+                                            <svg class="side-nav__icon side-nav__dropdown__icon">
+                                                <use xlink:href="img/sprite.svg#icon-v-card"></use>
+                                            </svg>
+                                            <span>
+                                                <select class="side-nav__dropdown" name="role" id="" >
+                                                    <option value="00000" href="profile.php" class="side-nav__dropdown dropnav">Profile</option>
+                                                    <option value="1" href="editprofile.php" class="side-nav__dropdown-content">Edit Profile</option>
+                                                    
+                                                </select>
+                                            </span>
+                                    </a>
+                                </li> -->
+                                <li class="side-nav__item ">
+                                    <a href="Eprofile.php" class="side-nav__link">
                                         <svg class="side-nav__icon">
                                             <use xlink:href="img/sprite.svg#icon-v-card"></use>
                                         </svg>
                                         <span>Profile</span>
                                     </a>
                                 </li>
-                                <!-- <li class="side-nav__item">
-                                    <a href="cpolicy.php" class="side-nav__link">
+                                <!-- <li class="side-nav__item side-nav__item--active">
+                                    <a href="eprivacy.php" class="side-nav__link">
                                         <svg class="side-nav__icon">
                                             <use xlink:href="img/sprite.svg#icon-hour-glass"></use>
                                         </svg>
@@ -115,57 +128,29 @@
                         </nav>
 
 
-                        <main class="user-view">
-                            <figure class="user-writeup">
-                                <figure class="writeup">
-                                    <div class="writeup__main">
-                                        <img src="img/scene1.jpg" alt="" class="writeup__photo">
-                                        <blockquote class="writeup__text">
-                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                                            Vitae, tempore sapiente aspernatur blanditiis ea voluptas 
-                                            quam architecto.
-                                            <a href="https://www.youtube.com/watch?v=2fsMce1OvXY" class="writeup__link">https://www.youtube.com/watch?v=2fsMce1OvXY</a>
-                                        </blockquote>
-                                    </div>
-                                    <figcaption class="writeup__movie">
-                                        <div class="writeup__movie">
-                                            <div class="writeup__movie-box">
-                                                <p class="writeup__movie-nom">My Drum Line</p>
-                                                <p class="writeup__movie-date">Date: July 1st, 2021</p>
-                                            </div>
-                                            
-                                            <div class="writeup__movie-icon">
-                                                <svg class="writeup__icon">
-                                                    <use xlink:href="img/sprite.svg#icon-star"></use>
-                                                </svg>
-                                                <svg class="writeup__icon">
-                                                    <use xlink:href="img/sprite.svg#icon-star"></use>
-                                                </svg>
-                                                <svg class="writeup__icon">
-                                                    <use xlink:href="img/sprite.svg#icon-star-outlined"></use>
-                                                </svg>
-                                                <svg class="writeup__icon">
-                                                    <use xlink:href="img/sprite.svg#icon-star-outlined"></use>
-                                                </svg>
-                                                <svg class="writeup__icon">
-                                                    <use xlink:href="img/sprite.svg#icon-star-outlined"></use>
-                                                </svg>
-                                            </div>
+                        <main class="privacy">
+                            <div class="privacy-view">
+                             
+                                <h3 class="heading-secondary">
+                                    Privacy Policy – Contestant and Talent                                
+                                </h3>
+                                <p class="view__paragraph">
+                                The RealityTVRegistry platform has employed significant security elements to protect the loss, exploitation 
+                                and modification of the information under our control. As a safeguard all user/members who elect to register, 
+                                may only do so by imputing an electronic/binding signature "I AGREE".</br> This signature provides consent to the 
+                                relevant non-disclosure/confidentiality agreement, or industry-standard material release form.
 
-                                            <div class="writeup__movie-button-1">
-                                                <a href="signup.php" class="btn btn--white">View</a>
-                                                <a href="signup.php" class="btn btn--white">Edit</a>
-                                            </div>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </figure>
-                            <div>
-                                <button class="btn-inline writeup__movie-button-2" href="signup.php">
-                                    Add Video<span>&rarr;</span>
-                                </button>
+                                </br> </br>
+                                To insure, protection to our member’s credentials and projects, all information from registrants is reviewed 
+                                and or vetted respectively, to confirm the validity of the information. This, to safeguard that our member's 
+                                and projects are being examined by legitimate executives in the film industry, and their entities. 
+                                </br>This assessment and authentication process is conducted prior to permitting access to our password protected database. 
+                                All industry executive registrations are confirmed by RealityTVRegistry executives and/or staff. Any questionable registrations 
+                                will be permanently deleted from our data base. 
+
+                                </p>
                             </div>
-                        </main>         
+                        </main>     
                     </div>
                 </div>
             </div>

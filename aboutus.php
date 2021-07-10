@@ -24,43 +24,14 @@
                     <img src="img/logo.png" alt="Reality Tv Logo" class="project__logo-box">
                 </div>
 
-                <nav class="clearfix">
+                <nav class="clearfix navbox">
                                     <div class="navbar">
                                         <div class="dropdown">
                                             <button class="dropbtn"><a href="#">Home</a>
                                             <i class="fa fa-caret-down"></i>
                                             </button>
                                         </div>
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><a href="Cdashboard.php">Contestants</a>
-                                                <i class="fa fa-caret-down"></i>
-                                            </button>
-                                            <!-- <div class="dropdown-content">
-                                                <a href="Xdashboard.php">Privacy Policy - Contestant, Talent and Executive</a>
-                                            </div> -->
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><a href="Wdashboard.php">Writers</a>
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                            <!-- <div class="dropdown-content">
-                                                <a href="">NDA - Confidentiality Agreement</a>
-                                                <a href="">Writer/Author - Material Release | Terms of Service</a>
-                                                <a href="">Writer Tips and Pitching</a>
-
-                                            </div> -->
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><a href="Edashboard.php">Executives</a>
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                            <!-- <div class="dropdown-content">
-                                                <a href="">Current Talent and Submissions</a>
-                                                <a href="">Industry Executive Review of Reality TV Proposals</a>
-                                                <a href="">Privacy Policy - Executives and Contestants</a>
-
-                                            </div> -->
-                                        </div>
+                                        
                                         <div class="dropdown">
                                             <button class="dropbtn"><a href="Edashboard.php">About Us</a>
                                             <i class="fa fa-caret-down"></i>
@@ -78,14 +49,17 @@
                                             <i class="fa fa-caret-down"></i>
                                             </button>
                                         </div>
+                                    </div>
+
+                                    <div>
                                         <div class="buttons">
                                             <a href="signup.php" class="btn btn--white">SignUp</a>
                                         </div>
                                     </div>
-                                </nav>
+                                </nav> 
 
 
-                            <div class="projects">
+                            <div class="projected">
                                 <div class="project__text-box">
                                     <h1 class="heading-primary">
                                         <span class="heading-primary--main">Reality Tv</span>
@@ -95,7 +69,38 @@
                             </div>                            
             </header>
 
+            <section class="aboutus-excercises">
+                <div>
 
+                    <h3 class="heading-secondary">About Us</h3>
+
+                    <div class="about-excersise">
+                        <div class="about-excercise--div">
+                            <p class="view__paragraph">In the essence of this community, aspiring individuals of great talent and ambition 
+                            convene, on their paths to discovery. With your commitment for success, we pledge to reveal your individual 
+                            talents in the quest of your discovery.</p>
+                            <p class="view__paragraph">Our philosophy is simple. Attaining success for talent suspended in anonymity, can 
+                            simply result in that individual aligning with a source who possesses relentless drive to promote their talent 
+                            until the dream is realized.</p> 
+                            <p class="view__paragraph">The founder is known for his marketing and promotional skills. With more than 35 
+                            years-experience in developing, targeting and implementing successful marketing strategies, the founder has 
+                            secured multi-year commitments with hundreds of companies and Fortune 500 entities located within the continental 
+                            United States and Hawaii.</p>
+                        </div>
+                        <img src="img/shoot7.jpg" alt="card-pic" class="subcontact-div__img" height="500rem" width="400rem">
+                    </div>
+                        <p class="view__paragraph">With the many forms of advertising mediums, selecting an effective mix is essential if 
+                        success is to be achieved. As the founder, I pledge that the staff at Reality TV Registry is committed in advancing 
+                        your talent and success.  
+                        Not to be overstated, this highly diverse destination has been developed to elevate our client’s visibility and 
+                        promote their skills, whether it be their special talents, competitiveness or unique reality proposals.</p>   
+                            <h4 class="aboutus-excercises--makemebold">“The lifeblood of any business is dependent on the success of its promotional campaigns”</h4>
+                        <p class="view__paragraph">
+                        If you have expectations of fulfilling your dream ….it is essential that you employ marketing and promotional campaigns like that of successful businesses.  
+                        Today, may be the turning point in your career. It is yours to choose.
+                        </p>
+                </div>
+            </section>
             
         </main>
 
@@ -109,27 +114,27 @@
                 </div>
                 <div class="col-1-of-2">
                      <div class="footer__navigation">
-                        <h3 class="footer__heading"><b>About</b></h3>
+                     <h3 class="footer__heading"><b>About</b></h3>
                             <ul class="footer__list">
-                                <li class="footer__item"></li><a href="#" class="footer__link">Blog</a></li>
-                                <li class="footer__item"></li><a href="testimonies.html" class="footer__link">Faq</a></li>
+                                <li class="footer__item"></li><a href="reality.php" class="footer__link">Reality TV</a></li>
+                                <li class="footer__item"></li><a href="faq.php" class="footer__link">Faq</a></li>
                                 <li class="footer__item"></li><a href="login.php" class="footer__link">Login/signup</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Privacy policy</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Terms of Service</a></li>
+                                <li class="footer__item"></li><a href="privacy.php" class="footer__link">Privacy policy</a></li>
+                                <li class="footer__item"></li><a href="terms.php" class="footer__link">Terms of Service</a></li>
                             </ul>
                         <h3 class="footer__heading-2"><b>Community</b></h3>
                             <ul class="footer__list-2">
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Forum</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Events</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Podcasts</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">SiteMap</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Community Standards</a></li>
+                                <li class="footer__item"></li><a href="future.php" class="footer__link">Future</a></li>
+                                <li class="footer__item"></li><a href="promoteyou.php" class="footer__link">Promoting You</a></li>
+                                <li class="footer__item"></li><a href="benefits.php" class="footer__link">Benefits</a></li>
+                                <li class="footer__item"></li><a href="communications.php" class="footer__link">Communications</a></li>
+                                <li class="footer__item"></li><a href="nda.php" class="footer__link">NDA Agreement</a></li>
                             </ul>
                         <h3 class="footer__heading-3"><b>Pages</b></h3>
                             <ul class="footer__list-3">
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Home</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">About us</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Contact us</a></li>
+                                <li class="footer__item"></li><a href="index.php" class="footer__link">Home</a></li>
+                                <li class="footer__item"></li><a href="aboutus.php" class="footer__link">About us</a></li>
+                                <li class="footer__item"></li><a href="contactus.php" class="footer__link">Contact us</a></li>
                             </ul>
                     </div>
                     <div class="sprite">
@@ -138,13 +143,11 @@
                                     <use xlink:href="img/sprite.svg#icon-accessibility"></use>
                                 </svg>
                             <div class="sprite__user">
-                                <span class="sprite__icon">USD</span>
                                     <svg class="sprite__icon sprite__icon-text">
                                         <use xlink:href="img/sprite.svg#icon-credit"></use>
                                     </svg>
                             </div>
                             <div class="sprite__user">
-                                <span class="sprite__icon sprite__icon-text">English</span>
                                 <svg class="sprite__icon sprite__icon-text">
                                     <use xlink:href="img/sprite.svg#icon-sphere"></use>
                                 </svg>

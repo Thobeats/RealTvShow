@@ -24,43 +24,14 @@
                     <img src="img/logo.png" alt="Reality Tv Logo" class="project__logo-box">
                 </div>
 
-                <nav class="clearfix">
+                             <nav class="clearfix navbox">
                                     <div class="navbar">
                                         <div class="dropdown">
                                             <button class="dropbtn"><a href="#">Home</a>
                                             <i class="fa fa-caret-down"></i>
                                             </button>
                                         </div>
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><a href="Cdashboard.php">Contestants</a>
-                                                <i class="fa fa-caret-down"></i>
-                                            </button>
-                                            <!-- <div class="dropdown-content">
-                                                <a href="Xdashboard.php">Privacy Policy - Contestant, Talent and Executive</a>
-                                            </div> -->
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><a href="Wdashboard.php">Writers</a>
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                            <!-- <div class="dropdown-content">
-                                                <a href="">NDA - Confidentiality Agreement</a>
-                                                <a href="">Writer/Author - Material Release | Terms of Service</a>
-                                                <a href="">Writer Tips and Pitching</a>
-
-                                            </div> -->
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><a href="Edashboard.php">Executives</a>
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                            <!-- <div class="dropdown-content">
-                                                <a href="">Current Talent and Submissions</a>
-                                                <a href="">Industry Executive Review of Reality TV Proposals</a>
-                                                <a href="">Privacy Policy - Executives and Contestants</a>
-
-                                            </div> -->
-                                        </div>
+                                        
                                         <div class="dropdown">
                                             <button class="dropbtn"><a href="Edashboard.php">About Us</a>
                                             <i class="fa fa-caret-down"></i>
@@ -78,11 +49,14 @@
                                             <i class="fa fa-caret-down"></i>
                                             </button>
                                         </div>
+                                    </div>
+
+                                    <div>
                                         <div class="buttons">
                                             <a href="signup.php" class="btn btn--white">SignUp</a>
                                         </div>
                                     </div>
-                                </nav>
+                                </nav> 
 
 
                             <div class="projects">
@@ -473,27 +447,27 @@
                 </div>
                 <div class="col-1-of-2">
                      <div class="footer__navigation">
-                        <h3 class="footer__heading"><b>About</b></h3>
+                     <h3 class="footer__heading"><b>About</b></h3>
                             <ul class="footer__list">
-                                <li class="footer__item"></li><a href="#" class="footer__link">Blog</a></li>
-                                <li class="footer__item"></li><a href="testimonies.html" class="footer__link">Faq</a></li>
+                                <li class="footer__item"></li><a href="reality.php" class="footer__link">Reality TV</a></li>
+                                <li class="footer__item"></li><a href="faq.php" class="footer__link">Faq</a></li>
                                 <li class="footer__item"></li><a href="login.php" class="footer__link">Login/signup</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Privacy policy</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Terms of Service</a></li>
+                                <li class="footer__item"></li><a href="privacy.php" class="footer__link">Privacy policy</a></li>
+                                <li class="footer__item"></li><a href="terms.php" class="footer__link">Terms of Service</a></li>
                             </ul>
                         <h3 class="footer__heading-2"><b>Community</b></h3>
                             <ul class="footer__list-2">
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Forum</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Events</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Podcasts</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">SiteMap</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Community Standards</a></li>
+                                <li class="footer__item"></li><a href="future.php" class="footer__link">Future</a></li>
+                                <li class="footer__item"></li><a href="promoteyou.php" class="footer__link">Promoting You</a></li>
+                                <li class="footer__item"></li><a href="benefits.php" class="footer__link">Benefits</a></li>
+                                <li class="footer__item"></li><a href="communications.php" class="footer__link">Communications</a></li>
+                                <li class="footer__item"></li><a href="nda.php" class="footer__link">NDA Agreement</a></li>
                             </ul>
                         <h3 class="footer__heading-3"><b>Pages</b></h3>
                             <ul class="footer__list-3">
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Home</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">About us</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Contact us</a></li>
+                                <li class="footer__item"></li><a href="index.php" class="footer__link">Home</a></li>
+                                <li class="footer__item"></li><a href="aboutus.php" class="footer__link">About us</a></li>
+                                <li class="footer__item"></li><a href="contactus.php" class="footer__link">Contact us</a></li>
                             </ul>
                     </div>
                     <div class="sprite">

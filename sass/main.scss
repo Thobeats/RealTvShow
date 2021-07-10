@@ -11,6 +11,7 @@
 @import "components/card";
 @import "components/Ecard";
 @import "components/feature-box";
+@import "components/promotecard";
 @import "components/slideshows";
 @import "components/billboard";
 @import "components/user-nav";
@@ -25,9 +26,11 @@
 
 
 @import "pages/home";
+@import "pages/contactus";
 @import "pages/login";
 @import "pages/profile";
 @import "pages/projects";
+@import "pages/promotingyou";
 @import "pages/signup";
 @import "pages/Wdashboard";
 @import "pages/Edashboard";

@@ -35,7 +35,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="side-nav__item">
-                                                    <a href="" class="side-nav__link">
+                                                    <a href="edashboard.php" class="side-nav__link">
                                                         <svg class="side-nav__icon">
                                                             <use xlink:href="img/sprite.svg#icon-gauge"></use>
                                                         </svg>
@@ -43,7 +43,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="side-nav__item side-nav__item--active">
-                                                    <a href="#" class="side-nav__link">
+                                                    <a href="eprofile.php" class="side-nav__link">
                                                         <svg class="side-nav__icon">
                                                             <use xlink:href="img/sprite.svg#icon-v-card"></use>
                                                         </svg>
@@ -51,7 +51,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="side-nav__item">
-                                                    <a href="" class="side-nav__link">
+                                                    <a href="epolicy.php" class="side-nav__link">
                                                         <svg class="side-nav__icon">
                                                             <use xlink:href="img/sprite.svg#icon-hour-glass"></use>
                                                         </svg>
