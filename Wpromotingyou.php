@@ -66,16 +66,18 @@
                                         <span class="heading-primary--sub">cache of unique formats & talent</span>
                                     </h1>        
                                 </div>
-
+                                
                                 <div class="buttons-promoter">
-                                    <a href="promotingyou.php" class="butn butn--white buttons-promoter-you buttons-promoter-you">Promoting Your Material</a>
+                                    <a href="promoteyou.php" class="butn butn--white buttons-promoter-you buttons-promoter-you">Promoting Your Material</a>
                                     <a href="business.php" class="butn butn--white buttons-promoter-you buttons-promoter-you-2">Business of Writing</a>
                                     <a href="pitching.php" class="butn butn--white buttons-promoter-you buttons-promoter-you-3">Pitching Reality</a>
                                     <a href="sample.php" class="butn butn--white buttons-promoter-you buttons-promoter-you-4">Sample – Display Listing & Image Pitch</a>
                                     <a href="business2.php" class="butn butn--white buttons-promoter-you buttons-promoter-you-5">Business of Options</a>
                                     <a href="hollywood.php" class="butn butn--white buttons-promoter-you buttons-promoter-you-6">Hollywood Outsiders Pitched</a>
-                                </div>
-                            </div>                            
+                                </div>  
+                            </div> 
+
+                                                        
             </header>
 
             <section class="section-promote">
@@ -220,7 +222,7 @@
 
             <section>
                 <div class="register-buttons">
-                    <a href="wregister.php" class="btn btn--white register-buttons-you register-buttons-you-0">Register Now</a>
+                    <a href="wregistration.php" class="btn btn--white register-buttons-you register-buttons-you-0">Register Now</a>
                 </div>
             </section>
         </main>

@@ -132,7 +132,7 @@
                             <div class="privacy-view">
                              
                                 <h3 class="heading-secondary">
-                                    Privacy Policy – Contestant and Talent                                
+                                    Privacy Policy – Writers                               
                                 </h3>
                                 <p class="view__paragraph">
                                 The RealityTVRegistry platform has employed significant security elements to protect the loss, exploitation 

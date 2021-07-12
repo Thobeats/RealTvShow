@@ -20,14 +20,14 @@
                         <div class="col-1-of-3">
                             <div class="feature-box">
                                 <img src="img/shoot00.jpg" alt="feature-pic" class="feature-box__img">
-                                <h2 class="heading-secondary"><a href="signup.php" class="feature-box__img--text">INDUSTRY TV EXECUTIVE REGISTRATION</a></h2>
+                                <h2 class="heading-secondary"><a href="Eprojectsreg.php" class="feature-box__img--text">INDUSTRY TV EXECUTIVE REGISTRATION</a></h2>
                             </div>
                         </div>
 
                         <div class="col-1-of-3">
                             <div class="feature-box">
                                 <img src="img/writer02.jpg" alt="feature-pic" class="feature-box__img">
-                                <h2 class="heading-secondary"><a href="signup.php" class="feature-box__img--text">INDUSTRY WRITER'S REGISTRATION</a></h2>
+                                <h2 class="heading-secondary"><a href="Wpromotingyou.php" class="feature-box__img--text">INDUSTRY WRITER'S REGISTRATION</a></h2>
                             </div>
                         </div>
                     </div>

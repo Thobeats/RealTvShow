@@ -127,6 +127,7 @@
         text-transform: uppercase;
         text-align: center;
         color: $color-white;
+        padding: 3rem;
         // position: absolute;
         // top: 0;
         // right: 0;
@@ -137,6 +138,7 @@
     &__heading-span {
         height: 5rem;
         width: 100%;
+        padding: 2rem;
         background-image: linear-gradient(to right bottom, 
         rgba($color-secondary-light, .85), 
         rgba($color-secondary-dark, .85));

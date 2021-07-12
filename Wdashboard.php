@@ -111,14 +111,14 @@
                                         <span>Profile</span>
                                     </a>
                                 </li>
-                                <!-- <li class="side-nav__item">
-                                    <a href="wpolicy.php" class="side-nav__link">
+                                <li class="side-nav__item">
+                                    <a href="wprivacy.php" class="side-nav__link">
                                         <svg class="side-nav__icon">
                                             <use xlink:href="img/sprite.svg#icon-hour-glass"></use>
                                         </svg>
                                         <span>Policy & Agreement</span>
                                     </a>
-                                </li> -->
+                                </li>
                             </ul>
 
                             <div class="legal">

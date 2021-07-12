@@ -59,7 +59,7 @@
                                 </nav> 
 
 
-                            <div class="projected">
+                            <div class="project">
                                 <div class="project__text-box">
                                     <h1 class="heading-primary">
                                         <span class="heading-primary--main">Reality Tv</span>
@@ -89,7 +89,7 @@
                                 </div>
                                 <div class="card__side card__side--back card__side--back-1">
                                     <div class="card__cta">
-                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
+                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
                                     </div> 
                                 </div>
                             </div>
@@ -106,7 +106,7 @@
                                 </div>
                                 <div class="card__side card__side--back card__side--back-2">
                                     <div class="card__cta">
-                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
+                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
                                     </div> 
                                 </div>
                             </div>
@@ -123,7 +123,7 @@
                                 </div>
                                 <div class="card__side card__side--back card__side--back-3">
                                     <div class="card__cta">
-                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
+                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
                                     </div> 
                                 </div>
                             </div>
@@ -143,7 +143,7 @@
                                 </div>
                                 <div class="card__side card__side--back card__side--back-4">
                                     <div class="card__cta">
-                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
+                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
                                     </div> 
                                 </div>
                             </div>
@@ -160,7 +160,7 @@
                                 </div>
                                 <div class="card__side card__side--back card__side--back-5">
                                     <div class="card__cta">
-                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
+                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
                                     </div> 
                                 </div>
                             </div>
@@ -177,7 +177,7 @@
                                 </div>
                                 <div class="card__side card__side--back card__side--back-6">
                                     <div class="card__cta"> 
-                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
+                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
                                     </div> 
                                 </div>
                             </div>
@@ -197,7 +197,7 @@
                                 </div>
                                 <div class="card__side card__side--back card__side--back-1">
                                     <div class="card__cta">
-                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
+                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
                                     </div> 
                                 </div>
                             </div>
@@ -214,7 +214,7 @@
                                 </div>
                                 <div class="card__side card__side--back card__side--back-2">
                                     <div class="card__cta">
-                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
+                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
                                     </div> 
                                 </div>
                             </div>
@@ -231,7 +231,7 @@
                                 </div>
                                 <div class="card__side card__side--back card__side--back-3">
                                     <div class="card__cta">
-                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
+                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
                                     </div> 
                                 </div>
                             </div>
@@ -251,7 +251,7 @@
                                 </div>
                                 <div class="card__side card__side--back card__side--back-4">
                                     <div class="card__cta">
-                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
+                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
                                     </div> 
                                 </div>
                             </div>
@@ -268,7 +268,7 @@
                                 </div>
                                 <div class="card__side card__side--back card__side--back-5">
                                     <div class="card__cta">
-                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
+                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
                                     </div> 
                                 </div>
                             </div>
@@ -285,7 +285,7 @@
                                 </div>
                                 <div class="card__side card__side--back card__side--back-6">
                                     <div class="card__cta"> 
-                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
+                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
                                     </div> 
                                 </div>
                             </div>
@@ -305,7 +305,7 @@
                                 </div>
                                 <div class="card__side card__side--back card__side--back-1">
                                     <div class="card__cta">
-                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
+                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
                                     </div> 
                                 </div>
                             </div>
@@ -322,7 +322,7 @@
                                 </div>
                                 <div class="card__side card__side--back card__side--back-2">
                                     <div class="card__cta">
-                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
+                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
                                     </div> 
                                 </div>
                             </div>
@@ -339,7 +339,7 @@
                                 </div>
                                 <div class="card__side card__side--back card__side--back-3">
                                     <div class="card__cta"> 
-                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
+                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
                                     </div> 
                                 </div>
                             </div>
@@ -393,11 +393,13 @@
                                     <use xlink:href="img/sprite.svg#icon-accessibility"></use>
                                 </svg>
                             <div class="sprite__user">
+                                <span class="sprite__icon">USD</span>
                                     <svg class="sprite__icon sprite__icon-text">
                                         <use xlink:href="img/sprite.svg#icon-credit"></use>
                                     </svg>
                             </div>
                             <div class="sprite__user">
+                                <span class="sprite__icon sprite__icon-text">English</span>
                                 <svg class="sprite__icon sprite__icon-text">
                                     <use xlink:href="img/sprite.svg#icon-sphere"></use>
                                 </svg>

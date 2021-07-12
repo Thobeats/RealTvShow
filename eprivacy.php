@@ -82,7 +82,7 @@
                                     </a>
                                 </li>
                                 <li class="side-nav__item">
-                                    <a href="Wdashboard.php" class="side-nav__link">
+                                    <a href="Edashboard.php" class="side-nav__link">
                                         <svg class="side-nav__icon">
                                             <use xlink:href="img/sprite.svg#icon-gauge"></use>
                                         </svg>

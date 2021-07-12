@@ -27,13 +27,13 @@
                 <nav class="clearfix navbox">
                                     <div class="navbar">
                                         <div class="dropdown">
-                                            <button class="dropbtn"><a href="#">Home</a>
+                                            <button class="dropbtn"><a href="index.php">Home</a>
                                             <i class="fa fa-caret-down"></i>
                                             </button>
                                         </div>
                                         
                                         <div class="dropdown">
-                                            <button class="dropbtn"><a href="Edashboard.php">About Us</a>
+                                            <button class="dropbtn"><a href="aboutus.php">About Us</a>
                                             <i class="fa fa-caret-down"></i>
                                             </button>
                                             <!-- <div class="dropdown-content">
@@ -45,7 +45,7 @@
                                             </div> -->
                                         </div>
                                         <div class="dropdown">
-                                            <button class="dropbtn"><a href="Edashboard.php">Contact Us</a>
+                                            <button class="dropbtn"><a href="contactus.php">Contact Us</a>
                                             <i class="fa fa-caret-down"></i>
                                             </button>
                                         </div>
@@ -296,6 +296,10 @@
 
                 </div>
 
+                <div class="registration-divi__btn">
+                    <a href="signup.php" class="butn butn--white">Register</a>
+                </div>
+                
             </section>    
         </main>
 

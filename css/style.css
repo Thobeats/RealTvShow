@@ -624,11 +624,13 @@ body {
     text-transform: uppercase;
     text-align: center;
     color: #fff;
+    padding: 3rem;
     width: 100%;
     margin-bottom: 3rem; }
   .promotecard__heading-span {
     height: 5rem;
     width: 100%;
+    padding: 2rem;
     background-image: linear-gradient(to right bottom, rgba(50, 149, 230, 0.85), rgba(0, 72, 131, 0.85)); }
   .promotecard__head {
     font-size: 2rem;

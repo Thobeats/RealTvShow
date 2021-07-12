@@ -24,13 +24,14 @@
                     <img src="img/logo.png" alt="Reality Tv Logo" class="project__logo-box">
                 </div>
 
-                <nav class="clearfix">
+                <nav class="clearfix navbox">
                                     <div class="navbar">
                                         <div class="dropdown">
                                             <button class="dropbtn"><a href="index.php">Home</a>
                                             <i class="fa fa-caret-down"></i>
                                             </button>
                                         </div>
+                                        
                                         <div class="dropdown">
                                             <button class="dropbtn"><a href="aboutus.php">About Us</a>
                                             <i class="fa fa-caret-down"></i>
@@ -48,11 +49,14 @@
                                             <i class="fa fa-caret-down"></i>
                                             </button>
                                         </div>
+                                    </div>
+
+                                    <div>
                                         <div class="buttons">
                                             <a href="signup.php" class="btn btn--white">SignUp</a>
                                         </div>
                                     </div>
-                                </nav>
+                                </nav> 
 
 
                             <div class="projectes">
