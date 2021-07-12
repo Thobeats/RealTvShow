@@ -1,22 +1,3 @@
-<?php 
-require_once "scripts/functions.php";
-$link = connect();
-// handle register
-if(isset($_POST['login_user'])){
-  $email = $_POST['email'];
-  $password = trim($_POST['password']);
-  
-
-
-  log_in_user($email, $password);
-
-
-}
-
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -36,7 +17,15 @@ if(isset($_POST['login_user'])){
     <body>
       <main>
         <div class="login__container">
-            <div class="section-one">
+
+
+            <div class="login__logo">
+              <div class="section-one">
+                <img src="img/logo.png" alt="Logo" class="signup__logo-box" height="75rem" width="180rem">
+              </div>
+            </div>
+          <form>
+            <div class="section-two">
               <div class="social-links">
                 <div class="login__container--facebook">
                   <span> LOGIN WITH FACEBOOk </span>
@@ -57,22 +46,24 @@ if(isset($_POST['login_user'])){
                   <span> LOGIN WITH TWITTER </span>
                 </div>
               </div>
-              <form action = "" method="POST">
               <div class="main-form">
                 <input class="main-form--input" type="email" name="email" placeholder="Email" />
                 <input class="main-form--input" type="password" name="password" placeholder="Password" />
                 <a href="#">I forgot my password?</a>
-                <button name="login_user">Login</button>
+                <button>Login</button>
+                <div class="signup__container--checkbox">
+                    <label> <input class="checkbox" type="checkbox" checked="checked" name="remember">Remember me </label>
+                </div>
               </div>
-              </form>
             </div>
       
-            <div class="section-two">
+            <div class="section-three">
               <div class="new-account">
               <a href="signup.php"><button>Create New Account</button></a>
               </div>
-        </div>
+            </div>
           </div>
+        </form>
         </div>
       </main>
   </body>

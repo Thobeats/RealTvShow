@@ -24,67 +24,42 @@
                     <img src="img/logo.png" alt="Reality Tv Logo" class="project__logo-box">
                 </div>
 
-                <nav class="clearfix">
+                <nav class="clearfix navbox">
                                     <div class="navbar">
                                         <div class="dropdown">
-                                            <button class="dropbtn">Home
+                                            <button class="dropbtn"><a href="index.php">Home</a>
                                             <i class="fa fa-caret-down"></i>
                                             </button>
                                         </div>
+                                        
                                         <div class="dropdown">
-                                            <button class="dropbtn">Contestants,Actors,Models and Musicians Registrations
-                                                <i class="fa fa-caret-down"></i>
-                                            </button>
-                                            <div class="dropdown-content">
-                                                <a href="#" class="navbar_item">Privacy Policy - Contestant, Talent and Executive</a>
-                                            </div>
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="dropbtn">Writer/Author Submission Registration
+                                            <button class="dropbtn"><a href="aboutus.php">About Us</a>
                                             <i class="fa fa-caret-down"></i>
                                             </button>
-                                            <div class="dropdown-content">
-                                                <a href="" class="navbar_item">NDA - Confidentiality Agreement</a>
-                                                <a href="" class="navbar_item">Writer/Author - Material Release | Terms of Service</a>
-                                                <a href="" class="navbar_item">Writer Tips and Pitching</a>
+                                            <!-- <div class="dropdown-content">
+                                                <a href="">Blog</a>
+                                                <a href="">FAQ's</a>
+                                                <a href="">Promoting You</a>
+                                                <a href="">Talent Areas</a>
+                                                <a href="">Writer Benefits and Talent Benefits</a>
+                                            </div> -->
+                                        </div>
+                                        <div class="dropdown">
+                                            <button class="dropbtn"><a href="contactus.php">Contact Us</a>
+                                            <i class="fa fa-caret-down"></i>
+                                            </button>
+                                        </div>
+                                    </div>
 
-                                            </div>
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="dropbtn">Executive Registration
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                            <div class="dropdown-content">
-                                                <a href="" class="navbar_item">Current Talent and Submissions</a>
-                                                <a href="" class="navbar_item">Industry Executive Review of Reality TV Proposals</a>
-                                                <a href="" class="navbar_item">Privacy Policy - Executives and Contestants</a>
-
-                                            </div>
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="dropbtn">About Us
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                            <div class="dropdown-content">
-                                                <a href="" class="navbar_item">Blog</a>
-                                                <a href="" class="navbar_item">FAQ's</a>
-                                                <a href="" class="navbar_item">Promoting You</a>
-                                                <a href="" class="navbar_item">Talent Areas</a>
-                                                <a href="" class="navbar_item">Writer Benefits and Talent Benefits</a>
-                                            </div>
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="dropbtn">Contact Us
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                        </div>
+                                    <div>
                                         <div class="buttons">
                                             <a href="signup.php" class="btn btn--white">SignUp</a>
                                         </div>
                                     </div>
-                                </nav>
+                                </nav> 
 
-                            <div class="project">
+
+                            <div class="projected">
                                 <div class="project__text-box">
                                     <h1 class="heading-primary">
                                         <span class="heading-primary--main">Reality Tv</span>
@@ -95,10 +70,10 @@
             </header>
 
                 <section class="section-realities">
-                    <div class="u-center-text u-margin-bottom-medium">
-                        <h2 class="heading-tertiary">
-                            Synopsis of 12 Realities
-                        </h2>
+                    <div class="u-center-text u-margin-bottom-large">
+                            <h2 class="heading-tertiary">
+                                Synopsis of 12 Realities
+                            </h2>
                     </div>
 
                     <div class="row">
@@ -106,7 +81,7 @@
                             <div class="card">
                                 <div class="card__side card__side--front">
                                     <div class="card__picture card__picture--1">
-                                        <img src="img/soldiers1.jpg" alt="card-pic" class="card__img">
+                                        <img src="img/snipers.jpg" alt="card-pic" class="card__img">
                                     </div>
                                     <h4 class="card__heading">
                                         <span class="card__heading-span card__heading-span--1">Battle Grounds - Snipers at Large</span>    
@@ -160,7 +135,7 @@
                             <div class="card">
                                 <div class="card__side card__side--front">
                                     <div class="card__picture card__picture--4">
-                                        <img src="img/oldwar.jpg" alt="card-pic" class="card__img">
+                                        <img src="img/war.jpg" alt="card-pic" class="card__img">
                                     </div>
                                     <h4 class="card__heading">
                                         <span class="card__heading-span card__heading-span--4">Battles of Foreign Lands</span>    
@@ -177,7 +152,7 @@
                             <div class="card">
                                 <div class="card__side card__side--front">
                                     <div class="card__picture card__picture--5">
-                                        <img src="img/act3.jpg" alt="card-pic" class="card__img">
+                                        <img src="img/love.jpg" alt="card-pic" class="card__img">
                                     </div>
                                     <h4 class="card__heading">
                                         <span class="card__heading-span card__heading-span--5">Modelled to Market</span>    
@@ -231,7 +206,7 @@
                             <div class="card">
                                 <div class="card__side card__side--front">
                                     <div class="card__picture card__picture--2">
-                                        <img src="img/Onboard1.jpg" alt="card-pic" class="card__img">
+                                        <img src="img/actress3.jpg" alt="card-pic" class="card__img">
                                     </div>
                                     <h4 class="card__heading">
                                         <span class="card__heading-span card__heading-span--2">Encore - Matters of ACTORS</span>    
@@ -268,7 +243,7 @@
                             <div class="card">
                                 <div class="card__side card__side--front">
                                     <div class="card__picture card__picture--4">
-                                        <img src="img/Manipulate.jpg" alt="card-pic" class="card__img">
+                                        <img src="img/wonder.jpg" alt="card-pic" class="card__img">
                                     </div>
                                     <h4 class="card__heading">
                                         <span class="card__heading-span card__heading-span--4">Manipulated</span>    
@@ -285,7 +260,7 @@
                             <div class="card">
                                 <div class="card__side card__side--front">
                                     <div class="card__picture card__picture--5">
-                                        <img src="img/golf.jpg" alt="card-pic" class="card__img">
+                                        <img src="img/golf2.jpg" alt="card-pic" class="card__img">
                                     </div>
                                     <h4 class="card__heading">
                                         <span class="card__heading-span card__heading-span--5">Golf Squadron</span>    
@@ -322,7 +297,7 @@
                             <div class="card">
                                 <div class="card__side card__side--front">
                                     <div class="card__picture card__picture--1">
-                                        <img src="img/Yacht2.jpg" alt="card-pic" class="card__img">
+                                        <img src="img/yacht3.jpg" alt="card-pic" class="card__img">
                                     </div>
                                     <h4 class="card__heading">
                                         <span class="card__heading-span card__heading-span--1">Singles Yatching Society</span>    
@@ -356,7 +331,7 @@
                             <div class="card">
                                 <div class="card__side card__side--front">
                                     <div class="card__picture card__picture--3">
-                                        <img src="img/Onboard2.jpg" alt="card-pic" class="card__img">
+                                        <img src="img/swim.jpg" alt="card-pic" class="card__img">
                                     </div>
                                     <h4 class="card__heading">
                                         <span class="card__heading-span card__heading-span--3">Living Aboard</span>    
@@ -371,7 +346,7 @@
                         </div>
                     </div>
                 </section>
-
+                
                 <section class="section-projects">
                     <p class="Projects__paragraph">With great enthusiasm, RealityTVRegistry recommends these 15 projects. All have copyright 
                         protection and are available for option and acquisition. Additional proposals are being 
@@ -389,27 +364,27 @@
                 </div>
                 <div class="col-1-of-2">
                      <div class="footer__navigation">
-                        <h3 class="footer__heading"><b>About</b></h3>
+                     <h3 class="footer__heading"><b>About</b></h3>
                             <ul class="footer__list">
-                                <li class="footer__item"></li><a href="#" class="footer__link">Blog</a></li>
-                                <li class="footer__item"></li><a href="testimonies.html" class="footer__link">Faq</a></li>
+                                <li class="footer__item"></li><a href="reality.php" class="footer__link">Reality TV</a></li>
+                                <li class="footer__item"></li><a href="faq.php" class="footer__link">Faq</a></li>
                                 <li class="footer__item"></li><a href="login.php" class="footer__link">Login/signup</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Privacy policy</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Terms of Service</a></li>
+                                <li class="footer__item"></li><a href="privacy.php" class="footer__link">Privacy policy</a></li>
+                                <li class="footer__item"></li><a href="terms.php" class="footer__link">Terms of Service</a></li>
                             </ul>
                         <h3 class="footer__heading-2"><b>Community</b></h3>
                             <ul class="footer__list-2">
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Forum</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Events</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Podcasts</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">SiteMap</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Commnity Standards</a></li>
+                                <li class="footer__item"></li><a href="future.php" class="footer__link">Future</a></li>
+                                <li class="footer__item"></li><a href="promoteyou.php" class="footer__link">Promoting You</a></li>
+                                <li class="footer__item"></li><a href="benefits.php" class="footer__link">Benefits</a></li>
+                                <li class="footer__item"></li><a href="communications.php" class="footer__link">Communications</a></li>
+                                <li class="footer__item"></li><a href="nda.php" class="footer__link">NDA Agreement</a></li>
                             </ul>
                         <h3 class="footer__heading-3"><b>Pages</b></h3>
                             <ul class="footer__list-3">
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Home</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">About us</a></li>
-                                <li class="footer__item"></li><a href="booking.html" class="footer__link">Contact us</a></li>
+                                <li class="footer__item"></li><a href="index.php" class="footer__link">Home</a></li>
+                                <li class="footer__item"></li><a href="aboutus.php" class="footer__link">About us</a></li>
+                                <li class="footer__item"></li><a href="contactus.php" class="footer__link">Contact us</a></li>
                             </ul>
                     </div>
                     <div class="sprite">
@@ -418,13 +393,11 @@
                                     <use xlink:href="img/sprite.svg#icon-accessibility"></use>
                                 </svg>
                             <div class="sprite__user">
-                                <span class="sprite__icon">USD</span>
                                     <svg class="sprite__icon sprite__icon-text">
                                         <use xlink:href="img/sprite.svg#icon-credit"></use>
                                     </svg>
                             </div>
                             <div class="sprite__user">
-                                <span class="sprite__icon sprite__icon-text">English</span>
                                 <svg class="sprite__icon sprite__icon-text">
                                     <use xlink:href="img/sprite.svg#icon-sphere"></use>
                                 </svg>

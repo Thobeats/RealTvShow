@@ -40,3 +40,23 @@
     height: 30rem;
     font-size: 2rem;    
 }
+
+.section-viewpage {
+    background-color: $color-white;
+    padding: 5rem;
+    font-size: 1.5rem;
+    color: $color-black;
+}
+
+.section-edashboard {
+    background-color: $color-white;
+    padding: 2rem 0;
+    // margin-top: -8rem;
+}
+
+.section-promote {
+    background-color: $color-white;
+    padding: 4rem 3rem;
+    width: 100%;
+    // margin-top: -8rem;
+}

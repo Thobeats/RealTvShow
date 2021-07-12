@@ -1,0 +1,186 @@
+.contactus-excercises {
+    background-color: $color-grey-light-2;
+    // @include respond(tab-port) {
+    //     padding: 20rem 0 10rem 0;
+    // }
+
+    &--makebold {
+        color: $color-secondary-dark;
+    }
+}
+
+.aboutus-excercises {
+    background-color: $color-white;
+    padding: 4rem;
+    // @include respond(tab-port) {
+    //     padding: 20rem 0 10rem 0;
+    // }
+
+    &--makemebold {
+        color: $color-secondary-dark;
+        text-align: center;
+        font-size: 2rem;
+    }
+}
+
+.about-excersise {
+    display: flex;
+    margin: 4rem;
+
+    &--div {
+        display: block;
+        font-size: 2rem;
+    }
+}
+
+.contact {
+    display: flex;
+    justify-content: space-between;
+
+    &-div {
+        display: block;
+        margin: 5rem;
+
+        &__header {
+            font-size: 3.5rem;
+            width: 60rem;
+            color: $color-secondary-dark;
+            padding: 2rem;
+            text-transform: uppercase;
+
+        }
+
+        &__paragraph {
+            width: 40rem;
+            margin-left: 2rem;
+            font-size: 2.5rem;
+            color: $color-black;
+            text-align: center;
+        }
+
+    }
+
+    &-divi {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        margin: 5rem;
+        padding: 2rem;
+        background-color: $color-white;
+        color: $color-secondary-dark;
+        font-size: 2rem;
+        font-weight: 900;
+        text-transform: uppercase;
+
+
+        &__text {
+            width: 5rem;
+        }
+
+        &__input {
+            min-height: 3rem;
+            margin: 2rem;
+            width: 35rem;
+
+            &-1 {
+                margin: 2rem;
+                width: 35rem;
+                height: 3rem;
+                font-size: 2rem;
+                color: $color-black;
+            }
+
+            &-2:hover {
+                height: 10rem;
+            }
+        }
+
+        &__btn {
+            margin: 3rem 0;
+            margin-left: 30rem;
+            width: 10rem;
+        }
+    }
+}
+
+.subcontact {
+    display: flex;
+    justify-content: space-between;
+    background-color: $color-secondary-light;
+    height: 45rem;
+
+
+    &-div {
+        margin-top: 5rem;
+        margin-left: 8rem;
+
+        &__img {
+            margin: 2rem;
+        }
+    }
+
+    &-divi {
+        position: relative;
+
+        &__text {
+            position: absolute;
+            top: 35rem;
+            left: 0;
+            color: $color-white;
+            font-size: 2rem;
+            width: 30rem;
+        }
+    }
+}
+ 
+.registration {
+    color: $color-grey-light-2;
+    margin: 3rem;
+
+    &-divi {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        margin: 5rem;
+        padding: 2rem;
+        background-color: $color-white;
+        color: $color-secondary-dark;
+        font-size: 2rem;
+        font-weight: 900;
+
+
+        &__text {
+            width: 5rem;
+        }
+
+        &__input {
+            min-height: 3rem;
+            margin: 2rem;
+            width: 35rem;
+
+            &-1 {
+                margin: 2rem;
+                width: 35rem;
+                height: 3rem;
+                font-size: 2rem;
+                color: $color-black;
+            }
+
+            &-2:hover {
+                height: 10rem;
+            }
+        }
+
+        &__btn {
+            display: flex;
+            margin: 3rem 0;
+            margin-left: 45rem;
+            width: 35rem;
+        }
+    }
+
+    &__paragraph {
+        color: $color-black;
+        font-size: 1.5rem;
+    }
+}

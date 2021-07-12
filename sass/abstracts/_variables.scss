@@ -7,6 +7,7 @@ $color-primary-light: #ffff00;
 $color-primary-dark:  #d1a002;
 
 $color-grey-light: #cccccc;
+$color-grey-light-2: #f4f2f2;
 $color-grey: #777;
 $color-grey-dark:#666666;
 
@@ -20,18 +21,19 @@ $grid-width: 100%;
 $gutter-vertical: 8rem;
 $gutter-horizontal: 3rem;
 
-// SIGNIN FORM
-$gradientColor1: #560bad;
-$gradeintColor2: #8e60c4;
-$formBackgroundColor: #300169;
+// SIGNUP/LOGIN FORM
+$mainFont: "Montserrat", sans-serif;
+
+$gradientColor1: #004883;
+$gradeintColor2: #1c87c9;
+$formBackgroundColor: #3295e6;
 $pinkOutline: #a31a6a;
-$loginButtonColor: rgb(96, 196, 96);
 $loginButtonTextColor: white;
-$newAccountButtonColor: #ffd60a;
+$newAccountButtonColor: #ffff00;
 $newAccountButtonTextColor: rgb(36, 34, 34);
-$inputBackgroundColor: #2b045c;
+$inputBackgroundColor: #666666;
 $inputPlaceholderColor: rgba(255, 255, 255, 0.548);
 $loginWithAccountsTextColor: white;
 $inputTextColor: white;
 $forgetHoverColor: white;
-$mainFont: Lato;
+$requiredfield: rgb(202, 20, 20);
