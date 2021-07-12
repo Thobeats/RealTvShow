@@ -21,7 +21,7 @@ function connect(){
 }
 
 // function connect(){ 
-//     $link = mysqli_connect("localhost", "realtv_db_user", "@lphA3ch0#", "realtvshow");
+//     $link = mysqli_connect("localhost", "realtv_db_user", "@lphA3ch0#", "realtv_show");
 
 //     if($link){
 //         return $link;
@@ -150,7 +150,7 @@ function log_in_user($email, $password){
         $updateUser = mysqli_query($link, "update realtv_users set last_logged_in = '$date', online = '1' where id = '$userid'");
 
         set_message("success", "Login Success"); 
-        echo "Yes";
+       // echo "Yes";
     }else {
         return false;
     }
@@ -292,6 +292,13 @@ function save_movie($movie_title, $movie_plot, $movie_pic, $movie_pics = NULL){
 
 }
 
+function user_id(){
+    return $_SESSION['id'];
+}
+
+function role(){
+    return $_SESSION['role_id'];
+}
 
 
 $link = connect();
