@@ -31,9 +31,10 @@ function connect(){
 // }
 
 function base_url(){
-    return "http://" . $_SERVER['SERVER_NAME'] . "/realtv";
+    return "https://" . $_SERVER['SERVER_NAME'] . "/test/";
 }
 
+//echo base_url();
 function set_message($type, $message, $title=null){
 
     $_SESSION[$type] = $message;
@@ -150,7 +151,7 @@ function log_in_user($email, $password){
         $updateUser = mysqli_query($link, "update realtv_users set last_logged_in = '$date', online = '1' where id = '$userid'");
 
         set_message("success", "Login Success"); 
-       // echo "Yes";
+        echo "Yes";
     }else {
         return false;
     }
@@ -160,7 +161,8 @@ function handle_image($image){
 
     if(!is_null($image)){
        // $uploads_dir = 'C:/Users/user/Documents/Fiverr Projects/RealTvShow/img/uploads/';
-        $uploads_dir = '/Users/firstlincoln/Documents/iyanu/RealTvShow/img/uploads/';
+       // $uploads_dir = '/Users/firstlincoln/Documents/iyanu/RealTvShow/img/uploads/';
+       $uploads_dir = 'img/uploads/';
 
         $extensions = ['jpg', 'png',"jpeg"];
 
@@ -183,7 +185,12 @@ function handle_image($image){
         }
         $uploads_file = $uploads_dir . basename($name);
 
-        move_uploaded_file($image['tmp_name'], $uploads_file);
+        if(move_uploaded_file($image['tmp_name'], $uploads_file)){
+         set_message("success", "Uploaded");
+            
+        }else{
+            set_message("error", "Not Uploaded");
+        }
         return $name;
 
     }else{
@@ -226,8 +233,6 @@ function handle_multi_images($images, $insertID){
         }
         
 
-    }else{
-        exit("No Image uploaded");
     }
 }
 
@@ -255,7 +260,12 @@ function handle_video($video){
         }
         $uploads_file = $uploads_dir . basename($name);
 
-        move_uploaded_file($video['tmp_name'], $uploads_file);
+        if(move_uploaded_file($video['tmp_name'], $uploads_file)){
+            set_message("success", "Uploaded");
+            
+        }else{
+            set_message("error", "Not Uploaded");
+        }
         return $name;
 
     }else{
