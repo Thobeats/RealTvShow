@@ -39,67 +39,84 @@
                             Synopsis of 12 Realities
                         </h2>
                     </div>
+<!-- <div class="row"> -->
+<?php 
+                            $movie_query = mysqli_query($link, "Select * from realtv_movies");
 
-                    <div class="row">
-                        <div class="col-1-of-3">
-                            <div class="card">
-                                <div class="card__side card__side--front">
-                                    <div class="card__picture card__picture--1">
-                                        <img src="img/snipers.jpg" alt="card-pic" class="card__img">
-                                    </div>
-                                    <h4 class="card__heading">
-                                        <span class="card__heading-span card__heading-span--1">Battle Grounds - Snipers at Large</span>    
-                                    </h4>
-                                </div>
-                                <div class="card__side card__side--back card__side--back-1">
-                                    <div class="card__cta">
-                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
-                                    </div> 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-1-of-3">
-                            <div class="card">
-                                <div class="card__side card__side--front">
-                                    <div class="card__picture card__picture--2">
-                                        <img src="img/scene1.jpg" alt="card-pic" class="card__img">
-                                    </div>
-                                    <h4 class="card__heading">
-                                        <span class="card__heading-span card__heading-span--2">Ovations - Sound of Music</span>    
-                                    </h4>
-                                </div>
-                                <div class="card__side card__side--back card__side--back-2">
-                                    <div class="card__cta">
-                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
-                                    </div> 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-1-of-3">
-                            <div class="card">
-                                <div class="card__side card__side--front">
-                                    <div class="card__picture card__picture--3">
-                                        <img src="img/lifeboat.jpg" alt="card-pic" class="card__img">
-                                    </div>
-                                    <h4 class="card__heading">
-                                        <span class="card__heading-span card__heading-span--3">Life Boat - Unhinged</span>    
-                                    </h4>
-                                </div>
-                                <div class="card__side card__side--back card__side--back-3">
-                                    <div class="card__cta">
-                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
-                                    </div> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            
+                            $num_rows = $movie_query->num_rows;
+                            if($num_rows > 0){
+                                $row = ceil($num_rows / 3);
+                                $row += 1;
+                                $rowCount = 1; 
+                                $start = 1;
+                                
 
-                    <div class="row">
+                                while ($rowCount < $row){
+                                    $movie_multiple = 3 * $rowCount; 
+                                
+                                    //echo $rowCount;
+                                //mysqli_data_seek($movie_query, $movie_multiple);
+                            ?>
+                            <div class="row"> 
+                            <?php
+                                $cardCount = $start; 
+                            
+                                while($cardCount < $movie_multiple+1){
+                                    
+                                    $movies = mysqli_fetch_assoc($movie_query);
+
+                                    if($movies != NULL){
+                                    $img = $movies['movie_pic']; $title = $movies['movie_title'];
+
+
+                            ?>
+                            <div class="col-1-of-3">
+                                <div class="card">
+                                    <div class="card__side card__side--front">
+                                        <div class="card__picture card__picture--1">
+                                            <img src="img/uploads/<?=$img ?>" alt="card-pic" class="card__img">
+                                        </div>
+                                        <h4 class="card__heading">
+                                            <span class="card__heading-span card__heading-span--1"><?= $title ?></span>    
+                                        </h4>
+                                    </div>
+                                    <div class="card__side card__side--back card__side--back-1">
+                                        <div class="card__cta">
+                                            <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <?php 
+                            }
+
+                            
+                            
+                            
+                                $cardCount++;
+                                if($cardCount % 3 == 0){
+                                    $start = $cardCount + 1;
+                                }
+                            }
+
+                            
+                            
+                            ?>
+                            </div>
+                        <?php $rowCount++;  //$start += $cardCount;
+                            }
+                        
+                        } else { 
+                        
+                        
+                       ?>
+                     <div class="row">
                         <div class="col-1-of-3">
                             <div class="card">
                                 <div class="card__side card__side--front">
                                     <div class="card__picture card__picture--4">
-                                        <img src="img/war.jpg" alt="card-pic" class="card__img">
+                                        <img src="img/oldwar.jpg" alt="card-pic" class="card__img">
                                     </div>
                                     <h4 class="card__heading">
                                         <span class="card__heading-span card__heading-span--4">Battles of Foreign Lands</span>    
@@ -116,7 +133,7 @@
                             <div class="card">
                                 <div class="card__side card__side--front">
                                     <div class="card__picture card__picture--5">
-                                        <img src="img/love.jpg" alt="card-pic" class="card__img">
+                                        <img src="img/act3.jpg" alt="card-pic" class="card__img">
                                     </div>
                                     <h4 class="card__heading">
                                         <span class="card__heading-span card__heading-span--5">Modelled to Market</span>    
@@ -147,7 +164,7 @@
                             </div>
                         </div>
                     </div>
-
+                    <?php } ?>
                     <div class="u-center-text u-margin-top-big">
                         <a href="projects.php" class="btnn bttn--blue">Discover all realities</a>
                     </div>
