@@ -4,9 +4,8 @@
                         <div class="footer__logo-box">
                             <img src="img/logo.png" alt="Logo" class="footer__logo">
                         </div>
-                    </div> 
                 </div>
-                <div class="col-1-of-2">
+                <div class="col-1-of-2 footer__group">
                      <div class="footer__navigation">
                         <h3 class="footer__heading"><b>About</b></h3>
                             <ul class="footer__list">
@@ -37,13 +36,11 @@
                                     <use xlink:href="img/sprite.svg#icon-accessibility"></use>
                                 </svg>
                             <div class="sprite__user">
-                                <span class="sprite__icon">USD</span>
                                     <svg class="sprite__icon sprite__icon-text">
                                         <use xlink:href="img/sprite.svg#icon-credit"></use>
                                     </svg>
                             </div>
                             <div class="sprite__user">
-                                <span class="sprite__icon sprite__icon-text">English</span>
                                 <svg class="sprite__icon sprite__icon-text">
                                     <use xlink:href="img/sprite.svg#icon-sphere"></use>
                                 </svg>
@@ -67,8 +64,8 @@
                     </div>
                 </div>
                 <div class="footer__copyright">
-                        &copy;RealityTV International Limited 2021.
-                    </div>
+                    &copy;RealityTV International Limited 2021.
+                </div>
             </div>
         </footer>
     </body>

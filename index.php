@@ -20,7 +20,7 @@
                         <div class="col-1-of-3">
                             <div class="feature-box">
                                 <img src="img/shoot00.jpg" alt="feature-pic" class="feature-box__img">
-                                <h2 class="heading-secondary"><a href="Eprojectsreg.php" class="feature-box__img--text">INDUSTRY TV EXECUTIVE REGISTRATION</a></h2>
+                                <h2 class="heading-secondary"><a href="signup.php" class="feature-box__img--text">INDUSTRY TV EXECUTIVE REGISTRATION</a></h2>
                             </div>
                         </div>
 
@@ -231,21 +231,17 @@
 
                 <section class="section-billboard">
                     <div class="container">
-                        <div class="row">
-                            <div class="col-1-of-2">
-                                <div class="billboard__group">
+                            <div class="billboard__group">
                                     <p class="billboard__paragraph">
                                         Registered members have <i class="billboard__link">priority</i> to be selected as <i class="billboard__link">participants</i> and to be represented in our Reality TV promotional campaigns.
                                     </p>
                                     <div class="billboard__cta"> 
                                         <a href="signup.php" class="butn butn--white">Get Started</a>
                                     </div>
-                                </div> 
                             </div>
-                            <div class="col-1-of-2">
+                            <div class="">
                                     <img src="img/act02.jpg" alt="card-pic" class="billboard__img">
                             </div>
-                        </div>
                     </div>
                 </section>
         </main>

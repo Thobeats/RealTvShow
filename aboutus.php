@@ -86,14 +86,14 @@
                             years-experience in developing, targeting and implementing successful marketing strategies, the founder has 
                             secured multi-year commitments with hundreds of companies and Fortune 500 entities located within the continental 
                             United States and Hawaii.</p>
+                            <p class="view__paragraph">With the many forms of advertising mediums, selecting an effective mix is essential if 
+                            success is to be achieved. As the founder, I pledge that the staff at Reality TV Registry is committed in advancing 
+                            your talent and success.  
+                            Not to be overstated, this highly diverse destination has been developed to elevate our client’s visibility and 
+                            promote their skills, whether it be their special talents, competitiveness or unique reality proposals.</p>   
                         </div>
                         <img src="img/shoot7.jpg" alt="card-pic" class="subcontact-div__img" height="500rem" width="400rem">
                     </div>
-                        <p class="view__paragraph">With the many forms of advertising mediums, selecting an effective mix is essential if 
-                        success is to be achieved. As the founder, I pledge that the staff at Reality TV Registry is committed in advancing 
-                        your talent and success.  
-                        Not to be overstated, this highly diverse destination has been developed to elevate our client’s visibility and 
-                        promote their skills, whether it be their special talents, competitiveness or unique reality proposals.</p>   
                             <h4 class="aboutus-excercises--makemebold">“The lifeblood of any business is dependent on the success of its promotional campaigns”</h4>
                         <p class="view__paragraph">
                         If you have expectations of fulfilling your dream ….it is essential that you employ marketing and promotional campaigns like that of successful businesses.  

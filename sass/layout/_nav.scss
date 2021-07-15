@@ -82,8 +82,13 @@ nav::after {
           font-weight: 900rem;
           background-color: $color-secondary;
           display: flex;
+          padding-left: 45rem;
           // justify-content: space-around; 
           width: 100%;
+
+          @include respond(tab-port) {
+            padding-left: 37rem;
+        }
         }
         
         .navbar a {
@@ -99,10 +104,10 @@ nav::after {
           display: flex;
           width: 100%;
           padding-top: 1rem;
-          padding-left: 50rem;
+          // padding-left: 50rem;
           background-color: $color-white;
           height: 10rem;
-          // justify-content: space-around; 
+          justify-content: space-around; 
           position: relative;
           z-index: 100;
           }

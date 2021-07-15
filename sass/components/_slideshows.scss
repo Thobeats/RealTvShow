@@ -1,9 +1,13 @@
 .slideshows {
     position: relative;
-    width: 95vw;
+    width: 100%;
     background-color: $color-white;
     display: block;
     z-index: 100;
+
+    @include respond(tab-port) {
+        margin-bottom: 5rem;
+    }
 
     &__paragraph {
         font-family: POPPINS;
@@ -19,6 +23,22 @@
         flex: inline;
         float: left;
         left: 5rem;
+
+        @include respond(tab-port) {
+            float: 0;
+            left: 0;
+            width: 55rem;
+            text-align: center;
+            letter-spacing: .2rem;
+        }
+
+        // @include respond(phone) {
+        //     top: 0;
+        //     left: 0;
+        //     width: 60rem;
+        //     text-align: center;
+        //     letter-spacing: 0;
+        // }
     }
 
     &__slides--img {
@@ -33,6 +53,18 @@
         object-fit: cover; 
         overflow: hidden;
         z-index: 50;
+
+        @include respond(tab-port) {
+            top: 15rem;
+            left: 8rem;
+            position: absolute;
+        }
+
+        // @include respond(phone) {
+        //     top: 18rem;
+        //     left: 12rem;
+        //     position: absolute;
+        // }
     }
 }
 
@@ -50,6 +82,11 @@
     top: 8rem;
     user-select: none;
     cursor: pointer;
+
+
+    @include respond(phone) {
+        margin: 0;
+    }
 }
 
 .w3-display-right {
@@ -59,4 +96,9 @@
     top: 8rem;
     user-select: none;
     cursor: pointer;
+
+
+    @include respond(phone) {
+        margin: 0;
+    }
 }

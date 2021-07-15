@@ -8,7 +8,16 @@
     // margin-top: 5rem;
     margin-left: 3rem;
 
+    @include respond(tab-port) {
+        margin-left: 10rem;
+        width: 60rem;
+    }
 
+
+    @include respond(phone) {
+        margin-left: 8rem;
+        width: 50rem;
+    }
 
     &__side {
         height: 52rem;

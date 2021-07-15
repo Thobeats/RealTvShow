@@ -80,10 +80,30 @@
                  
             <section class="section-contactus"> -->
                 <div class="row contact">
-                    <div class="contact-div">
-                        <h3 class="contact-div__header">Staying Connected</h3>
-                        <p  class="contact-div__paragraph">as we build a community of reality.</p>
-                    </div>
+                        <div class="contact-div">
+                            <h3 class="contact-div__header">Staying Connected</h3>
+                            <p  class="contact-div__paragraph">as we build a community of reality.</p>
+
+                                <div class="contact-div-main">
+                                    <svg class="contact-div-main__icon">
+                                        <use xlink:href="img/sprite.svg#icon-mail"></use>
+                                    </svg>
+                                    <span class="contact-div-main__text">Connect@RealityTVRegistry.com</span>
+                                </div>
+                                <div class="contact-div-main">
+                                    <svg class="contact-div-main__icon">
+                                        <use xlink:href="img/sprite.svg#icon-mail"></use>
+                                    </svg>
+                                    <span class="contact-div-main__text">PaulM@RealityTVRegistry.com</span>
+                                </div>
+                                <div class="contact-div-main">
+                                    <svg class="contact-div-main__icon">
+                                        <use xlink:href="img/sprite.svg#icon-location-pin"></use>
+                                    </svg>
+                                    <span class="contact-div-main__text">626, Wilshire Blvd Ste: 410 Los Angeles,CA. 90017</span>
+                                </div>
+                            </div>
+                        </div>
 
                     <div class="contact-divi">
                         <label for="contact-divi__text">Name</label>
@@ -91,9 +111,9 @@
                         <label for="contact-divi__text">Email</label>
                         <input class="contact-divi__input" id="text-input" type="text" />
 
-
+                        <label for="contact-divi__text">Interest As</label>
                         <select class="contact-divi__input-1" name="role" id="" required>
-                          <option value="00000">Interest As</option>
+                          <option value="00000"></option>
                           <option value="3">Contestant</option>
                           <option value="2">Script Writer</option>
                           <option value="1">Executive</option>

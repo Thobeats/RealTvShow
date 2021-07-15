@@ -9,21 +9,29 @@
     // transform: skewY(-7deg);
     margin-top: -8rem;
 
-    // & > * {
-    //     transform: skewY(7deg);
-
-    // }
+    @include respond(tab-port) {
+        padding: 20rem 0;
+    }
 }
 
 .section-realities {
     background-color: $color-secondary-dark;
-    padding: 20rem 0 25rem 0;
+    padding: 20rem 0 10rem 0;
     margin-top: -8rem;
+
+    @include respond(tab-port) {
+        padding: 15rem 0 5rem 0;
+    }
 }
 
 .section-slideshows {
     background-color: $color-white;
     padding: 5rem 0 15rem 0;
+
+    @include respond(tab-port) {
+        padding: 2rem 0 10rem 0;
+        margin-bottom: 7rem;
+    }
 }
 
 .section-billboard {
@@ -32,6 +40,10 @@
     margin: 0 5rem;
     border-radius: .5rem;
     height: 45rem;
+
+    @include respond(tab-port) {
+        padding: 2rem 2rem;
+    }
 }
 
 .section-projects {
