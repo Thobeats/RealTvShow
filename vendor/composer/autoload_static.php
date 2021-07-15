@@ -17,6 +17,7 @@ class ComposerStaticInita3d913f9a6683e34b732cc723e8b5271
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Contracts\\Translation\\' => 30,
             'Symfony\\Component\\Translation\\' => 30,
+            'Stripe\\' => 7,
         ),
         'P' => 
         array (
@@ -57,6 +58,10 @@ class ComposerStaticInita3d913f9a6683e34b732cc723e8b5271
         'Symfony\\Component\\Translation\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/translation',
+        ),
+        'Stripe\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/stripe/stripe-php/lib',
         ),
         'Psr\\SimpleCache\\' => 
         array (

@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'a1a6f4af9d4f6b75a9aa9fcb78759388417e8472',
+        'reference' => '794829a24ea4541330f4b1106c9476f037f9353e',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'a1a6f4af9d4f6b75a9aa9fcb78759388417e8472',
+            'reference' => '794829a24ea4541330f4b1106c9476f037f9353e',
             'dev_requirement' => false,
         ),
         'doctrine/inflector' => array(
@@ -116,6 +116,15 @@
             'install_path' => __DIR__ . '/../psr/simple-cache',
             'aliases' => array(),
             'reference' => '408d5eafb83c57f6365a3ca330ff23aa4a5fa39b',
+            'dev_requirement' => false,
+        ),
+        'stripe/stripe-php' => array(
+            'pretty_version' => 'v7.88.0',
+            'version' => '7.88.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../stripe/stripe-php',
+            'aliases' => array(),
+            'reference' => '7203d00ba9b09830c0c5d5c06a9558db43b8e0ea',
             'dev_requirement' => false,
         ),
         'symfony/polyfill-mbstring' => array(

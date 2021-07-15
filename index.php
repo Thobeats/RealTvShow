@@ -1,4 +1,8 @@
-<?php require "scripts/header.php"; ?>
+<?php 
+require "scripts/functions.php";
+require "scripts/header.php"; 
+
+?>
                             <div class="header">
                                 <div class="header__text-box">
                                     <h1 class="heading-primary">
@@ -39,9 +43,9 @@
                             Synopsis of 12 Realities
                         </h2>
                     </div>
-<!-- <div class="row"> -->
-<?php 
-                            $movie_query = mysqli_query($link, "Select * from realtv_movies");
+                    <!-- <div class="row"> -->
+                    <?php 
+                            $movie_query = mysqli_query($link, "Select * from realtv_movies limit 9");
 
                             
                             $num_rows = $movie_query->num_rows;
