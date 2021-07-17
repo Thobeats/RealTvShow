@@ -179,12 +179,14 @@ if(isset($_GET['id'])){
                                                                                                     Roman settlement, the Celtics are observed boasting until they see a troop of Roman Soldiers
                                                                                                     charging at them. Combat is certain snd an Epic Battle of revenge ensues. A man-to-man clash of
                                                                                                     soldiers wielding gladius type weaponry soon intensifies as antiquated pistols are drawn. In the end
-                                                                                                    either the Roman Soldiers or Celtic Gauls, will be declared victorious, and advance to battle again.' 
+                                                                                                    either the Roman Soldiers or Celtic Gauls, will be declared victorious, and advance to battle again.
+                                                                                                    <b>Note:</b> Proprietary "BattleSafeWeaponry" is specially designed to insure non-injury conflicts)
+                                                                                                    ' 
                                     ?>
                                     
                                     </p>
 
-                                    <p class="note"><i class="fa fa-thumb-tack" aria-hidden="true"></i>   <b>Note:</b> Proprietary "BattleSafeWeaponry" is specially designed to insure non-injury conflicts)</p>
+                                  
 
                                 </div> 
                             </div>
@@ -262,7 +264,7 @@ if(isset($_GET['id'])){
                                         </span>
 
                                         <span class="features-detail">
-                                        <?= isset($movie_data['where']) ? $movie_data['where'] : 'July 2021 - Los Angeles and Las Vegas' ?>
+                                        <?= isset($movie_data['when_and_where']) ? $movie_data['where'] : 'July 2021 - Los Angeles and Las Vegas' ?>
                                         
                                         </span>
 
@@ -275,7 +277,7 @@ if(isset($_GET['id'])){
                                         </span>
 
                                         <span class="features-detail">
-                                        <?= isset($movie_data['pay']) ? $movie_data['pay'] : 'Pre-production $50.00/hr.' ?> 
+                                        <?= isset($movie_data['pay_range']) ? $movie_data['pay'] : 'Pre-production $50.00/hr.' ?> 
                                         </span>
 
 
@@ -321,20 +323,22 @@ if(isset($_GET['id'])){
                     </div>
                 </div>
 
-        
+                <?php
+                    $pic_query = mysqli_query($link, "select * from realtv_movie_pics where movie_id = '$id'");
+                ?>
 
                 <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
                     <div class="d-flex justify-content-center mb-4">
                         <div class="row">                           
                             <div class="col-lg-4 col-md-4 col-sm-12 mt-3 text-center">
-                                <img src="img/war.jpg" width="80%">
+                                <img src="img/<?= mysqli_fetch_object($pic_query)->movie_pic; ?>" width="80%">
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-12 mt-3 text-center">
                                <h4 class="text-center zilla">Join our team today!</h4>
-                               <a href="" class="btn btn-warning mt-2">EZ $55 to Register</a>
+                               <a href="payment.php" class="btn btn-warning mt-2">EZ $<?= $movie_data['price'] ?? "55" ?> to Register</a>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-12 mt-3 text-center">
-                                <img src="img/vikings.jpg" width="80%">
+                                <img src="img/<?= mysqli_fetch_object($pic_query)->movie_pic; ?>" width="80%">
                             </div>
                         </div>
                     </div>

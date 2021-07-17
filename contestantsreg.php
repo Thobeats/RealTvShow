@@ -144,9 +144,7 @@ require "scripts/header.php";
                         </div>
                     </div>
                     <?php } ?>
-                    <div class="u-center-text u-margin-top-big">
-                        <a href="projects.php" class="btnn bttn--blue">Discover all realities</a>
-                    </div>
+                   
                 </section>
 
                 <section class="section-projects">

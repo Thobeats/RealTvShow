@@ -71,5 +71,10 @@
                     </div>
             </div>
         </footer>
+
+        <script>
+            CKEDITOR.replaceAll( 'text-editor' );
+
+        </script>
     </body>
 </html>

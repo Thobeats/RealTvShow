@@ -13,6 +13,8 @@
         <link rel="stylesheet" href="sass/main.scss">
         <link rel="shortcut icon" type="image.png" href="img/logo.png">
         <script type="text/javascript" src="js/reality.js"></script>
+        <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
+
 
         <title> RealityTV | RealityTVregistry.com</title>
 
