@@ -7,8 +7,6 @@ require "scripts/header_two.php";
 
 if(isset($_GET['id'])){
     $id = $_GET['id'];
-
-
     $movieQuery = mysqli_query($link, "select * from realtv_movies where id = '$id'");
     $movie_data = mysqli_fetch_assoc($movieQuery);
 }
@@ -210,7 +208,7 @@ if(isset($_GET['id'])){
                                         </span>
 
                                         <span class="features-detail">
-                                        <?= isset($movie_data['proposal']) ? $movie_data['proposal'] : 'Epic - Battles on Foreign Lands [in the US]' ?>
+                                        <?= isset($movie_data['movie_title']) ? $movie_data['movie_title'] : 'Epic - Battles on Foreign Lands [in the US]' ?>
                                         
                                         </span>
 
@@ -324,6 +322,7 @@ if(isset($_GET['id'])){
                 </div>
 
                 <?php
+        
                     $pic_query = mysqli_query($link, "select * from realtv_movie_pics where movie_id = '$id'");
                 ?>
 
@@ -331,14 +330,14 @@ if(isset($_GET['id'])){
                     <div class="d-flex justify-content-center mb-4">
                         <div class="row">                           
                             <div class="col-lg-4 col-md-4 col-sm-12 mt-3 text-center">
-                                <img src="img/<?= mysqli_fetch_object($pic_query)->movie_pic; ?>" width="80%">
+                                <img src="img/uploads/<?= mysqli_fetch_object($pic_query)->movie_pic; ?>" width="80%">
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-12 mt-3 text-center">
                                <h4 class="text-center zilla">Join our team today!</h4>
                                <a href="payment.php" class="btn btn-warning mt-2">EZ $<?= $movie_data['price'] ?? "55" ?> to Register</a>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-12 mt-3 text-center">
-                                <img src="img/<?= mysqli_fetch_object($pic_query)->movie_pic; ?>" width="80%">
+                                <img src="img/uploads/<?= mysqli_fetch_object($pic_query)->movie_pic; ?>" width="80%">
                             </div>
                         </div>
                     </div>

@@ -227,8 +227,7 @@ function handle_multi_images($images, $insertID){
             }
             $uploads_file = $uploads_dir . basename($imagename);
 
-            move_uploaded_file($images['tmp_name'][$key], $uploads_file);
-
+           if(move_uploaded_file($images['tmp_name'][$key], $uploads_file))
             mysqli_query($link, "INSERT INTO `realtv_movie_pics`(`movie_pic`, `movie_id`) VALUES ('$imagename', '$insertID')");
         }
         
