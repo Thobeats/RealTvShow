@@ -1,7 +1,17 @@
 <?php 
 $navBar = true;
 
+require "scripts/functions.php";
 require "scripts/header_two.php";
+
+
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+
+
+    $movieQuery = mysqli_query($link, "select * from realtv_movies where id = '$id'");
+    $movie_data = mysqli_fetch_assoc($movieQuery);
+}
 
 ?>
 
@@ -149,12 +159,12 @@ require "scripts/header_two.php";
                                 </h1>
                                 
                                 <p class="movie-title mt-3">
-                                    Epic - Battles of Foreign Lands (Proposed filming in the US)
+                                    <?= isset($movie_data['movie_title']) ? $movie_data['movie_title'] : 'Epic - Battles of Foreign Lands (Proposed filming in the US)' ?>                                    
                                 </p>
                             
                             </div> 
 
-                            <div class="col-lg-9 col-md-12 col-sm-12">
+                            <div class="col-lg-9 col-md-12 col-sm-12 mb-5">
                                 <div class="logline p-2">
                                     <h3 class="logline-header">
                                         Logline
@@ -162,12 +172,15 @@ require "scripts/header_two.php";
                                     </h3>
 
                                     <p class="logline-para">
-                                        A troop of 30 Roman Soldiers are led to battle against 30 Celti Gauls in this historically
-                                        significant encounter that occured, circa 525 BC. Among the destruction and burning ruins of a
-                                        Roman settlement, the Celtics are observed boasting until they see a troop of Roman Soldiers
-                                        charging at them. Combat is certain snd an Epic Battle of revenge ensues. A man-to-man clash of
-                                        soldiers wielding gladius type weaponry soon intensifies as antiquated pistols are drawn. In the end
-                                        either the Roman Soldiers or Celtic Gauls, will be declared victorious, and advance to battle again.
+
+
+                                    <?= isset($movie_data['logline']) ? $movie_data['logline'] : 'A troop of 30 Roman Soldiers are led to battle against 30 Celti Gauls in this historically
+                                                                                                    significant encounter that occured, circa 525 BC. Among the destruction and burning ruins of a
+                                                                                                    Roman settlement, the Celtics are observed boasting until they see a troop of Roman Soldiers
+                                                                                                    charging at them. Combat is certain snd an Epic Battle of revenge ensues. A man-to-man clash of
+                                                                                                    soldiers wielding gladius type weaponry soon intensifies as antiquated pistols are drawn. In the end
+                                                                                                    either the Roman Soldiers or Celtic Gauls, will be declared victorious, and advance to battle again.' 
+                                    ?>
                                     
                                     </p>
 
@@ -195,7 +208,7 @@ require "scripts/header_two.php";
                                         </span>
 
                                         <span class="features-detail">
-                                        Epic - Battles on Foreign Lands [in the US]
+                                        <?= isset($movie_data['proposal']) ? $movie_data['proposal'] : 'Epic - Battles on Foreign Lands [in the US]' ?>
                                         
                                         </span>
 
@@ -209,7 +222,7 @@ require "scripts/header_two.php";
                                         </span>
 
                                         <span class="features-detail">
-                                        US Copywright Office Title 17 - April 27, 2021
+                                        <?= isset($movie_data['copyright']) ? $movie_data['copyright'] : 'US Copywright Office Title 17 - April 27, 2021' ?>
                                         
                                         </span>
 
@@ -223,7 +236,7 @@ require "scripts/header_two.php";
                                         </span>
 
                                         <span class="features-detail">
-                                        Unscripted Format/12-episodes arc series
+                                        <?= isset($movie_data['reality']) ? $movie_data['reality'] : 'Unscripted Format/12-episodes arc series' ?>
                                         
                                         </span>
 
@@ -236,7 +249,7 @@ require "scripts/header_two.php";
                                         </span>
 
                                         <span class="features-detail">
-                                        Filming pre-production sizzle reels & qualifying
+                                        <?= isset($movie_data['purpose']) ? $movie_data['purpose'] : 'Filming pre-production sizzle reels & qualifying' ?>
                                         
                                         </span>
 
@@ -249,7 +262,7 @@ require "scripts/header_two.php";
                                         </span>
 
                                         <span class="features-detail">
-                                        July 2021 - Los Angeles and Las Vegas
+                                        <?= isset($movie_data['where']) ? $movie_data['where'] : 'July 2021 - Los Angeles and Las Vegas' ?>
                                         
                                         </span>
 
@@ -262,7 +275,7 @@ require "scripts/header_two.php";
                                         </span>
 
                                         <span class="features-detail">
-                                        Pre-production $50.00/hr. 
+                                        <?= isset($movie_data['pay']) ? $movie_data['pay'] : 'Pre-production $50.00/hr.' ?> 
                                         </span>
 
 
@@ -274,7 +287,7 @@ require "scripts/header_two.php";
                                         </span>
 
                                         <span class="features-detail">
-                                       350 propective contestants
+                                        <?= isset($movie_data['limited_to']) ? $movie_data['limited_to'] : '350 propective contestants' ?>
                                         
                                         </span>
 
@@ -288,7 +301,7 @@ require "scripts/header_two.php";
                             </div>
 
                             <div class="col-lg-5 col-md-12 col-sm-6">
-                                <img src="img/war.jpg" width="80%">
+                                <img src="" width="80%">
                             </div>
                                                   
                         </div>
