@@ -309,6 +309,35 @@ function role(){
     return $_SESSION['role_id'];
 }
 
+function is_loggedIn(){
+    if(!isset($_SESSION['id'])){
+        return false;
+    }
+
+    return true;
+}
+
+
+function payment_cUrl($post_data){
+
+    $url = "https://api-m.sandbox.paypal.com/v1/oauth2/token";
+    $headers = [
+        "Accept: application/json",
+        "Accept-Language: en_US",
+        "AalMKUeQF_tc82T1vnq4_QVA0_ICAnIfJO_sFC8um-76N-VobMJr8qrUhBaAILWTeDODUNXvk0Iwl_FQ: EMrf3fQCsprQXDD815OggwKuZwCf6Zny18GGe3ddK4F4MzORDYcDqqjAk4HjPFNiEWnUC5sQipTF9Su7",
+        "grant_type=client_credentials"
+    ];
+
+    $curl = curl_init();
+
+    curl_setopt($curl, CURLOPT_URL, $url);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $post_data);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+    
+
+}
 
 $link = connect();
 

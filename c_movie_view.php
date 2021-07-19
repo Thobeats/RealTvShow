@@ -140,6 +140,14 @@ if(isset($_GET['id'])){
     font-weight : 800;
 }
 
+.seeking{
+    padding-top : 10px;
+    font-family: 'Zilla Slab', serif;    
+    font-size : 15px;
+    font-weight : 400;
+    letter-spacing : 2px;
+}
+
 </style>
         <section class="cover-image p-4">
              <div class="cover-wrapper m-auto d-flex flex-column justify-content-center">                
@@ -311,12 +319,9 @@ if(isset($_GET['id'])){
                 </div>
 
                 <div class="col-12">
-                    <div class="d-flex justify-content-center">
-                        <p class="mt-4 logline-para">
-                            Seeking male and female, rough and tumble types to compete in real battle like clashes that
-                            transcend the usual Realty programming. Fitness and good marksmanship are a plus. You compete
-                            as either a Roman or Celtic. Replication of battle gladius (short swords) and chest armor were 
-                            specifically designed for this program and tested to be battle safe for non-injury contact. 
+                    <div class="d-flex justify-content-center seeking">
+                        <p class="mt-4 ">
+                           $movie_data['seeking'];
                         </p>
                     </div>
                 </div>
@@ -334,7 +339,7 @@ if(isset($_GET['id'])){
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-12 mt-3 text-center">
                                <h4 class="text-center zilla">Join our team today!</h4>
-                               <a href="payment.php" class="btn btn-warning mt-2">EZ $<?= $movie_data['price'] ?? "55" ?> to Register</a>
+                               <a href="payment.php" class="btn btn-warning mt-2">EZ $<?= $movie_data['reg_fee'] ?? "55" ?> to Register</a>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-12 mt-3 text-center">
                                 <img src="img/uploads/<?= mysqli_fetch_object($pic_query)->movie_pic; ?>" width="80%">
