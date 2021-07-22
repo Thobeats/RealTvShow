@@ -18,11 +18,14 @@ class ComposerStaticInita3d913f9a6683e34b732cc723e8b5271
             'Symfony\\Contracts\\Translation\\' => 30,
             'Symfony\\Component\\Translation\\' => 30,
             'Stripe\\' => 7,
+            'Sample\\' => 7,
         ),
         'P' => 
         array (
             'Psr\\SimpleCache\\' => 16,
             'Psr\\Container\\' => 14,
+            'PayPalHttp\\' => 11,
+            'PayPalCheckoutSdk\\' => 18,
             'PHPMailer\\PHPMailer\\' => 20,
         ),
         'I' => 
@@ -63,6 +66,10 @@ class ComposerStaticInita3d913f9a6683e34b732cc723e8b5271
         array (
             0 => __DIR__ . '/..' . '/stripe/stripe-php/lib',
         ),
+        'Sample\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/paypal/paypal-checkout-sdk/samples',
+        ),
         'Psr\\SimpleCache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
@@ -70,6 +77,14 @@ class ComposerStaticInita3d913f9a6683e34b732cc723e8b5271
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'PayPalHttp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/paypal/paypalhttp/lib/PayPalHttp',
+        ),
+        'PayPalCheckoutSdk\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/paypal/paypal-checkout-sdk/lib/PayPalCheckoutSdk',
         ),
         'PHPMailer\\PHPMailer\\' => 
         array (

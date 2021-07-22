@@ -70,11 +70,35 @@
 
 
  </div>
-<script src="https://js.stripe.com/v3/"></script>
-<script src="/js/client.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-<script>
+
+ <?php if(isset($paypal)): ?>
+ <script src="https://www.paypal.com/sdk/js?client-id=AfgYATIfVWBGwQVce9ggpT8F3cpdMckdMmaf525u6IvyLjD1oL8RTiTqHVZrUWMvn7Un6r2q_qDehBJY&currency=USD"></script>
+ <script>paypal.Buttons({
+     style : {
+         color : "blue",
+         shape : "pill"
+     },
+     createOrder: function(data, actions){
+         return actions.order.create({
+             purchase_units : [{
+                 amount : { value: "<?= $price ?>"}
+             }]
+         })
+     },
+     onApprove: function(data, actions){
+         return actions.order.capture().then(function (){
+           
+           window.location = "payments/GetOrder.php?orderID=" + data.orderID;
+         });
+     }
+ }).render("#paynow");
+ 
+ </script>
+
+ <?php endif; ?>
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+ <script>
    let date = document.getElementById("date");
    let d = new Date();
    date.innerHTML = d.getFullYear();

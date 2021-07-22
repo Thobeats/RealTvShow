@@ -270,7 +270,7 @@ if(isset($_GET['id'])){
                                         </span>
 
                                         <span class="features-detail">
-                                        <?= isset($movie_data['when_and_where']) ? $movie_data['where'] : 'July 2021 - Los Angeles and Las Vegas' ?>
+                                        <?= isset($movie_data['when_and_where']) ? $movie_data['when_and_where'] : 'July 2021 - Los Angeles and Las Vegas' ?>
                                         
                                         </span>
 
@@ -283,7 +283,7 @@ if(isset($_GET['id'])){
                                         </span>
 
                                         <span class="features-detail">
-                                        <?= isset($movie_data['pay_range']) ? $movie_data['pay'] : 'Pre-production $50.00/hr.' ?> 
+                                        <?= isset($movie_data['pay_range']) ? $movie_data['pay_range'] : 'Pre-production $50.00/hr.' ?> 
                                         </span>
 
 
@@ -309,7 +309,7 @@ if(isset($_GET['id'])){
                             </div>
 
                             <div class="col-lg-5 col-md-12 col-sm-6">
-                                <img src="" width="80%">
+                                <img src="img/uploads/<?= $movie_data['movie_pic'] ?>" width="80%">
                             </div>
                                                   
                         </div>
@@ -321,7 +321,7 @@ if(isset($_GET['id'])){
                 <div class="col-12">
                     <div class="d-flex justify-content-center seeking">
                         <p class="mt-4 ">
-                           $movie_data['seeking'];
+                           <?= $movie_data['seeking']; ?>
                         </p>
                     </div>
                 </div>
@@ -339,7 +339,7 @@ if(isset($_GET['id'])){
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-12 mt-3 text-center">
                                <h4 class="text-center zilla">Join our team today!</h4>
-                               <a href="payment.php" class="btn btn-warning mt-2">EZ $<?= $movie_data['reg_fee'] ?? "55" ?> to Register</a>
+                               <a href="payment.php?price=<?= $movie_data['reg_fee'] ?? '55' ?>" class="btn btn-warning mt-2">EZ $<?= $movie_data['reg_fee'] ?? "55" ?> to Register</a>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-12 mt-3 text-center">
                                 <img src="img/uploads/<?= mysqli_fetch_object($pic_query)->movie_pic; ?>" width="80%">

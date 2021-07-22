@@ -2,6 +2,10 @@
 <?php 
 require"scripts/header_two.php"; 
 
+
+if(isset($_GET['price'])){
+    $price = $_GET['price'];
+}
 ?>
 
 <style>
@@ -53,25 +57,14 @@ require"scripts/header_two.php";
                     <input type="email" name="email" class="form-control">
                 </div>
 
-                <div class="form-group">
-                    <label for="">Card Details:</label>
-                    <div class="my-1 border p-2 rounded" id="card-element"></div>
-                </div>
-
-                <div class="form-group">
-                    <button type="submit" class="btn form-control">Pay Now</button>
+                <div class="form-group" id="paynow">
+                   
                 </div>
                 
-            
-            
-            
-            
-            
             </form>
         </div>
     </div>
 
 </div>
-
-
+<?php $paypal = true ?>
 <?php require"scripts/footer_two.php" ?>

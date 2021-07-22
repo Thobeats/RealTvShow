@@ -10,6 +10,8 @@ use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
 
 
+
+
 function connect(){ 
     $link = mysqli_connect("127.0.0.1", "root", "", "realtvshow");
 
