@@ -36,7 +36,7 @@
      
     </ul>
 
-    <a href="" class="btn btn-warning">Signup</a>
+    <a href="signup.php" class="btn btn-warning">Signup</a>
    
   </div>
 </nav>
