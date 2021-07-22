@@ -1,10 +1,14 @@
 <?php $title = "RealTv Registry - Payment"; ?>
 <?php 
-require"scripts/header_two.php"; 
+
+require "scripts/functions.php";
+require "scripts/header_two.php"; 
 
 
-if(isset($_GET['price'])){
-    $price = $_GET['price'];
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+
+    $movie = get_movie($link, $id);
 }
 ?>
 
@@ -48,13 +52,10 @@ if(isset($_GET['price'])){
     <div class="col-lg-12">
         <div class="d-flex justify-content-center">
             <form action="" method="post" style="width : 400px;">
-                <div class="form-group">
-                    <label for="name">Fullname:</label>
-                    <input type="text" name="name" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" name="email" class="form-control">
+                
+                <div class="form-group text-center">
+                    <img src="img/uploads/<?= $movie['movie_pic'] ?>" width="100%" alt="<?= $movie['movie_title'] ?>">
+                    <p class=""><?= $movie['movie_title'] ?></p>
                 </div>
 
                 <div class="form-group" id="paynow">

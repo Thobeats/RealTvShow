@@ -81,7 +81,7 @@
      createOrder: function(data, actions){
          return actions.order.create({
              purchase_units : [{
-                 amount : { value: "<?= $price ?>"}
+                 amount : { value: "<?= $movie['reg_fee'] ?>"}
              }]
          })
      },
@@ -90,7 +90,11 @@
            
            window.location = "payments/GetOrder.php?orderID=" + data.orderID;
          });
+     },
+     onCancel: function(){
+        window.location = "payment-cancel.php";
      }
+
  }).render("#paynow");
  
  </script>

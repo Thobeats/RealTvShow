@@ -339,7 +339,7 @@ if(isset($_GET['id'])){
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-12 mt-3 text-center">
                                <h4 class="text-center zilla">Join our team today!</h4>
-                               <a href="payment.php?price=<?= $movie_data['reg_fee'] ?? '55' ?>" class="btn btn-warning mt-2">EZ $<?= $movie_data['reg_fee'] ?? "55" ?> to Register</a>
+                               <a href="payment.php?id=<?= $movie_data['id'] ?? '00' ?>" class="btn btn-warning mt-2">EZ $<?= $movie_data['reg_fee'] ?? "55" ?> to Register</a>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-12 mt-3 text-center">
                                 <img src="img/uploads/<?= mysqli_fetch_object($pic_query)->movie_pic; ?>" width="80%">
