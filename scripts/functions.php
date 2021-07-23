@@ -12,18 +12,8 @@ require 'vendor/autoload.php';
 
 
 
-// function connect(){ 
-//     $link = mysqli_connect("127.0.0.1", "root", "", "realtvshow");
-
-//     if($link){
-//         return $link;
-//     }else {
-//         return mysqli_connect_errno();
-//     }
-// }
-
 function connect(){ 
-    $link = mysqli_connect("localhost", "realtv_db_user", "@lphA3ch0#", "realtv_show");
+    $link = mysqli_connect("127.0.0.1", "root", "", "realtvshow");
 
     if($link){
         return $link;
@@ -31,6 +21,16 @@ function connect(){
         return mysqli_connect_errno();
     }
 }
+
+// function connect(){ 
+//     $link = mysqli_connect("localhost", "realtv_db_user", "@lphA3ch0#", "realtv_show");
+
+//     if($link){
+//         return $link;
+//     }else {
+//         return mysqli_connect_errno();
+//     }
+// }
 
 function base_url(){
     return "https://" . $_SERVER['SERVER_NAME'] . "/test/";
@@ -116,6 +116,7 @@ function register_new_user($firstname, $surname, $email, $password, $role_id){
     $checkEmail = mysqli_query($link, "select * from realtv_users where email = '$email'");
 
     if($checkEmail->num_rows == 1){
+        set_message('error', 'Email exists, register with a unique email');
         return false;
     }
 
