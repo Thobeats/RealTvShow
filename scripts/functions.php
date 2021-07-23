@@ -345,10 +345,18 @@ function save_movie($movie_title, $movie_plot, $movie_pic, $movie_pics = NULL){
 }
 
 function user_id(){
+    if(!isset($_SESSION['id'])){
+        return false;
+    }
     return $_SESSION['id'];
 }
 
 function role(){
+
+    if(!isset($_SESSION['role_id'])){
+        return false;
+    }
+    
     return $_SESSION['role_id'];
 }
 

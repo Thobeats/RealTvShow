@@ -2,7 +2,7 @@
     require "scripts/functions.php";
 
 
-    if(is_loggedIn()){
+    if(is_loggedIn() && role() == '3'){
     require "scripts/header.php";
 ?>
 
