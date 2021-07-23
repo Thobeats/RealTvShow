@@ -247,7 +247,8 @@ function handle_multi_images($images, $insertID){
     $link = connect();
     if(!is_null($images)){
        // $uploads_dir = 'C:/Users/user/Documents/Fiverr Projects/RealTvShow/img/uploads/';
-       $uploads_dir = '/Users/firstlincoln/Documents/iyanu/RealTvShow/img/uploads/';
+       //$uploads_dir = '/Users/firstlincoln/Documents/iyanu/RealTvShow/img/uploads/';
+       $uploads_dir = 'img/uploads/';
 
         $extensions = ['jpg', 'png',"jpeg"];     
 
@@ -280,7 +281,8 @@ function handle_multi_images($images, $insertID){
 
 function handle_video($video){
     if(!is_null($video)){
-        $uploads_dir = '/Users/firstlincoln/Documents/iyanu/RealTvShow/img/uploads/';
+      //  $uploads_dir = '/Users/firstlincoln/Documents/iyanu/RealTvShow/img/uploads/';
+        $uploads_dir = 'img/uploads/';
         $extensions = ['mp4', 'mkv', "avi"];
 
         $name = $video['name'];
