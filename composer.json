@@ -1,5 +1,8 @@
 {
     "require": {
-        "phpmailer/phpmailer": "^6.5"
+        "phpmailer/phpmailer": "^6.5",
+        "gufy/pdftohtml-php": "~2",
+        "stripe/stripe-php": "^7.88",
+        "paypal/paypal-checkout-sdk": "^1.0"
     }
 }
