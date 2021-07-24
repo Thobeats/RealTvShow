@@ -74,9 +74,16 @@
             width : 80%;
             height : 80%;
         }
+
+        body{
+            width: 100vw;
+            overflow-x : hidden !important;          
+        }
+
+       
     }
 
-    @media only screen and (max-width: 320px) {
+    @media only screen and (max-width: 425px) {
         #logo{
             height : 15vh;        
         }
@@ -84,6 +91,11 @@
         #footer-logo{
             width : 80%;
             height : 80%;
+        }
+
+        body{
+            width: 100vw;
+            overflow-x : hidden !important;
         }
     }
 

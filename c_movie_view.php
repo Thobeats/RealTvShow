@@ -19,6 +19,7 @@ if(isset($_GET['id'])){
     padding : 0px 15px;
     margin : 0px 15px;
 }
+
 .cover-image{
     background-image: url(../img/Onboard1.jpg);
     height: 100vh;
@@ -32,6 +33,7 @@ if(isset($_GET['id'])){
 .cover-wrapper{
     text-align : center;
     font-family: "Montserrat", sans-serif;
+    width : 100%;
 }
 
 .cover-wrapper h1{
@@ -44,7 +46,7 @@ if(isset($_GET['id'])){
     font-weight : 300;
     letter-spacing : 1rem;
     text-transform : uppercase;
-    width : 600px;
+    width : 100%;
 }
 
 .zilla{
@@ -147,6 +149,70 @@ if(isset($_GET['id'])){
     font-weight : 400;
     letter-spacing : 2px;
 }
+
+    @media only screen and (max-width: 1024px) {
+        .cover-image{
+            height: 50vh;
+            width : 100%;  
+            background-position : top right;  
+        }
+
+        .cover-wrapper h1{ 
+            font-size : 40px;           
+            width : 100%;
+        }
+
+        .cover-wrapper p{
+            width : 100%;
+        }
+
+        
+
+    }
+
+    @media only screen and (max-width: 425px) {
+        .cover-wrapper{
+            width : 425px;
+        }
+        .cover-wrapper h1{ 
+            font-size : 25px; 
+        }
+
+        .cover-wrapper p{
+             font-size : 15px;
+        }
+
+        .movie-title, .movie-header{
+            text-align : center;
+        }
+
+        .features-list{
+            width: 100%;
+        }
+
+        .carousel{
+            height : 50vh;
+        }
+
+       .carousel img{
+           padding-top : 35px;
+           width : 200px;
+           height : 150px;
+       }
+
+       .quotes{
+        padding-top : 20px;
+        font-size: 14px;
+       }
+
+       .card{
+          margin-top: 50px;
+       }
+
+       .fa{
+           font-size: 15px;
+       }
+    }
 
 </style>
         <section class="cover-image p-4">
