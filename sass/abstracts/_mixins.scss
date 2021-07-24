@@ -39,6 +39,13 @@
   }
 
 
+  @mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 
 
 
@@ -61,6 +68,9 @@ ORDER: Base + typography > general layout + grid > page layout > components
 1em = 16px
 */
 @mixin respond($breakpoint) {
+  @if $breakpoint == small-phone {
+    @media (max-width: 26.56em) { @content }; //425px
+  }
   @if $breakpoint == phone {
     @media (max-width: 37.5em) { @content }; //600px
   }

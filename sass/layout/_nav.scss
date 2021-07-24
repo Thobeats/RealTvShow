@@ -76,19 +76,14 @@ nav::after {
           display: flex;
         }
   
-        .navbar {
-          overflow: hidden;
-          font-family: Arial;
-          font-weight: 900rem;
-          background-color: $color-secondary;
-          display: flex;
-          padding-left: 45rem;
-          // justify-content: space-around; 
-          width: 100%;
-
-          @include respond(tab-port) {
-            padding-left: 37rem;
-        }
+          .navbar {
+            overflow: hidden;
+            font-family: Arial;
+            font-weight: 900rem;
+            background-color: $color-secondary;
+            display: flex;
+            justify-content: center; 
+            width: 100%;
         }
         
         .navbar a {

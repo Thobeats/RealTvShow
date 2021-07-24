@@ -164,64 +164,64 @@
                     <button class="w3-button w3-display-right" onclick="plusSlides(+1)">&#10095;</button>
                         <div class="row">
                                 <div class="slideshows" onclick="currentSlide(1)">
-                                    <div class="col-1-of-2">
-                                        <q class="slideshows__paragraph"> Inclusion of your credentials on the RealityTVRegistry platform </q>
+                                    <div class="col-2-of-3">
+                                        <p class="slideshows__paragraph"> Inclusion of your credentials on the RealityTVRegistry platform </p>
                                     </div>
-                                    <div class="col-1-of-2">
+                                    <div class="col-1-of-3">
                                         <img class="slideshows__slides--img" src="img/write01.jpg">
                                     </div>
                                 </div>
                             
                                 <div class="slideshows" style= "display:none;" onclick="currentSlide(2)">
-                                    <div class="col-1-of-2">
-                                        <q class="slideshows__paragraph"> Priority status to participate in the production of your choice </q>
+                                    <div class="col-2-of-3">
+                                        <p class="slideshows__paragraph"> Priority status to participate in the production of your choice </p>
                                     </div>
-                                    <div class="col-1-of-2">
+                                    <div class="col-1-of-3">
                                         <img class="slideshows__slides--img" src="img/shoot2.jpg" >
                                     </div>
                                 </div>
                             
                                 <div class="slideshows" style= "display:none;" onclick="currentSlide(3)">
-                                    <div class="col-1-of-2">
-                                        <q class="slideshows__paragraph"> Your private account access, to view and edit your credentials </q>
+                                    <div class="col-2-of-3">
+                                        <p class="slideshows__paragraph"> Your private account access, to view and edit your credentials </p>
                                     </div>
-                                    <div class="col-1-of-2">
+                                    <div class="col-1-of-3">
                                         <img class="slideshows__slides--img" src="img/Executive.jpg">
                                     </div>
                                 </div>
 
                                 <div class="slideshows" style= "display:none;" onclick="currentSlide(4)">
-                                    <div class="col-1-of-2">
-                                        <q class="slideshows__paragraph"> Promote your individual talents to producers and TV executives </q>
+                                    <div class="col-2-of-3">
+                                        <p class="slideshows__paragraph"> Promote your individual talents to producers and TV executives </p>
                                     </div>
-                                    <div class="col-1-of-2">
+                                    <div class="col-1-of-3">
                                         <img class="slideshows__slides--img" src="img/act000.jpg">
                                     </div>
                                 </div>
 
                                 <div class="slideshows" style= "display:none;" onclick="currentSlide(5)">
-                                    <div class="col-1-of-2">
-                                        <q class="slideshows__paragraph"> Casting companies access your info. and initiate contact  </q>
+                                    <div class="col-2-of-3">
+                                        <p class="slideshows__paragraph"> Casting companies access your info. and initiate contact  </p>
                                     </div>
-                                    <div class="col-1-of-2">
+                                    <div class="col-1-of-3">
                                         <img class="slideshows__slides--img" src="img/studio0.jpg">
                                     </div>
                                 </div>
 
                                 <div class="slideshows" style= "display:none;" onclick="currentSlide(6)">
-                                    <div class="col-1-of-2">
-                                        <q class="slideshows__paragraph"> Exposure to talent scouts with opportunity to be discovered</q>
+                                    <div class="col-2-of-3">
+                                        <p class="slideshows__paragraph"> Exposure to talent scouts with opportunity to be discovered</p>
                                     </div>
-                                    <div class="col-1-of-2">
+                                    <div class="col-1-of-3">
                                         <img class="slideshows__slides--img" src="img/write5.jpg">
                                     </div>
                                 </div>
 
                                 <div class="slideshows" style="display:none;" onclick="currentSlide(7)">
-                                    <div class="col-1-of-2">
-                                        <q class="slideshows__paragraph"> Keep you apprised of future reality productions</q>
+                                    <div class="col-2-of-3">
+                                        <p class="slideshows__paragraph"> Keep you apprised of future reality productions</p>
                                     </div>
-                                    <div class="col-1-of-2">
+                                    <div class="col-1-of-3">
                                         <img class="slideshows__slides--img" src="img/write3.jpg">
                                     </div>
                                 </div>
@@ -230,8 +230,8 @@
                 </section>
 
                 <section class="section-billboard">
-                    <div class="container">
-                            <div class="billboard__group">
+                    <div class="container billboard">
+                            <div class="col-2-of-3 billboard__group">
                                     <p class="billboard__paragraph">
                                         Registered members have <i class="billboard__link">priority</i> to be selected as <i class="billboard__link">participants</i> and to be represented in our Reality TV promotional campaigns.
                                     </p>
@@ -239,7 +239,7 @@
                                         <a href="signup.php" class="butn butn--white">Get Started</a>
                                     </div>
                             </div>
-                            <div class="">
+                            <div class="col-1-of-3">
                                     <img src="img/act02.jpg" alt="card-pic" class="billboard__img">
                             </div>
                     </div>

@@ -7,17 +7,17 @@
     transition: transform .3s;
 
     @include respond(tab-port) {
-        margin-left: 10rem;
+        margin: auto;
         margin-top: 6rem;
-    //     height: 55rem;
-    //     width: 50rem;
+        // height: 55rem;
+        // width: 50rem;
     }
 
     @include respond(phone) {
-        margin-left: 15rem;
+        margin: auto;
         margin-top: 10rem;
-    //     height: 35rem;
-    //     width: 30rem;
+        // height: 35rem;
+        // width: 30rem;
     }
 
     &__img {
@@ -28,15 +28,15 @@
         height: 50rem;
         width: 30rem;
         
-        // @include respond(tab-port) {
-        //     width: 50rem;
-        //     height: 75rem;
-        // }
+        @include respond(tab-port) {
+            width: 60%;
+            height: 75rem;
+        }
 
-        // @include respond(phone) {
-        //     width: 30rem;
-        //     height: 50rem;
-        // }
+        @include respond(phone) {
+            width: 30%;
+            height: 50rem;
+        }
 
         &--text {
             text-decoration: none;

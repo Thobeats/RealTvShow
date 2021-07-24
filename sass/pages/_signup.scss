@@ -8,15 +8,32 @@
   }
 
   .signup__button {
+    display: flex;
     border-bottom: 1px solid $newAccountButtonTextColor;
-    padding-bottom:2rem;
+    padding-bottom:1.5rem;
+
+    @include respond(small-phone) {
+      display: block;
+    }
+
+    &-1 {
+      margin: auto 2rem;
+
+      @include respond(small-phone) {
+        margin: auto auto 2rem auto;
+      }
+    }
   }
 
   .signup__container {
     background-color: linear-gradient(to right, $gradientColor1, $gradeintColor2);
-    height: 100vh;
-    width: 100vw;
+    height: 70rem;
+    width: 100%;
     background-color: $formBackgroundColor;
+
+    @include respond(small-phone) {
+      height: 90rem;
+    }
 
     // &--high {
     //   border-top: 1px solid $newAccountButtonColor;
@@ -24,7 +41,7 @@
     // }
 
     .section-one {
-      height: 10vh;
+      height: 10%;
       background-color: $formBackgroundColor;
 
       .signup__logo {
@@ -44,33 +61,35 @@
       @include enableFlex(true);
       border-top: 1px solid $newAccountButtonTextColor;
       border-width: 100%;
-      padding-bottom: 10rem;
-      height: 90vh;
+      padding: 5rem auto;
+      margin: none;
+      height: 90%;
       .social-links {
         display: flex;
         position: relative;
-        height: 20%;
+        height: 5rem;
         cursor: pointer;
+        margin: 2rem auto;
         @include enableFlex();
         .signup__container--facebook {
           @include enableFlex();
           position: absolute;
           left: -10.5rem;
           span {
-            width: 52%;
+            width: 40%;
             color: $loginWithAccountsTextColor;
             font-size: 0.8rem;
             padding-right: 0.4rem;
           }
           .signup__container--icon {
-            height: 6rem;
-            width: 6.5rem;
+            height: 5rem;
+            width: 5.3rem;
             border-radius: 100%;
             border: $gradientColor1 0.1rem solid;
             @include enableFlex();
             cursor: pointer;
             .signup__container--image {
-              height: 4rem;
+              height: 50%;
               @include enableFlex();
             }
           }
@@ -83,11 +102,11 @@
             width: 50%;
             color: $loginWithAccountsTextColor;
             padding-left: 0.4rem;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
           }
           .signup__container--icon {
-            height: 6rem;
-            width: 6.3rem;
+            height: 5rem;
+            width: 5.3rem;
             border-radius: 100%;
             border: $gradientColor1 0.1rem solid;
             @include enableFlex();
@@ -95,7 +114,7 @@
             box-shadow: -0.5rem 0px $formBackgroundColor;
   
             .signup__container--image {
-              height: 4rem;
+              height: 50%;
               @include enableFlex();
             }
           }
@@ -105,8 +124,8 @@
       .signup__container--text {
         font-size: 2.5rem;
         color: $inputPlaceholderColor;
-        padding: none;
-        margin: none;
+        padding: 1.5rem auto;
+        margin-top: 3rem;
 
         &-1 {
           padding: none;
@@ -139,7 +158,7 @@
           font-size: 1.5rem;
           position: relative;
           color: $inputTextColor;
-          margin-bottom: 2.5rem;
+          margin-bottom: 1.5rem;
 
           &-1 {
             padding-left: .5rem;
@@ -148,11 +167,17 @@
 
         &--input {
           display: flex;
+          width: 100%;
+
+          @include respond(small-phone) {
+            display: block;
+            width: 80%;
+          }
           
           &-1 {
             padding: 1rem;
             margin-right: 1rem;
-            width: 25rem;
+            width: 100%;
             border-radius: 0.2rem;
             border: $gradientColor1 0.01rem solid;
             color: $inputTextColor;
@@ -173,14 +198,22 @@
                 opacity: 1;
               }
           }
+
+          &-1-1 {
+            width: 98%;
+
+            @include respond(small-phone) {
+              width: 80%;
+            }
+          }
         }
       }
     }
   }
 
-  #pass {
-    width: 51rem;
-  }
+  // #pass {
+  //   width: 100%;
+  // }
   
 
   

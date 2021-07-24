@@ -60,20 +60,32 @@
 
 
                             <div class="projects">
+                                <div class="options">
+                                    <input type="checkbox" class="options__checkbox" id="navi-toggle">
+
+                                    <label for="navi-toggle" class="options__button">
+                                        <span class="options__icon">&nbsp;</span>
+                                    </label>
+
+                                    <div class="options__background">&nbsp;</div>
+
+                                    <nav class="options__nav">
+                                        <ul class="options__list">
+                                            <li class="options__item"><a href="promoteyou.php" class="options__link"><span>01</span>Promoting Your Material</a></li>
+                                            <li class="options__item"><a href="business.php" class="options__link"><span>02</span>Business of Writing</a></li>
+                                            <li class="options__item"><a href="pitching.php" class="options__link"><span>03</span>Pitching Reality</a></li>
+                                            <li class="options__item"><a href="sample.php" class="options__link"><span>04</span>Display Listing & Image Pitch</a></li>
+                                            <li class="options__item"><a href="business2.php" class="options__link"><span>05</span>Business of Options</a></li>
+                                            <li class="options__item"><a href="hollywood.php" class="options__link"><span>06</span>Hollywood Outsiders Pitched</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+
                                 <div class="project__text-box">
                                     <h1 class="heading-primary">
                                         <span class="heading-primary--main">Reality Tv</span>
                                         <span class="heading-primary--sub">cache of unique formats & talent</span>
                                     </h1>        
-                                </div>
-
-                                <div class="buttons-promoter">
-                                    <a href="promoteyou.php" class="butn butn--white buttons-promoter-you buttons-promoter-you">Promoting Your Material</a>
-                                    <a href="business.php" class="butn butn--white buttons-promoter-you buttons-promoter-you-2">Business of Writing</a>
-                                    <a href="pitching.php" class="butn butn--white buttons-promoter-you buttons-promoter-you-3">Pitching Reality</a>
-                                    <a href="sample.php" class="butn butn--white buttons-promoter-you buttons-promoter-you-4">Sample – Display Listing & Image Pitch</a>
-                                    <a href="business2.php" class="butn butn--white buttons-promoter-you buttons-promoter-you-5">Business of Options</a>
-                                    <a href="hollywood.php" class="butn butn--white buttons-promoter-you buttons-promoter-you-6">Hollywood Outsiders Pitched</a>
                                 </div>
                             </div>                            
             </header>
@@ -82,45 +94,45 @@
                 <h3 class="heading-secondary">Actual Display Listing and Image Enhanced Pitch</h3>
                     <div class="sample">
                         <div class="sample-group--1">
-                            <div>
+                            <div class="sample-group--1__img">
                                 <h4>Golf Squadron</h4>
-                                <img src="img/golf2.jpg" alt="Ecard-pic" class="sample-group__img" height="240rem" width="350rem">
+                                <img src="img/golf2.jpg" alt="Ecard-pic" class="sample-group--1__img-1"/>
                             </div>
-                            <div>
+                            <div class="sample-group--1__img">
                                 <h4>Gold Fever</h4>
-                                <img src="img/quest2.jpg" alt="Ecard-pic" class="sample-group__img" height="240rem" width="350rem">
+                                <img src="img/quest2.jpg" alt="Ecard-pic" class="sample-group--1__img-2" height="60px" width="85px"/>
                             </div>
-                            <div>
+                            <div class="sample-group--1__img">
                                 <h4>Battle Grounds - Snipers at Large</h4>
-                                <img src="img/snipers.jpg" alt="Ecard-pic" class="sample-group__img" height="240rem" width="350rem">
+                                <img src="img/snipers.jpg" alt="Ecard-pic" class="sample-group--1__img-3" height="52px" width="90px"/>
                             </div>
                         </div>
                         <div class="sample-group--2">
-                            <div>
+                            <div class="sample-group--2__img">
                                 <h4>Modeled To Market</h4>
-                                <img src="img/love.jpg" alt="Ecard-pic" class="sample-group__img" height="240rem" width="350rem">
+                                <img src="img/love.jpg" alt="Ecard-pic" class="sample-group__img-1" height="60%" width="90%"/>
                             </div>
-                            <div>
+                            <div class="sample-group--2__img">
                                 <h4>MANIPULATED</h4>
-                                <img src="img/wonder.jpg" alt="Ecard-pic" class="sample-group__img" height="240rem" width="350rem">
+                                <img src="img/wonder.jpg" alt="Ecard-pic" class="sample-group__img-2" height="60%" width="85%"/>
                             </div>
-                            <div>
+                            <div class="sample-group--2__img">
                                 <h4>Life Boat - Unhinged</h4>
-                                <img src="img/swim.jpg" alt="Ecard-pic" class="sample-group__img" height="240rem" width="350rem">
+                                <img src="img/swim.jpg" alt="Ecard-pic" class="sample-group__img-3" height="52%" width="90%"/>
                             </div>
                         </div>
                         <div class="sample-group--3">
-                            <div>
+                            <div class="sample-group--3__img">
                                 <h4>Encore - Matters Of Actors</h4>
-                                <img src="img/actress3.jpg" alt="Ecard-pic" class="sample-group__img" height="240rem" width="350rem">
+                                <img src="img/actress3.jpg" alt="Ecard-pic" class="sample-group__img-1" height="60%" width="90%"/>
                             </div>
-                            <div>
+                            <div class="sample-group--3__img">
                                 <h4>Singles Yachting Society</h4>
-                                <img src="img/yacht3.jpg" alt="Ecard-pic" class="sample-group__img" height="240rem" width="350rem">
+                                <img src="img/yacht3.jpg" alt="Ecard-pic" class="sample-group__img-2" height="60%" width="100%"/>
                             </div>
-                            <div>
+                            <div class="sample-group--3__img">
                                 <h4>--EPIC-- Battles of Foreign Lands</h4>
-                                <img src="img/war.jpg" alt="Ecard-pic" class="sample-group__img" height="240rem" width="350rem">
+                                <img src="img/war.jpg" alt="Ecard-pic" class="sample-group__img-3" height="60%" width="80%"/>
                             </div>
                         </div>
                     </div>
@@ -284,37 +296,44 @@ At the conclusion of each episode the team’s gold is weighed and recorded.</p>
 
         <footer class="footer">
             <div class="row footer__high">
-                <div class="col-1-of-2">
+                <div class="col-1-of-4">
                         <div class="footer__logo-box">
                             <img src="img/logo.png" alt="Logo" class="footer__logo">
                         </div>
-                    </div> 
                 </div>
-                <div class="col-1-of-2">
+                <div class="footer__group">
                      <div class="footer__navigation">
-                     <h3 class="footer__heading"><b>About</b></h3>
-                            <ul class="footer__list">
-                                <li class="footer__item"></li><a href="reality.php" class="footer__link">Reality TV</a></li>
-                                <li class="footer__item"></li><a href="faq.php" class="footer__link">Faq</a></li>
-                                <li class="footer__item"></li><a href="login.php" class="footer__link">Login/signup</a></li>
-                                <li class="footer__item"></li><a href="privacy.php" class="footer__link">Privacy policy</a></li>
-                                <li class="footer__item"></li><a href="terms.php" class="footer__link">Terms of Service</a></li>
-                            </ul>
-                        <h3 class="footer__heading-2"><b>Community</b></h3>
-                            <ul class="footer__list-2">
-                                <li class="footer__item"></li><a href="future.php" class="footer__link">Future</a></li>
-                                <li class="footer__item"></li><a href="promoteyou.php" class="footer__link">Promoting You</a></li>
-                                <li class="footer__item"></li><a href="benefits.php" class="footer__link">Benefits</a></li>
-                                <li class="footer__item"></li><a href="communications.php" class="footer__link">Communications</a></li>
-                                <li class="footer__item"></li><a href="nda.php" class="footer__link">NDA Agreement</a></li>
-                            </ul>
-                        <h3 class="footer__heading-3"><b>Pages</b></h3>
-                            <ul class="footer__list-3">
-                                <li class="footer__item"></li><a href="index.php" class="footer__link">Home</a></li>
-                                <li class="footer__item"></li><a href="aboutus.php" class="footer__link">About us</a></li>
-                                <li class="footer__item"></li><a href="contactus.php" class="footer__link">Contact us</a></li>
-                            </ul>
+                         <div class="col-1-of-4">
+                            <h3 class="footer__heading"><b>About</b></h3>
+                                <ul class="footer__list">
+                                    <li class="footer__item"></li><a href="reality.php" class="footer__link">Reality TV</a></li>
+                                    <li class="footer__item"></li><a href="faq.php" class="footer__link">Faq</a></li>
+                                    <li class="footer__item"></li><a href="login.php" class="footer__link">Login/signup</a></li>
+                                    <li class="footer__item"></li><a href="privacy.php" class="footer__link">Privacy policy</a></li>
+                                    <li class="footer__item"></li><a href="terms.php" class="footer__link">Terms of Service</a></li>
+                                </ul>
+                        <div>
+                        <div class="col-1-of-4">
+                            <h3 class="footer__heading-2"><b>Community</b></h3>
+                                <ul class="footer__list-2">
+                                    <li class="footer__item"></li><a href="future.php" class="footer__link">Future</a></li>
+                                    <li class="footer__item"></li><a href="promoteyou.php" class="footer__link">Promoting You</a></li>
+                                    <li class="footer__item"></li><a href="benefits.php" class="footer__link">Benefits</a></li>
+                                    <li class="footer__item"></li><a href="communications.php" class="footer__link">Communications</a></li>
+                                    <li class="footer__item"></li><a href="nda.php" class="footer__link">NDA Agreement</a></li>
+                                </ul>
+                        <div>
+                        <div class="col-1-of-4">
+                            <h3 class="footer__heading-3"><b>Pages</b></h3>
+                                <ul class="footer__list-3">
+                                    <li class="footer__item"></li><a href="index.php" class="footer__link">Home</a></li>
+                                    <li class="footer__item"></li><a href="aboutus.php" class="footer__link">About us</a></li>
+                                    <li class="footer__item"></li><a href="contactus.php" class="footer__link">Contact us</a></li>
+                                </ul>
+                        </div>
                     </div>
+                </div>
+                <div class="footer-late__div">
                     <div class="sprite">
                         <div class="sprite__icon-box">
                                 <svg class="sprite__icon">
@@ -347,10 +366,10 @@ At the conclusion of each episode the team’s gold is weighed and recorded.</p>
                             </svg>        
                         </div>
                     </div>
-                </div>
-                <p class="footer__copyright">
+                    <div class="footer__copyright">
                         &copy;RealityTV International Limited 2021.
-                    </p>
+                    </div>
+                </div>
             </div>
         </footer>
     </body>

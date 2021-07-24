@@ -1,6 +1,6 @@
 
 .dashcontainer {
-    max-width: 110rem;
+    max-width: 100%;
     margin: 4rem auto;
     background-color: $color-grey-light-2;
     box-shadow: 0 2rem 6rem rgba(0,0,0,.3);
@@ -23,7 +23,7 @@
     font-size: 1.4rem;
     list-style: none;
     margin-top: 2.5rem;
-    width: 25rem;
+    width: 25%;
     height: 100rem;
     
 
@@ -54,7 +54,7 @@
     &__item:hover::before,
     &__item--active::before {
         transform: scaleY(1);
-        width: 100%;
+        width: 80%;
     }
 
     &__item--active::before {
@@ -111,14 +111,17 @@
 
 //////////////////////////////////////
 ///WRITEUP
+.user-writeup {
+    width: 100%;
+}
+
 .writeup {
     background-color: $color-white;
     box-shadow: var($color-grey-light);
     margin: 2rem 4.5rem;
     padding: 3rem;
-    width: 75rem;
+    width: 90%;
     height: 20rem;
-    margin-bottom: 3.5rem;
     position: relative;
     transform: skewX(20deg);
     overflow: hidden;

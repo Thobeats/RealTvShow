@@ -9,7 +9,7 @@
 
 
   .section-one {
-    height: 10vh;
+    height: 10%;
     background-color: $formBackgroundColor;
 
     .login__logo {
@@ -24,8 +24,8 @@
 
   .login__container {
     background-color: linear-gradient(to right, $gradientColor1, $gradeintColor2);
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     background-color: $formBackgroundColor;
     .section-two {
       @include enableFlex(true);
@@ -107,7 +107,7 @@
         }
         &--input {
           padding: 0.8rem 1rem;
-          width: 22rem;
+          width: 40rem;
           border-radius: 0.2rem;
           border: $gradientColor1 0.01rem solid;
           color: $inputTextColor;
@@ -116,6 +116,10 @@
           font-size: medium;
           &::placeholder {
             color: $inputPlaceholderColor;
+          }
+
+          @include respond(small-phone) {
+            width: 100%;
           }
         }
       }

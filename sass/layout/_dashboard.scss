@@ -1,6 +1,7 @@
 .head {
     font-size: 1.5rem;
     height: 23rem;
+    width: 100%;
     background-image: url(../img/write7.jpg);
     background-size: cover;
     object-fit: cover; 
@@ -13,6 +14,7 @@
 .heade {
     font-size: 1.5rem;
     height: 23rem;
+    width: 100%;
     background-image: url(../img/camera2.jpg);
     background-size: cover;
     object-fit: cover; 
@@ -25,6 +27,7 @@
 .headee {
     font-size: 1.5rem;
     height: 23rem;
+    width: 100%;
     background-image: url(../img/act000.jpg);
     background-size: cover;
     object-fit: cover; 
@@ -36,6 +39,7 @@
 
 .content {
     display: flex;
+    width: 100%;
 }
 
 ///////////////////////////////////
@@ -43,6 +47,7 @@
 .sidebar {
     background-color: $color-secondary-dark;
     height: 100%;
+    width: 30%;
     flex: 0 0 18%;
 
     display: flex;
@@ -52,6 +57,7 @@
 
 .user-view {
     font-size: 1.4rem;
+    width: 70%;
     flex: 1;
 
     display: flex;

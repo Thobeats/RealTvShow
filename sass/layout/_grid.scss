@@ -2,6 +2,7 @@
     max-width: $grid-width;
     background-color: transparent;
     margin: 0 auto;
+    border: 1px solid red;
     // margin-bottom: $gutter-vertical;
 
     &:not(:last-child) {
@@ -13,14 +14,16 @@
     }
 
       @include respond(tab-port) {
-            max-width: 50%;
-            padding: 0 3rem;
+            max-width: 60%;
+            // padding: 0 3rem;
         }
 
-    //     @include respond(phone) {
-    //         max-width: 100%;
-    //         padding: 0 1.5rem;
-    //     }
+        @include respond(phone) {
+            max-width: 100%;
+            // display: flex;
+            // justify-content: center;
+            // flex-direction: column;
+        }
 
     @include clearfix;
 

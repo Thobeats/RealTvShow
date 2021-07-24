@@ -5,7 +5,7 @@
     font-size: 1.5rem;
     color: $color-grey-light;
     position: relative;
-    margin-top: 3rem;
+    margin: auto;
     
 
     @include respond(tab-port) {
@@ -24,30 +24,44 @@
         left: 100rem;
 
         @include respond(tab-port) {
-            top: 7rem;
-            left: 80rem;
+            top: 17rem;
+            left: 70%;
         }
 
 
         @include respond(phone) {
             top: 12rem;
-            left: 50rem;
+            left: 70%;
+        }
+
+        @include respond(small-phone) {
+            top: 52rem;
+            left: 45%;
+            margin-top: 4rem;
+            color: $color-black;
         }
 
         &-2 {
-            top: 7rem;
+            top:7rem;
             text-align: left;
             position: absolute;
             left: 80rem;
 
             @include respond(tab-port) {
-                top: 7rem;
-                left: 60rem;
+                top:17rem;
+                left: 45%
             }
 
             @include respond(phone) {
                 top: 12rem;
-                left: 30rem;
+                left: 40%;
+            }
+
+            @include respond(small-phone) {
+                top: 28rem;
+                left: 40%;
+                margin-top: 4rem;
+                color: $color-black;
             }
         }
 
@@ -58,13 +72,19 @@
             left: 65rem;
 
             @include respond(tab-port) {
-                top: 7rem;
-                left: 45rem;
+                top: 17rem;
+                left: 25%;
             }
 
             @include respond(phone) {
                 top: 12rem;
-                left: 15rem;
+                left: 15%;
+            }
+
+            @include respond(small-phone) {
+                left: 45%;
+                margin-top: 3rem;
+                color: $color-black;
             }
         }
     }
@@ -77,15 +97,21 @@
         left: 10rem;
 
         @include respond(tab-port) {
-            margin-bottom: 0;
+            margin: auto;
             top: 3rem;
-            left: 5rem;
+            left: 35%;
         }
 
         @include respond(phone) {
-            margin-bottom: 0;
+            margin: auto;
             top: 2rem;
-            left: 25rem;
+            left: 35%;
+        }
+
+        @include respond(small-phone) {
+            margin: auto;
+            top: 2rem;
+            left: 30%;
         }
     }
 
@@ -108,7 +134,7 @@
         top: 10rem;
         padding-top: 2rem;
         padding-bottom: .1rem;
-        margin-top: 15rem;
+        margin: auto;
         display: block;
 
        @include respond(tab-port) {
@@ -125,12 +151,23 @@
         left: 100rem;
 
         @include respond(tab-port) {
-            left: 80rem;
+            top: 20rem;
+            float: left;
+            position: absolute;
+            left: 70%;
         }
 
         @include respond(phone) {
             top: 13.5rem;
-            left: 50rem;
+            left: 70%;
+        }
+
+        @include respond(small-phone) {
+            position: absolute;
+            top: 56rem;
+            left: 38%;
+            margin-top: 2rem;
+            text-align: center;
         }
 
         &-2 {
@@ -140,12 +177,23 @@
             left: 80rem;
 
             @include respond(tab-port) {
-                    left: 60rem;
+                top: 20rem;
+                float: left;
+                position: absolute;
+                left: 45%;
             }
 
             @include respond(phone) {
                 top: 13.5rem;
-                left: 30rem;
+                left: 40%;
+            }
+
+            @include respond(small-phone) {
+                position: absolute;
+                top: 32rem;
+                left: 38%;
+                margin-top: 2rem;
+                text-align: center;
             }
         }
 
@@ -156,12 +204,20 @@
             left: 65rem;
 
             @include respond(tab-port) {
-                    left: 45rem;
-            }
+                top: 20rem;
+                float: left;
+                position: absolute;
+                left: 25%;            }
 
             @include respond(phone) {
                 top: 13.5rem;
-                left: 15rem;
+                left: 15%;
+            }
+
+            @include respond(small-phone) {
+                left: 42%;
+                margin-top: 3rem;
+                text-align: center;
             }
         }
     }
@@ -199,9 +255,46 @@
         right: 10rem;
     }
 
+    &-late__div {
+        display: block;
+        justify-content: center;
+        position: absolute;
+        top: 35rem;
+        width: 100%;
+
+        @include respond(tab-port) {
+            display: block;
+            justify-content: center;
+            width: 50%;
+            position: absolute;
+            top: 45rem;
+            left: 25%;
+        }
+
+
+        @include respond(phone) {
+            display: block;
+            justify-content: center;
+            width: 50%;
+            position: absolute;
+            top: 40rem;
+            left: 25%;
+        }
+
+        @include respond(small-phone) {
+            display: block;
+            justify-content: center;
+            width: 50%;
+            position: absolute;
+            top: 80rem;
+            left: 25%;
+        }
+
+    }
+
     &__copyright {
         display: flex;
-        padding: 2rem 40rem;
+        margin: 2rem 45rem;
         color: $color-grey-light;
         text-align: center;
         font-size: 1.5rem;
@@ -209,22 +302,16 @@
 
         @include respond(tab-port) {
             display: flex;
-            padding: 2rem 0;
-            width: 100%;
-            // margin-left: 10rem;
-            text-align: none;
-            position: absolute;
-            top: 35rem;
-            left: 42rem;
+            padding: 5rem;
+            width: 70%;
+            margin: auto;
         }
 
         @include respond(phone) {
-            padding: 5rem 2rem 25rem 25rem;
-            width: 100%;
-            text-align: none;
-            position: absolute;
-            top: 45rem;
-            left: 0;
+            padding: 2rem;
+            margin: auto;
+            width: 90%;
+            text-align: center;
         }
     }
 }
@@ -239,20 +326,15 @@
         justify-content: space-evenly;
 
         @include respond(tab-port) {
-            // align-items: center;
-            margin-top: 8rem;
-            position: absolute;
-            top: 25rem;
-            width: 50%;
+            align-items: center;
+            margin: auto;
+            width: 80%;
         }
 
         @include respond(phone) {
-            width: 80%;
-            padding: 2rem;
+            width: 100%;
+            margin: auto;
             align-items: center;
-            position: absolute;
-            top: 32rem;
-            left: 8.5rem;
         }
 
         & > * {

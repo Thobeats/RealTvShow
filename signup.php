@@ -64,8 +64,8 @@
                           <option value="1">Executive</option>
                         </select>
                     </div>
-                    <input class="main__form--input-1" id="pass" type="password" name="password" placeholder="Password" required/>
-                    <input class="main__form--input-1" id="pass"  type="password" name="password" placeholder="Confirm Password" required/>
+                    <input class="main__form--input-1 main__form--input-1-1" id="pass" type="password" name="password" placeholder="Password" required/>
+                    <input class="main__form--input-1 main__form--input-1-1" id="pass"  type="password" name="password" placeholder="Confirm Password" required/>
 
                     <div class="signup__container--checkbox">
                         <div class="signup__container--checkbox-1">
@@ -78,8 +78,12 @@
                       <p class="signup__container--1">Already have an account?<a href="login.php" class="signup__container--1-1">Login</a></p>
                     </div>
                     <div class="signup__button">
-                        <button><a href="Confirm.php">Register</a></button>
+                      <div>
+                        <button class="signup__button-1"><a href="Confirm.php">Register</a></button>
+                      </div>
+                      <div>
                         <button><a href=index.php>Cancel</a></button>
+                      </div>
                     </div>
                   </div>
                 </div>
