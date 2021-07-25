@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="css/icon-font.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="sass/main.scss">
@@ -74,9 +74,15 @@
                                     </div>
 
                                     <div>
+                                        <?php if(is_loggedIn()){ ?>
+                                        <div class="buttons">
+                                            <a href="" class="btn btn--white"><?= $_SESSION['firstname'] ?></a>
+                                        </div>
+                                        <?php } else { ?>
                                         <div class="buttons">
                                             <a href="signup.php" class="btn btn--white">SignUp</a>
                                         </div>
+                                        <?php } ?>
                                     </div>
                                 </nav> 
                 </header>

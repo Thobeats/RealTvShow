@@ -4,7 +4,8 @@
 
 
     if(is_loggedIn()){
-    require "scripts/header.php";
+        $navBar = true;
+    require "scripts/header_two.php";
 
 
 
@@ -13,262 +14,337 @@
 
         $movie_query = mysqli_query($link, "select * from realtv_movies where id = '$id'");
 
-        $data = mysqli_fetch_assoc($movie_query);
+        $movie_data = mysqli_fetch_assoc($movie_query);
     }
 
 
 ?>
 
+<style>
+.project{
+    background-image: url(img/shoot2.jpg);
+    height: 100vh;
+    background-size : cover;
+    background-position : top left;
+    color : white;
+    display: flex;
+    align-items : center;
+}
 
-            <div class="projecte">
-                <div class="project__text-box">
-                    <h1 class="heading-primary">
-                        <span class="heading-primary--main">Reality Tv</span>
-                        <span class="heading-primary--sub">cache of unique formats & talent</span>
-                    </h1>        
+.project-wrapper{
+    text-align : center;
+    font-family: "Montserrat", sans-serif;
+    width : 100%;
+}
+
+.project-wrapper h1{
+    font-weight : 600;
+    letter-spacing : 1.75rem;
+    text-transform : uppercase;
+}
+
+.project-wrapper p{
+    font-weight : 300;
+    letter-spacing : 1rem;
+    text-transform : uppercase;
+    width : 100%;
+}
+
+.movie-dets{
+    padding : 0px 15px;
+    margin : 0px 15px;
+}
+
+.zilla{
+    font-family: 'Zilla Slab', serif;    
+}
+
+.poppins{
+    font-family: 'Poppins', sans-serif;
+}
+.movie-header{
+    font-family: 'Zilla Slab', serif;    
+    font-size : 60px;
+    font-weight : 800;
+    width : 250px;
+    text-align : left;
+    color : #041e3c;
+    letter-spacing : 2px;
+    text-transform : uppercase;
+}
+
+.movie-title{
+    padding : 2px;
+    font-family: 'Zilla Slab', serif;    
+    font-size : 20px;
+    font-weight : 300;
+    color : #041e3c;
+    letter-spacing : 2px;
+}
+
+.logline{
+    position : relative;
+    top : 70px;
+}
+
+.logline-header{
+    font-family: 'Zilla Slab', serif;    
+    font-size : 19px;
+    font-weight : 600;
+    letter-spacing : 2px;
+}
+
+.logline-para {
+    padding-top : 10px;
+    font-size : 15px;
+    font-weight : 400;
+    letter-spacing : 2px;
+}
+
+.logline-para p{
+    font-family: 'Zilla Slab', serif;  
+}
+
+.features {
+    list-style-type : none;
+    padding : 10px;
+    font-family: 'Zilla Slab', serif;   
+    letter-spacing : 2px;
+}
+
+.features-list{
+    margin : 2px;
+    width : 120%;
+}
+
+.features-title{
+    font-weight : 700;
+    font-size: 20px;
+}
+
+.features-detail{
+    width : 700px;
+}
+
+.synopsis_content{
+    letter-spacing : 1px;
+}
+
+    @media only screen and (max-width: 1024px) {
+        .project{
+            height: 50vh;
+            width : 100%;  
+            background-position : top right;  
+        }
+
+        .project-wrapper h1{ 
+            font-size : 40px;           
+            width : 100%;
+        }
+
+        .project-wrapper p{
+            width : 100%;
+        }
+
+        
+
+    }
+
+    @media only screen and (max-width: 425px) {
+        .project-wrapper{
+            width : 425px;
+        }
+        .project-wrapper h1{ 
+            font-size : 25px; 
+        }
+
+        .project-wrapper p{
+             font-size : 15px;
+        }
+
+        .movie-title, .movie-header{
+            text-align : center;
+        }
+
+        .features-list{
+            width: 100%;
+        }
+
+        .carousel{
+            height : 50vh;
+        }
+
+       .carousel img{
+           padding-top : 35px;
+           width : 200px;
+           height : 150px;
+       }
+
+       .quotes{
+        padding-top : 20px;
+        font-size: 14px;
+       }
+
+       .card{
+          margin-top: 50px;
+       }
+
+       .fa{
+           font-size: 15px;
+       }
+    }
+
+</style>
+            <section class="project p-4">
+                <div class="project-wrapper m-auto d-flex flex-column justify-content-center">                
+                    <h1>Reality Tv</h1>
+                    <p class="mr-auto ml-auto">cache of unique formats & talent</p>                  
                 </div>
-            </div> 
+            </section>
 
-            <section class="section-viewpage">
-                <div class="view">
-                    <h3 class="view__header"> Title:  Epic - Battles of Foreign Lands (Proposed filming in the US)</h3>
-                    <p class="view__paragraph">
-                        Logline: A troop of 30 Roman Soldiers are led to battle against 30 Celti Gauls in this historically
-                        significant encounter that occured, circa 525 BC. Among the destruction and burning ruins of a
-                        Roman settlement, the Celtics are observed boasting until they see a troop of Roman Soldiers
-                        charging at them. Combat is certain snd an Epic Battle of revenge ensues. A man-to-man clash of
-                        soldiers wielding gladius type weaponry soon intensifies as antiquated pistols are drawn. In the end
-                        either the Roman Soldiers or Celtic Gauls, will be declared victorious, and advanceto battle again.
-                        <h3 class="heading-secondary"> Note: Proprietary "BattleSafeWeaponry" is specially designed to insure non-injury conflicts)</h3>
-                    </p>
-
-                    <div class="view__text">
-                        <div class="view__text--parag">
-                            <p class="view__text--paragraph">Project:   Epic - Battles on Foreign Lands</p>
-                            <p class="view__text--paragraph">Copyright:   May4, 2021, - Title 17 Copyright</p>
-                            <p class="view__text--paragraph">Reality:   Formatted (12 ep. arc /self-cont.</p>
-                            <p class="view__text--paragraph">Option/Acquisition:   Negotiable/$225,000</p>
-                        </div>
-
-                        <div class="view__text--image">
-                            <img src="img/war.jpg" alt="card-pic" class="view__img" height="200rem" width="350rem">
-                        </div>
-                    </div>
-
-                    <p class="view__paragraph">
-                        Synopsis: A group of 50 individuals are divided into two troops having 25 members. 
-                        One troop will compete as Roman soldiers and one as Celtic Gauls. A diverse inclusion
-                        of lawless scenarios and unique elements to overcome, are created to maintain a high 
-                        level of interest. The arms utilized in this reality will include life like 
-                        BattleSafeWeaponry and antiquated paintball pistols. They represent the most advance
-                        and best likeness to authentic arms. 
-
-                            <div class="view__text--parag-1">
-                                <p class="view__text--paragraph">Chest Armor – BattleSafeWeaponry gear with faux blood detection capsule insert</p>
-                                <p class="view__text--paragraph">The capsule explodes when adequately pierced by enemy gladius</p>
-                                <p class="view__text--paragraph">Battle Axes and Gladius Weaponry – Non-Injury BattleSafeWeaponry</p>
-                                <p class="view__text--paragraph">Semi-rigid plastic gladius replicas to pierce chest armor blood capsule</p>
-                                <p class="view__text--paragraph">Paintball Revolvers – Antique Models T4E Umarex TR 50 Caliber</p>
-                            </div>
-
-                        
-                        
-                        
-                        
-
-                        The Roman leader, Centurion is suited in full battle gear with suit, shield, battle axe 
-                        and pistol. He charges forward to lead his Legionaries to a faceoff with the infamous 
-                        Celtics Gauls. The Legionaries are suited in full Roman battle costuming consisting of 
-                        red plumed head gear with neck protective armor and their weaponry includes a gladius, 
-                        shield and pistol. The Celtic Gauls have long hair that is treated with a white paste 
-                        that hardens when dry. They are clothed in leather sandals and long knee-high tunics, 
-                        with neck armor and leather caps. They too have shields, gladius and pistols.
-
-                        Both armies have a chest guards with gladius red strike ball detection inserts. 
-                        When the opposition strikes the red capsule insert with the gladius a deep red substance 
-                        (dyed seltzer water) gushes out with an obvious display of being penetrated. 
-                        Program referees will detect the gush of faux blood and declare the warrior dead.  
-
-                        </p>
-
-                        <p>
-                        <h3 class="heading-secondary"> Battle Guidelines</h3>
-
-                        The Host offers an explanation of the season’s format and rules of the competition. 
-                        During the first three minutes of man-to-man combat the battle is limited to the use 
-                        of the gladius. Therefore, simulating real battles as they occurred.  During the contest 
-                        Soldiers and Gauls who battle among the smoldering ruins are limited to 30 seconds at any 
-                        given position. This rule is to promote continuous movement during the contest. 
-
-                        Program referees are positioned to quickly identify fallen Soldiers and Gauls.  
-                        At the point when either the Roman Soldiers of Celtic Gauls encounter a loss of 15 of their
-                        25 troops, they are declared the looser in the competition.  After a final count of fallen 
-                        warriors is confirmed the winning team is announced. During a break, Romans and Celtics reunite. 
-                        The winning troop’s leader stands above his troops and declares victory in the battle. 
-                        They are seen drinking and boasting without regard to the demise of the fallen enemy.  
-
-                        In only the finale, competition begins with the usual number of troops, however as Soldiers and 
-                        Gauls are terminated Reserve Replacements may enter at the time of death. Reserves are limited 
-                        to three individuals and prospects may be purged from contestants of battles already eliminated 
-                        in previous episodes.   
-                                            
-                        <h3 class="view__header"> The Battle and Game Time Scenario</h3>
-
-                        <h5>Episode 1- A Mission to Kill</h5> 
-
-                        <h5>Troops compete in a real battle</h5>
-
-                        At the commencement, a Roman Centurion stands over his troop of Legions and shouts his command 
-                        to advance upon enemy Celtic Gauls. They are seen burning and destroying a Roman settlement and 
-                        a battle-built chariot. The Legions chant and wield their gladius with approval. Both troops 
-                        muscle-up and prepare for battle. 
-
-                        In the opening moments the Soldiers and Gauls are seen charging toward each other and wielding 
-                        their gladius. Contact is made and a great battle ensues. Within a few moments the troops exchange 
-                        deadly stab wounds as witnessed by the sudden gush of blood flowing from their chest armor. 
-                        Five Roman Soldiers and five Celtic Gauls have fallen. The slashing and probing of the gladius 
-                        weaponry come to an abrupt halt as the distinct cracking sound of cannon fire is heard nearby. 
-
-                        Fire and smoke permeate the scene as 10 Roman Soldiers and 10 Celtic Gauls scatter to find 
-                        sheltered positions. As the smoke begins to settle the troops can be seen taking positions 
-                        among the burning ruins. With the exception of the fallen troops that perished during the 
-                        initial man-to-man combat, the remaining 10 from each troop remain on the front lines and 
-                        continue to battle in a man-to-man combat. 
-                        </p>
-
-                        <p>
-                        Soldiers and Gauls are seen in a shoot-out at the site of the burning chariot. Others duel 
-                        among the stone walls and towers. A partly destroyed stone wall is shelter to a trio of troops. 
-                        In an open field, Soldiers and Gauls brave their exposure in a shoot-out.  
-
-                        Back to the front lines, the 20 opposing troops continue to weild their gladius and attempt to 
-                        pierce the rival’s chest armor blood capsule. Soldiers and Gauls are falling in this highly 
-                        contested battle.  
-
-                        Program referees are quick to identify fallen Soldiers and Gauls.  On the front lines 9 of the 
-                        15 Roman Soldiers have perished and 11of the 15 Celtic Gauls have perished. Back to the battle 
-                        at the ruins, a count of 3 Roman Soldiers have perished and 3 Celtic Gauls have perished. 
-
-                        <p class="view__text--paragraph"> Score; 12 Dead Romans </p>
-                        <p class="view__text--paragraph"> 14 Dead Celtics </p>             
-                        <p>
-                        Reminder: At the point when either the Roman Soldiers of Celtic Gauls encounter a total loss of 
-                        15 troops they are declared the looser in the competition.
-                        <p>
-
-                        Battles continue with the Celtics just one death away from losing it all. Can the Romans hold on 
-                        from seeing three of their soldiers perish before witnessing one more Celtic death.
-
-                        The battle ends when the next Gaul receives a death blow to the chest. Blood gushes from the blood 
-                        capsule and there is no question that the Celtic Gaul has been killed.
-                        
-                        After a final count of fallen warriors, it becomes clear that the Roman Soldiers have prevailed. 
-                        During a break, Romans and Celtics reunite. The Roman Centurian stands above his troops and declares 
-                        the Romans victory. Drinking and boasting of their triumph is so annoying to the defeated Celtics.  
-
-                        Having prevailed, the Romans are confident in winning their next battle in Week 2.
-
-
-                        <h4 class="space-me">Progressive Path and Eliminations</h4>
-
-                        <p>At the beginning of the season a total 200 men and women will be qualified. These 200 individuals 
-                        comprise eight battle units having 25 men/women members.</p> 
-
-                        <h5 class="space-me">Weeks 1 and 2 - Round 1 Troops battle to prevail</h5>
-                        <p>    
-                        The Week 1 winner and loser compete again in Week 2
-                        If a team wins both weeks that team automatically advances to the semi-final
-                        If both teams claim a victory in Weeks 1 and 2 a Sudden Death shoot-out is employed to declare a 
-                        winner
-                        Both teams have their best shooter go head-to-head in a 5-target contest. The team, who’s shooter 
-                        scores the highest combined number wins
-                        This team advances to Week 9 semi-final.
-                        </p>
-
-                        <h5 class="space-me">Weeks 3 and 4 – Round 2 Troops battle to prevail</h5>
-                        <p>The Week 3 winner and loser compete again in Week 4
-                        If a team wins both weeks that team automatically advances to semi-fina
-                        </p>
-
-                        If both teams claim a victory in Weeks 3 and 4 a Sudden Death shoot-out is employed to declare a winner
-                        Both teams have their best sharp shooter go head-to-head in a 5-target contest. The team, who’s 
-                        shooter scores the highest combined number wins
-                        This team advances to Week 9 semi-final.
-
-                        <h5 class="space-me">Weeks 5 and 6 – Round 3 Troops battle to prevail</h5>
-                        The Week 5 winner and loser compete again in Week 6
-                        If a team wins both weeks that team automatically advances to the semi-final
-                        If both teams claim a victory in Weeks 5 and 6 a Sudden Death shoot-out is employed to declare a winner
-                        Both teams have their best sharp shooter go head-to-head in a 5-target contest. The team, 
-                        who’s shooter scores the highest combined number wins
-                        This team advances to Week 10 semi-final.
-
-                        <h5 class="space-me">Weeks 7 and 8 – Round 4 Troops battle to prevail</h5>
-                        The Week 7 winner and loser compete again in Week 8
-                        If a team wins both weeks that team automatically advances to the semi-final
-                        If both teams claim a victory in weeks 7 and 8 a Sudden Death shoot-out is employed to declare a winner
-                        Both teams have their best sharp shooter go head-to-head in a 5-target contest. The team, 
-                        who’s shooter scores the highest combined number wins
-                        This team advances to Week10 semi-final.
-
-
-
-                        <h5 class="space-me">Week 9 Semi-Finals include the winning troops from Weeks 2 and 4</h5> 
-                        This one-week episode follows the same format of previous weeks competition with the exception that this 
-                        one-week semi-final concludes with the winning team advancing to the Weeks 11& 12 Finale.
-
-
-                        <h5 class="space-me">Week 10 Semi-Finals include the winning troops from week 6 and 8</h5> 
-                        This one-week episode follows the same format of previous weeks competition with the exception that this 
-                        one-week semi-final concludes with the winning team advancing to the Weeks 11& 12 Finale.
-
-                        <h5 class="space-me">Weeks 11 & 12 Finale – Follows the same format of previous two-week eliminations.</h5>
-                        Either there will be one team to claim victory in both weeks or in the case of both teams winning in 
-                        separate weeks requiring a Sudden Death shoot-out, a winning team will be declared in this season finale.
-
-                        <ol class="space-me">
-                            <h3>Alternative Roman Battles</h3> 
-                        
-
-                            <li>Protect Cesar from assignation</li>
-                            <li>Secure the kingdom from invasion</li>  
-                            <li>Roman soldier’s mission to recover a tortured soldier</li>
-                            <li>Protect Lady Godiva in route to </li>
-                            <li>Identify and capture suspected Roman double-crosser</li>
-                            <li>Secure transport of traitor to stand before Cesar</li> 
-                            <li>Recover a stolen cache of gold medallions and</li> 
-                        </ol>
- 
-                        <ul class="space-me">
-                            <h3>Future Seasons</h3> 
+            <section class="row my-4 p-2 movie-dets">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="d-flex justify-content-center">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-12 col-sm-12 p-5">
+                            <h1 class="movie-header pt-2">
+                                Title
+                            </h1>
                             
-                            <li>Viking Warriors of 11th Century: Dane Warriors vs. Norseman in Europe raids on Christian lands</li>  
-                            <li>Egyptian 16th Century: Army Rangers known as the Medjay Clan battle Nomadic Desert Guardsmen or the Royal family battle with Commandos</li>
-                            <li>Greek Battle of Salamis 480 BC with the infamous Persian Fleet</li>
-                            <li>Alexander the Great battles 330 BC with Persian King Darius the 3rd </li>
-                            <li>Persian invasion of Marathon 490 BC vs. the Greeks</li> 
-                            <li>Aztecs 15th Century Jaguars battle for territory</li> 
-                            <li>Privateers and Corsairs at war to seize French ships</li> 
-                            <li>Pirates 18th. Century in battle to seize merchant ships</li>
-                            <li>Raiders and Buccaneers 17th and 18th Century</li>
-                        </ul>
-                    </p>
+                            <p class="movie-title mt-3">
+                                <?= isset($movie_data['movie_title']) ? $movie_data['movie_title'] : 'Epic - Battles of Foreign Lands (Proposed filming in the US)' ?>                                    
+                            </p>
+                        
+                        </div> 
 
-                </div>
+                        <div class="col-lg-9 col-md-12 col-sm-12 mb-5">
+                            <div class="logline p-2">
+                                <h3 class="logline-header">
+                                    Logline
+                                    <hr>
+                                </h3>
 
-                <div class="registration-divi__btn">
-                    <a href="signup.php" class="butn butn--white">Register</a>
-                </div>
+                                <p class="logline-para">
+
+
+                                <?= isset($movie_data['logline']) ? $movie_data['logline'] : 'A troop of 30 Roman Soldiers are led to battle against 30 Celti Gauls in this historically
+                                                                                                significant encounter that occured, circa 525 BC. Among the destruction and burning ruins of a
+                                                                                                Roman settlement, the Celtics are observed boasting until they see a troop of Roman Soldiers
+                                                                                                charging at them. Combat is certain snd an Epic Battle of revenge ensues. A man-to-man clash of
+                                                                                                soldiers wielding gladius type weaponry soon intensifies as antiquated pistols are drawn. In the end
+                                                                                                either the Roman Soldiers or Celtic Gauls, will be declared victorious, and advance to battle again.
+                                                                                                <b>Note:</b> Proprietary "BattleSafeWeaponry" is specially designed to insure non-injury conflicts)
+                                                                                                ' 
+                                ?>
+                                
+                                </p>
+
+                                
+
+                            </div> 
+                        </div>
+                                                
+                    </div>
                 
-            </section>    
-        </main>
+                </div>
+            
+            </div>
+
+
+            <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
+                
+                    <div class="row">
+                        <div class="col-lg-7 col-md-12 col-sm-12">
+                            <ul class="features p-2">
+
+                                <li class="features-list" >
+                                    <span class="features-title">
+                                        Proposal:
+                                    </span>
+
+                                    <span class="features-detail">
+                                    <?= isset($movie_data['movie_title']) ? $movie_data['movie_title'] : 'Epic - Battles on Foreign Lands [in the US]' ?>
+                                    
+                                    </span>
+
+
+                                </li>
+
+
+                                <li class="features-list" >
+                                    <span class="features-title">
+                                        Copyright:
+                                    </span>
+
+                                    <span class="features-detail">
+                                    <?= isset($movie_data['copyright']) ? $movie_data['copyright'] : 'US Copywright Office Title 17 - April 27, 2021' ?>
+                                    
+                                    </span>
+
+
+                                </li>
+
+
+                                <li class="features-list" >
+                                    <span class="features-title">
+                                        Reality:
+                                    </span>
+
+                                    <span class="features-detail">
+                                    <?= isset($movie_data['reality']) ? $movie_data['reality'] : 'Unscripted Format/12-episodes arc series' ?>
+                                    
+                                    </span>
+
+
+                                </li>
+
+                                <li class="features-list" >
+                                    <span class="features-title">
+                                        Option/Acquisition:
+                                    </span>
+
+                                    <span class="features-detail">
+                                    <?= isset($movie_data['acquisition']) ? $movie_data['acquisition'] : 'Negotiable/$300,000' ?>
+                                    
+                                    </span>
+
+
+                                </li>
+
+                                
+                            </ul> 
+                        </div>
+
+                        <div class="col-lg-5 col-md-12 col-sm-6">
+                            <img src="img/uploads/<?= $movie_data['movie_pic'] ?>" width="80%">
+                        </div>
+                                                
+                    </div>
+                
+            
+            </div>     
+            
+            <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
+                <div class="synopsis p-2">
+                    <h3 class="logline-header">
+                        Synopsis
+                        <hr>
+                    </h3>
+
+                    <div class="synopsis_content zilla">
+                        <?= $movie_data['synopsis'] ?>
+                    </div>
+                </div>
+            </div>
+
+        </section>       
 
         <?php 
 
-        require "scripts/footer.php";
+        require "scripts/footer_two.php";
 
         }else{
-        header("Location: signup.php");
+        header("Location: login.php");
         }
 
 

@@ -2,7 +2,10 @@
 require "scripts/functions.php";
 require "scripts/header.php"; 
 
+//var_dump($_SESSION);
 ?>
+
+<?php get_message("error"); get_message('success') ?>
                             <div class="header">
                                 <div class="header__text-box">
                                     <h1 class="heading-primary">

@@ -189,11 +189,11 @@ function log_in_user($email, $password){
         user_session($user_details);
         $date = date("Y/m/d h:i:s");
         $updateUser = mysqli_query($link, "update realtv_users set last_logged_in = '$date', online = '1' where id = '$userid'");
+        header('Location: index.php');
 
         set_message("success", "Login Success"); 
-        echo "Yes";
     }else {
-        return false;
+        set_message('error', 'Invalid login details');
     }
 }
 
