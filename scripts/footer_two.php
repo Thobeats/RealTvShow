@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-lg-5 col-md-12 col-sm-12">
         <div class="d-flex justify-content-center">
-            <img src="img/logo.png" alt="logo" id="footer-logo" width = "400px" height="150px">
+            <img src="../img/logo.png" alt="logo" id="footer-logo" width = "400px" height="150px">
         </div>   
     </div>
 

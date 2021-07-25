@@ -118,7 +118,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div id="logo" class="d-flex justify-content-center">
-                        <img src="img/logo.png" alt="logo" width = "243px" height="90px">
+                        <img src="../img/logo.png" alt="logo" width = "243px" height="90px">
                     </div>
                 </div>
             </div>

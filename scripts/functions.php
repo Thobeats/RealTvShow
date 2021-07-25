@@ -145,6 +145,7 @@ function register_new_user($firstname, $surname, $email, $password, $role_id){
     $encode_password = utf8_encode($password);
     $token = md5($email); $encode_token = utf8_encode($token);
     $fullname = strtoupper($firstname) . " " . $surname;
+    $email = strtolower($email);
 
     // Database connection
     $link = connect();   
@@ -178,6 +179,7 @@ function register_new_user($firstname, $surname, $email, $password, $role_id){
 
 function log_in_user($email, $password){
     $password = utf8_encode(md5($password));
+    $email = strtolower($email);
 
     $link = connect();
 

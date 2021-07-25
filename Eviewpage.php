@@ -22,7 +22,7 @@
 
 <style>
 .project{
-    background-image: url(img/shoot2.jpg);
+    background-image: url(../img/shoot2.jpg);
     height: 100vh;
     background-size : cover;
     background-position : top left;

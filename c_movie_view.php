@@ -16,7 +16,7 @@ if(isset($_GET['id'])){
 
 <style>
 .cover-image{
-    background-image: url(img/Onboard1.jpg);
+    background-image: url(../img/Onboard1.jpg);
     height: 100vh;
     background-size : cover;
     background-position : top left;
@@ -221,7 +221,7 @@ if(isset($_GET['id'])){
                 <p class="mr-auto ml-auto">cache of unique formats & talent</p>                  
             </div>
         </section>
-
+        
         <section class="row my-4 p-2 movie-dets">
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="d-flex justify-content-center">
