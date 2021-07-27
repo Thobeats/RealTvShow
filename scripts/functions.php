@@ -198,6 +198,24 @@ function log_in_user($email, $password){
         set_message('error', 'Invalid login details');
     }
 }
+ 
+function check_order($order_id){
+
+    $order_id = trim($order_id);
+
+    $link = connect();
+
+    $order = mysqli_query($link, "select * from realtv_reg where `orderID` = '$order_id'");
+
+    $num_row = $order_id->num_rows;
+
+    if($num_row == 1){
+        return 1;
+    }else {
+        return 0;
+    }
+}
+
 
 function handle_image($image){
 

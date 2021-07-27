@@ -16,7 +16,7 @@ if(isset($_GET['id'])){
 
 <style>
 .cover-image{
-    background-image: url(../img/Onboard1.jpg);
+    background-image: url(img/Onboard1.jpg);
     height: 100vh;
     background-size : cover;
     background-position : top left;

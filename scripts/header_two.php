@@ -86,7 +86,7 @@
 
     @media only screen and (max-width: 768px) {
         body{
-            width: 100%;
+            width: 100vw;
             overflow-x : hidden !important;          
         }
 
