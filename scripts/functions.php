@@ -56,7 +56,7 @@ function get_message($type){
         echo "<script>$toastr</script>";
 
 
-        unset($_SESSION[$type]);
+      unset($_SESSION[$type]);
     }
 }
 
@@ -139,7 +139,7 @@ function user_session($array){
     }
 }
 
-function register_new_user($firstname, $surname, $email, $password, $role_id){
+function register_new_user($firstname, $surname, $email, $password, $role_id, $reg=null){
 
     $password = md5($password);
     $encode_password = utf8_encode($password);
@@ -158,8 +158,8 @@ function register_new_user($firstname, $surname, $email, $password, $role_id){
         return false;
     }
 
-    $query = mysqli_query($link, "INSERT INTO `realtv_users`(`firstname`,`lastname`,`fullname`,`username`,`status`, `role_id`,`email`,`password`,`activated`, `token`) VALUES ('$firstname','$surname','$fullname','$email','Active',
-                                 '$role_id','$email','$encode_password','0', '$encode_token')");
+    $query = mysqli_query($link, "INSERT INTO `realtv_users`(`firstname`,`lastname`,`fullname`,`username`,`status`, `role_id`,`email`,`password`,`activated`, `token`,`reg_ref`) VALUES ('$firstname','$surname','$fullname','$email','Active',
+                                 '$role_id','$email','$encode_password','0', '$encode_token', '$reg')");
 
     if($query){
         $body = "<div style='padding: 5px; text-transform: capitalize;'>";
@@ -207,10 +207,10 @@ function check_order($order_id){
 
     $order = mysqli_query($link, "select * from realtv_reg where `orderID` = '$order_id'");
 
-    $num_row = $order_id->num_rows;
+    $num_row = $order->num_rows;
 
     if($num_row == 1){
-        return 1;
+        return mysqli_fetch_assoc($order)['id'];
     }else {
         return 0;
     }
