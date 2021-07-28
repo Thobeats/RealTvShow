@@ -1,6 +1,7 @@
 .billboard {
     position: relative;
     display: block;
+    padding: 0 5rem;
 
     &__group {
       position: absolute;
@@ -9,8 +10,8 @@
 
     &__paragraph {
         color: $color-white;
-        font-family: Poppins;
-        width: 65rem;
+        font-family: POPPINS;
+        width: 80rem;
         font-size: 3rem;
         font-weight: 700;
         padding: 3rem .1rem;
@@ -26,9 +27,11 @@
     &__img {
         float: right;
         height: max-height;
+        overflow: hidden;
         // padding-top: 5rem;
-        right: 15rem;
+        right: 10rem;
         position: absolute;
+        display: block;
         width: 25rem;
         
     }

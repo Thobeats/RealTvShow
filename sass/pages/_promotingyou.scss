@@ -1,0 +1,132 @@
+.buttons-promoter {
+    position: relative;
+   
+
+    &-you {
+        width: 31%;
+        margin: .2rem 0;
+        display: block;
+        position: absolute;
+        top: 50rem;
+        left: 1rem;
+
+        animation: moveInRight 1s ease-out;
+
+        &-2 {
+            animation: moveInRight 2s ease-out;
+        }
+        &-3 {
+            animation: moveInRight 3s ease-out;
+        }
+        &-4 {
+            animation: moveInRight 4s ease-out;
+        }
+        &-5 {
+            animation: moveInRight 5s ease-out;
+        }
+        &-6 {
+            animation: moveInRight 6s ease-out;
+        }
+        &-7 {
+            animation: moveInBottom 6s ease-out;
+        }
+    }
+}
+
+.register-buttons-you {
+    width: 20rem;
+    margin: 5rem 55rem;
+
+    &-0 {
+        animation: moveInBottom 3s ease-out;
+    }
+}
+
+.register-butt-you {
+    width: 60rem;
+    padding: 0 3rem;
+    margin: 5rem 35rem;
+
+    &-0 {
+        animation: moveInBottom 3s ease-out;
+    }
+}
+
+.promote__paragraph {
+    font-size: 1.5rem;
+    padding: 0 2rem;
+}
+
+.pitch--div {
+    display: flex;
+    padding: 2rem;
+
+    &__paragraph {
+        width: 75rem;
+        padding: 2rem;
+    }
+
+    &__img {
+
+    }
+}
+
+.promote--div {
+    display: flex;
+    margin: 2rem 5rem;
+
+    &__paragraph {
+        width: 75rem;
+        padding: 1rem;
+
+        &-2 {
+            width: 75rem;
+            padding: 2rem;
+        }
+    }
+}
+
+.pitch-paintme  {
+    color: $color-secondary-light;
+}
+
+.paintme {
+    color: red;
+}
+
+.paintmeblue {
+    color: $color-secondary-light;
+    text-decoration: underline;
+}
+
+.sample {
+    display: block;
+
+    &-group {
+
+        &--1 {
+            display: flex;
+            justify-content: space-between;
+            padding: 2rem;
+            font-size: 2rem;
+        }
+
+        &--2 {
+            display: flex;
+            justify-content: space-between;
+            padding: 2rem;
+            font-size: 2rem;
+        }
+
+        &--3 {
+            display: flex;
+            justify-content: space-between;
+            padding: 2rem;
+            font-size: 2rem;
+        }
+
+        &--img {
+            padding: 2rem;
+        }
+    }
+}

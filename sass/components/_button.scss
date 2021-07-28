@@ -4,11 +4,12 @@
       &:link,
       &:visited
       {
-          padding: .8rem .5rem;
-          // background-color: $color-primary;
+          padding: .7rem 1.5rem .7rem 1.5rem ;
+          background-color: $color-primary-dark;
           color: $color-white;
+          text-align: center;
           display: inline-block;
-          font-size: 1.2rem;
+          font-size: 1.5rem;
           border: 2px solid $color-white;
           border-radius: .5rem;
           transition: all .2s;
@@ -257,4 +258,26 @@
     .butn--animated {
       animation: moveInBottom .5s ease-out .75s;
       animation-fill-mode: backwards;
+    }
+
+
+    .btn-inline {
+      border: none;
+      color: $color-secondary;
+      font-size: inherit;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 2px;
+      display: inline-block;
+      background-color: transparent;
+      cursor: pointer;
+      transition: all .2s;
+
+      &:hover {
+        color: $color-grey-dark;
+      }
+
+      &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
+      }
     }
