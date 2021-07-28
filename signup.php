@@ -1,95 +1,244 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+<?php 
+require_once "scripts/functions.php";
+//$link = connect();
 
-        <link rel="stylesheet" href="css/icon-font.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="sass/main.scss">
-        <link rel="shortcut icon" type="image.png" href="img/logo.png">
 
-        <script type="text/javascript" src="js/reality.js"></script>
+// handle register
+if(isset($_POST['register'])){
+  $firstname = trim($_POST['firstname']);
+  $lastname = trim($_POST['lastname']);
+  $email = $_POST['email'];
+  $password = trim($_POST['password']);
+  $role = $_POST['role'];
+  $order_id = trim($_POST['order']);
 
-        <title> RealityTV | RealityTVregistry.com</title>
 
-    </head>
-    <body>
-      <main>
-          <div class="signup__container">
 
-              <div class="signup__logo">
-                  <div class="section-one">
-                      <img src="img/logo.png" alt="Logo" class="signup__logo-box" height="75rem" width="180rem">
-                  </div>
-              </div>
-            <form>
-                <div class="section-two">
-                    <p class="signup__container--text">Sign Up</p>
-                  <div class="social-links">
-                    <div class="signup__container--facebook">
-                      <span> SIGNUP WITH GOOGLE </span>
-                        <!-- <svg class="signup__container--icon">
-                            <use xlink:href="img/sprite.svg#icon-facebook2"></use>  
-                        </svg>  -->
-                      <div class="signup__container--icon">
-                        <img class="signup__container--image" src="svgs/google.svg" alt="" />
-                      </div>
-                    </div>
-                    <div class="signup__container--twitter">
-                      <div class="signup__container--icon">
-                        <img class="signup__container--image" src="svgs/linkedin.svg" alt="" srcset="" />
-                      </div> 
-                      <!-- <svg class="signup__container--icon">
-                            <use xlink:href="img/sprite.svg#icon-twitter1"></use>
-                        </svg>  -->
-                      <span> SIGNUP WITH LINKEDIN </span> 
-                    </div>
-                  </div>
-                  <div class="main__form">
-                    <div class="main__form--input">
-                        <input class="main__form--input-1" type="firstname" name="firstname" placeholder="First Name" required/>
-                        <input class="main__form--input-1" type="lastname" name="lastname" placeholder="Last Name" required/>
-                    </div>
+  if($role == '1'){
+    $check_order = check_order($order_id);
 
-                    <div class="main__form--input">
-                        <input class="main__form--input-1" type="email" name="email" placeholder="Email" required/>
-                        
-                        <select class="main__form--input-1" name="role" id="" required>
-                          <option value="00000">Select Role</option>
-                          <option value="3">Contestant</option>
-                          <option value="2">Script Writer</option>
-                          <option value="1">Executive</option>
-                        </select>
-                    </div>
-                    <input class="main__form--input-1 main__form--input-1-1" id="pass" type="password" name="password" placeholder="Password" required/>
-                    <input class="main__form--input-1 main__form--input-1-1" id="pass"  type="password" name="password" placeholder="Confirm Password" required/>
+    if($check_order == 0){
+      set_message("error", 'Order ID not found');
+    }else {
+      register_new_user($firstname, $lastname, $email, $password, $role, $check_order);     
+    }
+  }else{
 
-                    <div class="signup__container--checkbox">
-                        <div class="signup__container--checkbox-1">
-                            <label> <input class="checkbox" type="checkbox" checked="checked" name="remember"> Agree to Terms and Conditions </label>
-                        </div>
-                    </div>
+   register_new_user($firstname, $lastname, $email, $password, $role);
 
-                    <!-- <p class="signup__container--text-1">By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p> -->
-                    <div class="signup__container--login">
-                      <p class="signup__container--1">Already have an account?<a href="login.php" class="signup__container--1-1">Login</a></p>
-                    </div>
-                    <div class="signup__button">
-                      <div>
-                        <button class="signup__button-1"><a href="Confirm.php">Register</a></button>
-                      </div>
-                      <div>
-                        <button><a href=index.php>Cancel</a></button>
-                      </div>
-                    </div>
-                  </div>
+  }
+}
+
+
+require "scripts/header_two.php";
+
+?>
+
+    <?php get_message("error"); get_message('success'); ?>
+     <style>
+
+       *{
+         font-family: 'Poppins', serif;
+       }
+      
+       .order{
+         display : none;
+       }
+
+       .show{
+         display : block;
+       }
+
+       form{
+         width : 60%;
+       }
+
+        @media only screen and (max-width: 768px) {
+          form{
+              width : 70%;
+            }
+
+        }    
+
+    @media only screen and (max-width: 425px) {
+      form{
+         width : 100%;
+       }
+
+      .btn{
+        width : 100%;
+      }
+
+    }
+
+
+     </style>
+
+    <div>
+
+    <div class="row mt-5 ">
+      <div class="col-12 text-center">
+        <h3>Sign Up</h3>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-12">
+        <div class="d-flex justify-content-center">
+          <form action="" class="p-3" method="POST">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="form-group">
+                  <label for="firstname">First Name</label>
+                  <input type="text" class="form-control" name="firstname" required>
                 </div>
               </div>
-            </form>
-          </div>
-      </main>
-  </body>
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="form-group">
+                  <label for="lastname">Last Name</label>
+                  <input type="text" class="form-control" name="lastname" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" name="email" required>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="form-group">
+                  <label for="role">Role</label>
+                  <select name="role" id="" class="form-control role" required>
+                    <option>Select Role</option>
+                    <?php 
+                      $roleq = mysqli_query($link, "select * from realtv_roles");  
+
+                      while($role = mysqli_fetch_assoc($roleq)):
+                    
+                    ?>
+
+                        <option value="<?= $role['id'] ?>"><?= ucfirst($role['role_name']) ?></option>
+
+                    <?php endwhile; ?>                   
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="row order">
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="order">Enter Your Order ID</label>
+                  <input type="text" class="form-control" name="order" required>
+                </div>
+              </div>           
+            </div>
+
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="password" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="form-group">
+                  <label for="cpassword">Confirm Password</label>
+                  <input type="password" class="form-control cpassword" name="cpassword" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <div class="d-flex justify-content-center form-check form-check-inline">
+                    <input type="checkbox" class="form-check-input check" id="inlineCheckbox1" required> <label class="form-check-label" for="inlineCheckbox1">Agree to Terms and Conditions</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row my-4">
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="d-flex justify-content-center ">
+                  <button class="btn btn-lg btn-warning button" name="register" disabled="true">Sign Up</button>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="d-flex justify-content-center my-2">
+                  <a href="index.php" class="btn btn-lg btn-danger">Cancel</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <div class="d-flex justify-content-center">
+                    <p>Already have an account?  <a href="login.php" style="color: #004883; ">Login</a></p>
+                </div>
+              </div>
+            </div>
+            
+            
+
+
+
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+
+
+
+
+
+
+    </div>
+         
+
+    
+ 
+      <script>
+        let password = document.querySelector(".password");
+        let cpassword = document.querySelector(".cpassword");
+
+        password.addEventListener("blur", function(){
+          cpassword.value = password.value;
+        });
+
+
+        let role = document.querySelector(".role");
+        let order = document.querySelector(".order");
+        let button = document.querySelector(".button"); let checkbox = document.querySelector(".check");
+
+        role.addEventListener("change", function(){
+            if(this.value == "1"){
+              order.classList.add("show");
+            }else{
+              order.classList.remove("show");
+            }
+        });
+
+
+        checkbox.addEventListener('click', function(){
+          if(this.checked == true){
+            button.removeAttribute('disabled');
+
+          }else{
+            button.setAttribute('disabled', true);
+          }
+        });
+        
+
+        
+      
+      
+      </script>
+
+</body>
 </html>
