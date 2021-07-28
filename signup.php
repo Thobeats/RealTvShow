@@ -1,6 +1,6 @@
 <?php 
 require_once "scripts/functions.php";
-$link = connect();
+//$link = connect();
 
 
 // handle register
@@ -82,7 +82,7 @@ require "scripts/header_two.php";
       </div>
     </div>
 
-    <div class="row mt-5">
+    <div class="row mt-3">
       <div class="col-12">
         <div class="d-flex justify-content-center">
           <form action="" class="p-3" method="POST">
@@ -162,8 +162,8 @@ require "scripts/header_two.php";
 
             <div class="row">
               <div class="col-12">
-                <div class="d-flex justify-content-end">
-                  <button class="btn btn-warning btn-lg button" name="register" disabled="true">Sign Up</button>
+                <div class="d-flex justify-content-center my-2">
+                  <button class="btn btn-lg btn-warning button" name="register" disabled="true">Sign Up</button>
                 </div>
               </div>
             </div>
@@ -171,7 +171,7 @@ require "scripts/header_two.php";
             <div class="row">
               <div class="col-12">
                 <div class="d-flex justify-content-center">
-                    <p>Already have an account?  <a href="login.php">Login</a></p>
+                    <p>Already have an account?  <a href="login.php" style="color: #004883; ">Login</a></p>
                 </div>
               </div>
             </div>
