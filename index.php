@@ -6,14 +6,15 @@ require "scripts/header.php";
 ?>
 
 <?php get_message("error"); get_message('success') ?>
-                            <div class="header">
-                                <div class="header__text-box">
-                                    <h1 class="heading-primary">
-                                        <span class="heading-primary--main">Reality Tv</span>
-                                        <span class="heading-primary--sub">cache of unique formats & talent</span>
-                                    </h1>        
-                                </div>
-                            </div> 
+
+                <div class="header">
+                    <div class="header__text-box">
+                        <h1 class="heading-primary">
+                            <span class="heading-primary--main">Reality Tv</span>
+                            <span class="heading-primary--sub">cache of unique formats & talent</span>
+                        </h1>        
+                    </div>
+                </div> 
 
                 <section class="section-features">
                     <div class="row">
