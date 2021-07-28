@@ -5,7 +5,7 @@
     background-color: $color-grey-light-2;
     box-shadow: 0 2rem 6rem rgba(0,0,0,.3);
 
-    min-height: 90rem;
+    min-height: 100%;
 }
 
 .dash__logo{
@@ -118,10 +118,10 @@
 .writeup {
     background-color: $color-white;
     box-shadow: var($color-grey-light);
-    margin: 2rem 4.5rem;
+    margin: 2rem auto;
     padding: 3rem;
-    width: 90%;
-    height: 20rem;
+    width: 85%;
+    height: 30rem;
     position: relative;
     transform: skewX(20deg);
     overflow: hidden;
@@ -199,6 +199,149 @@
     &__movie-button-1 {
         padding-top: 1rem;
         padding-left: 9rem;
+    }
+
+    &__movie-button-3 {
+        align-content: center;
+        width: 60rem;
+        margin-top: 25rem;
+        margin-left: 18rem;
+    }
+
+    &__movie-button-2 {
+        align-self: center;
+        margin-bottom: 2rem;
+        margin-left: 35rem;
+
+    }
+
+    &::before {
+        content: "\201C";
+        position: absolute;
+        top: -2.75rem;
+        left: -1rem;
+        line-height: 1;
+        font-size: 15rem;
+        color: $color-grey-light-2;
+        font-family: sans-serif;
+        z-index: 1;
+    }
+
+}
+
+.privacy {
+    padding: 3rem;
+    
+}
+
+
+///////////////////////////////
+//////DRAWUP
+.user-drawup {
+    width: 100%;
+}
+
+.drawup {
+    background-color: $color-white;
+    box-shadow: var($color-grey-light);
+    margin: 2rem auto;
+    padding: 3rem;
+    width: 85%;
+    height: 100%;
+    position: relative;
+    transform: skewX(20deg);
+    overflow: hidden;
+
+    @include respond(phone){
+        transform: none;
+    }
+
+    &__main {
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+        transform: skewX(-20deg);
+
+        @include respond(phone){
+            transform: none;
+        }
+    }
+
+    &__main-button {
+        width: 25rem;
+        align-items: center;
+        text-transform: uppercase;
+    }
+
+    &__movie {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transform: skewX(-10deg);
+
+        @include respond(phone){
+            transform: none;
+            justify-content: space-evenly;
+        }
+    }
+
+    &__text {
+        width: 55rem;
+        padding-top: 1rem;
+    }
+
+    &__photo {
+        height: 9.5rem;
+        width: 18.5rem;
+        padding-top: 1rem;
+        padding-right: 1rem;
+        border-radius: 10%;
+        z-index: 10;
+        position: relative;
+    }
+
+    &__movie-box {
+        padding-top: 1rem;
+        padding-right: 13rem;
+    }
+
+    &__movie-nom {
+        font-size: 1.5rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+    }
+
+    &__movie-date {
+        font-size: 1.3rem;
+        color: $color-grey-dark;
+    }
+
+    &__movie-icon {
+        padding-top: 1rem;
+        padding-left: 5rem;
+
+    }
+
+    &__icon-box {
+        padding: 1rem;
+        align-items: center;
+        position: relative;
+    }
+
+    &__icon {
+        height: 2.25rem;
+        width: 2.25rem;
+        fill: $color-secondary-light;
+    }
+
+    &__movie-button-1 {
+        padding-top: 1rem;
+        padding-left: 9rem;
+
+        @include respond(phone){
+            padding-left: .5rem;
+        }
     }
 
     &__movie-button-3 {

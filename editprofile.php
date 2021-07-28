@@ -66,6 +66,53 @@
                                                 All rights reserved.
                                             </div>
                                 </nav> 
+
+                                <section>
+
+                    <div class="registration-divid">
+                        <div class="registration-divi--sub">
+                            <label for="registration-divi__text">First Name</label>
+                            <input class="registration-divi__input-1-1" type="First Name" name="First Name" placeholder="First Name" required/>
+                            <label for="registration-divi__text">Last Name</label>
+                            <input class="registration-divi__input-1-2" type="Last Name" name="Last Name" placeholder="Last Name" required/>
+                        </div>
+                        <div class="registration-divi--sub">
+                            <label for="registration-divi__text">Username</label>
+                            <input class="registration-divi__input-1-3" type="Username" name="Username" placeholder="Username" required/>
+                            <label for="registration-divi__text">Password</label>
+                            <input class="registration-divi__input-1-4" id="pass" type="password" name="password" placeholder="Password" required/>
+                        </div>
+                            <label for="registration-divi__text">Email Address</label>
+                            <textarea class="registration-divi__input-2" id="textarea"></textarea>
+                        <div class="registration-divi--sub">
+                            <label for="registration-divi__text">Nationality</label>
+                            <input class="registration-divi__input-1-5" type="Phone Number" name="Phone Number" placeholder="Phone Number" required/>
+                            <label for="registration-divi__text">Address</label>
+                            <input class="registration-divi__input-1-6" type="Address" name="Address" placeholder="Address" required/>
+                        </div>  
+
+                        <div class="registration-divi--sub">
+                            <label for="registration-divi__text">Phone Number</label>
+                            <input class="registration-divi__input-1-7" id="text-input" type="text" />
+                            <label for="registration-divi__text">Instagram</label>
+                            <input class="registration-divi__input-1-8" id="text-input" type="text" />
+                        </div>
+
+                        <div class="registration-divi--sub">
+                            <label for="registration-divi__text">Twitter</label>
+                            <input class="registration-divi__input-1-7" id="text-input" type="text" />
+                            <label for="registration-divi__text">Facebook</label>
+                            <input class="registration-divi__input-1-8" id="text-input" type="text" />
+                        </div>
+
+                        <div class="registration-divi__btn">
+                            <a href="signup.php" class="btn btn--white">Submit</a>
+                        </div> 
+                    </div>
+                </div>
+            </section>           
+        </main>
+
                             </div>
                         </div>
                 </div> 

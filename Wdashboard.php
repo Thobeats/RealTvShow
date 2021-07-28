@@ -129,42 +129,42 @@
 
 
                         <main class="user-view">
-                            <figure class="user-writeup">
-                                <figure class="writeup">
-                                    <div class="writeup__main">
-                                        <img src="img/scene1.jpg" alt="" class="writeup__photo">
-                                        <blockquote class="writeup__text">
+                            <figure class="user-drawup">
+                                <figure class="drawup">
+                                    <div class="drawup__main">
+                                        <img src="img/scene1.jpg" alt="" class="drawup__photo">
+                                        <blockquote class="drawup__text">
                                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
                                             Vitae, tempore sapiente aspernatur blanditiis ea voluptas 
                                             quam architecto.
                                         </blockquote>
                                     </div>
-                                    <figcaption class="writeup__movie">
-                                        <div class="writeup__movie">
-                                            <div class="writeup__movie-box">
-                                                <p class="writeup__movie-nom">Sound Of Music</p>
-                                                <p class="writeup__movie-date">Date: July 1st, 2021</p>
+                                    <figcaption class="drawup__movie">
+                                        <div class="drawup__movie">
+                                            <div class="drawup__movie-box">
+                                                <p class="drawup__movie-nom">Sound Of Music</p>
+                                                <p class="drawup__movie-date">Date: July 1st, 2021</p>
                                             </div>
                                             
-                                            <div class="writeup__movie-icon">
-                                                <svg class="writeup__icon">
+                                            <div class="drawup__movie-icon">
+                                                <svg class="drawup__icon">
                                                     <use xlink:href="img/sprite.svg#icon-star"></use>
                                                 </svg>
-                                                <svg class="writeup__icon">
+                                                <svg class="drawup__icon">
                                                     <use xlink:href="img/sprite.svg#icon-star"></use>
                                                 </svg>
-                                                <svg class="writeup__icon">
+                                                <svg class="drawup__icon">
                                                     <use xlink:href="img/sprite.svg#icon-star-outlined"></use>
                                                 </svg>
-                                                <svg class="writeup__icon">
+                                                <svg class="drawup__icon">
                                                     <use xlink:href="img/sprite.svg#icon-star-outlined"></use>
                                                 </svg>
-                                                <svg class="writeup__icon">
+                                                <svg class="drawup__icon">
                                                     <use xlink:href="img/sprite.svg#icon-star-outlined"></use>
                                                 </svg>
                                             </div>
 
-                                            <div class="writeup__movie-button-1">
+                                            <div class="drawup__movie-button-1">
                                                 <a href="signup.php" class="btn btn--white">View</a>
                                                 <a href="signup.php" class="btn btn--white">Edit</a>
                                             </div>
@@ -173,7 +173,7 @@
                                 </figure>
                             </figure>
                             <div>
-                                <button class="btn-inline writeup__movie-button-2" href="signup.php">
+                                <button class="btn-inline drawup__movie-button-2" href="signup.php">
                                     Add Project<span>&rarr;</span>
                                 </button>
                             </div>
