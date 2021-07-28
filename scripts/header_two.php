@@ -124,7 +124,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div id="logo" class="d-flex justify-content-center">
-                        <a href="index.php"><img src="../img/logo.png" alt="logo" width = "243px" height="90px"></a>
+                        <a href="index.php"><img src="img/logo.png" alt="logo" width = "243px" height="90px"></a>
                     </div>
                 </div>
             </div>
