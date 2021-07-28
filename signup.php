@@ -65,7 +65,7 @@ require "scripts/header_two.php";
          width : 100%;
        }
 
-      button{
+      .btn{
         width : 100%;
       }
 
@@ -160,10 +160,15 @@ require "scripts/header_two.php";
               </div>
             </div>
 
-            <div class="row">
-              <div class="col-12">
-                <div class="d-flex justify-content-center my-2">
+            <div class="row my-4">
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="d-flex justify-content-center ">
                   <button class="btn btn-lg btn-warning button" name="register" disabled="true">Sign Up</button>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="d-flex justify-content-center my-2">
+                  <a href="index.php" class="btn btn-lg btn-danger">Cancel</a>
                 </div>
               </div>
             </div>

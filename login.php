@@ -73,7 +73,7 @@ button{
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="form-group">
-          <label for="email">Email</label>
+          <label for="email">E-mail</label>
           <input type="email" class="form-control" name="email" required>
         </div>
       </div>      
@@ -91,38 +91,35 @@ button{
      </div>
 
      <div class="row">
-       <div class="col-12">
+       <div class="col-6">
          <div class="d-flex justify-content-center form-check form-check-inline">
-             <input type="checkbox" class="form-check-input" id="inlineCheckbox1"> <label class="form-check-label" for="inlineCheckbox1">Keep Me Logged In</label>
+             <input type="checkbox" class="form-check-input" id="inlineCheckbox1"> <label class="form-check-label" for="inlineCheckbox1">Remember Me</label>
+         </div>
+       </div>
+       <div class="col-6">
+         <div class="d-flex justify-content-start">
+            <a href="resetPassword.php" style="color: #004883; ">Forgot your Password?</a>
          </div>
        </div>
      </div>
     
 
      <div class="row">
-       <div class="col-12">
-         <div class="d-flex justify-content-center my-2">
+       <div class="col-lg-6 col-md-6 col-sm-12">
+         <div class="d-flex justify-content-center my-4">
            <button class="btn btn-lg btn-warning button" name="login" >Log In</button>
          </div>
        </div>
-     </div>
 
-     <div class="row">
-       <div class="col-12">
-         <div class="d-flex justify-content-center my-2">
-             <p>Forgot Password?  <a href="resetPassword.php" style="color: #004883; ">Reset Password</a></p>
-         </div>
-       </div>
-     </div>
-
-     <div class="row">
-       <div class="col-12">
-         <div class="d-flex justify-content-center">
+       <div class="col-lg-6 col-md-6 col-sm-12">
+         <div class="d-flex justify-content-start my-4">
              <p>Don't have an account?  <a href="signup.php"  style="color: #004883; ">Create Account</a></p>
          </div>
        </div>
      </div>
-     
+
+   
+
      
 
 
