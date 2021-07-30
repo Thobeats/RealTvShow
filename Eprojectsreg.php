@@ -1,9 +1,7 @@
-
-
-   <?php
+<?php
    
    require "scripts/functions.php";
-   
+
    
    
    if(is_loggedIn() && role() == '3'){

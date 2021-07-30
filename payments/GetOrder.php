@@ -137,6 +137,11 @@ class GetOrder
                 <td  align='right' style='padding: 10px; border-bottom: 1px solid #ffcc33;'><b>$name</b></td>
             </tr>
 
+            <tr>
+              <td align='left' style='padding: 10px; border-bottom: 1px solid #ffcc33;'>Amount</td>
+              <td  align='right' style='padding: 10px; border-bottom: 1px solid #ffcc33;'><b>$currency_code$gross_amount</b></td>
+            </tr>
+
 
             <tr>
                 <td align='left' style='padding-top: 30px; '><b>Note: Use Order ID to Register.</b></td>

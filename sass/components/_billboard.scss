@@ -44,9 +44,9 @@
         font-weight: 700;
         padding: 3rem .1rem;
         margin: auto;
-        float: left;
-        position: absolute;
-        top: 2rem;
+        // float: left;
+        position: relative;
+        top: 0;
         left: 2%;
 
         @include respond(tab-land) {

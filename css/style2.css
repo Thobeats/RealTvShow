@@ -1,0 +1,84 @@
+body{
+    overflow-x: hidden;
+}
+.landing-image{
+    background-image : url(../img/scene.png);
+    height : 100vh;
+    width : 100vw;
+    background-size : cover;
+    background-position : top left;
+}
+
+.landing-text {
+    padding : 40px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.274) ,rgba(0, 0, 0, 0.219));
+    font-family: "Montserrat", sans-serif;
+    width : 100%;
+    text-transform: uppercase;
+}
+
+.landing-text h1{
+    font-weight : 600;
+    letter-spacing : 1.75rem;
+    text-transform : uppercase;
+}
+
+.landing-text p{
+    font-weight : 300;
+    letter-spacing : 1rem;
+    text-transform : uppercase;
+    width : 100%;
+}
+
+.landing-page-roles{
+    background-image : url(../img/shoot0.jpg);
+    height : 100vh;
+    width : 100vw;
+    background-size : cover;
+    background-position : top left;
+}
+
+.new{
+    transform: scale(0.8);
+    transition: all linear 0.2s;
+}
+
+.new:hover{
+    transform: translateY(-1.5rem) scale(0.85);
+    background-color: #cccccc;
+}
+
+.card-link{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size : 20px;
+    width : 60%;
+}
+
+.landing-page-movie{
+    height: auto;
+    width: 100vw;
+    background-color : #004883;
+    text-transform: uppercase;
+}
+
+.landing-header{
+    padding : 60px 0px;
+    font-weight: 700;
+    background-image: linear-gradient(to right, #cccccc, #666666);
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: .2rem;
+    transition: all .2s;
+}
+
+.landing-header:hover{
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+
+.movie-card{
+    background-image: linear-gradient(to right bottom, #3295e6, #004883);
+}
+
