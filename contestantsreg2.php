@@ -9,51 +9,14 @@ require "scripts/header_two.php";
 <?php get_message("error"); get_message('success') ?>
 
 
-<section class="landing-image d-flex justify-content-center flex-column ">
-    <div class="landing-text text-white text-center">
-        <h1>Reality TV</h1>
-        <p>cache of unique formats & talent</p>
-    </div>
-
-</section>
-
-<section class="landing-page-roles d-flex justify-content-center flex-column ">
-    <div class="row p-5">
-        <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
-            <div class="card new">
-                <img src="img/act4.jpg" alt="" >
-                <div class="card-body bg-dark text-center">
-                    <a href="contestantsreg.php" class="text-white card-link">Contestant and Talent Registration</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
-        <div class="card new">
-                <img src="img/shoot00.jpg" alt="" >
-                <div class="card-body bg-dark text-center">
-                    <a href="Eprojectsreg.php" class="text-white card-link">industry tv excutive registration</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
-        <div class="card new">
-                <img src="img/writer02.jpg" alt="" >
-                <div class="card-body bg-dark text-center">
-                    <a href="Wpromotingyou.php" class="text-white card-link">industry writer's registration&nbsp;</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="landing-page-movie py-4">
+<section class="landing-page-movie">
     <div class="landing-synopsis text-center ">
         <h2 class="landing-header">synopsis of 12 realities</h2>
     </div>
 
-    <div class="row">
+    <div class="row py-5">
         <?php 
-            $movie_query = mysqli_query($link, "Select * from realtv_movies limit 9");
+            $movie_query = mysqli_query($link, "Select * from realtv_movies");
 
             while($movie = mysqli_fetch_object($movie_query)):
 
@@ -65,7 +28,7 @@ require "scripts/header_two.php";
                    <p class="p-2 movieTitle"  style="background-image: linear-gradient(to right bottom, rgba(50, 149, 230, 0.85), rgba(0, 72, 131, 0.85)); width: 80%;"><?= $movie->movie_title ?></p> 
                 </div>
                 <div class="mb-2 text-center check-out">
-                    <a href="signup.php" class="btn btn-warning ">Check This Out Now</a>
+                    <a href="c_movie_view.php?id=<?= $movie->id ?>" target="_blank" class="btn btn-warning ">Check This Out Now</a>
                 </div>
             </div>         
           
@@ -73,10 +36,17 @@ require "scripts/header_two.php";
         <?php endwhile; ?>
     </div>
     
-    <div class="row d-flex justify-content-center my-5">
-        <a href="projects.php" class="btn discover">discover all realities</a>
+ 
+</section>
+
+<section class="py-4 note">
+    <div class="col-12">
+        <p class="text-center p-4">
+        With great enthusiasm, RealityTVRegistry recommends these 15 projects. All have copyright protection and are available for option and acquisition. Additional proposals are being developed and may be viewable in mid-August.
+        </p>
     </div>
 </section>
+
 
 <section class="row mb-4">
     <div class="col-12 mt-4">
@@ -190,25 +160,6 @@ require "scripts/header_two.php";
     </div>
 </section>
 
-<section class="row px-5 my-5 call_to_action">
-    <div class="col-12 p-5 bg-warning d-flex flex-column justify-content-center">
-        <div class="row" style="height : 100%;">
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <p class="call_to_action_text"> Registered members have priority to be selected as participants and to be represented in our Reality TV </p>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-12 text-center my-auto">
-                <a href="" class="btn btn-info">Get Started</a>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-12 call_to_action_img" style="background-image: url(img/act02.jpg); background-size: cover;">
-                
-            </div>
-        </div>
-    </div>
-</section>
-
-
 <script>
     let movieCard = document.querySelectorAll(".movie-card");
 
@@ -234,22 +185,6 @@ require "scripts/header_two.php";
         });
     })
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php
  require "scripts/footer_two.php";
 ?>

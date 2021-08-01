@@ -8,6 +8,15 @@
     transform: translate(0); } 
 }
 
+@keyframes slideFromLeft {
+    0% {
+    transform: translateX(-10rem); }
+    80% {
+    transform: translateX(1rem); }
+    100% {
+    display: block !important;    
+    transform: translate(0); } 
+}
 
 body{
     overflow-x: hidden;
@@ -32,6 +41,7 @@ body{
     font-weight : 600;
     letter-spacing : 1.75rem;
     text-transform : uppercase;
+    animation: slideFromRight 1s;
 }
 
 .landing-text p{
@@ -39,6 +49,7 @@ body{
     letter-spacing : 1rem;
     text-transform : uppercase;
     width : 100%;
+    animation: slideFromLeft 1s;
 }
 
 .landing-page-roles{
@@ -71,6 +82,7 @@ body{
     width: 100vw;
     background-color : #004883;
     text-transform: uppercase;
+    padding: 20px 0px;
 }
 
 .landing-header{
@@ -88,7 +100,7 @@ body{
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
-.movie-title{
+.movieTitle{
     font-family: 'Poppins', sans-serif;
     font-weight : 200;
     font-size: larger;
@@ -147,6 +159,13 @@ body{
     color : white;
 }
 
+.note{
+    background-color: #cccccc;
+    font-size: 20px;
+    font-weight: 300;
+    color : white;
+    font-family: 'Poppins', sans-serif;
+}
 
 
 @media only screen and (max-width: 768px) {
@@ -163,7 +182,7 @@ body{
         color : white;
     }
 
-    .movie-title{
+    .movieTitle{
         font-size: 12px;
         letter-spacing: 2px;
     }
