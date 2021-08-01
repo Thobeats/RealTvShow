@@ -162,12 +162,12 @@ require "scripts/header_two.php";
 
             <div class="row my-4">
               <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="d-flex justify-content-center ">
+                <div class="d-flex justify-content-end my-2">
                   <button class="btn btn-lg btn-warning button" name="register" disabled="true">Sign Up</button>
                 </div>
               </div>
               <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="d-flex justify-content-center my-2">
+                <div class="d-flex justify-content-start my-2">
                   <a href="index.php" class="btn btn-lg btn-danger">Cancel</a>
                 </div>
               </div>
