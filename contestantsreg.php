@@ -23,7 +23,7 @@ require "scripts/header_two.php";
                 $moviePic = $movie->movie_pic;
         ?>
         <div class="col-lg-4 col-md-4 mt-5 card-col col-sm-6 d-flex justify-content-center">
-            <div class="card movie-card" style="width: 80%; background: url(img/<?= $moviePic ?>); height: 200px; background-size: cover; cursor: pointer" >
+            <div class="card movie-card" style="width: 80%; background: url(img/uploads/<?= $moviePic ?>); height: 200px; background-size: cover; cursor: pointer" >
                 <div class="card-title mb-auto text-right text-light mt-4 d-flex justify-content-end" >
                    <p class="p-2 movieTitle"  style="background-image: linear-gradient(to right bottom, rgba(50, 149, 230, 0.85), rgba(0, 72, 131, 0.85)); width: 80%;"><?= $movie->movie_title ?></p> 
                 </div>
