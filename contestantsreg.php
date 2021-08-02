@@ -28,7 +28,7 @@ require "scripts/header_two.php";
                    <p class="p-2 movieTitle"  style="background-image: linear-gradient(to right bottom, rgba(50, 149, 230, 0.85), rgba(0, 72, 131, 0.85)); width: 80%;"><?= $movie->movie_title ?></p> 
                 </div>
                 <div class="mb-2 text-center check-out">
-                    <a href="c_movie_view.php?id=<?= $movie->id ?>" target="_blank" class="btn btn-warning ">Check This Out Now</a>
+                    <a href="c_movie_view.php?id=<?= $movie->id ?>" target="_blank" class="btn btn-light text-dark">Check This Out Now</a>
                 </div>
             </div>         
           
@@ -169,7 +169,7 @@ require "scripts/header_two.php";
             let cardTitle = this.querySelector(".movieTitle");
             let checkout = this.querySelector(".check-out");
 
-            cardTitle.classList.add("animate-show");
+      //      cardTitle.classList.add("animate-show");
             checkout.classList.add("animate-show");
 
         });
@@ -179,7 +179,7 @@ require "scripts/header_two.php";
             let cardTitle = this.querySelector(".movieTitle");
             let checkout = this.querySelector(".check-out");
 
-            cardTitle.classList.remove("animate-show");
+           // cardTitle.classList.remove("animate-show");
             checkout.classList.remove("animate-show");
 
         });
