@@ -218,7 +218,8 @@ require "scripts/header_two.php";
         //    let cardTitle = this.querySelector(".movieTitle");
             let checkout = this.querySelector(".check-out");
 
-          //  cardTitle.classList.add("animate-show");
+            this.classList.add("backDrop");
+            console.log(this);
             checkout.classList.add("animate-show");
 
         });
@@ -229,6 +230,7 @@ require "scripts/header_two.php";
             let checkout = this.querySelector(".check-out");
 
        //     cardTitle.classList.remove("animate-show");
+            this.classList.remove("backDrop");
             checkout.classList.remove("animate-show");
 
         });

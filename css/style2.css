@@ -100,6 +100,10 @@ body{
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
+.backDrop{
+    background-image: linear-gradient(to right bottom, rgba(50, 149, 230, 0.85), rgba(0, 72, 131, 0.85)) !important;
+}
+
 .movieTitle{
     font-family: 'Poppins', sans-serif;
     font-weight : 200;
