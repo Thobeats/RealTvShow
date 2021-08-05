@@ -1,221 +1,216 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<?php 
+$navBar = true;
+require "scripts/functions.php";
+require "scripts/header_two.php"; 
 
-        <link rel="stylesheet" href="css/icon-font.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="sass/main.scss">
-        <link rel="shortcut icon" type="image.png" href="img/logo.png">
-        <script type="text/javascript" src="js/reality.js"></script>
+//var_dump($_SESSION);
+?>
 
-        <title> RealityTV | RealityTVregistry.com</title>
+<style>
+    body{
+        font-family : 'Poppins';
+    }
 
-    </head>
-    <body>
-        <main>
-            <header>
-                <div class="project__logo">
-                    <img src="img/logo.png" alt="Reality Tv Logo" class="project__logo-box">
-                </div>
+ 
+    .writer-cover{
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) ,rgba(0, 0, 0, 0.5)),url(img/drone4.jpg);
+        height: 100vh;
+        background-size : cover;
+        background-position : top left;
+        color : white;
+        display: flex;
+        align-items : center;
+    }
 
-                <nav class="clearfix navbox">
-                                    <div class="navbar">
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><a href="index.php">Home</a>
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                        </div>
-                                        
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><a href="aboutus.php">About Us</a>
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                            <!-- <div class="dropdown-content">
-                                                <a href="">Blog</a>
-                                                <a href="">FAQ's</a>
-                                                <a href="">Promoting You</a>
-                                                <a href="">Talent Areas</a>
-                                                <a href="">Writer Benefits and Talent Benefits</a>
-                                            </div> -->
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><a href="contactus.php">Contact Us</a>
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                        </div>
-                                    </div>
+    .writer-wrapper{
+        text-align : center;
+        font-family: "Montserrat", sans-serif;
+        width : 100%;
+    }
 
-                                    <div>
-                                        <div class="buttons">
-                                            <a href="signup.php" class="btn btn--white">SignUp</a>
-                                        </div>
-                                    </div>
-                                </nav> 
+    .writer-wrapper h1{
+        font-weight : 600;
+        letter-spacing : 1.75rem;
+        text-transform : uppercase;
+    }
 
+    .writer-wrapper p{
+        font-weight : 300;
+        letter-spacing : 1rem;
+        text-transform : uppercase;
+        width : 100%;
+    }
 
-                            <div class="projectes">
-                                <div class="project__text-box">
-                                    <h1 class="heading-primary">
-                                        <span class="heading-primary--main">Reality Tv</span>
-                                        <span class="heading-primary--sub">cache of unique formats & talent</span>
-                                    </h1>        
-                                </div>
-                            </div>                            
-            </header>
+    .writer-title{
+        font-family: 'Poppins', sans-serif;
+        text-transform: uppercase;
+        font-size: 50px;
+        font-weight: 700;
+    }
 
-        <main>
-            <section class="contactus-excercises" id="contactus-excercises">
-                <div class="u-center-text u-margin-bottom-big">
-                    <h2 class="heading-secondary">
-                        Writer/Author Reality Pitch Submission and Registration
-                    </h2>
-                </div>
-            <!-- </section>
-                 
-            <section class="section-contactus"> -->
+    .writer-header{
+        font-family: 'Poppins', sans-serif;
+        text-transform: uppercase;
+        font-size: 25px;
+        font-weight: 700;
+        justify-content : start;
+    }
 
-                    <div class="registration-divi">
-                        <div class="registration-divi--sub">
-                            <label for="registration-divi__text">First Name</label>
-                            <input class="registration-divi__input-1-1" type="First Name" name="First Name" placeholder="First Name" required/>
-                            <label for="registration-divi__text">Last Name</label>
-                            <input class="registration-divi__input-1-2" type="Last Name" name="Last Name" placeholder="Last Name" required/>
-                        </div>
-                        <div class="registration-divi--sub">
-                            <label for="registration-divi__text">Username</label>
-                            <input class="registration-divi__input-1-3" type="Username" name="Username" placeholder="Username" required/>
-                            <label for="registration-divi__text">Password</label>
-                            <input class="registration-divi__input-1-4" id="pass" type="password" name="password" placeholder="Password" required/>
-                        </div>
-                            <label for="registration-divi__text">Email Address</label>
-                            <textarea class="registration-divi__input-2" id="textarea"></textarea>
-                        <div class="registration-divi--sub">
-                            <label for="registration-divi__text">Phone Number</label>
-                            <input class="registration-divi__input-1-5" type="Phone Number" name="Phone Number" placeholder="Phone Number" required/>
-                            <label for="registration-divi__text">Address</label>
-                            <input class="registration-divi__input-1-6" type="Address" name="Address" placeholder="Address" required/>
-                        </div>  
+    @media only screen and (max-width: 768px) {
+        .writer-title{  
+            font-size: 40px;  
+        }
 
-                        <div class="registration-divi--sub">
-                            <label for="registration-divi__text">Project Title</label>
-                            <input class="registration-divi__input-1-7" id="text-input" type="text" />
-                            <label for="registration-divi__text">Logline</label>
-                            <input class="registration-divi__input-1-8" id="text-input" type="text" />
-                        </div>
-                            <label for="registration-divi__text">Genre <a href="" class="paintme">open Genre to view selection</a></label>
-                            <input class="registration-divi__input-1-9" id="text-input" type="text" />
-                            <label for="registration-divi__text">Synopsis/Pitch Outline <span class="registration__paragraph">(In he box below please paste in the synopsis of your project, format, or story. (usually, 1 to 5 pages))</span></label>
-                            <textarea class="registration-divi__input-2" id="textarea"></textarea>
+        .writer-header{       
+            font-size: 20px;
+        }
+    }
 
-                        <!-- <p class="view__paragraph paintme">When the individual registers for a specific Program it is identified on their credentials. 
-                            When TV execs view the individual he/she will be able to determine which Program they registered for. 
-                            Exec can see contact info. for the member.</p> -->
+    @media only screen and (max-width: 425px) {
+        .writer-title{  
+            font-size: 30px;  
+        }
 
-                            <p class="registration__paragraph">Please review the RTVR Industry Executive NDA - Confidential Agreement, which is required to be signed 
-                                by any Industry TV Executive who views writer’s material, without exception. Thus, designed to protect all the written material of writers 
-                                who are registered to RTVR. Agreeing to the terms of the standard Material Release Form, is required for all submissions. By checking the 
-                                box below as my electronic and binding signature, I confirm that I have reviewed, understand and agree to RealityTVRegistry.com NDA/Confidential 
-                                Agreement and Standard Material Release Form and that the terms and conditions of such shall govern me and my use of RTVR and/or any of the 
-                                services provided by RTVR including but not limited to any submission by me as a writer or any review of the materials of others contained herein.
-                            </p>
+        .writer-header{       
+            font-size: 18px;
+            text-align : center;
+            width: 100%;
+        }
 
-                            <div class="heading-tertiary-small-3">
-                                <div class="">
-                                    <label> <input class="checkbox" type="checkbox" checked="checked" name="remember"> Agree to our terms of services </label>
-                                </div>
-                            </div>
-                        <div class="registration-divi__btn">
-                            <a href="signup.php" class="btn btn--white">Register</a>
-                            <a href="signup.php" class="btn btn--white">Clear Form</a>
-                        </div> 
-                    </div>
-                </div>
-            </section>           
-        </main>
+        
+    }
+</style>
 
-        <footer class="footer">
-            <div class="row footer__high">
-                <div class="col-1-of-4">
-                        <div class="footer__logo-box">
-                            <img src="img/logo.png" alt="Logo" class="footer__logo">
-                        </div>
-                </div>
-                <div class="footer__group">
-                     <div class="footer__navigation">
-                         <div class="col-1-of-4">
-                            <h3 class="footer__heading"><b>About</b></h3>
-                                <ul class="footer__list">
-                                    <li class="footer__item"></li><a href="reality.php" class="footer__link">Reality TV</a></li>
-                                    <li class="footer__item"></li><a href="faq.php" class="footer__link">Faq</a></li>
-                                    <li class="footer__item"></li><a href="login.php" class="footer__link">Login/signup</a></li>
-                                    <li class="footer__item"></li><a href="privacy.php" class="footer__link">Privacy policy</a></li>
-                                    <li class="footer__item"></li><a href="terms.php" class="footer__link">Terms of Service</a></li>
-                                </ul>
-                        <div>
-                        <div class="col-1-of-4">
-                            <h3 class="footer__heading-2"><b>Community</b></h3>
-                                <ul class="footer__list-2">
-                                    <li class="footer__item"></li><a href="future.php" class="footer__link">Future</a></li>
-                                    <li class="footer__item"></li><a href="promoteyou.php" class="footer__link">Promoting You</a></li>
-                                    <li class="footer__item"></li><a href="benefits.php" class="footer__link">Benefits</a></li>
-                                    <li class="footer__item"></li><a href="communications.php" class="footer__link">Communications</a></li>
-                                    <li class="footer__item"></li><a href="nda.php" class="footer__link">NDA Agreement</a></li>
-                                </ul>
-                        <div>
-                        <div class="col-1-of-4">
-                            <h3 class="footer__heading-3"><b>Pages</b></h3>
-                                <ul class="footer__list-3">
-                                    <li class="footer__item"></li><a href="index.php" class="footer__link">Home</a></li>
-                                    <li class="footer__item"></li><a href="aboutus.php" class="footer__link">About us</a></li>
-                                    <li class="footer__item"></li><a href="contactus.php" class="footer__link">Contact us</a></li>
-                                </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-late__div">
-                    <div class="sprite">
-                        <div class="sprite__icon-box">
-                                <svg class="sprite__icon">
-                                    <use xlink:href="img/sprite.svg#icon-accessibility"></use>
-                                </svg>
-                            <div class="sprite__user">
-                                    <svg class="sprite__icon sprite__icon-text">
-                                        <use xlink:href="img/sprite.svg#icon-credit"></use>
-                                    </svg>
-                            </div>
-                            <div class="sprite__user">
-                                <svg class="sprite__icon sprite__icon-text">
-                                    <use xlink:href="img/sprite.svg#icon-sphere"></use>
-                                </svg>
-                            </div>
-                            <svg class="sprite__icon">
-                                <use xlink:href="img/sprite.svg#icon-facebook2"></use>  
-                            </svg>
-                            <svg class="sprite__icon">
-                                <use xlink:href="img/sprite.svg#icon-linkedin"></use>
-                            </svg>
-                            <svg class="sprite__icon">
-                                <use xlink:href="img/sprite.svg#icon-pinterest"></use>
-                            </svg>
-                            <svg class="sprite__icon">
-                                <use xlink:href="img/sprite.svg#icon-instagram1"></use>
-                            </svg>
-                            <svg class="sprite__icon">
-                                <use xlink:href="img/sprite.svg#icon-twitter1"></use>
-                            </svg>        
-                        </div>
-                    </div>
-                    <div class="footer__copyright">
-                        &copy;RealityTV International Limited 2021.
-                    </div>
+<section class="writer-cover p-4">
+    <div class="writer-wrapper m-auto d-flex flex-column justify-content-center">                
+        <h1>Reality Tv</h1>
+        <p class="mr-auto ml-auto">cache of unique formats & talent</p>                  
+    </div>
+</section>
+
+<div class="row p-5">
+    <div class="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-end pt-4">
+       <p class="p-2 writer-title text-right">Writer's Registration </p>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-start pt-4">
+       <img src="img/writer.jpg" alt="" srcset="" width="400px">
+    </div>
+</div>
+
+<section class="writer-form p-4 mb-4" style="height: auto;">
+    <div class="d-flex justify-content-center">
+        <form action="" method="POST" style="width: 80%;">
+             <div class="row">
+                <div class="col-12 d-flex">
+                <p class="p-2 writer-header"> personal details </p>
                 </div>
             </div>
-        </footer>
-    </body>
-</html>
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <label for="">First Name:</label>
+                    <input type="text" class="form-control">
+                </div>
+
+                <div class="col-lg-6 col-sm-12">
+                    <label for="">Last Name:</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-lg-6 col-sm-12">
+                    <label for="">Username:</label>
+                    <input type="text" class="form-control">
+                </div>
+
+                <div class="col-lg-6 col-sm-12">
+                    <label for="">Password:</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-lg-6 col-sm-12">
+                    <label for="">Email:</label>
+                    <input type="text" class="form-control">
+                </div>
+
+                <div class="col-lg-6 col-sm-12">
+                    <label for="">Phone Number:</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12">
+                    <label for="">Address:</label>
+                    <textarea name="" id="" class="form-control" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-lg-6"></div>
+                <div class="col-lg-6 text-right">
+                  <input type="button" class="btn btn-warning next writer-btn" value="Next">
+                </div>
+            </div>
+
+        </form>
+    </div>
+</section>
+
+<section class="movie-form p-4 mb-4" style="height: auto;">
+    <div class="d-flex justify-content-center">
+        <form action="" method="POST" style="width: 80%;">
+             <div class="row">
+                <div class="col-12 d-flex justify-content-start">
+                <p class="p-2 writer-header"> movie details </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <label for="">Project Title:</label>
+                    <input type="text" class="form-control">
+                </div>
+
+                <div class="col-lg-6 col-sm-12">
+                    <label for="">Genre:</label>
+                    <select name="genre" id="" class="form-control">
+                        <option value=""></option>
+                    </select>
+                </div>
+
+               
+            </div>
+
+            <div class="row mt-4">        
+                <div class="col-12">
+                    <label for="">Logline:</label>
+                    <textarea name="logline" id="" class="form-control text-editor" cols="5" rows="5"></textarea>
+                </div>
+
+            </div>            
+
+            <div class="row mt-4">
+                <div class="col-12">
+                    <label for="">Synopsis:</label>
+                    <textarea name="synopsis" id="" class="form-control text-editor" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-lg-6 writer-btn-prev col-sm-12">
+                    <input type="button" class="btn btn-warning prev writer-btn" value="Previous">
+                </div>
+                <div class="col-lg-6 writer-btn-reg col-sm-12">
+                  <input type="submit" class="btn btn-legit writer-btn" name="reg" value="Register">
+                </div>
+            </div>
+
+        </form>
+    </div>
+</section>
+
+
+
+<?php require "scripts/footer_two.php"; ?>
