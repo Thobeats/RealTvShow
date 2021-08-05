@@ -7,6 +7,11 @@ require "scripts/header_two.php";
 ?>
 
 <style>
+    body{
+        font-family : 'Poppins';
+    }
+
+ 
     .writer-cover{
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) ,rgba(0, 0, 0, 0.5)),url(img/drone4.jpg);
         height: 100vh;
@@ -48,6 +53,31 @@ require "scripts/header_two.php";
         text-transform: uppercase;
         font-size: 25px;
         font-weight: 700;
+        justify-content : start;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .writer-title{  
+            font-size: 40px;  
+        }
+
+        .writer-header{       
+            font-size: 20px;
+        }
+    }
+
+    @media only screen and (max-width: 425px) {
+        .writer-title{  
+            font-size: 30px;  
+        }
+
+        .writer-header{       
+            font-size: 18px;
+            text-align : center;
+            width: 100%;
+        }
+
+        
     }
 </style>
 
@@ -59,10 +89,10 @@ require "scripts/header_two.php";
 </section>
 
 <div class="row p-5">
-    <div class="col-6 d-flex justify-content-end pt-4">
+    <div class="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-end pt-4">
        <p class="p-2 writer-title text-right">Writer's Registration </p>
     </div>
-    <div class="col-6 d-flex justify-content-start pt-4">
+    <div class="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-start pt-4">
        <img src="img/writer.jpg" alt="" srcset="" width="400px">
     </div>
 </div>
@@ -71,7 +101,7 @@ require "scripts/header_two.php";
     <div class="d-flex justify-content-center">
         <form action="" method="POST" style="width: 80%;">
              <div class="row">
-                <div class="col-12 d-flex justify-content-start">
+                <div class="col-12 d-flex">
                 <p class="p-2 writer-header"> personal details </p>
                 </div>
             </div>
@@ -173,7 +203,7 @@ require "scripts/header_two.php";
                     <input type="button" class="btn btn-warning prev writer-btn" value="Previous">
                 </div>
                 <div class="col-lg-6 writer-btn-reg col-sm-12">
-                  <input type="submit" class="btn btn-primary writer-btn" name="reg" value="Register">
+                  <input type="submit" class="btn btn-legit writer-btn" name="reg" value="Register">
                 </div>
             </div>
 

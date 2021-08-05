@@ -43,6 +43,12 @@
 body{
     overflow-x: hidden;
 }
+
+.btn-legit{
+    background-color : #041e3c;
+    color : white;
+}
+
 .landing-image{
     background-image : url(../img/scene.png);
     height : 100vh;
@@ -249,6 +255,8 @@ body{
     .writer-btn-prev, .writer-btn-reg {
         text-align : center;
     }
+
+   
     
 }
 
