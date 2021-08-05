@@ -11,6 +11,9 @@ require "scripts/header_two.php";
         font-family : 'Poppins';
     }
 
+    form{
+        width: 80%;
+    }
  
     .writer-cover{
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) ,rgba(0, 0, 0, 0.5)),url(img/drone4.jpg);
@@ -32,6 +35,13 @@ require "scripts/header_two.php";
         font-weight : 600;
         letter-spacing : 1.75rem;
         text-transform : uppercase;
+    }
+
+    .writer-img{
+        height : 250px;
+        width: 400px;
+        background-image : url(img/writer.jpg);
+        background-size : cover;
     }
 
     .writer-wrapper p{
@@ -64,6 +74,11 @@ require "scripts/header_two.php";
         .writer-header{       
             font-size: 20px;
         }
+
+        .writer-img{
+            height : 200px;
+            width: 300px;
+        }
     }
 
     @media only screen and (max-width: 425px) {
@@ -77,6 +92,23 @@ require "scripts/header_two.php";
             width: 100%;
         }
 
+        .writer-img{
+            height : 150px;
+            width: 200px;          
+        }
+
+        .writer-img{
+            width : 100%;
+        }
+
+        form{
+            width : 100%;
+        }
+
+        form .row> .col-sm-12,.col-12{
+            margin-top : 10px;
+        }
+
         
     }
 </style>
@@ -88,18 +120,20 @@ require "scripts/header_two.php";
     </div>
 </section>
 
-<div class="row p-5">
+<div class="row p-3">
     <div class="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-end pt-4">
-       <p class="p-2 writer-title text-right">Writer's Registration </p>
+       <p class="pl-5 writer-title text-right">Writer's Registration </p>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-start pt-4">
-       <img src="img/writer.jpg" alt="" srcset="" width="400px">
+    <div class="col-lg-6 col-md-6 col-sm-12 text-align-left p-4">
+        <div class="writer-img">
+
+        </div>
     </div>
 </div>
 
-<section class="writer-form p-4 mb-4" style="height: auto;">
+<section class="writer-form px-4 py-2 mb-4" style="height: auto;">
     <div class="d-flex justify-content-center">
-        <form action="" method="POST" style="width: 80%;">
+        <form action="" method="POST" >
              <div class="row">
                 <div class="col-12 d-flex">
                 <p class="p-2 writer-header"> personal details </p>
@@ -117,7 +151,7 @@ require "scripts/header_two.php";
                 </div>
             </div>
 
-            <div class="row mt-4">
+            <div class="row">
                 <div class="col-lg-6 col-sm-12">
                     <label for="">Username:</label>
                     <input type="text" class="form-control">
@@ -129,7 +163,7 @@ require "scripts/header_two.php";
                 </div>
             </div>
 
-            <div class="row mt-4">
+            <div class="row">
                 <div class="col-lg-6 col-sm-12">
                     <label for="">Email:</label>
                     <input type="text" class="form-control">
@@ -141,7 +175,7 @@ require "scripts/header_two.php";
                 </div>
             </div>
 
-            <div class="row mt-4">
+            <div class="row">
                 <div class="col-12">
                     <label for="">Address:</label>
                     <textarea name="" id="" class="form-control" cols="30" rows="10"></textarea>
