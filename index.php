@@ -219,7 +219,6 @@ require "scripts/header_two.php";
             let checkout = this.querySelector(".check-out");
 
             this.classList.add("backDrop");
-            console.log(this);
             checkout.classList.add("animate-show");
 
         });

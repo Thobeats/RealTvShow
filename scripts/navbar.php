@@ -37,7 +37,16 @@
     </ul>
 
     <?php if(is_loggedIn()){ ?>
-      <a href="" class="btn btn-warning"><?= $_SESSION['firstname'] ?></a>
+      <div class="btn-group">
+        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <?= $_SESSION['firstname'] ?>
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item text-dark" href="#">Profile</a>
+          <a class="dropdown-item text-dark" href="logout.php">Logout</a>         
+        </div>
+      </div>
+
     <?php }else { ?>
     <a href="signup.php" class="btn btn-warning">Signup</a>
     <?php } ?>

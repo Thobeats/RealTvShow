@@ -18,6 +18,28 @@
     transform: translate(0); } 
 }
 
+@keyframes slideOut {
+    0% {
+    transform: translateX(0rem); }
+    50% {
+    transform: translateX(-100rem); }
+    100% {   
+    transform: translate(-200rem);
+    opacity: 0 !important;   
+} 
+}
+
+@keyframes slideIn {
+    0% {
+    transform: translateX(200rem); }
+    50% {
+    transform: translateX(100rem); }
+    100% {   
+    transform: translate(0rem);
+    display: block !important;   
+} 
+}
+
 body{
     overflow-x: hidden;
 }
@@ -101,7 +123,7 @@ body{
 }
 
 .backDrop{
-    background-image: linear-gradient(to right bottom, rgba(50, 149, 230, 0.85), rgba(0, 72, 131, 0.85)) !important;
+    background-image: linear-gradient(to right bottom, rgba(50, 149, 230, 0.123), rgba(57, 114, 160, 0.123)) !important;
 }
 
 .movieTitle{
@@ -170,6 +192,30 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
+.slideOut{
+    animation: slideOut 2s;  
+}
+
+.hide{
+    display: none;
+}
+
+.movie-form{
+    display: none;
+}
+
+.writer-btn{
+    width : 50%;
+}
+
+.writer-btn-prev{
+    text-align : right;
+}
+
+.writer-btn-reg{
+    text-align : left;
+}
+
 
 @media only screen and (max-width: 768px) {
     .landing-page-roles{
@@ -193,6 +239,15 @@ body{
     .check-out>a{
         font-size: 8px;
         border-radius: 20px;
+    }
+    .writer-btn{
+        width : 100%;
+        margin-top : 5px;
+    }
+
+
+    .writer-btn-prev, .writer-btn-reg {
+        text-align : center;
     }
     
 }
@@ -244,6 +299,12 @@ body{
         font-size: 10px;
         border-radius: 20px;
     }
+
+    .writer-btn{
+        width : 100%;
+        margin-top : 5px;
+    }
+
 
 
 }
