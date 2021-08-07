@@ -81,23 +81,25 @@ require "scripts/header_two.php";
     }
 
     .regnow{
-        background-image : url(img/write9.jpeg);
+        background-image : linear-gradient(to right bottom, rgba(13, 13, 14, 0.585), rgba(15, 15, 15, 0.567)),url(img/write9.jpeg);
         background-size : cover;
         background-position : center right;
-        width : 100%;
         height : 10vh;
+        border : 2px solid #004883;
     }
 
     .regnow_link{
         text-decoration : none;
-        color : #004000;
+        color : whitesmoke;
         font-family: 'Poppins', sans-serif;
         font-size: 20px;
+        padding : 30px;
         
     }
 
     .regnow_link:hover{
         text-decoration: none;
+        color : grey;
     }
 
 
@@ -106,6 +108,10 @@ require "scripts/header_two.php";
 @media only screen and (max-width: 768px) {
     .post_link {
         font-size: 15px;
+    }
+
+    .regnow_link{
+        font-size : 18px;
     }
 
    
@@ -124,6 +130,11 @@ require "scripts/header_two.php";
     .post_text{
         height : 6vh;
         padding : 0;
+    }
+
+    .regnow_link{
+        font-size : 15px;
+        padding : 5px;
     }
 
 
@@ -198,7 +209,11 @@ require "scripts/header_two.php";
 
             <div class="row mt-5">
                 <div class="col-12">
-                    <a href=""></a>
+                    <div class="d-flex flex-column justify-content-center regnow">
+                        <a href="wregistration.php" class="text-right regnow_link">
+                            Submit Pitch & Register Now
+                        </a>
+                    </div> 
                 </div>                
             </div>
         </div>

@@ -39,7 +39,7 @@ require "scripts/header_two.php";
         <div class="card new">
                 <img src="img/writer02.jpg" alt="" >
                 <div class="card-body bg-dark text-center">
-                    <a href="Wpromotingyou.php" class="text-white card-link">industry writer's registration&nbsp;</a>
+                    <a href="writersPage.php" class="text-white card-link">industry writer's registration&nbsp;</a>
                 </div>
             </div>
         </div>
