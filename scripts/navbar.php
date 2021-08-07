@@ -1,6 +1,6 @@
 <style>
   nav{
-    background-color : #1c87c9;
+    background-color : #004883;
   }
   
   nav a {

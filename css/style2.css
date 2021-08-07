@@ -128,10 +128,6 @@ body{
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
-.backDrop{
-    background-image: linear-gradient(to right bottom, rgba(50, 149, 230, 0.123), rgba(57, 114, 160, 0.123)) !important;
-}
-
 .movieTitle{
     font-family: 'Poppins', sans-serif;
     font-weight : 200;
@@ -222,6 +218,9 @@ body{
     text-align : left;
 }
 
+.movie-card:hover{
+    background-image:linear-gradient(to right bottom, rgba(247, 251, 255, 0.185), rgba(226, 236, 243, 0.267));
+}
 
 @media only screen and (max-width: 768px) {
     .landing-page-roles{
