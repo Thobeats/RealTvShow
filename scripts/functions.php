@@ -139,7 +139,7 @@ function user_session($array){
     }
 }
 
-function register_new_user($firstname, $surname, $email, $password, $role_id, $reg=null){
+function register_new_user($firstname, $surname, $email, $password, $role_id, $reg=null, $address=null, $username=null){
 
     $password = md5($password);
     $encode_password = utf8_encode($password);
@@ -147,19 +147,23 @@ function register_new_user($firstname, $surname, $email, $password, $role_id, $r
     $fullname = strtoupper($firstname) . " " . $surname;
     $email = strtolower($email);
 
+    if($username == null){
+        $username = $email;
+    }
+
     // Database connection
     $link = connect();   
 
 
     $checkEmail = mysqli_query($link, "select * from realtv_users where email = '$email'");
 
-    if($checkEmail->num_rows == 1){
+    if(mysqli_num_rows($checkEmail) == 1){
         set_message('error', 'Email exists, register with a unique email');
         return false;
     }
 
-    $query = mysqli_query($link, "INSERT INTO `realtv_users`(`firstname`,`lastname`,`fullname`,`username`,`status`, `role_id`,`email`,`password`,`activated`, `token`,`reg_ref`) VALUES ('$firstname','$surname','$fullname','$email','Active',
-                                 '$role_id','$email','$encode_password','0', '$encode_token', '$reg')");
+    $query = mysqli_query($link, "INSERT INTO `realtv_users`(`firstname`,`lastname`,`fullname`,`username`,`status`, `role_id`,`email`,`password`,`activated`, `token`,`reg_ref`, `address`) VALUES ('$firstname','$surname','$fullname','$username','Active',
+                                 '$role_id','$email','$encode_password','0', '$encode_token', '$reg', '$address')");
 
     if($query){
         $body = "<div style='padding: 5px; text-transform: capitalize;'>";
@@ -205,15 +209,24 @@ function check_order($order_id){
 
     $link = connect();
 
-    $order = mysqli_query($link, "select * from realtv_reg where `orderID` = '$order_id'");
+    $checkOrder = mysqli_query($link, "select * from realtv_users where orderID = '$order_id'");
 
-    $num_row = $order->num_rows;
+    if(mysqli_num_rows($checkOrder) >= 1){
+        set_message("error", "Order Id is used");
+    }else{
 
-    if($num_row == 1){
-        return mysqli_fetch_assoc($order)['id'];
-    }else {
-        return 0;
+        $order = mysqli_query($link, "select * from realtv_reg where `orderID` = '$order_id'");
+
+        $num_row = mysqli_num_rows($order);
+
+        if($num_row == 1){
+            return mysqli_fetch_assoc($order)['id'];
+        }else {
+            return 0;
+        }
     }
+
+    
 }
 
 
@@ -335,15 +348,43 @@ function handle_video($video){
 }
 
 
-function save_movie($movie_title, $movie_plot, $movie_pic, $movie_pics = NULL){
+function save_movie($movie_title, $movie_plot, $synopsis, $genre, $movie_pic, $movie_pics = NULL){
     $link = connect();
 
     $created_by = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : "00000000";
 
     $insert_pic = handle_image($movie_pic);
 
-    if( mysqli_query($link, "INSERT INTO `realtv_movies`( `created_by`, `movie_pic`, `movie_title`, `movie_plot`, `status`) 
+    if( mysqli_query($link, "INSERT INTO `realtv_movies`( `created_by`, `movie_pic`, `movie_title`, `movie_plot`, `status`, `synopsis`, `genre`) 
                             VALUES ('$created_by','$insert_pic','$movie_title','$movie_plot','1')")){
+               
+
+        //GET Insert ID
+        $movie_insert_id = mysqli_insert_id($link);
+
+        if(!is_null($movie_pics)){
+        
+             handle_multi_images($movie_pics, $movie_insert_id);          
+          
+        }
+
+        return 1;
+    }else{
+        return 0;
+    }
+
+
+}
+
+function reg_and_save_movie($movie_title, $logline, $synopsis, $genre, $movie_pic, $movie_pics = NULL){
+    $link = connect();
+
+    $insert_pic = handle_image($movie_pic);
+
+    $created_by = mysqli_insert_id($link);
+
+    if(mysqli_query($link, "INSERT INTO `realtv_movies`( `created_by`, `movie_pic`, `movie_title`, `logline`, `status`, `synopsis`, `genre`) 
+                            VALUES ('$created_by','$insert_pic','$movie_title','$logline','1','$synopsis','$genre')")){
                
 
         //GET Insert ID
