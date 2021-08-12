@@ -1,356 +1,195 @@
 <?php
-   
-   require "scripts/functions.php";
+    $navBar = true;
+    require "scripts/functions.php";
 
-   
-   
-   if(is_loggedIn() && role() == '3'){
-    require "scripts/header.php";
-?>
 
-    </head>
-    <body>
-        <main>
-            <header>
-                <div class="project__logo">
-                    <img src="img/logo.png" alt="Reality Tv Logo" class="project__logo-box">
+    if(is_loggedIn() && role() == '3'){
+        require "scripts/header_two.php"; 
+
+        //var_dump($_SESSION);
+        ?>
+        
+        <?php get_message("error"); get_message('success') ?>
+        
+        
+        <section class="landing-page-movie">
+            <div class="landing-synopsis text-center ">
+                <h2 class="landing-header">synopsis of 12 realities</h2>
+            </div>
+        
+            <div class="row py-5">
+                <?php 
+                    $movie_query = mysqli_query($link, "Select * from realtv_movies");
+        
+                    while($movie = mysqli_fetch_object($movie_query)):
+        
+                        $moviePic = $movie->movie_pic;
+                ?>
+                <div class="col-lg-4 col-md-4 mt-5 card-col col-sm-6 d-flex justify-content-center">
+                    <div class="card movie-card" style="width: 80%; background: url(img/uploads/<?= $moviePic ?>); height: 200px; background-size: cover; cursor: pointer" >
+                        <div class="card-title mb-auto text-right text-light mt-4 d-flex justify-content-end" >
+                           <p class="p-2 movieTitle"  style="background-image: linear-gradient(to right bottom, rgba(50, 149, 230, 0.85), rgba(0, 72, 131, 0.85)); width: 80%;"><?= $movie->movie_title ?></p> 
+                        </div>
+                        <div class="mb-2 text-center check-out">
+                            <a href="Eviewpage.php?id=<?= $movie->id ?>" target="_blank" class="btn btn-light text-dark">Check This Out Now</a>
+                        </div>
+                    </div>         
+                  
                 </div>
-
-                <nav class="clearfix navbox">
-                                    <div class="navbar">
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><a href="index.php">Home</a>
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                        </div>
+                <?php endwhile; ?>
+            </div>
+            
+         
+        </section>
+        
+        <section class="py-4 note">
+            <div class="col-12">
+                <p class="text-center p-4">
+                With great enthusiasm, RealityTVRegistry recommends these 15 projects. All have copyright protection and are available for option and acquisition. Additional proposals are being developed and may be viewable in mid-August.
+                </p>
+            </div>
+        </section>
+        
+        
+        <section class="row mb-4">
+            <div class="col-12 mt-4">
+                <div class="member-benefits">
+                    <h3 class="text-center my-4 m-title">MEMBER BENEFITS</h3>
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card border-0">
+                                    <div class="card-body d-flex justify-content-center">
+                                        <div class="quotes zilla text-center">
                                         
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><a href="aboutus.php">About Us</a>
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                            <!-- <div class="dropdown-content">
-                                                <a href="">Blog</a>
-                                                <a href="">FAQ's</a>
-                                                <a href="">Promoting You</a>
-                                                <a href="">Talent Areas</a>
-                                                <a href="">Writer Benefits and Talent Benefits</a>
-                                            </div> -->
+                                            Big 93% advantage to be casted when promoted by a business 
+                                            
                                         </div>
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><a href="contactus.php">Contact Us</a>
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
+                                            <img class="" src="img/write01.jpg" width="350px">
+        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card border-0">
+                                    <div class="card-body d-flex justify-content-center">
+                                        <div class="quotes text-center">
+                                        
+                                            Priority status to participate in the production of your choice
+                                                                            
                                         </div>
+                                            <img class="" src="img/shoot2.jpg" width="350px">
+        
                                     </div>
-
-                                    <div>
-                                        <div class="buttons">
-                                            <a href="signup.php" class="btn btn--white">SignUp</a>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card border-0">
+                                    <div class="card-body d-flex justify-content-center">
+                                        <div class="quotes text-center">
+                                    
+                                            Your private account access, to view and edit your credentials 
+                                                                                
                                         </div>
+                                            <img class="" src="img/Executive.jpg" width="350px">
+        
                                     </div>
-                                </nav> 
-
-
-                            <div class="project">
-                                <div class="project__text-box">
-                                    <h1 class="heading-primary">
-                                        <span class="heading-primary--main">Reality Tv</span>
-                                        <span class="heading-primary--sub">cache of unique formats & talent</span>
-                                    </h1>        
                                 </div>
-                            </div>                            
-            </header>
-
-                <section class="section-realities">
-                    <div class="u-center-text u-margin-bottom-large">
-                            <h2 class="heading-tertiary">
-                                Synopsis of 12 Realities
-                            </h2>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card border-0">
+                                    <div class="card-body d-flex justify-content-center">
+                                        <div class="quotes text-center">
+                                        
+                                            Promote your individual talents to producers and TV executives 
+                                                                                
+                                        </div>
+                                            <img class="" src="img/act000.jpg" width="350px">
+        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card border-0">
+                                    <div class="card-body d-flex justify-content-center">
+                                        <div class="quotes text-center">
+                                        
+                                            Casting companies access your info. and initiate contact
+                                                                                    
+                                        </div>
+                                            <img class="" src="img/studio0.jpg" width="350px">
+        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card border-0">
+                                    <div class="card-body d-flex justify-content-center">
+                                        <div class="quotes text-center">
+                                    
+                                            Exposure to talent scouts with opportunity to be discovered
+                                                                                    
+                                        </div>
+                                            <img class="" src="img/write5.jpg" width="350px">
+        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card border-0">
+                                    <div class="card-body d-flex justify-content-center">
+                                        <div class="quotes text-center">
+                                        
+                                            Keep you apprised of future reality productions
+                                                                                    
+                                        </div>
+                                            <img class="" src="img/write3.jpg" width="350px">
+        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="fa fa-arrow-circle-o-left fa-2x" aria-hidden="true" style="color : black"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="fa fa-arrow-circle-o-right fa-2x" aria-hidden="true" style="color : black"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
-
-                    <div class="row">
-                        <div class="col-1-of-3">
-                            <div class="card">
-                                <div class="card__side card__side--front">
-                                    <div class="card__picture card__picture--1">
-                                        <img src="img/snipers.jpg" alt="card-pic" class="card__img">
-                                    </div>
-                                    <h4 class="card__heading">
-                                        <span class="card__heading-span card__heading-span--1">Battle Grounds - Snipers at Large</span>    
-                                    </h4>
-                                </div>
-                                <div class="card__side card__side--back card__side--back-1">
-                                    <div class="card__cta">
-                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
-                                    </div> 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-1-of-3">
-                            <div class="card">
-                                <div class="card__side card__side--front">
-                                    <div class="card__picture card__picture--2">
-                                        <img src="img/scene1.jpg" alt="card-pic" class="card__img">
-                                    </div>
-                                    <h4 class="card__heading">
-                                        <span class="card__heading-span card__heading-span--2">Ovations - Sound of Music</span>    
-                                    </h4>
-                                </div>
-                                <div class="card__side card__side--back card__side--back-2">
-                                    <div class="card__cta">
-                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
-                                    </div> 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-1-of-3">
-                            <div class="card">
-                                <div class="card__side card__side--front">
-                                    <div class="card__picture card__picture--3">
-                                        <img src="img/lifeboat.jpg" alt="card-pic" class="card__img">
-                                    </div>
-                                    <h4 class="card__heading">
-                                        <span class="card__heading-span card__heading-span--3">Life Boat - Unhinged</span>    
-                                    </h4>
-                                </div>
-                                <div class="card__side card__side--back card__side--back-3">
-                                    <div class="card__cta">
-                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
-                                    </div> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-1-of-3">
-                            <div class="card">
-                                <div class="card__side card__side--front">
-                                    <div class="card__picture card__picture--4">
-                                        <img src="img/war.jpg" alt="card-pic" class="card__img">
-                                    </div>
-                                    <h4 class="card__heading">
-                                        <span class="card__heading-span card__heading-span--4">Battles of Foreign Lands</span>    
-                                    </h4>
-                                </div>
-                                <div class="card__side card__side--back card__side--back-4">
-                                    <div class="card__cta">
-                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
-                                    </div> 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-1-of-3">
-                            <div class="card">
-                                <div class="card__side card__side--front">
-                                    <div class="card__picture card__picture--5">
-                                        <img src="img/love.jpg" alt="card-pic" class="card__img">
-                                    </div>
-                                    <h4 class="card__heading">
-                                        <span class="card__heading-span card__heading-span--5">Modelled to Market</span>    
-                                    </h4>
-                                </div>
-                                <div class="card__side card__side--back card__side--back-5">
-                                    <div class="card__cta">
-                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
-                                    </div> 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-1-of-3">
-                            <div class="card">
-                                <div class="card__side card__side--front">
-                                    <div class="card__picture card__picture--6">
-                                        <img src="img/shark2.jpg" alt="card-pic" class="card__img">
-                                    </div>
-                                    <h4 class="card__heading">
-                                        <span class="card__heading-span card__heading-span--6">Sharks on Wallstreet</span>    
-                                    </h4>
-                                </div>
-                                <div class="card__side card__side--back card__side--back-6">
-                                    <div class="card__cta"> 
-                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
-                                    </div> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-1-of-3">
-                            <div class="card">
-                                <div class="card__side card__side--front">
-                                    <div class="card__picture card__picture--1">
-                                        <img src="img/Conquest2.jpg" alt="card-pic" class="card__img">
-                                    </div>
-                                    <h4 class="card__heading">
-                                        <span class="card__heading-span card__heading-span--1">Gold Fever - Quest for the Mother Lode</span>    
-                                    </h4>
-                                </div>
-                                <div class="card__side card__side--back card__side--back-1">
-                                    <div class="card__cta">
-                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
-                                    </div> 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-1-of-3">
-                            <div class="card">
-                                <div class="card__side card__side--front">
-                                    <div class="card__picture card__picture--2">
-                                        <img src="img/actress3.jpg" alt="card-pic" class="card__img">
-                                    </div>
-                                    <h4 class="card__heading">
-                                        <span class="card__heading-span card__heading-span--2">Encore - Matters of ACTORS</span>    
-                                    </h4>
-                                </div>
-                                <div class="card__side card__side--back card__side--back-2">
-                                    <div class="card__cta">
-                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
-                                    </div> 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-1-of-3">
-                            <div class="card">
-                                <div class="card__side card__side--front">
-                                    <div class="card__picture card__picture--3">
-                                        <img src="img/Imagine.jpg" alt="card-pic" class="card__img">
-                                    </div>
-                                    <h4 class="card__heading">
-                                        <span class="card__heading-span card__heading-span--3">Imagine That</span>    
-                                    </h4>
-                                </div>
-                                <div class="card__side card__side--back card__side--back-3">
-                                    <div class="card__cta">
-                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
-                                    </div> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-1-of-3">
-                            <div class="card">
-                                <div class="card__side card__side--front">
-                                    <div class="card__picture card__picture--4">
-                                        <img src="img/wonder.jpg" alt="card-pic" class="card__img">
-                                    </div>
-                                    <h4 class="card__heading">
-                                        <span class="card__heading-span card__heading-span--4">Manipulated</span>    
-                                    </h4>
-                                </div>
-                                <div class="card__side card__side--back card__side--back-4">
-                                    <div class="card__cta">
-                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
-                                    </div> 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-1-of-3">
-                            <div class="card">
-                                <div class="card__side card__side--front">
-                                    <div class="card__picture card__picture--5">
-                                        <img src="img/golf2.jpg" alt="card-pic" class="card__img">
-                                    </div>
-                                    <h4 class="card__heading">
-                                        <span class="card__heading-span card__heading-span--5">Golf Squadron</span>    
-                                    </h4>
-                                </div>
-                                <div class="card__side card__side--back card__side--back-5">
-                                    <div class="card__cta">
-                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
-                                    </div> 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-1-of-3">
-                            <div class="card">
-                                <div class="card__side card__side--front">
-                                    <div class="card__picture card__picture--6">
-                                        <img src="img/Pet1.jpg" alt="card-pic" class="card__img">
-                                    </div>
-                                    <h4 class="card__heading">
-                                        <span class="card__heading-span card__heading-span--6">Pet Celebrity</span>    
-                                    </h4>
-                                </div>
-                                <div class="card__side card__side--back card__side--back-6">
-                                    <div class="card__cta"> 
-                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
-                                    </div> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-1-of-3">
-                            <div class="card">
-                                <div class="card__side card__side--front">
-                                    <div class="card__picture card__picture--1">
-                                        <img src="img/yacht3.jpg" alt="card-pic" class="card__img">
-                                    </div>
-                                    <h4 class="card__heading">
-                                        <span class="card__heading-span card__heading-span--1">Singles Yatching Society</span>    
-                                    </h4>
-                                </div>
-                                <div class="card__side card__side--back card__side--back-1">
-                                    <div class="card__cta">
-                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
-                                    </div> 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-1-of-3">
-                            <div class="card">
-                                <div class="card__side card__side--front">
-                                    <div class="card__picture card__picture--2">
-                                        <img src="img/Inventor.jpg" alt="card-pic" class="card__img">
-                                    </div>
-                                    <h4 class="card__heading">
-                                        <span class="card__heading-span card__heading-span--2">State Street Inventor</span>    
-                                    </h4>
-                                </div>
-                                <div class="card__side card__side--back card__side--back-2">
-                                    <div class="card__cta">
-                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
-                                    </div> 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-1-of-3">
-                            <div class="card">
-                                <div class="card__side card__side--front">
-                                    <div class="card__picture card__picture--3">
-                                        <img src="img/swim.jpg" alt="card-pic" class="card__img">
-                                    </div>
-                                    <h4 class="card__heading">
-                                        <span class="card__heading-span card__heading-span--3">Living Aboard</span>    
-                                    </h4>
-                                </div>
-                                <div class="card__side card__side--back card__side--back-3">
-                                    <div class="card__cta"> 
-                                        <a href="Eviewpage.php" class="bttn bttn--white">Check It Out Now</a>
-                                    </div> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                <section class="section-projects">
-                    <p class="Projects__paragraph">With great enthusiasm, RealityTVRegistry recommends these 15 projects. All have copyright 
-                        protection and are available for option and acquisition. Additional proposals are being 
-                        developed and may be viewable in mid-August.</p>
-                </section>
-        </main>
-
-       
-
-<?php 
-
-        require "scripts/footer.php";
+                </div>
+                    
+            </div>
+        </section>
+        
+        <script>
+            let movieCard = document.querySelectorAll(".movie-card");
+        
+            movieCard.forEach((card)=>{
+                card.addEventListener("mouseover", function(){
+        
+                    let cardTitle = this.querySelector(".movieTitle");
+                    let checkout = this.querySelector(".check-out");
+        
+              //      cardTitle.classList.add("animate-show");
+                    checkout.classList.add("animate-show");
+        
+                });
+        
+                card.addEventListener("mouseleave", function(){
+        
+                    let cardTitle = this.querySelector(".movieTitle");
+                    let checkout = this.querySelector(".check-out");
+        
+                   // cardTitle.classList.remove("animate-show");
+                    checkout.classList.remove("animate-show");
+        
+                });
+            })
+        </script>
+ <?php
+         require "scripts/footer_two.php";
 
     }else{
         header("Location: login.php");
