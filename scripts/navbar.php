@@ -48,6 +48,7 @@
       </div>
 
     <?php }else { ?>
+    <a href="login.php" class="btn btn-warning mr-2">Login</a>
     <a href="signup.php" class="btn btn-warning">Signup</a>
     <?php } ?>
    

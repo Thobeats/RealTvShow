@@ -202,16 +202,16 @@
                 </div>
             </section>
 
-            <section class="row my-4 p-2 movie-dets">
+            <section class="row my-4 p-2 movie-dets bg-light">
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="d-flex justify-content-center">
                     <div class="row">
                         <div class="col-lg-3 col-md-12 col-sm-12 p-5">
-                            <h1 class="movie-header pt-2">
+                            <h1 class="movie-header pt-2 text-center">
                                 Title
                             </h1>
                             
-                            <p class="movie-title mt-3">
+                            <p class="movie-title mt-3 pl-3 text-center">
                                 <?= isset($movie_data['movie_title']) ? $movie_data['movie_title'] : 'Epic - Battles of Foreign Lands (Proposed filming in the US)' ?>                                    
                             </p>
                         
