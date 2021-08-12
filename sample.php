@@ -126,7 +126,7 @@ require("scripts/header_two.php");
     </div>
 </section>
 
-<section class="d-flex justify-content-center p-4 mt-5">
+<section class="d-flex justify-content-center p-4 mt-5 bg-light">
     <h3 class="zilla">ACTUAL DISPLAY LISTING AND IMAGE ENHANCED PITCH</h4>
 </section>
 
@@ -150,7 +150,9 @@ require("scripts/header_two.php");
 
 <?php   
 
-$movie_data = mysqli_fetch_assoc(mysqli_query($link, "select * from realtv_movies where id = '5'"))
+$random = rand(1,6);
+
+$movie_data = mysqli_fetch_assoc(mysqli_query($link, "select * from realtv_movies where id = '$random'"));
 
 ?>
 <section class="row my-4 p-2 movie-dets bg-light">

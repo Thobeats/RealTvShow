@@ -23,11 +23,18 @@ if(isset($_POST['reg'])){
 
    if(register_new_user($firstname, $lastname, $email, $password, $role, null, $address, $username)){
        set_message("success", "Registration Successful, check your email to activate your account");
+
+       if(reg_and_save_movie($movie_title,$logline,$synopsis,$genre,$cover_pic,$other_img)){
+           set_message("success", "Pitch Saved");
+       }else{
+           set_message("error", "Error: Not Saved!");
+       }
+
    }else{
        set_message("error", "Registration Failed");
    }
 
-   reg_and_save_movie($movie_title,$logline,$synopsis,$genre,$cover_pic,$other_img);
+   
 }
 ?>
 
