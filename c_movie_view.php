@@ -171,15 +171,22 @@ if(isset($_GET['id'])){
     }
 
     @media only screen and (max-width: 425px) {
-        .cover-wrapper{
+        .cover-image{
+            height : 50vh;
+            background-position : center right;
+        }
+
+          .cover-wrapper{
             width : 425px;
         }
         .cover-wrapper h1{ 
             font-size : 25px; 
+            letter-spacing : 2px;
         }
 
         .cover-wrapper p{
              font-size : 15px;
+             letter-spacing : 1px;
         }
 
         .movie-title, .movie-header{

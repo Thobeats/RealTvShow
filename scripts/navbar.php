@@ -14,6 +14,10 @@
     background-color : #ffc107;
   }
 
+
+
+  
+
 </style>
 
 
@@ -23,7 +27,8 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto ml-auto">
+    <ul class="navbar-nav m-auto">
+       
       <li class="nav-item active">
         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
@@ -38,7 +43,7 @@
 
     <?php if(is_loggedIn()){ ?>
       <div class="btn-group">
-        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button type="button" class="realbtn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <?= $_SESSION['firstname'] ?>
         </button>
         <div class="dropdown-menu">
@@ -48,8 +53,14 @@
       </div>
 
     <?php }else { ?>
-    <a href="login.php" class="btn btn-warning mr-2">Login</a>
-    <a href="signup.php" class="btn btn-warning">Signup</a>
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a href="login.php" class="nav-link">Login</a>
+        </li>
+        <li class="nav-item">
+         <a href="signup.php" class="nav-link">Signup</a>
+        </li>             
+      </ul>
     <?php } ?>
    
   </div>

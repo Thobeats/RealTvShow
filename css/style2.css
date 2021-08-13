@@ -44,6 +44,28 @@ body{
     overflow-x: hidden;
 }
 
+a,a:hover{
+    text-decoration: none;
+}
+
+.realbtn{
+    padding : 10px 25px;
+    border-radius : 5px;
+    border: none;
+    font-size: 14px;
+    letter-spacing : 2px;
+    font-weight : 300;
+}
+
+.small-btn{
+    transform : scale(0.8);
+  }
+
+.form-control{
+    font-weight : 300 !important;
+    letter-spacing: 2px;
+}
+
 .btn-legit{
     background-color : #041e3c;
     color : white;
@@ -260,6 +282,21 @@ body{
 }
 
 @media only screen and (max-width: 425px) {
+    .landing-image{
+        height : 50vh;
+        background-position: center right;
+    }
+
+    .landing-text h1{
+        font-size: 25px;
+        letter-spacing: 2px;
+    }
+
+    .landing-text p{
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+
     .landing-page-roles{
         height: auto;
     }
@@ -310,6 +347,11 @@ body{
     .writer-btn{
         width : 100%;
         margin-top : 5px;
+    }
+
+    .cnote{
+        font-size : 13px;
+        letter-spacing: 1px;
     }
 
 

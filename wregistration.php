@@ -225,7 +225,7 @@ if(isset($_POST['reg'])){
             <div class="row mt-4">
                 <div class="col-lg-6"></div>
                 <div class="col-lg-6 text-right">
-                  <input type="button" class="btn btn-warning next writer-btn" value="Next">
+                  <input type="button" class="realbtn btn-warning next writer-btn" value="Next">
                 </div>
             </div>
 
@@ -279,7 +279,7 @@ if(isset($_POST['reg'])){
             </div>
 
             <div class="row mt-3">
-                <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="col-lg-6 col-md-6 col-sm-12" style="transform: scale(0.8);">
                     <div class="input-group mt-2" style="font-weight: 300">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
@@ -291,14 +291,14 @@ if(isset($_POST['reg'])){
                     </div>
                 </div>
 
-                <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="col-lg-6 col-md-6 col-sm-12" style="transform: scale(0.8);">
                     <div class="input-group mt-2">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                         </div>
                         <div class="custom-file">
                             <input type="file" name="other_img" title="Select multiple images" style="font-weight: 300 !important;" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" multiple>
-                            <label class="custom-file-label" for="inputGroupFile01">Other Images</label>
+                            <label class="custom-file-label" for="inputGroupFile01" >Other Images</label>
                         </div>
                     </div>
                 </div>
@@ -306,10 +306,10 @@ if(isset($_POST['reg'])){
 
             <div class="row mt-5">
                 <div class="col-lg-6 writer-btn-prev col-sm-12">
-                    <input type="button" class="btn btn-warning prev writer-btn" value="Previous">
+                    <input type="button" class="realbtn btn-warning prev writer-btn" value="Previous">
                 </div>
                 <div class="col-lg-6 writer-btn-reg col-sm-12">
-                  <input type="submit" class="btn btn-legit writer-btn" name="reg" value="Register">
+                  <input type="submit" class="realbtn btn-legit writer-btn" name="reg" value="Register">
                 </div>
             </div>
 

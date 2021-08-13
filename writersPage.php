@@ -88,18 +88,22 @@ require "scripts/header_two.php";
         border : 2px solid #004883;
     }
 
+    
+
     .regnow_link{
         text-decoration : none;
         color : whitesmoke;
         font-family: 'Poppins', sans-serif;
-        font-size: 20px;
+        font-size: 17px;
+        letter-spacing : 2px;
         padding : 30px;
+        font-weight : 300;
         
     }
 
     .regnow_link:hover{
         text-decoration: none;
-        color : grey;
+        color : white;
     }
 
 

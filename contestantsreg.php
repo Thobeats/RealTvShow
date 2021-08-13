@@ -41,7 +41,7 @@ require "scripts/header_two.php";
 
 <section class="py-4 note">
     <div class="col-12">
-        <p class="text-center p-4">
+        <p class="text-center p-4 cnote">
         With great enthusiasm, RealityTVRegistry recommends these 15 projects. All have copyright protection and are available for option and acquisition. Additional proposals are being developed and may be viewable in mid-August.
         </p>
     </div>

@@ -19,7 +19,7 @@ require "scripts/header_two.php";
 
 <section class="landing-page-roles d-flex justify-content-center flex-column ">
     <div class="row p-5">
-        <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
+        <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="card new">
                 <img src="img/act4.jpg" alt="" >
                 <div class="card-body bg-dark text-center">
@@ -27,7 +27,7 @@ require "scripts/header_two.php";
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
+        <div class="col-lg-4 col-md-4 col-sm-12">
         <div class="card new">
                 <img src="img/shoot00.jpg" alt="" >
                 <div class="card-body bg-dark text-center">
@@ -35,7 +35,7 @@ require "scripts/header_two.php";
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
+        <div class="col-lg-4 col-md-4 col-sm-12">
         <div class="card new">
                 <img src="img/writer02.jpg" alt="" >
                 <div class="card-body bg-dark text-center">
@@ -198,7 +198,7 @@ require "scripts/header_two.php";
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 text-center my-auto">
-                <a href="" class="btn btn-info">Get Started</a>
+                <a href="" class="realbtn btn-info btn-lg">Get Started</a>
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 call_to_action_img" style="background-image: url(img/act02.jpg); background-size: cover;">

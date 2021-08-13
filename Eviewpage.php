@@ -211,7 +211,7 @@
                                 Title
                             </h1>
                             
-                            <p class="movie-title mt-3 pl-3 text-center">
+                            <p class="movie-title mt-3 text-center">
                                 <?= isset($movie_data['movie_title']) ? $movie_data['movie_title'] : 'Epic - Battles of Foreign Lands (Proposed filming in the US)' ?>                                    
                             </p>
                         
