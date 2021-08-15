@@ -22,6 +22,7 @@ require("scripts/header_two.php");
     text-align : center;
     font-family: "Montserrat", sans-serif;
     width : 100%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.274) ,rgba(0, 0, 0, 0.219));
 }
 
 .sample-wrapper h1{
@@ -115,6 +116,29 @@ require("scripts/header_two.php");
 
 .synopsis_content{
     letter-spacing : 1px;
+}
+
+@media only screen and (max-width: 425px) {
+
+body{
+    width : auto;
+}
+
+.sample{
+    height : 50vh;
+    background-position : center right;
+}
+
+.sample-wrapper h1{
+    font-size : 25px;
+    letter-spacing : 2px;
+}
+
+.sample-wrapper p{
+    font-size : 15px;
+    letter-spacing : 1px;
+}
+
 }
 
 </style>

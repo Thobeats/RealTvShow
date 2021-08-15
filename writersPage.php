@@ -154,7 +154,7 @@ require "scripts/header_two.php";
                     <div class="d-flex flex-column tile">
                         <div class="first_post_pic"></div>
                         <div class="post_text d-flex flex-column justify-content-center pt-1">
-                            <a href="" class="post_link text-center">promoting your material</a>
+                            <a href="promoteyou.php" class="post_link text-center">promoting your material</a>
                         </div>
                     </div>
                 </div>
@@ -185,7 +185,7 @@ require "scripts/header_two.php";
                     <div class="d-flex flex-column">
                         <div class="second_post_pic"></div>
                         <div class="post_text d-flex flex-column justify-content-center pt-1">
-                            <a href="" class="post_link text-center">business of writing</a>
+                            <a href="business.php" class="post_link text-center">business of writing</a>
                         </div>
                     </div>
                 </div>

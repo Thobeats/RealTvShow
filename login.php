@@ -31,6 +31,10 @@ require "scripts/header_two.php";
   display : block;
 }
 
+.button{
+  background-color : #004883;
+}
+
 form{
   width : 50%;
 }
@@ -107,7 +111,7 @@ button{
      <div class="row">
        <div class="col-lg-6 col-md-6 col-sm-12">
          <div class="d-flex justify-content-center my-4">
-           <button class="realbtn btn-lg btn-warning button" name="login" >Log In</button>
+           <button class="realbtn btn-lg text-light button" name="login" >Log In</button>
          </div>
        </div>
 

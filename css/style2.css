@@ -55,6 +55,7 @@ a,a:hover{
     font-size: 14px;
     letter-spacing : 2px;
     font-weight : 300;
+    width : auto;
 }
 
 .small-btn{
@@ -244,6 +245,23 @@ a,a:hover{
     background-image:linear-gradient(to right bottom, rgba(11, 65, 214, 0.555), rgba(15, 15, 15, 0.267));
 }
 
+.sidebar-para{
+    font-size: 15px;
+    color : grey;
+    padding : 10px;
+    font-family: 'Zilla Slab', serif;    
+}
+
+.member_benefit{
+    border-left : 1px solid rgb(218, 215, 215);
+}
+
+.poppins{
+    font-family: 'Poppins', sans-serif;
+    font-weight : 300;
+}
+
+
 @media only screen and (max-width: 768px) {
     .landing-page-roles{
         height: auto;
@@ -277,6 +295,8 @@ a,a:hover{
         text-align : center;
     }
 
+    
+    
    
     
 }
@@ -352,6 +372,16 @@ a,a:hover{
     .cnote{
         font-size : 13px;
         letter-spacing: 1px;
+    }
+
+    .sidebar-para{
+        font-size: 12px;       
+    }
+
+    .member_benefit{
+        border-left : none;
+        border-top : 1px solid rgb(218, 215, 215);
+        margin-top : 20px;
     }
 
 
