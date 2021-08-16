@@ -163,7 +163,7 @@ require "scripts/header_two.php";
                     <div class="d-flex flex-column">
                         <div class="fourth_post_pic"></div>
                         <div class="post_text d-flex flex-column justify-content-center pt-1">
-                            <a href="" class="post_link text-center">hollywood outsiders</a>
+                            <a href="hollywood.php" class="post_link text-center">hollywood outsiders</a>
                         </div>
                     </div>
                 </div>
@@ -172,7 +172,7 @@ require "scripts/header_two.php";
                     <div class="d-flex flex-column">
                         <div class="fifth_post_pic"></div>
                         <div class="post_text d-flex flex-column justify-content-center pt-1">
-                            <a href="" class="post_link text-center">business of options</a>
+                            <a href="businessOption.php" class="post_link text-center">business of options</a>
                         </div>
                     </div>
                 </div>
@@ -193,7 +193,7 @@ require "scripts/header_two.php";
                     <div class="d-flex flex-column">
                         <div class="third_post_pic"></div>
                         <div class="post_text d-flex flex-column justify-content-center pt-1">
-                            <a href="" class="post_link text-center">pitching reality</a>
+                            <a href="pitching.php" class="post_link text-center">pitching reality</a>
                         </div>
                     </div>
                 </div>
@@ -204,7 +204,7 @@ require "scripts/header_two.php";
                     <div class="d-flex flex-column">
                         <div class="sixth_post_pic"></div>
                         <div class="post_text d-flex flex-column justify-content-center pt-1">
-                            <a href="" class="post_link text-center">display listing and image pitch</a>
+                            <a href="sample.php" class="post_link text-center">display listing and image pitch</a>
                         </div>
                     </div>
                 </div>

@@ -147,7 +147,7 @@ body{
     <div class="row">
         <div class="col-lg-9 col-md-9 col-sm-12">
             <div class="row d-flex justify-content-start">
-                <h2 class="p-5 promote_you_header">business of writing reality </h2>
+                <h2 class="p-5 promote_you_header">the business of options</h2>
             </div>
             <div class="row p-2">
                 <div class="col-12 pl-3">
