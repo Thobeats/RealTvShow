@@ -184,8 +184,7 @@
                                         is to have it optioned by someone who 
                                         has a high likelihood of getting it made. Because while having a script optioned is great (and it is great, 
                                         don’t get me wrong) having a script produced is even better. Not just for your ego, but for your career.
-                                        So what you really want (short of actually selling the screenplay) 
-                                        is to have it optioned by someone who </br>
+                                        </br>
                                         3 – It’s okay to say no
                                         If you’re approached by an unknown producer with no resources, no previous credits, 
                                         no financing and no connections, and thus a limited likelihood of getting to production, 
