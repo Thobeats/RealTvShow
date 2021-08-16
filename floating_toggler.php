@@ -82,11 +82,10 @@
     <ul class="writers_option">
         <li class="option"><a class="option_link" href="promoteyou.php">Promoting You</a></li>
         <li class="option"><a class="option_link" href="business.php">Business of writing</a></li>
-        <li class="option"><a class="option_link" href="">Pitching Reality</a></li>
-        <li class="option"><a class="option_link" href="">Display Listing and Image Pitch</a></li>
-        <li class="option"><a class="option_link" href="">Business of Options</a></li>
-        <li class="option"><a class="option_link" href="">Hollywood outsiders pitched</a></li>
-        <li class="option"><a class="option_link" href="sample.php">View Pitch Sample</a></li>
+        <li class="option"><a class="option_link" href="pitching.php">Pitching Reality</a></li>
+        <li class="option"><a class="option_link" href="sample.php">Display Listing and Image Pitch</a></li>
+        <li class="option"><a class="option_link" href="businessOption.php">Business of Options</a></li>
+        <li class="option"><a class="option_link" href="hollywood.php">Hollywood outsiders pitched</a></li>
         <li class="option"><a class="option_link" href="wregistration.php">Register</a></li>
     </ul>
 </div>

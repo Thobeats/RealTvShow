@@ -85,6 +85,31 @@ require "scripts/header_two.php";
     font-weight : 300;
 }
 
+.promote_img{
+    width : 300px;
+    height : 250px;
+    transform : scale(0.7);
+}
+
+.movie-para{
+    margin-top : -30px;
+}
+
+@media only screen and (max-width: 768px) {
+    .promote_img{
+    width : 180px;
+    height : 140px;
+}
+
+.movie-para{
+    margin-top : 0px;
+    margin-top : -20px;
+    font-size : 10px;
+    margin-right : -10px;
+
+}
+    
+}
 
 
 @media only screen and (max-width: 425px) {
@@ -114,6 +139,18 @@ body{
     font-size : 12px;
   
 }
+
+.promote_img{
+    width : 150px;
+    height : 100px;
+}
+
+.movie-para{
+    margin-top : 0px;
+    margin-top : -10px;
+    border: 1px solid;
+   
+}
 }
 </style>
 
@@ -129,7 +166,7 @@ body{
 <section class="promote-you p-2 my-5">
 
     <div class="row">
-        <div class="col-lg-8 col-md-8 col-sm-12">
+        <div class="col-lg-9 col-md-9 col-sm-12">
             <div class="row d-flex justify-content-start">
                 <h2 class="p-5 promote_you_header">promoting you </h2>
             </div>
@@ -175,9 +212,12 @@ body{
 
                 ?>
 
-                <div class="col-6 text-center">
-                    <img src="img/upload/<?= $movies['movie_pic']  ?>" alt="" width="100%" class="border" style="transform : scale(0.8);">
-                    <p class="movie-para"><?= $movies['movie_title'] ?></p>
+                <div class="col-4">
+                    <div class="d-flex flex-column justify-content-center">
+                        <img src="img/uploads/<?= $movies['movie_pic']  ?>" alt="" class="promote_img">
+                        <p class="movie-para text-right"><?= $movies['movie_title'] ?></p>
+                    </div>
+                    
                 </div>
 
 

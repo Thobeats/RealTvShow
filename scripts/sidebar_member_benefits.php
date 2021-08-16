@@ -1,4 +1,4 @@
-<div class="col-lg-4 col-md-3 col-sm-12 member_benefit">
+<div class="col-lg-3 col-md-3 col-sm-12 member_benefit">
     <div class="row d-flex justify-content-center">
         <h4 class="p-5 text-muted">Member Benefit </h4>
     </div>
