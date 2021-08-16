@@ -1,101 +1,158 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<?php 
+$navBar = true;
+require "scripts/functions.php";
+require "scripts/header_two.php"; 
 
-        <link rel="stylesheet" href="css/icon-font.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="sass/main.scss">
-        <link rel="shortcut icon" type="image.png" href="img/logo.png">
-        <script type="text/javascript" src="js/reality.js"></script>
+//var_dump($_SESSION);
+?>
+<style>
+    .cover-image{
+    background-image: url(img/camera8.jpg);
+    height: 100vh;
+    background-size : cover;
+    background-position : top left;
+    color : white;
+    display: flex;
+    align-items : center;
+}
 
-        <title> RealityTV | RealityTVregistry.com</title>
+.cover-wrapper{
+    text-align : center;
+    font-family: "Montserrat", sans-serif;
+    width : 100%;
+}
 
-    </head>
-    <body>
-        <main>
-            <header>
-                <div class="project__logo">
-                    <img src="img/logo.png" alt="Reality Tv Logo" class="project__logo-box">
-                </div>
+.cover-wrapper h1{
+    font-weight : 600;
+    letter-spacing : 1.75rem;
+    text-transform : uppercase;
+}
 
-                <nav class="clearfix navbox">
-                                    <div class="navbar">
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><a href="index.php">Home</a>
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                        </div>
-                                        
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><a href="aboutus.php">About Us</a>
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                            <!-- <div class="dropdown-content">
-                                                <a href="">Blog</a>
-                                                <a href="">FAQ's</a>
-                                                <a href="">Promoting You</a>
-                                                <a href="">Talent Areas</a>
-                                                <a href="">Writer Benefits and Talent Benefits</a>
-                                            </div> -->
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><a href="contactus.php">Contact Us</a>
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                        </div>
-                                    </div>
+.cover-wrapper p{
+    font-weight : 300;
+    letter-spacing : 1rem;
+    text-transform : uppercase;
+    width : 100%;
+}
 
-                                    <div>
-                                        <div class="buttons">
-                                            <a href="signup.php" class="btn btn--white">SignUp</a>
-                                        </div>
-                                    </div>
-                                </nav> 
+.promote-you{
+    height : auto;
+}
+
+.promote-you h2{
+    text-transform : uppercase;
+    letter-spacing: 1px;
+    font-family: 'Poppins', serif;
+    font-weight : 600;
+}
+
+.promote-you h4{
+    text-transform : uppercase;
+    letter-spacing: 1px;
+    font-family: 'Poppins', serif;
+    font-weight : 400;
+}
+
+.promote-you h5{
+    text-transform : uppercase;
+    letter-spacing: 1px;
+    font-family: 'Poppins', serif;
+    font-weight : 600;
+}
+
+.promote-you h3{
+    text-transform : uppercase;
+    letter-spacing: 1px;
+    font-family: 'Poppins', serif;
+    font-weight : 600;
+}
+
+.promote_you_header::before{
+    display: inline-block;
+    background-color :  #004883;
+    content : " ";
+    width : 10px;
+    height : 23px;
+    margin-right : 3px;
+}
 
 
-                            <div class="projects">
+.promote-you h5::before{
+    display: inline-block;
+    background-color :  #004883;
+    content : " ";
+    width : 10px;
+    height : 15px;
+    margin-right : 3px;
+}
 
-                                <div class="options">
-                                    <input type="checkbox" class="options__checkbox" id="navi-toggle">
+.promote-you h3::before{
+    display: inline-block;
+    background-color :  #004883;
+    content : " ";
+    width : 10px;
+    height : 19px;
+    margin-right : 3px;
+}
 
-                                    <label for="navi-toggle" class="options__button">
-                                        <span class="options__icon">&nbsp;</span>
-                                    </label>
+.writer_side_para, .movie-para{
+    font-size : 14px;
+    font-family : 'Poppins', serif;
+    font-weight : 300;
+}
 
-                                    <div class="options__background">&nbsp;</div>
 
-                                    <nav class="options__nav">
-                                        <ul class="options__list">
-                                            <li class="options__item"><a href="promoteyou.php" class="options__link"><span>01</span>Promoting Your Material</a></li>
-                                            <li class="options__item"><a href="business.php" class="options__link"><span>02</span>Business of Writing</a></li>
-                                            <li class="options__item"><a href="pitching.php" class="options__link"><span>03</span>Pitching Reality</a></li>
-                                            <li class="options__item"><a href="sample.php" class="options__link"><span>04</span>Display Listing & Image Pitch</a></li>
-                                            <li class="options__item"><a href="business2.php" class="options__link"><span>05</span>Business of Options</a></li>
-                                            <li class="options__item"><a href="hollywood.php" class="options__link"><span>06</span>Hollywood Outsiders Pitched</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
 
-                                <div class="project__text-box">
-                                    <h1 class="heading-primary">
-                                        <span class="heading-primary--main">Reality Tv</span>
-                                        <span class="heading-primary--sub">cache of unique formats & talent</span>
-                                    </h1>        
-                                </div>
-                            </div>                            
-            </header>
+@media only screen and (max-width: 425px) {
 
-            <section class="section-viewpage">
-            <h2 class="heading-secondary">
-                Hollywood Outsiders Claim Success
-            </h2>
-                    <ul class="view__paragraph">
+body{
+    width : auto;
+}
+
+.cover-image{
+    height : 50vh;
+    background-position : center right;
+}
+
+.cover-wrapper h1{
+    font-size : 25px;
+    letter-spacing : 2px;
+}
+
+.cover-wrapper p{
+    font-size : 15px;
+    letter-spacing : 1px;
+}
+
+
+
+.writer_side_para, .movie-para{
+    font-size : 12px;
+  
+}
+}
+</style>
+
+<section class="cover-image p-4">
+    <div class="cover-wrapper m-auto d-flex flex-column justify-content-center">                
+        <h1>Reality Tv</h1>
+        <p class="mr-auto ml-auto">cache of unique formats & talent</p>                  
+    </div>
+</section>
+
+<?php include("floating_toggler.php"); ?>
+
+<section class="promote-you p-2 my-5">
+
+    <div class="row">
+        <div class="col-lg-9 col-md-9 col-sm-12">
+            <div class="row d-flex justify-content-start">
+                <h2 class="p-5 promote_you_header">Hollywood Outsiders Claim Success</h2>
+            </div>
+
+            <div class="row p-2">
+                <div class="col-12 pl-3">
+                    <ol class="writer_side_para">
                         <li>A few, recent success stories of individuals who pitched their unique material to 
                         producers and then prospered from their efforts.</li>
                         </br>
@@ -129,93 +186,28 @@
                         <li>Timothy Centner from a tiny rural town contracted with MDR Entertainment for his 
                         original concepts in reality television programming.</li>
                     </ul>
-            </section>
-
-            <section>
-                <div class="register-buttons">
-                    <a href="wregister.php" class="btn btn--white register-buttons-you register-buttons-you-1">Register Now</a>
-                </div>
-            </section>
-            
-        </main>
-
-        <footer class="footer">
-            <div class="row footer__high">
-                <div class="col-1-of-4">
-                        <div class="footer__logo-box">
-                            <img src="img/logo.png" alt="Logo" class="footer__logo">
-                        </div>
-                </div>
-                <div class="footer__group">
-                     <div class="footer__navigation">
-                         <div class="col-1-of-4">
-                            <h3 class="footer__heading"><b>About</b></h3>
-                                <ul class="footer__list">
-                                    <li class="footer__item"></li><a href="reality.php" class="footer__link">Reality TV</a></li>
-                                    <li class="footer__item"></li><a href="faq.php" class="footer__link">Faq</a></li>
-                                    <li class="footer__item"></li><a href="login.php" class="footer__link">Login/signup</a></li>
-                                    <li class="footer__item"></li><a href="privacy.php" class="footer__link">Privacy policy</a></li>
-                                    <li class="footer__item"></li><a href="terms.php" class="footer__link">Terms of Service</a></li>
-                                </ul>
-                        <div>
-                        <div class="col-1-of-4">
-                            <h3 class="footer__heading-2"><b>Community</b></h3>
-                                <ul class="footer__list-2">
-                                    <li class="footer__item"></li><a href="future.php" class="footer__link">Future</a></li>
-                                    <li class="footer__item"></li><a href="promoteyou.php" class="footer__link">Promoting You</a></li>
-                                    <li class="footer__item"></li><a href="benefits.php" class="footer__link">Benefits</a></li>
-                                    <li class="footer__item"></li><a href="communications.php" class="footer__link">Communications</a></li>
-                                    <li class="footer__item"></li><a href="nda.php" class="footer__link">NDA Agreement</a></li>
-                                </ul>
-                        <div>
-                        <div class="col-1-of-4">
-                            <h3 class="footer__heading-3"><b>Pages</b></h3>
-                                <ul class="footer__list-3">
-                                    <li class="footer__item"></li><a href="index.php" class="footer__link">Home</a></li>
-                                    <li class="footer__item"></li><a href="aboutus.php" class="footer__link">About us</a></li>
-                                    <li class="footer__item"></li><a href="contactus.php" class="footer__link">Contact us</a></li>
-                                </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-late__div">
-                    <div class="sprite">
-                        <div class="sprite__icon-box">
-                                <svg class="sprite__icon">
-                                    <use xlink:href="img/sprite.svg#icon-accessibility"></use>
-                                </svg>
-                            <div class="sprite__user">
-                                    <svg class="sprite__icon sprite__icon-text">
-                                        <use xlink:href="img/sprite.svg#icon-credit"></use>
-                                    </svg>
-                            </div>
-                            <div class="sprite__user">
-                                <svg class="sprite__icon sprite__icon-text">
-                                    <use xlink:href="img/sprite.svg#icon-sphere"></use>
-                                </svg>
-                            </div>
-                            <svg class="sprite__icon">
-                                <use xlink:href="img/sprite.svg#icon-facebook2"></use>  
-                            </svg>
-                            <svg class="sprite__icon">
-                                <use xlink:href="img/sprite.svg#icon-linkedin"></use>
-                            </svg>
-                            <svg class="sprite__icon">
-                                <use xlink:href="img/sprite.svg#icon-pinterest"></use>
-                            </svg>
-                            <svg class="sprite__icon">
-                                <use xlink:href="img/sprite.svg#icon-instagram1"></use>
-                            </svg>
-                            <svg class="sprite__icon">
-                                <use xlink:href="img/sprite.svg#icon-twitter1"></use>
-                            </svg>        
-                        </div>
-                    </div>
-                    <div class="footer__copyright">
-                        &copy;RealityTV International Limited 2021.
-                    </div>
                 </div>
             </div>
-        </footer>
-    </body>
-</html>
+
+            <div class="row mt-3">
+                <div class="col-lg-6 col-md-6 text-center p-3 col-sm-12">
+                    <a class="realbtn border-bottom" href="sample.php">View Pitch Sample</a>
+                </div>
+                <div class="col-lg-6 col-md-6 text-center p-3 col-sm-12">
+                    <a class="realbtn border-bottom" href="wregistration.php">Register</a>
+                </div>
+            </div>
+           
+        </div>
+        <?php require "scripts/sidebar_member_benefits.php"; ?>
+    </div>
+    
+</section>
+
+     
+
+
+
+<?php
+ require "scripts/footer_two.php";
+?>
