@@ -1,173 +1,246 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<?php 
+$navBar = true;
+require "scripts/functions.php";
+require "scripts/header_two.php"; 
 
-        <link rel="stylesheet" href="css/icon-font.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="sass/main.scss">
-        <link rel="shortcut icon" type="image.png" href="img/logo.png">
-        <script type="text/javascript" src="js/reality.js"></script>
+//var_dump($_SESSION);
+?>
+<style>
+.promote-you{
+    height : auto;
+}
 
-        <title> RealityTV | RealityTVregistry.com</title>
+.promote-you h2{
+    text-transform : uppercase;
+    letter-spacing: 1px;
+    font-family: 'Poppins', serif;
+    font-weight : 600;
+}
 
-    </head>
-    <body>
-        <main>
-            <header>
-                <div class="project__logo">
-                    <img src="img/logo.png" alt="Reality Tv Logo" class="project__logo-box">
-                </div>
+.promote-you h4{
+    text-transform : uppercase;
+    letter-spacing: 1px;
+    font-family: 'Poppins', serif;
+    font-weight : 400;
+}
 
-                <nav class="clearfix navbox">
-                                    <div class="navbar">
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><a href="index.php">Home</a>
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                        </div>
-                                        
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><a href="aboutus.php">About Us</a>
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                            <!-- <div class="dropdown-content">
-                                                <a href="">Blog</a>
-                                                <a href="">FAQ's</a>
-                                                <a href="">Promoting You</a>
-                                                <a href="">Talent Areas</a>
-                                                <a href="">Writer Benefits and Talent Benefits</a>
-                                            </div> -->
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><a href="contactus.php">Contact Us</a>
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                        </div>
-                                    </div>
+.promote-you h5{
+    text-transform : uppercase;
+    letter-spacing: 1px;
+    font-family: 'Poppins', serif;
+    font-weight : 600;
+}
 
-                                    <div>
-                                        <div class="buttons">
-                                            <a href="signup.php" class="btn btn--white">SignUp</a>
-                                        </div>
-                                    </div>
-                                </nav> 
+.promote_you_header::before{
+    display: inline-block;
+    background-color :  #004883;
+    content : " ";
+    width : 10px;
+    height : 23px;
+    margin-right : 3px;
+}
 
 
-                            <div class="projected">
-                                <div class="project__text-box">
-                                    <h1 class="heading-primary">
-                                        <span class="heading-primary--main">Reality Tv</span>
-                                        <span class="heading-primary--sub">cache of unique formats & talent</span>
-                                    </h1>        
-                                </div>
-                            </div>                            
-            </header>
+.promote-you h5::before{
+    display: inline-block;
+    background-color :  #004883;
+    content : " ";
+    width : 10px;
+    height : 15px;
+    margin-right : 3px;
+}
+.writer_side_para, .movie-para{
+    font-size : 14px;
+    font-family : 'Poppins', serif;
+    font-weight : 300;
+}
 
-            <section class="aboutus-excercises">
-                <div>
-                        <h3 class="heading-secondary">Privacy Policy – TV Industry Executives </h3>
-                        <p class="view__paragraph">
-                        The RealityTVRegistry platform has employed significant security elements to protect the loss, 
-                        exploitation and modification of the information under our control. As a safeguard all user/members 
-                        who elect to register, may only do so by imputing an electronic/binding signature "I AGREE". 
-                        This signature provides consent to the relevant non-disclosure/confidentiality agreement, or 
-                        industry-standard material release form.
-                        </br>
-                        To insure, protection to our member’s credentials and projects, all information from registrants is reviewed 
-                        and or vetted respectively, to confirm the validity of the information. This, to safeguard that our member's 
-                        and projects are being examined by legitimate executives in the film industry, and their entities. This assessment 
-                        and authentication process is conducted prior to permitting access to our <b class="paintme">password protected database</b>. All industry 
-                        executive registrations are confirmed by RealityTVRegistry executives and/or staff. Any questionable registrations 
-                        will be permanently deleted from our data base. 
+.promote_img{
+    width : 300px;
+    height : 250px;
+    transform : scale(0.7);
+}
+
+.movie-para{
+    margin-top : -30px;
+}
+
+@media only screen and (max-width: 768px) {
+    .promote_img{
+    width : 180px;
+    height : 140px;
+}
+
+.movie-para{
+    margin-top : 0px;
+    margin-top : -20px;
+    font-size : 10px;
+    margin-right : -10px;
+
+}
+    
+}
+
+
+@media only screen and (max-width: 425px) {
+
+body{
+    width : auto;
+}
+
+.cover-image{
+    height : 50vh;
+    background-position : center right;
+}
+
+.cover-wrapper h1{
+    font-size : 25px;
+    letter-spacing : 2px;
+}
+
+.cover-wrapper p{
+    font-size : 15px;
+    letter-spacing : 1px;
+}
+
+
+
+.writer_side_para, .movie-para{
+    font-size : 12px;
+  
+}
+
+.promote_img{
+    width : 150px;
+    height : 100px;
+}
+
+.movie-para{
+    margin-top : 0px;
+    margin-top : -10px;
+    border: 1px solid;
+   
+}
+}
+</style>
+
+
+
+<section class="promote-you p-2 mt-2 mb-5">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="row d-flex justify-content-start">
+                <h2 class="px-5 pt-5 pb-2 promote_you_header ">Privacy Policy – TV Industry Executives </h2>
+            </div>
+            <div class="row p-2">
+                <div class="col-12 pl-3">
+                    <p class="writer_side_para">
+                    The RealityTVRegistry platform has employed significant security elements to protect the loss, exploitation and
+                    modification of the information under our control. As a safeguard all user/members who elect to register, may
+                    only do so by imputing an electronic/binding signature &quot;I AGREE&quot;. This signature provides consent to the
+                    relevant non-disclosure/confidentiality agreement, or industry-standard material release form. 
+                    </p>
+                    <p class="writer_side_para">
+                    To insure, protection to our member’s credentials and projects, all information from registrants is reviewed and
+                    or vetted respectively, to confirm the validity of the information. This, to safeguard that our member&#39;s and
+                    projects are being examined by legitimate executives in the film industry, and their entities. This assessment
+                    and authentication process is conducted prior to permitting access to our password protected database. All
+                    industry executive registrations are confirmed by RealityTVRegistry executives and/or staff. Any questionable
+                    registrations will be permanently deleted from our data base.
                     </p>
                 </div>
-            </section>
-            
-        </main>
+            </div>
 
-        <footer class="footer">
-            <div class="row footer__high">
-                <div class="col-1-of-4">
-                        <div class="footer__logo-box">
-                            <img src="img/logo.png" alt="Logo" class="footer__logo">
-                        </div>
-                </div>
-                <div class="footer__group">
-                     <div class="footer__navigation">
-                         <div class="col-1-of-4">
-                            <h3 class="footer__heading"><b>About</b></h3>
-                                <ul class="footer__list">
-                                    <li class="footer__item"></li><a href="reality.php" class="footer__link">Reality TV</a></li>
-                                    <li class="footer__item"></li><a href="faq.php" class="footer__link">Faq</a></li>
-                                    <li class="footer__item"></li><a href="login.php" class="footer__link">Login/signup</a></li>
-                                    <li class="footer__item"></li><a href="privacy.php" class="footer__link">Privacy policy</a></li>
-                                    <li class="footer__item"></li><a href="terms.php" class="footer__link">Terms of Service</a></li>
-                                </ul>
-                        <div>
-                        <div class="col-1-of-4">
-                            <h3 class="footer__heading-2"><b>Community</b></h3>
-                                <ul class="footer__list-2">
-                                    <li class="footer__item"></li><a href="future.php" class="footer__link">Future</a></li>
-                                    <li class="footer__item"></li><a href="promoteyou.php" class="footer__link">Promoting You</a></li>
-                                    <li class="footer__item"></li><a href="benefits.php" class="footer__link">Benefits</a></li>
-                                    <li class="footer__item"></li><a href="communications.php" class="footer__link">Communications</a></li>
-                                    <li class="footer__item"></li><a href="nda.php" class="footer__link">NDA Agreement</a></li>
-                                </ul>
-                        <div>
-                        <div class="col-1-of-4">
-                            <h3 class="footer__heading-3"><b>Pages</b></h3>
-                                <ul class="footer__list-3">
-                                    <li class="footer__item"></li><a href="index.php" class="footer__link">Home</a></li>
-                                    <li class="footer__item"></li><a href="aboutus.php" class="footer__link">About us</a></li>
-                                    <li class="footer__item"></li><a href="contactus.php" class="footer__link">Contact us</a></li>
-                                </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-late__div">
-                    <div class="sprite">
-                        <div class="sprite__icon-box">
-                                <svg class="sprite__icon">
-                                    <use xlink:href="img/sprite.svg#icon-accessibility"></use>
-                                </svg>
-                            <div class="sprite__user">
-                                    <svg class="sprite__icon sprite__icon-text">
-                                        <use xlink:href="img/sprite.svg#icon-credit"></use>
-                                    </svg>
-                            </div>
-                            <div class="sprite__user">
-                                <svg class="sprite__icon sprite__icon-text">
-                                    <use xlink:href="img/sprite.svg#icon-sphere"></use>
-                                </svg>
-                            </div>
-                            <svg class="sprite__icon">
-                                <use xlink:href="img/sprite.svg#icon-facebook2"></use>  
-                            </svg>
-                            <svg class="sprite__icon">
-                                <use xlink:href="img/sprite.svg#icon-linkedin"></use>
-                            </svg>
-                            <svg class="sprite__icon">
-                                <use xlink:href="img/sprite.svg#icon-pinterest"></use>
-                            </svg>
-                            <svg class="sprite__icon">
-                                <use xlink:href="img/sprite.svg#icon-instagram1"></use>
-                            </svg>
-                            <svg class="sprite__icon">
-                                <use xlink:href="img/sprite.svg#icon-twitter1"></use>
-                            </svg>        
-                        </div>
-                    </div>
-                    <div class="footer__copyright">
-                        &copy;RealityTV International Limited 2021.
-                    </div>
+            <div class="row d-flex justify-content-start">
+                <h5 class="pt-2 pl-5 pb-2 promote_you_header">communications</h5>
+            </div>
+            <div class="row p-2">
+                <div class="col-12 pl-3">
+                    <p class="writer_side_para">
+                        The RealityTVRegistry implement Form Mail and Send Mail to deliver electronic notification to certain
+                        registered members relative to the activity on their private account. It also delivers specific notifications of
+                        member related news. Our staff manually sends all emails to those registered with our promotional services.
+                        We do not spam non-members. Registered members submit either a personal or business email address that
+                        is used to receive notifications from our office. We pledge to never sale, lend or exploit member emails or other
+                        personal data to third parties.
+                    </p>
+                    <p class="writer_side_para">
+                        User Activity Monitored Password protected access is provided to member writers. Thus, these members have
+                        access to a personal project status page where they are enabled to observe registered member executive
+                        reviews. The reviews are accessed for member writer related projects that are posted for review strictly for the
+                        access of the RTVR industry executive database. As registered industry executive examines or selects an
+                        applicable status for any project, that review/status is electronically sent and posted to the corresponding
+                        writer&#39;s project status page. The information indicates the company name/ project title / date reviewed / and
+                        time. Industry executives have full discretion to select the status or the ability to change it at any time for any
+                        project that has been posted. The executive has no obligation to the corresponding writer. The review status
+                        logs are submitted to our registered member writers as a courtesy and service, and not to be construed as a
+                        right of information.
+                    </p>
                 </div>
             </div>
-        </footer>
-    </body>
-</html>
+
+            <div class="row d-flex justify-content-start">
+                <h5 class="pt-2 pl-5 pb-2 promote_you_header">copyright protection</h5>
+            </div>
+            <div class="row p-2">
+                <div class="col-12 pl-3">
+                    <p class="writer_side_para">
+                        It is highly recommended that all member writers of RealityTVRegistry who submit original written material take
+                        the initiative to register for copyright protection. Your written material is considered intellectual property and it is
+                        ultimately the responsibility of the Writer to take these measures in protecting their work.
+                    </p>
+                    <p class="writer_side_para">
+                        To provide mutual protection and privacy of both industry executives and registered writers, we require all
+                        registering industry executives to agree by electronic signature to an industry standard Non-Disclosure
+                        Agreement. Furthermore, all registered writers are required to agree by electronic signature, to an industry
+                        standard Material Release Form.
+                    </p>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-start">
+                <h5 class="pt-2 pl-5 pb-2 promote_you_header">cookies</h5>
+            </div>
+            <div class="row p-2">
+                <div class="col-12 pl-3">
+                    <p class="writer_side_para">
+                    Member names and passwords are stored as “cookies” on websites that we use. Cookies permit individuals to
+                    store and retrieve login information through a user&#39;s browser. A cookie is a small data file that certain Web
+                    sites write to your hard drive when you visit them. A cookie file generally contains information such as a user
+                    ID that the site exercises to track pages that you have visited.
+                    </p>
+                    <p class="writer_side_para">
+                        The RealityTVRegistry registration form requires users to provide contact information including name, email
+                        address, and additional information. Our staff gathers customer contact information from the registration form
+                        to deliver user information about our company as well as information concerning available projects and other
+                        acquisition related data. The member&#39;s contact information is also used to contact the visitor when necessary.
+                    </p>
+                    <p class="writer_side_para">
+                        Industry executives have the ability to contact registered members of RTVR to discuss their talent interests and
+                        projects, therefore it is important that member contact data are current. If the RTVR member enlists an industry
+                        representative it is imperative to so state and include the current contact data of the representative. *Writer
+                        contact information is not publicly displayed on RTVR platform. Contact information is only released to a
+                        verified Industry Executive when a formal solicitation or formal review of the talent or project is requested by
+                        the executive. At that time the executive may discuss project particulars or a deal proposal. The executives
+                        and/or staff of RTVR may contact any member as deemed necessary.
+                    </p>
+                    <p class="writer_side_para">
+                        Within the content of the RealityTVRegistry are links to related websites that are not under the policies of our
+                        company. Therefore, RTVR cannot be held liable for the privacy practices or the content of these websites.
+                        The RTVR staff and executives pledge to never sell, broker or otherwise distribute mailing lists, contact
+                        information or personal demographics information to third party companies, members, or non-members.
+                    </p>
+                </div>
+            </div>            
+        </div>
+    </div>
+    
+</section>
+
+     
+
+
+
+<?php
+ require "scripts/footer_two.php";
+?>

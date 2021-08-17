@@ -28,7 +28,7 @@
                         <li class="r_list"><a href="future.php">Future</a></li>
                         <li class="r_list"><a href="promoteyou.php">Promoting You</a></li>
                         <li class="r_list"><a href="benefits.php">Benefits</a></li>
-                        <li class="r_list"><a href="communications.php">Communications</a></li>
+                        <!-- <li class="r_list"><a href="communications.php">Communications</a></li> -->
                         <li class="r_list"><a href="nda.php">NDA Agreement</a></li>   
                     </ul>
                 </div>
