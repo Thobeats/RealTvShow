@@ -29,7 +29,7 @@ require "scripts/header_two.php";
                 </div>
                 <p class="p-2 movieTitle text-light text-center my-0"  style="background-image: linear-gradient(to right bottom, rgba(50, 149, 230, 0.85), rgba(0, 72, 131, 0.85));"><?= $movie->movie_title ?></p>
                 <div class="card-footer text-center">
-                    <a href="signup.php"class="realbtn btn-warning">Check it out</a>
+                    <a href="c_movie_view.php?id=<?= $movie->id ?>"class="realbtn btn-warning">Check it out</a>
                 </div>                            
             </div>         
           

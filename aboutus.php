@@ -6,33 +6,7 @@ require "scripts/header_two.php";
 //var_dump($_SESSION);
 ?>
 <style>
-    .cover-image{
-    background-image: url(img/camera8.jpg);
-    height: 100vh;
-    background-size : cover;
-    background-position : top left;
-    color : white;
-    display: flex;
-    align-items : center;
-}
-
-.cover-wrapper{
-    text-align : center;
-    font-family: "Montserrat", sans-serif;
-    width : 100%;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.274) ,rgba(0, 0, 0, 0.219));
-}
-
-.cover-wrapper h1{
-    font-weight : 600;
-    letter-spacing : 1.75rem;
-    text-transform : uppercase;
-}.cover-wrapper p{
-    font-weight : 300;
-    letter-spacing : 1rem;
-    text-transform : uppercase;
-    width : 100%;
-}.about-us-wrapper{
+.about-us-wrapper{
     height : auto;
 }.about-us{
     text-transform : uppercase;
@@ -80,12 +54,7 @@ require "scripts/header_two.php";
 }
 </style>
 
-<section class="cover-image p-4">
-    <div class="cover-wrapper m-auto d-flex flex-column justify-content-center">                
-        <h1>Reality Tv</h1>
-        <p class="mr-auto ml-auto">cache of unique formats & talent</p>                  
-    </div>
-</section>
+
 
 <section class="about-us-wrapper">
     <div class="row p-3">

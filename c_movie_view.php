@@ -225,7 +225,7 @@ if(isset($_GET['id'])){
         <section class="cover-image p-4">
              <div class="cover-wrapper m-auto d-flex flex-column justify-content-center">                
                 <h1>Reality Tv</h1>
-                <p class="mr-auto ml-auto">cache of unique formats & talent</p>                  
+                <p class="mr-auto ml-auto">on location to a cache of unique formats & talent</p>                  
             </div>
         </section>
         

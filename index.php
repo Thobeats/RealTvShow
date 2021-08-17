@@ -80,7 +80,7 @@ require "scripts/header_two.php";
     </div>
     
     <div class="row d-flex justify-content-center my-5">
-        <a href="contestantsreg.php" class="btn discover">discover all realities</a>
+        <a href="projects.php" class="btn discover">discover all realities</a>
     </div>
 </section>
 
