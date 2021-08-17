@@ -11,7 +11,7 @@ require "scripts/header_two.php";
 
 <section class="landing-page-movie">
     <div class="landing-synopsis text-center ">
-        <h2 class="landing-header">synopsis of 12 realities</h2>
+        <h2 class="landing-header">reality tv proposals</h2>
     </div>
 
     <div class="row py-5">
@@ -22,14 +22,15 @@ require "scripts/header_two.php";
 
                 $moviePic = $movie->movie_pic;
         ?>
-        <div class="col-lg-4 col-md-4 mt-5 card-col col-sm-6 d-flex justify-content-center">
-            <div class="card movie-card" style="width: 80%; background: url(img/uploads/<?= $moviePic ?>); height: 200px; background-size: cover; cursor: pointer" >
-                <div class="card-title mb-auto text-right text-light mt-4 d-flex justify-content-end" >
-                   <p class="p-2 movieTitle"  style="background-image: linear-gradient(to right bottom, rgba(50, 149, 230, 0.85), rgba(0, 72, 131, 0.85)); width: 80%;"><?= $movie->movie_title ?></p> 
+        <div class="col-lg-4 col-md-4 mt-5 col-sm-6">
+            <div class="card border-0 mx-auto" style="cursor: pointer; width: 70%; background-color: inherit">
+                <div class="card-body">
+                      <img src="img/uploads/<?= $moviePic ?>" width="100%"  alt="">
                 </div>
-                <div class="mb-2 text-center check-out">
-                    <a href="c_movie_view.php?id=<?= $movie->id ?>" target="_blank" class="btn btn-light text-dark">Check This Out Now</a>
-                </div>
+                <p class="p-2 movieTitle text-light text-center"  style="background-image: linear-gradient(to right bottom, rgba(50, 149, 230, 0.85), rgba(0, 72, 131, 0.85));"><?= $movie->movie_title ?></p>
+                <div class="card-footer text-center">
+                    <a href="signup.php"class="realbtn btn-warning">Check it out</a>
+                </div>                            
             </div>         
           
         </div>
@@ -160,31 +161,7 @@ require "scripts/header_two.php";
     </div>
 </section>
 
-<script>
-    let movieCard = document.querySelectorAll(".movie-card");
 
-    movieCard.forEach((card)=>{
-        card.addEventListener("mouseover", function(){
-
-            let cardTitle = this.querySelector(".movieTitle");
-            let checkout = this.querySelector(".check-out");
-
-      //      cardTitle.classList.add("animate-show");
-            checkout.classList.add("animate-show");
-
-        });
-
-        card.addEventListener("mouseleave", function(){
-
-            let cardTitle = this.querySelector(".movieTitle");
-            let checkout = this.querySelector(".check-out");
-
-           // cardTitle.classList.remove("animate-show");
-            checkout.classList.remove("animate-show");
-
-        });
-    })
-</script>
 <?php
  require "scripts/footer_two.php";
 ?>

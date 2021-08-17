@@ -104,11 +104,16 @@ a,a:hover{
 }
 
 .landing-page-roles{
-    background-image : url(../img/shoot0.jpg);
     height : 100vh;
     width : 100vw;
     background-size : cover;
     background-position : top left;
+}
+
+.role-intro{
+    text-transform: capitalize;
+    font-family: 'Poppins', serif;
+    font-weight : 300;
 }
 
 .new{
@@ -131,7 +136,7 @@ a,a:hover{
 .landing-page-movie{
     height: auto;
     width: 100vw;
-    background-color : #004883;
+    background-color : #000;
     text-transform: uppercase;
     padding: 20px 0px;
 }
@@ -154,7 +159,7 @@ a,a:hover{
 .movieTitle{
     font-family: 'Poppins', sans-serif;
     font-weight : 200;
-    font-size: larger;
+    font-size: 15px;
     letter-spacing: 3px;
 }
 
@@ -210,10 +215,9 @@ a,a:hover{
 }
 
 .note{
-    background-color: #cccccc;
+    background-color: silver;
     font-size: 20px;
     font-weight: 300;
-    color : white;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -241,9 +245,6 @@ a,a:hover{
     text-align : left;
 }
 
-.movie-card:hover{
-    background-image:linear-gradient(to right bottom, rgba(11, 65, 214, 0.555), rgba(15, 15, 15, 0.267));
-}
 
 .sidebar-para{
     font-size: 15px;

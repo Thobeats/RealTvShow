@@ -17,8 +17,13 @@ require "scripts/header_two.php";
 
 </section>
 
-<section class="landing-page-roles d-flex justify-content-center flex-column ">
-    <div class="row p-5">
+<section class="landing-page-roles d-flex justify-content-center flex-column bg-light">
+    <div class="row mt-5">
+        <div class="col-12">
+            <h3 class="text-center p-3 role-intro">dedicated registrations for contestants/talent, writers, industry TV executives</h3>
+        </div>
+    </div>
+    <div class="row px-5">
         <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="card new">
                 <img src="img/act4.jpg" alt="" >
@@ -48,7 +53,7 @@ require "scripts/header_two.php";
 
 <section class="landing-page-movie py-4">
     <div class="landing-synopsis text-center ">
-        <h2 class="landing-header">synopsis of 12 realities</h2>
+        <h2 class="landing-header">reality tv proposals</h2>
     </div>
 
     <div class="row">
@@ -59,14 +64,15 @@ require "scripts/header_two.php";
 
                 $moviePic = $movie->movie_pic;
         ?>
-        <div class="col-lg-4 col-md-4 mt-5 card-col col-sm-6 d-flex justify-content-center">
-            <div class="card movie-card" style="width: 80%; background: url(img/uploads/<?= $moviePic ?>); height: 200px; background-size: cover; cursor: pointer" >
-                <div class="card-title mb-auto text-right text-light mt-4 d-flex justify-content-end" >
-                   <p class="p-2 movieTitle"  style="background-image: linear-gradient(to right bottom, rgba(50, 149, 230, 0.85), rgba(0, 72, 131, 0.85)); width: 80%;"><?= $movie->movie_title ?></p> 
+        <div class="col-lg-4 col-md-4 mt-5 col-sm-6">
+            <div class="card border-0 mx-auto" style="cursor: pointer; width: 70%; background-color: inherit">
+                <div class="card-body">
+                      <img src="img/uploads/<?= $moviePic ?>" width="100%"  alt="">
                 </div>
-                <div class="mb-2 text-center check-out">
-                    <a href="signup.php" class="btn btn-light text-dark">Check This Out Now</a>
-                </div>
+                <p class="p-2 movieTitle text-light text-center"  style="background-image: linear-gradient(to right bottom, rgba(50, 149, 230, 0.85), rgba(0, 72, 131, 0.85));"><?= $movie->movie_title ?></p>
+                <div class="card-footer text-center">
+                    <a href="signup.php"class="realbtn btn-warning">Check it out</a>
+                </div>                            
             </div>         
           
         </div>
@@ -74,11 +80,11 @@ require "scripts/header_two.php";
     </div>
     
     <div class="row d-flex justify-content-center my-5">
-        <a href="projects.php" class="btn discover">discover all realities</a>
+        <a href="contestantsreg.php" class="btn discover">discover all realities</a>
     </div>
 </section>
 
-<section class="row mb-4">
+<!-- <section class="row mb-4">
     <div class="col-12 mt-4">
         <div class="member-benefits">
             <h3 class="text-center my-4 m-title">MEMBER BENEFITS</h3>
@@ -188,9 +194,9 @@ require "scripts/header_two.php";
         </div>
             
     </div>
-</section>
+</section> -->
 
-<section class="row px-5 my-5 call_to_action">
+<!-- <section class="row px-5 my-5 call_to_action">
     <div class="col-12 p-5 bg-warning d-flex flex-column justify-content-center">
         <div class="row" style="height : 100%;">
             <div class="col-lg-4 col-md-4 col-sm-12">
@@ -206,33 +212,10 @@ require "scripts/header_two.php";
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 
-<script>
-    let movieCard = document.querySelectorAll(".movie-card");
 
-    movieCard.forEach((card)=>{
-        card.addEventListener("mouseover", function(){
-
-        //    let cardTitle = this.querySelector(".movieTitle");
-            let checkout = this.querySelector(".check-out");
-
-            checkout.classList.add("animate-show");
-
-        });
-
-        card.addEventListener("mouseleave", function(){
-
-           // let cardTitle = this.querySelector(".movieTitle");
-            let checkout = this.querySelector(".check-out");
-
-       //     cardTitle.classList.remove("animate-show");
-            checkout.classList.remove("animate-show");
-
-        });
-    })
-</script>
 
 
 

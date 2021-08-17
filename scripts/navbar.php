@@ -1,6 +1,6 @@
 <style>
   nav{
-    background-color : #004883;
+    background-color : black;
   }
   
   nav a {
@@ -36,7 +36,10 @@
         <a class="nav-link" href="aboutus.php">About Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="contactus.php">Contact Us</a>
+        <a class="nav-link" href="contactus.php">Let's Connect</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contactus.php">Faq</a>
       </li>
      
     </ul>
