@@ -7,7 +7,7 @@ require "scripts/header_two.php";
 ?>
 <style>
     .cover-image{
-    background-image: url(img/camera8.jpg);
+    background-image: url(img/drone4.jpg);
     height: 100vh;
     background-size : cover;
     background-position : top left;
@@ -38,16 +38,8 @@ require "scripts/header_two.php";
     text-transform : uppercase;
     font-weight : 500;
     font-family: 'Poppins', serif;
-    font-size: 50px; 
+    font-size: 20px; 
     letter-spacing : 3px;   
-}.about-us::after{
-    content : '';
-    background-color : #ffc107;
-    width : 100px;
-    height : 5px;
-    display : block;
-    position: relative;
-    left : 150px;
 }.about-us-text{
     font-family: 'Poppins', serif;
     font-size : 15px;
@@ -56,12 +48,9 @@ require "scripts/header_two.php";
 }.about-us-img{
     width : 100%;
     clip-path : polygon(0% 0%, 0% 100%, 100% 96%, 100% 0%);
-}@media only screen and (max-width: 768px) {.about-us{font-weight : 500;font-size: 40px; }.about-us::after{left : 110px;}.about-us-text{font-size : 12px;} .img-wrapper{margin-top: 50px;}  .cover-image{height: 80vh;} }
-@media only screen and (max-width: 425px) {body{width : auto;}.about-us{font-weight : 500;font-size: 30px;}
-    .about-us{padding-right: 40px;}
-    .about-us::after{
-        left : 80px;
-        width : 80px;}.about-us-text{font-size : 10px;}
+}@media only screen and (max-width: 768px) {.about-us{font-weight : 500;font-size: 15px; }.about-us-text{font-size : 12px;} .img-wrapper{margin-top: 50px;}  .cover-image{height: 80vh;} }
+@media only screen and (max-width: 425px) {body{width : auto;}.about-us{font-weight : 500;font-size: 12px;}
+    .about-us-text{font-size : 10px;}
     .about-us-img{
         width: 70%;
     }
@@ -89,8 +78,8 @@ require "scripts/header_two.php";
 
 <section class="about-us-wrapper">
     <div class="row p-3">
-        <div class="col-lg-7 col-md-8 col-sm-12 d-flex justify-content-end pt-4">
-            <p class="pl-5 about-us text-right">about us</p>
+        <div class="col-lg-12 d-flex justify-content-center pt-4">
+            <p class="pl-5 about-us text-center"> Please refer to <a href="#">FAQ’s</a> page for quick answers to your question </p>
         </div>        
     </div>
 

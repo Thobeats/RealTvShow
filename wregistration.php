@@ -104,6 +104,7 @@ if(isset($_POST['reg'])){
     }
 
     @media only screen and (max-width: 768px) {
+           
         .writer-title{  
             font-size: 40px;  
         }
@@ -123,6 +124,21 @@ if(isset($_POST['reg'])){
     }
 
     @media only screen and (max-width: 425px) {
+
+        .writer-cover{
+            height: 50vh;
+            background-position : center right;
+        }
+
+        .writer-wrapper h1{
+            font-size : 25px;
+            letter-spacing : 2px;
+        }
+
+        .writer-wrapper p{
+            font-size : 15px;
+            letter-spacing : 1px;
+        }
         .writer-title{  
             font-size: 30px;  
         }
@@ -168,7 +184,7 @@ if(isset($_POST['reg'])){
 
 <div class="row p-3">
     <div class="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-end pt-4">
-       <p class="pl-5 writer-title text-right">Writer's Registration </p>
+       <p class="pl-5 writer-title text-right"> authors & scripters</p>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 text-align-left p-4">
         <div class="writer-img">
