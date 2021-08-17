@@ -158,17 +158,24 @@ body{
 
 <section class="sample_listings p-3">
     <div class="row">
-        <?php
-            $samples = mysqli_query($link, "select * from realtv_movies LIMIT 6");
+        <?php 
+            $movie_query = mysqli_query($link, "Select * from realtv_movies limit 9");
 
-            while($sample = mysqli_fetch_assoc($samples)):
+            while($movie = mysqli_fetch_object($movie_query)):
+
+                $moviePic = $movie->movie_pic;
         ?>
-        <div class="col-lg-4 col-md-4 mt-5 card-col col-sm-6 d-flex justify-content-center">
-            <div class="card movie-card" style="width: 80%; background: url(img/uploads/<?= $sample['movie_pic'] ?>); height: 200px; background-size: cover; cursor: pointer" >
-                <div class="card-title mb-auto text-right text-light mt-4 d-flex justify-content-end" >
-                    <p class="p-2 movieTitle"  style="background-image: linear-gradient(to right bottom, rgba(50, 149, 230, 0.85), rgba(0, 72, 131, 0.85)); width: 80%;"><?= $sample['movie_title'] ?></p> 
-                </div>               
-            </div>      
+        <div class="col-lg-4 col-md-4 mt-5 col-sm-6">
+            <div class="card movie-card border-0 mx-auto" style="cursor: pointer; background-color: inherit">
+                <div class="card-body p-0">
+                      <img src="img/uploads/<?= $moviePic ?>" width="100%"  alt="">
+                </div>
+                <p class="p-2 movieTitle text-light text-center my-0"  style="background-image: linear-gradient(to right bottom, rgba(50, 149, 230, 0.85), rgba(0, 72, 131, 0.85));"><?= $movie->movie_title ?></p>
+                <div class="card-footer text-center">
+                    <a href="signup.php"class="realbtn btn-warning">Check it out</a>
+                </div>                            
+            </div>         
+          
         </div>
         <?php endwhile; ?>
     </div>

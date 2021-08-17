@@ -161,12 +161,11 @@ body{
     </div>
 </section>
 
-<?php include("floating_toggler.php"); ?>
 
 <section class="promote-you p-2 my-5">
 
     <div class="row">
-        <div class="col-lg-9 col-md-9 col-sm-12">
+        <div class="col-12">
             <div class="row d-flex justify-content-start">
                 <h2 class="p-5 promote_you_header">promoting you </h2>
             </div>
@@ -205,26 +204,18 @@ body{
 
             <div class="row">
                 <?php 
-                    $total = mysqli_num_rows(mysqli_query($link, "select * from realtv_movies"));
-                    $movieQuery = mysqli_query($link, "select * from realtv_movies limit 15");
+                    $movie_query = mysqli_query($link, "Select * from realtv_movies");
 
-                    while($movies = mysqli_fetch_assoc($movieQuery)):
+                    while($movie = mysqli_fetch_object($movie_query)):
 
+                        $moviePic = $movie->movie_pic;
                 ?>
-
-                <div class="col-4">
-                    <div class="d-flex flex-column justify-content-center">
-                        <img src="img/uploads/<?= $movies['movie_pic']  ?>" alt="" class="promote_img">
-                        <p class="movie-para text-right"><?= $movies['movie_title'] ?></p>
-                    </div>
-                    
+                <div class="col-lg-4 col-md-4 col-sm-6 mt-2">
+                    <p class="p-2 text-center bg-light my-0"><?= $movie->movie_title ?></p>                
                 </div>
-
-
                 <?php endwhile; ?>
             </div>
         </div>
-        <?php require "scripts/sidebar_member_benefits.php"; ?>
     </div>
     
 </section>
