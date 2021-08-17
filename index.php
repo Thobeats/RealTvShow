@@ -65,11 +65,11 @@ require "scripts/header_two.php";
                 $moviePic = $movie->movie_pic;
         ?>
         <div class="col-lg-4 col-md-4 mt-5 col-sm-6">
-            <div class="card border-0 mx-auto" style="cursor: pointer; width: 70%; background-color: inherit">
-                <div class="card-body">
+            <div class="card movie-card border-0 mx-auto" style="cursor: pointer; background-color: inherit">
+                <div class="card-body p-0">
                       <img src="img/uploads/<?= $moviePic ?>" width="100%"  alt="">
                 </div>
-                <p class="p-2 movieTitle text-light text-center"  style="background-image: linear-gradient(to right bottom, rgba(50, 149, 230, 0.85), rgba(0, 72, 131, 0.85));"><?= $movie->movie_title ?></p>
+                <p class="p-2 movieTitle text-light text-center my-0"  style="background-image: linear-gradient(to right bottom, rgba(50, 149, 230, 0.85), rgba(0, 72, 131, 0.85));"><?= $movie->movie_title ?></p>
                 <div class="card-footer text-center">
                     <a href="signup.php"class="realbtn btn-warning">Check it out</a>
                 </div>                            
