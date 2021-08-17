@@ -55,6 +55,7 @@ require "scripts/header_two.php";
 }
 .contact-form{
     width : 100%;
+    font-family: 'Poppins', serif;
 }
 .contact-details-list{
     list-style: none;
