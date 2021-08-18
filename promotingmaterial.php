@@ -124,12 +124,13 @@ body{
 }
 </style>
 
+<?php include("floating_toggler.php"); ?>
 
 
 <section class="promote-you mt-2 mb-5 px-3">
 
     <div class="row">
-        <div class="col-12">
+        <div class="col-lg-9 col-md-9 col-sm-12">
             <div class="row d-flex justify-content-start">
                 <h2 class="p-5 promote_you_header">promoting your material </h2>
             </div>
@@ -226,6 +227,7 @@ body{
 
             
         </div>
+        <?php require "scripts/sidebar_member_benefits.php"; ?>
     </div>
     
 </section>

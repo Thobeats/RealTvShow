@@ -6,35 +6,6 @@ require "scripts/header_two.php";
 //var_dump($_SESSION);
 ?>
 <style>
-    .cover-image{
-    background-image: url(img/camera8.jpg);
-    height: 100vh;
-    background-size : cover;
-    background-position : top left;
-    color : white;
-    display: flex;
-    align-items : center;
-}
-
-.cover-wrapper{
-    text-align : center;
-    font-family: "Montserrat", sans-serif;
-    width : 100%;
-}
-
-.cover-wrapper h1{
-    font-weight : 600;
-    letter-spacing : 1.75rem;
-    text-transform : uppercase;
-}
-
-.cover-wrapper p{
-    font-weight : 300;
-    letter-spacing : 1rem;
-    text-transform : uppercase;
-    width : 100%;
-}
-
 .promote-you{
     height : auto;
 }
@@ -100,49 +71,20 @@ require "scripts/header_two.php";
     font-family : 'Poppins', serif;
     font-weight : 300;
 }
-
-
-
 @media only screen and (max-width: 425px) {
 
 body{
     width : auto;
 }
-
-.cover-image{
-    height : 50vh;
-    background-position : center right;
-}
-
-.cover-wrapper h1{
-    font-size : 25px;
-    letter-spacing : 2px;
-}
-
-.cover-wrapper p{
-    font-size : 15px;
-    letter-spacing : 1px;
-}
-
-
-
 .writer_side_para, .movie-para{
     font-size : 12px;
   
 }
 }
 </style>
-
-<section class="cover-image p-4">
-    <div class="cover-wrapper m-auto d-flex flex-column justify-content-center">                
-        <h1>Reality Tv</h1>
-        <p class="mr-auto ml-auto">cache of unique formats & talent</p>                  
-    </div>
-</section>
-
 <?php include("floating_toggler.php"); ?>
 
-<section class="promote-you p-2 my-5">
+<section class="promote-you p-2 my-5 px-3">
 
     <div class="row">
         <div class="col-lg-9 col-md-9 col-sm-12">
@@ -180,7 +122,7 @@ body{
 
             <div class="row p-2">
                 <div class="col-12 pl-3">
-                    <h5 class="pt-5 pl-5 pb-2 promote_you_header">what is an option?</h5>
+                    <h5 class="pt-2 pl-5 pb-2 promote_you_header">what is an option?</h5>
                     <p class="writer_side_para">
                         Producer Bob stumbled across your script on your site or in a screenplay competition, and has approached you with an offer to “option” it. 
                         What’s that mean, exactly? Granting a producer an option means granting them the exclusive right to develop the script… to try to raise the money to 
@@ -191,7 +133,7 @@ body{
                         Depends.
                     </p> 
 
-                    <h5 class="pt-5 pl-5 pb-2 promote_you_header">Should you take the option?</h5>
+                    <h5 class="pt-2 pl-5 pb-2 promote_you_header">Should you take the option?</h5>
                     <p class="writer_side_para">
                         If you’re approached by an unknown producer with no resources, no previous credits, 
                         no financing and no connections, and thus a limited likelihood of getting to production, 
@@ -202,7 +144,7 @@ body{
                         take said chance with Mister unknown resourceless producer… more on that later.)
                     </p> 
 
-                    <h5 class="pt-5 pl-5 pb-2 promote_you_header">Get a Lawyer</h5>
+                    <h5 class="pt-2 pl-5 pb-2 promote_you_header">Get a Lawyer</h5>
                     <p class="writer_side_para">
                     If you’re considering taking the option, let me say this first:
                                         Get a lawyer… not just any lawyer, but an entertainment attorney. I promise you, they will handle 
@@ -233,7 +175,7 @@ body{
                                         and explain things to me that I didn’t understand. 
                     </p> 
 
-                    <h5 class="pt-5 pl-5 pb-2 promote_you_header">why do you get paid?</h5>
+                    <h5 class="pt-2 pl-5 pb-2 promote_you_header">why do you get paid?</h5>
                     <p class="writer_side_para">
                         So if they’re not making your movie (yet) why do you get paid?
                         Your script is Intellectual Property (IP), and he with the best IP wins. No script, no movie. 
@@ -251,7 +193,7 @@ body{
                                     Because you’re giving up an asset with value and taking it off the market, you should be compensated.
                     </p> 
 
-                    <h5 class="pt-5 pl-5 pb-2 promote_you_header">How much would you get paid?</h5>
+                    <h5 class="pt-2 pl-5 pb-2 promote_you_header">How much would you get paid?</h5>
                     <p class="writer_side_para">
                         Your option contract should include at least two numbers: the option price, and the purchase price. The option price is what you get for giving the producer rights to your IP, and taking it off the market. 
                                     The option price is traditionally 10% of the purchase price, and is yours to keep no matter what happens.
@@ -275,7 +217,7 @@ body{
 
                     </p> 
 
-                    <h5 class="pt-5 pl-5 pb-2 promote_you_header">What about those “dollar options”? </h5>
+                    <h5 class="pt-2 pl-5 pb-2 promote_you_header">What about those “dollar options”? </h5>
                     <p class="writer_side_para">
                     Again, if you’re in the WGA there are restrictions on how little you can accept… but we’re not WGA. So we’ve got the freedom to strike any deal we want.
                                         The producer may ask you to option your script to them for very little or no money, and while many writers may disagree with me, I don’t think that’s 
@@ -292,7 +234,7 @@ body{
                     </p> 
 
 
-                    <h5 class="pt-5 pl-5 pb-2 promote_you_header">How long will the option be?</h5>
+                    <h5 class="pt-2 pl-5 pb-2 promote_you_header">How long will the option be?</h5>
                     <p class="writer_side_para">
                         Options run 6-12 months (usually). At the end of the option period, the producer may have an “extension clause” 
                         they can exercise, to get another 3-6 months or more. But if they do, there should be another payment involved.
@@ -304,7 +246,7 @@ body{
                         you’re obligated.
                     </p> 
 
-                    <h5 class="pt-5 pl-5 pb-2 promote_you_header">Will they change my script?</h5>
+                    <h5 class="pt-2 pl-5 pb-2 promote_you_header">Will they change my script?</h5>
                     <p class="writer_side_para">
                         In a word, “Yes”.
                         Every script, by every writer established or new, will go through changes. During my first option, among many other changes, all the 
@@ -325,7 +267,7 @@ body{
                         competition with another version of your script that you don’t control. That’s not a place you want to be.
                     </p> 
 
-                    <h5 class="pt-5 pl-5 pb-2 promote_you_header">So why option?</h5>
+                    <h5 class="pt-2 pl-5 pb-2 promote_you_header">So why option?</h5>
                     <p class="writer_side_para mb-5">
                         If you were a producer, wouldn’t you rather spend a little money to guarantee your exclusive rights to a great script, and spend a year 
                         testing the waters with financiers, production partners and distributors, than buy a script outright for ten times the money only to discover you can’t gain any traction?
