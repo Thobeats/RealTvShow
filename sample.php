@@ -143,7 +143,6 @@ body{
 
 </style>
 
-<?php require ("floating_toggler.php"); ?>
 
 <section class="sample p-4">
     <div class="sample-wrapper m-auto d-flex flex-column justify-content-center">                
