@@ -59,7 +59,7 @@ a,a:hover{
 }
 
 .small-btn{
-    transform : scale(0.8);
+    transform : scale(0.5);
   }
 
 .form-control{
@@ -392,6 +392,9 @@ a,a:hover{
     }
     .movie-card{
         width : 50%;
+    }.realbtn{
+        padding : 8px 10px;
+        font-size: 9px;
     }
 }
 
