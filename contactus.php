@@ -57,7 +57,7 @@ require "scripts/header_two.php";
 </style>
 
 
-<section class="about-us-wrapper">
+<section class="about-us-wrapper mb-5 ">
     <div class="row p-3">
         <div class="col-lg-12 d-flex justify-content-center pt-4">
             <p class="pl-5 about-us text-center"> Please refer to <a href="faq.php">FAQ’s</a> page for quick answers to your question </p>
@@ -68,21 +68,27 @@ require "scripts/header_two.php";
         <div class="col-lg-7 col-md-7 col-sm-12">
             <div class="contact-us-text px-3 pt-5">
                 <h3 class="my-5 text-center">Stay connected as we build a community of reality.</h3>
-                <a class="text-left" href="#">
-                    <i class="bi bi-envelope-fill"></i> Connect@RealityTVRegistry.com
-                </a>
-                <a class="text-left" href="#">
-                    <i class="bi bi-envelope-fill"></i> PaulM@RealityTVRegistry.com
-                </a>
-                <a class="text-left" href="#">
-                    <i class="bi bi-geo-alt-fill"></i> 626, Wilshire Blvd Ste: 410 Los Angeles,CA. 90017
-                </a>
+                <div class="my-2 p-2 text-center">
+                    <img src="img/Picture1.png" alt="" width="80%">
+                </div>
+                <div class="my-2">
+                    <a class="text-center" href="#">
+                        <i class="bi bi-envelope-fill"></i> Connect@RealityTVRegistry.com
+                    </a>
+                    <a class="text-center" href="#">
+                        <i class="bi bi-envelope-fill"></i> PaulM@RealityTVRegistry.com
+                    </a>
+                    <a class="text-center" href="#">
+                        <i class="bi bi-geo-alt-fill"></i> 626, Wilshire Blvd Ste: 410 Los Angeles,CA. 90017
+                    </a>
+                </div>
+               
             </div>
         </div>
 
         <div class="col-lg-4 col-md-5 col-sm-12 p-0 mb-5">
             <div class="p-2 img-wrapper d-flex justify-content-center">
-                <form action="" method="POST" class="contact-form">
+                <form action="" method="POST" class="contact-form mt-5">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" name="name" class="form-control">
