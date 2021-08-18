@@ -27,9 +27,7 @@
                         <li class="r_list list-title">Community</li>
                         <li class="r_list"><a href="future.php">Future</a></li>
                         <li class="r_list"><a href="promoteyou.php">Promoting You</a></li>
-                        <li class="r_list"><a href="benefits.php">Benefits</a></li>
-                        <!-- <li class="r_list"><a href="communications.php">Communications</a></li> -->
-                        <li class="r_list"><a href="nda.php">NDA Agreement</a></li>   
+                        <li class="r_list"><a href="benefits.php">Benefits</a></li>                       
                     </ul>
                 </div>
 
@@ -38,9 +36,7 @@
                         <li class="r_list list-title">About</li>
                         <li class="r_list"><a href="reality.php">Reality Tv</a></li>
                         <li class="r_list"><a href="faq.php">Faq</a></li>
-                        <li class="r_list"><a href="login.php">Login/Signup</a></li>   
-                        <li class="r_list"><a href="privacy.php">Privacy Policy</a></li>
-                        <li class="r_list"><a href="terms.php">Terms of service</a></li>
+                        <li class="r_list"><a href="login.php">Login/Signup</a></li>  
                     </ul>
                 </div>
             </div>
