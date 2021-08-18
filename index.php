@@ -20,7 +20,7 @@ require "scripts/header_two.php";
 <section class="landing-page-roles d-flex justify-content-center flex-column bg-light">
     <div class="row mt-5">
         <div class="col-12">
-            <h3 class="text-center p-3 role-intro">dedicated registrations for contestants/talent, writers, industry TV executives</h3>
+            <h3 class="text-center p-3 role-intro">dedicated registrations for contestants/talent, writers & industry TV executives</h3>
         </div>
     </div>
     <div class="row px-5">

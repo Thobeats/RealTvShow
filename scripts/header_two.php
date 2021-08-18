@@ -99,6 +99,10 @@
             overflow-x : hidden !important;          
         }
 
+        #logo{
+            height : 15vh;        
+        }
+
        
     }
 
