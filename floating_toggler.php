@@ -9,14 +9,14 @@
         position: fixed;
         top : 30px;
         left : 20px;
-        background-color : #000;
+        background-color : #004883;
         color : whitesmoke;
         z-index: 300;
 
     }
 
     .writers_list{
-        background-color : #000;
+        background-color : #004883;
         width : 250px;
         position : fixed;
         top: 0px;
@@ -75,10 +75,10 @@
 
 <button class="btn toggle_writer rounded-circle"><i class="bi bi-justify"></i></button>
 
-<div class="writers_list pb-2">
-    <!-- <div id="logo" class="d-flex justify-content-center bg-light">
-        <a href="index.php"><img src="img/logo.png" alt="logo" width = "200px" height="90px"></a>
-    </div> -->
+<div class="writers_list py-2">
+    <div id="logo" class="d-flex justify-content-center">
+        <a href="index.php"><img src="img/logo.png" alt="logo" width = "243px" height="90px"></a>
+    </div>
     <ul class="writers_option">
         <li class="option"><a class="option_link" href="promoteyou.php">Promoting You</a></li>
         <li class="option"><a class="option_link" href="business.php">Business of writing</a></li>
