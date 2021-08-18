@@ -126,7 +126,7 @@ body{
 
 
 
-<section class="promote-you p-2 mt-2 mb-5">
+<section class="promote-you p-2 mt-2 mb-5 px-3">
 
     <div class="row">
         <div class="col-12">

@@ -97,7 +97,7 @@ require "scripts/header_two.php";
         </div>
         <div class="form-group">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
                 <label class="form-check-label" for="defaultCheck1">
                     Click to Agree
                 </label>

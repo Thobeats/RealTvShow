@@ -154,7 +154,7 @@ require "scripts/header_two.php";
                     <div class="d-flex flex-column tile">
                         <div class="first_post_pic"></div>
                         <div class="post_text d-flex flex-column justify-content-center pt-1">
-                            <a href="promoteyou.php" class="post_link text-center">promoting your material</a>
+                            <a href="promotingmaterial.php" class="post_link text-center">promoting your material</a>
                         </div>
                     </div>
                 </div>

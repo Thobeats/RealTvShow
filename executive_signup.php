@@ -96,7 +96,7 @@ require "scripts/header_two.php";
             </p>
         </div>
         <div class="form-group">
-        <input type="text" class="form-control" required>
+            <input type="text" class="form-control" required>
         </div>
         <div class="form-group">
             <button type="submit" class="realbtn btn-warning">Register</button>            

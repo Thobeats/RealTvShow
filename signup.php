@@ -94,7 +94,7 @@ require "scripts/header_two.php";
         </div></a>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-12 p-4">
-        <a href=""><div class="card bg-dark text-light">
+        <a href="wregistration.php"><div class="card bg-dark text-light">
           <div class="card-body text-center">
           <h3 class="h3">author sign up</h3>
             <p class="icon">  

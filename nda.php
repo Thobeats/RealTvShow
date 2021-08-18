@@ -103,11 +103,8 @@ body{
     letter-spacing : 1px;
 }
 
-
-
 .writer_side_para, .movie-para{
     font-size : 12px;
-  
 }
 
 .promote_img{

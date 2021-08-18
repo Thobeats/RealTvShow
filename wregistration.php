@@ -46,28 +46,7 @@ if(isset($_POST['reg'])){
     form{
         padding : 0 10%;
     }
- 
-    .writer-cover{
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) ,rgba(0, 0, 0, 0.5)),url(img/drone4.jpg);
-        height: 100vh;
-        background-size : cover;
-        background-position : top left;
-        color : white;
-        display: flex;
-        align-items : center;
-    }
 
-    .writer-wrapper{
-        text-align : center;
-        font-family: "Montserrat", sans-serif;
-        width : 100%;
-    }
-
-    .writer-wrapper h1{
-        font-weight : 600;
-        letter-spacing : 1.75rem;
-        text-transform : uppercase;
-    }
 
     .writer-img{
         height : 250px;
@@ -103,6 +82,12 @@ if(isset($_POST['reg'])){
         font-weight : 300;
     }
 
+    .writer_side_para{
+        font-size : 12px;
+        font-family : 'Poppins', serif;
+        font-weight : 300;
+    }
+
     @media only screen and (max-width: 768px) {
            
         .writer-title{  
@@ -125,20 +110,6 @@ if(isset($_POST['reg'])){
 
     @media only screen and (max-width: 425px) {
 
-        .writer-cover{
-            height: 50vh;
-            background-position : center right;
-        }
-
-        .writer-wrapper h1{
-            font-size : 25px;
-            letter-spacing : 2px;
-        }
-
-        .writer-wrapper p{
-            font-size : 15px;
-            letter-spacing : 1px;
-        }
         .writer-title{  
             font-size: 30px;  
         }
@@ -157,17 +128,12 @@ if(isset($_POST['reg'])){
         .writer-img{
             width : 100%;
         }
-
-        form{
-        padding : 0;
-    }
        
-
-        form .row> .col-sm-12,.col-12{
+        form{
+            padding : 0;
+        }form .row> .col-sm-12,.col-12{
             margin-top : 10px;
-        }
-
-        .form-control{
+        }.form-control{
             margin: 0;
         }
 
@@ -175,12 +141,6 @@ if(isset($_POST['reg'])){
     }
 </style>
 
-<section class="writer-cover p-4">
-    <div class="writer-wrapper m-auto d-flex flex-column justify-content-center">                
-        <h1>Reality Tv</h1>
-        <p class="mr-auto ml-auto">cache of unique formats & talent</p>                  
-    </div>
-</section>
 
 <div class="row p-3">
     <div class="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-end pt-4">
@@ -316,6 +276,29 @@ if(isset($_POST['reg'])){
                             <input type="file" name="other_img" title="Select multiple images" style="font-weight: 300 !important;" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" multiple>
                             <label class="custom-file-label" for="inputGroupFile01" >Other Images</label>
                         </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-12">
+                    <p class="writer_side_para">
+                        Please review the RTVR Industry Executive <a href="nda.php" target="_blank">NDA - Confidential Agreement</a> , which is required to be signed by any Industry TV
+                        Executive who views writer’s material, without exception. Thus, designed to protect all the written material of writers who are registered
+                        to RTVR. <a href="terms.php" target="_blank"> Agreeing to the terms of the standard Material Release Form</a>, is required for all submissions. By checking the box below as
+                        my electronic and binding signature, I confirm that I have reviewed, understand and agree to RealityTVRegistry.com NDA/Confidential
+                        Agreement and Standard Material Release Form and that the terms and conditions of such shall govern me and my use of RTVR
+                        and/or any of the services provided by RTVR including but not limited to any submission by me as a writer or any review of the
+                        materials of others contained herein.
+                    </p>
+                </div>
+                <div class="col-12">
+                    <div class="form-check mx-auto">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
+                        <label class="form-check-label" for="defaultCheck1">
+                            Click to Agree
+                        </label>
                     </div>
                 </div>
             </div>
