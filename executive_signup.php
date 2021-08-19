@@ -57,6 +57,9 @@ require "scripts/header_two.php";
 </style>
 <section class="d-flex justify-content-center bg-light" style="height : auto;">
     <form action="" class="form">
+        <div class="get_started my-3 p-2">
+            <h3>Get Started</h3>
+        </div>
         <div class="form-group">
             <input type="text" placeholder="Firstname" class="form-control">
         </div>

@@ -9,18 +9,8 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
 
-// function connect(){ 
-//     $link = mysqli_connect("127.0.0.1", "root", "", "realtvshow");
-
-//     if($link){
-//         return $link;
-//     }else {
-//         return mysqli_connect_errno();
-//     }
-// }
-
 function connect(){ 
-    $link = mysqli_connect("localhost", "realtv_db_user", "@lphA3ch0#", "realtv_show");
+    $link = mysqli_connect("127.0.0.1", "root", "", "realtvshow");
 
     if($link){
         return $link;
@@ -28,6 +18,16 @@ function connect(){
         return mysqli_connect_errno();
     }
 }
+
+// function connect(){ 
+//     $link = mysqli_connect("localhost", "realtv_db_user", "@lphA3ch0#", "realtv_show");
+
+//     if($link){
+//         return $link;
+//     }else {
+//         return mysqli_connect_errno();
+//     }
+// }
 
 function base_url(){
     return "https://" . $_SERVER['SERVER_NAME'] . "/test/";
@@ -139,7 +139,7 @@ function user_session($array){
     }
 }
 
-function register_new_user($firstname, $surname, $email, $password, $role_id, $reg=null, $address=null, $username=null){
+function register_new_user($firstname, $surname, $email, $password, $role_id, $address=null, $username=null, $phone_no){
 
     $password = md5($password);
     $encode_password = utf8_encode($password);
@@ -152,9 +152,7 @@ function register_new_user($firstname, $surname, $email, $password, $role_id, $r
     }
 
     // Database connection
-    $link = connect();   
-
-
+    $link = connect(); 
     $checkEmail = mysqli_query($link, "select * from realtv_users where email = '$email'");
 
     if(mysqli_num_rows($checkEmail) == 1){
@@ -165,6 +163,10 @@ function register_new_user($firstname, $surname, $email, $password, $role_id, $r
     $query = mysqli_query($link, "INSERT INTO `realtv_users`(`firstname`,`lastname`,`fullname`,`username`,`status`, `role_id`,`email`,`password`,`activated`, `token`,`reg_ref`, `address`) VALUES ('$firstname','$surname','$fullname','$username','Active',
                                  '$role_id','$email','$encode_password','0', '$encode_token', '$reg', '$address')");
 
+    if($role_id == "1"){
+        $query2 = mysqli_query($link, "INSERT INTO `realtv_contestants`(`firstname`, `lastname`, `email`, `username`, `password`, `phone_no`, `address`, `profile_pic`, `resume`) VALUES ('$firstname','$surname','$email','$username',
+                                        '$password','$phone_no','$address','$project1','$resume')");
+    }
     if($query){
         $body = "<div style='padding: 5px; text-transform: capitalize;'>";
         $body .= "<h4>Welcome to RealTv Show</h4>";

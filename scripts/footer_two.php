@@ -69,7 +69,8 @@
 
  <?php if(isset($paypal)): ?>
  <script src="https://www.paypal.com/sdk/js?client-id=AfgYATIfVWBGwQVce9ggpT8F3cpdMckdMmaf525u6IvyLjD1oL8RTiTqHVZrUWMvn7Un6r2q_qDehBJY&currency=USD"></script>
- <script>paypal.Buttons({
+ <script>
+paypal.Buttons({
      style : {
          color : "blue",
          shape : "pill"

@@ -37,6 +37,11 @@ require "scripts/header_two.php";
 .contact-details-list{
     list-style: none;
 }
+.realbtn{
+    width : 100%;
+    padding : 15px;
+    font-size : 15px;
+  }
 @media only screen and (max-width: 768px) {.about-us{font-weight : 500;font-size: 17px; }.contact-us-text h3{font-size : 40px;}.contact-us-text a{font-size : 12px;}.img-wrapper{margin-top: 50px;}.cover-image{height: 80vh;} }
 @media only screen and (max-width: 425px) {body{width : auto;}.about-us{font-weight : 500;font-size: 15px;}
     .contact-us-text h3{font-size : 30px;}
