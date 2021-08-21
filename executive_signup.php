@@ -28,6 +28,13 @@ require "scripts/header_two.php";
     font-size : 15px;
   }
 
+  label{
+    font-size:14px;
+    letter-spacing : 1px;
+    font-family: "Poppins", serif;
+    font-weight : 300;
+  }
+
 @media only screen and (max-width: 768px) {    
     .form{
         width : 50%;  
@@ -55,43 +62,60 @@ require "scripts/header_two.php";
 
 }
 </style>
+
+<?= get_message("error"); ?>
+<?= get_message("success"); ?>
 <section class="d-flex justify-content-center bg-light" style="height : auto;">
-    <form action="" class="form">
+    <form action="process_executive.php" method="POST" class="form" enctype="multipart/form-data">
         <div class="get_started my-3 p-2">
-            <h3>Get Started</h3>
+            <h3>Get Started...</h3>
         </div>
         <div class="form-group">
-            <input type="text" placeholder="Firstname" class="form-control">
+            <input type="text" placeholder="Firstname" name="firstname" class="form-control" required>
         </div>
         <div class="form-group">
-            <input type="text" placeholder="Lastname" class="form-control">
+            <input type="text" placeholder="Lastname" name="lastname" class="form-control" required>
         </div>
         <div class="form-group">
-            <input type="email" placeholder="Direct Email (Company Domain)" class="form-control">
+            <input type="email" placeholder="Direct Email (Company Domain)" name="email" class="form-control" required>
         </div>
         <div class="form-group">
-            <input type="text" placeholder="Username" class="form-control">
+            <input type="text" placeholder="Username" name="username" class="form-control" required>
         </div>
         <div class="form-group">
-            <input type="password" placeholder="Password" class="form-control">
+            <input type="password" placeholder="Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" class="form-control" required>
         </div>
         <div class="form-group">
-            <input type="password" placeholder="Confirm Password" class="form-control">
+            <input type="password" placeholder="Confirm Password" name="c_pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" class="form-control" required>
         </div>
         <div class="form-group">
-            <input type="text" placeholder="Position / Title" class="form-control">
+            <input type="text" placeholder="Position / Title" name="title" class="form-control" required>
         </div>
         <div class="form-group">
-            <input type="text" placeholder="Company Name" class="form-control">
+            <input type="text" placeholder="Company Name" name="company_name" class="form-control" required>
         </div>
         <div class="form-group">
-            <input type="text" placeholder="Direct Dial Phone" class="form-control">
+            <input type="tel" placeholder="Direct Dial Phone" name="phone" class="form-control" required>
         </div>
         <div class="form-group">
-            <textarea rows="4" cols="80" placeholder="Address(Street Address, City, Zip)" class="form-control"></textarea>
+            <textarea rows="4" cols="80" name="address" placeholder="Address(Street Address, City, Zip)" class="form-control" required></textarea>
         </div>
         <div class="form-group">
-            <input type="text" placeholder="Current Mandate(Genre of Projects You are Scouting)" class="form-control" required>
+            <select name="genre" id="" class="form-control" required>
+                <option value="">Select Genre</option>
+                <?php 
+                    $genreQ = mysqli_query($link, "Select * from movie_genre");
+                    while($genre = mysqli_fetch_object($genreQ)) : 
+                ?>
+
+                <option value="<?= $genre->id ?>"><?= ucfirst($genre->genre_name) ?></option>
+
+                <?php endwhile; ?>
+            </select>
+        </div>
+        <div class="form-group"> 
+            <label for="exampleFormControlFile1">Profile Pic</label>
+            <input type="file" name="profile" class="form-control-file" id="exampleFormControlFile1">
         </div>
         <div class="form-group">
             <p class="privacy">
@@ -99,10 +123,10 @@ require "scripts/header_two.php";
             </p>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" required>
+            <input type="text" name="agree" class="form-control" required>
         </div>
         <div class="form-group">
-            <button type="submit" class="realbtn btn-warning">Register</button>            
+            <button type="submit" name="executive_submit" class="realbtn btn-warning">Register</button>            
         </div>
         <div class="form-group">
             <button type="reset" class="realbtn btn-dark">Reset</button>            

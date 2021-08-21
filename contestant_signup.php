@@ -69,9 +69,9 @@ require "scripts/header_two.php";
 <?= get_message("success"); ?>
 <section class="d-flex justify-content-center bg-light" style="height : auto;">
     
-    <form action="process.php" method="POST" class="form">
+    <form action="process_contestant.php" method="POST" class="form" enctype="multipart/form-data">
         <div class="get_started my-3 p-2">
-            <h3>Get Started</h3>
+            <h3>Get Started..</h3>
         </div>
         <div class="form-group">
             <input type="text" placeholder="Firstname" name="firstname" class="form-control" required>

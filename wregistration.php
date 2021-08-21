@@ -153,7 +153,7 @@ if(isset($_POST['reg'])){
     </div>
 </div>
 
-<form action="" method="POST" >
+<form action="" method="POST" enctype="multipart/form-data">
 <section class="writer-form px-4 py-2 mb-4" style="height: auto;">
     <div class="d-flex flex-column justify-content-center">
         
