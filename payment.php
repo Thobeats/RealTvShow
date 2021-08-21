@@ -5,7 +5,10 @@ require "scripts/functions.php";
 require "scripts/header_two.php"; 
 
 
-// if(!is_loggedIn() && )
+if(!is_loggedIn() && role() != 1){
+    set_message("info", "Signup continue");
+    header("Location: contestant_signup.php");
+}else{
 
 
 if(isset($_GET['id'])){
@@ -79,4 +82,8 @@ if(isset($_GET['id'])){
 
 </div>
 <?php $paypal = true ?>
-<?php require"scripts/footer_two.php" ?>
+<?php 
+
+require"scripts/footer_two.php"; 
+
+} ?>
