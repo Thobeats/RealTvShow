@@ -139,38 +139,59 @@ function user_session($array){
     }
 }
 
-function register_new_user($firstname, $surname, $email, $password, $role_id, $address=null, $username=null, $phone_no){
+function register_new_user($firstname, $surname, $email, $password, $role_id, $address=null, $username=null, $phone_no, $project = null, $profile_pic, $resume = null){
 
     $password = md5($password);
     $encode_password = utf8_encode($password);
     $token = md5($email); $encode_token = utf8_encode($token);
     $fullname = strtoupper($firstname) . " " . $surname;
     $email = strtolower($email);
+    $unique_id = $role_id.strtotime("now");
 
     if($username == null){
         $username = $email;
     }
 
     // Database connection
-    $link = connect(); 
-    $checkEmail = mysqli_query($link, "select * from realtv_users where email = '$email'");
+    $link = connect();     
 
-    if(mysqli_num_rows($checkEmail) == 1){
-        set_message('error', 'Email exists, register with a unique email');
-        return false;
-    }
+    $query = mysqli_query($link, "INSERT INTO `realtv_users`(`firstname`,`lastname`,`fullname`,`username`,`status`, `role_id`,`email`,`password`,`activated`, `token`, `address`, `unique_id`) VALUES ('$firstname','$surname','$fullname','$username','Active',
+                                 '$role_id','$email','$encode_password','0', '$encode_token', '$address', '$unique_id')");
 
-    $query = mysqli_query($link, "INSERT INTO `realtv_users`(`firstname`,`lastname`,`fullname`,`username`,`status`, `role_id`,`email`,`password`,`activated`, `token`,`reg_ref`, `address`) VALUES ('$firstname','$surname','$fullname','$username','Active',
-                                 '$role_id','$email','$encode_password','0', '$encode_token', '$reg', '$address')");
-
-    if($role_id == "1"){
-        $query2 = mysqli_query($link, "INSERT INTO `realtv_contestants`(`firstname`, `lastname`, `email`, `username`, `password`, `phone_no`, `address`, `profile_pic`, `resume`) VALUES ('$firstname','$surname','$email','$username',
-                                        '$password','$phone_no','$address','$project1','$resume')");
-    }
+  
     if($query){
+        if($role_id == 1){
+            $contestant_query = mysqli_query($link, "INSERT INTO `realtv_contestants`(`firstname`, `lastname`, `email`, `username`, `password`, `phone_no`, `address`, `profile_pic`, `resume`, `unique_id`) VALUES ('$firstname','$surname','$email','$username',
+                                            '$password','$phone_no','$address','$profile_pic','$resume', '$unique_id')");
+            if(!is_null($project)){
+                foreach($project as $pro){
+                    $cartquery = mysqli_query($link, "INSERT INTO `realtv_cart`(`user_id`, `project_id`) VALUES ('$unique_id','$pro')");
+                }
+
+                echo mysqli_error($link);
+
+            }
+
+        }
+
+        if($role_id == "2"){
+            $writer_query = mysqli_query($link, "INSERT INTO `realtv_writers`(`firstname`, `lastname`, `email`, `username`, `password`, `phone_no`, `address`, `profile_pic`, `resume`, `unique_id`) VALUES ('$firstname','$surname','$email','$username',
+                                            '$password','$phone_no','$address','$project1','$resume', '$unique_id')");
+            
+           
+        }
+
+        if($role_id == "3"){
+            $executive_query = mysqli_query($link, "INSERT INTO `realtv_executives`(`firstname`, `lastname`, `email`, `username`, `password`, `phone_no`, `address`, `profile_pic`, `resume`, `unique_id`) VALUES ('$firstname','$surname','$email','$username',
+                                            '$password','$phone_no','$address','$project1','$resume', '$unique_id')");
+            
+           
+        }
+
+
         $body = "<div style='padding: 5px; text-transform: capitalize;'>";
         $body .= "<h4>Welcome to RealTv Show</h4>";
-        $body .= "<p>Confirm your email to activate your account. To confirm your email, click <a href='".base_url()."/confirm.php?email=$email&pass=$token'>here</a> </p>";
+        $body .= "<p>Confirm your email to activate your account. To confirm your email, click <a href='".base_url()."confirm.php?email=$email&pass=$token'>here</a> </p>";
         $body .= "</div>";
         send_mail($email, "Email Confirmation", $body);
     }else {
@@ -202,6 +223,17 @@ function log_in_user($email, $password){
         set_message("success", "Login Success"); 
     }else {
         set_message('error', 'Invalid login details');
+    }
+}
+
+function save_to_cart($user_id, $project_id){
+    $link = connect();
+    $query = mysqli_query($link, "INSERT INTO `realtv_cart`(`user_id`, `project_id`) VALUES ('$user_id','$project_id')");
+
+    if($query){
+        return 1;
+    }else{
+        return 0;
     }
 }
  

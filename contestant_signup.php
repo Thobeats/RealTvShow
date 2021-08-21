@@ -2,30 +2,6 @@
 require_once "scripts/functions.php";
 require "scripts/header_two.php";
 
-if(isset($_POST['submit'])){
-    $firstname = mysqli_real_escape_string($link,$_POST['firstname']);
-    $lastname = mysqli_real_escape_string($link,$_POST['lastname']);
-    $email = mysqli_real_escape_string($link,$_POST['email']);
-    $username = mysqli_real_escape_string($link,$_POST['username']);
-    $password = mysqli_real_escape_string($link,$_POST['password']);
-    $cpass = mysqli_real_escape_string($link,$_POST['cpass']);
-    $phone_no = mysqli_real_escape_string($link,$_POST['phone_no']);
-    $address = mysqli_real_escape_string($link,$_POST['address']);
-    $project1 = mysqli_real_escape_string($link,$_POST['project1']);
-    $project2 = mysqli_real_escape_string($link,$_POST['project2']);
-    $role = "1";
-
-    $profile_pic = mysqli_real_escape_string($link,$_FILES['profile_pic']);
-    $resume = mysqli_real_escape_string($link,$_FILES['resume']);
-
-    if($password != $cpass){
-        set_message("error", "Passwords do not match");      
-    }else{
-        register_new_user($firstname, $lastname, $email, $password, $role, $addressg, $username, $phone_no);
-    }
-   
-}
-
 
 
 ?>
@@ -93,7 +69,7 @@ if(isset($_POST['submit'])){
 <?= get_message("success"); ?>
 <section class="d-flex justify-content-center bg-light" style="height : auto;">
     
-    <form action="" method="POST" class="form" autocomplete="on">
+    <form action="process.php" method="POST" class="form">
         <div class="get_started my-3 p-2">
             <h3>Get Started</h3>
         </div>
@@ -116,37 +92,34 @@ if(isset($_POST['submit'])){
             <input type="password" placeholder="Confirm Password" name="c_pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" class="form-control" required>
         </div>
         <div class="form-group">
-            <input type="text" placeholder="Phone Number" name="phone_no" class="form-control" required>
+            <input type="tel" placeholder="Phone Number" name="phone_no" class="form-control" required>
         </div>
         <div class="form-group">
             <textarea rows="4" cols="80" placeholder="Address" name="address" class="form-control" required></textarea>
         </div>
         <div class="form-group">
-            <select  name="project1" class="form-control"  id="" required>
+            <select  name="project1[]" class="form-control select2 movie"  id="" multiple required>
                 <option value="">First Project Title</option>
                 <?php 
                     $movies = mysqli_query($link, "select * from realtv_movies");   
 
-                    while($movie = mysqli_fetch_object($movies)):
+                    while($movie = mysqli_fetch_assoc($movies)):
                 ?>
-                <option value="<?= $movie->reg_fee ?>"><?= $movie->movie_title ?></option>
+                <option value="<?= (int)$movie['id'] ?>" data-price="<?= (int)$movie['reg_fee'] ?>"><?= $movie['movie_title'] ?></option>
 
                 <?php endwhile; ?>
             </select>
         </div>
-        <div class="form-group">
-            <select  name="project2" class="form-control"  id="">
-                <option value="">Second Project Title (optional)</option>
-                <?php 
-                    $movies = mysqli_query($link, "select * from realtv_movies");   
-
-                    while($movie = mysqli_fetch_object($movies)):
-                ?>
-                <option value="<?= $movie->reg_fee ?>"><?= $movie->movie_title ?></option>
-
-                <?php endwhile; ?>
-            </select>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend" style="height : 35px;">
+                <span class="input-group-text">$</span>
+            </div>
+            <input type="text" name="price" placeholder="Total Price" class="form-control price" readonly aria-label="Amount (to the nearest dollar)" required>
+            <div class="input-group-append" style="height : 35px;">
+                <span class="input-group-text">.00</span>
+            </div>
         </div>
+              
         <div class="form-group">
             <label for="exampleFormControlFile1">Profile Pic</label>
             <input type="file" name="profile" class="form-control-file" id="exampleFormControlFile1">
@@ -176,6 +149,38 @@ if(isset($_POST['submit'])){
         </div>
     </form>
 </section>
+
+
+<script>
+    let price = 0; let l = 0;
+
+      $(document).ready(function() {
+        $('.select2').select2({
+            placeholder : "Project Title",
+        });
+
+        $(".movie").change(function(){
+            if($(this).val().length != 0){
+                if($(this).val().length > l){
+                    l = $(this).val().length;
+                    price += $(this).find(':selected').data('price');
+                }else{
+                    price -= $(this).find(':selected').data('price');
+                    l = $(this).val().length;
+                }
+            }else{
+                
+                price = 0; l = 0;
+            }
+            
+
+           // console.log($(this).val());
+          //  if(price < 0){ price = 0; }
+            $(".price").val(price);
+        });
+       });
+
+</script>
 
 
 
