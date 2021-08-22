@@ -67,6 +67,8 @@ require "scripts/header_two.php";
 
 <?= get_message("error"); ?>
 <?= get_message("success"); ?>
+<?= get_message("info"); ?>
+
 <section class="d-flex justify-content-center bg-light" style="height : auto;">
     
     <form action="process_contestant.php" method="POST" class="form" enctype="multipart/form-data">

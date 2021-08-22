@@ -139,7 +139,66 @@ function user_session($array){
     }
 }
 
-function register_new_user($firstname, $surname, $email, $password, $role_id, $address=null, $username=null, $phone_no, $project = null, $profile_pic, $resume = null, $title=null, $company_name=null){
+// function register_new_user($firstname, $surname, $email, $password, $role_id, $address=null, $username=null, $phone_no, $project = null, $profile_pic, $resume = null, $title=null, $company_name=null){
+
+//     $password = md5($password);
+//     $encode_password = utf8_encode($password);
+//     $token = md5($email); $encode_token = utf8_encode($token);
+//     $fullname = strtoupper($firstname) . " " . $surname;
+//     $email = strtolower($email);
+//     $unique_id = $role_id.strtotime("now");
+
+//     $pic = handle_image($profile_pic);
+
+//     if($username == null){
+//         $username = $email;
+//     }
+
+//     // Database connection
+//     $link = connect();     
+
+//     $query = mysqli_query($link, "INSERT INTO `realtv_users`(`firstname`,`lastname`,`fullname`,`username`,`status`, `role_id`,`email`,`password`,`activated`, `token`, `address`, `unique_id`) VALUES ('$firstname','$surname','$fullname','$username','Active',
+//                                  '$role_id','$email','$encode_password','0', '$encode_token', '$address', '$unique_id')");
+
+  
+//     if($query){
+//         if($role_id == 1){
+//             $contestant_query = mysqli_query($link, "INSERT INTO `realtv_contestants`(`firstname`, `lastname`, `email`, `username`, `password`, `phone_no`, `address`, `profile_pic`, `resume`, `unique_id`) VALUES ('$firstname','$surname','$email','$username',
+//                                             '$password','$phone_no','$address','$pic','$resume', '$unique_id')");
+//             if(!is_null($project)){
+//                 foreach($project as $pro){
+//                     $cartquery = mysqli_query($link, "INSERT INTO `realtv_cart`(`user_id`, `project_id`) VALUES ('$unique_id','$pro')");
+//                 }
+//             }
+//         }
+
+//         if($role_id == "2"){
+//             $writer_query = mysqli_query($link, "INSERT INTO `realtv_writers`(`firstname`, `lastname`, `email`, `username`, `password`, `phone_no`, `address`, `profile_pic`, `resume`, `unique_id`) VALUES ('$firstname','$surname','$email','$username',
+//                                             '$password','$phone_no','$address','$project1','$resume', '$unique_id')");
+//         }
+
+//         if($role_id == "3"){
+//             $executive_query = mysqli_query($link, "INSERT INTO `realtv_executives`(`firstname`, `lastname`, `email`, `username`, `password`, `phone_no`, `address`, `profile_pic`, `unique_id`, `title`, `company_name`) VALUES ('$firstname','$surname','$email','$username',
+//                                             '$password','$phone_no','$address','$pic','$unique_id', '$title', '$company_name')");
+//         }
+
+
+//         $body = "<div style='padding: 5px; text-transform: capitalize;'>";
+//         $body .= "<h4>Welcome to RealTv Show</h4>";
+//         $body .= "<p>Confirm your email to activate your account. To confirm your email, click <a href='".base_url()."confirm.php?email=$email&pass=$token'>here</a> </p>";
+//         $body .= "</div>";
+//         send_mail($email, "Email Confirmation", $body);
+//     }else {
+//         set_message("error", "Not Registered");
+//         echo mysqli_error($link);    
+
+//     }
+
+    
+
+// }
+
+function register_writer($firstname, $surname, $email, $password, $role_id, $address, $username, $phone_no, $project_title, $genre, $logline, $synopsis, $cover_img, $other_images){
 
     $password = md5($password);
     $encode_password = utf8_encode($password);
@@ -147,8 +206,6 @@ function register_new_user($firstname, $surname, $email, $password, $role_id, $a
     $fullname = strtoupper($firstname) . " " . $surname;
     $email = strtolower($email);
     $unique_id = $role_id.strtotime("now");
-
-    $pic = handle_image($profile_pic);
 
     if($username == null){
         $username = $email;
@@ -162,26 +219,19 @@ function register_new_user($firstname, $surname, $email, $password, $role_id, $a
 
   
     if($query){
-        if($role_id == 1){
-            $contestant_query = mysqli_query($link, "INSERT INTO `realtv_contestants`(`firstname`, `lastname`, `email`, `username`, `password`, `phone_no`, `address`, `profile_pic`, `resume`, `unique_id`) VALUES ('$firstname','$surname','$email','$username',
-                                            '$password','$phone_no','$address','$pic','$resume', '$unique_id')");
-            if(!is_null($project)){
-                foreach($project as $pro){
-                    $cartquery = mysqli_query($link, "INSERT INTO `realtv_cart`(`user_id`, `project_id`) VALUES ('$unique_id','$pro')");
-                }
-            }
-        }
+        
+        if($role_id == 2){
 
-        if($role_id == "2"){
-            $writer_query = mysqli_query($link, "INSERT INTO `realtv_writers`(`firstname`, `lastname`, `email`, `username`, `password`, `phone_no`, `address`, `profile_pic`, `resume`, `unique_id`) VALUES ('$firstname','$surname','$email','$username',
-                                            '$password','$phone_no','$address','$project1','$resume', '$unique_id')");
-        }
+            //var_dump($_POST);
+            $writer_query = mysqli_query($link, "INSERT INTO `realtv_writers`(`firstname`, `lastname`, `email`, `username`, `password`, `phone_no`, `address`, `unique_id`) 
+                                                VALUES ('$firstname','$surname','$email','$username','$password','$phone_no','$address','$unique_id')");
 
-        if($role_id == "3"){
-            $executive_query = mysqli_query($link, "INSERT INTO `realtv_executives`(`firstname`, `lastname`, `email`, `username`, `password`, `phone_no`, `address`, `profile_pic`, `unique_id`, `title`, `company_name`) VALUES ('$firstname','$surname','$email','$username',
-                                            '$password','$phone_no','$address','$pic','$unique_id', '$title', '$company_name')");
-        }
+           $res = save_drafts($unique_id, $project_title,$logline,$synopsis,$genre,$cover_img,$other_images);
 
+            echo $res;    
+
+        }
+  
 
         $body = "<div style='padding: 5px; text-transform: capitalize;'>";
         $body .= "<h4>Welcome to RealTv Show</h4>";
@@ -190,7 +240,6 @@ function register_new_user($firstname, $surname, $email, $password, $role_id, $a
         send_mail($email, "Email Confirmation", $body);
     }else {
         set_message("error", "Not Registered");
-        echo mysqli_error($link);    
 
     }
 
@@ -463,6 +512,46 @@ function handle_multi_images($images, $insertID){
     }
 }
 
+function handle_image_drafts($images){
+
+    $link = connect();
+    $image_list = "";
+    if(!is_null($images)){
+       // $uploads_dir = 'C:/Users/user/Documents/Fiverr Projects/RealTvShow/img/uploads/';
+       //$uploads_dir = '/Users/firstlincoln/Documents/iyanu/RealTvShow/img/uploads/';
+       $uploads_dir = 'img/uploads/';
+
+        $extensions = ['jpg', 'png',"jpeg"];     
+
+       // var_dump($images);
+        //check size 
+        foreach($images['size'] as $size){
+            if($size > 1000000){
+                set_message("error", "file too large, must not exceed 1MB");
+                exit(0);
+            }
+
+        }
+
+        foreach($images['name'] as $key => $imagename){
+            $ext = explode(".", $imagename)[1];
+
+            //check extension
+            if(!in_array($ext, $extensions)){
+                //set_message("error", "invalid type, only jpg or png allowed");
+                return false;
+            }
+            $uploads_file = $uploads_dir . basename($imagename);
+            if($uploads_file){
+                $image_list .= $imagename . ",";
+            }
+           
+        }
+    }
+
+    return $image_list;
+}
+
 function handle_video($video){
     if(!is_null($video)){
       //  $uploads_dir = '/Users/firstlincoln/Documents/iyanu/RealTvShow/img/uploads/';
@@ -525,6 +614,28 @@ function save_movie($movie_title, $movie_plot, $synopsis, $genre, $movie_pic, $m
         return 1;
     }else{
         return 0;
+    }
+
+
+}
+
+function save_drafts($writer_id = null, $movie_title, $logline, $synopsis, $genre, $movie_pic, $movie_pics = NULL){
+    $link = connect();
+
+    if ($writer_id == null) {
+        $writer_id = $_SESSION['user_id'];
+    }
+
+    $insert_pic = handle_image($movie_pic);
+    $other_images = handle_image_drafts($movie_pics);
+
+
+    if( mysqli_query($link, "INSERT INTO `realtv_drafts`(`created_by`, `movie_pic`, `movie_title`,`logline`, `genre`, `synopsis`, other_pics) 
+                            VALUES ('$writer_id','$insert_pic','$movie_title','$logline','$genre','$synopsis', '$other_images')")){
+        
+        return 1;
+    }else{
+        return mysqli_error($link);    
     }
 
 

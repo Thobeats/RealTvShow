@@ -4,40 +4,47 @@ require "scripts/functions.php";
 require "scripts/header_two.php"; 
 
 if(isset($_POST['reg'])){ 
-    $firstname = mysqli_real_escape_string(trim($_POST['fname']));
-    $lastname = mysqli_real_escape_string(trim($_POST['lname']));
-    $username = mysqli_real_escape_string(trim($_POST['uname']));
-    $password = mysqli_real_escape_string(trim($_POST['password'])); 
-    $email = mysqli_real_escape_string(trim($_POST['email']));
-    $phone_num = mysqli_real_escape_string(trim($_POST['phone_num']));
-    $address = mysqli_real_escape_string(trim($_POST['address']));
+    $firstname = trim($_POST['fname']);
+    $lastname = trim($_POST['lname']);
+    $username = trim($_POST['uname']);
+    $password = trim($_POST['password']); 
+    $email = trim($_POST['email']);
+    $phone_num = trim($_POST['phone_num']);
+    $address = trim($_POST['address']);
     $role = 2;
 
     //Movie Details....
-   $movie_title = mysqli_real_escape_string(trim($_POST['project_title']));
-   $genre = mysqli_real_escape_string(trim($_POST['genre']));
-   $logline = mysqli_real_escape_string(trim($_POST['logline']));
-   $synopsis = mysqli_real_escape_string(trim($_POST['synopsis']));
+   $movie_title = trim($_POST['project_title']);
+   $genre = trim($_POST['genre']);
+   $logline = trim($_POST['logline']);
+   $synopsis = trim($_POST['synopsis']);
    $cover_pic = $_FILES['cover_img'];
    $other_img = $_FILES['other_img'];
 
-   if(register_new_user($firstname, $lastname, $email, $password, $role, null, $address, $username)){
-       set_message("success", "Registration Successful, check your email to activate your account");
+  // var_dump($other_img);
 
-       if(reg_and_save_movie($movie_title,$logline,$synopsis,$genre,$cover_pic,$other_img)){
-           set_message("success", "Pitch Saved");
-       }else{
-           set_message("error", "Error: Not Saved!");
-       }
+    $checkEmail = mysqli_query($link, "select * from realtv_users where email = '$email'");
+    if(mysqli_num_rows($checkEmail) == 1){
+        set_message('error', 'Email taken, register with a unique email');
+    }else{
+        $checkUsername = mysqli_query($link, "select * from realtv_users where username = '$username'");
+        if(mysqli_num_rows($checkUsername) == 1){
+            set_message('error', 'Username taken, select another username');
+        } 
+        else{
+            register_writer($firstname,$lastname,$email,$password,$role,$address,$username,$phone_num,$movie_title,$genre,$logline,$synopsis,$cover_pic,$other_img);
+               
+        }
+    }
 
-   }else{
-       set_message("error", "Registration Failed");
-   }
+   
 
    
 }
 ?>
-
+<?= get_message("error"); ?>
+<?= get_message("success"); ?>
+<?= get_message("info"); ?>
 <style>
     body{
         font-family : 'Poppins';
@@ -273,7 +280,7 @@ if(isset($_POST['reg'])){
                             <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                         </div>
                         <div class="custom-file">
-                            <input type="file" name="other_img" title="Select multiple images" style="font-weight: 300 !important;" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" multiple>
+                            <input type="file" name="other_img[]" title="Select multiple images" style="font-weight: 300 !important;" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" multiple>
                             <label class="custom-file-label" for="inputGroupFile01" >Other Images</label>
                         </div>
                     </div>
