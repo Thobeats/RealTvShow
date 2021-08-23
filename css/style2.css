@@ -55,7 +55,7 @@ a,a:hover{
     font-size: 14px;
     letter-spacing : 2px;
     font-weight : 300;
-    width : auto;
+    width : 100%;
 }
 
 .small-btn{
@@ -158,9 +158,18 @@ a,a:hover{
 
 .movieTitle{
     font-family: 'Poppins', sans-serif;
-    font-weight : 200;
     font-size: 15px;
-    letter-spacing: 3px;
+    font-weight: 300;
+    height : auto;
+    letter-spacing: 1px;
+    color : #ccc;
+    padding: 5px;
+    background-color: #004177;
+}
+
+.movie-card-body{
+    width : 100%;
+    height : 100%;
 }
 
 .check-out{
@@ -180,14 +189,13 @@ a,a:hover{
 }
 
 .discover{
-    background-image: linear-gradient(to right bottom, rgba(50, 149, 230, 0.85), rgba(0, 72, 131, 0.85));
+    background-color: #004177;
     color : white;
     text-transform: uppercase;
     padding : 20px;
-    border-radius: 50px;
     font-family: 'Poppins', sans-serif;
     font-weight : 300;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .member-benefits{
@@ -263,50 +271,50 @@ a,a:hover{
 }
 .movie-card{
     width : 60%;
+    height : 280px;
+}
+
+.check {
+    font-size: 12px;
 }
 
 
 @media only screen and (max-width: 768px) {
     .landing-page-roles{
         height: auto;
-    }
-
-    .call_to_action{
+    }.call_to_action{
         height: auto;
-    }
-
-    .call_to_action_text{
+    }.call_to_action_text{
         font-size: 20px;
         color : white;
-    }
-
-    .movieTitle{
-        font-size: 12px;
-        letter-spacing: 2px;
-    }
-        
-    .check-out>a{
+    }.check-out>a{
         font-size: 8px;
         border-radius: 20px;
     }
     .writer-btn{
         width : 100%;
         margin-top : 5px;
-    }
-
-
-    .writer-btn-prev, .writer-btn-reg {
+    }.writer-btn-prev, .writer-btn-reg {
         text-align : center;
     }
-
     .realbtn{
         padding : 9px;
         font-size: 12px;       
     } .role-intro{
         font-size : 20px;
     }  .movie-card{
-        width : 70%;
-    } 
+        width : 90%;
+        height : 250px;
+    } .movieTitle{
+        padding : 0;
+        padding: 10px;
+        font-size: 10px;
+        font-weight: 300;
+    }.card-footer{
+        padding : 5px;
+    }.check{
+        font-size: 10px;
+    }
 }
 
 @media only screen and (max-width: 425px) {
@@ -314,6 +322,10 @@ a,a:hover{
         height : 50vh;
         background-position: center right;
     }
+    .movie-card{
+        width : 70%;
+        height : 200px;
+    } 
 
     .landing-text h1{
         font-size: 25px;

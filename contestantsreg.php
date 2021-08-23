@@ -23,14 +23,19 @@ require "scripts/header_two.php";
                 $moviePic = $movie->movie_pic;
         ?>
         <div class="col-lg-4 col-md-4 mt-5 col-sm-6">
-            <div class="card border-0 mx-auto" style="cursor: pointer; width: 70%; background-color: inherit">
+            <div class="card movie-card border-0 mx-auto" style="cursor: pointer; background-color: inherit">
                 <div class="card-body p-0">
-                      <img src="img/uploads/<?= $moviePic ?>" width="100%"  alt="">
+                      <img src="img/uploads/<?= $moviePic ?>" class="movie-card-body"  alt="">
                 </div>
-                <p class="p-2 movieTitle text-light text-center my-0"  style="background-image: linear-gradient(to right bottom, rgba(50, 149, 230, 0.85), rgba(0, 72, 131, 0.85));"><?= $movie->movie_title ?></p>
-                <div class="card-footer text-center">
-                    <a href="c_movie_view.php?id=<?= $movie->id ?>"class="realbtn btn-warning">Check it out</a>
-                </div>                            
+                <p class=" movieTitle text-center my-0"><?= $movie->movie_title ?></p>
+                <!-- <div class="card-footer text-center">
+                    <a href="signup.php"class="realbtn small-btn btn-warning">Check it out</a>
+                </div> -->
+                <a href="c_movie_view.php?id=<?= $movie->id ?>" class="text-dark"> 
+                    <div class="check bg-warning card-footer text-center">
+                    Check it out
+                    </div> 
+                </a>                           
             </div>         
           
         </div>
@@ -40,7 +45,7 @@ require "scripts/header_two.php";
  
 </section>
 
-<section class="py-4 note">
+<section class="py-4 mt-4 note">
     <div class="col-12">
         <p class="text-center p-4 cnote">
         With great enthusiasm, RealityTVRegistry recommends these 15 projects. All have copyright protection and are available for option and acquisition. Additional proposals are being developed and may be viewable in mid-August.

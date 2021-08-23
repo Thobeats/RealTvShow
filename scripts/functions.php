@@ -228,8 +228,6 @@ function register_writer($firstname, $surname, $email, $password, $role_id, $add
 
            $res = save_drafts($unique_id, $project_title,$logline,$synopsis,$genre,$cover_img,$other_images);
 
-            echo $res;    
-
         }
   
 

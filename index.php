@@ -28,7 +28,7 @@ require "scripts/header_two.php";
             <div class="card new">
                 <img src="img/act4.jpg" alt="" >
                 <div class="card-body bg-dark text-center">
-                    <a href="contestantsreg.php" class="text-white card-link">Contestant and Talent Registration</a>
+                    <a href="contestantsreg.php" class="text-light card-link">Contestant and Talent Registration</a>
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@ require "scripts/header_two.php";
         <div class="card new">
                 <img src="img/shoot00.jpg" alt="" >
                 <div class="card-body bg-dark text-center">
-                    <a href="Eprojectsreg.php" class="text-white card-link">industry tv excutive registration</a>
+                    <a href="Eprojectsreg.php" class="text-light card-link">industry tv excutive registration</a>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@ require "scripts/header_two.php";
         <div class="card new">
                 <img src="img/writer02.jpg" alt="" >
                 <div class="card-body bg-dark text-center">
-                    <a href="writersPage.php" class="text-white card-link">industry writer's registration&nbsp;</a>
+                    <a href="writersPage.php" class="text-light card-link">industry writer's registration&nbsp;</a>
                 </div>
             </div>
         </div>
@@ -67,12 +67,15 @@ require "scripts/header_two.php";
         <div class="col-lg-4 col-md-4 mt-5 col-sm-6">
             <div class="card movie-card border-0 mx-auto" style="cursor: pointer; background-color: inherit">
                 <div class="card-body p-0">
-                      <img src="img/uploads/<?= $moviePic ?>" width="100%"  alt="">
+                      <img src="img/uploads/<?= $moviePic ?>" class="movie-card-body"  alt="">
                 </div>
-                <p class="p-2 movieTitle text-light text-center my-0"  style="background-image: linear-gradient(to right bottom, rgba(50, 149, 230, 0.85), rgba(0, 72, 131, 0.85));"><?= $movie->movie_title ?></p>
-                <div class="card-footer text-center">
-                    <a href="signup.php"class="realbtn small-btn btn-warning">Check it out</a>
-                </div>                            
+                <p class=" movieTitle text-center my-0"><?= $movie->movie_title ?></p>
+                
+                <a href="signup.php" class="text-dark"> 
+                    <div class="check bg-warning card-footer text-center">
+                    Check it out
+                    </div> 
+                </a>                           
             </div>         
           
         </div>
