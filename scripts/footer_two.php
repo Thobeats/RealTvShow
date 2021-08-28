@@ -1,16 +1,21 @@
-
+<!-- <style>
+    *{
+        border : 1px solid;
+    }
+</style> -->
 
 <footer class="border-top p-4">
 
 <div class="row">
-    <div class="col-lg-5 col-md-12 col-sm-12">
-        <div class="d-flex justify-content-center">
-            <img src="img/logo.png" alt="logo" id="footer-logo" width = "400px" height="150px">
+    <div class="col-lg-6 col-md-12 col-sm-12 ">
+        <div class="d-flex flex-column justify-content-center text-center">
+            <img src="img/logo.png" class="mx-auto" alt="logo" id="footer-logo" width = "100%">
+            <p class="mt-2 text-center h6 text-dark">on location to a cache of unique formats & talent</p>
         </div>   
     </div>
 
  
-    <div class="col-lg-7 col-md-12 col-sm-12">
+    <div class="col-lg-6 col-md-12 col-sm-12 pt-5">
         <div class="d-flex justify-content-center">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12">
@@ -45,7 +50,7 @@
  
 </div>
 <div class="row my-4">
-    <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-left text-body">
+    <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center text-body">
         <i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>
         <i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i>
         <i class="fa fa-pinterest fa-lg" aria-hidden="true"></i>

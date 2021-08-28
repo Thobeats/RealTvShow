@@ -17,12 +17,6 @@ if(isset($_GET['id'])){
     $movie = get_movie($link, $id);
 }
 
-
-
-
-
-
-
 ?>
 
 <style>

@@ -1,11 +1,10 @@
-@keyframes slideFromRight {
+@keyframes FadeIn {
     0% {
-    transform: translateX(10rem); }
+    opacity: 0; }
     80% {
-    transform: translateX(-1rem); }
+    opacity: 0.9; }
     100% {
-    display: block !important;    
-    transform: translate(0); } 
+    opacity: 1; } 
 }
 
 @keyframes slideFromLeft {
@@ -72,8 +71,12 @@ a,a:hover{
     color : white;
 }
 
+.welcome-logo{
+    width: 70%;
+}
+
 .landing-image{
-    background-image : url(../img/scene.png);
+    background-image : linear-gradient(to bottom, rgba(250, 250, 250, 0.562), rgba(250, 250, 250, 0.562) ,rgba(19, 19, 19, 0.692)),url(../img/scene.png);
     height : 100vh;
     width : 100vw;
     background-size : cover;
@@ -81,18 +84,18 @@ a,a:hover{
 }
 
 .landing-text {
-    padding : 40px;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.274) ,rgba(0, 0, 0, 0.219));
-    font-family: "Montserrat", sans-serif;
+    padding : 50px;
+    font-family: "Poppins", sans-serif;
     width : 100%;
     text-transform: uppercase;
 }
 
-.landing-text h1{
-    font-weight : 600;
-    letter-spacing : 1.75rem;
+.landing-text h3{
+    font-weight : 500;
+    font-size : 30px;
+    color: rgb(5, 5, 5);
     text-transform : uppercase;
-    animation: slideFromRight 1s;
+    animation: FadeIn 1s;
 }
 
 .landing-text p{
@@ -104,10 +107,11 @@ a,a:hover{
 }
 
 .landing-page-roles{
-    height : 100vh;
+    height : auto;
     width : 100vw;
     background-size : cover;
     background-position : top left;
+    background-color: #c7c7c7;
 }
 
 .role-intro{
@@ -159,7 +163,7 @@ a,a:hover{
 .movieTitle{
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
-    font-weight: 300;
+    font-weight: 400;
     height : auto;
     letter-spacing: 1px;
     color : #ccc;
@@ -271,11 +275,19 @@ a,a:hover{
 }
 .movie-card{
     width : 60%;
-    height : 280px;
+    height : 300px;
 }
 
 .check {
     font-size: 12px;
+}
+
+.mt-10{
+    margin-top: 5rem;
+}
+
+footer p{
+    text-transform: uppercase;
 }
 
 
@@ -315,6 +327,17 @@ a,a:hover{
     }.check{
         font-size: 10px;
     }
+    .mt-10{
+        margin-top: 30px;
+    }
+    .landing-text h3{       
+        font-size :30px;
+    }
+    .card-link{
+        font-size : 17px;
+        width : 100%;
+    }
+   
 }
 
 @media only screen and (max-width: 425px) {
@@ -408,6 +431,16 @@ a,a:hover{
         padding : 8px 10px;
         font-size: 9px;
     }
+    .landing-text h3{       
+        font-size : 15px;
+    }
+    footer p{
+       font-size: 12px !important;
+    }
+    .welcome-logo{
+        width: 100%;
+    }
+    
 }
 
 
