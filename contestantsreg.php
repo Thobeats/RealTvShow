@@ -48,7 +48,11 @@ require "scripts/header_two.php";
 <section class="py-4 mt-4 note">
     <div class="col-12">
         <p class="text-center p-4 cnote">
-        With great enthusiasm, RealityTVRegistry recommends these 15 projects. All have copyright protection and are available for option and acquisition. Additional proposals are being developed and may be viewable in mid-August.
+            With great enthusiasm, Reality TV
+            Registry enters the initial stages in creating sizzle reels and qualifying contestants and
+            professional talent in these original and exciting programs. Additional programs are in the
+            development stages and will be available for viewing soon. All program material is protected
+            by the US Patent and Trademark Office under Title 17.        
         </p>
     </div>
 </section>
