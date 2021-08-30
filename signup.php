@@ -1,138 +1,110 @@
 <?php 
 require_once "scripts/functions.php";
-$link = connect();
+require "scripts/header_two.php";
 
+?>
 
-// handle register
-if(isset($_POST['register'])){
-  $firstname = trim($_POST['firstname']);
-  $lastname = trim($_POST['lastname']);
-  $email = $_POST['email'];
-  $password = trim($_POST['password']);
-  $role = $_POST['role'];
+<style>
+  .sign_up_wrapper{
+    height : 80vh;
+  }
 
+  a{
+    color : #f8f9fa!important;
+  }
 
-  register_new_user($firstname, $lastname, $email, $password, $role);
+  .card{
+    cursor : pointer;
+    transition : linear 0.5s;
+  }
 
+  .card:hover{
+    transform : scale(1.02);
+  }
+
+  .h3{
+    text-transform : uppercase;
+    font-family : 'Poppins', serif;
+    font-weight : 300;
+  }
+
+  .icon{
+    font-size : 70px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    
+    .sign_up_wrapper{
+      height : 50vh;
+    }
+
+    .h3{
+      font-size : 25px;
+  }
+
+  .icon{
+    font-size : 50px;
+  }
 
 }
 
 
-?>
+@media only screen and (max-width: 425px) {
+  .sign_up_wrapper{
+    height : auto;
+  }
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  .card{
+    width : 65%;
+    margin : auto;
+  }
+  
 
-        <link rel="stylesheet" href="css/icon-font.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="sass/main.scss">
-        <link rel="shortcut icon" type="image.png" href="img/logo.png">
+  .h3{
+      font-size : 20px;
+  }
 
-        <script type="text/javascript" src="js/reality.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <title> RealityTV | RealityTVregistry.com</title>
+  .icon{
+    font-size : 30px;
+  }
 
-    </head>
-    <body>
-    <?php get_message("error"); ?>
-      <main>
-          <div class="signup__container">
 
-              <div class="signup__logo">
-                  <div class="section-one">
-                      <a href="index.php"><img src="img/logo.png" alt="Logo" class="signup__logo-box" height="75rem" width="180rem"></a>
-                  </div>
-              </div>
-
-              <div class="section-two">
-                  <p class="signup__container--text">Sign Up</p>
-                <div class="social-links">
-                  <div class="signup__container--facebook">
-                    <span> SIGNUP WITH GOOGLE </span>
-                      <!-- <svg class="signup__container--icon">
-                          <use xlink:href="img/sprite.svg#icon-facebook2"></use>  
-                      </svg>  -->
-                    <div class="signup__container--icon">
-                      <img class="signup__container--image" src="svgs/google.svg" alt="" />
-                    </div>
-                  </div>
-                  <div class="signup__container--twitter">
-                    <div class="signup__container--icon">
-                      <img class="signup__container--image" src="svgs/linkedin.svg" alt="" srcset="" />
-                    </div> 
-                    <!-- <svg class="signup__container--icon">
-                          <use xlink:href="img/sprite.svg#icon-twitter1"></use>
-                      </svg>  -->
-                    <span> SIGNUP WITH LINKEDIN </span> 
-                  </div>
-                </div>
-
-                <form action="" method="POST">
-                  <div class="main__form">
-                    <div class="main__form--input">
-                        <input class="main__form--input-1" type="firstname" name="firstname" placeholder="First Name" required/>
-                        <input class="main__form--input-1" type="lastname" name="lastname" placeholder="Last Name" required/>
-                    </div>
-
-                    <div class="main__form--input">
-                        <input class="main__form--input-1" type="email" name="email" placeholder="Email" required/>
-                        
-                        <select class="main__form--input-1" name="role" id="" required>
-                          <option value="00000">Select Role</option>
-
-                          <?php 
-                            $roles = mysqli_query($link, "Select * from realtv_roles"); 
-                            while($role = mysqli_fetch_object($roles)):
-                          ?>
-                          <option value="<?= $role->id ?>"><?= ucfirst($role->role_name) ?></option>
-                          <?php endwhile; ?>
-                        </select>
-                    </div>
-                    <input class="main__form--input-1 password" id="pass" type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-                           title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" 
-                           placeholder="Password" required/>
-                    <input class="main__form--input-1 cpassword" id="pass" type="password" name="cpassword" placeholder="Confirm Password" readonly required/>
-
-                    <div class="signup__container--checkbox">
-                        <div class="signup__container--checkbox-1">
-                            <label> <input class="checkbox" type="checkbox" checked="checked" name="remember">Remember me </label>
-                        </div>
-                        <div class="signup__container--checkbox-1">
-                            <label> <input class="checkbox" type="checkbox" checked="checked" name="remember"> Agree to Terms and Conditions </label>
-                        </div>
-                    </div>
-
-                    <!-- <p class="signup__container--text-1">By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p> -->
-                    <p class="signup__container--text-1">Already have an account?<a href="login.php">Login</a></p>
-                    <div class="signup__button">
-                        <button name="register">Register</button>
-                        <button name="cancel">Cancel</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
+}
+</style>
+<section class="d-flex flex-column justify-content-center bg-light sign_up_wrapper" >
+  <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12 p-4">
+        <a href="contestant_signup.php"><div class="card bg-primary text-light">
+          <div class="card-body text-center">
+            <h3 class="h3">contestant sign up</h3>
+            <p class="icon">  
+              <i class="bi bi-play-circle"></i>  
+            </p>
+          </div></a>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12  p-4">
+        <a href="executive_signup.php"><div class="card bg-warning text-light">
+          <div class="card-body text-center">
+            <h3 class="h3">executive sign up</h3>
+            <p class="icon">  
+              <i class="bi bi-camera-reels"></i>  
+            </p>         
           </div>
-      </main>
+        </div></a>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12 p-4">
+        <a href="wregistration.php"><div class="card bg-dark text-light">
+          <div class="card-body text-center">
+          <h3 class="h3">author sign up</h3>
+            <p class="icon">  
+              <i class="bi bi-pen"></i>  
+            </p> 
+          </div>
+        </div></a>
+      </div>
+    </div>
+</section>
 
-      <script>
-        let password = document.querySelector(".password");
-        let cpassword = document.querySelector(".cpassword");
-
-        password.addEventListener("blur", function(){
-          cpassword.value = password.value;
-        });
-
-        
-      
-      
-      </script>
-  </body>
-</html>
+    
+<?php require_once "scripts/footer_two.php"; ?>

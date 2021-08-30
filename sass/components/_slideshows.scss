@@ -1,38 +1,80 @@
 .slideshows {
     position: relative;
-    width: 95vw;
+    width: 100%;
     background-color: $color-white;
     display: block;
     z-index: 100;
 
+    @include respond(tab-port) {
+        margin-bottom: 5rem;
+    }
+
     &__paragraph {
         font-family: POPPINS;
         font-size: 3rem;
+        width: 90%;
         font-weight: 400;
-        padding-left: 5rem;
+        margin: auto;
         text-align: center;
         color: $color-secondary-dark;
         letter-spacing: .4rem;
         bottom: -15rem;
         overflow: hidden;
         z-index: 50;
-        flex: inline;
-        float: left;
-        left: 5rem;
+
+        @include respond(tab-land) {
+            margin: auto;
+            width: 70%;
+            text-align: center;
+            letter-spacing: .2rem;
+        }
+
+        @include respond(tab-port) {
+            margin: auto;
+            width: 100%;
+            text-align: center;
+            letter-spacing: .2rem;
+        }
+
+        @include respond(phone) {
+            margin: auto;
+            text-align: center;
+            letter-spacing: 0;
+        }
     }
 
     &__slides--img {
-        width: 40rem;
+        width: 35rem;
         height: 20rem;
-        position: absolute;
+        margin: auto;
+        // position: absolute;
         // min-width:100%; 
         // max-height:100%; 
-        bottom: -20rem;
-        float: right;
-        right: 7rem;
+        // bottom: -20rem;
+        // float: right;
+        // right: 7rem;
         object-fit: cover; 
         overflow: hidden;
         z-index: 50;
+
+        @include respond(tab-land) {
+            top: .5rem;
+            margin: auto;
+            width: 35%;
+            position: absolute;
+            left: 60%;
+        }
+
+        @include respond(tab-port) {
+            margin: auto;
+            position: absolute;
+            top: 15rem;
+            left: 20%;
+            width: 60%;
+        }
+
+        @include respond(phone) {
+        }
     }
 }
 
@@ -50,6 +92,11 @@
     top: 8rem;
     user-select: none;
     cursor: pointer;
+
+
+    @include respond(phone) {
+        margin: 0;
+    }
 }
 
 .w3-display-right {
@@ -59,4 +106,9 @@
     top: 8rem;
     user-select: none;
     cursor: pointer;
+
+
+    @include respond(phone) {
+        margin: 0;
+    }
 }

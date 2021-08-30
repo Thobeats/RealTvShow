@@ -5,8 +5,20 @@
     position: relative;
     height: 20rem;
     width: 35rem;
-    margin-left: 3rem;
+    margin: auto;
 
+
+
+    @include respond(tab-port) {
+        margin: auto;
+        width: 90%;
+    }
+
+
+    @include respond(phone) {
+        margin: auto;
+        width: 60%;
+    }
 
 
     &__side {
@@ -57,6 +69,14 @@
         object-fit: cover; 
         overflow: hidden; 
         // position: absolute;
+
+        @include respond(tab-port) {
+            width: 80rem;
+        }
+
+        @include respond(phone) {
+            width: 50rem;
+        }
     }
     
     &:hover &__side--front {

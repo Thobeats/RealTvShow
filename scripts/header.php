@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="css/icon-font.css">
@@ -22,7 +22,7 @@
     <body>
         <main>
                 <header>
-                    <!-- <div class="navbar__logo-box">
+                        <!-- <div class="navbar__logo-box">
                             <img src="img/logo.png" alt="Logo" class="header__logo">
                         </div>
                         <div class="header">
@@ -46,65 +46,43 @@
                                     <img src="img/logo.png" alt="Reality Tv Logo" class="navbar__logo-box">
                                 </div>
 
-                                <nav class="clearfix">
+                                <nav class="clearfix navbox">
                                     <div class="navbar">
                                         <div class="dropdown">
-                                            <button class="dropbtn">Home
+                                            <button class="dropbtn"><a href="index.php">Home</a>
                                             <i class="fa fa-caret-down"></i>
                                             </button>
                                         </div>
+                                        
                                         <div class="dropdown">
-                                            <button class="dropbtn">Contestants,Actors,Models and Musicians Registrations
-                                                <i class="fa fa-caret-down"></i>
-                                            </button>
-                                            <div class="dropdown-content">
-                                                <a href="#" class="navbar_item">Privacy Policy - Contestant, Talent and Executive</a>
-                                            </div>
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="dropbtn">Writer/Author Submission Registration
+                                            <button class="dropbtn"><a href="aboutus.php">About Us</a>
                                             <i class="fa fa-caret-down"></i>
                                             </button>
-                                            <div class="dropdown-content">
-                                                <a href="" class="navbar_item">NDA - Confidentiality Agreement</a>
-                                                <a href="" class="navbar_item">Writer/Author - Material Release | Terms of Service</a>
-                                                <a href="" class="navbar_item">Writer Tips and Pitching</a>
+                                            <!-- <div class="dropdown-content">
+                                                <a href="">Blog</a>
+                                                <a href="">FAQ's</a>
+                                                <a href="">Promoting You</a>
+                                                <a href="">Talent Areas</a>
+                                                <a href="">Writer Benefits and Talent Benefits</a>
+                                            </div> -->
+                                        </div>
+                                        <div class="dropdown">
+                                            <button class="dropbtn"><a href="contactus.php">Contact Us</a>
+                                            <i class="fa fa-caret-down"></i>
+                                            </button>
+                                        </div>
+                                    </div>
 
-                                            </div>
+                                    <div>
+                                        <?php if(is_loggedIn()){ ?>
+                                        <div class="buttons">
+                                            <a href="" class="btn btn--white"><?= $_SESSION['firstname'] ?></a>
                                         </div>
-                                        <div class="dropdown">
-                                            <button class="dropbtn">Executive Registration
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                            <div class="dropdown-content">
-                                                <a href="" class="navbar_item">Current Talent and Submissions</a>
-                                                <a href="" class="navbar_item">Industry Executive Review of Reality TV Proposals</a>
-                                                <a href="" class="navbar_item">Privacy Policy - Executives and Contestants</a>
-
-                                            </div>
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="dropbtn">About Us
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                            <div class="dropdown-content">
-                                                <a href="" class="navbar_item">Blog</a>
-                                                <a href="" class="navbar_item">FAQ's</a>
-                                                <a href="" class="navbar_item">Promoting You</a>
-                                                <a href="" class="navbar_item">Talent Areas</a>
-                                                <a href="" class="navbar_item">Writer Benefits and Talent Benefits</a>
-                                            </div>
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="dropbtn">Contact Us
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                        </div>
+                                        <?php } else { ?>
                                         <div class="buttons">
                                             <a href="signup.php" class="btn btn--white">SignUp</a>
                                         </div>
+                                        <?php } ?>
                                     </div>
-                                </nav>
-
-                           
+                                </nav> 
                 </header>

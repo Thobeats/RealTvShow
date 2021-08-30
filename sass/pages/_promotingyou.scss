@@ -1,0 +1,602 @@
+.buttons-promoter {
+    position: absolute;
+   
+    // &-i {
+    //     @include respond(phone) {
+    //         position: absolute;
+    //         display: flex;
+    //         flex-direction: column;
+    //         top: 0;
+    //         float: left;
+    //         left: 1%;
+    //         width: 83%;
+    //     }
+
+    // }
+
+    // &-ii {
+
+    //     @include respond(phone) {
+    //         position: absolute;
+    //         display: flex;
+    //         flex-direction: column;
+    //         top: 0;
+    //         float: right;
+    //         left: 43%;
+    //         width: 100%;
+    //     }
+
+    // }
+
+    // &-you {
+    //     width: 31%;
+    //     margin: .2rem 0;
+    //     display: block;
+    //     position: absolute;
+    //     top: 50rem;
+    //     left: 1rem;
+
+    //     @include respond(tab-land) {
+    //         top: 26rem;
+    //     }
+
+    //     @include respond(tab-port) {
+    //         top: 29rem;
+    //     }
+
+    //     &-1-1 {
+    //         animation: moveInRight 1s ease-out;
+
+    //         @include respond(phone) {
+    //             top: 24rem;
+    //             width: 50%;
+    //         }
+    
+    //     }
+
+    //     &-1-2 {
+    //         animation: moveInRight 2s ease-out;
+
+    //         @include respond(phone) {
+    //             width: 50%;
+    //         }
+
+    //     }
+    //     &-1-3 {
+    //         animation: moveInRight 3s ease-out;
+
+    //         @include respond(phone) {
+    //             width: 50%;
+    //         }
+    //     }
+
+    //     &-1-4 {
+    //         animation: moveInRight 4s ease-out;
+
+    //         @include respond(tab-port) {
+    //             width: 35%;
+    //         }
+
+    //         @include respond(phone) {
+    //             width: 53%;
+    //         }
+    //     }
+
+    //     &-1-5 {
+    //         animation: moveInRight 5s ease-out;
+
+    //         @include respond(phone) {
+    //             width: 53%;
+    //         }
+    //     }
+
+    //     &-1-6 {
+    //         animation: moveInRight 6s ease-out;
+
+    //         @include respond(phone) {
+    //             width: 53%;
+    //         }
+    //     }
+        
+        &-7 {
+            animation: moveInBottom 6s ease-out;
+        }
+    }
+
+.register-buttons-you {
+    width: 20rem;
+    margin: 5rem 55rem;
+
+    &-1 {
+        margin: auto 42%;
+
+        @include respond(phone) {
+            width: 30%;
+            margin: 5% auto auto 35%;
+        }
+    }
+
+    &-0 {
+        animation: moveInBottom 3s ease-out;
+
+        @include respond(tab-port) {
+            margin: 5% auto auto 40%;
+        }
+
+        @include respond(phone) {
+            margin: 5% auto auto 35%;
+        }
+
+        @include respond(small-phone) {
+            margin: 5% auto auto 27%;
+        }
+    }
+}
+
+.register-butt-you {
+    width: 60rem;
+    padding: 0 3rem;
+    margin: 5rem 35rem;
+
+    &-0 {
+        animation: moveInBottom 3s ease-out;
+
+        @include respond(tab-port) {
+            margin: auto auto 5% 23%;
+        }
+
+        @include respond(phone) {
+            margin: 0 auto auto 7%;
+        }
+
+        @include respond(small-phone) {
+            margin: 0 auto auto 5%;
+            width: 40rem;
+        }
+    }
+}
+
+.promote__paragraph {
+    font-size: 1.5rem;
+    padding: 0 2rem;
+}
+
+
+//PITCHING
+.pitch--div {
+    display: flex;
+    width: 100%;
+
+    &__paragraph {
+        width: 70%;
+        padding: 2rem;
+
+        @include respond(phone) {
+            width: 65%;
+            padding: 1rem;
+        }
+
+        @include respond(small-phone) {
+            width: 100%;
+        }
+    }
+
+    @include respond(small-phone) {
+        display: block;
+        padding: 1rem;
+    }
+
+    &__img {
+        width: 30%;
+
+        @include respond(phone) {
+            width: 35%;
+        }
+    
+        @include respond(small-phone) {
+            width: 100%;
+        }
+        
+        &-1 {
+            padding: 2rem;
+            height: 80%;
+            width: 100%;
+
+            @include respond(phone) {
+                height: 70%;
+                margin-top: 5rem;
+
+            }
+
+            @include respond(small-phone) {
+                margin-top: none;
+            }
+        }
+    }
+}
+
+.promote--div {
+    display: flex;
+    margin: 2rem 5rem;
+
+    @include respond(small-phone) {
+        display: block;
+        margin: auto;
+    }
+
+    &__paragraph {
+        width: 75rem;
+        padding: 1rem;
+
+        &-2 {
+            width: 75rem;
+            padding: 2rem;
+
+            @include respond(small-phone) {
+                padding: 1rem;
+            }
+        }
+    }
+}
+
+.pitch-paintme  {
+    color: $color-secondary-light;
+}
+
+.paintme {
+    color: red;
+}
+
+.paintmeblue {
+    color: $color-secondary-light;
+    text-decoration: underline;
+}
+
+//SAMPLE
+.sample {
+    width: 100%;
+    height: 120rem;
+
+        &-group--1 {
+            display: flex;
+            font-size: 2rem;
+            margin: 3rem 0;
+
+            &__img {
+                padding: 2rem;
+                height: 60%;
+                width: 35%;
+    
+                &-1{
+                    width: 80px !important;
+                }
+
+                &-2{
+                    width: 50px;
+                    height: 50px;
+                }
+
+                &-3{
+                    width: 50px;
+                    height: 50px;
+                }
+
+            // @include respond(tab-port) {
+            //     padding: 1rem auto;
+            // }
+            }
+        }
+
+        &-group--2 {
+            display: flex;
+            font-size: 2rem;
+            margin: 3rem 0;
+
+            &--img {
+                padding: 2rem auto;
+                height: 60%;
+                width: 35%;
+    
+                // &-1{
+                //     padding: 1rem auto;
+                //     width: 50%;
+                //     height: 50%;
+                // }
+
+                // &-2{
+                //     padding: 1rem auto;
+                //     width: 50%;
+                //     height: 50%;
+                // }
+
+                // &-3{
+                //     padding: 1rem auto;
+                //     width: 50%;
+                //     height: 50%;
+                // }
+            }
+        }
+
+        &-group--3 {
+            display: flex;
+            font-size: 2rem;
+            margin: 3rem 0;
+
+            &--img {
+                padding: 2rem;
+                height: 60%;
+                width:  35%;
+    
+                // &-1{
+                //     padding: 1rem auto;
+                //     width: 50%;
+                //     height: 50%;
+                // }
+
+                // &-2{
+                //     padding: 1rem auto;
+                //     width: 50%;
+                //     height: 50%;
+                // }
+
+                &-3{
+                    padding: 1rem auto;
+                    
+                }
+            }
+        }
+    }
+        // &--img {
+        //     padding: 2rem;
+        //     width: 30%;
+
+        //     &-1{
+        //         padding: 1rem auto;
+        //         width: 70%;
+        //         height: 50%;
+        //     }
+
+        //     // @include respond(tab-port) {
+        //     //     padding: 1rem auto;
+        //     //     width: 30%;
+        //     //     height: 50%;
+        //     // }
+        // }
+
+// INSIDE NAVIGATION
+.options {
+    &__checkbox {
+        display: none;
+    }
+
+    &__button {
+        background-color: $color-white;
+        height: 8%;
+        width: 4%;
+        position: fixed;
+        top: 18rem;
+        left: 6.5rem;
+        border-radius: 50%;
+        z-index: 2000;
+        box-shadow: 0 1rem 3rem rgba($color-black, .1);
+        text-align: center;
+        cursor: pointer;
+
+        @include respond(tab-land) {
+            height: 10%;
+            width: 3%;
+            top: 16.5rem;
+            left: 4rem;
+        }
+
+        @include respond(tab-port) {
+            height: 10%;
+            width: 4%;
+            top: 16.5rem;
+            left: 4rem;
+        }
+
+        @include respond(phone) {
+            height: 7%;
+            width: 4%;
+            top: 16.5rem;
+            left: 3rem;
+        }
+
+        @include respond(small-phone) {
+            height: 5%;
+            width: 5%;
+            top: 16.5rem;
+            left: 3rem;
+        }
+    }
+
+    &__background {
+        height: 8%;
+        width: 4%;
+        border-radius: 60%;
+        position: fixed;
+        top: 18rem;
+        left: 6.5rem;
+        background-image: radial-gradient($color-primary-light, $color-primary-dark);
+        z-index: 1000;
+        transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+
+        // transform: scale(50);
+        @include respond(tab-land) {
+            height: 10%;
+            width: 3%;
+            top: 16.5rem;
+            left: 4rem;
+        }
+
+        @include respond(tab-port) {
+            height: 10%;
+            width: 4%;
+            top: 16.5rem;
+            left: 4rem;
+        }
+
+        @include respond(phone) {
+            height: 7%;
+            width: 4%;
+            top: 16.5rem;
+            left: 3rem;
+        }
+
+        @include respond(small-phone) {
+            height: 5%;
+            width: 5%;
+            top: 16.5rem;
+            left: 3rem;
+        }
+    }
+
+    &__nav {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1500;
+
+        opacity: 0;
+        width: 0;
+        transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    &__list {
+        @include absCenter;
+        list-style: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    &__item {
+        margin: 1rem;
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            display: inline-block;
+            font-size: 3rem;
+            font-weight: 300;
+            padding: 1rem 2rem;
+            color: $color-black;
+            text-decoration: none;
+            text-transform: uppercase;
+            background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+            background-size: 220%;
+            transition: all .4s;
+
+            @include respond(tab-port) {
+                padding: 1rem 2rem;
+                font-size: 2.5rem;
+            }
+
+            @include respond(phone) {
+                padding: .5rem 2rem;
+                font-size: 2rem;
+            }
+
+            @include respond(small-phone) {
+                padding: none;
+                font-size: 1.5rem;
+            }
+
+            span {
+                margin-right: 1.5rem;
+                display: inline-block;
+            }
+        }
+
+
+        &:hover,
+        &:active {
+            background-position: 100%;
+            color: $color-primary;
+            transform: translateX(1rem);
+        }
+
+    }
+
+    &__checkbox:checked ~ &__background {
+        transform: scale(80);
+    }
+
+    &__checkbox:checked ~ &__nav {
+        opacity: 1;
+        width: 100%;
+    }
+
+
+    //ICON
+    &__icon {
+        position: relative;
+        margin-top: 3rem;
+
+        @include respond(tab-port) {
+            margin-top: 2.3rem;
+        }
+
+        @include respond(phone) {
+            margin-top: 2.8rem;
+        }
+
+        @include respond(small-phone) {
+            margin-top: 2.5rem;
+        }
+
+        &,
+        &::before,
+        &::after {
+            width: 3rem;
+            height: 2px;
+            background-color: $color-grey-dark;
+            display: inline-block;
+        }
+
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+        }
+
+
+        &::before { 
+            top: -.7rem;
+        }
+        &::after { 
+            top: .7rem; 
+        }
+
+    }
+
+    &__button:hover &__icon::before {
+
+        top: -1rem;
+    }
+    
+    &__button:hover &__icon::after {
+
+        top: 1rem;
+    }
+
+    &__checkbox:checked + &__button &__icon {
+        background-color: transparent;
+    }
+
+    &__checkbox:checked + &__button &__icon::before {
+        top: 0;
+        transform: rotate(135deg);
+    }
+
+    &__checkbox:checked + &__button &__icon::after {
+        top: 0;
+        transform: rotate(-135deg);
+
+    }
+}

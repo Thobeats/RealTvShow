@@ -2,33 +2,21 @@
 ob_start();
 require_once "scripts/functions.php"; $link = connect();
 session_start();
-
+require_once "scripts/header_two.php";
 ?>
+<style>
+  p{
+    font-family: 'Poppins', serif;
+    font-size : 20px;
+    font-weight : 300;
+  }
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-
-        <link rel="stylesheet" href="css/icon-font.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="sass/main.scss">
-        <link rel="shortcut icon" type="image.png" href="img/logo.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-        <script type="text/javascript" src="js/reality.js"></script>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-        <title> RealityTV | RealityTVregistry.com</title>
-
-    </head>
-    <body>
-
+  @media only screen and (max-width: 768px) {    
+    p{
+      font-size: 15px;
+    }
+}
+</style>
 <?php  
 
   if(isset($_GET['pass'])){
@@ -41,19 +29,11 @@ $auth = utf8_encode($_GET['pass']);
 
 ?>
 
-      <main>
-          <div class="signup__container">
-
-              <div class="signup__logo">
-                  <div class="section-one">
-                      <a href="index.php"><img src="img/logo.png" alt="Logo" class="signup__logo-box" height="75rem" width="180rem"></a>
-                  </div>
-              </div>
-
-            <div class="section-two">
-              <p class="signup__container--text"> Your account has been activated, <a href="login.php">Click here </a> to Login</p>
-            </div>
-      </main>
+      <section class="bg-light d-flex flex-column justify-content-center border-bottom" style="height:70vh;">
+        <div class="welcome text-center">
+          <p>Your account has been activated, <a href="login.php">Click here </a> to Login</p>
+        </div>
+      </section>
 
 
 
@@ -72,19 +52,11 @@ $auth = utf8_encode($_GET['pass']);
 
     <?= get_message("success"); ?>
 
-      <main>
-          <div class="signup__container">
-
-              <div class="signup__logo">
-                  <div class="section-one">
-                      <a href="index.php"><img src="img/logo.png" alt="Logo" class="signup__logo-box" height="75rem" width="180rem"></a>
-                  </div>
-              </div>
-
-            <div class="section-two">
-              <p class="signup__container--text"> Thank You for joinig us. </br> Kindly check your email to confirm and complete the Sign Up Process.</p>
-            </div>
-      </main>
+   <section class="bg-light d-flex flex-column justify-content-center border-bottom" style="height:70vh;">
+     <div class="welcome text-center">
+       <p>Thank you for joining us <br> Kindly Check Your Email to Complete the Sign Up Process</p>
+     </div>
+   </section>
 
 
 <?php } ?>

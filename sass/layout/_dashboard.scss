@@ -1,0 +1,76 @@
+.head {
+    font-size: 1.5rem;
+    height: 23rem;
+    width: 100%;
+    background-image: url(../img/write7.jpg);
+    background-size: cover;
+    object-fit: cover; 
+    background-position: center; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.heade {
+    font-size: 1.5rem;
+    height: 23rem;
+    width: 100%;
+    background-image: url(../img/camera2.jpg);
+    background-size: cover;
+    object-fit: cover; 
+    background-position: center; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.headee {
+    font-size: 1.5rem;
+    height: 23rem;
+    width: 100%;
+    background-image: url(../img/act000.jpg);
+    background-size: cover;
+    object-fit: cover; 
+    background-position: center; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    width: 100%;
+}
+
+///////////////////////////////////
+// SIDE NAVIGATION
+.sidebar {
+    background-color: $color-secondary-dark;
+    height: 100%;
+    width: 30%;
+    flex: 0 0 18%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.user-view {
+    font-size: 1.4rem;
+    width: 70%;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profile-view {
+    background-color: $color-white;
+    font-size: 1.4rem;
+    flex: 1;
+
+    display: block;
+    // flex-direction: column;
+    // justify-content: space-between;
+}

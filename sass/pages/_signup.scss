@@ -1,56 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;700&display=swap');
 
-$mainFont: "Montserrat", sans-serif;
-
-$gradientColor1: #004883;
-$gradeintColor2: #1c87c9;
-$formBackgroundColor: #3295e6;
-$pinkOutline: #a31a6a;
-$loginButtonColor: rgb(96, 196, 96);
-$loginButtonTextColor: white;
-$newAccountButtonColor: #ffff00;
-$newAccountButtonTextColor: rgb(36, 34, 34);
-$inputBackgroundColor: #666666;
-$inputPlaceholderColor: rgba(255, 255, 255, 0.548);
-$loginWithAccountsTextColor: white;
-$inputTextColor: white;
-$forgetHoverColor: white;
-$requiredfield: rgb(247, 9, 9);
-
-@mixin enableFlex($direction: false) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    @if $direction {
-      flex-direction: column;
-    }
-  }
-
-  @mixin buttonStyles($backgroundColor, $fontColor) {
-    padding: 0.8rem 1.5rem;
-    width: 22rem;
-    border-radius: 0.2rem;
-    outline: none;
-    border: none;
-    font-size: medium;
-    background-color: $backgroundColor;
-    color: $fontColor;
-    cursor: pointer;
-    transition: background 0.5s;
-    &:hover {
-      background: darken($backgroundColor, 20%)
-        radial-gradient(circle, transparent 1%, darken($backgroundColor, 20%) 1%)
-        center/15000%;
-    }
-    &:active {
-      background-color: darken($backgroundColor, 30%);
-      background-size: 100%;
-      transition: background 0s;
-    }
-  }
-
-
-
   * {
     font-family: $mainFont;
     margin: 0;
@@ -59,15 +8,32 @@ $requiredfield: rgb(247, 9, 9);
   }
 
   .signup__button {
-    border-bottom: 1px solid $newAccountButtonColor;
-    padding-bottom:2rem;
+    display: flex;
+    border-bottom: 1px solid $newAccountButtonTextColor;
+    padding-bottom:1.5rem;
+
+    @include respond(small-phone) {
+      display: block;
+    }
+
+    &-1 {
+      margin: auto 2rem;
+
+      @include respond(small-phone) {
+        margin: auto auto 2rem auto;
+      }
+    }
   }
 
   .signup__container {
     background-color: linear-gradient(to right, $gradientColor1, $gradeintColor2);
-    height: 100vh;
-    width: 100vw;
+    height: 70rem;
+    width: 100%;
     background-color: $formBackgroundColor;
+
+    @include respond(small-phone) {
+      height: 90rem;
+    }
 
     // &--high {
     //   border-top: 1px solid $newAccountButtonColor;
@@ -75,7 +41,7 @@ $requiredfield: rgb(247, 9, 9);
     // }
 
     .section-one {
-      height: 10vh;
+      height: 10%;
       background-color: $formBackgroundColor;
 
       .signup__logo {
@@ -93,35 +59,37 @@ $requiredfield: rgb(247, 9, 9);
 
     .section-two {
       @include enableFlex(true);
-      border-top: 1px solid $newAccountButtonColor;
+      border-top: 1px solid $newAccountButtonTextColor;
       border-width: 100%;
-      padding-bottom: 10rem;
-      height: 90vh;
+      padding: 5rem auto;
+      margin: none;
+      height: 90%;
       .social-links {
         display: flex;
         position: relative;
-        height: 20%;
+        height: 5rem;
         cursor: pointer;
+        margin: 2rem auto;
         @include enableFlex();
         .signup__container--facebook {
           @include enableFlex();
           position: absolute;
           left: -10.5rem;
           span {
-            width: 52%;
+            width: 40%;
             color: $loginWithAccountsTextColor;
             font-size: 0.8rem;
             padding-right: 0.4rem;
           }
           .signup__container--icon {
-            height: 6rem;
-            width: 6.5rem;
+            height: 5rem;
+            width: 5.3rem;
             border-radius: 100%;
-            border: $pinkOutline 0.1rem solid;
+            border: $gradientColor1 0.1rem solid;
             @include enableFlex();
             cursor: pointer;
             .signup__container--image {
-              height: 4rem;
+              height: 50%;
               @include enableFlex();
             }
           }
@@ -134,19 +102,19 @@ $requiredfield: rgb(247, 9, 9);
             width: 50%;
             color: $loginWithAccountsTextColor;
             padding-left: 0.4rem;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
           }
           .signup__container--icon {
-            height: 6rem;
-            width: 6.3rem;
+            height: 5rem;
+            width: 5.3rem;
             border-radius: 100%;
-            border: $pinkOutline 0.1rem solid;
+            border: $gradientColor1 0.1rem solid;
             @include enableFlex();
             background-color: $formBackgroundColor;
             box-shadow: -0.5rem 0px $formBackgroundColor;
   
             .signup__container--image {
-              height: 4rem;
+              height: 50%;
               @include enableFlex();
             }
           }
@@ -156,8 +124,8 @@ $requiredfield: rgb(247, 9, 9);
       .signup__container--text {
         font-size: 2.5rem;
         color: $inputPlaceholderColor;
-        padding: none;
-        margin: none;
+        padding: 1.5rem auto;
+        margin-top: 3rem;
 
         &-1 {
           padding: none;
@@ -176,7 +144,7 @@ $requiredfield: rgb(247, 9, 9);
         a {
           text-decoration: none;
           @include enableFlex();
-          color: $pinkOutline;
+          color: $gradientColor1;
           font-weight: bold;
           margin-bottom: .5rem;
           transition: 0.3s ease-in-out;
@@ -184,23 +152,34 @@ $requiredfield: rgb(247, 9, 9);
             color: $forgetHoverColor;
           }
         }
-        .signup__container--checkbox {
-            display: block;
-            font-size: 1.5rem;
-            position: relative;
-            color: $inputTextColor;
-            margin-bottom: 2.5rem;
-        }
+
+        .signup__container--1{
+          display: flex;
+          font-size: 1.5rem;
+          position: relative;
+          color: $inputTextColor;
+          margin-bottom: 1.5rem;
+
+          &-1 {
+            padding-left: .5rem;
+          }
+      }
 
         &--input {
           display: flex;
+          width: 100%;
+
+          @include respond(small-phone) {
+            display: block;
+            width: 80%;
+          }
           
           &-1 {
             padding: 1rem;
             margin-right: 1rem;
-            width: 25rem;
+            width: 100%;
             border-radius: 0.2rem;
-            border: $pinkOutline 0.01rem solid;
+            border: $gradientColor1 0.01rem solid;
             color: $inputTextColor;
             background-color: $gradientColor1;
             margin-bottom: .5rem;
@@ -209,7 +188,7 @@ $requiredfield: rgb(247, 9, 9);
               color: $inputPlaceholderColor;
             }
             &:required {
-                box-shadow: 4px 4px 20px rgba(200, 0, 0, 0.45);
+                box-shadow: 4px 4px 20px rgba(200, 0, 0, 0.35);
               }
               &:focus {
                 border: 1px solid $requiredfield;
@@ -219,14 +198,22 @@ $requiredfield: rgb(247, 9, 9);
                 opacity: 1;
               }
           }
+
+          &-1-1 {
+            width: 98%;
+
+            @include respond(small-phone) {
+              width: 80%;
+            }
+          }
         }
       }
     }
   }
 
-  #pass {
-    width: 51rem;
-  }
+  // #pass {
+  //   width: 100%;
+  // }
   
 
   
