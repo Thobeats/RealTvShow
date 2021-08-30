@@ -37,7 +37,8 @@
     margin : 0 !important;
   }
     #logo{
-        height : 15vh;        
+        height : auto;    
+        padding : 20px;    
     }
 
     footer{
@@ -132,14 +133,15 @@
 </style>
     <div class="container-fluid">
         <header class="border-bottom">
-            <!-- <div class="row">
+            <?php if(isset($logo)){ ?>
+            <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div id="logo" class="d-flex justify-content-center">
-                        <a href="index.php"><img src="img/logo.png" alt="logo" width = "243px" height="90px"></a>
+                        <a href="index.php"><img src="img/logo.png" alt="logo" width = "350px"></a>
                     </div>
                 </div>
-            </div> -->
-
+            </div>
+            <?php } ?>
          <?php 
             if(isset($navBar)){
                 require "scripts/navbar.php";

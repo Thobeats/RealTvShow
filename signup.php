@@ -1,4 +1,5 @@
 <?php 
+$logo = true;
 require_once "scripts/functions.php";
 require "scripts/header_two.php";
 
@@ -9,7 +10,7 @@ require "scripts/header_two.php";
     height : 80vh;
   }
 
-  a{
+  .signup_link{
     color : #f8f9fa!important;
   }
 
@@ -71,10 +72,10 @@ require "scripts/header_two.php";
 
 }
 </style>
-<section class="d-flex flex-column justify-content-center bg-light sign_up_wrapper" >
+<section class="d-flex flex-column justify-content-center sign_up_wrapper" style="background-color: inherit;">
   <div class="row">
       <div class="col-lg-4 col-md-4 col-sm-12 p-4">
-        <a href="contestant_signup.php"><div class="card bg-primary text-light">
+        <a class="signup_link" href="contestant_signup.php"><div class="card bg-primary text-light">
           <div class="card-body text-center">
             <h3 class="h3">contestant sign up</h3>
             <p class="icon">  
@@ -84,7 +85,7 @@ require "scripts/header_two.php";
         </div>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-12  p-4">
-        <a href="executive_signup.php"><div class="card bg-warning text-light">
+        <a class="signup_link" href="executive_signup.php"><div class="card bg-warning text-light">
           <div class="card-body text-center">
             <h3 class="h3">executive sign up</h3>
             <p class="icon">  
@@ -94,7 +95,7 @@ require "scripts/header_two.php";
         </div></a>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-12 p-4">
-        <a href="wregistration.php"><div class="card bg-dark text-light">
+        <a class="signup_link" href="wregistration.php"><div class="card bg-dark text-light">
           <div class="card-body text-center">
           <h3 class="h3">author sign up</h3>
             <p class="icon">  

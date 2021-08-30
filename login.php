@@ -1,6 +1,6 @@
 <?php 
 
-
+$logo =true;
 require "scripts/functions.php"; 
 
 if(isset($_POST['login'])){

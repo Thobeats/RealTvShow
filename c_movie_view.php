@@ -5,6 +5,10 @@ require "scripts/functions.php";
 require "scripts/header_two.php";
 
 
+if(!is_loggedIn() || role() != 1){
+    header("Location: signup.php");
+}else{
+
 if(isset($_GET['id'])){
     $id = $_GET['id'];
     $movieQuery = mysqli_query($link, "select * from realtv_movies where id = '$id'");
@@ -89,7 +93,7 @@ if(isset($_GET['id'])){
 }
 
 .logline-para{
-    padding-top : 10px;
+    padding-top : 15px;
     font-family: 'Zilla Slab', serif;    
     font-size : 15px;
     font-weight : 400;
@@ -423,7 +427,7 @@ if(isset($_GET['id'])){
                 
             </div>
 
-            <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
+            <div class="col-lg-12 col-md-12 col-sm-12 mt-4 mb-3">
                 <div class="d-flex justify-content-center">
                     <div class="row">                           
                         <div class="col-lg-12 col-md-4 col-sm-12 mt-3 text-center" style="text-transform: uppercase;">
@@ -433,7 +437,7 @@ if(isset($_GET['id'])){
                 </div>
             </div>
 
-            <div class="col-12 mt-4">
+            <div class="col-12 mt-5">
                 <div class="member-benefits">
                     <h3 class="text-center my-4 m-title">MEMBER BENEFITS</h3>
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -547,4 +551,4 @@ if(isset($_GET['id'])){
 
         </section>    
 
-       <?php require "scripts/footer_two.php"; ?>
+       <?php require "scripts/footer_two.php"; }?>

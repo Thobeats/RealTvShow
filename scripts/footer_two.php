@@ -4,7 +4,7 @@
     }
 </style> -->
 
-<footer class="border-top p-4">
+<footer class="border-top p-4 text-dark">
 
 <div class="row">
     <div class="col-lg-6 col-md-12 col-sm-12 ">
@@ -61,7 +61,7 @@
 
 <div class="row my-4 pb-3">
     <div class="col-lg-12 col-md-12 col-sm-12 text-center">
-            ©RealityTV International Limited  <span id="date"></span>.
+            Reality TV Registry <span id="date"></span>.
     </div>
 </div>
 
