@@ -1,12 +1,12 @@
 <div class="col-lg-3 col-md-3 col-sm-12 member_benefit">
     <div class="row d-flex justify-content-center">
-        <h4 class="p-5 text-muted">Writer's Benefit </h4>
+        <h4 class="p-5 text-muted">Writer's Benefits </h4>
     </div>
 
     <div class="row">
         <div class="col-12 text-center p-2">
             <img class="" src="img/write9.jpeg" width="200px">
-            <p class="sidebar-para"> Inclusion of Image Enhancement Pitches on the RealityTVRegistry platform</p>
+            <p class="sidebar-para"> Opportunity to have your pitch title &amp; image displayed on high impact….Home Page</p>
         </div>
         <div class="col-12 text-center p-2">
             <img class="" src="img/write7.jpeg" width="200px">

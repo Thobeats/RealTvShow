@@ -151,7 +151,7 @@ if(isset($_POST['reg'])){
 
 <div class="row p-3">
     <div class="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-end pt-4">
-       <p class="pl-5 writer-title text-right"> authors & scripters</p>
+       <p class="pl-5 writer-title text-right"> Writers and Creators</p>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 text-align-left p-4">
         <div class="writer-img">
@@ -221,7 +221,7 @@ if(isset($_POST['reg'])){
         <!-- <form action="" method="POST"> -->
              <div class="row">
                 <div class="col-12 d-flex justify-content-start">
-                <p class="p-2 writer-header"> movie details </p>
+                <p class="p-2 writer-header"> proposed reality </p>
                 </div>
             </div>
             <div class="row">
@@ -248,7 +248,7 @@ if(isset($_POST['reg'])){
 
             <div class="row mt-3">        
                 <div class="col-12">
-                    <label for="">Logline</label>
+                    <label for="" class="h4">Logline</label>
                     <textarea name="logline" id="" class="form-control text-editor" cols="5" rows="5"></textarea>
                 </div>
 
@@ -256,33 +256,30 @@ if(isset($_POST['reg'])){
 
             <div class="row mt-3">
                 <div class="col-12">
-                    <label for="">Synopsis</label>
+                    <label class="h4" for="">Synopsis</label>
                     <textarea name="synopsis" id="" class="form-control text-editor" cols="30" rows="10"></textarea>
                 </div>
             </div>
 
             <div class="row mt-3">
-                <div class="col-lg-6 col-md-6 col-sm-12" style="transform: scale(0.8);">
-                    <div class="input-group mt-2" style="font-weight: 300">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-                        </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">                    
                         <div class="custom-file">
                             <input type="file" name="cover_img" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                            <label class="custom-file-label" for="inputGroupFile01">Cover Image</label>
+                            <label class="custom-file-label" for="inputGroupFile01">Home Page</label>
                         </div>
+                </div>
+                    
+                <div class="col-lg-6 col-md-6 col-sm-12">    
+                    <div class="custom-file">                
+                        <input type="file" name="other_img[]" title="Select multiple images" style="font-weight: 300 !important;" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" multiple>
+                        <label class="custom-file-label" for="inputGroupFile01" >Image Enhanced Pitch up to 7 Images</label>                      
                     </div>
                 </div>
 
-                <div class="col-lg-6 col-md-6 col-sm-12" style="transform: scale(0.8);">
-                    <div class="input-group mt-2">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-                        </div>
-                        <div class="custom-file">
-                            <input type="file" name="other_img[]" title="Select multiple images" style="font-weight: 300 !important;" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" multiple>
-                            <label class="custom-file-label" for="inputGroupFile01" >Other Images</label>
-                        </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 mt-2">    
+                    <div class="custom-file">                
+                        <input type="file" name="sizzle" title="Select multiple images" style="font-weight: 300 !important;" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile01" >Upload Sizzle Reel Video</label>                      
                     </div>
                 </div>
 
@@ -324,6 +321,20 @@ if(isset($_POST['reg'])){
 </section>
 
 </form>
+
+<script>
+    let next = document.querySelector(".next");
+    let writerTitle = document.querySelector(".writer-title");
+    next.addEventListener("click", function(){
+        writerTitle.innerHTML = "pitch submissions";
+    });
+
+    let prev = document.querySelector(".prev");
+    prev.addEventListener("click", function(){
+        writerTitle.innerHTML = "writers and creators";
+    });
+
+</script>
 
 
 

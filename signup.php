@@ -26,7 +26,7 @@ require "scripts/header_two.php";
   .h3{
     text-transform : uppercase;
     font-family : 'Poppins', serif;
-    font-weight : 300;
+    font-weight : 700;
   }
 
   .icon{
@@ -72,10 +72,10 @@ require "scripts/header_two.php";
 
 }
 </style>
-<section class="d-flex flex-column justify-content-center sign_up_wrapper" style="background-color: inherit;">
+<section class="d-flex flex-column justify-content-center sign_up_wrapper">
   <div class="row">
       <div class="col-lg-4 col-md-4 col-sm-12 p-4">
-        <a class="signup_link" href="contestant_signup.php"><div class="card bg-primary text-light">
+        <a class="signup_link" href="contestant_signup.php"><div class="card text-light" style="background-color: #285097;">
           <div class="card-body text-center">
             <h3 class="h3">contestant sign up</h3>
             <p class="icon">  

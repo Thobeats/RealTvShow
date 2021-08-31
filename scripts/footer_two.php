@@ -3,7 +3,6 @@
         border : 1px solid;
     }
 </style> -->
-
 <footer class="border-top p-4 text-dark">
 
 <div class="row">
@@ -71,6 +70,7 @@
 
 
  </div>
+
 
  <?php if(isset($paypal)): ?>
  <script src="https://www.paypal.com/sdk/js?client-id=AfgYATIfVWBGwQVce9ggpT8F3cpdMckdMmaf525u6IvyLjD1oL8RTiTqHVZrUWMvn7Un6r2q_qDehBJY&currency=USD"></script>
@@ -152,5 +152,9 @@ paypal.Buttons({
     });
 </script>
 
+
+
+
 </body>
 </html>
+

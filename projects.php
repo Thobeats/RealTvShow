@@ -1,12 +1,20 @@
 <?php 
 $navBar = true;
 require "scripts/functions.php";
+
+if(is_loggedIn() && role() != 1){
+    //$_SESSION['error'] = "Not Authorized";
+    set_message("error", "Not Authorized");
+    header("Location: index.php");    
+
+}else{
+
 require "scripts/header_two.php"; 
 
 //var_dump($_SESSION);
 ?>
 
-<?php get_message("error"); get_message('success') ?>
+<?php get_message("error"); get_message('success')  ?>
 
 
 <section class="landing-page-movie">
@@ -46,7 +54,7 @@ require "scripts/header_two.php";
 <section class="py-4 note">
     <div class="col-12">
         <p class="text-center p-4 cnote">
-        With great enthusiasm, RealityTVRegistry recommends these 15 projects. All have copyright protection and are available for option and acquisition. Additional proposals are being developed and may be viewable in mid-August.
+        With great enthusiasm, RealityTVRegistry recommends these projects, Other projects are currently being developed and will be available soon. All have copyright protection and are available for option and acquisition. Additional proposals are being developed and may be viewable in mid-August.
         </p>
     </div>
 </section>
@@ -167,4 +175,5 @@ require "scripts/header_two.php";
 
 <?php
  require "scripts/footer_two.php";
+}
 ?>

@@ -1,5 +1,5 @@
 <?php 
-$navBar = true;
+$navBar = true; $logo =true;
 require "scripts/functions.php";
 require "scripts/header_two.php"; 
 
@@ -209,7 +209,7 @@ body{
                         and with the inclusion of a highly visible Home Page 2”x 2” block display.
                     </p> 
                     <p class="writer_side_para text-center my-3 bg-light py-3">
-                        <a href="sample.php" class="realbtn">Click Here to view a sample <b>Display Listing and Image Enhanced Pitch</b></a>
+                        <a href="sample.php" class="realbtn" style="font-size: 17px; letter-spacing:0;"><b>Click Here to VIEW a SAMPLE Display Listing and Image Enhanced Pitch</b></a>
                     </p> 
                     <p class="writer_side_para">
                         Either option will significantly increase your opportunity to be discovered through the usual business-to-business

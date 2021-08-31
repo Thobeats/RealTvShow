@@ -291,6 +291,10 @@ footer p{
     text-transform: uppercase;
 }
 
+.writer_side_para{
+    font-size: 17px !important;
+}
+
 
 @media only screen and (max-width: 768px) {
     .landing-page-roles{

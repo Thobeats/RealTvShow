@@ -34,14 +34,12 @@ function base_url(){
 }
 
 //echo base_url();
-function set_message($type, $message, $title=null){
-
-    $_SESSION[$type] = $message;
-   
+function set_message($type, $message){
+    $_SESSION[$type] = $message;   
 }
 
 function get_message($type){
-
+    $echo = false;
     if(isset($_SESSION[$type])){
 
         $message = $_SESSION[$type]; $title = NULL;
@@ -54,11 +52,15 @@ function get_message($type){
 
 
         echo "<script>$toastr</script>";
-
-
-      unset($_SESSION[$type]);
+        $echo = true;
     }
+
+    if($echo == true){
+        unset($_SESSION[$type]);
+    }
+
 }
+
 
 function send_mail($toEmail, $subject, $body){
     $mail = new PHPMailer(true);

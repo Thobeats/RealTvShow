@@ -8,6 +8,7 @@ require("scripts/header_two.php");
 ?>
 
 <style>
+
 .sample{
     background-image: url(img/shoot2.jpg);
     height: 100vh;
@@ -84,7 +85,7 @@ require("scripts/header_two.php");
 
 .logline-para {
     padding-top : 10px;
-    font-size : 15px;
+    font-size : 17px;
     font-weight : 400;
     letter-spacing : 2px;
 }
@@ -116,6 +117,7 @@ require("scripts/header_two.php");
 
 .synopsis_content{
     letter-spacing : 1px;
+    font-size : 18px;
 }
 
 @media only screen and (max-width: 425px) {
@@ -151,8 +153,8 @@ body{
     </div>
 </section>
 
-<section class="d-flex justify-content-center p-4 mt-5 bg-light">
-    <h3 class="zilla">ACTUAL DISPLAY LISTING AND IMAGE ENHANCED PITCH</h4>
+<section class="d-flex justify-content-center p-4 mt-5 bg-dark">
+    <h3 class="zilla text-light" style="text-transform: uppercase;">High Impact Home Page Display Listings And Image Enhanced Pitches</h4>
 </section>
 
 <section class="sample_listings p-3">
@@ -169,7 +171,12 @@ body{
                 <div class="card-body p-0">
                       <img src="img/uploads/<?= $moviePic ?>" class="movie-card-body"  alt="">
                 </div>
-                <p class=" movieTitle text-center my-0"><?= $movie->movie_title ?></p>                                         
+                <p class=" movieTitle text-center my-0"><?= $movie->movie_title ?></p>  
+                <a class="text-dark"> 
+                    <div class="check bg-warning card-footer text-center">
+                    Check it out
+                    </div> 
+                </a>                                        
             </div>         
           
         </div>
@@ -179,9 +186,9 @@ body{
 
 <?php   
 
-$random = rand(1,6);
+//$random = rand(1,6);
 
-$movie_data = mysqli_fetch_assoc(mysqli_query($link, "select * from realtv_movies where id = '$random'"));
+$movie_data = mysqli_fetch_assoc(mysqli_query($link, "select * from realtv_movies where id = '2'"));
 
 ?>
 <section class="row my-4 p-2 movie-dets bg-light">
@@ -206,7 +213,7 @@ $movie_data = mysqli_fetch_assoc(mysqli_query($link, "select * from realtv_movie
                             <hr>
                         </h3>
 
-                        <p class="logline-para">
+                        <div class="logline-para">
 
 
                         <?= isset($movie_data['logline']) ? $movie_data['logline'] : 'A troop of 30 Roman Soldiers are led to battle against 30 Celti Gauls in this historically
@@ -219,7 +226,7 @@ $movie_data = mysqli_fetch_assoc(mysqli_query($link, "select * from realtv_movie
                                                                                         ' 
                         ?>
                         
-                        </p>
+                        </div>
 
                         
 
@@ -322,7 +329,7 @@ $movie_data = mysqli_fetch_assoc(mysqli_query($link, "select * from realtv_movie
 </section>    
 
 <section class="d-flex justify-content-end p-4">
-    <a name="" id="" class="btn btn-warning" href="wregistration.php" role="button">Register Now</a>
+    <a name="" id="" class="realbtn btn-warning text-center" style="font-weight: 600; font-size: 20px;" href="wregistration.php" role="button">Register Now</a>
 </section>
 
 

@@ -1,11 +1,12 @@
 <?php 
+ob_start();
 $navBar = true;
 require "scripts/functions.php";
 require "scripts/header_two.php"; 
 
 ?>
 
-<?php get_message("error"); get_message('success') ?>
+<?php get_message('error'); get_message('success'); ?>
 
 
 <section class="landing-image d-flex flex-column justify-content-start flex-column ">
