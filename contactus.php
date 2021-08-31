@@ -72,7 +72,7 @@ require "scripts/header_two.php";
     <div class="row">
         <div class="col-lg-7 col-md-7 col-sm-12">
             <div class="contact-us-text px-3 pt-5">
-                <h3 class="my-5 text-center">Stay connected as we build a community of reality.</h3>
+                <h3 class="my-5 text-center">Staying connected as we build a community of reality</h3>
                 <div class="my-2 p-2 text-center">
                     <img src="img/Picture1.png" alt="" width="80%">
                 </div>

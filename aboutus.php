@@ -24,12 +24,11 @@ require "scripts/header_two.php";
     left : 150px;
 }.about-us-text{
     font-family: 'Poppins', serif;
-    font-size : 15px;
+    font-size : 17px;
     letter-spacing : 2px;
     font-weight : 300;
 }.about-us-img{
     width : 100%;
-    clip-path : polygon(0% 0%, 0% 100%, 100% 96%, 100% 0%);
 }@media only screen and (max-width: 768px) {.about-us{font-weight : 500;font-size: 40px; }.about-us::after{left : 110px;}.about-us-text{font-size : 12px;} .img-wrapper{margin-top: 50px;}  .cover-image{height: 80vh;} }
 @media only screen and (max-width: 425px) {body{width : auto;}.about-us{font-weight : 500;font-size: 30px;}
     .about-us{padding-right: 40px;}
@@ -56,16 +55,16 @@ require "scripts/header_two.php";
 
 
 
-<section class="about-us-wrapper">
-    <div class="row p-3">
+<section class="about-us-wrapper" >
+    <div class="row p-3" style="width : 100%;">
         <div class="col-lg-7 col-md-8 col-sm-12 d-flex justify-content-end pt-4">
             <p class="pl-5 about-us text-right">about us</p>
         </div>        
     </div>
 
-    <div class="row">
+    <div class="row" style="width : 100%;">
         <div class="col-lg-7 col-md-7 col-sm-12">
-            <div class="about-us-text px-5 pb-5 text-center">
+            <div class="about-us-text px-5 pb-5 text-left">
                 <p>
                     In the essence of this community, aspiring individuals of great talent and ambition 
                     convene, on their paths to discovery. With your commitment for success, we pledge to reveal your individual 

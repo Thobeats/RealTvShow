@@ -39,7 +39,7 @@
         <a class="nav-link" href="contactus.php">Let's Connect</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="faq.php">Faq</a>
+        <a class="nav-link" href="faq.php">Faq's</a>
       </li>
      
     </ul>

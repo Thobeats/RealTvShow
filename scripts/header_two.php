@@ -32,13 +32,14 @@
 <body>
 <style>
 
+
 .container-fluid{
     padding : 0 !important;
     margin : 0 !important;
   }
     #logo{
         height : auto;    
-        padding : 20px;    
+        padding : 20px; 
     }
 
     footer{
@@ -62,6 +63,10 @@
        cursor: pointer;
    }
 
+   .logo{
+        width : 350px;
+    }
+
     .footer_grp{
         font-family: 'Poppins', sans-serif;
         list-style-type : none;
@@ -82,7 +87,7 @@
 
     @media only screen and (max-width: 1024px) {
         #logo{
-            height : 12vh;        
+            height : auto;        
         }
 
         #footer-logo{
@@ -105,18 +110,13 @@
         }
 
         #logo{
-            height : 15vh;        
+            height : auto;        
         }
-
-       
+              
     }
-
-
-    
-
     @media only screen and (max-width: 425px) {
         #logo{
-            height : 15vh;        
+            height : auto;        
         }
 
         #footer-logo{
@@ -128,16 +128,20 @@
             width: 100vw;
             overflow-x : hidden !important;
         }
+
+        .logo{
+            width : 200px;
+        }
     }
 
 </style>
     <div class="container-fluid">
         <header class="border-bottom">
             <?php if(isset($logo)){ ?>
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="row" style="width: 100%;">
+                <div class="col-lg-12 col-md-12 col-sm-12" >
                     <div id="logo" class="d-flex justify-content-center">
-                        <a href="index.php"><img src="img/logo.png" alt="logo" width = "350px"></a>
+                        <a href="index.php"><img src="img/logo.png" alt="logo" class="logo"></a>
                     </div>
                 </div>
             </div>

@@ -102,9 +102,6 @@ body{
     font-size : 15px;
     letter-spacing : 1px;
 }
-
-
-
 .writer_side_para, .movie-para{
     font-size : 12px;
   
@@ -126,7 +123,7 @@ body{
 
 
 
-<section class="promote-you p-2 mt-2 mb-5">
+<section class="promote-you px-5 mt-2 mb-5 text-left">
 
     <div class="row">
         <div class="col-12">
