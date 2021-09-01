@@ -166,19 +166,15 @@ body{
 
                 $moviePic = $movie->movie_pic;
         ?>
-        <div class="col-lg-4 col-md-4 mt-5 col-sm-6">
+       <div class="col-lg-4 col-md-4 mt-5 col-sm-6">
             <div class="card movie-card border-0 mx-auto" style="cursor: pointer; background-color: inherit">
-                <div class="card-body p-0">
+                <div class="card-body p-0" style="height: 70%;">
                       <img src="img/uploads/<?= $moviePic ?>" class="movie-card-body"  alt="">
                 </div>
-                <p class=" movieTitle text-center my-0"><?= $movie->movie_title ?></p>  
-                <a class="text-dark"> 
-                    <div class="check bg-warning card-footer text-center">
-                    Check it out
-                    </div> 
-                </a>                                        
-            </div>         
-          
+                <div class=" movieTitle my-0 p-2">
+                    <p><?= $movie->movie_title ?></p>
+                </div>
+            </div>     
         </div>
         <?php endwhile; ?>
     </div>

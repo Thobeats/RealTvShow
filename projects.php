@@ -2,11 +2,13 @@
 $navBar = true;
 require "scripts/functions.php";
 
-if(is_loggedIn() && role() != 1){
+if(!is_loggedIn()){
     //$_SESSION['error'] = "Not Authorized";
-    set_message("error", "Not Authorized");
-    header("Location: index.php");    
+    header("Location: login.php");    
 
+}elseif(role() != 1){
+    set_message('error', "Not Authorized");
+    header("Location: index.php");    
 }else{
 
 require "scripts/header_two.php"; 
@@ -32,18 +34,14 @@ require "scripts/header_two.php";
         ?>
         <div class="col-lg-4 col-md-4 mt-5 col-sm-6">
             <div class="card movie-card border-0 mx-auto" style="cursor: pointer; background-color: inherit">
-                <div class="card-body p-0">
+                <div class="card-body p-0" style="height: 70%;">
                       <img src="img/uploads/<?= $moviePic ?>" class="movie-card-body"  alt="">
                 </div>
-                <p class=" movieTitle text-center my-0"><?= $movie->movie_title ?></p>
-                
-                <a href="signup.php" class="text-dark"> 
-                    <div class="check bg-warning card-footer text-center">
-                    Check it out
-                    </div> 
-                </a>                           
-            </div>         
-          
+                <div class=" movieTitle my-0 p-2">
+                    <p><?= $movie->movie_title ?></p>
+                    <a href="c_movie_view.php?id=<?= $movie->id ?>" class="bg-warning check text-dark">Check it out</a>
+                </div>
+            </div>     
         </div>
         <?php endwhile; ?>
     </div>

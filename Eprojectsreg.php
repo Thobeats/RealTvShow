@@ -25,16 +25,16 @@
         
                         $moviePic = $movie->movie_pic;
                 ?>
-                <div class="col-lg-4 col-md-4 mt-5 card-col col-sm-6 d-flex justify-content-center">
-                    <div class="card movie-card" style="width: 80%; background: url(img/uploads/<?= $moviePic ?>); height: 200px; background-size: cover; cursor: pointer" >
-                        <div class="card-title mb-auto text-right text-light mt-4 d-flex justify-content-end" >
-                           <p class="p-2 movieTitle"  style="background-image: linear-gradient(to right bottom, rgba(50, 149, 230, 0.85), rgba(0, 72, 131, 0.85)); width: 80%;"><?= $movie->movie_title ?></p> 
+                <div class="col-lg-4 col-md-4 mt-5 col-sm-6">
+                    <div class="card movie-card border-0 mx-auto" style="cursor: pointer; background-color: inherit">
+                        <div class="card-body p-0" style="height: 70%;">
+                            <img src="img/uploads/<?= $moviePic ?>" class="movie-card-body"  alt="">
                         </div>
-                        <div class="mb-2 text-center check-out">
-                            <a href="Eviewpage.php?id=<?= $movie->id ?>" target="_blank" class="btn btn-light text-dark">Check This Out Now</a>
+                        <div class=" movieTitle my-0 p-2">
+                            <p><?= $movie->movie_title ?></p>
+                            <a href="Eviewpage.php?id=<?= $movie->id ?>" class="bg-warning check text-dark">Check it out</a>
                         </div>
-                    </div>         
-                  
+                    </div>     
                 </div>
                 <?php endwhile; ?>
             </div>

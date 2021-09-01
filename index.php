@@ -11,11 +11,10 @@ require "scripts/header_two.php";
 
 <section class="landing-image d-flex flex-column justify-content-start flex-column ">
     <div class="landing-text text-white text-center">
-        <div class="">
+        <div class="" >
             <img src="img/newLogo.png" alt="" class="welcome-logo">
         </div>
-        <h3 class="mt-2">on location to a cache of unique formats & talent</h3>
-        
+        <h3 class="mt-2">on location to a cache of unique formats & talent</h3>        
     </div>
 
 </section>
@@ -69,16 +68,13 @@ require "scripts/header_two.php";
         ?>
         <div class="col-lg-4 col-md-4 mt-5 col-sm-6">
             <div class="card movie-card border-0 mx-auto" style="cursor: pointer; background-color: inherit">
-                <div class="card-body p-0">
+                <div class="card-body p-0" style="height: 70%;">
                       <img src="img/uploads/<?= $moviePic ?>" class="movie-card-body"  alt="">
                 </div>
-                <p class=" movieTitle text-center my-0"><?= $movie->movie_title ?></p>
-                
-                <a href="signup.php" class="text-dark"> 
-                    <div class="check bg-warning card-footer text-center">
-                    Check it out
-                    </div> 
-                </a>                           
+                <div class=" movieTitle my-0 p-2">
+                    <p><?= $movie->movie_title ?></p>
+                    <a href="signup.php" class="bg-warning check text-dark">Check it out</a>
+                </div>
             </div>         
           
         </div>

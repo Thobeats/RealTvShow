@@ -4,6 +4,16 @@ require "scripts/functions.php";
 require "scripts/header_two.php"; 
 
 //var_dump($_SESSION);
+
+if(!is_loggedIn()){
+    //$_SESSION['error'] = "Not Authorized";
+    header("Location: login.php");    
+
+}elseif(role() != 1){
+    set_message('error', "Not Authorized");
+    header("Location: index.php");    
+}else{
+
 ?>
 
 <?php get_message("error"); get_message('success') ?>
@@ -24,20 +34,14 @@ require "scripts/header_two.php";
         ?>
         <div class="col-lg-4 col-md-4 mt-5 col-sm-6">
             <div class="card movie-card border-0 mx-auto" style="cursor: pointer; background-color: inherit">
-                <div class="card-body p-0">
+                <div class="card-body p-0" style="height: 70%;">
                       <img src="img/uploads/<?= $moviePic ?>" class="movie-card-body"  alt="">
                 </div>
-                <p class=" movieTitle text-center my-0"><?= $movie->movie_title ?></p>
-                <!-- <div class="card-footer text-center">
-                    <a href="signup.php"class="realbtn small-btn btn-warning">Check it out</a>
-                </div> -->
-                <a href="c_movie_view.php?id=<?= $movie->id ?>" class="text-dark"> 
-                    <div class="check bg-warning card-footer text-center">
-                    Check it out
-                    </div> 
-                </a>                           
-            </div>         
-          
+                <div class=" movieTitle my-0 p-2">
+                    <p><?= $movie->movie_title ?></p>
+                    <a href="c_movie_view.php?id=<?= $movie->id ?>" class="bg-warning check text-dark">Check it out</a>
+                </div>
+            </div>     
         </div>
         <?php endwhile; ?>
     </div>
@@ -173,4 +177,6 @@ require "scripts/header_two.php";
 
 <?php
  require "scripts/footer_two.php";
+
+}
 ?>

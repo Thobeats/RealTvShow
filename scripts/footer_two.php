@@ -9,7 +9,7 @@
     <div class="col-lg-6 col-md-12 col-sm-12 ">
         <div class="d-flex flex-column justify-content-center text-center">
             <img src="img/logo.png" class="mx-auto" alt="logo" id="footer-logo" width = "100%">
-            <p class="mt-2 text-center h6 text-dark">on location to a cache of unique formats & talent</p>
+            <p class="mt-2 text-center h5 text-dark">on location to a cache of unique formats & talent</p>
         </div>   
     </div>
 
