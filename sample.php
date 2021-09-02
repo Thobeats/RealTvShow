@@ -10,7 +10,7 @@ require("scripts/header_two.php");
 <style>
 
 .sample{
-    background-image: url(img/shoot2.jpg);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.774) ,rgba(0, 0, 0, 0.719)),url(img/shoot2.jpg);
     height: 100vh;
     background-size : cover;
     background-position : top left;
@@ -23,18 +23,17 @@ require("scripts/header_two.php");
     text-align : center;
     font-family: "Montserrat", sans-serif;
     width : 100%;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.274) ,rgba(0, 0, 0, 0.219));
 }
 
 .sample-wrapper h1{
-    font-weight : 600;
-    letter-spacing : 1.75rem;
+    font-weight : 800;
+    letter-spacing : 5px;
     text-transform : uppercase;
 }
 
 .sample-wrapper p{
     font-weight : 300;
-    letter-spacing : 1rem;
+    letter-spacing : 3px;
     text-transform : uppercase;
     width : 100%;
 }
@@ -148,8 +147,8 @@ body{
 
 <section class="sample p-4">
     <div class="sample-wrapper m-auto d-flex flex-column justify-content-center">                
-        <h1>Reality Tv</h1>
-        <p class="mr-auto ml-auto">cache of unique formats & talent</p>                  
+        <h1 style="font-weight:600;">Reality Tv registry</h1>
+        <p class="mr-auto ml-auto">on location to a cache of unique formats & talent</p>                  
     </div>
 </section>
 

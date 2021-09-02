@@ -26,7 +26,7 @@ require "scripts/header_two.php";
 }
 
 .contact-us-text a {
-   font-size : 15px;
+   font-size : 18px;
    display: block;
    color : #004883;
 }
@@ -42,7 +42,7 @@ require "scripts/header_two.php";
     padding : 15px;
     font-size : 15px;
   }
-@media only screen and (max-width: 768px) {.about-us{font-weight : 500;font-size: 17px; }.contact-us-text h3{font-size : 40px;}.contact-us-text a{font-size : 12px;}.img-wrapper{margin-top: 50px;}.cover-image{height: 80vh;} }
+@media only screen and (max-width: 768px) {.about-us{font-weight : 500;font-size: 17px; }.contact-us-text h3{font-size : 40px;}.contact-us-text a{font-size : 15px;}.img-wrapper{margin-top: 50px;}.cover-image{height: 80vh;} }
 @media only screen and (max-width: 425px) {body{width : auto;}.about-us{font-weight : 500;font-size: 15px;}
     .contact-us-text h3{font-size : 30px;}
     .contact-form{
@@ -74,16 +74,16 @@ require "scripts/header_two.php";
             <div class="contact-us-text px-3 pt-5">
                 <h3 class="my-5 text-center">Staying connected as we build a community of reality</h3>
                 <div class="my-2 p-2 text-center">
-                    <img src="img/Picture1.png" alt="" width="80%">
+                    <img src="img/Picture1.png" alt="" width="100%">
                 </div>
-                <div class="my-2">
-                    <a class="text-center" href="#">
+                <div class="my-2 ml-5">
+                    <a class="text-left py-2" href="#">
                         <i class="bi bi-envelope-fill"></i> Connect@RealityTVRegistry.com
                     </a>
-                    <a class="text-center" href="#">
+                    <a class="text-left py-2" href="#">
                         <i class="bi bi-envelope-fill"></i> PaulM@RealityTVRegistry.com
                     </a>
-                    <a class="text-center" href="#">
+                    <a class="text-left py-2" href="#">
                         <i class="bi bi-geo-alt-fill"></i> 626, Wilshire Blvd Ste: 410 Los Angeles,CA. 90017
                     </a>
                 </div>

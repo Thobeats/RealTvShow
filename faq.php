@@ -8,6 +8,8 @@ require "scripts/header_two.php";
 <style>
 .promote-you{
     height : auto;
+    margin : 0px 70px;
+    padding : 0px 20px;
 }
 
 .promote-you h2{
@@ -71,6 +73,11 @@ require "scripts/header_two.php";
     height : 140px;
 }
 
+.promote-you{
+    height : auto;
+    margin : 0px 20px;
+}
+
 .movie-para{
     margin-top : 0px;
     margin-top : -20px;
@@ -106,6 +113,11 @@ body{
     font-size : 12px;
   
 }
+.promote-you{
+    height : auto;
+    margin : 0px 10px;
+    padding : 0px;
+}
 
 .promote_img{
     width : 150px;
@@ -123,7 +135,7 @@ body{
 
 
 
-<section class="promote-you px-5 mt-2 mb-5 text-left">
+<section class="promote-you mt-2 mb-5 text-left">
 
     <div class="row">
         <div class="col-12">

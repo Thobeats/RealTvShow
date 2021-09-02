@@ -9,7 +9,7 @@ require "scripts/header_two.php";
 <?php get_message('error'); get_message('success'); ?>
 
 
-<section class="landing-image d-flex flex-column justify-content-start flex-column ">
+<section class="landing-image d-flex flex-column justify-content-start flex-column">
     <div class="landing-text text-white text-center">
         <div class="" >
             <img src="img/newLogo.png" alt="" class="welcome-logo">
@@ -19,7 +19,7 @@ require "scripts/header_two.php";
 
 </section>
 
-<section class="landing-page-roles d-flex justify-content-center flex-column">
+<section class="landing-page-roles d-flex justify-content-center flex-column pb-3">
     <div class="row mt-10 " style="width: 100vw;">
         <div class="col-12">
             <h3 class="text-center p-3 role-intro">dedicated registrations for contestants/talent, writers & industry TV executives</h3>

@@ -248,7 +248,7 @@ if(isset($_POST['reg'])){
 
             <div class="row mt-3">        
                 <div class="col-12">
-                    <label for="" class="h4">Logline</label>
+                    <label for="" class="h4">Logline <small> (Copy &amp; Paste Your Content)</small></label>
                     <textarea name="logline" id="" class="form-control text-editor" cols="5" rows="5"></textarea>
                 </div>
 
@@ -256,7 +256,7 @@ if(isset($_POST['reg'])){
 
             <div class="row mt-3">
                 <div class="col-12">
-                    <label class="h4" for="">Synopsis</label>
+                    <label class="h4" for="">Synopsis <small> (Copy &amp; Paste Your Content)</small></label>
                     <textarea name="synopsis" id="" class="form-control text-editor" cols="30" rows="10"></textarea>
                 </div>
             </div>

@@ -23,13 +23,6 @@ require "scripts/header_two.php";
   .form-control{
       font-size:14px;
   }
-
-  .realbtn{
-    width : 100%;
-    padding : 15px;
-    font-size : 15px;
-  }
-
   label{
     font-size:14px;
     letter-spacing : 1px;
@@ -43,11 +36,7 @@ require "scripts/header_two.php";
         padding : 20px;
      
     }   
-    
-    .realbtn{
-        padding : 10px;
-        font-size : 12px;
-    }
+  
 }
 
 
@@ -56,11 +45,7 @@ require "scripts/header_two.php";
         width : 90%;  
         padding : 20px;        
     }   
-    .realbtn{
-        padding : 10px;
-        font-size : 12px;
-    }
-
+   
 
 }
 </style>

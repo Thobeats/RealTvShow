@@ -2,7 +2,7 @@
   nav{
     background-color : black;
   }
-  
+
   nav a {
     color : white !important;
     font-family: 'Poppins', sans-serif;
@@ -14,6 +14,13 @@
     background-color : #ffc107;
   }
 
+  .user-btn{
+    border : none;
+    padding : 10px;
+    font-size : 15px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
+  }
   
 
 </style>
@@ -24,26 +31,31 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav m-auto">   
-      <li class="nav-item active">
-        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="aboutus.php">About Us</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="contactus.php">Let's Connect</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="faq.php">Faq's</a>
-      </li>
-     
-    </ul>
+  <div class="collapse navbar-collapse row" id="navbarSupportedContent">
+    <div class="col-4"></div>
+    <div class="col-lg-4 col-md-12">
+        <ul class="navbar-nav page-nav">   
+        <li class="nav-item active">
+          <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="aboutus.php">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contactus.php">Let's Connect</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="faq.php">Faq's</a>
+        </li>
+      
+      </ul>
+    </div>
+    
 
     <?php if(is_loggedIn()){ ?>
+    <div class="col-lg-4 col-md-12 signup-nav">
       <div class="btn-group">
-        <button type="button" class="realbtn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button type="button" class="user-btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <?= $_SESSION['firstname'] ?>
         </button>
         <div class="dropdown-menu">
@@ -51,16 +63,20 @@
           <a class="dropdown-item text-dark" href="logout.php">Logout</a>         
         </div>
       </div>
+    </div>
 
     <?php }else { ?>
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a href="login.php" class="nav-link">Login</a>
-        </li>
-        <li class="nav-item">
-         <a href="signup.php" class="nav-link">Signup</a>
-        </li>             
-      </ul>
+      <div class="col-lg-4 col-md-12">
+        <ul class="navbar-nav signup-nav">
+          <li class="nav-item active">
+            <a href="login.php" class="nav-link">Login</a>
+          </li>
+          <li class="nav-item">
+          <a href="signup.php" class="nav-link">Signup</a>
+          </li>             
+        </ul>
+      </div>
+      
     <?php } ?>
    
   </div>

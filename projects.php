@@ -52,13 +52,13 @@ require "scripts/header_two.php";
 <section class="py-4 note">
     <div class="col-12">
         <p class="text-center p-4 cnote">
-        With great enthusiasm, RealityTVRegistry recommends these projects, Other projects are currently being developed and will be available soon. All have copyright protection and are available for option and acquisition. Additional proposals are being developed and may be viewable in mid-August.
+        With great enthusiasm, RealityTVRegistry recommends these projects, Other projects are currently being developed and will be available soon. All have copyright protection and are available for option and acquisition. Additional proposals are being developed and will be viewable soon.
         </p>
     </div>
 </section>
 
 
-<section class="row mb-4">
+<!-- <section class="row mb-4">
     <div class="col-12 mt-4">
         <div class="member-benefits">
             <h3 class="text-center my-4 m-title">MEMBER BENEFITS</h3>
@@ -168,7 +168,7 @@ require "scripts/header_two.php";
         </div>
             
     </div>
-</section>
+</section> -->
 
 
 <?php
