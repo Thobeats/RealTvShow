@@ -9,18 +9,8 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
 
-function connect(){ 
-    $link = mysqli_connect("127.0.0.1", "root", "", "realtvshow");
-
-    if($link){
-        return $link;
-    }else {
-        return mysqli_connect_errno();
-    }
-}
-
 // function connect(){ 
-//     $link = mysqli_connect("localhost", "realtv_db_user", "@lphA3ch0#", "realtv_show");
+//     $link = mysqli_connect("127.0.0.1", "root", "", "realtvshow");
 
 //     if($link){
 //         return $link;
@@ -28,6 +18,16 @@ function connect(){
 //         return mysqli_connect_errno();
 //     }
 // }
+
+function connect(){ 
+    $link = mysqli_connect("localhost", "realtv_db_user", "@lphA3ch0#", "realtv_show");
+
+    if($link){
+        return $link;
+    }else {
+        return mysqli_connect_errno();
+    }
+}
 
 function base_url(){
     return "https://" . $_SERVER['SERVER_NAME'] . "/test/";
@@ -62,61 +62,21 @@ function get_message($type){
 }
 
 
-function send_mail($toEmail, $subject, $body){
-    $mail = new PHPMailer(true);
-    try{
-        //Settings
-       // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-        $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
-        $mail->SMTPAuth = true;
-        $mail->Username = "tobiy23@gmail.com";
-        $mail->Password = "T3mil0luw4";
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-        $mail->Port = "465";
-
-        //Receiver
-        $mail->setFrom('RealtvShow@test.com', 'Mailer');
-        $mail->addAddress($toEmail);
-    
-        //Content
-        $mail->isHTML(true);
-        $mail->Subject = $subject;
-        $mail->Body = $body;
-        
-        $mail->send();
-        set_message("success", "Confirmation email sent");        
-        header("location: confirm.php");
-
-
-    }
-    catch(Exception $e){
-        set_message("error" , $mail->ErrorInfo);
-    }
-}
-
 // function send_mail($toEmail, $subject, $body){
 //     $mail = new PHPMailer(true);
 //     try{
 //         //Settings
-//         $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-       
+//        // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
 //         $mail->isSMTP();
-//         $mail->Host = 'p3plzcpnl459190.prod.phx3.secureserver.net';
-//         $mail->SMTPAuth = false;
-//         $mail->SMTPAutoTLS = false; 
-//         $mail->Port = 25; 
-//         // $mail->isSMTP();
-//         // $mail->Host = 'smtp.gmail.com';
-//         // $mail->SMTPAuth = true;
-//         $mail->Username = "welcome@realitytv-registry.com";
-//         $mail->Password = "R34l1tytvr3g1stry";
-//         $mail->SMTPSecure = 'none';
-//         $mail->ENCRYPTION = "none";
-//         //$mail->Port = "465";
+//         $mail->Host = 'smtp.gmail.com';
+//         $mail->SMTPAuth = true;
+//         $mail->Username = "tobiy23@gmail.com";
+//         $mail->Password = "T3mil0luw4";
+//         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+//         $mail->Port = "465";
 
 //         //Receiver
-//         $mail->setFrom('welcome@realitytv-registry.com', 'Connect');
+//         $mail->setFrom('RealtvShow@test.com', 'Mailer');
 //         $mail->addAddress($toEmail);
     
 //         //Content
@@ -134,6 +94,46 @@ function send_mail($toEmail, $subject, $body){
 //         set_message("error" , $mail->ErrorInfo);
 //     }
 // }
+
+function send_mail($toEmail, $subject, $body){
+    $mail = new PHPMailer(true);
+    try{
+        //Settings
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+       
+        $mail->isSMTP();
+        $mail->Host = 'p3plzcpnl459190.prod.phx3.secureserver.net';
+        $mail->SMTPAuth = false;
+        $mail->SMTPAutoTLS = false; 
+        $mail->Port = 25; 
+        // $mail->isSMTP();
+        // $mail->Host = 'smtp.gmail.com';
+        // $mail->SMTPAuth = true;
+        $mail->Username = "welcome@realitytv-registry.com";
+        $mail->Password = "R34l1tytvr3g1stry";
+        $mail->SMTPSecure = 'none';
+        $mail->ENCRYPTION = "none";
+        //$mail->Port = "465";
+
+        //Receiver
+        $mail->setFrom('welcome@realitytv-registry.com', 'Connect');
+        $mail->addAddress($toEmail);
+    
+        //Content
+        $mail->isHTML(true);
+        $mail->Subject = $subject;
+        $mail->Body = $body;
+        
+        $mail->send();
+        set_message("success", "Confirmation email sent");        
+        header("location: confirm.php");
+
+
+    }
+    catch(Exception $e){
+        set_message("error" , $mail->ErrorInfo);
+    }
+}
 
 function user_session($array){
     foreach($array as $key => $value){
