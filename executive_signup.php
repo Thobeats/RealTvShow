@@ -52,7 +52,7 @@ require "scripts/header_two.php";
 <?= get_message("error"); ?>
 <?= get_message("success"); ?>
 <section class="d-flex justify-content-center bg-light" style="height : auto;">
-    <form action="process_executive.php" method="POST" class="form" enctype="multipart/form-data">
+    <form action="process_executive.php" method="POST" class="form" enctype="multipart/form-data" autocomplete="off">
         <div class="get_started my-3 p-2">
             <h3>Get Started...</h3>
         </div>

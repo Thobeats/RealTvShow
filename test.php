@@ -6,19 +6,10 @@
 
      if(isset($_POST['submit'])){
         
-        $test = $_FILES['pic'];
-        $pics = $_FILES['pics'];
-        $title = $_POST['title'];
-        $plot = $_POST['plot'];
-
-       $save_stats = save_movie($title, $plot, $test, $pics);
-
-        if($save_stats == 1){
-            echo "Yes";
-        }
+       $synopsis =  $_POST['synopsis'];
 
 
-     //handle_multi_image($pics);
+       mysqli_query($link, "update realtv_movies set synopsis = '$synopsis' where id = '2'");
         
 
     

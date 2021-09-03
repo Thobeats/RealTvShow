@@ -160,7 +160,7 @@ if(isset($_POST['reg'])){
     </div>
 </div>
 
-<form action="" method="POST" enctype="multipart/form-data">
+<form action="" method="POST" enctype="multipart/form-data" autocomplete="off">
 <section class="writer-form px-4 py-2 mb-4" style="height: auto;">
     <div class="d-flex flex-column justify-content-center">
         
@@ -171,21 +171,21 @@ if(isset($_POST['reg'])){
             </div>
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <input type="text" class="form-control" name="fname" placeholder="First Name">
+                    <input type="text" class="form-control" name="fname" placeholder="First Name" autocomplete="off">
                 </div>
 
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <input type="text" class="form-control" name="lname" placeholder="Last Name">
+                    <input type="text" class="form-control" name="lname" placeholder="Last Name" autocomplete="off">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <input type="text" class="form-control" name="uname" placeholder="Username">
+                    <input type="text" class="form-control" name="uname" placeholder="Username" autocomplete="off">
                 </div>
 
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <input type="password" class="form-control" name="password" placeholder="Password">
+                    <input type="password" class="form-control" name="password" placeholder="Password" autocomplete="off">
                 </div>
             </div>
 
