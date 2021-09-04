@@ -60,6 +60,7 @@
         </button>
         <div class="dropdown-menu">
           <a class="dropdown-item text-dark" href="#">Profile</a>
+          <a class="dropdown-item text-dark" href="cart.php">Cart</a>
           <a class="dropdown-item text-dark" href="logout.php">Logout</a>         
         </div>
       </div>

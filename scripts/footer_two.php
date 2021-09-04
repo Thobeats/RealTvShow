@@ -150,6 +150,8 @@ paypal.Buttons({
         $(writerForm).show(600);
       
     });
+
+    $('form').disableAutoFill();
 </script>
 
 

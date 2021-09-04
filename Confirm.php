@@ -1,7 +1,8 @@
 <?php
 ob_start();
 require_once "scripts/functions.php"; $link = connect();
-session_start();
+session_start(); 
+$logo = true;
 require_once "scripts/header_two.php";
 ?>
 <style>

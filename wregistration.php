@@ -160,7 +160,7 @@ if(isset($_POST['reg'])){
     </div>
 </div>
 
-<form action="" method="POST" enctype="multipart/form-data" autocomplete="off">
+<form action="" method="POST" enctype="multipart/form-data" autocomplete="off" id="writer-form">
 <section class="writer-form px-4 py-2 mb-4" style="height: auto;">
     <div class="d-flex flex-column justify-content-center">
         

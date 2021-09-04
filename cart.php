@@ -1,4 +1,5 @@
 <?php 
+$navBar =true; $logo = true;
 require_once "scripts/functions.php";
 
 if(is_loggedIn && (role() == 1)){
@@ -41,14 +42,12 @@ $cartquery = mysqli_query($link, "select * from realtv_cart where user_id = '$un
                             ?>
                             <div class="col-12">
                                 <div class="row border my-2">
-                                    <div class="col-8 p-2">
-                                        <div class="d-flex">
-                                            <img src="img/uploads/<?= $project['movie_pic'] ?>" width="150px" height="100px"  alt="">
-                                            <div class="p-4 d-flex flex-column"><?= $project['movie_title'] ?></div>
-                                        </div>                                        
+                                    <div class="col-lg-4 col-sm-12 p-2">
+                                        <img src="img/uploads/<?= $project['movie_pic'] ?>" width="100%" height= "180px" alt="">
                                     </div>
-                                    <div class="col-4 d-flex justify-content-center">
-                                        <h3 class="d-flex flex-column justify-content-center"><?= $project['reg_fee'] ?></h3>
+                                    <div class="col-lg-4 d-flex flex-column justify-content-center col-sm-6">
+                                        <p><?= $project['movie_title'] ?></p>
+                                        <p class="d-flex flex-column justify-content-center"><?= $project['reg_fee'] ?></p>
                                     </div>
                                 </div>
                             </div>
