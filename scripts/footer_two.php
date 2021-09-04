@@ -117,6 +117,13 @@ paypal.Buttons({
 </script>
 
 <script>
+    function removeMOvie(event){
+        let id = event.target.dataset.id;
+        
+    }
+</script>
+
+<script>
   
     let nextBtn = document.querySelector(".next");
     let writerForm = document.querySelector(".writer-form");

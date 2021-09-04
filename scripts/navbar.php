@@ -21,6 +21,13 @@
     font-family: 'Poppins', sans-serif;
     border-radius: 5px;
   }
+
+  .cart-no{
+    font-size : 10px;
+    display: inline-block;
+    transform : translateY(-10px);
+    padding : 1px 3px;
+  }
   
 
 </style>
@@ -52,19 +59,26 @@
     </div>
     
 
-    <?php if(is_loggedIn()){ ?>
-    <div class="col-lg-4 col-md-12 signup-nav">
-      <div class="btn-group">
-        <button type="button" class="user-btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <?= $_SESSION['firstname'] ?>
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item text-dark" href="#">Profile</a>
-          <a class="dropdown-item text-dark" href="cart.php">Cart</a>
-          <a class="dropdown-item text-dark" href="logout.php">Logout</a>         
-        </div>
+    <?php 
+    
+    if(is_loggedIn()){
+      $userid = $_SESSION['unique_id'];
+      $no = mysqli_fetch_assoc(mysqli_query($link, "select count(*) as cnt from realtv_cart where user_id='$userid'"))['cnt'];
+      
+    ?>
+      <div class="col-lg-4 col-md-12">
+        <ul class="navbar-nav signup-nav">
+          <li class="nav-item active">
+            <a href="profile.php" class="nav-link"><i class="bi bi-person"></i> <?= $_SESSION['firstname'] ?></a>
+          </li>
+          <li class="nav-item">
+          <a href="cart.php" class="nav-link"><i class="bi bi-cart2"></i>Cart<?php if ($no > 0):  ?><span class="bg-danger rounded-circle cart-no"><?= $no ?></span> <?php endif; ?> </a>
+          </li>
+          <li class="nav-item">
+          <a href="logout.php" class="nav-link"><i class="bi bi-box-arrow-right"></i> Logout</a>
+          </li>             
+        </ul>
       </div>
-    </div>
 
     <?php }else { ?>
       <div class="col-lg-4 col-md-12">

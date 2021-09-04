@@ -13,55 +13,99 @@ $cartquery = mysqli_query($link, "select * from realtv_cart where user_id = '$un
 
 
 <style>
-    .card{
-        
-    }
+   .cart-text{
+       font-size : 20px;
+       text-transform : uppercase;
+       font-family : 'Poppins', serif;
+       color : #004883;
+   }
+
+   .cart-img{
+       width : 200px;
+       height : 150px;
+   }
+
+   .cart-btn{
+       padding : 10px 30px;
+       border : none;
+       color : #004883;
+   }
+   
+   .cart-desc{
+       font-size : 15px;
+       text-transform : capitalize;
+       font-family : 'Poppins', serif;
+       color : #004883;
+   }
+
+   @media only screen and (max-width: 425px) {
+        .cart-desc{
+            text-align : center;
+        }
+        .cart-action{
+            padding : 5px;
+        }
+   }
+
+
+   
 </style>
 
-<section class="p-5 bg-light">
+<section class="px-5 my-4">
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-2 mx-2 bg-white border p-0">
-            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link active" id="v-pills-cart-tab" data-toggle="pill" href="#v-pills-cart" role="tab" aria-controls="v-pills-cart" aria-selected="true">Cart</a>
-                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
-                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
-                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
-            </div>
-        </div>
-        <div class="col-8 bg-white border">
-            <div class="tab-content" id="v-pills-tabContent">
-                <div class="tab-pane fade show active" id="v-pills-cart" role="tabpanel" aria-labelledby="v-pills-cart-tab">
-                    <div class="cart p-5">
-                        <div class="row">
-                            <?php 
-                                while($cart = mysqli_fetch_assoc($cartquery)): 
-                                    $project_id = $cart['project_id'];
-                                    $projectQuery = mysqli_query($link, "select * from realtv_movies where id='$project_id'");
-                                    $project = mysqli_fetch_assoc($projectQuery);
-                            ?>
-                            <div class="col-12">
-                                <div class="row border my-2">
-                                    <div class="col-lg-4 col-sm-12 p-2">
-                                        <img src="img/uploads/<?= $project['movie_pic'] ?>" width="100%" height= "180px" alt="">
-                                    </div>
-                                    <div class="col-lg-4 d-flex flex-column justify-content-center col-sm-6">
-                                        <p><?= $project['movie_title'] ?></p>
-                                        <p class="d-flex flex-column justify-content-center"><?= $project['reg_fee'] ?></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php endwhile; ?>
-                        </div>
+        <div class="col-lg-8 col-md-8 col-sm-12">
+            <p class="border border-light cart-text p-2" style="background-color: #e6e6e6;"><i class="bi bi-cart2"></i> Cart</p>
+            <?php 
+                $total = 0;
+                while($cartItem = mysqli_fetch_object($cartquery)): 
+                    $projectID = $cartItem->project_id;
+                    $getProject = mysqli_fetch_object(mysqli_query($link, "select * from realtv_movies where id = '$projectID'"));
+                
+                
+            ?>
+            <div class="row my-2 py-2" style="background-color: #e6e6e6;">
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="cart-img mx-auto">
+                        <img src="img/uploads/<?=$getProject->movie_pic ?>" alt="" width="100%" height="100%">
                     </div>
                 </div>
-                <!-- <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
-                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
-                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div> -->
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="mt-4 cart-desc">
+                        <p class="">
+                            <?= $getProject->movie_title ?>
+                        </p>
+                        <p>
+                        $<?= $getProject->reg_fee ?> 
+                        <?php (int)$total += (int)$getProject->reg_fee; ?>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="mt-4 cart-action" style="display:flex; justify-content: center">            
+                        <button class="cart-btn btn-light text-danger mx-2" data-id="<?= $getProject->id ?>">Remove</button>
+                        <a href="payment.php?id=<?= $getProject->id  ?>" class="cart-btn mx-2 btn-light text-success" >Pay</a>
+                    </div> 
+                </div>
+                
+                  
+                             
             </div>
+            <?php endwhile; ?>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <p class="border border-light cart-text p-2" style="background-color: #e6e6e6;">Total</p>
+            <div class="d-flex justify-content-start">
+                <p class="border border-light cart-text p-2 flex-grow-1" style="background-color: #e6e6e6;">$<?= number_format($total,2) ?> </p>
+                <p class="p-3"><a href="" class="cart-btn mx-2 btn-warning" >Pay</a></p>
+
+            </div>
+
+
         </div>
     </div>
-
 </section>
 
 

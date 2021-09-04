@@ -1,12 +1,13 @@
 <?php $title = "RealTv Registry - Payment"; ?>
 <?php 
-
+$logo = true;
 require "scripts/functions.php";
 require "scripts/header_two.php"; 
 
 
+
 if(!is_loggedIn() && role() != 1){
-    set_message("info", "Signup continue");
+    set_message("info", "Signup to continue");
     header("Location: contestant_signup.php");
 }else{
 
