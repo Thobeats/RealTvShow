@@ -141,66 +141,8 @@ function user_session($array){
     }
 }
 
-// function register_new_user($firstname, $surname, $email, $password, $role_id, $address=null, $username=null, $phone_no, $project = null, $profile_pic, $resume = null, $title=null, $company_name=null){
 
-//     $password = md5($password);
-//     $encode_password = utf8_encode($password);
-//     $token = md5($email); $encode_token = utf8_encode($token);
-//     $fullname = strtoupper($firstname) . " " . $surname;
-//     $email = strtolower($email);
-//     $unique_id = $role_id.strtotime("now");
-
-//     $pic = handle_image($profile_pic);
-
-//     if($username == null){
-//         $username = $email;
-//     }
-
-//     // Database connection
-//     $link = connect();     
-
-//     $query = mysqli_query($link, "INSERT INTO `realtv_users`(`firstname`,`lastname`,`fullname`,`username`,`status`, `role_id`,`email`,`password`,`activated`, `token`, `address`, `unique_id`) VALUES ('$firstname','$surname','$fullname','$username','Active',
-//                                  '$role_id','$email','$encode_password','0', '$encode_token', '$address', '$unique_id')");
-
-  
-//     if($query){
-//         if($role_id == 1){
-//             $contestant_query = mysqli_query($link, "INSERT INTO `realtv_contestants`(`firstname`, `lastname`, `email`, `username`, `password`, `phone_no`, `address`, `profile_pic`, `resume`, `unique_id`) VALUES ('$firstname','$surname','$email','$username',
-//                                             '$password','$phone_no','$address','$pic','$resume', '$unique_id')");
-//             if(!is_null($project)){
-//                 foreach($project as $pro){
-//                     $cartquery = mysqli_query($link, "INSERT INTO `realtv_cart`(`user_id`, `project_id`) VALUES ('$unique_id','$pro')");
-//                 }
-//             }
-//         }
-
-//         if($role_id == "2"){
-//             $writer_query = mysqli_query($link, "INSERT INTO `realtv_writers`(`firstname`, `lastname`, `email`, `username`, `password`, `phone_no`, `address`, `profile_pic`, `resume`, `unique_id`) VALUES ('$firstname','$surname','$email','$username',
-//                                             '$password','$phone_no','$address','$project1','$resume', '$unique_id')");
-//         }
-
-//         if($role_id == "3"){
-//             $executive_query = mysqli_query($link, "INSERT INTO `realtv_executives`(`firstname`, `lastname`, `email`, `username`, `password`, `phone_no`, `address`, `profile_pic`, `unique_id`, `title`, `company_name`) VALUES ('$firstname','$surname','$email','$username',
-//                                             '$password','$phone_no','$address','$pic','$unique_id', '$title', '$company_name')");
-//         }
-
-
-//         $body = "<div style='padding: 5px; text-transform: capitalize;'>";
-//         $body .= "<h4>Welcome to RealTv Show</h4>";
-//         $body .= "<p>Confirm your email to activate your account. To confirm your email, click <a href='".base_url()."confirm.php?email=$email&pass=$token'>here</a> </p>";
-//         $body .= "</div>";
-//         send_mail($email, "Email Confirmation", $body);
-//     }else {
-//         set_message("error", "Not Registered");
-//         echo mysqli_error($link);    
-
-//     }
-
-    
-
-// }
-
-function register_writer($firstname, $surname, $email, $password, $role_id, $address, $username, $phone_no, $project_title, $genre, $logline, $synopsis, $cover_img, $other_images){
+function register_writer($firstname, $surname, $email, $password, $role_id, $address, $username, $phone_no, $project_title, $genre, $logline, $synopsis, $cover_img = null, $other_images = null, $video = null){
 
     $password = md5($password);
     $encode_password = utf8_encode($password);
@@ -208,6 +150,15 @@ function register_writer($firstname, $surname, $email, $password, $role_id, $add
     $fullname = strtoupper($firstname) . " " . $surname;
     $email = strtolower($email);
     $unique_id = $role_id.strtotime("now");
+
+    if($cover_img['name'] != ""){
+        $pic = handle_image($cover_img);
+    }
+
+    if($video['name'] != ""){
+        $vid = handle_video($video);
+    }
+
 
     if($username == null){
         $username = $email;
@@ -225,10 +176,10 @@ function register_writer($firstname, $surname, $email, $password, $role_id, $add
         if($role_id == 2){
 
             //var_dump($_POST);
-            $writer_query = mysqli_query($link, "INSERT INTO `realtv_writers`(`firstname`, `lastname`, `email`, `username`, `password`, `phone_no`, `address`, `unique_id`) 
-                                                VALUES ('$firstname','$surname','$email','$username','$password','$phone_no','$address','$unique_id')");
+            $writer_query = mysqli_query($link, "INSERT INTO `realtv_writers`(`firstname`, `lastname`, `email`, `username`, `password`, `phone_no`, `address`, `profile_pic`, `sizzle_reel`, `unique_id`) 
+                                                VALUES ('$firstname','$surname','$email','$username','$password','$phone_no','$address','$pic','$vid','$unique_id')");
 
-           $res = save_drafts($unique_id, $project_title,$logline,$synopsis,$genre,$cover_img,$other_images);
+           $res = save_drafts($unique_id, $project_title,$logline,$synopsis,$genre,$other_images);
 
         }
   
@@ -306,6 +257,8 @@ function register_executive($firstname, $surname, $email, $password, $role_id, $
 
     $pic = handle_image($profile_pic);
 
+    //echo $pic;
+
     if($username == null){
         $username = $email;
     }
@@ -372,82 +325,6 @@ function save_to_cart($user_id, $project_id){
     }
 }
 
-function handle_image($image){
-    if(!is_null($image)){
-       // $uploads_dir = 'C:/Users/user/Documents/Fiverr Projects/RealTvShow/img/uploads/';
-       // $uploads_dir = '/Users/firstlincoln/Documents/iyanu/RealTvShow/img/uploads/';
-       $uploads_dir = 'img/uploads/';
-
-        $extensions = ['jpg', 'png',"jpeg"];
-
-        $name = $image['name'];
-        $size = $image['size']; 
-        $ext = explode(".", $name)[1];
-
-        //echo $ext;
-
-        //check size 
-        if($size > 500000){
-            set_message("error", "file too large, must not exceed 500KB");
-            exit(0);
-        }
-
-        //check extension
-        if(!in_array($ext, $extensions)){
-            //set_message("error", "invalid type, only jpg or png allowed");
-            return false;
-        }
-        $uploads_file = $uploads_dir . basename($name);
-
-        if(move_uploaded_file($image['tmp_name'], $uploads_file)){
-         set_message("success", "Uploaded");
-            
-        }else{
-            set_message("error", "Not Uploaded");
-        }
-        return $name;
-    }
-  
-
-}
-
-function handle_file($image){
-    if(!is_null($image)){
-       // $uploads_dir = 'C:/Users/user/Documents/Fiverr Projects/RealTvShow/img/uploads/';
-       // $uploads_dir = '/Users/firstlincoln/Documents/iyanu/RealTvShow/img/uploads/';
-       $uploads_dir = 'img/uploads/';
-        $extensions = ['pdf'];
-        $name = $image['name'];
-        $size = $image['size']; 
-        $ext = explode(".", $name)[1];
-
-        //echo $ext;
-
-        //check size 
-        if($size > 500000){
-            set_message("error", "file too large, must not exceed 500KB");
-            exit(0);
-        }
-
-        //check extension
-        if(!in_array($ext, $extensions)){
-            //set_message("error", "invalid type, only jpg or png allowed");
-            return false;
-        }
-        $uploads_file = $uploads_dir . basename($name);
-
-        if(move_uploaded_file($image['tmp_name'], $uploads_file)){
-         set_message("success", "Uploaded");
-            
-        }else{
-            set_message("error", "Not Uploaded");
-        }
-        return $name;
-    }
-  
-
-}
- 
 function check_order($order_id){
 
     $order_id = trim($order_id);
@@ -475,50 +352,100 @@ function check_order($order_id){
 }
 
 
-function handle_multi_images($images, $insertID){
+/////////////////// MEDIA FUNCTIONS /////////////////////////
 
-    $link = connect();
-    if(!is_null($images)){
-       // $uploads_dir = 'C:/Users/user/Documents/Fiverr Projects/RealTvShow/img/uploads/';
-       //$uploads_dir = '/Users/firstlincoln/Documents/iyanu/RealTvShow/img/uploads/';
-       $uploads_dir = 'img/uploads/';
+function handle_image($image){
+    if(!is_null($image)){
+      
+        $uploads_dir = 'img/uploads/';
 
-        $extensions = ['jpg', 'png',"jpeg"];     
+        $extensions = ['jpg', 'png',"jpeg"];
 
-        //check size 
-        foreach($images['size'] as $size){
-            if($size > 1000000){
-                set_message("error", "file too large, must not exceed 1MB");
-                exit(0);
-            }
+        $name = $image['name'];
+        $size = $image['size']; 
+        $ext = end(explode(".", $name));
+        $location = $_SERVER['HTTP_REFERER'];
 
+        //echo $ext;
+
+        // //check size 
+        if($size > 500000){
+            set_message("error", "file too large, must not exceed 500KB");
+            header("Location: $location");
+            exit(0);
         }
 
-        foreach($images['name'] as $key => $imagename){
-            $ext = explode(".", $imagename)[1];
-
-            //check extension
-            if(!in_array($ext, $extensions)){
-                //set_message("error", "invalid type, only jpg or png allowed");
-                return false;
-            }
-            $uploads_file = $uploads_dir . basename($imagename);
-
-           if(move_uploaded_file($images['tmp_name'][$key], $uploads_file))
-            mysqli_query($link, "INSERT INTO `realtv_movie_pics`(`movie_pic`, `movie_id`) VALUES ('$imagename', '$insertID')");
+        //check extension
+        if(!in_array($ext, $extensions)){
+            set_message("error", "invalid type, only jpg or png allowed");
+            header("Location: $location");
+            exit(0);
         }
-        
+        $uploads_file = $uploads_dir . basename($name);
 
+        if(move_uploaded_file($image['tmp_name'], $uploads_file)){
+         set_message("success", "Uploaded");
+            
+        }else{
+            set_message("error", "Not Uploaded");
+        }
+        return $name;
     }
+  
+
 }
 
-function handle_image_drafts($images){
-
-    $link = connect();
-    $image_list = "";
-    if(!is_null($images)){
+function handle_file($image){
+    if(!is_null($image)){
        // $uploads_dir = 'C:/Users/user/Documents/Fiverr Projects/RealTvShow/img/uploads/';
-       //$uploads_dir = '/Users/firstlincoln/Documents/iyanu/RealTvShow/img/uploads/';
+       // $uploads_dir = '/Users/firstlincoln/Documents/iyanu/RealTvShow/img/uploads/';
+       $uploads_dir = 'img/uploads/';
+        $extensions = ['pdf'];
+        $name = $image['name'];
+        $size = $image['size']; 
+        $ext = end(explode(".", $name));
+        $location = $_SERVER['HTTP_REFERER'];
+
+
+        //echo $ext;
+
+        //check size 
+        if($size > 500000){
+            set_message("error", "file too large, must not exceed 500KB");
+            header("Location: $location");
+            exit(0);
+        }
+
+        //check extension
+        if(!in_array($ext, $extensions)){
+            set_message("error", "invalid type, only pdf is allowed");
+            header("Location: $location");
+            exit(0);
+        }
+        $uploads_file = $uploads_dir . basename($name);
+
+        if(move_uploaded_file($image['tmp_name'], $uploads_file)){
+         set_message("success", "Uploaded");
+            
+        }else{
+            set_message("error", "Not Uploaded");
+            header("Location: $location");
+            exit(0);
+        }
+        return $name;
+    }
+  
+
+}
+
+
+function handle_multi_images($images){
+
+    $image_list = "";
+    $location = $_SERVER['HTTP_REFERER'];
+
+    if(!is_null($images)){
+ 
        $uploads_dir = 'img/uploads/';
 
         $extensions = ['jpg', 'png',"jpeg"];     
@@ -528,18 +455,20 @@ function handle_image_drafts($images){
         foreach($images['size'] as $size){
             if($size > 1000000){
                 set_message("error", "file too large, must not exceed 1MB");
+                header("Location: $location");
                 exit(0);
             }
 
         }
 
         foreach($images['name'] as $key => $imagename){
-            $ext = explode(".", $imagename)[1];
+            $ext = end(explode(".", $imagename));
 
             //check extension
             if(!in_array($ext, $extensions)){
-                //set_message("error", "invalid type, only jpg or png allowed");
-                return false;
+                set_message("error", "$imagename is invalid, only png and jpg is allowed");
+                header("Location: $location");
+                exit(0);
             }
             $uploads_file = $uploads_dir . basename($imagename);
             if($uploads_file){
@@ -560,19 +489,20 @@ function handle_video($video){
 
         $name = $video['name'];
         $size = $video['size']; 
-        $ext = explode(".", $name)[1];
-
-        //echo $ext;
+        $ext = end(explode(".", $name));
+        $location = $_SERVER['HTTP_REFERER'];
 
         //check size 
         if($size > 5000000){
             set_message("error", "file too large, must not exceed 5MB");
+            header("Location: $location");
             exit(0);
         }
 
         //check extension
         if(!in_array($ext, $extensions)){
             set_message("error", "invalid type, only mp4, mkv or avi are allowed");
+            header("Location: $location");
             exit(0);
         }
         $uploads_file = $uploads_dir . basename($name);
@@ -582,13 +512,17 @@ function handle_video($video){
             
         }else{
             set_message("error", "Not Uploaded");
+            header("Location: $location");
+            exit(0);
         }
         return $name;
 
-    }else{
-        return "No Image uploaded";
     }
 }
+
+
+
+///// MEDIA FUNCTIONS END /////////////////
 
 
 function save_movie($movie_title, $movie_plot, $synopsis, $genre, $movie_pic, $movie_pics = NULL){
@@ -619,51 +553,25 @@ function save_movie($movie_title, $movie_plot, $synopsis, $genre, $movie_pic, $m
 
 }
 
-function save_drafts($writer_id = null, $movie_title, $logline, $synopsis, $genre, $movie_pic, $movie_pics = NULL){
+function save_drafts($writer_id = null, $movie_title, $logline, $synopsis, $genre, $movie_pics = NULL){
     $link = connect();
 
     if ($writer_id == null) {
         $writer_id = $_SESSION['user_id'];
     }
 
-    $insert_pic = handle_image($movie_pic);
-    $other_images = handle_image_drafts($movie_pics);
+    $other_images = handle_multi_images($movie_pics);
 
 
-    if( mysqli_query($link, "INSERT INTO `realtv_drafts`(`created_by`, `movie_pic`, `movie_title`,`logline`, `genre`, `synopsis`, other_pics) 
-                            VALUES ('$writer_id','$insert_pic','$movie_title','$logline','$genre','$synopsis', '$other_images')")){
+    if( mysqli_query($link, "INSERT INTO `realtv_drafts`(`created_by`,`movie_title`,`logline`, `genre`, `synopsis`, `other_pics`) 
+                            VALUES ('$writer_id','$movie_title','$logline','$genre','$synopsis', '$other_images')")){
         
         return 1;
     }else{
-        return mysqli_error($link);    
-    }
-
-
-}
-
-function reg_and_save_movie($movie_title, $logline, $synopsis, $genre, $movie_pic, $movie_pics = NULL){
-    $link = connect();
-
-    $insert_pic = handle_image($movie_pic);
-
-    $created_by = mysqli_insert_id($link);
-
-    if(mysqli_query($link, "INSERT INTO `realtv_movies`( `created_by`, `movie_pic`, `movie_title`, `logline`, `status`, `synopsis`, `genre`) 
-                            VALUES ('$created_by','$insert_pic','$movie_title','$logline','1','$synopsis','$genre')")){
-               
-
-        //GET Insert ID
-        $movie_insert_id = mysqli_insert_id($link);
-
-        if(!is_null($movie_pics)){
-        
-             handle_multi_images($movie_pics, $movie_insert_id);          
-          
-        }
-
-        return 1;
-    }else{
-        return 0;
+        $error = mysqli_error($link);    
+        set_message("error", "$error");
+        header("Location: $location");
+        exit(0);
     }
 
 

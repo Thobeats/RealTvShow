@@ -32,7 +32,7 @@ $cartquery = mysqli_query($link, "select * from realtv_cart where user_id = '$un
    }
    
    .cart-desc{
-       font-size : 15px;
+       font-size : 20px;
        text-transform : capitalize;
        font-family : 'Poppins', serif;
        color : #004883;
@@ -41,9 +41,16 @@ $cartquery = mysqli_query($link, "select * from realtv_cart where user_id = '$un
    @media only screen and (max-width: 425px) {
         .cart-desc{
             text-align : center;
+            font-size : 15px;
         }
         .cart-action{
             padding : 5px;
+        }
+        .total{
+            margin-top: 20px;
+        }
+        .cart-btn{
+            font-size : 15px;
         }
    }
 
@@ -63,7 +70,7 @@ $cartquery = mysqli_query($link, "select * from realtv_cart where user_id = '$un
                 
                 
             ?>
-            <div class="row my-2 py-2" style="background-color: #e6e6e6;">
+            <div class="row my-2 py-4" style="background-color: #e6e6e6;">
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="cart-img mx-auto">
@@ -95,12 +102,11 @@ $cartquery = mysqli_query($link, "select * from realtv_cart where user_id = '$un
             </div>
             <?php endwhile; ?>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="col-lg-4 col-md-4 col-sm-12 total">
             <p class="border border-light cart-text p-2" style="background-color: #e6e6e6;">Total</p>
-            <div class="d-flex justify-content-start">
-                <p class="border border-light cart-text p-2 flex-grow-1" style="background-color: #e6e6e6;">$<?= number_format($total,2) ?> </p>
-                <p class="p-3"><a href="" class="cart-btn mx-2 btn-warning" >Pay</a></p>
-
+            <div class="d-flex justify-content-start border-bottom">
+                <p class="cart-text flex-grow-1">$<?= number_format($total,2) ?> </p>
+                <p class=""><a href="" class="cart-btn mx-2 btn-warning" >Pay</a></p>
             </div>
 
 

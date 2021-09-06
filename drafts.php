@@ -2,13 +2,13 @@
 $navBar =true; $logo = true;
 require_once "scripts/functions.php";
 
-if(is_loggedIn && (role() == 1)){
+if(is_loggedIn && (role() == 2)){
 require "scripts/header_two.php";
 
 $unique_id = $_SESSION['unique_id'];
 
 
-$draftquery = mysqli_query($link, "select * from realtv_cart where user_id = '$unique_id' and status = 'Pending'");
+$draftquery = mysqli_query($link, "select * from realtv_drafts where created_by = '$unique_id' and status = 'Pending'");
 ?>
 
 
@@ -33,7 +33,7 @@ $draftquery = mysqli_query($link, "select * from realtv_cart where user_id = '$u
    }
    
    .draft-desc{
-       font-size : 15px;
+       font-size : 20px;
        text-transform : capitalize;
        font-family : 'Poppins', serif;
        color : #004883;
@@ -58,8 +58,7 @@ $draftquery = mysqli_query($link, "select * from realtv_cart where user_id = '$u
             <p class="border border-light draft-text p-2" style="background-color: #e6e6e6;"><i class="bi bi-pencil-square"></i> draft</p>
             <?php 
                 while($draftItem = mysqli_fetch_object($draftquery)): 
-                    $projectID = $draftItem->project_id;
-                    $getProject = mysqli_fetch_object(mysqli_query($link, "select * from realtv_movies where id = '$projectID'"));
+                    
                 
                 
             ?>
@@ -67,18 +66,16 @@ $draftquery = mysqli_query($link, "select * from realtv_cart where user_id = '$u
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="draft-img mx-auto">
-                        <img src="img/uploads/<?=$getProject->movie_pic ?>" alt="" width="100%" height="100%">
+                        <img src="img/uploads/<?=$draftItem->movie_pic ?>" alt="" width="100%" height="100%">
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="mt-4 draft-desc">
                         <p class="">
-                            <?= $getProject->movie_title ?>
+                            <?= $draftItem->movie_title ?>
                         </p>
-                        <p>
-                        $<?= $getProject->reg_fee ?> 
-                        </p>
+                     
                     </div>
                 </div>
 

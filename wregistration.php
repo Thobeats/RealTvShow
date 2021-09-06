@@ -12,13 +12,14 @@ if(isset($_POST['reg'])){
     $phone_num = trim($_POST['phone_num']);
     $address = trim($_POST['address']);
     $role = 2;
+    $video = $_FILES['sizzle'];
+    $cover_pic = $_FILES['cover_img'];
 
     //Movie Details....
    $movie_title = trim($_POST['project_title']);
    $genre = trim($_POST['genre']);
    $logline = trim($_POST['logline']);
    $synopsis = trim($_POST['synopsis']);
-   $cover_pic = $_FILES['cover_img'];
    $other_img = $_FILES['other_img'];
 
   // var_dump($other_img);
@@ -32,7 +33,7 @@ if(isset($_POST['reg'])){
             set_message('error', 'Username taken, select another username');
         } 
         else{
-            register_writer($firstname,$lastname,$email,$password,$role,$address,$username,$phone_num,$movie_title,$genre,$logline,$synopsis,$cover_pic,$other_img);
+            register_writer($firstname,$lastname,$email,$password,$role,$address,$username,$phone_num,$movie_title,$genre,$logline,$synopsis,$cover_pic,$other_img, $video);
                
         }
     }

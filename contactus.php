@@ -18,40 +18,31 @@ require "scripts/header_two.php";
     font-family: 'Poppins', serif;
     letter-spacing : 2px;
     font-weight : 300;
-}
-
-.contact-us-text h3{
+}.contact-us-text h3{
    font-size : 50px;
    text-transform : capitalize;
-}
-
-.contact-us-text a {
+}.contact-us-text a {
    font-size : 18px;
    display: block;
    color : #004883;
-}
-.contact-form{
+}.contact-form{
     width : 100%;
     font-family: 'Poppins', serif;
-}
-.contact-details-list{
+}.contact-details-list{
     list-style: none;
-}
-.realbtn{
+}.realbtn{
     width : 100%;
     padding : 15px;
     font-size : 15px;
-  }
+}
 @media only screen and (max-width: 768px) {.about-us{font-weight : 500;font-size: 17px; }.contact-us-text h3{font-size : 40px;}.contact-us-text a{font-size : 15px;}.img-wrapper{margin-top: 50px;}.cover-image{height: 80vh;} }
 @media only screen and (max-width: 425px) {body{width : auto;}.about-us{font-weight : 500;font-size: 15px;}
     .contact-us-text h3{font-size : 30px;}
     .contact-form{
         width: 90%;
-    }
-    .cover-image{
+    }.cover-image{
         height:50vh;background-position : center right;
-    }
-    .cover-wrapper h1{
+    }.cover-wrapper h1{
         font-size : 25px;
         letter-spacing : 3px;
     }.cover-wrapper p{
@@ -92,7 +83,7 @@ require "scripts/header_two.php";
         </div>
 
         <div class="col-lg-4 col-md-5 col-sm-12 p-0 mb-5">
-            <div class="p-2 img-wrapper d-flex justify-content-center">
+            <div class="pt-5 img-wrapper d-flex justify-content-center">
                 <form action="" method="POST" class="contact-form mt-5">
                     <div class="form-group">
                         <label for="name">Name</label>

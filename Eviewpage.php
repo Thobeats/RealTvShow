@@ -332,7 +332,15 @@
                     </h3>
 
                     <div class="synopsis_content zilla">
-                        <?= $movie_data['synopsis'] ?>
+                        <?php
+                        
+                         $synopsis = $movie_data['synopsis'];
+
+                         $trimmed = str_replace(array('<p>&nbsp;</p>'), array(''), $synopsis);
+
+                         echo $trimmed;
+                        
+                        ?>
                     </div>
                 </div>
             </div>
