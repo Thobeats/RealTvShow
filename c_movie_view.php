@@ -1,9 +1,13 @@
 <?php 
-$navBar = true;
+$navBar = true; $logo =true;
 
 require "scripts/functions.php";
 require "scripts/header_two.php";
 
+
+if(!is_loggedIn() || role() != 1){
+    header("Location: signup.php");
+}else{
 
 if(isset($_GET['id'])){
     $id = $_GET['id'];
@@ -89,7 +93,7 @@ if(isset($_GET['id'])){
 }
 
 .logline-para{
-    padding-top : 10px;
+    padding-top : 15px;
     font-family: 'Zilla Slab', serif;    
     font-size : 15px;
     font-weight : 400;
@@ -171,15 +175,22 @@ if(isset($_GET['id'])){
     }
 
     @media only screen and (max-width: 425px) {
-        .cover-wrapper{
+        .cover-image{
+            height : 50vh;
+            background-position : center right;
+        }
+
+          .cover-wrapper{
             width : 425px;
         }
         .cover-wrapper h1{ 
             font-size : 25px; 
+            letter-spacing : 2px;
         }
 
         .cover-wrapper p{
              font-size : 15px;
+             letter-spacing : 1px;
         }
 
         .movie-title, .movie-header{
@@ -218,7 +229,7 @@ if(isset($_GET['id'])){
         <section class="cover-image p-4">
              <div class="cover-wrapper m-auto d-flex flex-column justify-content-center">                
                 <h1>Reality Tv</h1>
-                <p class="mr-auto ml-auto">cache of unique formats & talent</p>                  
+                <p class="mr-auto ml-auto">on location to a cache of unique formats & talent</p>                  
             </div>
         </section>
         
@@ -416,7 +427,7 @@ if(isset($_GET['id'])){
                 
             </div>
 
-            <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
+            <div class="col-lg-12 col-md-12 col-sm-12 mt-4 mb-3">
                 <div class="d-flex justify-content-center">
                     <div class="row">                           
                         <div class="col-lg-12 col-md-4 col-sm-12 mt-3 text-center" style="text-transform: uppercase;">
@@ -426,7 +437,7 @@ if(isset($_GET['id'])){
                 </div>
             </div>
 
-            <div class="col-12 mt-4">
+            <div class="col-12 mt-5">
                 <div class="member-benefits">
                     <h3 class="text-center my-4 m-title">MEMBER BENEFITS</h3>
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -540,4 +551,4 @@ if(isset($_GET['id'])){
 
         </section>    
 
-       <?php require "scripts/footer_two.php"; ?>
+       <?php require "scripts/footer_two.php"; }?>

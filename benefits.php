@@ -1,190 +1,198 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<?php 
+$navBar = true; $logo = true;
+require "scripts/functions.php";
+require "scripts/header_two.php"; 
 
-        <link rel="stylesheet" href="css/icon-font.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="sass/main.scss">
-        <link rel="shortcut icon" type="image.png" href="img/logo.png">
-        <script type="text/javascript" src="js/reality.js"></script>
+//var_dump($_SESSION);
+?>
+<style>
+.promote-you{
+    height : auto;
+}
 
-        <title> RealityTV | RealityTVregistry.com</title>
+.promote-you h2{
+    text-transform : uppercase;
+    letter-spacing: 1px;
+    font-family: 'Poppins', serif;
+    font-weight : 600;
+}
 
-    </head>
-    <body>
-        <main>
-            <header>
-                <div class="project__logo">
-                    <img src="img/logo.png" alt="Reality Tv Logo" class="project__logo-box">
-                </div>
+.promote-you h4{
+    text-transform : uppercase;
+    letter-spacing: 1px;
+    font-family: 'Poppins', serif;
+    font-weight : 400;
+}
 
-                <nav class="clearfix navbox">
-                                    <div class="navbar">
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><a href="index.php">Home</a>
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                        </div>
-                                        
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><a href="aboutus.php">About Us</a>
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                            <!-- <div class="dropdown-content">
-                                                <a href="">Blog</a>
-                                                <a href="">FAQ's</a>
-                                                <a href="">Promoting You</a>
-                                                <a href="">Talent Areas</a>
-                                                <a href="">Writer Benefits and Talent Benefits</a>
-                                            </div> -->
-                                        </div>
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><a href="contactus.php">Contact Us</a>
-                                            <i class="fa fa-caret-down"></i>
-                                            </button>
-                                        </div>
-                                    </div>
+.promote-you h5{
+    text-transform : uppercase;
+    letter-spacing: 1px;
+    font-family: 'Poppins', serif;
+    font-weight : 600;
+}
 
-                                    <div>
-                                        <div class="buttons">
-                                            <a href="signup.php" class="btn btn--white">SignUp</a>
-                                        </div>
-                                    </div>
-                                </nav> 
+.promote_you_header::before{
+    display: inline-block;
+    background-color :  #004883;
+    content : " ";
+    width : 10px;
+    height : 23px;
+    margin-right : 3px;
+}
 
 
-                            <div class="projected">
-                                <div class="project__text-box">
-                                    <h1 class="heading-primary">
-                                        <span class="heading-primary--main">Reality Tv</span>
-                                        <span class="heading-primary--sub">cache of unique formats & talent</span>
-                                    </h1>        
-                                </div>
-                            </div>                            
-            </header>
+.promote-you h5::before{
+    display: inline-block;
+    background-color :  #004883;
+    content : " ";
+    width : 10px;
+    height : 15px;
+    margin-right : 3px;
+}
+.writer_side_para, .movie-para{
+    font-size : 14px;
+    font-family : 'Poppins', serif;
+    font-weight : 300;
+}
 
-            <section class="aboutus-excercises">
-                <div>
+.promote_img{
+    width : 300px;
+    height : 250px;
+    transform : scale(0.7);
+}
 
-                    <h3 class="heading-secondary">Contestant/Talent and Writer Benefits</h3>
+.movie-para{
+    margin-top : -30px;
+}
 
-                             
- 
-                    <p class="view__paragraph">
-                        Your benefits can start today. TV industry executives have 24-hour access to the RTVR platform 
-                        in which, to scout reality talent for casting and acting rolls, and to discover unique and 
-                        original material from writers who display reality TV projects. Through our promotional campaigns 
-                        RTVR members obtain a competitive advantage of being discovered.
-                    </br>
-                    Executive access is granted to Producers, Networks Executives and Casting Companies. 
-                    These individuals have full access privileges to proposed reality programming and talent credentials, that are submitted by registered individuals. 
-                    </p>
+@media only screen and (max-width: 768px) {
+    .promote_img{
+    width : 180px;
+    height : 140px;
+}
 
-                    <ol class="view__paragraph">
-                        <h3 class="heading-tertiary-small">Contestant/Talent Benefits: </h3>                  
-                        <li>Big 93% advantage to be cast when promoted by RealityTVRegistry</li>
-                        <li>Priority status to participate in the Reality production of your choice</li> 
-                        <li>Your private account access, to view and edit your credentials</li>
-                        <li>We promote your individual talents to producers and TV executives</li> 
-                        <li>Casting companies can view your talents and contact you directly</li>
-                        <li>Exposure to talent scouts with opportunity to be discovered</li>
-                        <li>We keep you apprised of future Reality TV productions</li> 
-                    </ol>
+.movie-para{
+    margin-top : 0px;
+    margin-top : -20px;
+    font-size : 10px;
+    margin-right : -10px;
 
-                    <ol class="view__paragraph">
-                        <h3 class="heading-tertiary-small">Writer Benefits:</h3>
-                        <li>Inclusion of <b class="paintme">Image Enhancement Pitches</b> on the RealityTVRegistry platform</li>
-                        <li>Advantage to be promoted via Business-To-Business approach</li>
-                        <li>Strict vetting process to verify legitimate industry TV executives</li> 
-                        <li>Your account access to identify companies who have viewed your material</li>
-                        <li>Account access to edit and upload additional reality proposals</li>
-                        <li>We promote your unique material to producers and TV executives</li> 
-                        <li>Producers and networks access your reality pitch and initiate contact</li>
-                        <li>We keep you apprised of future industry trade opportunities</li> 
-                    </0l>
+}
+    
+}
 
-                </div>
- 
-            </section>
-            
-        </main>
 
-        <footer class="footer">
-            <div class="row footer__high">
-                <div class="col-1-of-2">
-                        <div class="footer__logo-box">
-                            <img src="img/logo.png" alt="Logo" class="footer__logo">
-                        </div>
-                    </div> 
-                </div>
-                <div class="col-1-of-2">
-                     <div class="footer__navigation">
-                     <h3 class="footer__heading"><b>About</b></h3>
-                            <ul class="footer__list">
-                                <li class="footer__item"></li><a href="reality.php" class="footer__link">Reality TV</a></li>
-                                <li class="footer__item"></li><a href="faq.php" class="footer__link">Faq</a></li>
-                                <li class="footer__item"></li><a href="login.php" class="footer__link">Login/signup</a></li>
-                                <li class="footer__item"></li><a href="privacy.php" class="footer__link">Privacy policy</a></li>
-                                <li class="footer__item"></li><a href="terms.php" class="footer__link">Terms of Service</a></li>
-                            </ul>
-                        <h3 class="footer__heading-2"><b>Community</b></h3>
-                            <ul class="footer__list-2">
-                                <li class="footer__item"></li><a href="future.php" class="footer__link">Future</a></li>
-                                <li class="footer__item"></li><a href="promoteyou.php" class="footer__link">Promoting You</a></li>
-                                <li class="footer__item"></li><a href="benefits.php" class="footer__link">Benefits</a></li>
-                                <li class="footer__item"></li><a href="communications.php" class="footer__link">Communications</a></li>
-                                <li class="footer__item"></li><a href="nda.php" class="footer__link">NDA Agreement</a></li>
-                            </ul>
-                        <h3 class="footer__heading-3"><b>Pages</b></h3>
-                            <ul class="footer__list-3">
-                                <li class="footer__item"></li><a href="index.php" class="footer__link">Home</a></li>
-                                <li class="footer__item"></li><a href="aboutus.php" class="footer__link">About us</a></li>
-                                <li class="footer__item"></li><a href="contactus.php" class="footer__link">Contact us</a></li>
-                            </ul>
-                    </div>
-                    <div class="sprite">
-                        <div class="sprite__icon-box">
-                                <svg class="sprite__icon">
-                                    <use xlink:href="img/sprite.svg#icon-accessibility"></use>
-                                </svg>
-                            <div class="sprite__user">
-                                    <svg class="sprite__icon sprite__icon-text">
-                                        <use xlink:href="img/sprite.svg#icon-credit"></use>
-                                    </svg>
-                            </div>
-                            <div class="sprite__user">
-                                <svg class="sprite__icon sprite__icon-text">
-                                    <use xlink:href="img/sprite.svg#icon-sphere"></use>
-                                </svg>
-                            </div>
-                            <svg class="sprite__icon">
-                                <use xlink:href="img/sprite.svg#icon-facebook2"></use>  
-                            </svg>
-                            <svg class="sprite__icon">
-                                <use xlink:href="img/sprite.svg#icon-linkedin"></use>
-                            </svg>
-                            <svg class="sprite__icon">
-                                <use xlink:href="img/sprite.svg#icon-pinterest"></use>
-                            </svg>
-                            <svg class="sprite__icon">
-                                <use xlink:href="img/sprite.svg#icon-instagram1"></use>
-                            </svg>
-                            <svg class="sprite__icon">
-                                <use xlink:href="img/sprite.svg#icon-twitter1"></use>
-                            </svg>        
-                        </div>
-                    </div>
-                </div>
-                <p class="footer__copyright">
-                        &copy;RealityTV International Limited 2021.
-                    </p>
+@media only screen and (max-width: 425px) {
+
+body{
+    width : auto;
+}
+
+.cover-image{
+    height : 50vh;
+    background-position : center right;
+}
+
+.cover-wrapper h1{
+    font-size : 25px;
+    letter-spacing : 2px;
+}
+
+.cover-wrapper p{
+    font-size : 15px;
+    letter-spacing : 1px;
+}
+
+
+
+.writer_side_para, .movie-para{
+    font-size : 12px;
+  
+}
+
+.promote_img{
+    width : 150px;
+    height : 100px;
+}
+
+.movie-para{
+    margin-top : 0px;
+    margin-top : -10px;
+    border: 1px solid;
+   
+}
+}
+</style>
+
+
+
+<section class="promote-you p-2 mt-2 mb-5">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="row d-flex justify-content-start">
+                <h2 class="px-5 pt-5 pb-2 promote_you_header ">contestant/talent and writer benefits </h2>
             </div>
-        </footer>
-    </body>
-</html>
+            <div class="row p-2">
+                <div class="col-12 pl-3">
+                    <p class="writer_side_para">
+                        Your benefits can start today. TV industry executives have 24-hour access to the RTVR platform in
+                        which, to scout reality talent for casting and acting rolls, and to discover unique and original material
+                        from writers who display reality TV projects. Through our promotional campaigns RTVR members
+                        obtain a competitive advantage of being discovered.
+                    </p>
+                    <p class="writer_side_para">
+                        <i style="text-decoration: underline;"><b>Executive access is granted to Producers, Networks Executives and Casting Companies.</b></i>                        
+                    </p>
+                    <p class="writer_side_para">
+                        These individuals have full access privileges to proposed reality programming and talent credentials,
+                        that are submitted by registered individuals.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-start">
+                <h5 class="pt-2 pl-5 pb-2 promote_you_header">contestant/talent benefits</h5>
+            </div>
+            <div class="row p-2">
+                <div class="col-12 pl-3">
+                    <ol class="writer_side_para">
+                       <li>Big 93% advantage to be cast when promoted by RealityTVRegistry.</li>
+                       <li>Priority status to participate in the Reality production of your choice.</li>
+                       <li> Your private account access, to view and edit your credentials.</li>
+                       <li> We promote your individual talents to producers and TV executives.</li>
+                       <li> Casting companies can view your talents and contact you directly.</li>
+                       <li> Exposure to talent scouts with opportunity to be discovered.</li>
+                       <li> We keep you apprised of future Reality TV productions.</li>
+                    </ol>
+                </div>
+            </div>  
+            <div class="row d-flex justify-content-start">
+                <h5 class="pt-2 pl-5 pb-2 promote_you_header">writer benefits</h5>
+            </div>
+            <div class="row p-2">
+                <div class="col-12 pl-3">
+                    <ol class="writer_side_para">
+                       <li>Inclusion of <a href="sample.php">Image Enhancement Pitches</a> on the RealityTVRegistry platform.</li>
+                       <li>Advantage to be promoted via Business-To-Business approach.</li>
+                       <li> Strict vetting process to verify legitimate industry TV executives.</li>
+                       <li> Your account access to identify companies who have viewed your material.</li>
+                       <li> Account access to edit and upload additional reality proposals.</li>
+                       <li> We promote your unique material to producers and TV executives.</li>
+                       <li> Producers and networks access your reality pitch and initiate contact.</li>
+                       <li> We keep you apprised of future industry trade opportunities.</li>
+                    </ol>
+                </div>
+            </div>  
+        </div>
+    </div>
+    
+</section>
+
+     
+
+
+
+<?php
+ require "scripts/footer_two.php";
+?>

@@ -1,8 +1,15 @@
 <?php $title = "RealTv Registry - Payment"; ?>
 <?php 
-
+$logo = true;
 require "scripts/functions.php";
 require "scripts/header_two.php"; 
+
+
+
+if(!is_loggedIn() && role() != 1){
+    set_message("info", "Signup to continue");
+    header("Location: contestant_signup.php");
+}else{
 
 
 if(isset($_GET['id'])){
@@ -10,6 +17,7 @@ if(isset($_GET['id'])){
 
     $movie = get_movie($link, $id);
 }
+
 ?>
 
 <style>
@@ -53,6 +61,7 @@ if(isset($_GET['id'])){
         <div class="d-flex justify-content-center">
             <form action="" method="post" style="width : 400px;">
                 
+                
                 <div class="form-group text-center">
                     <img src="img/uploads/<?= $movie['movie_pic'] ?>" width="100%" alt="<?= $movie['movie_title'] ?>">
                     <p class=""><?= $movie['movie_title'] ?></p>
@@ -68,4 +77,8 @@ if(isset($_GET['id'])){
 
 </div>
 <?php $paypal = true ?>
-<?php require"scripts/footer_two.php" ?>
+<?php 
+
+require"scripts/footer_two.php"; 
+
+} ?>

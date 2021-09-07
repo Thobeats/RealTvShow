@@ -34,14 +34,12 @@ function base_url(){
 }
 
 //echo base_url();
-function set_message($type, $message, $title=null){
-
-    $_SESSION[$type] = $message;
-   
+function set_message($type, $message){
+    $_SESSION[$type] = $message;   
 }
 
 function get_message($type){
-
+    $echo = false;
     if(isset($_SESSION[$type])){
 
         $message = $_SESSION[$type]; $title = NULL;
@@ -54,11 +52,15 @@ function get_message($type){
 
 
         echo "<script>$toastr</script>";
-
-
-      unset($_SESSION[$type]);
+        $echo = true;
     }
+
+    if($echo == true){
+        unset($_SESSION[$type]);
+    }
+
 }
+
 
 function send_mail($toEmail, $subject, $body){
     $mail = new PHPMailer(true);
@@ -139,32 +141,156 @@ function user_session($array){
     }
 }
 
-function register_new_user($firstname, $surname, $email, $password, $role_id, $reg=null){
+
+function register_writer($firstname, $surname, $email, $password, $role_id, $address, $username, $phone_no, $project_title, $genre, $logline, $synopsis, $cover_img = null, $other_images = null, $video = null){
 
     $password = md5($password);
     $encode_password = utf8_encode($password);
     $token = md5($email); $encode_token = utf8_encode($token);
     $fullname = strtoupper($firstname) . " " . $surname;
     $email = strtolower($email);
+    $unique_id = $role_id.strtotime("now");
 
-    // Database connection
-    $link = connect();   
-
-
-    $checkEmail = mysqli_query($link, "select * from realtv_users where email = '$email'");
-
-    if($checkEmail->num_rows == 1){
-        set_message('error', 'Email exists, register with a unique email');
-        return false;
+    if($cover_img['name'] != ""){
+        $pic = handle_image($cover_img);
     }
 
-    $query = mysqli_query($link, "INSERT INTO `realtv_users`(`firstname`,`lastname`,`fullname`,`username`,`status`, `role_id`,`email`,`password`,`activated`, `token`,`reg_ref`) VALUES ('$firstname','$surname','$fullname','$email','Active',
-                                 '$role_id','$email','$encode_password','0', '$encode_token', '$reg')");
+    if($video['name'] != ""){
+        $vid = handle_video($video);
+    }
 
+
+    if($username == null){
+        $username = $email;
+    }
+
+    // Database connection
+    $link = connect();     
+
+    $query = mysqli_query($link, "INSERT INTO `realtv_users`(`firstname`,`lastname`,`fullname`,`username`,`status`, `role_id`,`email`,`password`,`activated`, `token`, `address`, `unique_id`) VALUES ('$firstname','$surname','$fullname','$username','Active',
+                                 '$role_id','$email','$encode_password','0', '$encode_token', '$address', '$unique_id')");
+
+  
     if($query){
+        
+        if($role_id == 2){
+
+            //var_dump($_POST);
+            $writer_query = mysqli_query($link, "INSERT INTO `realtv_writers`(`firstname`, `lastname`, `email`, `username`, `password`, `phone_no`, `address`, `profile_pic`, `sizzle_reel`, `unique_id`) 
+                                                VALUES ('$firstname','$surname','$email','$username','$password','$phone_no','$address','$pic','$vid','$unique_id')");
+
+           $res = save_drafts($unique_id, $project_title,$logline,$synopsis,$genre,$other_images);
+
+        }
+  
+
         $body = "<div style='padding: 5px; text-transform: capitalize;'>";
         $body .= "<h4>Welcome to RealTv Show</h4>";
-        $body .= "<p>Confirm your email to activate your account. To confirm your email, click <a href='".base_url()."/confirm.php?email=$email&pass=$token'>here</a> </p>";
+        $body .= "<p>Confirm your email to activate your account. To confirm your email, click <a href='".base_url()."confirm.php?email=$email&pass=$token'>here</a> </p>";
+        $body .= "</div>";
+        send_mail($email, "Email Confirmation", $body);
+    }else {
+        set_message("error", "Not Registered");
+
+    }
+
+    
+
+}
+
+function register_contestant($firstname, $surname, $email, $password, $role_id, $address, $username, $phone_no, $project, $profile_pic, $resume){
+
+    $password = md5($password);
+    $encode_password = utf8_encode($password);
+    $token = md5($email); $encode_token = utf8_encode($token);
+    $fullname = strtoupper($firstname) . " " . $surname;
+    $email = strtolower($email);
+    $unique_id = $role_id.strtotime("now");
+
+    // $pic = handle_image($profile_pic);
+    // $res = handle_file($resume);
+
+    if($profile_pic['name'] != ""){
+        $pic = handle_image($profile_pic);
+    }
+
+    if($resume['name'] != ""){
+        $res = handle_file($resume);
+    }
+
+    if($username == null){
+        $username = $email;
+    }
+
+    // Database connection
+    $link = connect();     
+
+    $query = mysqli_query($link, "INSERT INTO `realtv_users`(`firstname`,`lastname`,`fullname`,`username`,`status`, `role_id`,`email`,`password`,`activated`, `token`, `address`, `unique_id`) VALUES ('$firstname','$surname','$fullname','$username','Active',
+                                 '$role_id','$email','$encode_password','0', '$encode_token', '$address', '$unique_id')");
+
+  
+    if($query){
+        if($role_id == 1){
+            $contestant_query = mysqli_query($link, "INSERT INTO `realtv_contestants`(`firstname`, `lastname`, `email`, `username`, `password`, `phone_no`, `address`, `profile_pic`, `resume`, `unique_id`) VALUES ('$firstname','$surname','$email','$username',
+                                            '$password','$phone_no','$address','$pic','$res', '$unique_id')");
+            if(!is_null($project)){
+                foreach($project as $pro){
+                    $cartquery = mysqli_query($link, "INSERT INTO `realtv_cart`(`user_id`, `project_id`) VALUES ('$unique_id','$pro')");
+                }
+            }
+        }
+        $body = "<div style='padding: 5px; text-transform: capitalize;'>";
+        $body .= "<h4>Welcome to RealTv Show</h4>";
+        $body .= "<p>Confirm your email to activate your account. To confirm your email, click <a href='".base_url()."confirm.php?email=$email&pass=$token'>here</a> </p>";
+        $body .= "</div>";
+        send_mail($email, "Email Confirmation", $body);
+    }else {
+        set_message("error", "Not Registered");
+        echo mysqli_error($link);    
+
+    }
+
+    
+
+}
+
+function register_executive($firstname, $surname, $email, $password, $role_id, $address, $username, $phone_no, $profile_pic=null, $title=null, $company_name=null){
+
+    $password = md5($password);
+    $encode_password = utf8_encode($password);
+    $token = md5($email); $encode_token = utf8_encode($token);
+    $fullname = strtoupper($firstname) . " " . $surname;
+    $email = strtolower($email);
+    $unique_id = $role_id.strtotime("now");
+
+    
+    if($profile_pic['name'] != ""){
+        $pic = handle_image($profile_pic);
+    }
+
+    //echo $pic;
+
+    if($username == null){
+        $username = $email;
+    }
+
+    // Database connection
+    $link = connect();     
+
+    $query = mysqli_query($link, "INSERT INTO `realtv_users`(`firstname`,`lastname`,`fullname`,`username`,`status`, `role_id`,`email`,`password`,`activated`, `token`, `address`, `unique_id`) VALUES ('$firstname','$surname','$fullname','$username','Active',
+                                 '$role_id','$email','$encode_password','0', '$encode_token', '$address', '$unique_id')");
+
+  
+    if($query){
+        if($role_id == "3"){
+            $executive_query = mysqli_query($link, "INSERT INTO `realtv_executives`(`firstname`, `lastname`, `email`, `username`, `password`, `phone_no`, `address`, `profile_pic`, `unique_id`, `title`, `company_name`) VALUES ('$firstname','$surname','$email','$username',
+                                            '$password','$phone_no','$address','$pic','$unique_id', '$title', '$company_name')");
+        }
+
+
+        $body = "<div style='padding: 5px; text-transform: capitalize;'>";
+        $body .= "<h4>Welcome to RealTv Show</h4>";
+        $body .= "<p>Confirm your email to activate your account. To confirm your email, click <a href='".base_url()."confirm.php?email=$email&pass=$token'>here</a> </p>";
         $body .= "</div>";
         send_mail($email, "Email Confirmation", $body);
     }else {
@@ -191,57 +317,97 @@ function log_in_user($email, $password){
         user_session($user_details);
         $date = date("Y/m/d h:i:s");
         $updateUser = mysqli_query($link, "update realtv_users set last_logged_in = '$date', online = '1' where id = '$userid'");
-        header('Location: index.php');
+
+        $role = $user_details['role_id'];
+
+        if($role == 3){
+            $location = "Eprojectsreg.php";
+        }
+
+        if($role == 1){
+            $location = "contestantsreg.php";
+        }
+
+        if($role == 2){
+            $location = "writersPage.php";
+        }
+
+        $_SESSION['index'] = $location;
+       
+        header("Location: $location");
 
         set_message("success", "Login Success"); 
     }else {
         set_message('error', 'Invalid login details');
     }
 }
- 
+
+function save_to_cart($user_id, $project_id){
+    $link = connect();
+    $query = mysqli_query($link, "INSERT INTO `realtv_cart`(`user_id`, `project_id`) VALUES ('$user_id','$project_id')");
+
+    if($query){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
 function check_order($order_id){
 
     $order_id = trim($order_id);
 
     $link = connect();
 
-    $order = mysqli_query($link, "select * from realtv_reg where `orderID` = '$order_id'");
+    $checkOrder = mysqli_query($link, "select * from realtv_users where orderID = '$order_id'");
 
-    $num_row = $order->num_rows;
+    if(mysqli_num_rows($checkOrder) >= 1){
+        set_message("error", "Order Id is used");
+    }else{
 
-    if($num_row == 1){
-        return mysqli_fetch_assoc($order)['id'];
-    }else {
-        return 0;
+        $order = mysqli_query($link, "select * from realtv_reg where `orderID` = '$order_id'");
+
+        $num_row = mysqli_num_rows($order);
+
+        if($num_row == 1){
+            return mysqli_fetch_assoc($order)['id'];
+        }else {
+            return 0;
+        }
     }
+
+    
 }
 
 
-function handle_image($image){
+/////////////////// MEDIA FUNCTIONS /////////////////////////
 
+function handle_image($image){
     if(!is_null($image)){
-       // $uploads_dir = 'C:/Users/user/Documents/Fiverr Projects/RealTvShow/img/uploads/';
-       // $uploads_dir = '/Users/firstlincoln/Documents/iyanu/RealTvShow/img/uploads/';
-       $uploads_dir = 'img/uploads/';
+      
+        $uploads_dir = 'img/uploads/';
 
         $extensions = ['jpg', 'png',"jpeg"];
 
         $name = $image['name'];
         $size = $image['size']; 
-        $ext = explode(".", $name)[1];
+        $ext = end(explode(".", $name));
+        $location = $_SERVER['HTTP_REFERER'];
 
         //echo $ext;
 
-        //check size 
+        // //check size 
         if($size > 500000){
             set_message("error", "file too large, must not exceed 500KB");
+            header("Location: $location");
             exit(0);
         }
 
         //check extension
         if(!in_array($ext, $extensions)){
-            //set_message("error", "invalid type, only jpg or png allowed");
-            return false;
+            set_message("error", "invalid type, only jpg or png allowed");
+            header("Location: $location");
+            exit(0);
         }
         $uploads_file = $uploads_dir . basename($name);
 
@@ -252,48 +418,99 @@ function handle_image($image){
             set_message("error", "Not Uploaded");
         }
         return $name;
-
-    }else{
-        exit("No Image uploaded");
     }
+  
 
 }
 
-function handle_multi_images($images, $insertID){
-
-    $link = connect();
-    if(!is_null($images)){
+function handle_file($image){
+    if(!is_null($image)){
        // $uploads_dir = 'C:/Users/user/Documents/Fiverr Projects/RealTvShow/img/uploads/';
-       //$uploads_dir = '/Users/firstlincoln/Documents/iyanu/RealTvShow/img/uploads/';
+       // $uploads_dir = '/Users/firstlincoln/Documents/iyanu/RealTvShow/img/uploads/';
+       $uploads_dir = 'img/uploads/';
+        $extensions = ['pdf'];
+        $name = $image['name'];
+        $size = $image['size']; 
+        $ext = end(explode(".", $name));
+        $location = $_SERVER['HTTP_REFERER'];
+
+
+        //echo $ext;
+
+        //check size 
+        if($size > 500000){
+            set_message("error", "file too large, must not exceed 500KB");
+            header("Location: $location");
+            exit(0);
+        }
+
+        //check extension
+        if(!in_array($ext, $extensions)){
+            set_message("error", "invalid type, only pdf is allowed");
+            header("Location: $location");
+            exit(0);
+        }
+        $uploads_file = $uploads_dir . basename($name);
+
+        if(move_uploaded_file($image['tmp_name'], $uploads_file)){
+         set_message("success", "Uploaded");
+            
+        }else{
+            set_message("error", "Not Uploaded");
+            header("Location: $location");
+            exit(0);
+        }
+        return $name;
+    }
+  
+
+}
+
+
+function handle_multi_images($images){
+
+    $image_list = "";
+    $location = $_SERVER['HTTP_REFERER'];
+
+    if(!is_null($images)){
+ 
        $uploads_dir = 'img/uploads/';
 
         $extensions = ['jpg', 'png',"jpeg"];     
 
+       // var_dump($images);
         //check size 
         foreach($images['size'] as $size){
             if($size > 1000000){
                 set_message("error", "file too large, must not exceed 1MB");
+                header("Location: $location");
                 exit(0);
             }
 
         }
 
         foreach($images['name'] as $key => $imagename){
-            $ext = explode(".", $imagename)[1];
+            $ext = end(explode(".", $imagename));
 
             //check extension
             if(!in_array($ext, $extensions)){
-                //set_message("error", "invalid type, only jpg or png allowed");
-                return false;
+                set_message("error", "$imagename is invalid, only png and jpg is allowed");
+                header("Location: $location");
+                exit(0);
             }
+
             $uploads_file = $uploads_dir . basename($imagename);
 
-           if(move_uploaded_file($images['tmp_name'][$key], $uploads_file))
-            mysqli_query($link, "INSERT INTO `realtv_movie_pics`(`movie_pic`, `movie_id`) VALUES ('$imagename', '$insertID')");
+            if(move_uploaded_file($images['tmp_name'][$key], $uploads_file)){
+                $image_list .= $imagename . ",";
+            }
+           
         }
-        
 
+       
     }
+
+    return $image_list;
 }
 
 function handle_video($video){
@@ -304,19 +521,20 @@ function handle_video($video){
 
         $name = $video['name'];
         $size = $video['size']; 
-        $ext = explode(".", $name)[1];
-
-        //echo $ext;
+        $ext = end(explode(".", $name));
+        $location = $_SERVER['HTTP_REFERER'];
 
         //check size 
         if($size > 5000000){
             set_message("error", "file too large, must not exceed 5MB");
+            header("Location: $location");
             exit(0);
         }
 
         //check extension
         if(!in_array($ext, $extensions)){
             set_message("error", "invalid type, only mp4, mkv or avi are allowed");
+            header("Location: $location");
             exit(0);
         }
         $uploads_file = $uploads_dir . basename($name);
@@ -326,23 +544,27 @@ function handle_video($video){
             
         }else{
             set_message("error", "Not Uploaded");
+            header("Location: $location");
+            exit(0);
         }
         return $name;
 
-    }else{
-        return "No Image uploaded";
     }
 }
 
 
-function save_movie($movie_title, $movie_plot, $movie_pic, $movie_pics = NULL){
+
+///// MEDIA FUNCTIONS END /////////////////
+
+
+function save_movie($movie_title, $movie_plot, $synopsis, $genre, $movie_pic, $movie_pics = NULL){
     $link = connect();
 
     $created_by = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : "00000000";
 
     $insert_pic = handle_image($movie_pic);
 
-    if( mysqli_query($link, "INSERT INTO `realtv_movies`( `created_by`, `movie_pic`, `movie_title`, `movie_plot`, `status`) 
+    if( mysqli_query($link, "INSERT INTO `realtv_movies`( `created_by`, `movie_pic`, `movie_title`, `movie_plot`, `status`, `synopsis`, `genre`) 
                             VALUES ('$created_by','$insert_pic','$movie_title','$movie_plot','1')")){
                
 
@@ -358,6 +580,30 @@ function save_movie($movie_title, $movie_plot, $movie_pic, $movie_pics = NULL){
         return 1;
     }else{
         return 0;
+    }
+
+
+}
+
+function save_drafts($writer_id = null, $movie_title, $logline, $synopsis, $genre, $movie_pics = NULL){
+    $link = connect();
+
+    if ($writer_id == null) {
+        $writer_id = $_SESSION['user_id'];
+    }
+
+    $other_images = handle_multi_images($movie_pics);
+
+
+    if( mysqli_query($link, "INSERT INTO `realtv_drafts`(`created_by`,`movie_title`,`logline`, `genre`, `synopsis`, `other_pics`) 
+                            VALUES ('$writer_id','$movie_title','$logline','$genre','$synopsis', '$other_images')")){
+        
+        return 1;
+    }else{
+        $error = mysqli_error($link);    
+        set_message("error", "$error");
+        header("Location: $location");
+        exit(0);
     }
 
 
@@ -387,27 +633,6 @@ function is_loggedIn(){
     return true;
 }
 
-
-// function payment_cUrl($post_data){
-
-//     $url = "https://api-m.sandbox.paypal.com/v1/oauth2/token";
-//     $headers = [
-//         "Accept: application/json",
-//         "Accept-Language: en_US",
-//         "AalMKUeQF_tc82T1vnq4_QVA0_ICAnIfJO_sFC8um-76N-VobMJr8qrUhBaAILWTeDODUNXvk0Iwl_FQ: EMrf3fQCsprQXDD815OggwKuZwCf6Zny18GGe3ddK4F4MzORDYcDqqjAk4HjPFNiEWnUC5sQipTF9Su7",
-//         "grant_type=client_credentials"
-//     ];
-
-//     $curl = curl_init();
-
-//     curl_setopt($curl, CURLOPT_URL, $url);
-//     curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-//     curl_setopt($curl, CURLOPT_POSTFIELDS, $post_data);
-//     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
-    
-
-// }
 
 function get_movie($link, $id){
     return mysqli_fetch_assoc(mysqli_query($link, "select * from realtv_movies where id = '$id'"));

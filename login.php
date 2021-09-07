@@ -1,15 +1,11 @@
 <?php 
 
-
+$logo =true;
 require "scripts/functions.php"; 
 
 if(isset($_POST['login'])){
   $email = trim($_POST['email']);
   $password = trim($_POST['password']);
-
-
-
-
   log_in_user($email,$password);
 }
 
@@ -29,6 +25,10 @@ require "scripts/header_two.php";
 
 .show{
   display : block;
+}
+
+.button{
+  background-color : #004883;
 }
 
 form{
@@ -57,6 +57,7 @@ button{
 </style>
 
 <div>
+<?php get_message('error'); get_message('success'); ?>
 
 <div class="row mt-5 ">
   <div class="col-12 text-center">
@@ -107,7 +108,7 @@ button{
      <div class="row">
        <div class="col-lg-6 col-md-6 col-sm-12">
          <div class="d-flex justify-content-center my-4">
-           <button class="btn btn-lg btn-warning button" name="login" >Log In</button>
+           <button class="realbtn btn-lg text-light button" name="login" >Log In</button>
          </div>
        </div>
 

@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -84,27 +81,32 @@
             <section class="section-contactus"> -->
 
                     <div class="registration-divi">
-
-                        <label for="registration-divi__text">Email Address</label>
-                        <input class="registration-divi__input" id="pass" type="Email Address" name="Email Address" placeholder="Email Address" required/>
-                        <label for="registration-divi__text">Username</label>
-                        <input class="registration-divi__input" type="Username" name="Username" placeholder="Username" required/>
-                        <label for="registration-divi__text">Password</label>
-                        <input class="registration-divi__input" id="pass" type="password" name="password" placeholder="Password" required/>
-                        <label for="registration-divi__text">First Name</label>
-                        <input class="registration-divi__input" type="First Name" name="First Name" placeholder="First Name" required/>
-                        <label for="registration-divi__text">Last Name</label>
-                        <input class="registration-divi__input" type="Last Name" name="Last Name" placeholder="Last Name" required/>
-                        <label for="registration-divi__text">Phone Number</label>
-                        <input class="registration-divi__input" type="Phone Number" name="Phone Number" placeholder="Phone Number" required/>
-                        <label for="registration-divi__text">Address</label>
-                        <input class="registration-divi__input" type="Address" name="Address" placeholder="Address" required/>
-                        <label for="registration-divi__text">First Choice Project Title</label>
-                        <input class="registration-divi__input" id="text-input" type="text" />
-                        <label for="registration-divi__text">Please attach your credentials and 1 small photo here</br>
-                            <span class="registration__paragraph">(In the box below, please paste-in your credentials and photo, (usually 1 to 2 pages))</span>
-                        </label>
-                        <textarea class="registration-divi__input-2" id="textarea"></textarea>
+                        <div class="registration-divi--sub">
+                            <label for="registration-divi__text">First Name</label>
+                            <input class="registration-divi__input-1-1" type="First Name" name="First Name" placeholder="First Name" required/>
+                            <label for="registration-divi__text">Last Name</label>
+                            <input class="registration-divi__input-1-2" type="Last Name" name="Last Name" placeholder="Last Name" required/>
+                        </div>
+                        <div class="registration-divi--sub">
+                            <label for="registration-divi__text">Username</label>
+                            <input class="registration-divi__input-1-3" type="Username" name="Username" placeholder="Username" required/>
+                            <label for="registration-divi__text">Password</label>
+                            <input class="registration-divi__input-1-4" id="pass" type="password" name="password" placeholder="Password" required/>
+                        </div>
+                        <div class="registration-divi--sub">
+                            <label for="registration-divi__text">Phone Number</label>
+                            <input class="registration-divi__input-1-5" type="Phone Number" name="Phone Number" placeholder="Phone Number" required/>
+                            <label for="registration-divi__text">Address</label>
+                            <input class="registration-divi__input-1-6" type="Address" name="Address" placeholder="Address" required/>
+                        </div>
+                            <label for="registration-divi__text">Email Address</label>
+                            <textarea class="registration-divi__input-2" id="textarea"></textarea>                        
+                            <label for="registration-divi__text">First Choice Project Title</label>
+                            <input class="registration-divi__input-1-9" id="text-input" type="text" />
+                            <label for="registration-divi__text">Please attach your credentials and 1 small photo here</br>
+                                <span class="registration__paragraph">(In the box below, please paste-in your credentials and photo, (usually 1 to 2 pages))</span>
+                            </label>
+                            <textarea class="registration-divi__input-2" id="textarea"></textarea>
 
                         <!-- <p class="view__paragraph paintme">When the individual registers for a specific Program it is identified on their credentials. 
                             When TV execs view the individual he/she will be able to determine which Program they registered for. 
@@ -131,37 +133,44 @@
 
         <footer class="footer">
             <div class="row footer__high">
-                <div class="col-1-of-2">
+                <div class="col-1-of-4">
                         <div class="footer__logo-box">
                             <img src="img/logo.png" alt="Logo" class="footer__logo">
                         </div>
-                    </div> 
                 </div>
-                <div class="col-1-of-2">
+                <div class="footer__group">
                      <div class="footer__navigation">
-                     <h3 class="footer__heading"><b>About</b></h3>
-                            <ul class="footer__list">
-                                <li class="footer__item"></li><a href="reality.php" class="footer__link">Reality TV</a></li>
-                                <li class="footer__item"></li><a href="faq.php" class="footer__link">Faq</a></li>
-                                <li class="footer__item"></li><a href="login.php" class="footer__link">Login/signup</a></li>
-                                <li class="footer__item"></li><a href="privacy.php" class="footer__link">Privacy policy</a></li>
-                                <li class="footer__item"></li><a href="terms.php" class="footer__link">Terms of Service</a></li>
-                            </ul>
-                        <h3 class="footer__heading-2"><b>Community</b></h3>
-                            <ul class="footer__list-2">
-                                <li class="footer__item"></li><a href="future.php" class="footer__link">Future</a></li>
-                                <li class="footer__item"></li><a href="promoteyou.php" class="footer__link">Promoting You</a></li>
-                                <li class="footer__item"></li><a href="benefits.php" class="footer__link">Benefits</a></li>
-                                <li class="footer__item"></li><a href="communications.php" class="footer__link">Communications</a></li>
-                                <li class="footer__item"></li><a href="nda.php" class="footer__link">NDA Agreement</a></li>
-                            </ul>
-                        <h3 class="footer__heading-3"><b>Pages</b></h3>
-                            <ul class="footer__list-3">
-                                <li class="footer__item"></li><a href="index.php" class="footer__link">Home</a></li>
-                                <li class="footer__item"></li><a href="aboutus.php" class="footer__link">About us</a></li>
-                                <li class="footer__item"></li><a href="contactus.php" class="footer__link">Contact us</a></li>
-                            </ul>
+                         <div class="col-1-of-4">
+                            <h3 class="footer__heading"><b>About</b></h3>
+                                <ul class="footer__list">
+                                    <li class="footer__item"></li><a href="reality.php" class="footer__link">Reality TV</a></li>
+                                    <li class="footer__item"></li><a href="faq.php" class="footer__link">Faq</a></li>
+                                    <li class="footer__item"></li><a href="login.php" class="footer__link">Login/signup</a></li>
+                                    <li class="footer__item"></li><a href="privacy.php" class="footer__link">Privacy policy</a></li>
+                                    <li class="footer__item"></li><a href="terms.php" class="footer__link">Terms of Service</a></li>
+                                </ul>
+                        <div>
+                        <div class="col-1-of-4">
+                            <h3 class="footer__heading-2"><b>Community</b></h3>
+                                <ul class="footer__list-2">
+                                    <li class="footer__item"></li><a href="future.php" class="footer__link">Future</a></li>
+                                    <li class="footer__item"></li><a href="promoteyou.php" class="footer__link">Promoting You</a></li>
+                                    <li class="footer__item"></li><a href="benefits.php" class="footer__link">Benefits</a></li>
+                                    <li class="footer__item"></li><a href="communications.php" class="footer__link">Communications</a></li>
+                                    <li class="footer__item"></li><a href="nda.php" class="footer__link">NDA Agreement</a></li>
+                                </ul>
+                        <div>
+                        <div class="col-1-of-4">
+                            <h3 class="footer__heading-3"><b>Pages</b></h3>
+                                <ul class="footer__list-3">
+                                    <li class="footer__item"></li><a href="index.php" class="footer__link">Home</a></li>
+                                    <li class="footer__item"></li><a href="aboutus.php" class="footer__link">About us</a></li>
+                                    <li class="footer__item"></li><a href="contactus.php" class="footer__link">Contact us</a></li>
+                                </ul>
+                        </div>
                     </div>
+                </div>
+                <div class="footer-late__div">
                     <div class="sprite">
                         <div class="sprite__icon-box">
                                 <svg class="sprite__icon">
@@ -194,10 +203,10 @@
                             </svg>        
                         </div>
                     </div>
-                </div>
-                <p class="footer__copyright">
+                    <div class="footer__copyright">
                         &copy;RealityTV International Limited 2021.
-                    </p>
+                    </div>
+                </div>
             </div>
         </footer>
     </body>

@@ -8,22 +8,42 @@
     background-size: cover;
     // transform: skewY(-7deg);
     margin-top: -8rem;
+    margin-bottom: 8rem;
 
-    // & > * {
-    //     transform: skewY(7deg);
 
-    // }
+    @include respond(tab-port) {
+        padding: 20rem 0;
+    }
 }
 
 .section-realities {
     background-color: $color-secondary-dark;
-    padding: 20rem 0 25rem 0;
+    padding: 20rem 0 10rem 0;
     margin-top: -8rem;
+
+    @include respond(tab-port) {
+        padding: 15rem 0 5rem 0;
+    }
 }
 
 .section-slideshows {
     background-color: $color-white;
     padding: 5rem 0 15rem 0;
+
+    @include respond(tab-port) {
+        padding: 2rem 0 10rem 0;
+        height: 60rem;
+    }
+
+    @include respond(phone) {
+        padding: 2rem 0 5rem 0;
+        height: 55rem;
+    }
+
+    @include respond(small-phone) {
+        padding: 2rem 0 5rem 0;
+        height: 55rem;
+    }
 }
 
 .section-billboard {
@@ -32,6 +52,23 @@
     margin: 0 5rem;
     border-radius: .5rem;
     height: 45rem;
+
+    @include respond(tab-land) {
+        padding: 2rem 2rem;
+        margin: 0 auto;
+        height: 60rem;
+    }
+
+    @include respond(tab-port) {
+        padding: 2rem 2rem;
+        margin: 0 auto;
+        height: 55rem;
+    }
+
+    @include respond(small-phone) {
+        padding: 2rem 0 0 2rem;
+        height: 75rem;
+    }
 }
 
 .section-projects {
@@ -59,4 +96,40 @@
     padding: 4rem 3rem;
     width: 100%;
     // margin-top: -8rem;
+
+    @include respond(tab-port) {
+        padding: auto;
+        margin-bottom: 15rem;
+        height: 100%;
+    }
+
+    @include respond(phone) {
+        height: 100%;
+        margin: auto;
+     }
+
+    &--2 {
+        height: 25rem;
+
+        @include respond(phone) {
+           height: 26rem;
+           width: 100%;
+           margin: auto;
+           margin-bottom: 5rem;
+        }
+    }
+}
+
+.section-aboutus {
+    @include respond(phone) {
+        padding: none;
+        margin: auto;
+        height: 150rem;
+    }
+
+    @include respond(small-phone) {
+        padding: none;
+        margin: auto;
+        height: 170rem;
+    }
 }

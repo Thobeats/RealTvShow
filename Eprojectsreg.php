@@ -1,170 +1,200 @@
 <?php
+    $navBar = true; $logo=true;
     require "scripts/functions.php";
 
 
     if(is_loggedIn() && role() == '3'){
-    require "scripts/header.php";
-?>
+        require "scripts/header_two.php"; 
 
-            <div class="project">
-                <div class="project__text-box">
-                    <h1 class="heading-primary">
-                        <span class="heading-primary--main">Reality Tv</span>
-                        <span class="heading-primary--sub">cache of unique formats & talent</span>
-                    </h1>        
+        //var_dump($_SESSION);
+        ?>
+        
+        <?php get_message("error"); get_message('success') ?>
+        
+        
+        <section class="landing-page-movie">
+            <div class="landing-synopsis text-center ">
+                <h2 class="landing-header">synopsis of 12 realities</h2>
+            </div>
+        
+            <div class="row py-5">
+                <?php 
+                    $movie_query = mysqli_query($link, "Select * from realtv_movies");
+        
+                    while($movie = mysqli_fetch_object($movie_query)):
+        
+                        $moviePic = $movie->movie_pic;
+                ?>
+                <div class="col-lg-4 col-md-4 mt-5 col-sm-6">
+                    <div class="card movie-card border-0 mx-auto" style="cursor: pointer; background-color: inherit">
+                        <div class="card-body p-0" style="height: 70%;">
+                            <img src="img/uploads/<?= $moviePic ?>" class="movie-card-body"  alt="">
+                        </div>
+                        <div class=" movieTitle my-0 p-2">
+                            <p><?= $movie->movie_title ?></p>
+                            <a href="Eviewpage.php?id=<?= $movie->id ?>" class="bg-warning check text-dark">Check it out</a>
+                        </div>
+                    </div>     
                 </div>
-            </div>  
-
-                <section class="section-realities">
-                    <div class="u-center-text u-margin-bottom-large">
-                            <h2 class="heading-tertiary">
-                                Synopsis of 12 Realities
-                            </h2>
-                    </div>
-
-                    <?php 
-                            $movie_query = mysqli_query($link, "Select * from realtv_movies");
-
-                            
-                            $num_rows = $movie_query->num_rows;
-                            if($num_rows > 0){
-                                $row = ceil($num_rows / 3);
-                                $row += 1;
-                                $rowCount = 1; 
-                                $start = 1;
-                                
-
-                                while ($rowCount < $row){
-                                    $movie_multiple = 3 * $rowCount; 
-                                
-                                    //echo $rowCount;
-                                //mysqli_data_seek($movie_query, $movie_multiple);
-                            ?>
-                            <div class="row"> 
-                            <?php
-                                $cardCount = $start; 
-                            
-                                while($cardCount < $movie_multiple+1){
-                                    
-                                    $movies = mysqli_fetch_assoc($movie_query);
-
-                                    if($movies != NULL){
-                                    $img = $movies['movie_pic']; $title = $movies['movie_title'];
-                                    $movie_id = $movies['id'];
-
-
-                            ?>
-                            <div class="col-1-of-3">
-                                <div class="card">
-                                    <div class="card__side card__side--front">
-                                        <div class="card__picture card__picture--1">
-                                            <img src="img/uploads/<?= $img ?>" alt="card-pic" class="card__img">
+                <?php endwhile; ?>
+            </div>
+            
+         
+        </section>
+        
+        <section class="py-4 note">
+            <div class="col-12">
+                <p class="text-center p-4">
+                With great enthusiasm, RealityTVRegistry recommends these 15 projects. All have copyright protection and are available for option and acquisition. Additional proposals are being developed and may be viewable in mid-August.
+                </p>
+            </div>
+        </section>
+        
+        
+        <section class="row mb-4">
+            <div class="col-12 mt-4">
+                <div class="member-benefits">
+                    <h3 class="text-center my-4 m-title">MEMBER BENEFITS</h3>
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card border-0">
+                                    <div class="card-body d-flex justify-content-center">
+                                        <div class="quotes zilla text-center">
+                                        
+                                            Big 93% advantage to be casted when promoted by a business 
+                                            
                                         </div>
-                                        <h4 class="card__heading">
-                                            <span class="card__heading-span card__heading-span--1"><?= $title ?></span>    
-                                        </h4>
-                                    </div>
-                                    <div class="card__side card__side--back card__side--back-1">
-                                        <div class="card__cta">
-                                            <a href="Eviewpage.php?id=<?= $movie_id ?>" class="bttn bttn--white">Check It Out Now</a>
-                                        </div> 
+                                            <img class="" src="img/write01.jpg" width="350px">
+        
                                     </div>
                                 </div>
                             </div>
-                            <?php 
-                            }
-
-                            
-                            
-                            
-                                $cardCount++;
-                                if($cardCount % 3 == 0){
-                                    $start = $cardCount + 1;
-                                }
-                            }
-
-                            
-                            
-                            ?>
-                            </div>
-                        <?php $rowCount++;  //$start += $cardCount;
-                            }
-                        
-                        } else { 
-                        
-                        
-                       ?>
-                     <div class="row">
-                        <div class="col-1-of-3">
-                            <div class="card">
-                                <div class="card__side card__side--front">
-                                    <div class="card__picture card__picture--4">
-                                        <img src="img/oldwar.jpg" alt="card-pic" class="card__img">
+                            <div class="carousel-item">
+                                <div class="card border-0">
+                                    <div class="card-body d-flex justify-content-center">
+                                        <div class="quotes text-center">
+                                        
+                                            Priority status to participate in the production of your choice
+                                                                            
+                                        </div>
+                                            <img class="" src="img/shoot2.jpg" width="350px">
+        
                                     </div>
-                                    <h4 class="card__heading">
-                                        <span class="card__heading-span card__heading-span--4">Battles of Foreign Lands</span>    
-                                    </h4>
-                                </div>
-                                <div class="card__side card__side--back card__side--back-4">
-                                    <div class="card__cta">
-                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
-                                    </div> 
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-1-of-3">
-                            <div class="card">
-                                <div class="card__side card__side--front">
-                                    <div class="card__picture card__picture--5">
-                                        <img src="img/act3.jpg" alt="card-pic" class="card__img">
+                            <div class="carousel-item">
+                                <div class="card border-0">
+                                    <div class="card-body d-flex justify-content-center">
+                                        <div class="quotes text-center">
+                                    
+                                            Your private account access, to view and edit your credentials 
+                                                                                
+                                        </div>
+                                            <img class="" src="img/Executive.jpg" width="350px">
+        
                                     </div>
-                                    <h4 class="card__heading">
-                                        <span class="card__heading-span card__heading-span--5">Modelled to Market</span>    
-                                    </h4>
-                                </div>
-                                <div class="card__side card__side--back card__side--back-5">
-                                    <div class="card__cta">
-                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
-                                    </div> 
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-1-of-3">
-                            <div class="card">
-                                <div class="card__side card__side--front">
-                                    <div class="card__picture card__picture--6">
-                                        <img src="img/shark2.jpg" alt="card-pic" class="card__img">
+                            <div class="carousel-item">
+                                <div class="card border-0">
+                                    <div class="card-body d-flex justify-content-center">
+                                        <div class="quotes text-center">
+                                        
+                                            Promote your individual talents to producers and TV executives 
+                                                                                
+                                        </div>
+                                            <img class="" src="img/act000.jpg" width="350px">
+        
                                     </div>
-                                    <h4 class="card__heading">
-                                        <span class="card__heading-span card__heading-span--6">Sharks on Wallstreet</span>    
-                                    </h4>
                                 </div>
-                                <div class="card__side card__side--back card__side--back-6">
-                                    <div class="card__cta"> 
-                                        <a href="signup.php" class="bttn bttn--white">Check It Out Now</a>
-                                    </div> 
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card border-0">
+                                    <div class="card-body d-flex justify-content-center">
+                                        <div class="quotes text-center">
+                                        
+                                            Casting companies access your info. and initiate contact
+                                                                                    
+                                        </div>
+                                            <img class="" src="img/studio0.jpg" width="350px">
+        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card border-0">
+                                    <div class="card-body d-flex justify-content-center">
+                                        <div class="quotes text-center">
+                                    
+                                            Exposure to talent scouts with opportunity to be discovered
+                                                                                    
+                                        </div>
+                                            <img class="" src="img/write5.jpg" width="350px">
+        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card border-0">
+                                    <div class="card-body d-flex justify-content-center">
+                                        <div class="quotes text-center">
+                                        
+                                            Keep you apprised of future reality productions
+                                                                                    
+                                        </div>
+                                            <img class="" src="img/write3.jpg" width="350px">
+        
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="fa fa-arrow-circle-o-left fa-2x" aria-hidden="true" style="color : black"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="fa fa-arrow-circle-o-right fa-2x" aria-hidden="true" style="color : black"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
-                    <?php } ?>
+                </div>
+                    
+            </div>
+        </section>
+        
+        <script>
+            let movieCard = document.querySelectorAll(".movie-card");
+        
+            movieCard.forEach((card)=>{
+                card.addEventListener("mouseover", function(){
+        
+                    let cardTitle = this.querySelector(".movieTitle");
+                    let checkout = this.querySelector(".check-out");
+        
+              //      cardTitle.classList.add("animate-show");
+                    checkout.classList.add("animate-show");
+        
+                });
+        
+                card.addEventListener("mouseleave", function(){
+        
+                    let cardTitle = this.querySelector(".movieTitle");
+                    let checkout = this.querySelector(".check-out");
+        
+                   // cardTitle.classList.remove("animate-show");
+                    checkout.classList.remove("animate-show");
+        
+                });
+            })
+        </script>
+ <?php
+         require "scripts/footer_two.php";
 
- 
-                </section>
-                
-                <section class="section-projects">
-                    <p class="Projects__paragraph">With great enthusiasm, RealityTVRegistry recommends these 15 projects. All have copyright 
-                        protection and are available for option and acquisition. Additional proposals are being 
-                        developed and may be viewable in mid-August.</p>
-                </section>
-        </main>
-
-       
-
-<?php 
-
-        require "scripts/footer.php";
-
+    }elseif(is_loggedIn() && role() != '3'){
+        $location = $_SERVER['HTTP_REFERER'];
+        set_message("error", "Not Authorized");
+        header("Location: $location");
     }else{
         header("Location: login.php");
     }
