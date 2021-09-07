@@ -218,9 +218,12 @@ body{
                     <p class="writer_side_para">
                         We have your best interest in mind, with the motivation to transform your dreams into a reality.
                     </p>   
+                    <?php 
+                        if(!is_loggedIn()){ ?>
                     <p class="writer_side_para text-center my-3 py-3">
                         <a href="wregistration.php" class="realbtn btn-dark">Register Now</a>
-                    </p>            
+                    </p>   
+                    <?php } ?>         
                 </div>
             </div>
             

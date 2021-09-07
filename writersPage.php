@@ -145,6 +145,7 @@ require "scripts/header_two.php";
 
 }
 </style>
+<?php get_message("error"); get_message('success') ?>
 
 <section class="py-5 px-2" style="height : auto">
     <div class="row">
@@ -211,6 +212,8 @@ require "scripts/header_two.php";
                
             </div>
 
+            <?php 
+            if(!is_loggedIn()){ ?>
             <div class="row mt-5">
                 <div class="col-12">
                     <div class="d-flex flex-column justify-content-center regnow">
@@ -220,6 +223,7 @@ require "scripts/header_two.php";
                     </div> 
                 </div>                
             </div>
+            <?php } ?>
         </div>
     </div>
 </section>

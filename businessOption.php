@@ -304,11 +304,14 @@ body{
                                         
             <div class="row mt-3">
                 <div class="col-lg-6 col-md-6 text-center p-3 col-sm-12">
-                    <a class="realbtn border-bottom" href="sample.php">View Pitch Sample</a>
+                    <a class="realbtn btn-dark border-bottom" href="sample.php">View Pitch Sample</a>
                 </div>
+                <?php 
+                        if(!is_loggedIn()){ ?>
                 <div class="col-lg-6 col-md-6 text-center p-3 col-sm-12">
-                    <a class="realbtn border-bottom" href="wregistration.php">Register</a>
+                    <a class="realbtn btn-dark border-bottom" href="wregistration.php">Register</a>
                 </div>
+                <?php } ?>
             </div>
            
         </div>

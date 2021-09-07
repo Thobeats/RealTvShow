@@ -86,7 +86,10 @@
         <li class="option"><a class="option_link" href="sample.php">Display Listing and Image Pitch</a></li>
         <li class="option"><a class="option_link" href="businessOption.php">Business of Options</a></li>
         <li class="option"><a class="option_link" href="hollywood.php">Hollywood outsiders pitched</a></li>
+        <?php 
+            if(!is_loggedIn()){ ?>
         <li class="option"><a class="option_link" href="wregistration.php">Register</a></li>
+        <?php } ?>
     </ul>
 </div>
 
