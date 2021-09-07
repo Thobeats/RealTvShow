@@ -60,14 +60,16 @@ $draftquery = mysqli_query($link, "select * from realtv_drafts where created_by 
                 while($draftItem = mysqli_fetch_object($draftquery)): 
                 
                     $imgs = substr($draftItem->other_pics, 0, -1);
-                    $cover_pic = explode(",",$imgs)[3];
+                    $cover_pic = explode(",",$imgs);
+
+                    $display = current($cover_pic);
                     
                 ?>
             <div class="row my-2 py-2" style="background-color: #e6e6e6;">
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="draft-img mx-auto">
-                        <img src="img/uploads/<?= $cover_pic; ?>" alt="" width="100%" height="100%">
+                        <img src="img/uploads/<?= $display; ?>" alt="" width="100%" height="100%">
                     </div>
                 </div>
 

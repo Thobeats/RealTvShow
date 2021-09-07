@@ -57,6 +57,7 @@ button{
 </style>
 
 <div>
+<?php get_message('error'); get_message('success'); ?>
 
 <div class="row mt-5 ">
   <div class="col-12 text-center">

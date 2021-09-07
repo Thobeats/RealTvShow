@@ -498,12 +498,16 @@ function handle_multi_images($images){
                 header("Location: $location");
                 exit(0);
             }
+
             $uploads_file = $uploads_dir . basename($imagename);
-            if($uploads_file){
+
+            if(move_uploaded_file($images['tmp_name'][$key], $uploads_file)){
                 $image_list .= $imagename . ",";
             }
            
         }
+
+       
     }
 
     return $image_list;
