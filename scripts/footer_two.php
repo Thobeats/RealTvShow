@@ -20,7 +20,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-12">
                     <ul class="footer_grp p-4 ">
                         <li class="r_list list-title">Pages</li>
-                        <li class="r_list"><a href="index.php">Home</a></li>
+                        <li class="r_list"><a href="<?= $_SESSION['index'] ?? 'index.php' ?>">Home</a></li>
                         <li class="r_list"><a href="aboutus.php">About Us</a></li>
                         <li class="r_list"><a href="contactus.php">Contact Us</a></li>   
                     </ul>

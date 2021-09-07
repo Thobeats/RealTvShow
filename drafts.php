@@ -58,15 +58,16 @@ $draftquery = mysqli_query($link, "select * from realtv_drafts where created_by 
             <p class="border border-light draft-text p-2" style="background-color: #e6e6e6;"><i class="bi bi-pencil-square"></i> draft</p>
             <?php 
                 while($draftItem = mysqli_fetch_object($draftquery)): 
+                
+                    $imgs = substr($draftItem->other_pics, 0, -1);
+                    $cover_pic = explode(",",$imgs)[3];
                     
-                
-                
-            ?>
+                ?>
             <div class="row my-2 py-2" style="background-color: #e6e6e6;">
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="draft-img mx-auto">
-                        <img src="img/uploads/<?=$draftItem->movie_pic ?>" alt="" width="100%" height="100%">
+                        <img src="img/uploads/<?= $cover_pic; ?>" alt="" width="100%" height="100%">
                     </div>
                 </div>
 
@@ -81,7 +82,7 @@ $draftquery = mysqli_query($link, "select * from realtv_drafts where created_by 
 
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="mt-4 draft-action" style="display:flex; justify-content: center"> 
-                        <button class="draft-btn btn-light mx-2 text-danger" data-id="<?= $getProject->id ?>">Delete</button>           
+                        <button class="draft-btn btn-light mx-2 text-danger" data-id="<?= $getProject->id ?>">Discard</button>           
                         <button class="draft-btn btn-light mx-2" data-id="<?= $getProject->id ?>">Edit</button>
                         <a href="payment.php?id=<?= $getProject->id  ?>" class="draft-btn mx-2 btn-light text-success" >Submit</a>
                     </div> 

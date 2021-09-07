@@ -21,8 +21,9 @@
 ?>
 
 <style>
+
 .project{
-    background-image: url(img/shoot2.jpg);
+    background-image: linear-gradient(to bottom, rgba(36, 36, 36, 0.692),rgba(19, 19, 19, 0.692)),url(img/shoot2.jpg);
     height: 100vh;
     background-size : cover;
     background-position : top left;
@@ -38,14 +39,14 @@
 }
 
 .project-wrapper h1{
-    font-weight : 600;
-    letter-spacing : 1.75rem;
+    font-weight : 800;
+    letter-spacing : 5px;
     text-transform : uppercase;
 }
 
 .project-wrapper p{
     font-weight : 300;
-    letter-spacing : 1rem;
+    letter-spacing : 5px;
     text-transform : uppercase;
     width : 100%;
 }
@@ -66,7 +67,6 @@
     font-family: 'Zilla Slab', serif;    
     font-size : 60px;
     font-weight : 800;
-    width : 250px;
     text-align : left;
     color : #041e3c;
     letter-spacing : 2px;
@@ -76,10 +76,12 @@
 .movie-title{
     padding : 2px;
     font-family: 'Zilla Slab', serif;    
-    font-size : 20px;
-    font-weight : 300;
+    font-size : 40px;
+    font-weight : 700;
     color : #041e3c;
+    text-transform : uppercase;
     letter-spacing : 2px;
+    text-align : left;
 }
 
 .logline{
@@ -95,7 +97,6 @@
 }
 
 .logline-para {
-    padding-top : 10px;
     font-size : 15px;
     font-weight : 400;
     letter-spacing : 2px;
@@ -114,7 +115,7 @@
 
 .features-list{
     margin : 2px;
-    width : 120%;
+    width : 100%;
 }
 
 .features-title{
@@ -130,66 +131,49 @@
     letter-spacing : 1px;
 }
 
-    @media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 768px) {
         .project{
             height: 50vh;
             width : 100%;  
             background-position : top right;  
-        }
-
-        .project-wrapper h1{ 
+        }.project-wrapper h1{ 
             font-size : 40px;           
             width : 100%;
-        }
-
-        .project-wrapper p{
+        }.project-wrapper p{
             width : 100%;
+        }.movie-title, .movie-header{
+            text-align : center;
+            border: 1px: solid;
+        }.features{
+            text-align : center;
         }
-
-        
-
     }
 
     @media only screen and (max-width: 425px) {
         .project-wrapper{
-            width : 425px;
+            width : auto;
         }
         .project-wrapper h1{ 
-            font-size : 25px; 
-        }
-
-        .project-wrapper p{
-             font-size : 15px;
-        }
-
-        .movie-title, .movie-header{
+            font-size : 40px; 
+        }.project-wrapper p{
+             font-size : 10px;
+        }.movie-title, .movie-header{
             text-align : center;
-        }
-
-        .features-list{
+            border: 1px: solid;
+        }.features-list{
             width: 100%;
-        }
-
-        .carousel{
+        }.carousel{
             height : 50vh;
-        }
-
-       .carousel img{
+        }.carousel img{
            padding-top : 35px;
            width : 200px;
            height : 150px;
-       }
-
-       .quotes{
+       }.quotes{
         padding-top : 20px;
         font-size: 14px;
-       }
-
-       .card{
+       }.card{
           margin-top: 50px;
-       }
-
-       .fa{
+       }.fa{
            font-size: 15px;
        }
     }
@@ -198,26 +182,30 @@
             <section class="project p-4">
                 <div class="project-wrapper m-auto d-flex flex-column justify-content-center">                
                     <h1>Reality Tv</h1>
-                    <p class="mr-auto ml-auto">cache of unique formats & talent</p>                  
+                    <p class="mr-auto ml-auto">on location to a cache of unique formats & talent</p>                  
                 </div>
             </section>
 
             <section class="row my-4 p-2 movie-dets bg-light">
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="d-flex justify-content-center">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-12 col-sm-12 p-5">
-                            <h1 class="movie-header pt-2 text-center">
-                                Title
-                            </h1>
-                            
-                            <p class="movie-title mt-3 text-center">
-                                <?= isset($movie_data['movie_title']) ? $movie_data['movie_title'] : 'Epic - Battles of Foreign Lands (Proposed filming in the US)' ?>                                    
-                            </p>
-                        
+                    <div class="row" style="width: 100%;">
+                        <div class="col-lg-12 col-md-12 col-sm-12 mt-5">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-12">
+                                    <h1 class="movie-header pt-2 text-center">
+                                        Title
+                                    </h1>
+                                </div>
+                                <div class="col-lg-8 col-md-12">
+                                    <h1 class="movie-title py-4">
+                                        <?= isset($movie_data['movie_title']) ? $movie_data['movie_title'] : 'Epic - Battles of Foreign Lands (Proposed filming in the US)' ?>                                    
+                                    </h1>
+                                </div>
+                            </div>
                         </div> 
 
-                        <div class="col-lg-9 col-md-12 col-sm-12 mb-5">
+                        <div class="col-lg-12 col-md-12 col-sm-12 mb-5">
                             <div class="logline p-2">
                                 <h3 class="logline-header">
                                     Logline
@@ -316,7 +304,9 @@
                         </div>
 
                         <div class="col-lg-5 col-md-12 col-sm-6">
-                            <img src="img/uploads/<?= $movie_data['movie_pic'] ?>" width="80%">
+                            <div class="movie_img text-center my-2">
+                              <img src="img/uploads/<?= $movie_data['movie_pic'] ?>" width="50%">
+                            </div>
                         </div>
                                                 
                     </div>
@@ -337,7 +327,7 @@
                          $synopsis = $movie_data['synopsis'];
 
                          $trimmed = str_replace(array('<p>&nbsp;</p>'), array(''), $synopsis);
-
+                         $trimmed = str_replace(array('&nbsp;'), array(''), $synopsis);
                          echo $trimmed;
                         
                         ?>

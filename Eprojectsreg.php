@@ -192,8 +192,9 @@
          require "scripts/footer_two.php";
 
     }elseif(is_loggedIn() && role() != '3'){
+        $location = $_SERVER['HTTP_REFERER'];
         set_message("error", "Not Authorized");
-        header("Location: index.php");
+        header("Location: $location");
     }else{
         header("Location: login.php");
     }

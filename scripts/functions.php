@@ -207,8 +207,16 @@ function register_contestant($firstname, $surname, $email, $password, $role_id, 
     $email = strtolower($email);
     $unique_id = $role_id.strtotime("now");
 
-    $pic = handle_image($profile_pic);
-    $res = handle_file($resume);
+    // $pic = handle_image($profile_pic);
+    // $res = handle_file($resume);
+
+    if($profile_pic['name'] != ""){
+        $pic = handle_image($profile_pic);
+    }
+
+    if($resume['name'] != ""){
+        $res = handle_file($resume);
+    }
 
     if($username == null){
         $username = $email;
@@ -255,7 +263,10 @@ function register_executive($firstname, $surname, $email, $password, $role_id, $
     $email = strtolower($email);
     $unique_id = $role_id.strtotime("now");
 
-    $pic = handle_image($profile_pic);
+    
+    if($profile_pic['name'] != ""){
+        $pic = handle_image($profile_pic);
+    }
 
     //echo $pic;
 
@@ -306,7 +317,24 @@ function log_in_user($email, $password){
         user_session($user_details);
         $date = date("Y/m/d h:i:s");
         $updateUser = mysqli_query($link, "update realtv_users set last_logged_in = '$date', online = '1' where id = '$userid'");
-        header('Location: index.php');
+
+        $role = $user_details['role_id'];
+
+        if($role == 3){
+            $location = "Eprojectsreg.php";
+        }
+
+        if($role == 1){
+            $location = "contestantsreg.php";
+        }
+
+        if($role == 2){
+            $location = "writersPage.php";
+        }
+
+        $_SESSION['index'] = $location;
+       
+        header("Location: $location");
 
         set_message("success", "Login Success"); 
     }else {

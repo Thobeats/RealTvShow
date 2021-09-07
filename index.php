@@ -2,6 +2,7 @@
 ob_start();
 $navBar = true;
 require "scripts/functions.php";
+
 require "scripts/header_two.php"; 
 
 ?>

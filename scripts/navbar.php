@@ -43,7 +43,7 @@
     <div class="col-lg-4 col-md-12">
         <ul class="navbar-nav page-nav">   
         <li class="nav-item active">
-          <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="<?= $_SESSION['index'] ?? 'index.php' ?>">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="aboutus.php">About Us</a>
