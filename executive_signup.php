@@ -1,4 +1,5 @@
 <?php 
+$logo = true;
 require_once "scripts/functions.php";
 require "scripts/header_two.php";
 

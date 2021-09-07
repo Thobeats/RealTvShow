@@ -40,7 +40,11 @@
                         <li class="r_list list-title">About</li>
                         <li class="r_list"><a href="reality.php">Reality Tv</a></li>
                         <li class="r_list"><a href="faq.php">Faq</a></li>
+                        <?php if(is_loggedIn) { ?>
+                            <li class="r_list"><a href="logout.php">Logout</a></li>  
+                        <?php }else{?>
                         <li class="r_list"><a href="login.php">Login/Signup</a></li>  
+                        <?php } ?>
                     </ul>
                 </div>
             </div>

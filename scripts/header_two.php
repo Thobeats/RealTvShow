@@ -141,7 +141,7 @@
             <div class="row" style="width: 100%;">
                 <div class="col-lg-12 col-md-12 col-sm-12" >
                     <div id="logo" class="d-flex justify-content-center">
-                        <a href="index.php"><img src="img/logo.png" alt="logo" class="logo"></a>
+                        <a href="<?= $_SESSION['index'] ?? 'index.php' ?>"><img src="img/logo.png" alt="logo" class="logo"></a>
                     </div>
                 </div>
             </div>
