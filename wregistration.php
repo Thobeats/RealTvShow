@@ -1,5 +1,5 @@
 <?php 
-$navBar = true; $logo=true;
+$navBar = true; $logo=true; $writerReg = true;
 require "scripts/functions.php";
 require "scripts/header_two.php"; 
 

@@ -40,7 +40,7 @@
                         <li class="r_list list-title">About</li>
                         <li class="r_list"><a href="reality.php">Reality Tv</a></li>
                         <li class="r_list"><a href="faq.php">Faq</a></li>
-                        <?php if(is_loggedIn) { ?>
+                        <?php if(is_loggedIn()) { ?>
                             <li class="r_list"><a href="logout.php">Logout</a></li>  
                         <?php }else{?>
                         <li class="r_list"><a href="login.php">Login/Signup</a></li>  
@@ -74,7 +74,6 @@
 
 
  </div>
-
 
  <?php if(isset($paypal)): ?>
  <script src="https://www.paypal.com/sdk/js?client-id=AfgYATIfVWBGwQVce9ggpT8F3cpdMckdMmaf525u6IvyLjD1oL8RTiTqHVZrUWMvn7Un6r2q_qDehBJY&currency=USD"></script>
@@ -116,7 +115,7 @@ paypal.Buttons({
    let d = new Date();
    date.innerHTML = d.getFullYear();
    
-   CKEDITOR.replaceAll('text-editor');
+  let editor = CKEDITOR.replaceAll('text-editor');
 
 </script>
 
@@ -128,7 +127,16 @@ paypal.Buttons({
 </script>
 
 <script>
-  
+
+let formControl = document.querySelectorAll(".form-control");
+
+formControl.forEach((formC)=>{
+    formC.addEventListener("focus", function(){
+        this.classList.add("focus");
+    })
+});
+
+<?php if(isset($writerReg)): ?>
     let nextBtn = document.querySelector(".next");
     let writerForm = document.querySelector(".writer-form");
     let movieForm = document.querySelector(".movie-form");
@@ -163,6 +171,8 @@ paypal.Buttons({
     });
 
     $('form').disableAutoFill();
+
+<?php endif; ?>
 </script>
 
 

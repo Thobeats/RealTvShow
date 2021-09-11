@@ -386,9 +386,7 @@ function handle_image($image){
     if(!is_null($image)){
       
         $uploads_dir = 'img/uploads/';
-
         $extensions = ['jpg', 'png',"jpeg"];
-
         $name = $image['name'];
         $size = $image['size']; 
         $ext = end(explode(".", $name));
@@ -557,26 +555,17 @@ function handle_video($video){
 ///// MEDIA FUNCTIONS END /////////////////
 
 
-function save_movie($movie_title, $movie_plot, $synopsis, $genre, $movie_pic, $movie_pics = NULL){
+function save_movie($movie_title, $movie_plot, $synopsis, $genre, $movie_pic, $movie_pics = NULL, $reality, $acquisition, $unique_id = null){
     $link = connect();
 
     $created_by = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : "00000000";
+    if(is_null($unique_id)) {
+        $unique_id = "MOV" . strtotime('now');
+    }
 
-    $insert_pic = handle_image($movie_pic);
-
-    if( mysqli_query($link, "INSERT INTO `realtv_movies`( `created_by`, `movie_pic`, `movie_title`, `movie_plot`, `status`, `synopsis`, `genre`) 
-                            VALUES ('$created_by','$insert_pic','$movie_title','$movie_plot','1')")){
-               
-
-        //GET Insert ID
-        $movie_insert_id = mysqli_insert_id($link);
-
-        if(!is_null($movie_pics)){
-        
-             handle_multi_images($movie_pics, $movie_insert_id);          
-          
-        }
-
+    if( mysqli_query($link, "INSERT INTO `realtv_movies`( `created_by`, `movie_pic`,`other_img`, `movie_title`, `logline`, `status`, `synopsis`, `genre`, `unique_id`) 
+                            VALUES ('$created_by','$movie_pic','$movie_pics','$movie_title','$movie_plot','1', '$synopsis', '$genre', '$unique_id')")){
+      
         return 1;
     }else{
         return 0;
@@ -585,18 +574,19 @@ function save_movie($movie_title, $movie_plot, $synopsis, $genre, $movie_pic, $m
 
 }
 
-function save_drafts($writer_id = null, $movie_title, $logline, $synopsis, $genre, $movie_pics = NULL){
+function save_drafts($writer_id = null, $movie_title, $logline, $synopsis, $genre, $movie_pics = NULL, $reality = null, $acquisition = null, $copyright = null){
     $link = connect();
 
     if ($writer_id == null) {
-        $writer_id = $_SESSION['user_id'];
+        $writer_id = $_SESSION['unique_id'];
     }
 
     $other_images = handle_multi_images($movie_pics);
+    $unique_id = "MOV".strtotime("now");
 
 
-    if( mysqli_query($link, "INSERT INTO `realtv_drafts`(`created_by`,`movie_title`,`logline`, `genre`, `synopsis`, `other_pics`) 
-                            VALUES ('$writer_id','$movie_title','$logline','$genre','$synopsis', '$other_images')")){
+    if( mysqli_query($link, "INSERT INTO `realtv_drafts`(`created_by`,`movie_title`,`logline`, `genre`, `synopsis`, `other_pics`, `unique_id`, `reality`, `acquisition`, `copyright`) 
+                            VALUES ('$writer_id','$movie_title','$logline','$genre','$synopsis', '$other_images', '$unique_id', '$reality', '$acquisition', '$copyright')")){
         
         return 1;
     }else{

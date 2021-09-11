@@ -37,13 +37,13 @@ if(isset($_GET['id'])){
 
 .cover-wrapper h1{
     font-weight : 600;
-    letter-spacing : 1.75rem;
+    letter-spacing : 3px;
     text-transform : uppercase;
 }
 
 .cover-wrapper p{
     font-weight : 300;
-    letter-spacing : 1rem;
+    letter-spacing : 3px;;
     text-transform : uppercase;
     width : 100%;
 }
@@ -64,7 +64,6 @@ if(isset($_GET['id'])){
     font-family: 'Zilla Slab', serif;    
     font-size : 60px;
     font-weight : 800;
-    width : 250px;
     text-align : left;
     color : #041e3c;
     letter-spacing : 2px;
@@ -74,10 +73,12 @@ if(isset($_GET['id'])){
 .movie-title{
     padding : 2px;
     font-family: 'Zilla Slab', serif;    
-    font-size : 20px;
-    font-weight : 300;
+    font-size : 40px;
+    font-weight : 700;
     color : #041e3c;
+    text-transform : uppercase;
     letter-spacing : 2px;
+    text-align : left;
 }
 
 .logline{
@@ -109,7 +110,7 @@ if(isset($_GET['id'])){
 
 .features-list{
     margin : 2px;
-    width : 120%;
+    width : 100%;
 }
 
 .features-title{
@@ -154,24 +155,27 @@ if(isset($_GET['id'])){
     letter-spacing : 2px;
 }
 
-    @media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 768px) {
+
+        *{
+            border: 1px solid;
+        }
         .cover-image{
             height: 50vh;
             width : 100%;  
             background-position : top right;  
-        }
-
-        .cover-wrapper h1{ 
+        }.cover-wrapper h1{ 
             font-size : 40px;           
             width : 100%;
-        }
-
-        .cover-wrapper p{
+        }.cover-wrapper p{
             width : 100%;
         }
-
-        
-
+        .movie-title, .movie-header{
+            text-align : center;
+            border: 1px: solid;
+        }.features{
+            text-align : center;
+        }
     }
 
     @media only screen and (max-width: 425px) {
@@ -236,39 +240,43 @@ if(isset($_GET['id'])){
         <section class="row my-4 p-2 movie-dets">
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="d-flex justify-content-center">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-12 col-sm-12 p-5">
-                            <h1 class="movie-header pt-2">
-                                Title
-                            </h1>
-                            
-                            <p class="movie-title mt-3">
-                                <?= isset($movie_data['movie_title']) ? $movie_data['movie_title'] : 'Epic - Battles of Foreign Lands (Proposed filming in the US)' ?>                                    
-                            </p>
-                        
+                    <div class="row" style="width: 100%;">
+                        <div class="col-lg-12 col-md-12 col-sm-12 mt-5">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-12">
+                                    <h1 class="movie-header pt-2 text-center">
+                                        Title
+                                    </h1>
+                                </div>
+                                <div class="col-lg-8 col-md-12">
+                                    <h1 class="movie-title py-4">
+                                        <?= isset($movie_data['movie_title']) ? $movie_data['movie_title'] : 'Epic - Battles of Foreign Lands (Proposed filming in the US)' ?>                                    
+                                    </h1>
+                                </div>
+                            </div>
                         </div> 
 
-                        <div class="col-lg-9 col-md-12 col-sm-12 mb-5">
+                        <div class="col-lg-12 col-md-12 col-sm-12 mb-5">
                             <div class="logline p-2">
                                 <h3 class="logline-header">
                                     Logline
                                     <hr>
                                 </h3>
 
-                                <p class="logline-para">
+                                <div class="logline-para">
 
 
-                                <?= isset($movie_data['logline']) ? $movie_data['logline'] : 'A troop of 30 Roman Soldiers are led to battle against 30 Celti Gauls in this historically
-                                                                                                significant encounter that occured, circa 525 BC. Among the destruction and burning ruins of a
-                                                                                                Roman settlement, the Celtics are observed boasting until they see a troop of Roman Soldiers
-                                                                                                charging at them. Combat is certain snd an Epic Battle of revenge ensues. A man-to-man clash of
-                                                                                                soldiers wielding gladius type weaponry soon intensifies as antiquated pistols are drawn. In the end
-                                                                                                either the Roman Soldiers or Celtic Gauls, will be declared victorious, and advance to battle again.
-                                                                                                <b>Note:</b> Proprietary "BattleSafeWeaponry" is specially designed to insure non-injury conflicts)
-                                                                                                ' 
-                                ?>
+                                    <?= isset($movie_data['logline']) ? $movie_data['logline'] : 'A troop of 30 Roman Soldiers are led to battle against 30 Celti Gauls in this historically
+                                                                                                    significant encounter that occured, circa 525 BC. Among the destruction and burning ruins of a
+                                                                                                    Roman settlement, the Celtics are observed boasting until they see a troop of Roman Soldiers
+                                                                                                    charging at them. Combat is certain snd an Epic Battle of revenge ensues. A man-to-man clash of
+                                                                                                    soldiers wielding gladius type weaponry soon intensifies as antiquated pistols are drawn. In the end
+                                                                                                    either the Roman Soldiers or Celtic Gauls, will be declared victorious, and advance to battle again.
+                                                                                                    <b>Note:</b> Proprietary "BattleSafeWeaponry" is specially designed to insure non-injury conflicts)
+                                                                                                    ' 
+                                    ?>
                                 
-                                </p>
+                                </div>
 
                                 
 
@@ -387,7 +395,9 @@ if(isset($_GET['id'])){
                         </div>
 
                         <div class="col-lg-5 col-md-12 col-sm-6">
-                            <img src="img/uploads/<?= $movie_data['movie_pic'] ?>" width="80%">
+                            <div class="movie_img text-center my-2">
+                              <img src="img/uploads/<?= $movie_data['movie_pic'] ?>" width="50%">
+                            </div>
                         </div>
                                                 
                     </div>

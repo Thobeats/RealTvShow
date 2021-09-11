@@ -65,6 +65,8 @@ a,a:hover{
 .form-control{
     font-weight : 300 !important;
     letter-spacing: 1px;
+    background-color:  inherit;
+    border: 1px solid;
 }
 
 .btn-legit{
@@ -135,6 +137,11 @@ a,a:hover{
     background-color : #000;
     text-transform: uppercase;
     padding: 20px 0px;
+}
+
+.focus{
+    outline: none !important;
+    background-color: inherit !important;
 }
 
 .landing-header{
