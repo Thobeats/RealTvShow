@@ -18,6 +18,15 @@ if(isset($_GET['id'])){
     $movie = get_movie($link, $id);
 }
 
+
+if(isset($_GET['writer'])){
+    $mid = $_GET['item'];
+    $price = $_GET['price'];
+    $pac = $_GET['pac'];
+    $uni = $_GET['writer'];
+    $mov_id = mysqli_fetch_assoc(mysqli_query($link, "select unique_id from realtv_drafts where id = '$mid'"))['unique_id'];
+
+}
 ?>
 
 <style>

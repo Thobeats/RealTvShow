@@ -89,7 +89,7 @@ paypal.Buttons({
      onApprove: function(data, actions){
          return actions.order.capture().then(function (){
            
-           window.location = "payments/GetOrder.php?orderID=" + data.orderID;
+           window.location = "payments/GetOrder.php?orderID=" + data.orderID + "&userid=" + <?= $uni ?> + "&mov_id=" <?= $mov_id ?> + "&pac=" + <?= $pac ?>;
          });
      },
      onCancel: function(){

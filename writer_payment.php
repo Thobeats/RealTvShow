@@ -7,7 +7,10 @@ require "scripts/header_two.php";
 
 if(isset($_GET['mid'])){
     $mid = $_GET['mid'];
+    $uni = unique_id();
+
 }
+
 //var_dump($_SESSION);
 ?>
 
@@ -43,7 +46,7 @@ if(isset($_GET['mid'])){
     }
 
     #enhanced:hover{
-        background-image: linear-gradient(to bottom, rgba(36, 36, 36, 0.692),rgba(19, 19, 19, 0.692)),url(img/write.jpg);
+        background-image: linear-gradient(to bottom, rgba(36, 36, 36, 0.692),rgba(19, 19, 19, 0.692)),url(img/studio3.jpg);
         color : #ccc;
     }
 
@@ -65,7 +68,7 @@ if(isset($_GET['mid'])){
 <section class="m-5 p-3">
     <div class="row">
         <div class="col-lg-6 col-md-12 col-sm-12">
-            <a class="m-a" href="payment.php?writer=1&pac=st&item=<?=$mid?>&price=95">
+            <a class="m-a" href="payment.php?writer=<?=$uni ?>&pac=standard&item=<?=$mid?>&price=95">
                 <div class="card">
                     <div class="card-body pay_card rounded" id="standard">
                         <h3 class="text-center">Standard Pitch Submission</h3>
@@ -76,7 +79,7 @@ if(isset($_GET['mid'])){
             </a>
         </div>
         <div class="col-lg-6 col-md-12 col-sm-12 c">
-            <a class="m-a" href="payment.php?writer=1&pac=en&item=<?=$mid?>&price=95">
+            <a class="m-a" href="payment.php?writer=<?=$uni ?>&pac=enhanced&item=<?=$mid?>&price=250">
                 <div class="card">
                     <div class="card-body pay_card" id="enhanced">
                         <h3 class="text-center">Display Listing and Image Enhanced Pitch</h3>

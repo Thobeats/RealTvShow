@@ -2,7 +2,7 @@
 
 $name = $_GET['pic'];
 
-$path = "/Applications/XAMPP/xamppfiles/htdocs/RealTvShow/img/uploads/$name";
+$path = "img/uploads/$name";
 if(unlink($path)){
     echo "File Deleted";
 }else{

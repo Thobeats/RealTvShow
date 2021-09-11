@@ -15,6 +15,9 @@ require('../PaypalClient.php');
 
 if(isset($_GET['orderID'])){
   $orderid = $_GET['orderID'];
+  $mov_id = $_GET['mov_id'];
+  $pac = $_GET['pac'];
+  $user_id = $_GET['userid'];
 }
 
 
@@ -28,20 +31,58 @@ class GetOrder
 
 
    public function send_confirmation_mail($toEmail, $subject, $body){
+    // $mail = new PHPMailer(true);
+    // try{
+    //     //Settings
+    //    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    //     $mail->isSMTP();
+    //     $mail->Host = 'smtp.gmail.com';
+    //     $mail->SMTPAuth = true;
+    //     $mail->Username = "tobiy23@gmail.com";
+    //     $mail->Password = "T3mil0luw4";
+    //     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    //     $mail->Port = "465";
+
+    //     //Receiver
+    //     $mail->setFrom('RealtvShow@test.com', 'Mailer');
+    //     $mail->addAddress($toEmail);
+    
+    //     //Content
+    //     $mail->isHTML(true);
+    //     $mail->Subject = $subject;
+    //     $mail->Body = $body;
+        
+    //     $mail->send();
+    //    // set_message("success", "Confirmation email sent");        
+    //     header("location: confirm.php");
+
+
+    // }
+    // catch(Exception $e){
+    //    // set_message("error" , $mail->ErrorInfo);
+    // }
+
     $mail = new PHPMailer(true);
     try{
         //Settings
-       // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+       
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
-        $mail->SMTPAuth = true;
-        $mail->Username = "tobiy23@gmail.com";
-        $mail->Password = "T3mil0luw4";
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-        $mail->Port = "465";
+        $mail->Host = 'p3plzcpnl459190.prod.phx3.secureserver.net';
+        $mail->SMTPAuth = false;
+        $mail->SMTPAutoTLS = false; 
+        $mail->Port = 25; 
+        // $mail->isSMTP();
+        // $mail->Host = 'smtp.gmail.com';
+        // $mail->SMTPAuth = true;
+        $mail->Username = "welcome@realitytv-registry.com";
+        $mail->Password = "R34l1tytvr3g1stry";
+        $mail->SMTPSecure = 'none';
+        $mail->ENCRYPTION = "none";
+        //$mail->Port = "465";
 
         //Receiver
-        $mail->setFrom('RealtvShow@test.com', 'Mailer');
+        $mail->setFrom('welcome@realitytv-registry.com', 'Connect');
         $mail->addAddress($toEmail);
     
         //Content
@@ -51,16 +92,16 @@ class GetOrder
         
         $mail->send();
        // set_message("success", "Confirmation email sent");        
-        header("location: confirm.php");
+      //  header("location: confirm.php");
 
 
     }
     catch(Exception $e){
-       // set_message("error" , $mail->ErrorInfo);
+      //  set_message("error" , $mail->ErrorInfo);
     }
    }
 
-   public static function getOrder($orderId)
+   public static function getOrder($orderId, $mov, $pac = null, $user_id)
   {
       $getOrder = new GetOrder();
     // 3. Call PayPal to get the transaction details
@@ -88,7 +129,9 @@ class GetOrder
 
     $currency_code = $response->result->purchase_units[0]->amount->currency_code;
     $gross_amount = $response->result->purchase_units[0]->amount->value;
-    $movie_id = $orderId;
+    $movie_id = $mov;
+    $package = $pac;
+    $user = $user_id;
     $date = date('l jS \of F Y');
 
 
@@ -96,11 +139,11 @@ class GetOrder
 
     require "db.php";
 
-    $insertdata = $con->prepare("INSERT INTO `realtv_reg`(`orderID`, `payerID`, `name`, `email`,
+    $insertdata = $con->prepare("INSERT INTO `realtv_reg`(`orderID`, `payerID`, `userID`,`name`, `email`,
                                `address1`, `address2`, `address3`, `postal_code`, `country_code`, `currency_code`,
-                                `gross_amount`, `intent`) 
-                                      VALUES(?,?,?,?,?,?,?,?,?,?,?,?)");
-    $insertdata->bind_param("ssssssssssss", $orderID,$payerID,$name,$email,$address,$address2,$address3,$postal_code,$country_code,$currency_code,$gross_amount,$intent);
+                                `gross_amount`, `intent`, `movie_id`, `package`) 
+                                      VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+    $insertdata->bind_param("sssssssssssssss", "$orderID","$payerID","$user","$name","$email","$address","$address2","$address3","$postal_code","$country_code","$currency_code","$gross_amount","$intent", "$movie_id", "$package");
     $insertdata->execute();
 
     if(!$insertdata){
@@ -171,6 +214,6 @@ class GetOrder
  */
 if (!count(debug_backtrace()))
 {
-  GetOrder::getOrder($orderid, true);
+  GetOrder::getOrder($orderid,$mov_id,$pac,$user_id);
 }
 ?>

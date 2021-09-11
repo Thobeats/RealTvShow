@@ -4,14 +4,14 @@
 
 
 $pic = $_FILES['file'];
-$uploads_dir = '/Applications/XAMPP/xamppfiles/htdocs/RealtvShow/img/uploads/';
+$uploads_dir = 'img/uploads/';
 $extensions = ['jpg', 'png',"jpeg"];
 $name = $pic['name'];
 $size = $pic['size']; 
 $tmp = explode(".", $name);
 $ext = end($tmp);
 
-$path = "/Applications/XAMPP/xamppfiles/htdocs/RealtvShow/img/uploads/" . $name;
+$path = "img/uploads/" . $name;
 
 if(!file_exists($path)){
     if($size > 500000){
