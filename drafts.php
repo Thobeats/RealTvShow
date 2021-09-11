@@ -86,7 +86,7 @@ $draftquery = mysqli_query($link, "select * from realtv_drafts where created_by 
                     <div class="mt-4 draft-action" style="display:flex; justify-content: center"> 
                         <button class="draft-btn btn-light mx-2 text-danger" data-id="<?= $draftItem->id ?>">Discard</button>           
                         <a href="writer_edit.php?edit=true&id=<?= $draftItem->id ?>" class="draft-btn btn-light mx-2">Edit</button>
-                        <a href="payment.php?id=<?= $draftItem->id  ?>" class="draft-btn mx-2 btn-light text-success" >Submit</a>
+                        <a href="writer_payment.php?mid=<?= $draftItem->id  ?>" class="draft-btn mx-2 btn-light text-success" >Submit</a>
                     </div> 
                 </div>
                 

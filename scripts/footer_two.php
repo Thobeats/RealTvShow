@@ -1,8 +1,4 @@
-<!-- <style>
-    *{
-        border : 1px solid;
-    }
-</style> -->
+
 <footer class="border-top p-4 text-dark">
 
 <div class="row">

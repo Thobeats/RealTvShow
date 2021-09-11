@@ -1,6 +1,6 @@
 <?php
 
-require("scripts/functions.php");
+require "scripts/functions.php";
 
 if(isset($_SESSION['preview'])){
 
@@ -9,6 +9,9 @@ $imgs = $_SESSION['imgs'];
 $imgs = explode(",", $imgs);
 
 $display_img = current($imgs);
+
+}
+
 
 require("scripts/header_two.php");
 
@@ -122,28 +125,6 @@ body{
 
 </style>
 
-<section class="sample_listings p-3">
-    <div class="row">
-        <div class="col-lg-4 col-md-4 mt-5 col-sm-6"></div>
-       <div class="col-lg-4 col-md-4 mt-5 col-sm-6">
-            <div class="card movie-card border-0 mx-auto" style="cursor: pointer; background-color: inherit">
-                <div class="card-body p-0" style="height: 70%;">
-                      <img src="img/uploads/<?= $display_img  ?>" class="movie-card-body"  alt="">
-                </div>
-                <div class=" movieTitle my-0 p-2">
-                    <p><?= $_SESSION['title'] ?></p>
-                </div>
-            </div>     
-        </div>
-    </div>
-</section>
-
-<?php   
-
-//$random = rand(1,6);
-
-
-?>
 <section class="row my-4 p-2 movie-dets bg-light">
 <div class="col-lg-12 col-md-12 col-sm-12">
     <div class="d-flex justify-content-center">
@@ -290,5 +271,4 @@ body{
 
 echo "</body>
 </html>";
-}
 ?>
