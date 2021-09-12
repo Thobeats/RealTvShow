@@ -143,7 +143,7 @@ class GetOrder
                                `address1`, `address2`, `address3`, `postal_code`, `country_code`, `currency_code`,
                                 `gross_amount`, `intent`, `movie_id`, `package`) 
                                       VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-    $insertdata->bind_param("sssssssssssssss", "$orderID","$payerID","$user","$name","$email","$address","$address2","$address3","$postal_code","$country_code","$currency_code","$gross_amount","$intent", "$movie_id", "$package");
+    $insertdata->bind_param("sssssssssssssss", $orderID,$payerID,$user,$name,$email,$address,$address2,$address3,$postal_code,$country_code,$currency_code,$gross_amount,$intent, $movie_id, $package);
     $insertdata->execute();
 
     if(!$insertdata){
@@ -197,7 +197,7 @@ class GetOrder
         </table>
         ";
         $getOrder->send_confirmation_mail($email, 'RealTV Registry Movie Registration Payment', $body);
-        header('location: ../payment-success.php');
+        header('Location:../payment-success.php');
     }
 
     $insertdata->close();

@@ -1,5 +1,5 @@
 <?php
-
+$logo = true;
 require"scripts/header_two.php"; 
 
 

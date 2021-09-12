@@ -71,10 +71,10 @@ if(isset($_GET['writer'])){
             <form action="" method="post" style="width : 400px;">
                 
                 
-                <div class="form-group text-center">
+                <!-- <div class="form-group text-center">
                     <img src="img/uploads/<?= $movie['movie_pic'] ?>" width="100%" alt="<?= $movie['movie_title'] ?>">
                     <p class=""><?= $movie['movie_title'] ?></p>
-                </div>
+                </div> -->
 
                 <div class="form-group" id="paynow">
                    
