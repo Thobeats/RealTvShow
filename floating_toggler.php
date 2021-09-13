@@ -11,7 +11,7 @@
         left : 20px;
         background-color : #004883;
         color : whitesmoke;
-        z-index: 300;
+        z-index: 900; margin : 0;
 
     }
 

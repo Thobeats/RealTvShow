@@ -2,6 +2,7 @@
 $navBar = true;$logo =true;
 require "scripts/functions.php";
 require "scripts/header_two.php"; 
+//include("floating_toggler.php");
 
 //var_dump($_SESSION);
 ?>
@@ -86,8 +87,6 @@ body{
 }
 </style>
 
-
-<?php include("floating_toggler.php"); ?>
 
 <section class="promote-you p-2 my-5 px-3">
 

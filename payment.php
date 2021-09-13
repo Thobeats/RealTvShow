@@ -12,10 +12,14 @@ if(!is_loggedIn() && role() != 1){
 }else{
 
 
-if(isset($_GET['id'])){
+if(isset($_GET['contestant'])){
     $id = $_GET['id'];
-
-    $movie = get_movie($link, $id);
+    $price = $_GET['price'];
+    $pac = null;
+    $uni = $_GET['contestant'];
+    $user_type = "contestant";
+    $mov_id = $id;
+    
 }
 
 
@@ -24,6 +28,7 @@ if(isset($_GET['writer'])){
     $price = $_GET['price'];
     $pac = $_GET['pac'];
     $uni = $_GET['writer'];
+    $user_type = "writer";
     $mov_id = mysqli_fetch_assoc(mysqli_query($link, "select unique_id from realtv_drafts where id = '$mid'"))['unique_id'];
 
 }
@@ -70,12 +75,28 @@ if(isset($_GET['writer'])){
         <div class="d-flex justify-content-center">
             <form action="" method="post" style="width : 400px;">
                 
-                
-                <!-- <div class="form-group text-center">
+                <?php  if(isset($_GET['sng'])) {  
+                        $mov_id = $id;
+
+                    $movie = get_movie($link, $id); 
+                ?>
+                <div class="form-group text-center">
                     <img src="img/uploads/<?= $movie['movie_pic'] ?>" width="100%" alt="<?= $movie['movie_title'] ?>">
                     <p class=""><?= $movie['movie_title'] ?></p>
-                </div> -->
+                </div>
+                <?php }elseif(isset($_GET['multi'])){ 
+                    $list = substr($id,0,-1);
+                    $mov_id = $list;
 
+                    $list = explode(",", $list);
+                    foreach($list as $id){
+                     $movie = get_movie($link, $id); 
+                ?>
+                     <div class="form-group text-center">
+                        <img src="img/uploads/<?= $movie['movie_pic'] ?>" width="100%" alt="<?= $movie['movie_title'] ?>">
+                        <p class=""><?= $movie['movie_title'] ?></p>
+                    </div>
+                <?php }} ?>
                 <div class="form-group" id="paynow">
                    
                 </div>

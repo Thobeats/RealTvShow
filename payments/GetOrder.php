@@ -16,6 +16,7 @@ require('../PaypalClient.php');
 if(isset($_GET['orderID'])){
   $orderid = $_GET['orderID'];
   $mov_id = $_GET['mov_id'];
+  $user_type = $_GET['user_type'];
   $pac = $_GET['pac'];
   $user_id = $_GET['userid'];
 }
@@ -65,7 +66,7 @@ class GetOrder
     $mail = new PHPMailer(true);
     try{
         //Settings
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+      //  $mail->SMTPDebug = SMTP::DEBUG_SERVER;
        
         $mail->isSMTP();
         $mail->Host = 'p3plzcpnl459190.prod.phx3.secureserver.net';
@@ -101,7 +102,7 @@ class GetOrder
     }
    }
 
-   public static function getOrder($orderId, $mov, $pac = null, $user_id)
+   public static function getOrder($orderId, $mov, $pac = null, $user_id, $user_type)
   {
       $getOrder = new GetOrder();
     // 3. Call PayPal to get the transaction details
@@ -141,9 +142,9 @@ class GetOrder
 
     $insertdata = $con->prepare("INSERT INTO `realtv_reg`(`orderID`, `payerID`, `userID`,`name`, `email`,
                                `address1`, `address2`, `address3`, `postal_code`, `country_code`, `currency_code`,
-                                `gross_amount`, `intent`, `movie_id`, `package`) 
-                                      VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-    $insertdata->bind_param("sssssssssssssss", $orderID,$payerID,$user,$name,$email,$address,$address2,$address3,$postal_code,$country_code,$currency_code,$gross_amount,$intent, $movie_id, $package);
+                                `gross_amount`, `intent`, `movie_id`, `package`, `user_type`) 
+                                      VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+    $insertdata->bind_param("ssssssssssssssss", $orderID,$payerID,$user,$name,$email,$address,$address2,$address3,$postal_code,$country_code,$currency_code,$gross_amount,$intent, $movie_id, $package, $user_type);
     $insertdata->execute();
 
     if(!$insertdata){
@@ -186,10 +187,6 @@ class GetOrder
             </tr>
 
 
-            <tr>
-                <td align='left' style='padding-top: 30px; '><b>Note: Use Order ID to Register.</b></td>
-            </tr>
-
             
         </tbody>
               
@@ -214,6 +211,6 @@ class GetOrder
  */
 if (!count(debug_backtrace()))
 {
-  GetOrder::getOrder($orderid,$mov_id,$pac,$user_id);
+  GetOrder::getOrder($orderid,$mov_id,$pac,$user_id, $user_type);
 }
 ?>
