@@ -24,6 +24,10 @@
      <button type="submit" name="submit">upload</button>
 </form>
 
+<h1 style="margin-left: 100px;">ORDER CONFIRMED</h1>
+<h3 style="margin-left: 100px;">Order Details</h3>
+
+
 
 
 

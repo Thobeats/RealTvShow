@@ -1,5 +1,5 @@
 <?php
-$link = mysqli_connect("127.0.0.1", "root", "", "realtvshow");
+require "link.php";
 
 $id = $_GET['id'];
 

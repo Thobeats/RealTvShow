@@ -4,6 +4,7 @@ $navBar = true; $logo =true;
 require "scripts/functions.php";
 require "scripts/header_two.php";
 
+$uni = unique_id();
 
 if(!is_loggedIn() || role() != 1){
     header("Location: signup.php");
@@ -157,9 +158,6 @@ if(isset($_GET['id'])){
 
     @media only screen and (max-width: 768px) {
 
-        *{
-            border: 1px solid;
-        }
         .cover-image{
             height: 50vh;
             width : 100%;  
@@ -427,7 +425,7 @@ if(isset($_GET['id'])){
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12 mt-3 text-center">
                             <h4 class="text-center zilla">Join our team today!</h4>
-                            <a href="payment.php?id=<?= $movie_data['id'] ?? '00' ?>" class="btn btn-warning mt-2">EZ $<?= $movie_data['reg_fee'] ?? "55" ?> to Register</a>
+                            <a href="payment.php?contestant=<?= $uni ?>&id=<?= $movie_data['id'] ?>&price=<?= $movie_data['reg_fee'] ?>&sng=1" class="btn btn-warning mt-2">EZ $<?= $movie_data['reg_fee'] ?? "55" ?> to Register</a>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12 mt-3 text-center">
                             <img src="img/uploads/<?= mysqli_fetch_object($pic_query)->movie_pic; ?>" width="80%">

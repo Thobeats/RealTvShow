@@ -1,8 +1,4 @@
-<!-- <style>
-    *{
-        border : 1px solid;
-    }
-</style> -->
+
 <footer class="border-top p-4 text-dark">
 
 <div class="row">
@@ -92,8 +88,7 @@ paypal.Buttons({
      },
      onApprove: function(data, actions){
          return actions.order.capture().then(function (){
-           
-           window.location = "payments/GetOrder.php?orderID=" + data.orderID;
+          window.location = "payments/GetOrder.php?orderID=" + data.orderID + "&userid=" + '<?= $uni ?>' + "&mov_id=" + '<?= $mov_id ?> '+ "&pac=" + '<?= $pac ?>'+ "&user_type=" + '<?= $user_type ?>';
          });
      },
      onCancel: function(){

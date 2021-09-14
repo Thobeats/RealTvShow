@@ -1,5 +1,7 @@
 <?php
+session_start();
 
+$logo = true;
 require"scripts/header_two.php"; 
 
 

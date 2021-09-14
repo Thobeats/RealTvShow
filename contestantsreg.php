@@ -31,6 +31,10 @@ if(!is_loggedIn()){
             while($movie = mysqli_fetch_object($movie_query)):
 
                 $moviePic = $movie->movie_pic;
+                $user_id = unique_id(); $mvid = $movie->id;
+
+                $checkInCart = mysqli_query($link, "select * from realtv_cart where project_id = '$mvid' and user_id = '$user_id'");
+               
         ?>
         <div class="col-lg-4 col-md-4 mt-5 col-sm-6">
             <div class="card movie-card border-0 mx-auto" style="cursor: pointer; background-color: inherit">
@@ -38,7 +42,12 @@ if(!is_loggedIn()){
                       <img src="img/uploads/<?= $moviePic ?>" class="movie-card-body"  alt="">
                 </div>
                 <div class=" movieTitle my-0 p-2">
-                    <p><?= $movie->movie_title ?></p>
+                    <p class="pb-2"><?= $movie->movie_title ?></p>
+                    <?php  if($checkInCart->num_rows > 0){ ?>
+                        <span class="crt-<?=$mvid?>"> <span class="addcart badge-success"><i class="bi bi-check"></i>Added to Cart</span> <span class="crt">
+                    <?php }else{ ?>
+                       <span class="crt-<?=$mvid?>"> <button onclick="addToCart(event)" data-id="<?= $movie->id ?>" class="bg-warning addcart text-dark"><i class="bi bi-cart2"></i> Add to Cart</button> </span>
+                    <?php } ?> 
                     <a href="c_movie_view.php?id=<?= $movie->id ?>" class="bg-warning check text-dark">Check it out</a>
                 </div>
             </div>     
@@ -174,7 +183,31 @@ if(!is_loggedIn()){
     </div>
 </section>
 
+<script>
 
+
+    function addToCart(event){
+      let n =  event.target.dataset.id;
+      let crt = ".crt-" + n;
+      let user = '<?= unique_id() ?>';
+      let url = "addToCart.php?user_unique=" + user + "&id=" + n;
+
+      $.get(url, function(data){
+            if(data){
+                //alert(data);
+                $(".cart-no").html(data);
+                $(crt).html('<span class="addcart badge-success"><i class="bi bi-check"></i>Added to Cart</span>');
+                toastr.success('Added To Cart',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                });
+
+                
+            }
+      }, "text");
+    }
+</script>
 <?php
  require "scripts/footer_two.php";
 

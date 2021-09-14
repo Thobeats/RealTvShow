@@ -1,10 +1,8 @@
 <?php 
- $link = mysqli_connect("127.0.0.1", "root", "", "realtvshow");
+require "link.php";
 
 $id = $_GET['id'];
-
 $q = mysqli_query($link, "select other_pics from realtv_drafts where id = '$id'");
-
 $r = mysqli_fetch_assoc($q);
 
 if($r != ""){
