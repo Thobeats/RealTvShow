@@ -11,7 +11,8 @@ if(!is_loggedIn()){
 
 }elseif(role() != 1){
     set_message('error', "Not Authorized");
-    header("Location: index.php");    
+    $location = $_SESSION['index'];
+    header("Location: $location");    
 }else{
 
 ?>
@@ -63,9 +64,7 @@ if(!is_loggedIn()){
         <p class="text-center p-4 cnote">
             With great enthusiasm, Reality TV
             Registry enters the initial stages in creating sizzle reels and qualifying contestants and
-            professional talent in these original and exciting programs. Additional programs are in the
-            development stages and will be available for viewing soon. All program material is protected
-            by the US Patent and Trademark Office under Title 17.        
+            professional talent in these original and exciting programs.        
         </p>
     </div>
 </section>

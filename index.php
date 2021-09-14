@@ -31,7 +31,7 @@ require "scripts/header_two.php";
             <div class="card new">
                 <img src="img/act4.jpg" alt="" >
                 <div class="card-body bg-dark text-center" >
-                    <a href="contestantsreg.php" class="text-light card-link">Contestant and Talent Registration</a>
+                    <a href="contestant_signup.php" class="text-light card-link">Contestant and Talent Registration</a>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@ require "scripts/header_two.php";
         <div class="card new">
                 <img src="img/shoot00.jpg" alt="" >
                 <div class="card-body bg-dark text-center">
-                    <a href="Eprojectsreg.php" class="text-light card-link">industry tv excutive registration</a>
+                    <a href="executive_signup.php" class="text-light card-link">industry tv excutive registration</a>
                 </div>
             </div>
         </div>
@@ -69,10 +69,10 @@ require "scripts/header_two.php";
         ?>
         <div class="col-lg-4 col-md-4 mt-5 col-sm-6">
             <div class="card movie-card border-0 mx-auto" style="cursor: pointer; background-color: inherit">
-                <div class="card-body p-0" style="height: 70%;">
+                <div class="card-body p-0" style="height: 100%;">
                       <img src="img/uploads/<?= $moviePic ?>" class="movie-card-body"  alt="">
                 </div>
-                <div class=" movieTitle my-0 p-2">
+                <div class="movieTitle my-0 p-2">
                     <p><?= $movie->movie_title ?></p>
                     <a href="signup.php" class="bg-warning check text-dark">Check it out</a>
                 </div>
@@ -83,7 +83,7 @@ require "scripts/header_two.php";
     </div>
     
     <div class="row d-flex justify-content-center my-5" style="width: 100vw;">
-        <a href="projects.php" class="btn discover">discover all realities</a>
+        <a href="signup.php" class="btn discover">discover all realities</a>
     </div>
 </section>
 
