@@ -162,12 +162,11 @@ a,a:hover{
 .movieTitle{
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
-    height : 10vh;
     color : #ccc;
     padding: 20px;
     background-color: #004177;
     font-size : 18px;
-   height : 100px;
+    height : 100px;
 }
 
 .movie-card{
