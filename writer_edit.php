@@ -1,5 +1,5 @@
 <?php 
-$navBar = true; $logo = true;
+$fixed = true; $logo = true;
 require "scripts/functions.php";
 
 
@@ -347,7 +347,7 @@ body{
   </div>
 </div>
 
-<section class="p-3 m-3">
+<section class="p-3" style="margin-top: 33vh;">
     <div class="row my-3 mx-auto p-3" style="width: 80%;">
         <div class="col-12">
             <h3 class="poppins"><?= $title ?? "Create Project" ?></h3>
@@ -438,11 +438,13 @@ window.addEventListener("load", function(){
         imgArray = split;
        // console.log(data);
         img_contain.innerHTML = "";
-        for(dt of imgArray){
-        img_contain.innerHTML += `<div class="mx-2 card p-0 border-0" style="width: 120px; height: 120px; background-color:inherit;">
-                                        <img src="img/uploads/${dt}" width="100%" height="50%">                                        
-                                        <div class="card-footer text-mute text-right"><i class="bi bi-trash-fill" data-name="${dt}" data-id="<?= $movie_id ?>" onclick="deletePic(event)"></i></div>                                        
-                                </div>`;
+        if(imgArray != null){
+            for(dt of imgArray){
+            img_contain.innerHTML += `<div class="mx-2 card p-0 border-0" style="width: 120px; height: 120px; background-color:inherit;">
+                                            <img src="img/uploads/${dt}" width="100%" height="50%">                                        
+                                            <div class="card-footer text-mute text-right"><i class="bi bi-trash-fill" data-name="${dt}" data-id="<?= $movie_id ?>" onclick="deletePic(event)"></i></div>                                        
+                                    </div>`;
+            }
         }
 
         img_file.value = imgArray.toString();

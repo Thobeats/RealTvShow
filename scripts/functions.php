@@ -635,6 +635,16 @@ function get_movie($link, $id){
     return mysqli_fetch_assoc(mysqli_query($link, "select * from realtv_movies where id = '$id'"));
 }
 
+function get_table2_data($role){
+    if($role == 3){
+        return "realtv_executives";
+    }else if($role == 2){
+        return "realtv_writers";
+    }else if($role == 1){
+       return "realtv_contestants";
+    }
+}
+
 $link = connect();
 
 ?>

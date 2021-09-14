@@ -1,5 +1,5 @@
 <?php 
-$navBar =true; $logo = true;
+$fixed = true; $logo = true;
 require_once "scripts/functions.php";
 
 if(is_loggedIn && (role() == 2)){
@@ -13,6 +13,9 @@ $draftquery = mysqli_query($link, "select * from realtv_drafts where created_by 
 
 
 <style>
+    section{
+        margin-top: 33vh;
+    }
    .draft-text{
        font-size : 20px;
        text-transform : uppercase;
@@ -41,6 +44,9 @@ $draftquery = mysqli_query($link, "select * from realtv_drafts where created_by 
 
 
    @media only screen and (max-width: 425px) {
+        section{
+            margin-top: 25vh;
+        }
         .draft-desc{
             text-align : center;
         }
@@ -52,7 +58,7 @@ $draftquery = mysqli_query($link, "select * from realtv_drafts where created_by 
    
 </style>
 
-<section class="px-5 my-4">
+<section class="px-5 mb-5 pt-3">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
             <p class="border border-light draft-text p-2" style="background-color: #e6e6e6;"><i class="bi bi-pencil-square"></i> draft</p>

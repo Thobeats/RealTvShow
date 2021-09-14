@@ -6,32 +6,32 @@ require "scripts/header_two.php";
 
 
 
-if(!is_loggedIn() && role() != 1){
+if(!is_loggedIn()){
     set_message("info", "Signup to continue");
-    header("Location: contestant_signup.php");
+    header("Location: signup.php");
 }else{
 
 
-if(isset($_GET['contestant'])){
-    $id = $_GET['id'];
-    $price = $_GET['price'];
-    $pac = null;
-    $uni = $_GET['contestant'];
-    $user_type = "contestant";
-    $mov_id = $id;
-    
-}
+    if(isset($_GET['contestant'])){
+        $id = $_GET['id'];
+        $price = $_GET['price'];
+        $pac = null;
+        $uni = $_GET['contestant'];
+        $user_type = "contestant";
+        $mov_id = $id;
+        
+    }
 
 
-if(isset($_GET['writer'])){
-    $mid = $_GET['item'];
-    $price = $_GET['price'];
-    $pac = $_GET['pac'];
-    $uni = $_GET['writer'];
-    $user_type = "writer";
-    $mov_id = mysqli_fetch_assoc(mysqli_query($link, "select unique_id from realtv_drafts where id = '$mid'"))['unique_id'];
+    if(isset($_GET['writer'])){
+        $mid = $_GET['item'];
+        $price = $_GET['price'];
+        $pac = $_GET['pac'];
+        $uni = $_GET['writer'];
+        $user_type = "writer";
+        $mov_id = $mid;
 
-}
+    }
 ?>
 
 <style>
@@ -108,7 +108,6 @@ if(isset($_GET['writer'])){
 </div>
 <?php $paypal = true ?>
 <?php 
-
-require"scripts/footer_two.php"; 
-
-} ?>
+    require"scripts/footer_two.php"; 
+} 
+?>

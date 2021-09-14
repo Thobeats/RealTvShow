@@ -144,9 +144,9 @@
 
 </style>
     <div class="container-fluid">
-        <header class="border-bottom">
+        <header class="border-bottom <?= isset($fixed) ? 'fixed-top' : ''; ?>">
             <?php if(isset($logo)){ ?>
-            <div class="row" style="width: 100%;">
+            <div class="row" style="width: 100%; background-color: rgb(218, 214, 214);">
                 <div class="col-lg-12 col-md-12 col-sm-12" >
                     <div id="logo" class="d-flex justify-content-center">
                         <a href="<?= $_SESSION['index'] ?? 'index.php' ?>"><img src="img/logo.png" alt="logo" class="logo"></a>
@@ -159,8 +159,10 @@
                 require "scripts/navbar.php";
             }
          
-         
+            if(isset($fixed) ) { require "scripts/fixed-bar.php"; } 
          ?> 
+
+         
         
         
         </header>

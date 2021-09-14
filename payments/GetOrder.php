@@ -102,6 +102,22 @@ class GetOrder
     }
    }
 
+
+   public static function updateCartStatus($user_id, $item_id, $user_type){
+      require "db.php";
+
+      if($user_type == "contestant"){
+        $table = "realtv_cart";
+        $update_data = $con->query("UPDATE $table set status='paid' where `user_id` = '$user_id' and `id` = `$item_id`");
+      }elseif($user_type == "writer"){
+        $table = "realtv_drafts";
+        $update_data = $con->query("UPDATE $table set status='paid' where `created_by` = '$user_id' and `id` = `$item_id`");
+
+      }
+    $con->close();
+
+   }
+
    public static function getOrder($orderId, $mov, $pac = null, $user_id, $user_type)
   {
       $getOrder = new GetOrder();
