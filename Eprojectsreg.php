@@ -14,7 +14,7 @@
         
         <section class="landing-page-movie">
             <div class="landing-synopsis text-center ">
-                <h2 class="landing-header">synopsis of 12 realities</h2>
+                <h2 class="landing-header">PROPOSED REALITY FORMATS AND DOCUSERIES </h2>
             </div>
         
             <div class="row py-5">
@@ -27,10 +27,10 @@
                 ?>
                 <div class="col-lg-4 col-md-4 mt-5 col-sm-6">
                     <div class="card movie-card border-0 mx-auto" style="cursor: pointer; background-color: inherit">
-                        <div class="card-body p-0" style="height: 70%;">
+                        <div class="card-body p-0" style="height: 100%;">
                             <img src="img/uploads/<?= $moviePic ?>" class="movie-card-body"  alt="">
                         </div>
-                        <div class=" movieTitle my-0 p-2">
+                        <div class="movieTitle my-0 p-2">
                             <p><?= $movie->movie_title ?></p>
                             <a href="Eviewpage.php?id=<?= $movie->id ?>" class="bg-warning check text-dark">Check it out</a>
                         </div>

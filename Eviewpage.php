@@ -27,16 +27,15 @@ $logo = true;
     padding : 0px 15px;
     margin : 0px 15px;
 }
-
 .zilla{
     font-family: 'Zilla Slab', serif;    
 }
-
 .poppins{
     font-family: 'Poppins', sans-serif;
 }
 .title{
     text-align : right;
+    font-size : 30px;
 }
 .movie_img{
     text-align : left;
@@ -47,15 +46,44 @@ $logo = true;
 .r{
     text-align : right;
 }
+.features{
+    margin-left : 150px;
+    font-size : larger;
+    padding-left : 50px;
+}
+
+.features span{
+    font-weight : 800;
+}
 
 .synopsis_content{
     letter-spacing : 1px;
 }
 
+.res img{
+    width : 80px !important;
+    height : 80px !important;
+}.res{
+    margin-top: 10px;
+}
+
     @media only screen and (max-width: 768px) {
+        .title{
+            text-align : right;
+            font-size : 28px;
+        }
+        .res{
+            margin-top: 0px;
+            margin-left : 5px;
+            margin-right : 20px;
+            padding : 10px;
+        }
+        .features{
+            margin-left : 0px;
+            font-size : 15px;
+        }
         .movie_img{
-            text-align : center;
-            
+            text-align : center;            
         }
         .movie_img img{
             width : 70%;
@@ -65,17 +93,25 @@ $logo = true;
 
     @media only screen and (max-width: 425px) {
         .title{
+            margin-bottom : 0px;
             font-size : 20px;
             text-align : left;
         }
-        .synopsis{ font-size : 20px;}
+        .synopsis{ 
+            font-size : 20px;
+        }
         .res{
             font-size : 15px;
+            padding : 0px;
+            margin : 3px 10px !important;
+        }
+        .features{
+            margin-left : 0px;
         }
         .features p{
-            font-size : 12px;
+            font-size : 15px;
         }.r{
-            text-align : center;
+            text-align : right;
         }.movie_img{
             text-align : center;
         }
@@ -93,7 +129,7 @@ $logo = true;
                         </h3>
                     </div>
                     <div class="col-lg-10 col-md-10 col-10 p-0">
-                        <h5 class="mt-1 ml-3 res"> 
+                        <h5 class="res"> 
                             <?= isset($movie_data['movie_title']) ? $movie_data['movie_title'] : 'Epic - Battles of Foreign Lands (Proposed filming in the US)' ?>                                    
                         </h5>
                     </div>                           
@@ -123,69 +159,59 @@ $logo = true;
             </div>
 
 
-            <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
-                <div class="col-lg-12 col-md-12 col-sm-12 mt-4">                    
-                    <div class="row">
-                        <div class="col-lg-7 col-md-6 col-sm-12 p-0">
-                            <div class="row features">
-                                <p class="col-4 r">
-                                    Proposal
-                                </p>
-                                <p class="col-8">
-                                    : <?= isset($movie_data['movie_title']) ? $movie_data['movie_title'] : 'Epic - Battles on Foreign Lands [in the US]' ?>
-                                </p>
-                                <p class="col-4 r">
-                                    Copyright
-                                </p>
-                                <p class="col-8">
-                                    : <?= isset($movie_data['copyright']) ? $movie_data['copyright'] : 'US Copywright Office Title 17 - April 27, 2021' ?>
-                                </p>
-                                <p class="col-4 r">
-                                    Reality
-                                </p>
-                                <p class="col-8 ">
-                                    : <?= isset($movie_data['reality']) ? $movie_data['reality'] : 'Unscripted Format/12-episodes arc series' ?>
-                                </p>
-                                <p class="col-4 r">
-                                    Option/Acquisition
-                                </p>
-                                <p class="col-8 ">
-                                    : <?= isset($movie_data['acquisition']) ? $movie_data['acquisition'] : 'Negotiable/$300,000' ?>
-                                </p>
-                                    
-                            </div> 
-                        </div>
-
-                        <div class="col-lg-5 col-md-6 col-sm-6">
-                            <div class="movie_img">
-                            <img src="img/uploads/<?= $movie_data['movie_pic'] ?>">
-                            </div>
-                        </div>
-                                                
-                    </div>            
-                </div>
-            </div>     
-            
-            <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
-                <div class="p-2">
-                    <h3 class="synopsis">
-                        Synopsis
-                        <hr>
-                    </h3>
-
-                    <div class="res">
-                        <?php
-                        
-                         $synopsis = $movie_data['synopsis'];
-
-                         $trimmed = str_replace(array('<p>&nbsp;</p>'), array(''), $synopsis);
-                         $trimmed = str_replace(array('&nbsp;'), array(''), $synopsis);
-                         echo $trimmed;
-                        
-                        ?>
+            <div class="col-lg-12 col-md-12 col-sm-12 mt-4 feat">                    
+                <div class="row">
+                    <div class="col-lg-7 col-md-6 col-sm-12 p-0">
+                        <div class="row features">
+                            <p class="col-12">
+                              <span class="text-right mr-2">Proposal:</span>  <?= isset($movie_data['movie_title']) ? $movie_data['movie_title'] : 'Epic - Battles on Foreign Lands [in the US]' ?>
+                            </p>
+                           
+                            <p class="col-12">
+                                <span class="text-right mr-2">Copyright:</span>    <?= isset($movie_data['copyright']) ? $movie_data['copyright'] : 'US Copywright Office Title 17 - April 27, 2021' ?>
+                            </p>
+                          
+                            <p class="col-12">
+                                <span class="text-right mr-2">Reality:</span> <?= isset($movie_data['reality']) ? $movie_data['reality'] : 'Unscripted Format/12-episodes arc series' ?>
+                            </p>
+                            
+                            <p class="col-12">
+                                <span class="text-right mr-2">Optional/Acquisition:</span> <?= isset($movie_data['acquisition']) ? $movie_data['acquisition'] : 'Negotiable/$300,000' ?>
+                            </p>
+                                
+                        </div> 
                     </div>
+
+                    <div class="col-lg-5 col-md-6 col-sm-6">
+                        <div class="movie_img">
+                        <img src="img/uploads/<?= $movie_data['movie_pic'] ?>">
+                        </div>
+                    </div>
+                                            
+                </div>            
+            </div>
+            
+            <div class="col-lg-2 col-md-2 col-sm-12 mt-2 p-0"> 
+                <h3 class="title">
+                    Synopsis:
+                </h3>   
+            </div>
+
+            <div class="col-lg-10 col-md-10 col-sm-12 mt-2 p-0">   
+                <div class="res px-2 mr-2">
+                    <?php
+                    
+                        $synopsis = $movie_data['synopsis'];
+
+                        $trimmed = str_replace(array('<p>&nbsp;</p>'), array(''), $synopsis);
+                        $trimmed = str_replace(array('&nbsp;'), array(''), $synopsis);
+                        echo $trimmed;
+                    
+                    ?>
                 </div>
             </div>
+
+            
 
         </section>       
 
