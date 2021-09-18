@@ -94,7 +94,7 @@ $cartquery = mysqli_query($link, "select * from realtv_cart where user_id = '$un
                     <div class="mt-4 cart-action" style="display:flex; justify-content: center">    
                         <a href="c_movie_view.php?id=<?= $getProject->id  ?>" class="cart-btn mx-2 btn-light text-warning" >View</a>        
                         <button onclick = "removeFromCart(event)" class="cart-btn btn-light text-danger mx-2" data-id="<?= $cartItem->id ?>"> Remove</button>
-                        <a href="payment.php?contestant=<?= $uni ?>&id=<?= $getProject->id  ?>&price=<?= $getProject->reg_fee ?>&sng=1" class="cart-btn mx-2 btn-light text-success" >Pay</a>
+                        <a href="payment.php?contestant=<?= $uni ?>&cartid=<?= $cartItem->id ?>&id=<?= $getProject->id  ?>&price=<?= $getProject->reg_fee ?>&sng=1" class="cart-btn mx-2 btn-light text-success" >Pay</a>
                     </div> 
                 </div>
                 

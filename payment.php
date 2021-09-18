@@ -19,6 +19,7 @@ if(!is_loggedIn()){
         $uni = $_GET['contestant'];
         $user_type = "contestant";
         $mov_id = $id;
+        $svdID = $_GET['cartid'] ?? null;
         
     }
 
@@ -29,7 +30,8 @@ if(!is_loggedIn()){
         $pac = $_GET['pac'];
         $uni = $_GET['writer'];
         $user_type = "writer";
-        $mov_id = $mid;
+        $mov_id = $mid; 
+        $svdID = $mid;
 
     }
 ?>

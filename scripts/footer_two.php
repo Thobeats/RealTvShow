@@ -88,7 +88,7 @@ paypal.Buttons({
      },
      onApprove: function(data, actions){
          return actions.order.capture().then(function (){
-          window.location = "payments/GetOrder.php?orderID=" + data.orderID + "&userid=" + '<?= $uni ?>' + "&mov_id=" + '<?= $mov_id ?> '+ "&pac=" + '<?= $pac ?>'+ "&user_type=" + '<?= $user_type ?>';
+          window.location = "payments/GetOrder.php?orderID=" + data.orderID + "&userid=" + '<?= $uni ?>' + "&mov_id=" + '<?= $mov_id ?> '+ "&pac=" + '<?= $pac ?>'+ "&user_type=" + '<?= $user_type ?>' + "&savedID=" + '<?= $svdID ?>';
          });
      },
      onCancel: function(){
