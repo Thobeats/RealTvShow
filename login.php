@@ -108,7 +108,7 @@ button{
      <div class="row">
        <div class="col-lg-6 col-md-6 col-sm-12">
          <div class="d-flex justify-content-center my-4">
-           <button class="realbtn btn-lg text-light button" name="login" >Log In</button>
+           <button class="realbtn btn-lg text-light button btn-stretch" name="login" >Log In</button>
          </div>
        </div>
 

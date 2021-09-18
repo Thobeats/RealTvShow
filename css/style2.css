@@ -57,9 +57,11 @@ a,a:hover{
     font-size: 14px;
     letter-spacing : 2px;
     font-weight : 300;
-    width : 100%;
 }.small-btn{
     transform : scale(0.5);
+  }
+  .btn-stretch{
+      width : 100%;
   }
 
 .form-control{

@@ -8,6 +8,7 @@ $logo = true;
         $navBar = true;
     require "scripts/header_two.php";
 
+    $user_id = unique_id();
 
 
     if(isset($_GET['id'])){
@@ -58,14 +59,18 @@ $logo = true;
 
 .synopsis_content{
     letter-spacing : 1px;
-}
-
-.res img{
+}.res img{
     width : 80px !important;
     height : 80px !important;
+    margin-left : 50%;
 }.res{
     margin-top: 10px;
+}.bookmark{
+    font-size : 17px;
+    font-family : 'Montserrat', serif;
+    cursor: pointer;
 }
+
 
     @media only screen and (max-width: 768px) {
         .title{
@@ -129,7 +134,7 @@ $logo = true;
                         </h3>
                     </div>
                     <div class="col-lg-10 col-md-10 col-10 p-0">
-                        <h5 class="res"> 
+                        <h5 class="res pl-2"> 
                             <?= isset($movie_data['movie_title']) ? $movie_data['movie_title'] : 'Epic - Battles of Foreign Lands (Proposed filming in the US)' ?>                                    
                         </h5>
                     </div>                           
@@ -213,7 +218,44 @@ $logo = true;
 
             
 
-        </section>       
+        </section>   
+        
+        <div class="row my-2 text-right">
+            <div class="col-12 btnContain">
+                <?php 
+                    $check = mysqli_query($link, "select * from realtv_executive_project where movie_id = '$id' and user_id='$user_id'");
+                    if($check->num_rows == 1){
+                ?>
+                    <p class="p-4 bookmark"><i class="bi bi-bookmark-fill"></i> Bookmarked</p>
+                <?php }else{ ?>
+                    <p class="p-4 bookmark" data-id="<?= $id ?>" onclick="saveMovie(event)"> <i class="bi bi-bookmark"></i> Click to Bookmark</p>
+                <?php } ?>
+            </div>
+        </div>
+
+
+
+        <script>
+
+                function saveMovie(event){
+                    let id = event.target.dataset.id;
+                    let url = "savemovie.php?id=" + id + "&user_id=" + '<?= $user_id ?>';
+
+                    
+
+                    //alert(url);
+
+                    $.get(url, function(data){
+                        if(data == 1){
+                            document.querySelector(".btnContain").innerHTML = "";
+                            document.querySelector(".btnContain").innerHTML = "<p class='p-4 bookmark'><i class='bi bi-bookmark-fill'></i> Bookmarked</p>";
+                        }
+
+                    }, "text");
+
+                }
+
+        </script>
 
         <?php 
 

@@ -39,13 +39,13 @@ if(!is_loggedIn()){
         ?>
         <div class="col-lg-4 col-md-4 mt-5 col-sm-6">
             <div class="card movie-card border-0 mx-auto" style="cursor: pointer; background-color: inherit">
-                <div class="card-body p-0" style="height: 70%;">
+                <div class="card-body p-0" style="height: 100%;">
                       <img src="img/uploads/<?= $moviePic ?>" class="movie-card-body"  alt="">
                 </div>
                 <div class=" movieTitle my-0 p-2">
                     <p class="pb-2"><?= $movie->movie_title ?></p>
                     <?php  if($checkInCart->num_rows > 0){ ?>
-                        <span class="crt-<?=$mvid?>"> <span class="addcart badge-success"><i class="bi bi-check"></i>Added to Cart</span> <span class="crt">
+                        <span class="crt-<?=$mvid?> addcart badge-success"> <i class="bi bi-check"></i>Added to Cart</span>
                     <?php }else{ ?>
                        <span class="crt-<?=$mvid?>"> <button onclick="addToCart(event)" data-id="<?= $movie->id ?>" class="bg-warning addcart text-dark"><i class="bi bi-cart2"></i> Add to Cart</button> </span>
                     <?php } ?> 

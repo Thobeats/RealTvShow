@@ -58,7 +58,7 @@ require "scripts/header_two.php";
     
     <form action="process_contestant.php" method="POST" class="form" enctype="multipart/form-data" autocomplete="off">
         <div class="get_started my-3 p-2">
-            <h3>Get Started..</h3>
+            <p>This registration confirms your interest to participate in one or more proposed reality programs, as well as to be promoted throughout the television industry.</p>
         </div>
         <div class="form-group">
             <input type="text" placeholder="Firstname" name="firstname" class="form-control" required>
@@ -129,10 +129,10 @@ require "scripts/header_two.php";
             </div>
         </div>
         <div class="form-group">
-            <button type="submit" name="submit" class="realbtn btn-warning">Register</button>            
+            <button type="submit" name="submit" class="realbtn btn-warning btn-stretch">Register</button>            
         </div>
         <div class="form-group">
-            <button type="reset" class="realbtn btn-dark">Reset</button>            
+            <button type="reset" class="realbtn btn-dark btn-stretch">Reset</button>            
         </div>
     </form>
 </section>

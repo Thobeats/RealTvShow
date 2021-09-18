@@ -32,6 +32,8 @@ if(isset($_GET['id'])){
     margin : 1px 0px;
 }.member-benefits{
     padding : 20px 0px;
+}.res{
+    font-size : 20px;
 }
 
 .card{
@@ -51,10 +53,19 @@ if(isset($_GET['id'])){
     font-size : 35px;
     letter-spacing : 2px;
     font-weight : 800;
+}.features{
+    margin-left : 150px;
+    font-size : larger;
+    padding-left : 50px;
+}
+
+.features span{
+    font-weight : 800;
 }
 
 .seeking{
    margin : 0px 30px;
+   font-size : larger;
 }
 .title{
     text-align : right;
@@ -63,7 +74,8 @@ if(isset($_GET['id'])){
     text-align : left;
 }
 .movie_img img{
-    width : 70%;
+    margin-top : 20px;
+    width : 50%;
 }.r{
     text-align : right;
 }
@@ -145,7 +157,7 @@ if(isset($_GET['id'])){
                             </h3>
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-12 mt-2">
-                            <div class="res">
+                            <div class="res mr-3">
                             <?= isset($movie_data['logline']) ? $movie_data['logline'] : 'A troop of 30 Roman Soldiers are led to battle against 30 Celti Gauls in this historically
                                                                                             significant encounter that occured, circa 525 BC. Among the destruction and burning ruins of a
                                                                                             Roman settlement, the Celtics are observed boasting until they see a troop of Roman Soldiers
@@ -164,67 +176,47 @@ if(isset($_GET['id'])){
             </div>
 
 
-            <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
-                
-                    <div class="row">
-                        <div class="col-lg-7 col-md-6 col-sm-12 p-0">
-                           <div class="row features">
-                                <p class="col-4 r">
-                                    Proposal
-                                </p>
-                                <p class="col-8">
-                                : <?= isset($movie_data['movie_title']) ? $movie_data['movie_title'] : 'Epic - Battles on Foreign Lands [in the US]' ?>
+            <div class="col-lg-12 col-md-12 col-sm-12 mt-4 feat">                    
+                <div class="row">
+                    <div class="col-lg-7 col-md-6 col-sm-12 p-0">
+                        <div class="row features">
+                            <p class="col-12">
+                              <span class="text-right mr-2">Proposal:</span>  <?= isset($movie_data['movie_title']) ? $movie_data['movie_title'] : 'Epic - Battles on Foreign Lands [in the US]' ?>
+                            </p>
+                           
+                            <p class="col-12">
+                                <span class="text-right mr-2">Copyright:</span>    <?= isset($movie_data['copyright']) ? $movie_data['copyright'] : 'US Copywright Office Title 17 - April 27, 2021' ?>
+                            </p>
+                          
+                            <p class="col-12">
+                                <span class="text-right mr-2">Reality:</span> <?= isset($movie_data['reality']) ? $movie_data['reality'] : 'Unscripted Format/12-episodes arc series' ?>
+                            </p>
+                         
+                            <p class="col-12">
+                                <span class="text-right mr-2">Purpose:</span>  <?= isset($movie_data['purpose']) ? $movie_data['purpose'] : 'Filming pre-production sizzle reels & qualifying' ?>
+                            </p>
+                          
+                            <p class="col-12">
+                                <span class="text-right mr-2"> When / Where:</span> <?= isset($movie_data['when_and_where']) ? $movie_data['when_and_where'] : 'July 2021 - Los Angeles and Las Vegas' ?>
+                            </p>
+                            <p class="col-12">
+                                <span class="text-right mr-2">Pay Range:</span> <?= isset($movie_data['pay_range']) ? $movie_data['pay_range'] : 'Pre-production $50.00/hr.' ?>
+                            </p>
+                            
+                            <p class="col-12">
+                                <span class="text-right mr-2">Limited To:</span> <?= isset($movie_data['limited_to']) ? $movie_data['limited_to'] : '350 propective contestants' ?>
+                            </p>
+                                
+                        </div> 
+                    </div>
 
-                                </p>
-                                <p class="col-4 r">
-                                    Copyright
-                                </p>
-                                <p class="col-8">
-                                : <?= isset($movie_data['copyright']) ? $movie_data['copyright'] : 'US Copywright Office Title 17 - April 27, 2021' ?>
-
-                                </p>
-                                <p class="col-4 r">
-                                    Reality
-                                </p>
-                                <p class="col-8 ">
-                                : <?= isset($movie_data['reality']) ? $movie_data['reality'] : 'Unscripted Format/12-episodes arc series' ?>
-
-                                </p>
-                                <p class="col-4 r">
-                                    Purpose
-                                </p>
-                                <p class="col-8">
-                                : <?= isset($movie_data['purpose']) ? $movie_data['purpose'] : 'Filming pre-production sizzle reels & qualifying' ?>
-
-                                </p>
-                                <p class="col-4 r">
-                                    When / Where
-                                </p>
-                                <p class="col-8">
-                                : <?= isset($movie_data['when_and_where']) ? $movie_data['when_and_where'] : 'July 2021 - Los Angeles and Las Vegas' ?>
-                                </p>
-                                <p class="col-4 r">
-                                    Pay Range
-                                </p>
-                                <p class="col-8">
-                                : <?= isset($movie_data['pay_range']) ? $movie_data['pay_range'] : 'Pre-production $50.00/hr.' ?>
-                                </p>
-                                <p class="col-4 r">
-                                   Limited To
-                                </p>
-                                <p class="col-8">
-                                : <?= isset($movie_data['limited_to']) ? $movie_data['limited_to'] : '350 propective contestants' ?>
-                                </p>
-                           </div> 
+                    <div class="col-lg-5 col-md-6 col-sm-6">
+                        <div class="movie_img">
+                        <img src="img/uploads/<?= $movie_data['movie_pic'] ?>">
                         </div>
-
-                        <div class="col-lg-5 col-md-6 col-sm-6">
-                            <div class="movie_img">
-                              <img src="img/uploads/<?= $movie_data['movie_pic'] ?>">
-                            </div>
-                        </div>
-                                                
-                    </div>            
+                    </div>
+                                            
+                </div>            
             </div>
 
             <div class="col-12 mt-3 text-center seeking">
@@ -242,14 +234,14 @@ if(isset($_GET['id'])){
                 <div class="d-flex justify-content-center mb-4">
                     <div class="row">                           
                         <div class="col-lg-4 col-md-4 col-sm-12 mt-3 text-center">
-                            <img src="img/uploads/<?= mysqli_fetch_object($pic_query)->movie_pic; ?>" width="80%">
+                            <img src="img/uploads/<?= mysqli_fetch_object($pic_query)->movie_pic; ?>" width="100%">
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12 mt-3 text-center">
                             <h4 class="text-center zilla">Join our team today!</h4>
                             <a href="payment.php?contestant=<?= $uni ?>&id=<?= $movie_data['id'] ?>&price=<?= $movie_data['reg_fee'] ?>&sng=1" class="btn btn-warning mt-2">EZ $<?= $movie_data['reg_fee'] ?? "55" ?> to Register</a>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12 mt-3 text-center">
-                            <img src="img/uploads/<?= mysqli_fetch_object($pic_query)->movie_pic; ?>" width="80%">
+                            <img src="img/uploads/<?= mysqli_fetch_object($pic_query)->movie_pic; ?>" width="100%">
                         </div>
                     </div>
                 </div>
@@ -276,7 +268,7 @@ if(isset($_GET['id'])){
                                     <div class="card-body d-flex justify-content-center">
                                         <div class="quotes zilla text-center">
                                         
-                                            Big 93% advantage to be casted when promoted by a business 
+                                            Big 93% advantage to be cast when promoted by a business 
                                             
                                         </div>
                                             <img class="" src="img/write01.jpg" width="350px">
@@ -376,6 +368,40 @@ if(isset($_GET['id'])){
                 </div>
                 
             
+            </div>
+
+            <div class="col-12 mt-4">
+                <div class="row p-2">
+                    <h2 class="promote_you_header pl-3">Promoting You </h2>
+                </div>
+                <div class="row p-2">
+                    <div class="col-12 pl-3">
+                        <p class="writer_side_para">
+                            Diverse groups of industry professionals gather here, to explore the possibility of discovery and growth. Casting companies are able to review the credentials of individuals registered for their interest in casting assignments and prospective rolls. 
+                            Identified as television industry's marketplace for talent and creation, the Reality TV Registry platform is accessed by decision-makers of leading Production Companies and TV Networks seeking talent and original TV programming ideas and scripts. Their scope of interest embraces all genres of Reality TV programming. 
+                        </p>
+
+                        <p class="writer_side_para">
+                            From the RTVR platform we promote your individual talents to producers, talent scouts, and network executives for all major networks and cable networks. Individuals from these companies have active casting assignments for a diversity of rolls to fill. The Reality TV Registry platform is just one of the many mediums implemented in our strategic approach to promotional campaigns. Social Media is one our mediums to fill casting assignments and rolls. 
+                            Yes, it is true that at times, the likelihood of one’s success may be hinged on who you know. This reality cannot be truer, in the entertainment industry. With this in mind, your potential success is greatly leveraged when we campaign on your behalf.  
+                        </p>
+
+                        <p class="writer_side_para">
+                            Have you ever experienced someone of great talent performing in an obscure or tiny venue and thought to yourself; why aren’t they performing in Vegas or in a pack filled arena. Or maybe on TV. Most often, the reason is simply that their talent wasn’t adequately promoted. 
+                            Assuming one has great skill, success generally stems from PROMOTION. 
+                        </p>
+
+                        <p class="writer_side_para">
+                            Performers, whether it be actors, musicians, dancers, special acts or routines are rarely schooled in effective marketing and promotional techniques. Consequently, some of the greatest talent is never cast or seen in acting rolls. 
+                            There are tens-of-thousands of individuals who are yet to break through and achieve recognition and success in which they are so deserving. 
+                        </p>
+
+                        <p class="writer_side_para">
+                            Meeting your expectations: When you register to be a member of the RealityTVRegistry, you expect that our firm will deliver as promised. As the founder of this company, it is my personal belief that our success will be directly measured by your success. There rests, our duty to perform.
+                            The Reality TV Registry site has been developed as a promotional platform that lists promising reality shows by promising writers. As a member, talent or contestant, you have first priority and opportunity to be participate in their productions.  Producers and Networks seek fresh ideas in programming and the talent associated in support of a successful show. 
+                        </p>
+                    </div>
+                </div>
             </div>
 
         </section>    

@@ -114,10 +114,10 @@ require "scripts/header_two.php";
             <input type="text" name="agree" class="form-control" required>
         </div>
         <div class="form-group">
-            <button type="submit" name="executive_submit" class="realbtn btn-warning">Register</button>            
+            <button type="submit" name="executive_submit" class="realbtn btn-warning btn-stretch">Register</button>            
         </div>
         <div class="form-group">
-            <button type="reset" class="realbtn btn-dark">Reset</button>            
+            <button type="reset" class="realbtn btn-dark btn-stretch">Reset</button>            
         </div>
     </form>
 </section>
