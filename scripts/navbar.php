@@ -68,7 +68,7 @@
       <div class="col-lg-4 col-md-12">
         <ul class="navbar-nav signup-nav">
           <li class="nav-item active">
-            <a href="profile.php" class="nav-link"><i class="bi bi-person"></i> <?= $_SESSION['firstname'] ?></a>
+            <a class="nav-link"><i class="bi bi-person"></i> <?= $_SESSION['firstname'] ?></a>
           </li>
 
           <?php if(role() == 1): 
