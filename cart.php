@@ -26,7 +26,7 @@ $cartquery = mysqli_query($link, "select * from realtv_cart where user_id = '$un
    }
 
    .cart-btn{
-       padding : 10px 30px;
+       padding : 5px 10px;
        border : none;
        color : #004883;
    }
@@ -91,7 +91,8 @@ $cartquery = mysqli_query($link, "select * from realtv_cart where user_id = '$un
                 </div>
 
                 <div class="col-lg-4 col-md-12 col-sm-12">
-                    <div class="mt-4 cart-action" style="display:flex; justify-content: center">            
+                    <div class="mt-4 cart-action" style="display:flex; justify-content: center">    
+                        <a href="c_movie_view.php?id=<?= $getProject->id  ?>" class="cart-btn mx-2 btn-light text-warning" >View</a>        
                         <button onclick = "removeFromCart(event)" class="cart-btn btn-light text-danger mx-2" data-id="<?= $cartItem->id ?>"> Remove</button>
                         <a href="payment.php?contestant=<?= $uni ?>&id=<?= $getProject->id  ?>&price=<?= $getProject->reg_fee ?>&sng=1" class="cart-btn mx-2 btn-light text-success" >Pay</a>
                     </div> 
@@ -106,7 +107,7 @@ $cartquery = mysqli_query($link, "select * from realtv_cart where user_id = '$un
             <p class="border border-light cart-text p-2" style="background-color: #e6e6e6;">Total</p>
             <div class="d-flex justify-content-start border-bottom">
                 <p class="cart-text flex-grow-1">$<?= number_format($total,2) ?> </p>
-                <p class=""><a href="payment.php?contestant=<?= $uni ?>&id=<?= $id_list ?>&price=<?= $total ?>&multi=1" class="cart-btn mx-2 btn-warning" >Pay</a></p>
+                <p class=""><a href="payment.php?contestant=<?= $uni ?>&id=<?= $id_list ?>&price=<?= $total ?>&multi=1" class="cart-btn mx-2 px-3 py-2 btn-warning" >Pay</a></p>
             </div>
 
 

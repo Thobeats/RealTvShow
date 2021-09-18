@@ -9,6 +9,7 @@ require "scripts/header_two.php";
 
 $user_id = user_id();
 $role = role(); 
+$unique_id = unique_id();
 
 function get_role(){
     $l = connect();
@@ -21,6 +22,11 @@ function get_role(){
 $tabl2 = get_table2_data($role);
 
 $user_details = mysqli_fetch_object(mysqli_query($link, "select * from realtv_users a inner join $tabl2 b on a.unique_id = b.unique_id where a.id= '$user_id'"));
+
+$no_cont = mysqli_fetch_object(mysqli_query($link, "select count(*) as cnt from realtv_contestants"))->cnt;
+$no_write = mysqli_fetch_object(mysqli_query($link, "select count(*) as cnt from realtv_writers"))->cnt;
+$no_pro = mysqli_fetch_object(mysqli_query($link, "select count(*) as cnt from realtv_contestants"))->cnt;
+$no_book = mysqli_fetch_object(mysqli_query($link, "select count(*) as cnt from realtv_executive_project where user_id = '$unique_id'"))->cnt;
 
 $fullname = $user_details->fullname;
 ?>
@@ -118,6 +124,92 @@ $fullname = $user_details->fullname;
             </div>
         </div>
     </div>
+<?php if(role() == 3) { ?>
+    <div class="row preview p-3">
+        <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="card-body bg-dark text-light p-0">
+                <h1 class="h1 p-3 text-center"><?= $no_book ?></h1>
+                <p class="text-center p-3">Bookmarked Projects</p>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="card-body bg-light text-dark p-0">
+                <h1 class="h1 p-3 text-center">4</h1>
+                <p class="text-center p-3">Projects</p>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="card-body bg-warning text-light p-0">
+                <h1 class="h1 p-3 text-center"><?= $no_write ?></h1>
+                <p class="text-center p-3">Writers</p>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="card-body text-light p-0" style="background-color : #004883;">
+                <h1 class="h1 p-3 text-center"><?= $no_cont ?></h1>
+                <p class="text-center p-3">Contestants</p>
+            </div>
+        </div>
+    </div>
+<?php } ?>
+
+<?php if(role() == 1) { ?>
+    <div class="row preview p-3">
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="card-body bg-dark text-light p-0">
+                <h1 class="h1 p-3 text-center">4</h1>
+                <p class="text-center p-3">Saved Gigs</p>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="card-body bg-light text-dark p-0">
+                <h1 class="h1 p-3 text-center">4</h1>
+                <p class="text-center p-3">Registered Gigs</p>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="card-body bg-warning text-light p-0">
+                <h1 class="h1 p-3 text-center">4</h1>
+                <p class="text-center p-3">Views</p>
+            </div>
+        </div>
+        <!-- <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="card-body text-light p-0" style="background-color : #004883;">
+                <h1 class="h1 p-3 text-center">4</h1>
+                <p class="text-center p-3"></p>
+            </div>
+        </div> -->
+    </div>
+<?php } ?>
+
+<?php if(role() == 2) { ?>
+    <div class="row preview p-3">
+        <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="card-body bg-dark text-light p-0">
+                <h1 class="h1 p-3 text-center">4</h1>
+                <p class="text-center p-3">Drafts</p>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="card-body bg-light text-dark p-0">
+                <h1 class="h1 p-3 text-center">4</h1>
+                <p class="text-center p-3">Registered Projects</p>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="card-body bg-warning text-light p-0">
+                <h1 class="h1 p-3 text-center">4</h1>
+                <p class="text-center p-3">Negotiations</p>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="card-body text-light p-0" style="background-color : #004883;">
+                <h1 class="h1 p-3 text-center">4</h1>
+                <p class="text-center p-3">Views</p>
+            </div>
+        </div>
+    </div>
+<?php } ?>
 
     <div class="row p-3 bio-container">
         <div class="col-12">
