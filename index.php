@@ -21,12 +21,12 @@ require "scripts/header_two.php";
 </section>
 
 <section class="landing-page-roles d-flex justify-content-center flex-column pb-3">
-    <div class="row mt-10 " style="width: 100vw;">
+    <div class="row mt-10 mx-auto" style="width: 100vw;">
         <div class="col-12">
             <h3 class="text-center p-3 role-intro">dedicated registrations for contestants/talent, writers & industry TV executives</h3>
         </div>
     </div>
-    <div class="row px-5" style="width: 100vw;">
+    <div class="row px-5 mx-auto" style="width: 100vw;">
         <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="card new">
                 <img src="img/act4.jpg" alt="" >
@@ -59,7 +59,7 @@ require "scripts/header_two.php";
         <h2 class="landing-header">reality tv proposals</h2>
     </div>
 
-    <div class="row" style="width: 100vw;">
+    <div class="row mx-auto" style="width: 100vw;">
         <?php 
             $movie_query = mysqli_query($link, "Select * from realtv_movies limit 9");
 
@@ -67,13 +67,15 @@ require "scripts/header_two.php";
 
                 $moviePic = $movie->movie_pic;
         ?>
-        <div class="col-lg-4 col-md-4 mt-5 col-sm-6">
+        <div class="col-lg-4 col-md-4 mt-5 col-sm-12">
             <div class="card movie-card border-0 mx-auto" style="cursor: pointer; background-color: inherit">
                 <div class="card-body p-0" style="height: 100%;">
                       <img src="img/uploads/<?= $moviePic ?>" class="movie-card-body"  alt="">
                 </div>
-                <div class="movieTitle my-0 p-2">
+                <div class="movieTitle">
                     <p><?= $movie->movie_title ?></p>
+                </div>
+                <div class="action-btns">                
                     <a href="signup.php" class="bg-warning check text-dark">Check it out</a>
                 </div>
             </div>         

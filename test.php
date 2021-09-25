@@ -7,9 +7,13 @@
      if(isset($_POST['submit'])){
         
        $synopsis =  $_POST['synopsis'];
+       $logline = $_POST['logline'];
+       $title = $_POST['title'];
+
+       echo preg_replace("/<p>/", "<p><b>Logline:</b>",$logline, 1);
 
 
-       mysqli_query($link, "update realtv_movies set synopsis = '$synopsis' where id = '2'");
+      // mysqli_query($link, "update realtv_movies set synopsis = '$synopsis' where id = '2'");
         
 
     

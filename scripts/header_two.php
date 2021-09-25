@@ -18,7 +18,8 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.2.2/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
 
-    <script src="//cdn.ckeditor.com/4.16.2/classic/ckeditor.js"></script>   
+    <script src="https://cdn.ckeditor.com/4.16.2/classic/ckeditor.js"></script>   
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.js"></script>
  
 
     <link rel="stylesheet" href="css/style2.css">

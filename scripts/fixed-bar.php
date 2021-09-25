@@ -97,7 +97,7 @@
             <div data-toggle="collapse" data-target="#collapseC" aria-expanded="false" aria-controls="collapseDraft"><i class="bi bi-building"></i> <span class="ml-2">Company Profile</span></div>
             <div class="collapse mt-2" id="collapseC">
                  <ul class="profile_option">
-                    <li class="pl-5 py-2  sub-option"><a href="profile.php"><i class="bi bi-building"></i> View Profile<</a>/li>
+                    <li class="pl-5 py-2  sub-option"><a href="profile.php"><i class="bi bi-building"></i> View Profile </a> </li>
                     <li class="pl-5 py-2  sub-option"><a href="edit_profile.php"><i class="bi bi-building"></i> Edit Profile </a></li>
                  </ul>
             </div>

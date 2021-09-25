@@ -43,14 +43,25 @@ if(!is_loggedIn()){
                       <img src="img/uploads/<?= $moviePic ?>" class="movie-card-body"  alt="">
                 </div>
                 <div class=" movieTitle my-0 p-2">
-                    <p class="pb-2"><?= $movie->movie_title ?></p>
-                    <?php  if($checkInCart->num_rows > 0){ ?>
-                        <span class="crt-<?=$mvid?> addcart badge-success"> <i class="bi bi-check"></i>Added to Cart</span>
-                    <?php }else{ ?>
-                       <span class="crt-<?=$mvid?>"> <button onclick="addToCart(event)" data-id="<?= $movie->id ?>" class="bg-warning addcart text-dark"><i class="bi bi-cart2"></i> Add to Cart</button> </span>
-                    <?php } ?> 
-                    <a href="c_movie_view.php?id=<?= $movie->id ?>" class="bg-warning check text-dark">Check it out</a>
+                    <p class="pb-2"><?= $movie->movie_title ?></p>                   
                 </div>
+                <div class="action-btns row w-100 mx-auto">               
+                    <div class="col-6 text-left p-0 pr-1">
+                        <?php  if($checkInCart->num_rows > 0){ ?>
+                            <span class="crt-<?=$mvid?> addcart badge-success"> <i class="bi bi-check"></i>Added to Cart</span>
+                        <?php }else{ ?>
+                            <span class="crt-<?=$mvid?> addcart text-light" onclick="addToCart(event)" data-id="<?= $movie->id ?>" style="background-color : #004177;"><i class="bi bi-cart2"></i> Add to Cart</span>
+                        <?php } ?> 
+                    </div>
+                    <div class="col-6 text-right p-0 pl-1">
+                        <a href="c_movie_view.php?id=<?= $movie->id ?>" class="bg-warning cont_check text-dark">Check it out</a>
+                    </div>                  
+
+                </div>
+                <!-- <div class="action-btns">                
+                    <a href="c_movie_view.php?id=<?= $movie->id ?>" class="bg-warning check text-dark">Check it out</a>
+                </div> -->
+                    
             </div>     
         </div>
         <?php endwhile; ?>
@@ -188,6 +199,7 @@ if(!is_loggedIn()){
     function addToCart(event){
       let n =  event.target.dataset.id;
       let crt = ".crt-" + n;
+      let crtclass = "crt-" + n;
       let user = '<?= unique_id() ?>';
       let url = "addToCart.php?user_unique=" + user + "&id=" + n;
 
@@ -195,7 +207,7 @@ if(!is_loggedIn()){
             if(data){
                 //alert(data);
                 $(".cart-no").html(data);
-                $(crt).html('<span class="addcart badge-success"><i class="bi bi-check"></i>Added to Cart</span>');
+                $(crt).parent().html('<span class="' + crtclass +' addcart badge-success"><i class="bi bi-check"></i>Added to Cart</span>');
                 toastr.success('Added To Cart',{
                     'closeButton': true, 
                     'showMethod' : 'slideDown', 

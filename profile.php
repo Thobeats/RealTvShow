@@ -34,7 +34,11 @@ $fullname = $user_details->fullname;
     .profile-body{
         margin-top : 33vh;
     }
-
+    .h1{
+        font-family : 'Montserrat', serif;
+        font-weight : 700;
+        font-size : 45px;
+    }
     .cover-image{
         background-image: linear-gradient(to bottom, rgba(36, 36, 36, 0.692),rgba(19, 19, 19, 0.692)),url(img/Onboard1.jpg);
         height : 40vh;
@@ -125,11 +129,11 @@ $fullname = $user_details->fullname;
         </div>
     </div>
 <?php if(role() == 3) { ?>
-    <div class="row preview p-3">
+    <div class="row preview p-3 mx-auto w-100">
         <div class="col-lg-3 col-md-3 col-sm-12">
             <div class="card-body bg-dark text-light p-0">
                 <h1 class="h1 p-3 text-center"><?= $no_book ?></h1>
-                <p class="text-center p-3">Bookmarked Projects</p>
+                <p class="text-center p-3">Saved Projects</p>
             </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12">
@@ -154,7 +158,7 @@ $fullname = $user_details->fullname;
 <?php } ?>
 
 <?php if(role() == 1) { ?>
-    <div class="row preview p-3">
+    <div class="row preview p-3 mx-auto w-100">
         <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="card-body bg-dark text-light p-0">
                 <h1 class="h1 p-3 text-center">4</h1>
@@ -183,7 +187,7 @@ $fullname = $user_details->fullname;
 <?php } ?>
 
 <?php if(role() == 2) { ?>
-    <div class="row preview p-3">
+    <div class="row preview p-3 mx-auto w-100">
         <div class="col-lg-3 col-md-3 col-sm-12">
             <div class="card-body bg-dark text-light p-0">
                 <h1 class="h1 p-3 text-center">4</h1>
@@ -211,7 +215,7 @@ $fullname = $user_details->fullname;
     </div>
 <?php } ?>
 
-    <div class="row p-3 bio-container">
+    <div class="row p-3 bio-container mx-auto w-100">
         <div class="col-12">
             <div class="bio p-2">
                 <h3 class="poppins ml-4">Bio</h3>
@@ -250,6 +254,7 @@ $fullname = $user_details->fullname;
     </div>
 </section>
 
+
 <script>
     setInterval(function(){ curTime(); }, 1000);
 
@@ -268,6 +273,8 @@ $fullname = $user_details->fullname;
             return n;
         }
     }
+
+    
 </script>
 <?php
  require "scripts/footer_two.php";

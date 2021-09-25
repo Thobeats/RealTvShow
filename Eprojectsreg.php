@@ -30,10 +30,13 @@
                         <div class="card-body p-0" style="height: 100%;">
                             <img src="img/uploads/<?= $moviePic ?>" class="movie-card-body"  alt="">
                         </div>
-                        <div class="movieTitle my-0 p-2">
+                        <div class="movieTitle">
                             <p><?= $movie->movie_title ?></p>
-                            <a href="Eviewpage.php?id=<?= $movie->id ?>" class="bg-warning check text-dark">Check it out</a>
                         </div>
+                        <div class="action-btns">                
+                        <a href="Eviewpage.php?id=<?= $movie->id ?>" class="bg-warning check text-dark">Check it out</a>
+                        </div>
+
                     </div>     
                 </div>
                 <?php endwhile; ?>
