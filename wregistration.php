@@ -3,10 +3,7 @@ $navBar = true; $logo=true; $writerReg = true;
 require "scripts/functions.php";
 require "scripts/header_two.php"; 
 
-echo $upload_max_size = ini_get('upload_max_filesize');  
-echo $post_max_size=ini_get('post_max_size');  
 
-echo "<br>";
 
 if(isset($_POST['reg'])){ 
     $firstname = trim($_POST['fname']);
