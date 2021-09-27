@@ -15,10 +15,12 @@
 
       // mysqli_query($link, "update realtv_movies set synopsis = '$synopsis' where id = '2'");
         
-
     
      }
-   
+    //  $ip = $_SERVER['REMOTE_ADDR'];
+    //  $details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
+    //  echo $details->city;
+
 ?>
 
 <!DOCTYPE html>

@@ -342,7 +342,6 @@ if (isset($_POST['save'])){
             </div>
             <div class="mt-3 col-12">
                 <div class="custom-file">                
-                    <!-- <input type="file" name="img[]" id="input-id" class="file" data-preview-file-type="text" multiple>                    -->
                     <input type="file" id="file_upload" >
                 </div>
             </div> 

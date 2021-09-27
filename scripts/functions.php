@@ -151,13 +151,15 @@ function register_writer($firstname, $surname, $email, $password, $role_id, $add
     $email = strtolower($email);
     $unique_id = $role_id.strtotime("now");
 
-    if($cover_img['name'] != ""){
-        $pic = handle_image($cover_img);
-    }
+    // if($cover_img['name'] != ""){
+    //     $pic = handle_image($cover_img);
+    // }
 
     if($video['name'] != ""){
         $vid = handle_video($video);
     }
+
+
 
 
     if($username == null){
@@ -177,7 +179,7 @@ function register_writer($firstname, $surname, $email, $password, $role_id, $add
 
             //var_dump($_POST);
             $writer_query = mysqli_query($link, "INSERT INTO `realtv_writers`(`firstname`, `lastname`, `email`, `username`, `password`, `phone_no`, `address`, `profile_pic`, `sizzle_reel`, `unique_id`) 
-                                                VALUES ('$firstname','$surname','$email','$username','$password','$phone_no','$address','$pic','$vid','$unique_id')");
+                                                VALUES ('$firstname','$surname','$email','$username','$password','$phone_no','$address','$cover_img','$vid','$unique_id')");
 
            $res = save_drafts($unique_id, $project_title,$logline,$synopsis,$genre,$other_images);
 
@@ -581,12 +583,12 @@ function save_drafts($writer_id = null, $movie_title, $logline, $synopsis, $genr
         $writer_id = $_SESSION['unique_id'];
     }
 
-    $other_images = handle_multi_images($movie_pics);
+    //$other_images = handle_multi_images($movie_pics);
     $unique_id = "MOV".strtotime("now");
 
 
     if( mysqli_query($link, "INSERT INTO `realtv_drafts`(`created_by`,`movie_title`,`logline`, `genre`, `synopsis`, `other_pics`, `unique_id`, `reality`, `acquisition`, `copyright`) 
-                            VALUES ('$writer_id','$movie_title','$logline','$genre','$synopsis', '$other_images', '$unique_id', '$reality', '$acquisition', '$copyright')")){
+                            VALUES ('$writer_id','$movie_title','$logline','$genre','$synopsis', '$movie_pics', '$unique_id', '$reality', '$acquisition', '$copyright')")){
         
         return 1;
     }else{

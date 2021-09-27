@@ -21,7 +21,7 @@ if(!file_exists($path)){
     }else{
         $uploads_file = $uploads_dir . basename($name);
         if(move_uploaded_file($pic['tmp_name'], $uploads_file)){
-        echo $name;
+            echo $name;
         }
     }
 }else{

@@ -23,10 +23,11 @@ require_once "scripts/header_two.php";
   if(isset($_GET['pass'])){
 $email = $_GET['email'];
 $auth = utf8_encode($_GET['pass']);
+    $ip = $_SERVER['REMOTE_ADDR'];
   $checkActivation = mysqli_query($link, "Select * from realtv_users where email = '$email' and token = '$auth'");
 
     if($checkActivation->num_rows == 1){
-      $activateUser = mysqli_query($link, "update realtv_users set activated = '1' where email='$email' and token = '$auth'");
+      $activateUser = mysqli_query($link, "update realtv_users set activated = '1', ip_address = '$ip' where email='$email' and token = '$auth'");
 
 ?>
 

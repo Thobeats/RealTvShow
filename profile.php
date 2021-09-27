@@ -117,13 +117,13 @@ $fullname = $user_details->fullname;
                     </div>                    
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 dt">
-                   <h3 class="day w-100 text-center"><?= date('l') ?></h3>
-                   <h3 class="m-y w-100 text-center"><?= date('M Y') ?></h3>
-                   <h6 class="time w-100 text-center">
-                       <span id="hrs"></span>
-                       <span id="min"></span>
-                       <span id="sec"></span>
-                   </h6>
+                    <div class="date text-right text-secondary">
+                        <span class="mr-2"><?= date('l M Y') ?></span> <span id="hrs"></span><span id="min"></span><span id="sec"></span>
+                    </div>
+                    <div class="details">
+
+                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -250,6 +250,17 @@ $fullname = $user_details->fullname;
             <div class="edit text-right">
                 <a href="edit_profile.php" class="realbtn"><i class="bi bi-pencil-square"></i>Edit Profile</a>
             </div>
+        </div>
+    </div>
+    <div class="row p-3 bio-container mx-auto w-100">
+        <div class="col-12">
+            <div class="bio p-2">
+                <h3 class="poppins ml-4">Sizzle Reel</h3>
+                <hr>
+            </div>
+        </div>
+        <div class="sizzle_reel">
+
         </div>
     </div>
 </section>

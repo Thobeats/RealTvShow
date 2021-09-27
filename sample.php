@@ -23,12 +23,12 @@ require("scripts/header_two.php");
     width : 100px;
 }
 .title{
-    font-size : 18pt;
+    font-size : 15pt;
     font-weight : 800;
     font-family : 'Poppins', serif;
 }
 .logline{
-    font-size : 16pt;
+    font-size : 14pt;
     margin-top : 5px;
 }
 .movie_img{
@@ -36,20 +36,17 @@ require("scripts/header_two.php");
 }
 .movie_img img{
     width : 70%;
-}
-.r{
+}.r{
     text-align : right;
-}
-.features{
+}.features{
     margin-left : 150px;
     font-size : 13pt;
     padding-left : 50px;
-}
-.feat_heading{
+}.feat_heading{
     display:inline-block;
     width : 180px;
 }.synopsis{
-    font-size : 16pt;
+    font-size : 14pt;
 }.synopsis img{
     width : 80px !important;
     height : 80px !important;
