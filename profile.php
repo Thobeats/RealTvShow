@@ -29,6 +29,14 @@ $no_pro = mysqli_fetch_object(mysqli_query($link, "select count(*) as cnt from r
 $no_book = mysqli_fetch_object(mysqli_query($link, "select count(*) as cnt from realtv_executive_project where user_id = '$unique_id'"))->cnt;
 
 $fullname = $user_details->fullname;
+$dateOfBirth = date('d M Y', strtotime($user_details->dob));
+$joined = date('d M Y', strtotime($user_details->date_created));
+
+$fb = $user_details->facebook;
+$tw = $user_details->twitter;
+$ln = $user_details->linked_in;
+$in = $user_details->instagram;
+
 ?>
 
 <?= get_message("success"); get_message("error"); ?>
@@ -87,6 +95,12 @@ $fullname = $user_details->fullname;
         color: #000;
         letter-spacing : 0px;
     }
+    .social{
+        text-align : right;
+    }
+    .social a{
+        font-size : 18px;
+    }
     @media only screen and (max-width: 768px) {
         .realbtn{
             padding : 8px;
@@ -129,7 +143,7 @@ $fullname = $user_details->fullname;
             <div class="profile-image row">
                 <div class="col-lg-6 col-md-6 col-sm-12 text-center" >
                     <div class="img rounded-circle">
-                        <img src="<?= $user_details->profile_pic != null ? 'img/uploads/' . $user_details->profile_pic : 'img/man.png' ?>" class="rounded" width="100%">
+                        <img src="<?= $user_details->profile_pic != null ? 'img/uploads/' . $user_details->profile_pic : 'img/man.png' ?>" class="rounded" width="100%" height ="100%">
                         <label for="editProfile" class="badge"><i class="bi bi-pencil-square"></i> Edit </label>
                         <input type="file" name="profile_pic" id="editProfile" hidden>  
                     </div>    
@@ -141,7 +155,19 @@ $fullname = $user_details->fullname;
                     </div>
                    
                     <div class="details mt-2 text-secondary">
-                        <span class="mr-2"><i class="bi bi-geo-alt mr-2"></i>Lagos, Nigeria</span> <span class="mr-2"><i class="fa fa-birthday-cake mr-2" aria-hidden="true"></i> Birthday</span> <span class="mr-2"><i class="bi bi-calendar mr-2"></i> Joined</span>
+                        <span class="mr-2"><i class="bi bi-geo-alt mr-2"></i> <i class="loc"></i></span> 
+                        <?php if($dateOfBirth != null): ?>
+                        <span class="mr-2"><i class="fa fa-birthday-cake mr-2" aria-hidden="true"></i> Birthday <?= $dateOfBirth ?></span> 
+                        <?php endif; ?>
+                        <span class="mr-2"><i class="bi bi-calendar mr-2"></i> Joined <?= $joined ?></span>
+                    </div>
+
+                    <div class="social mt-2">
+                        <span><a class="mr-2" href="https://web.facebook.com/<?= $fb ?>/" target="_blank"><i class="bi bi-facebook"></i></a></span>
+                        <span><a class="mr-2" href="https://twitter.com/<?= $tw ?>" target="_blank"><i class="bi bi-twitter"></i></a></span>
+                        <span><a class="mr-2" href="https://www.linkedin.com/in/<?= $ln ?>/" target="_blank"><i class="bi bi-linkedin"></i></a></span>
+                        <span><a class="mr-2" href="https://www.instagram.com/<?= $in ?>/" target="_blank"><i class="bi bi-instagram"></i></a></span>
+
                     </div>
                    
                 </div>
@@ -272,6 +298,8 @@ $fullname = $user_details->fullname;
             </div>
         </div>
     </div>
+
+<?php if(role == 2): ?>
     <div class="row p-3 bio-container mx-auto w-100">
         <div class="col-12">
             <div class="bio p-2">
@@ -283,6 +311,7 @@ $fullname = $user_details->fullname;
 
         </div>
     </div>
+<?php endif; ?>
 </section>
 
 
@@ -305,6 +334,16 @@ $fullname = $user_details->fullname;
         }
     }
 
+    $(document).ready(()=>{
+
+        let url = "https://geolocation-db.com/json/";
+
+        $.get(url, function(data){
+            let city = data.city;
+            let country = data.country_name;
+            $(".loc").html(city + ", " + country);
+        }, 'json');
+    })
     
 </script>
 <?php
