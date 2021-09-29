@@ -231,6 +231,18 @@ if(isset($_POST['save'])){
 
 $(document).ready(function(){
     let value = "<?= $user_details->country ?? "" ?>";
+    let valueC = "<?= $user_details->city ?? "" ?>";
+    let valueS = "<?= $user_details->state ?? "" ?>";
+
+
+        if(valueS != ""){
+            document.getElementById("state").innerHTML += `<option> ${valueS} </option><option></option>`;
+        }
+        if(valueC != ""){
+            document.getElementById("city").innerHTML += `<option> ${valueC} </option><option></option>`;
+        }
+       
+
     let countries = document.getElementById("country");
     var headers = new Headers();
     headers.append("X-CSCAPI-KEY", "OW1RV3hIVkpaZWRybXgyUm1KaXVpY3c5TUdwTk1tRzg4dERxQWxvbw==");
@@ -263,7 +275,6 @@ $(document).ready(function(){
 
 function getState(event){
     let country = event.target.value.split("-")[1].trim();
-    let value = "<?= $user_details->state ?? "" ?>";
 
     console.log(country);
 
@@ -284,13 +295,8 @@ function getState(event){
         //console.log(result); 
         state.innerHTML = '';
 
-        if(value != ""){
-            state.innerHTML += `<option> ${value} </option><option></option>`;
-        }else{
-            state.innerHTML += '<option> Select State </option>';
+        state.innerHTML += '<option> Select State </option>';
 
-        }
-       
         for(let res of result){
             state.innerHTML += `<option value="${res.name}-${res.iso2}-${country}" >${res.name}</option>`;
         }
@@ -302,7 +308,6 @@ function getState(event){
 function getCity(event){
     let state = event.target.value.split("-")[1].trim();
     let country = event.target.value.split("-")[2].trim();
-    let value = "<?= $user_details->city ?? "" ?>";
 
     let city = document.getElementById("city");
 
@@ -320,12 +325,8 @@ function getCity(event){
     .then((result) => {
        // console.log(result); 
         city.innerHTML = '';
-        if(value != ""){
-            city.innerHTML += `<option> ${value} </option><option></option>`;
-        }else{
-            city.innerHTML += '<option> Select City</option>';
-        }
        
+        city.innerHTML += '<option> Select City</option>';
 
         for(let res of result){
             city.innerHTML += `<option value="${res.name}">${res.name}</option>`;
