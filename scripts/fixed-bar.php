@@ -80,6 +80,14 @@
                  </ul>
             </div>
         </li>
+        <li class="option">
+            <div data-toggle="collapse" data-target="#collapseReel" aria-expanded="false" aria-controls="collapseDraft">  <i class="bi bi-film"></i> <span class="ml-2">Sizzle Reel</span></div>
+            <div class="collapse mt-2" id="collapseReel">
+                 <ul class="profile_option">
+                    <li class="pl-5 py-2  sub-option"><a href="reel.php"><i class="bi bi-sliders"></i> Manage</a></li>
+                 </ul>
+            </div>
+        </li>
         <?php } ?>
         <?php if(role() == 1){ ?>
         <li class="option">

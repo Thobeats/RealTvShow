@@ -2,7 +2,7 @@
 require "scripts/functions.php";
 
 
-// if(is_loggedIn()){
+if(is_loggedIn()){
 
 $logo = true; $fixed = true;
 require "scripts/header_two.php"; 
@@ -62,7 +62,7 @@ $in = $user_details->instagram;
         background-position : center;
     }
     .img{
-        transform : translateY(-70px);
+        transform : translateY(-50px);
         width : 200px;
         margin: 0 auto;
     }
@@ -95,12 +95,13 @@ $in = $user_details->instagram;
         color: #000;
         letter-spacing : 0px;
     }
-    .social{
+    .social,.profile-edit{
         text-align : right;
     }
     .social a{
         font-size : 18px;
     }
+     
     @media only screen and (max-width: 768px) {
         .realbtn{
             padding : 8px;
@@ -124,33 +125,80 @@ $in = $user_details->instagram;
             padding : 5px;
             font-size: 13px;
         }
+        .social,.profile-edit{
+            text-align : center;
+        }
         .img{
-            transform : translateY(-70px);
             width : 150px;
             margin: 0 auto;
         }.date{ margin-top: 10px; text-align: center; font-size : 12px; }
     }
 
 </style>
+<div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content text-light" style="background-color : black !important;">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
+        <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="edit_cover_img text-light" style="height: 30vh;display:flex; justify-content: center; align-items: center; font-size:15px;">
+                        <div>
+                            <label for="change_cover" style="background-color:inherit;"><i class="bi bi-brush text-light" title="change cover image"></i></label>
+                            <input type="file" name="edit_cover_img" id="change_cover" hidden>
+                            <i class="bi bi-x-lg" style="cursor:pointer;" title="Remove"></i>
+                        </div>                               
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
+                        <div class="prof_pic text-light"  style="height: 200px; display:flex; justify-content: center; align-items: center; font-size:15px;">
+                            <div>
+                                <label for="change_cover" style="background-color:inherit;"><i class="bi bi-brush text-light" title="change profile image"></i></label>
+                                <input type="file" name="edit_cover_img" id="change_cover" hidden>
+                                <i class="bi bi-x-lg" style="cursor:pointer;" title="Remove"></i>
+                            </div>   
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
+                        <div class="form-group" style="height: 200px;">
+                            <label for="" style="background-color:inherit;">About You</label>
+                            <textarea name="" id="" cols="" rows="6" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+            
+            
+            </div>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </form>
+    </div>
+  </div>
+</div>
 
 <section class="profile-body p-2 mx-2">
-    <div class="row mx-auto" style="width: 100%">
+    <div class="row mx-auto mb-5" style="width: 100%">
         <div class="col-12">
             <div class="cover-image">
-                <label for="editProfile" class="badge"><i class="bi bi-pencil-square"></i> Edit </label>
-                <input type="file" name="cover_pic" id="editCover" hidden>  
             </div>
             <div class="profile-image row">
                 <div class="col-lg-6 col-md-6 col-sm-12 text-center" >
                     <div class="img rounded-circle">
-                        <img src="<?= $user_details->profile_pic != null ? 'img/uploads/' . $user_details->profile_pic : 'img/man.png' ?>" class="rounded" width="100%" height ="100%">
-                        <label for="editProfile" class="badge"><i class="bi bi-pencil-square"></i> Edit </label>
-                        <input type="file" name="profile_pic" id="editProfile" hidden>  
+                        <img src="<?= $user_details->profile_pic != null ? 'img/uploads/' . $user_details->profile_pic : 'img/man.png' ?>" class="rounded" width="100%" height ="100%"> 
                     </div>    
                                
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 dt">
-                    <div class="date text-secondary border-bottom">
+                <div class="col-lg-6 col-md-6 col-sm-12 mt-5">
+                    <div class="date text-secondary mt-2">
                         <span class="mr-2"><?= date('l M Y') ?></span> <span id="hrs"></span><span id="min"></span><span id="sec"></span>
                     </div>
                    
@@ -163,11 +211,16 @@ $in = $user_details->instagram;
                     </div>
 
                     <div class="social mt-2">
+                        
                         <span><a class="mr-2" href="https://web.facebook.com/<?= $fb ?>/" target="_blank"><i class="bi bi-facebook"></i></a></span>
                         <span><a class="mr-2" href="https://twitter.com/<?= $tw ?>" target="_blank"><i class="bi bi-twitter"></i></a></span>
                         <span><a class="mr-2" href="https://www.linkedin.com/in/<?= $ln ?>/" target="_blank"><i class="bi bi-linkedin"></i></a></span>
                         <span><a class="mr-2" href="https://www.instagram.com/<?= $in ?>/" target="_blank"><i class="bi bi-instagram"></i></a></span>
 
+                    </div>
+
+                    <div class="profile-edit mt-4">
+                        <button style="background-color:inherit;" data-toggle="modal" data-target="#editProfileModal" class="realbtn"><i class="bi bi-pencil-square"></i> Edit Profile</button>
                     </div>
                    
                 </div>
@@ -294,22 +347,16 @@ $in = $user_details->instagram;
         </div>
         <div class="col-12">
             <div class="edit text-right">
-                <a href="edit_profile.php" class="realbtn"><i class="bi bi-pencil-square"></i> Edit Profile</a>
+                <a href="edit_profile.php" class="realbtn"><i class="bi bi-pencil-square"></i> Edit Bio</a>
             </div>
         </div>
     </div>
 
-<?php if(role == 2): ?>
-    <div class="row p-3 bio-container mx-auto w-100">
-        <div class="col-12">
-            <div class="bio p-2">
-                <h3 class="poppins ml-4">Sizzle Reel</h3>
-                <hr>
-            </div>
-        </div>
-        <div class="sizzle_reel">
+<?php if(role() == 2): ?>
+    <div class="row p-3 bio-container mx-auto w-100 my-2 ">
+       <div class="col-12">
 
-        </div>
+       </div>
     </div>
 <?php endif; ?>
 </section>
@@ -343,13 +390,29 @@ $in = $user_details->instagram;
             let country = data.country_name;
             $(".loc").html(city + ", " + country);
         }, 'json');
+    });
+
+    $(document).ready(function(){
+        let coverImg = "<?= $user_details->cover_img ?? 'Onboard1.jpg' ?>";
+        let profPic = "<?= $user_details->profile_pic ?? 'man.png' ?>"
+
+        let cover = document.querySelector(".edit_cover_img");
+
+        let pro = document.querySelector(".prof_pic");
+
+        cover.style.backgroundImage = `linear-gradient(to bottom, rgba(36, 36, 36, 0.692),rgba(19, 19, 19, 0.692)),url(img/${coverImg})`;
+        cover.style.backgroundPosition = "center";
+        cover.style.backgroundSize = "cover";
+        pro.style.backgroundImage = `linear-gradient(to bottom, rgba(36, 36, 36, 0.692),rgba(19, 19, 19, 0.692)),url(img/uploads/${profPic})`;
+        pro.style.backgroundPosition = "center";
+        pro.style.backgroundSize = "cover";
     })
     
 </script>
 <?php
  require "scripts/footer_two.php";
 
-// }else{
-//     header("Location: login.php");
-// }
+}else{
+    header("Location: login.php");
+}
 ?>
