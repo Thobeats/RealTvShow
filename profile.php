@@ -71,7 +71,7 @@ $in = $user_details->instagram;
         font-family: 'Arial',serif;
         font-weight : 500;
         font-size : 45px;
-    }.date{ text-align: right }
+    }.date{ text-align: right; font-size : 14px; }
     .day{
         font-size : 50px;
         padding-top : 15px;
@@ -79,7 +79,7 @@ $in = $user_details->instagram;
         text-transform: uppercase;
         font-family : 'Montserrat', serif;
 
-    }.details{ text-align : right;}
+    }.details{ text-align : right; font-size : 14px;}
     .m-y{
         font-size : 20px;
         font-weight : 600;
@@ -155,11 +155,11 @@ $in = $user_details->instagram;
                     </div>
                    
                     <div class="details mt-2 text-secondary">
-                        <span class="mr-2"><i class="bi bi-geo-alt mr-2"></i> <i class="loc"></i></span> 
+                        <span><i class="bi bi-geo-alt"></i> <i class="loc"></i></span> 
                         <?php if($dateOfBirth != null): ?>
-                        <span class="mr-2"><i class="fa fa-birthday-cake mr-2" aria-hidden="true"></i> Birthday <?= $dateOfBirth ?></span> 
+                        <span class="mr-2"><i class="fa fa-birthday-cake" aria-hidden="true"></i> <i>Birthday <?= $dateOfBirth ?></i></span> 
                         <?php endif; ?>
-                        <span class="mr-2"><i class="bi bi-calendar mr-2"></i> Joined <?= $joined ?></span>
+                        <span class="mr-2"><i class="bi bi-calendar"></i> <i>Joined <?= $joined ?></i></span>
                     </div>
 
                     <div class="social mt-2">
