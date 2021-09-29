@@ -9,7 +9,7 @@ require "scripts/header_two.php";
 
 <style>
     .first_post_pic{
-        background-image : url(img/promotingyou.jpeg);
+        background-image : url(img/promotingyou.jpg);
         background-size : cover;
         height : 60vh;
     }
@@ -37,7 +37,7 @@ require "scripts/header_two.php";
     }
 
     .fifth_post_pic{
-        background-image : url(img/options.jpeg);
+        background-image : url(img/options.jpg);
         background-size : cover;
         background-position : center;
         height : 30vh;

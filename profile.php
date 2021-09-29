@@ -125,7 +125,7 @@ $fullname = $user_details->fullname;
             </div>
             <div class="profile-image row">
                 <div class="col-lg-6 col-md-6 col-sm-12 text-center" >
-                    <div class="img rounded-circle bg-light">
+                    <div class="img rounded-circle">
                         <img src="<?= $user_details->profile_pic != null ? 'img/uploads/' . $user_details->profile_pic : 'img/man.png' ?>" class="rounded" width="100%">
                         <label for="editProfile" class="badge"><i class="bi bi-pencil-square"></i> Edit </label>
                         <input type="file" name="profile_pic" id="editProfile" hidden>  

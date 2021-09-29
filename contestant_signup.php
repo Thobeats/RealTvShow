@@ -107,13 +107,23 @@ require "scripts/header_two.php";
             </div>
         </div>
               
-        <div class="form-group">
-            <label for="exampleFormControlFile1">Profile Pic</label>
-            <input type="file" name="profile" class="form-control-file" id="exampleFormControlFile1">
+        <div class="form-group row">
+            <div class="col-12">
+                <label for="profpic" class="realbtn btn-warning">Profile Pic</label>
+                <input type="file" name="profile" class="form-control-file" id="profpic" hidden>
+            </div>
+            <div class="col-12">
+                <img alt="" id="prev_pic" width="100px" height="100px">
+            </div>
         </div>
         <div class="form-group">
-            <label for="exampleFormControlFile1">Resume</label>
-            <input type="file" name="resume" class="form-control-file" id="exampleFormControlFile1">
+            <div class="col-12">
+                <label for="resume" class="realbtn btn-warning">Resume</label>
+                <input type="file" name="resume" class="form-control-file" id="resume" hidden>
+            </div>
+            <div class="col-12">
+                <embed id="prev_res" width="100" height="100">
+            </div>
         </div>
         <div class="form-group">
             <p class="privacy">
@@ -139,6 +149,19 @@ require "scripts/header_two.php";
 
 
 <script>
+
+    document.querySelector("#profpic").addEventListener("change", function(){
+        let src = URL.createObjectURL(this.files[0]);
+
+        document.querySelector("#prev_pic").setAttribute("src", src);
+    });
+
+    document.querySelector("#resume").addEventListener("change", function(){
+        let src = URL.createObjectURL(this.files[0]);
+
+        document.querySelector("#prev_res").setAttribute("src", src);
+    });
+
     let price = 0; let l = 0;
 
       $(document).ready(function() {

@@ -29,7 +29,7 @@ require "scripts/header_two.php";
     <div class="row px-5 mx-auto" style="width: 100vw;">
         <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="card new">
-                <img src="img/act4.jpg" alt="" >
+                <img src="img/contestant.jpg" alt="" >
                 <div class="card-body bg-dark text-center" >
                     <a href="contestant_signup.php" class="text-light card-link">Contestant and Talent Registration</a>
                 </div>

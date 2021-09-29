@@ -126,6 +126,10 @@ a,a:hover{
     background-color: #cccccc;
 }
 
+.new>img{
+    height : 550px;
+}
+
 .card-link{
     text-decoration: none;
     text-transform: uppercase;
@@ -402,7 +406,9 @@ footer p{
         justify-content: left;
         align-content: left;
     }
-   
+    .new>img{
+        height : 300px;
+    }
 }
 
 @media only screen and (max-width: 425px) {
@@ -511,6 +517,8 @@ footer p{
     .card-link{
         font-size : 15px;
         width : 100%;
+    }.new>img{
+        height : auto;
     }
     
 }

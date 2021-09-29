@@ -13,7 +13,7 @@
             <p class="sidebar-para"> Advantage to be promoted via Business-To-Business approach </p>
         </div>
         <div class="col-12 text-center p-2">
-            <img class="" src="img/Executive.jpg" width="200px">
+            <img class="" src="img/mixgh.jpg" width="200px">
             <p class="sidebar-para"> Strict vetting process to verify legitimate industry TV executives</p>
         </div>
         <div class="col-12 text-center p-2">
@@ -25,7 +25,7 @@
             <p class="sidebar-para"> Account access to edit and upload additional reality proposals</p>
         </div>
         <div class="col-12 text-center p-2">
-            <img class="" src="img/write5.jpg" width="200px">
+            <img class="" src="img/books.jpg" width="200px">
             <p class="sidebar-para"> We promote your unique material to producers and TV executives</p>
         </div>
         <div class="col-12 text-center p-2">

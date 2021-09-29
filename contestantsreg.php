@@ -121,7 +121,7 @@ if(!is_loggedIn()){
                                     Your private account access, to view and edit your credentials 
                                                                         
                                 </div>
-                                    <img class="" src="img/Executive.jpg" width="350px">
+                                    <img class="" src="img/mixgh.jpg" width="350px">
 
                             </div>
                         </div>
@@ -160,7 +160,7 @@ if(!is_loggedIn()){
                                     Exposure to talent scouts with opportunity to be discovered
                                                                             
                                 </div>
-                                    <img class="" src="img/write5.jpg" width="350px">
+                                    <img class="" src="img/wePromote.jpg" width="350px">
 
                             </div>
                         </div>
