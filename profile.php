@@ -30,6 +30,9 @@ $no_book = mysqli_fetch_object(mysqli_query($link, "select count(*) as cnt from 
 
 $fullname = $user_details->fullname;
 ?>
+
+<?= get_message("success"); get_message("error"); ?>
+
 <style>
     label{
         background-color : whitesmoke;

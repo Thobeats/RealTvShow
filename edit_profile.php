@@ -27,7 +27,9 @@ if(isset($_POST['save'])){
     $email = $_POST['email'];
     $username = $_POST['username'];
     $country = $_POST['country'];
+    $country = explode("-",$country)[0];
     $state = $_POST['state'];
+    $state = explode("-", $state)[0];
     $city = $_POST['city'];
     $dob = $_POST['dob'];
     $phone = $_POST['mobile'];
@@ -40,7 +42,7 @@ if(isset($_POST['save'])){
     $updated = date("Y-m-d h:i:s");
     $ip = $_SERVER['REMOTE_ADDR'];
 
-    $q1 = "UPDATE `realtv_users` SET `firstname`='$first_name',`lastname`='$last_name',`fullname`='$fullname',`username`='$username',`address`='$address',`email`='$email',`phone`='$phone',`mobile2`='$phone2',`mobile3`='$phone3',`twitter`='$twitter',`facebook`='$facebook',`linked_in`='$linked_in',`instagram`='$instagram',`updated_at`='$updated',`ip_address`='$ip',`dob`='$dob' WHERE id = '$user_id'";
+    $q1 = "UPDATE `realtv_users` SET `firstname`='$first_name',`lastname`='$last_name',`fullname`='$fullname',`username`='$username',`address`='$address',`email`='$email',`phone`='$phone',`mobile2`='$phone2',`mobile3`='$phone3',`twitter`='$twitter',`facebook`='$facebook',`linked_in`='$linked_in',`instagram`='$instagram',`updated_at`='$updated',`ip_address`='$ip',`dob`='$dob', `country`='$country', `state`='$state', `city`='$city' WHERE id = '$user_id'";
 
     if(mysqli_query($link, $q1)){
 
@@ -80,6 +82,7 @@ if(isset($_POST['save'])){
     }
   }
 ?>
+
 <style>
     .profile-body{
         margin-top : 33vh;
@@ -135,7 +138,7 @@ if(isset($_POST['save'])){
 <section class="profile-body p-2 mx-2">
    <div class="row">
        <div class="col-12">
-        <form action="process_contestant.php" method="POST" class="mx-auto" enctype="multipart/form-data" autocomplete="off">
+        <form action="" method="POST" class="mx-auto" enctype="multipart/form-data" autocomplete="off">
             <div class="form-row mt-3">
                 <div class="col-6">
                     <h3>Edit Profile</h3>
@@ -165,7 +168,7 @@ if(isset($_POST['save'])){
             </div>
             <div class="form-row">
                 <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
-                    <input type="text" name="mobile" class="form-control" placeholder="Phone" value="<?= $user_details->phone ?? "" ?>">
+                    <input type="text" name="mobile" class="form-control" placeholder="Phone" value="<?= $user_details->phone_no ?? "" ?>">
                 </div>                
                 <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
                     <input type="text" name="mobile2" class="form-control" placeholder="Phone2" value="<?= $user_details->mobile2 ?? "" ?>">
@@ -205,17 +208,17 @@ if(isset($_POST['save'])){
                     <input type="text" name="twitter" class="form-control" placeholder="twitter username" value="<?= $user_details->twitter ?? "" ?>">
                 </div> 
                 <div class="col-lg-3 col-md-3 col-sm-6  mt-2">
-                    <input type="text" name="linked_in" class="form-control" placeholder="linkedIn uaername" value="<?= $user_details->linked_in ?? "" ?>">
+                    <input type="text" name="linked_in" class="form-control" placeholder="linkedIn username" value="<?= $user_details->linked_in ?? "" ?>">
                 </div>
 
                 <div class="col-lg-3 col-md-3 col-sm-6  mt-2">
-                    <input type="text" name="instagram" class="form-control" placeholder="Instagram uaername" value="<?= $user_details->instagram ?? "" ?>">
+                    <input type="text" name="instagram" class="form-control" placeholder="Instagram username" value="<?= $user_details->instagram ?? "" ?>">
                 </div>                
             </div>
             
             <div class="form-row">
                 <div class="col-12 mt-2">
-                    <textarea name="address" class="form-control" id="" cols="30" rows="10" placeholder="Enter Address"><?= $user_details->address ?? "" ?></textarea>
+                    <textarea name="address" class="form-control" cols="5" rows="10" placeholder="Enter Address"><?= $user_details->address ?? "" ?></textarea>
                 </div>                
             </div>            
         </form>
@@ -243,7 +246,13 @@ $(document).ready(function(){
     .then((result) => {
         //console.log(result); 
         countries.innerHTML = '';
-        countries.innerHTML += '<option> Select Country </option>';
+
+        if(value != ""){
+            countries.innerHTML += `<option> ${value}</option><option></option>`;
+        }else{
+            countries.innerHTML += '<option> Select Country </option>';
+        }
+       
 
         for(let res of result){
             countries.innerHTML += `<option value="${res.name} - ${res.iso2}">${res.name}</option>`;
@@ -254,7 +263,7 @@ $(document).ready(function(){
 
 function getState(event){
     let country = event.target.value.split("-")[1].trim();
-
+    let value = "<?= $user_details->state ?? "" ?>";
 
     console.log(country);
 
@@ -274,8 +283,14 @@ function getState(event){
     .then((result) => {
         //console.log(result); 
         state.innerHTML = '';
-        state.innerHTML += '<option> Select State </option>';
 
+        if(value != ""){
+            state.innerHTML += `<option> ${value} </option><option></option>`;
+        }else{
+            state.innerHTML += '<option> Select State </option>';
+
+        }
+       
         for(let res of result){
             state.innerHTML += `<option value="${res.name}-${res.iso2}-${country}" >${res.name}</option>`;
         }
@@ -287,6 +302,7 @@ function getState(event){
 function getCity(event){
     let state = event.target.value.split("-")[1].trim();
     let country = event.target.value.split("-")[2].trim();
+    let value = "<?= $user_details->city ?? "" ?>";
 
     let city = document.getElementById("city");
 
@@ -304,7 +320,12 @@ function getCity(event){
     .then((result) => {
        // console.log(result); 
         city.innerHTML = '';
-        city.innerHTML += '<option> Select City</option>';
+        if(value != ""){
+            city.innerHTML += `<option> ${value} </option><option></option>`;
+        }else{
+            city.innerHTML += '<option> Select City</option>';
+        }
+       
 
         for(let res of result){
             city.innerHTML += `<option value="${res.name}">${res.name}</option>`;
