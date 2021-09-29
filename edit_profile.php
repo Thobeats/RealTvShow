@@ -30,8 +30,9 @@ if(isset($_POST['save'])){
     $state = $_POST['state'];
     $city = $_POST['city'];
     $dob = $_POST['dob'];
-    $phone = $_POST['phone'];
-    $phone2 = $_POST['phone2'];
+    $phone = $_POST['mobile'];
+    $phone2 = $_POST['mobile2'];
+    $phone3 = $_POST['mobile3'];
     $facebook = $_POST['facebook'];
     $twitter = $_POST['twitter'];
     $linked_in = $_POST['linked_in'];
@@ -164,43 +165,51 @@ if(isset($_POST['save'])){
             </div>
             <div class="form-row">
                 <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
-                    <input type="text" name="phone" class="form-control" placeholder="Phone" value="<?= $user_details->phone ?? "" ?>">
+                    <input type="text" name="mobile" class="form-control" placeholder="Phone" value="<?= $user_details->phone ?? "" ?>">
                 </div>                
+                <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
+                    <input type="text" name="mobile2" class="form-control" placeholder="Phone2" value="<?= $user_details->mobile2 ?? "" ?>">
+                </div>     
             </div>
             <div class="form-row">
-                 <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
-                    <input type="text" name="country" class="form-control" placeholder="Country" value="<?= $user_details->country ?? "" ?>">
-                </div>    
-                <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
-                    <input type="text" name="state" class="form-control" placeholder="State" value="<?= $user_details->state ?? "" ?>">
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
-                    <input type="text" name="city" class="form-control" placeholder="City" value="<?= $user_details->city ?? "" ?>">
-                </div>    
-            </div>
-            <div class="form-row">
+            <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
+                    <input type="text" name="mobile3" class="form-control" placeholder="Phone3" value="<?= $user_details->mobile3 ?? "" ?>">
+                </div>   
                 <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
                     <input type="date" name="dob" class="form-control" placeholder="Date of Birth" value="<?= $user_details->dob ?? "" ?>">
                 </div>
 
-                <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
-                    <input type="text" name="mobile2" class="form-control" placeholder="Phone2">
-                </div>                
+                           
             </div>
             <div class="form-row">
+                 <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
+                    <select name="country" class="form-control" id="country" onchange="getState(event)">
+                        <option> Select Country </option>
+                    </select>
+                </div>    
+                <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
+                    <select name="state" class="form-control" placeholder="State" id="state" onchange="getCity(event)">
+                    </select>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
+                    <select name="city" class="form-control" placeholder="City" id="city"></select>
+                </div>    
+            </div>
+            
+            <div class="form-row">
                 <div class="col-lg-3 col-md-3 col-sm-6 mt-2">
-                    <input type="text" name="facebook" class="form-control" placeholder="facebook" value="<?= $user_details->facebook ?? "" ?>">
+                    <input type="text" name="facebook" class="form-control" placeholder="facebook username" value="<?= $user_details->facebook ?? "" ?>">
                 </div>
 
                 <div class="col-lg-3 col-md-3 col-sm-6  mt-2">
-                    <input type="text" name="twitter" class="form-control" placeholder="twitter" value="<?= $user_details->twitter ?? "" ?>">
+                    <input type="text" name="twitter" class="form-control" placeholder="twitter username" value="<?= $user_details->twitter ?? "" ?>">
                 </div> 
                 <div class="col-lg-3 col-md-3 col-sm-6  mt-2">
-                    <input type="text" name="linked_in" class="form-control" placeholder="linkedIn" value="<?= $user_details->linked_in ?? "" ?>">
+                    <input type="text" name="linked_in" class="form-control" placeholder="linkedIn uaername" value="<?= $user_details->linked_in ?? "" ?>">
                 </div>
 
                 <div class="col-lg-3 col-md-3 col-sm-6  mt-2">
-                    <input type="text" name="instagram" class="form-control" placeholder="Instagram" value="<?= $user_details->instagram ?? "" ?>">
+                    <input type="text" name="instagram" class="form-control" placeholder="Instagram uaername" value="<?= $user_details->instagram ?? "" ?>">
                 </div>                
             </div>
             
@@ -215,6 +224,95 @@ if(isset($_POST['save'])){
 </section>
 
 <script>
+
+
+$(document).ready(function(){
+    let value = "<?= $user_details->country ?? "" ?>";
+    let countries = document.getElementById("country");
+    var headers = new Headers();
+    headers.append("X-CSCAPI-KEY", "OW1RV3hIVkpaZWRybXgyUm1KaXVpY3c5TUdwTk1tRzg4dERxQWxvbw==");
+
+    var requestOptions = {
+    method: 'GET',
+    headers: headers,
+    redirect: 'follow'
+    };
+
+    fetch("https://api.countrystatecity.in/v1/countries", requestOptions)
+    .then(response => response.json())
+    .then((result) => {
+        //console.log(result); 
+        countries.innerHTML = '';
+        countries.innerHTML += '<option> Select Country </option>';
+
+        for(let res of result){
+            countries.innerHTML += `<option value="${res.name} - ${res.iso2}">${res.name}</option>`;
+        }
+    })
+    .catch(error => console.log('error', error));
+});
+
+function getState(event){
+    let country = event.target.value.split("-")[1].trim();
+
+
+    console.log(country);
+
+    let state = document.getElementById("state");
+
+    var headers = new Headers();
+    headers.append("X-CSCAPI-KEY", "OW1RV3hIVkpaZWRybXgyUm1KaXVpY3c5TUdwTk1tRzg4dERxQWxvbw==");
+
+    var requestOptions = {
+    method: 'GET',
+    headers: headers,
+    redirect: 'follow'
+    };
+
+    fetch(`https://api.countrystatecity.in/v1/countries/${country}/states`, requestOptions)
+    .then(response => response.json())
+    .then((result) => {
+        //console.log(result); 
+        state.innerHTML = '';
+        state.innerHTML += '<option> Select State </option>';
+
+        for(let res of result){
+            state.innerHTML += `<option value="${res.name}-${res.iso2}-${country}" >${res.name}</option>`;
+        }
+    })
+    .catch(error => console.log('error', error));
+
+}
+
+function getCity(event){
+    let state = event.target.value.split("-")[1].trim();
+    let country = event.target.value.split("-")[2].trim();
+
+    let city = document.getElementById("city");
+
+    var headers = new Headers();
+    headers.append("X-CSCAPI-KEY", "OW1RV3hIVkpaZWRybXgyUm1KaXVpY3c5TUdwTk1tRzg4dERxQWxvbw==");
+
+    var requestOptions = {
+    method: 'GET',
+    headers: headers,
+    redirect: 'follow'
+    };
+
+    fetch(`https://api.countrystatecity.in/v1/countries/${country}/states/${state}/cities`, requestOptions)
+    .then(response => response.json())
+    .then((result) => {
+       // console.log(result); 
+        city.innerHTML = '';
+        city.innerHTML += '<option> Select City</option>';
+
+        for(let res of result){
+            city.innerHTML += `<option value="${res.name}">${res.name}</option>`;
+        }
+    })
+    .catch(error => console.log('error', error));
+
+}
 
 </script>
 
