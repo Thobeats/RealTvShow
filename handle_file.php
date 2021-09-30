@@ -8,12 +8,21 @@ $size = $pic['size'];
 $tmp = explode(".", $name);
 $ext = end($tmp);
 
-if($size > 500000){
-    echo "error1";
-}elseif(!in_array($ext, $extensions)){
-    echo "error2";
+
+$path = "img/uploads/" . $name;
+
+if(!file_exists($path)){
+
+    if($size > 500000){
+        echo "error1";
+    }elseif(!in_array($ext, $extensions)){
+        echo "error2";
+    }else{
+        echo $name;
+    }
+
 }else{
-    echo $name;
+    echo "no";
 }
 
 

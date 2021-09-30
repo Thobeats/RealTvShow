@@ -187,7 +187,7 @@ if(isset($_POST['save'])){
             <div class="form-row">
                  <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
                     <select name="country" class="form-control" id="country" onchange="getState(event)">
-                        <option> Select Country </option>
+                        <option value=""> Select Country </option>
                     </select>
                 </div>    
                 <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
@@ -262,7 +262,7 @@ $(document).ready(function(){
         if(value != ""){
             countries.innerHTML += `<option> ${value}</option><option></option>`;
         }else{
-            countries.innerHTML += '<option> Select Country </option>';
+            countries.innerHTML += '<option value=""> Select Country </option>';
         }
        
 
@@ -295,7 +295,7 @@ function getState(event){
         //console.log(result); 
         state.innerHTML = '';
 
-        state.innerHTML += '<option> Select State </option>';
+        state.innerHTML += '<option value=""> Select State </option>';
 
         for(let res of result){
             state.innerHTML += `<option value="${res.name}-${res.iso2}-${country}" >${res.name}</option>`;
@@ -326,7 +326,7 @@ function getCity(event){
        // console.log(result); 
         city.innerHTML = '';
        
-        city.innerHTML += '<option> Select City</option>';
+        city.innerHTML += '<option value=""> Select City</option>';
 
         for(let res of result){
             city.innerHTML += `<option value="${res.name}">${res.name}</option>`;

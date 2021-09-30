@@ -369,7 +369,7 @@ if(isset($_POST['reg'])){
 
     sizzle.addEventListener("change", function(){
         let files = this.files[0];
-        console.log(files);
+        //console.log(files);
         let url = "handle_video.php";
        
         let formData = new FormData(); 
@@ -405,7 +405,7 @@ if(isset($_POST['reg'])){
                 sizzlePreview.innerHTML += `<source src="${src}" type="video/${format}"></source>`;
             }
         });
-    })
+    });
 
 
     //MultiUpload

@@ -9,18 +9,8 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
 
-// function connect(){ 
-//     $link = mysqli_connect("127.0.0.1", "root", "", "realtvshow");
-
-//     if($link){
-//         return $link;
-//     }else {
-//         return mysqli_connect_errno();
-//     }
-// }
-
 function connect(){ 
-    $link = mysqli_connect("localhost", "realtv_db_user", "@lphA3ch0#", "realtv_show");
+    $link = mysqli_connect("127.0.0.1", "root", "", "realtvshow");
 
     if($link){
         return $link;
@@ -28,6 +18,16 @@ function connect(){
         return mysqli_connect_errno();
     }
 }
+
+// function connect(){ 
+//     $link = mysqli_connect("localhost", "realtv_db_user", "@lphA3ch0#", "realtv_show");
+
+//     if($link){
+//         return $link;
+//     }else {
+//         return mysqli_connect_errno();
+//     }
+// }
 
 function base_url(){
     return "https://" . $_SERVER['SERVER_NAME'] . "/test/";
@@ -394,30 +394,29 @@ function handle_image($image){
         $ext = end(explode(".", $name));
         $location = $_SERVER['HTTP_REFERER'];
 
-        //echo $ext;
+        // //echo $ext;
 
-        // //check size 
-        if($size > 500000){
-            set_message("error", "file too large, must not exceed 500KB");
-            header("Location: $location");
-            exit(0);
-        }
+        // // //check size 
+        // if($size > 500000){
+        //     set_message("error", "file too large, must not exceed 500KB");
+        //     header("Location: $location");
+        //     exit(0);
+        // }
 
-        //check extension
-        if(!in_array($ext, $extensions)){
-            set_message("error", "invalid type, only jpg or png allowed");
-            header("Location: $location");
-            exit(0);
-        }
+        // //check extension
+        // if(!in_array($ext, $extensions)){
+        //     set_message("error", "invalid type, only jpg or png allowed");
+        //     header("Location: $location");
+        //     exit(0);
+        // }
         $uploads_file = $uploads_dir . basename($name);
 
         if(move_uploaded_file($image['tmp_name'], $uploads_file)){
-         set_message("success", "Uploaded");
-            
+            return $name;
+
         }else{
-            set_message("error", "Not Uploaded");
+            return "error";
         }
-        return $name;
     }
   
 

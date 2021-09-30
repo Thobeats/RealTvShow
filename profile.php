@@ -37,6 +37,58 @@ $tw = $user_details->twitter;
 $ln = $user_details->linked_in;
 $in = $user_details->instagram;
 
+$coverImg = $user_details->cover_img;
+
+$date = date('Y-m-d h:i:s');
+
+
+?>
+
+
+<?php
+if(isset($_POST['save'])){
+    $cover_img = $_FILES['edit_cover_img'];
+    $pro_img = $_FILES['edit_pro'];
+    $about_me = $_POST['about_me'];
+
+    if($cover_img['name'] !== ""){
+        $cover_img = handle_image($cover_img);
+
+     if($cover_img != 'error'){
+        $update_query = mysqli_query($link, "UPDATE `realtv_users` SET `cover_img`='$cover_img',`updated_at`='$date',`about_you`='$about_me' WHERE id='$user_id'");
+
+        if($update_query){
+
+            if($pro_img['name'] !== ""){
+                $pro_img = handle_image($pro_img);
+
+                if($pro_img != 'error'){
+                    $update_pro = mysqli_query($link, "update $tabl2 set profile_pic = '$pro_img' where unique_id = '$unique_id'");
+
+                    if($update_pro){
+                        set_message("success", "Update Successful");
+                      
+                    }else{
+                        set_message("error", "Update Error, Try Again");
+                    }
+                }else{
+                    set_message("error", "Update Error, Try Again");
+                }
+            }  
+            set_message("success", "Update Successful");            
+         
+        }else{
+            set_message("error", "Update Error, Try Again");
+        }
+    }else{
+        set_message("error", "Update Error, Try Again");
+    }
+}
+
+
+header("location : profile.php");
+}
+
 ?>
 
 <?= get_message("success"); get_message("error"); ?>
@@ -56,7 +108,7 @@ $in = $user_details->instagram;
         font-size : 45px;
     }
     .cover-image{
-        background-image: linear-gradient(to bottom, rgba(36, 36, 36, 0.692),rgba(19, 19, 19, 0.692)),url(img/Onboard1.jpg);
+        background-image: linear-gradient(to bottom, rgba(36, 36, 36, 0.692),rgba(19, 19, 19, 0.692)),url(img/uploads/<?= $coverImg != '' ? $coverImg : 'Onboard1.jpg' ?>);
         height : 40vh;
         background-size : cover;
         background-position : center;
@@ -64,6 +116,7 @@ $in = $user_details->instagram;
     .img{
         transform : translateY(-50px);
         width : 200px;
+        height : 180px;
         margin: 0 auto;
     }
     .fullname{
@@ -130,12 +183,16 @@ $in = $user_details->instagram;
         }
         .img{
             width : 150px;
+            height : 130px;
             margin: 0 auto;
         }.date{ margin-top: 10px; text-align: center; font-size : 12px; }
+        .details{ text-align : right; font-size : 13px;}
+        .details span{ display: block; text-align: center;}
     }
 
 </style>
 <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+
   <div class="modal-dialog modal-lg">
     <div class="modal-content text-light" style="background-color : black !important;">
       <div class="modal-header border-0">
@@ -160,16 +217,16 @@ $in = $user_details->instagram;
                     <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
                         <div class="prof_pic text-light"  style="height: 200px; display:flex; justify-content: center; align-items: center; font-size:15px;">
                             <div>
-                                <label for="change_cover" style="background-color:inherit;"><i class="bi bi-brush text-light" title="change profile image"></i></label>
-                                <input type="file" name="edit_cover_img" id="change_cover" hidden>
+                                <label for="change_pro" style="background-color:inherit;"><i class="bi bi-brush text-light" title="change profile image"></i></label>
+                                <input type="file" name="edit_pro" id="change_pro" hidden>
                                 <i class="bi bi-x-lg" style="cursor:pointer;" title="Remove"></i>
                             </div>   
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
                         <div class="form-group" style="height: 200px;">
-                            <label for="" style="background-color:inherit;">About You</label>
-                            <textarea name="" id="" cols="" rows="6" class="form-control"></textarea>
+                            <label for="" style="background-color:inherit;">About Me</label>
+                            <textarea name="about_me" id="" cols="" rows="6" class="form-control"><?= $user_details->about_you ?? "" ?></textarea>
                         </div>
                     </div>
                 </div>
@@ -178,7 +235,7 @@ $in = $user_details->instagram;
             </div>
             <div class="modal-footer border-0">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="submit" class="btn btn-primary" name="save">Save changes</button>
             </div>
         </form>
     </div>
@@ -192,22 +249,26 @@ $in = $user_details->instagram;
             </div>
             <div class="profile-image row">
                 <div class="col-lg-6 col-md-6 col-sm-12 text-center" >
-                    <div class="img rounded-circle">
-                        <img src="<?= $user_details->profile_pic != null ? 'img/uploads/' . $user_details->profile_pic : 'img/man.png' ?>" class="rounded" width="100%" height ="100%"> 
+                    <div class="img">
+                        <img src="<?= $user_details->profile_pic != null ? 'img/uploads/' . $user_details->profile_pic : 'img/man.png' ?>" class="rounded rounded-circle border border-4 border-dark" width="100%" height="100%"> 
                     </div>    
+
+                    <div style="font-family: 'Poppins', serif;">
+                        <?= $user_details->about_you ?>
+                    </div>
                                
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 mt-5">
+                <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
                     <div class="date text-secondary mt-2">
                         <span class="mr-2"><?= date('l M Y') ?></span> <span id="hrs"></span><span id="min"></span><span id="sec"></span>
                     </div>
                    
                     <div class="details mt-2 text-secondary">
-                        <span><i class="bi bi-geo-alt"></i> <i class="loc"></i></span> 
+                        <span><i class="bi bi-geo-alt"></i> <i class="loc"></i></span>
                         <?php if($dateOfBirth != null): ?>
-                        <span class="mr-2"><i class="fa fa-birthday-cake" aria-hidden="true"></i> <i>Birthday <?= $dateOfBirth ?></i></span> 
+                        <span class=""><i class="fa fa-birthday-cake" aria-hidden="true"></i> <i>Birthday <?= $dateOfBirth ?></i></span>
                         <?php endif; ?>
-                        <span class="mr-2"><i class="bi bi-calendar"></i> <i>Joined <?= $joined ?></i></span>
+                        <span class=""><i class="bi bi-calendar"></i> <i>Joined <?= $joined ?></i></span>
                     </div>
 
                     <div class="social mt-2">
@@ -388,25 +449,116 @@ $in = $user_details->instagram;
         $.get(url, function(data){
             let city = data.city;
             let country = data.country_name;
-            $(".loc").html(city + ", " + country);
+            document.querySelector(".loc").innerHTML = city + ", " + country;
         }, 'json');
     });
 
     $(document).ready(function(){
-        let coverImg = "<?= $user_details->cover_img ?? 'Onboard1.jpg' ?>";
-        let profPic = "<?= $user_details->profile_pic ?? 'man.png' ?>"
+        let coverImg = "<?= $user_details->cover_img ?? '' ?>";
+        let profPic = "<?= $user_details->profile_pic ?? '' ?>"
 
         let cover = document.querySelector(".edit_cover_img");
 
         let pro = document.querySelector(".prof_pic");
 
-        cover.style.backgroundImage = `linear-gradient(to bottom, rgba(36, 36, 36, 0.692),rgba(19, 19, 19, 0.692)),url(img/${coverImg})`;
+        cover.style.backgroundImage = `linear-gradient(to bottom, rgba(36, 36, 36, 0.692),rgba(19, 19, 19, 0.692)),url(img/uploads/${coverImg})`;
         cover.style.backgroundPosition = "center";
         cover.style.backgroundSize = "cover";
         pro.style.backgroundImage = `linear-gradient(to bottom, rgba(36, 36, 36, 0.692),rgba(19, 19, 19, 0.692)),url(img/uploads/${profPic})`;
         pro.style.backgroundPosition = "center";
         pro.style.backgroundSize = "cover";
-    })
+    });
+
+
+    document.getElementById("change_cover").addEventListener("change", function(){
+        let files = this.files[0];
+        let url = "handle_file.php";
+
+        let formData = new FormData(); 
+        formData.append("file", files);
+        fetch(url, {
+            method: "POST", 
+            body: formData,
+        }).then(response => response.text()).then((data) => {
+            
+           console.log(data);
+            if(data == 'no'){
+                toastr.error('File exists',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                });
+            }else if(data == 'error1'){
+                toastr.error('File too Large',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                });
+            }else if(data == 'error2'){
+                toastr.error('Invalid format',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                });
+            }else{
+
+                console.log(data);
+
+                let src = URL.createObjectURL(files);     
+                
+                let cover = document.querySelector(".edit_cover_img");
+                cover.style.backgroundImage = `linear-gradient(to bottom, rgba(36, 36, 36, 0.692),rgba(19, 19, 19, 0.692)),url(${src})`;
+
+            }
+        });
+
+
+    });
+
+    document.getElementById("change_pro").addEventListener("change", function(){
+        let files = this.files[0];
+        let url = "handle_file.php";
+
+        let formData = new FormData(); 
+        formData.append("file", files);
+        fetch(url, {
+            method: "POST", 
+            body: formData,
+        }).then(response => response.text()).then((data) => {
+            
+           console.log(data);
+            if(data == 'no'){
+                toastr.error('File exists',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                });
+            }else if(data == 'error1'){
+                toastr.error('File too Large',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                });
+            }else if(data == 'error2'){
+                toastr.error('Invalid format',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                });
+            }else{
+
+                console.log(data);
+
+                let src = URL.createObjectURL(files);     
+                
+                let cover = document.querySelector(".prof_pic");
+                cover.style.backgroundImage = `linear-gradient(to bottom, rgba(36, 36, 36, 0.692),rgba(19, 19, 19, 0.692)),url(${src})`;
+
+            }
+        });
+
+
+    });
     
 </script>
 <?php
