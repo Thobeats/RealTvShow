@@ -208,7 +208,7 @@ header("location : profile.php");
                         <div>
                             <label for="change_cover" style="background-color:inherit;"><i class="bi bi-brush text-light" title="change cover image"></i></label>
                             <input type="file" name="edit_cover_img" id="change_cover" hidden>
-                            <i class="bi bi-x-lg" style="cursor:pointer;" title="Remove"></i>
+                            <i class="bi bi-x-lg" data-name="<?= $coverImg ?>" data-tag="edit_cover_img" onclick="removePic(event)" style="cursor:pointer;" title="Remove"></i>
                         </div>                               
                     </div>
                 </div>
@@ -219,7 +219,7 @@ header("location : profile.php");
                             <div>
                                 <label for="change_pro" style="background-color:inherit;"><i class="bi bi-brush text-light" title="change profile image"></i></label>
                                 <input type="file" name="edit_pro" id="change_pro" hidden>
-                                <i class="bi bi-x-lg" style="cursor:pointer;" title="Remove"></i>
+                                <i class="bi bi-x-lg" onclick="removePic(event)" data-name="<?= $user_details->profile_pic ?>" data-tag="prof_pic"style="cursor:pointer;" title="Remove"></i>
                             </div>   
                         </div>
                     </div>
@@ -250,7 +250,7 @@ header("location : profile.php");
             <div class="profile-image row">
                 <div class="col-lg-6 col-md-6 col-sm-12 text-center" >
                     <div class="img">
-                        <img src="<?= $user_details->profile_pic != null ? 'img/uploads/' . $user_details->profile_pic : 'img/man.png' ?>" class="rounded rounded-circle border border-4 border-dark" width="100%" height="100%"> 
+                        <img src="<?= $user_details->profile_pic != null ? 'img/uploads/' . $user_details->profile_pic : 'img/uploads/man.png' ?>" class="rounded rounded-circle border border-4 border-dark" width="100%" height="100%"> 
                     </div>    
 
                     <div style="font-family: 'Poppins', serif;">
@@ -439,6 +439,36 @@ header("location : profile.php");
             return "0" + n;
         }else{
             return n;
+        }
+    }
+
+    function removePic(event){
+        let name = event.target.dataset.name;
+        let tag = event.target.dataset.tag;
+
+        console.log(tag);
+
+        if(name !== ""){
+            let url = `unlink.php?pic=${name}`;
+
+            $.get(url, function(data){
+                if(data == "File Deleted"){
+
+                    event.target.dataset.name = "";
+                    document.querySelector("."+tag).style.backgroundImage = 'none';
+                    toastr.success('Removed',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                    });
+                }else{
+                    toastr.error('not found',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                    });
+                }
+            }, 'text');
         }
     }
 
