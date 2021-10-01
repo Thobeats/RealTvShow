@@ -47,47 +47,17 @@ $date = date('Y-m-d h:i:s');
 
 <?php
 if(isset($_POST['save'])){
-    $cover_img = $_FILES['edit_cover_img'];
-    $pro_img = $_FILES['edit_pro'];
+   
     $about_me = $_POST['about_me'];
+    $update_query = mysqli_query($link, "UPDATE `realtv_users` SET `updated_at`='$date',`about_you`='$about_me' WHERE id='$user_id'");
 
-    if($cover_img['name'] !== ""){
-        $cover_img = handle_image($cover_img);
-
-     if($cover_img != 'error'){
-        $update_query = mysqli_query($link, "UPDATE `realtv_users` SET `cover_img`='$cover_img',`updated_at`='$date',`about_you`='$about_me' WHERE id='$user_id'");
-
-        if($update_query){
-
-            if($pro_img['name'] !== ""){
-                $pro_img = handle_image($pro_img);
-
-                if($pro_img != 'error'){
-                    $update_pro = mysqli_query($link, "update $tabl2 set profile_pic = '$pro_img' where unique_id = '$unique_id'");
-
-                    if($update_pro){
-                        set_message("success", "Update Successful");
-                      
-                    }else{
-                        set_message("error", "Update Error, Try Again");
-                    }
-                }else{
-                    set_message("error", "Update Error, Try Again");
-                }
-            }  
-            set_message("success", "Update Successful");            
-         
-        }else{
-            set_message("error", "Update Error, Try Again");
-        }
-    }else{
-        set_message("error", "Update Error, Try Again");
+    if($update_query){           
+        set_message("success", "Update Successful");   
+        header("location: profile.php");
     }
+   
 }
 
-
-header("location : profile.php");
-}
 
 ?>
 
@@ -112,12 +82,21 @@ header("location : profile.php");
         height : 40vh;
         background-size : cover;
         background-position : center;
+        cursor: pointer;
+        display:flex; justify-content: center; align-items: center; font-size:15px;
+    }
+    #edit_btns,.edit_btns{
+            display : none;
+        }
+    .show{
+        display: block;
     }
     .img{
         transform : translateY(-50px);
         width : 200px;
         height : 180px;
         margin: 0 auto;
+        cursor : pointer;
     }
     .fullname{
         text-transform : uppercase;
@@ -170,7 +149,7 @@ header("location : profile.php");
         .dt{
             transform : translateY(-70px);
         }
-
+       
         .bio-container{
             margin : 0px 0px;
         }
@@ -203,27 +182,10 @@ header("location : profile.php");
       </div>
         <form action="" method="post" enctype="multipart/form-data">
             <div class="modal-body">
-                <div class="form-group">
-                    <div class="edit_cover_img text-light" style="height: 30vh;display:flex; justify-content: center; align-items: center; font-size:15px;">
-                        <div>
-                            <label for="change_cover" style="background-color:inherit;"><i class="bi bi-brush text-light" title="change cover image"></i></label>
-                            <input type="file" name="edit_cover_img" id="change_cover" hidden>
-                            <i class="bi bi-x-lg" data-name="<?= $coverImg ?>" data-tag="edit_cover_img" onclick="removePic(event)" style="cursor:pointer;" title="Remove"></i>
-                        </div>                               
-                    </div>
-                </div>
+               
 
                 <div class="form-group row">
-                    <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
-                        <div class="prof_pic text-light"  style="height: 200px; display:flex; justify-content: center; align-items: center; font-size:15px;">
-                            <div>
-                                <label for="change_pro" style="background-color:inherit;"><i class="bi bi-brush text-light" title="change profile image"></i></label>
-                                <input type="file" name="edit_pro" id="change_pro" hidden>
-                                <i class="bi bi-x-lg" onclick="removePic(event)" data-name="<?= $user_details->profile_pic ?>" data-tag="prof_pic"style="cursor:pointer;" title="Remove"></i>
-                            </div>   
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
+                    <div class="col-12 mt-2">
                         <div class="form-group" style="height: 200px;">
                             <label for="" style="background-color:inherit;">About Me</label>
                             <textarea name="about_me" id="" cols="" rows="6" class="form-control"><?= $user_details->about_you ?? "" ?></textarea>
@@ -245,12 +207,23 @@ header("location : profile.php");
 <section class="profile-body p-2 mx-2">
     <div class="row mx-auto mb-5" style="width: 100%">
         <div class="col-12">
-            <div class="cover-image">
+            <div class="cover-image text-light">
+                <div id="edit_btns">
+                    <label for="change_cover" style="background-color:inherit;"><i class="bi bi-brush text-light" title="change cover image"></i></label>
+                    <input type="file" name="edit_cover_img" id="change_cover" hidden>
+                    <i class="bi bi-x-lg" data-name="<?= $coverImg ?>" data-type="cover_image" data-tag=".cover-image" onclick="removePic(event)" style="cursor:pointer;" title="Remove"></i>
+                </div>  
             </div>
             <div class="profile-image row">
+                
                 <div class="col-lg-6 col-md-6 col-sm-12 text-center" >
                     <div class="img">
-                        <img src="<?= $user_details->profile_pic != null ? 'img/uploads/' . $user_details->profile_pic : 'img/uploads/man.png' ?>" class="rounded rounded-circle border border-4 border-dark" width="100%" height="100%"> 
+                        <div class="text-right text-light edit_btns">
+                            <label for="change_pro" style="background-color:inherit;"><i class="bi bi-brush text-light" title="change profile image"></i></label>
+                            <input type="file" name="edit_pro" id="change_pro" hidden>
+                            <i class="bi bi-x-lg" onclick="removePic(event)" data-table="<?= $tabl2 ?>" data-type="pro_image" data-name="<?= $user_details->profile_pic ?>" data-tag=".pro_img"style="cursor:pointer;" title="Remove"></i>
+                        </div>   
+                        <img src="<?= $user_details->profile_pic != NULL ? 'img/uploads/' . $user_details->profile_pic : 'img/man.png' ?>" class="pro_img rounded rounded-circle border border-4 border-dark" width="100%" height="100%"> 
                     </div>    
 
                     <div style="font-family: 'Poppins', serif;">
@@ -445,22 +418,53 @@ header("location : profile.php");
     function removePic(event){
         let name = event.target.dataset.name;
         let tag = event.target.dataset.tag;
+        let type = event.target.dataset.type;
 
-        console.log(tag);
 
         if(name !== ""){
             let url = `unlink.php?pic=${name}`;
 
             $.get(url, function(data){
                 if(data == "File Deleted"){
-
+                    console.log(tag);
                     event.target.dataset.name = "";
-                    document.querySelector("."+tag).style.backgroundImage = 'none';
-                    toastr.success('Removed',{
-                    'closeButton': true, 
-                    'showMethod' : 'slideDown', 
-                    'hideMethod' : 'slideUp'
-                    });
+
+                    if(type == "cover_image"){
+                        document.querySelector(tag).style.backgroundImage = 'linear-gradient(to bottom, rgba(36, 36, 36, 0.692),rgba(19, 19, 19, 0.692))';
+                    }
+
+                    if(type == "pro_image"){
+                        document.querySelector(tag).setAttribute("src", "img/man.png");
+                    }
+                    // toastr.success('Removed',{
+                    //     'closeButton': true, 
+                    //     'showMethod' : 'slideDown', 
+                    //     'hideMethod' : 'slideUp'
+                    // });
+                    
+                    let name = "";
+                    let ur = "";
+                    if(event.target.hasAttribute("data-table")){
+                        let tbl = event.target.dataset.table;
+                        ur = `update_file.php?tbl=${tbl}&type=pro_img&name=${name}&id=` + "<?= $unique_id ?>";   
+                    }else{
+                        ur = `update_file.php?type=cover_img&name=${name}&id=` + "<?= $user_id ?>"; 
+                    }
+
+                    console.log(ur);
+                      
+                    $.get(ur, function(dat){
+                        if(dat){
+                            toastr.success(dat,{
+                                'closeButton': true, 
+                                'showMethod' : 'slideDown', 
+                                'hideMethod' : 'slideUp'
+                            });
+                        }
+                    },'text');
+
+
+
                 }else{
                     toastr.error('not found',{
                     'closeButton': true, 
@@ -483,26 +487,41 @@ header("location : profile.php");
         }, 'json');
     });
 
-    $(document).ready(function(){
-        let coverImg = "<?= $user_details->cover_img ?? '' ?>";
-        let profPic = "<?= $user_details->profile_pic ?? '' ?>"
+    // $(document).ready(function(){
+    //     let coverImg = "<?= $user_details->cover_img ?? '' ?>";
+    //     let profPic = "<?= $user_details->profile_pic ?? '' ?>"
 
-        let cover = document.querySelector(".edit_cover_img");
+    //     let cover = document.querySelector(".edit_cover_img");
 
-        let pro = document.querySelector(".prof_pic");
+    //     let pro = document.querySelector(".prof_pic");
 
-        cover.style.backgroundImage = `linear-gradient(to bottom, rgba(36, 36, 36, 0.692),rgba(19, 19, 19, 0.692)),url(img/uploads/${coverImg})`;
-        cover.style.backgroundPosition = "center";
-        cover.style.backgroundSize = "cover";
-        pro.style.backgroundImage = `linear-gradient(to bottom, rgba(36, 36, 36, 0.692),rgba(19, 19, 19, 0.692)),url(img/uploads/${profPic})`;
-        pro.style.backgroundPosition = "center";
-        pro.style.backgroundSize = "cover";
+    //     cover.style.backgroundImage = `linear-gradient(to bottom, rgba(36, 36, 36, 0.692),rgba(19, 19, 19, 0.692)),url(img/uploads/${coverImg})`;
+    //     cover.style.backgroundPosition = "center";
+    //     cover.style.backgroundSize = "cover";
+    //     pro.style.backgroundImage = `linear-gradient(to bottom, rgba(36, 36, 36, 0.692),rgba(19, 19, 19, 0.692)),url(img/uploads/${profPic})`;
+    //     pro.style.backgroundPosition = "center";
+    //     pro.style.backgroundSize = "cover";
+    // });
+
+
+    $(".cover-image").hover(function(){
+        $("#edit_btns").css('display', 'block');
+    }, function(){
+        $("#edit_btns").css('display', 'none');
+    });
+
+    $(".img").hover(function(){
+        $(".edit_btns").css('display', 'block');
+    }, function(){
+        $(".edit_btns").css('display', 'none');
     });
 
 
     document.getElementById("change_cover").addEventListener("change", function(){
         let files = this.files[0];
-        let url = "handle_file.php";
+        let url = "upload_file.php";
+
+        let user = "<?= $user_id ?>";
 
         let formData = new FormData(); 
         formData.append("file", files);
@@ -534,11 +553,21 @@ header("location : profile.php");
 
                 console.log(data);
 
-                let src = URL.createObjectURL(files);     
+                let src = URL.createObjectURL(files);  
+                let url = `update_file.php?type=cover_img&name=${data}&id=` + "<?= $user_id ?>";   
                 
-                let cover = document.querySelector(".edit_cover_img");
+                let cover = document.querySelector(".cover-image");
                 cover.style.backgroundImage = `linear-gradient(to bottom, rgba(36, 36, 36, 0.692),rgba(19, 19, 19, 0.692)),url(${src})`;
 
+                $.get(url, function(data){
+                    if(data == 1){
+                        toastr.success('Updated',{
+                            'closeButton': true, 
+                            'showMethod' : 'slideDown', 
+                            'hideMethod' : 'slideUp'
+                        });
+                    }
+                },'text');
             }
         });
 
@@ -547,7 +576,7 @@ header("location : profile.php");
 
     document.getElementById("change_pro").addEventListener("change", function(){
         let files = this.files[0];
-        let url = "handle_file.php";
+        let url = "upload_file.php";
 
         let formData = new FormData(); 
         formData.append("file", files);
@@ -577,12 +606,25 @@ header("location : profile.php");
                 });
             }else{
 
-                console.log(data);
-
+                
+                let tbl = "<?= $tabl2 ?>";
+                let url = `update_file.php?tbl=${tbl}&type=pro_img&name=${data}&id=` + "<?= $unique_id ?>";   
                 let src = URL.createObjectURL(files);     
                 
-                let cover = document.querySelector(".prof_pic");
-                cover.style.backgroundImage = `linear-gradient(to bottom, rgba(36, 36, 36, 0.692),rgba(19, 19, 19, 0.692)),url(${src})`;
+                let pro_img = document.querySelector(".pro_img");
+                pro_img.setAttribute("src", src);
+                
+                $.get(url, function(data){
+                    if(data == 1){
+                        toastr.success('Updated',{
+                            'closeButton': true, 
+                            'showMethod' : 'slideDown', 
+                            'hideMethod' : 'slideUp'
+                        });
+                    }
+                },'text');
+
+
 
             }
         });

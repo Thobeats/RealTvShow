@@ -170,6 +170,12 @@ formControl.forEach((formC)=>{
 <?php endif; ?>
 </script>
 
+<script>
+if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
+</script>
+
 
 
 
