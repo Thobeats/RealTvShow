@@ -32,6 +32,25 @@ require "scripts/header_two.php";
 </style>
 
 <section class="profile-body p-2 mx-2">
+
+    <table class="table-bordered table" id="contestants">
+        <thead>
+            <tr>
+                <th>SN</th>
+                <th>Profile Image</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Resume</th>
+               <?php if(role() == 4){ ?>
+                <th>Action</th>
+               <?php } ?>
+            </tr>
+        </thead>
+    </table>
    
 </section>
 

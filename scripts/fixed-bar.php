@@ -120,7 +120,7 @@
             </div>
         </li>
         <li class="option"><i class="bi bi-pen"></i> <span class="ml-2">Writers</span></li>
-        <li class="option"><i class="bi bi-people-fill"></i><span class="ml-2">Contestants</span></li>
+        <li class="option"><i class="bi bi-people-fill"></i><span class="ml-2"><a class="profile_link" href="all_contestants.php">Contestants</a></span></li>
         <?php } ?>
         <li class="option"><a href="logout.php"><i class="bi bi-box-arrow-right"></i><span class="ml-2">Logout</span></a></li>
         

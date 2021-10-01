@@ -175,7 +175,7 @@ if(isset($_POST['save'])){
   <div class="modal-dialog modal-lg">
     <div class="modal-content text-light" style="background-color : black !important;">
       <div class="modal-header border-0">
-        <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
+        <h5 class="modal-title" id="editProfileModalLabel">Introduce Yourself</h5>
         <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -254,7 +254,7 @@ if(isset($_POST['save'])){
                     </div>
 
                     <div class="profile-edit mt-4">
-                        <button style="background-color:inherit;" data-toggle="modal" data-target="#editProfileModal" class="realbtn"><i class="bi bi-pencil-square"></i> Edit Profile</button>
+                        <button style="background-color:inherit;" data-toggle="modal" data-target="#editProfileModal" class="realbtn"><i class="bi bi-pencil-square"></i> Edit Intro</button>
                     </div>
                    
                 </div>
