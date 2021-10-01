@@ -27,6 +27,9 @@ $query = mysqli_query($link, "Select * from realtv_executives");
         table{
             font-family : "Poppins", serif !important;
         }
+        tbody td{
+            background-color : none !important;
+        }
         
     }
     @media only screen and (max-width: 425px) {
@@ -40,7 +43,7 @@ $query = mysqli_query($link, "Select * from realtv_executives");
 
 <section class="profile-body p-2 mx-2">
 
-    <table class="table-bordered table" id="contestants">
+    <table class="stripe compact hover table cell-border" id="contestants">
         <thead>
             <tr>
                 <th>SN</th>

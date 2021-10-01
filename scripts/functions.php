@@ -342,6 +342,10 @@ function log_in_user($email, $password){
             $location = "writersPage.php";
         }
 
+        if($role == 4){
+            $location = "profile.php";
+        }
+
         $_SESSION['index'] = $location;
        
         header("Location: $location");

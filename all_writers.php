@@ -28,6 +28,7 @@ $query = mysqli_query($link, "Select * from realtv_writers");
             font-family : "Poppins", serif !important;
         }
         
+        
     }
     @media only screen and (max-width: 425px) {
         .profile-body{

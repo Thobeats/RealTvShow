@@ -24,6 +24,13 @@ if($type == "pro_img"){
     }
 }
 
+if($type == "company_img"){
+    if(mysqli_query($link, "update realtv_company set co_img = '$name' where id = '$id'")){
+        echo "updated";
+        //$tbl . " " . $id;
+    }
+}
+
 
 
 

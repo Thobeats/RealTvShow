@@ -23,6 +23,10 @@ $tabl2 = get_table2_data($role);
 
 $user_details = mysqli_fetch_object(mysqli_query($link, "select * from realtv_users a inner join $tabl2 b on a.unique_id = b.unique_id where a.id= '$user_id'"));
 
+if(role() ==  4){
+    $user_details = mysqli_fetch_object(mysqli_query($link, "select * from realtv_users where id= '$user_id'"));
+}
+
 $no_cont = mysqli_fetch_object(mysqli_query($link, "select count(*) as cnt from realtv_contestants"))->cnt;
 $no_write = mysqli_fetch_object(mysqli_query($link, "select count(*) as cnt from realtv_writers"))->cnt;
 $no_pro = mysqli_fetch_object(mysqli_query($link, "select count(*) as cnt from realtv_contestants"))->cnt;
@@ -369,7 +373,7 @@ if(isset($_POST['save'])){
         </div>
         <div class="col-lg-6  col-md-6 col-sm-12 row poppins mx-auto">
             <p class="col-4 text-right">Phone</p>
-            <p class="col-8">:  <?= $user_details->phone_no ?></p>
+            <p class="col-8">:  <?= $user_details->phone_no ?? $user_details->phone ?></p>
         </div>
         <div class="col-lg-6  col-md-6 col-sm-12 row poppins mx-auto">
             <p class="col-4 text-right">Role</p>
@@ -426,7 +430,6 @@ if(isset($_POST['save'])){
 
             $.get(url, function(data){
                 if(data == "File Deleted"){
-                    console.log(tag);
                     event.target.dataset.name = "";
 
                     if(type == "cover_image"){
@@ -451,7 +454,6 @@ if(isset($_POST['save'])){
                         ur = `update_file.php?type=cover_img&name=${name}&id=` + "<?= $user_id ?>"; 
                     }
 
-                    console.log(ur);
                       
                     $.get(ur, function(dat){
                         if(dat){
@@ -487,21 +489,6 @@ if(isset($_POST['save'])){
         }, 'json');
     });
 
-    // $(document).ready(function(){
-    //     let coverImg = "<?= $user_details->cover_img ?? '' ?>";
-    //     let profPic = "<?= $user_details->profile_pic ?? '' ?>"
-
-    //     let cover = document.querySelector(".edit_cover_img");
-
-    //     let pro = document.querySelector(".prof_pic");
-
-    //     cover.style.backgroundImage = `linear-gradient(to bottom, rgba(36, 36, 36, 0.692),rgba(19, 19, 19, 0.692)),url(img/uploads/${coverImg})`;
-    //     cover.style.backgroundPosition = "center";
-    //     cover.style.backgroundSize = "cover";
-    //     pro.style.backgroundImage = `linear-gradient(to bottom, rgba(36, 36, 36, 0.692),rgba(19, 19, 19, 0.692)),url(img/uploads/${profPic})`;
-    //     pro.style.backgroundPosition = "center";
-    //     pro.style.backgroundSize = "cover";
-    // });
 
 
     $(".cover-image").hover(function(){
