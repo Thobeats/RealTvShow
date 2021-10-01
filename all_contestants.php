@@ -18,6 +18,9 @@ $query = mysqli_query($link, "Select * from realtv_contestants");
 ?>
 
 <style>
+    body{
+        overflow-x : scroll;
+    }
     .profile-body{
         margin-top : 33vh;
     }
