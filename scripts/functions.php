@@ -279,14 +279,22 @@ function register_executive($firstname, $surname, $email, $password, $role_id, $
     // Database connection
     $link = connect();     
 
+    if($company_name != null){
+       if(mysqli_connect($link, "INSERT INTO `realtv_company`(`company_name`) VALUES ('$company_name'")){
+           $company_id = mysqli_insert_id($link);
+       }else{
+           $company_id = null;
+       }
+    }
+
     $query = mysqli_query($link, "INSERT INTO `realtv_users`(`firstname`,`lastname`,`fullname`,`username`,`status`, `role_id`,`email`,`password`,`activated`, `token`, `address`, `unique_id`) VALUES ('$firstname','$surname','$fullname','$username','Active',
                                  '$role_id','$email','$encode_password','0', '$encode_token', '$address', '$unique_id')");
 
   
     if($query){
         if($role_id == "3"){
-            $executive_query = mysqli_query($link, "INSERT INTO `realtv_executives`(`firstname`, `lastname`, `email`, `username`, `password`, `phone_no`, `address`, `profile_pic`, `unique_id`, `title`, `company_name`) VALUES ('$firstname','$surname','$email','$username',
-                                            '$password','$phone_no','$address','$pic','$unique_id', '$title', '$company_name')");
+            $executive_query = mysqli_query($link, "INSERT INTO `realtv_executives`(`firstname`, `lastname`, `email`, `username`, `password`, `phone_no`, `address`, `profile_pic`, `unique_id`, `title`, `company_id`) VALUES ('$firstname','$surname','$email','$username',
+                                            '$password','$phone_no','$address','$pic','$unique_id', '$title', '$company_id')");
         }
 
 
@@ -674,6 +682,14 @@ function update_executive($link, $id, $firstname, $lastname, $email, $username, 
     if(mysqli_query($link, $q)){
         return 1;
     }
+}
+
+function isactive($id){
+    $link = connect();
+
+    $check = mysqli_query($link, "select activated from realtv_users where unique_id = '$id'");
+
+    return mysqli_fetch_assoc($check)['activated'];
 }
 
 $link = connect();
