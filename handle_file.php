@@ -13,7 +13,7 @@ $path = "img/uploads/" . $name;
 
 if(!file_exists($path)){
 
-    if($size > 500000){
+    if($size > 5000000){
         echo "error1";
     }elseif(!in_array($ext, $extensions)){
         echo "error2";

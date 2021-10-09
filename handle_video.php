@@ -8,7 +8,7 @@ $size = $pic['size'];
 $tmp = explode(".", $name);
 $ext = end($tmp);
 
-if($size > 5000000){
+if($size > 50000000){
     echo json_encode(['status' => '0', 'msg' => 'error1']);
 }elseif(!in_array($ext, $extensions)){
     echo json_encode(['status' => '0', 'msg' => 'error2']);

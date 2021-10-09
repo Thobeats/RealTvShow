@@ -174,6 +174,10 @@ formControl.forEach((formC)=>{
 if ( window.history.replaceState ) {
   window.history.replaceState( null, null, window.location.href );
 }
+
+
+$(".form")[0].reset();
+
 </script>
 
 

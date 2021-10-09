@@ -4,6 +4,37 @@ require_once "scripts/functions.php";
 require "scripts/header_two.php";
 
 ?>
+<!-- Modal -->
+<div class="modal fade" id="contestant" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+       
+        <h5 class="modal-title" id="exampleModalLabel">Register to view Proposals</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        
+      <form action="viewTestProposal.php" method='GET'>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="">Firstname:</label>
+                    <input type="text" name="firstname" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Email:</label>
+                    <input type="email" name="email" class="form-control" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-xs" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary btn-xs">Check it out</button>
+            </div>
+      </form>      
+    </div>
+  </div>
+</div>
 
 <style>
   .sign_up_wrapper{
@@ -75,7 +106,7 @@ require "scripts/header_two.php";
 <section class="d-flex flex-column justify-content-center sign_up_wrapper">
   <div class="row">
       <div class="col-lg-4 col-md-4 col-sm-12 p-4">
-        <a class="signup_link" href="contestant_signup.php"><div class="card text-light" style="background-color: #285097;">
+        <a class="signup_link" href="" onclick="preventDefault()" data-toggle="modal" data-target="#contestant"><div class="card text-light" style="background-color: #285097;">
           <div class="card-body text-center">
             <h3 class="h3">contestant sign up</h3>
             <p class="icon">  

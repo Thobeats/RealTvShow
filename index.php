@@ -9,6 +9,38 @@ require "scripts/header_two.php";
 
 <?php get_message('error'); get_message('success'); ?>
 
+<!-- Modal -->
+<div class="modal fade" id="contestant" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+       
+        <h5 class="modal-title" id="exampleModalLabel">Register to view Proposals</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        
+      <form action="viewTestProposal.php" method='GET'>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="">Firstname:</label>
+                    <input type="text" name="firstname" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Email:</label>
+                    <input type="email" name="email" class="form-control" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-xs" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary btn-xs">Check it out</button>
+            </div>
+      </form>      
+    </div>
+  </div>
+</div>
+
 
 <section class="landing-image d-flex flex-column justify-content-start flex-column">
     <div class="landing-text text-white text-center">
@@ -31,7 +63,7 @@ require "scripts/header_two.php";
             <div class="card new">
                 <img src="img/contestant.jpg" alt="" >
                 <div class="card-body bg-dark text-center" >
-                    <a href="contestant_signup.php" class="text-light card-link">Contestant and Talent Registration</a>
+                    <a href="" onclick="preventDefault()" data-toggle="modal" data-target="#contestant" class="text-light card-link">Contestant and Talent Registration</a>
                 </div>
             </div>
         </div>
