@@ -96,7 +96,7 @@ if(isset($_POST['save'])){
         display: block;
     }
     .img{
-        transform : translateY(-50px);
+        transform : translateY(-20px);
         width : 200px;
         height : 180px;
         margin: 0 auto;
@@ -266,6 +266,7 @@ if(isset($_POST['save'])){
         </div>
     </div>
 <?php if(role() == 3) { ?>
+
     <div class="row preview p-3 mx-auto w-100">
         <div class="col-lg-3 col-md-3 col-sm-12">
             <div class="card-body bg-dark text-light p-0">
@@ -294,23 +295,32 @@ if(isset($_POST['save'])){
     </div>
 <?php } ?>
 
-<?php if(role() == 1) { ?>
+<?php if(role() == 1) { 
+    $no_wishlist = mysqli_fetch_assoc(mysqli_query($link, "select count(*) as cnt from realtv_cart where user_id= '$unique_id' and LOWER(status) = 'pending'"))['cnt'];
+    $no_reg = mysqli_fetch_assoc(mysqli_query($link, "select count(*) as cnt from realtv_cart where user_id= '$unique_id' and LOWER(status) = 'paid'"))['cnt'];
+?>
     <div class="row preview p-3 mx-auto w-100">
-        <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="col-lg-3 col-md-3 col-sm-12">
             <div class="card-body bg-dark text-light p-0">
-                <h1 class="h1 p-3 text-center">4</h1>
-                <p class="text-center p-3">Saved Gigs</p>
+                <h1 class="h1 p-3 text-center"><?= $no_wishlist ?></h1>
+                <p class="text-center p-3">Wishlist</p>
             </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="col-lg-3 col-md-3 col-sm-12">
             <div class="card-body bg-light text-dark p-0">
-                <h1 class="h1 p-3 text-center">4</h1>
-                <p class="text-center p-3">Registered Gigs</p>
+                <h1 class="h1 p-3 text-center"><?= $no_reg ?></h1>
+                <p class="text-center p-3">Registered</p>
             </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="card-body text-light p-0" style="background-color : #004883;">
+                <h1 class="h1 p-3 text-center">3</h1>
+                <p class="text-center p-3">Completed</p>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12">
             <div class="card-body bg-warning text-light p-0">
-                <h1 class="h1 p-3 text-center">4</h1>
+                <h1 class="h1 p-3 text-center">3</h1>
                 <p class="text-center p-3">Views</p>
             </div>
         </div>

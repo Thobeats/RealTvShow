@@ -81,14 +81,39 @@ if(isset($_POST['save'])){
 
     }
   }
+
+if(isset($_POST['save_sizzle'])){
+
+}
+
+
+if(isset($_GET['step'])){
+    $step = $_GET['step'];
+
+}else{
+    $step = 'bio';
+}
 ?>
 
 <style>
     .profile-body{
         margin-top : 33vh;
     }
-
-    
+     .tab-active{
+         text-transform : uppercase;
+         border: 1px solid;
+         color : #004883;
+         border-left: 5px solid #004883;
+     }
+     .real-color{
+         color : #004883;
+     }.border-blue{
+         border-right : 1px solid #004883;
+         box-shadow : 3px 0px 3px #000;
+     }
+     .tab-pane{
+        min-height : 20vh;
+     }
     form{
         padding  : 20px 60px;
         width : 90%;
@@ -136,94 +161,151 @@ if(isset($_POST['save'])){
 </style>
 
 <section class="profile-body p-2 mx-2">
-   <div class="row">
-       <div class="col-12">
-        <form action="" method="POST" class="mx-auto" enctype="multipart/form-data" autocomplete="off">
-            <div class="form-row mt-3">
-                <div class="col-6">
-                    <h3>Edit Profile</h3>
-                </div>
-                <div class="col-6 form-group text-right">
-                    <button class="btn btn-success" type="submit" name="save">Save</button>
-                </div>
-            </div>
-            <hr>
-            <div class="form-row">
-                <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
-                    <input type="text" name="firstname" class="form-control" placeholder="Firstname" value="<?= $user_details->firstname ?? "" ?>">
-                </div>
 
-                <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
-                    <input type="text" name="lastname" class="form-control" placeholder="Lastname" value="<?= $user_details->lastname ?? "" ?>">
-                </div>                
+    <div class="row">
+        <div class="col-2 border-blue pt-3">
+            <div class="nav nav-pills flex-column nav-fill d-flex justify-content-center mx-auto" id="v-pills-tab" role="tablist">
+                <a class="nav-link <?= $step == 'bio' ? 'tab-active' : '' ?>" href="?step=bio">Bio</a>
+                <?php if(role() == 1): ?>
+                <a class="nav-link <?= $step == 'resume' ? 'tab-active' : '' ?>" href="?step=resume">Resume</a>
+                <?php endif; ?>
+                <?php if(role() == 2): ?>
+                <a class="nav-link <?= $step == 'sizzle' ? 'tab-active' : '' ?>" href="?step=sizzle">Sizzle Reel</a>
+                <?php endif; ?>
+                <?php if(role() == 3): ?>
+                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Company</a>
+                <?php endif; ?>
             </div>
-            <div class="form-row">
-                <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
-                    <input type="email" name="email" class="form-control" placeholder="Email" value="<?= $user_details->email ?? "" ?>">
-                </div>
+        </div>
+        <div class="col-10">
+        <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane <?= $step == 'bio' ? 'active' : '' ?>" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                <div class="row">
+                    <div class="col-12">
+                        <form action="" method="POST" class="mx-auto" enctype="multipart/form-data" autocomplete="off">
+                            <div class="form-row mt-3">
+                                <div class="col-6">
+                                    <h3 class="real-color">Edit Profile</h3>
+                                </div>
+                                <div class="col-6 form-group text-right">
+                                    <button class="realbtn text-light" style="background-color: #004883; " type="submit" name="save">Save</button>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form-row">
+                                <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
+                                    <input type="text" name="firstname" class="form-control" placeholder="Firstname" value="<?= $user_details->firstname ?? "" ?>">
+                                </div>
 
-                <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
-                    <input type="text" name="username" class="form-control" placeholder="Username" value="<?= $user_details->username ?? "" ?>">
-                </div>                
-            </div>
-            <div class="form-row">
-                <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
-                    <input type="text" name="mobile" class="form-control" placeholder="Phone" value="<?= $user_details->phone_no ?? "" ?>">
-                </div>                
-                <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
-                    <input type="text" name="mobile2" class="form-control" placeholder="Phone2" value="<?= $user_details->mobile2 ?? "" ?>">
-                </div>     
-            </div>
-            <div class="form-row">
-            <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
-                    <input type="text" name="mobile3" class="form-control" placeholder="Phone3" value="<?= $user_details->mobile3 ?? "" ?>">
-                </div>   
-                <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
-                    <input type="date" name="dob" class="form-control" placeholder="Date of Birth" value="<?= $user_details->dob ?? "" ?>">
-                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
+                                    <input type="text" name="lastname" class="form-control" placeholder="Lastname" value="<?= $user_details->lastname ?? "" ?>">
+                                </div>                
+                            </div>
+                            <div class="form-row">
+                                <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
+                                    <input type="email" name="email" class="form-control" placeholder="Email" value="<?= $user_details->email ?? "" ?>">
+                                </div>
 
-                           
-            </div>
-            <div class="form-row">
-                 <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
-                    <select name="country" class="form-control" id="country" onchange="getState(event)">
-                        <option value=""> Select Country </option>
-                    </select>
-                </div>    
-                <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
-                    <select name="state" class="form-control" placeholder="State" id="state" onchange="getCity(event)">
-                    </select>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
-                    <select name="city" class="form-control" placeholder="City" id="city"></select>
-                </div>    
-            </div>
-            
-            <div class="form-row">
-                <div class="col-lg-3 col-md-3 col-sm-6 mt-2">
-                    <input type="text" name="facebook" class="form-control" placeholder="facebook username" value="<?= $user_details->facebook ?? "" ?>">
-                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
+                                    <input type="text" name="username" class="form-control" placeholder="Username" value="<?= $user_details->username ?? "" ?>">
+                                </div>                
+                            </div>
+                            <div class="form-row">
+                                <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
+                                    <input type="text" name="mobile" class="form-control" placeholder="Phone" value="<?= $user_details->phone_no ?? "" ?>">
+                                </div>                
+                                <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
+                                    <input type="text" name="mobile2" class="form-control" placeholder="Phone2" value="<?= $user_details->mobile2 ?? "" ?>">
+                                </div>     
+                            </div>
+                            <div class="form-row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
+                                    <input type="text" name="mobile3" class="form-control" placeholder="Phone3" value="<?= $user_details->mobile3 ?? "" ?>">
+                                </div>   
+                                <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
+                                    <input type="date" name="dob" class="form-control" placeholder="Date of Birth" value="<?= $user_details->dob ?? "" ?>">
+                                </div>
 
-                <div class="col-lg-3 col-md-3 col-sm-6  mt-2">
-                    <input type="text" name="twitter" class="form-control" placeholder="twitter username" value="<?= $user_details->twitter ?? "" ?>">
-                </div> 
-                <div class="col-lg-3 col-md-3 col-sm-6  mt-2">
-                    <input type="text" name="linked_in" class="form-control" placeholder="linkedIn username" value="<?= $user_details->linked_in ?? "" ?>">
-                </div>
+                                        
+                            </div>
+                            <div class="form-row">
+                                <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
+                                    <select name="country" class="form-control" id="country" onchange="getState(event)">
+                                        <option value=""> Select Country </option>
+                                    </select>
+                                </div>    
+                                <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
+                                    <select name="state" class="form-control" placeholder="State" id="state" onchange="getCity(event)">
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
+                                    <select name="city" class="form-control" placeholder="City" id="city"></select>
+                                </div>    
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="col-lg-3 col-md-3 col-sm-6 mt-2">
+                                    <input type="text" name="facebook" class="form-control" placeholder="facebook username" value="<?= $user_details->facebook ?? "" ?>">
+                                </div>
 
-                <div class="col-lg-3 col-md-3 col-sm-6  mt-2">
-                    <input type="text" name="instagram" class="form-control" placeholder="Instagram username" value="<?= $user_details->instagram ?? "" ?>">
-                </div>                
+                                <div class="col-lg-3 col-md-3 col-sm-6  mt-2">
+                                    <input type="text" name="twitter" class="form-control" placeholder="twitter username" value="<?= $user_details->twitter ?? "" ?>">
+                                </div> 
+                                <div class="col-lg-3 col-md-3 col-sm-6  mt-2">
+                                    <input type="text" name="linked_in" class="form-control" placeholder="linkedIn username" value="<?= $user_details->linked_in ?? "" ?>">
+                                </div>
+
+                                <div class="col-lg-3 col-md-3 col-sm-6  mt-2">
+                                    <input type="text" name="instagram" class="form-control" placeholder="Instagram username" value="<?= $user_details->instagram ?? "" ?>">
+                                </div>                
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="col-12 mt-2">
+                                    <textarea name="address" class="form-control" cols="5" rows="10" placeholder="Enter Address"><?= $user_details->address ?? "" ?></textarea>
+                                </div>                
+                            </div>            
+                        </form>
+                    </div>
+                </div>
             </div>
-            
-            <div class="form-row">
-                <div class="col-12 mt-2">
-                    <textarea name="address" class="form-control" cols="5" rows="10" placeholder="Enter Address"><?= $user_details->address ?? "" ?></textarea>
-                </div>                
-            </div>            
-        </form>
-       </div>
-   </div>
+            <div class="tab-pane <?= $step == 'resume' ? 'active' : '' ?>" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+            <div class="tab-pane <?= $step == 'sizzle' ? 'active' : '' ?>" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+            <div class="row">
+                    <div class="col-12">
+                        <form action="" method="POST" class="mx-auto" enctype="multipart/form-data" autocomplete="off">
+                            <div class="form-row mt-3">
+                                <div class="col-6">
+                                    <h3 class="real-color">Edit Sizzle Reel</h3>
+                                </div>
+                                <div class="col-6 form-group text-right">
+                                    <button class="realbtn text-light" style="background-color: #004883; " type="submit" name="save_sizzle">Save</button>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form-group">
+                                <video width="100%" height="100%" controls autoplay>
+                                    <source src="img/uploads/<?= $user_details->sizzle_reel ?>" type="video/mp4"></source>
+                                </video>
+                            </div> 
+                            <div class="form-group">
+                                <label for="upload_video">Upload Video</label>
+                                <input type="file" name="sizzle" id="upload_video" hidden>
+                                <label class="btn-danger"for="">Remove Video</label>
+                            </div>   
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+   
 </section>
 
 <script>
