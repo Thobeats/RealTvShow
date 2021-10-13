@@ -83,6 +83,15 @@ if(isset($_POST['save'])){
   }
 
 if(isset($_POST['save_sizzle'])){
+    $vid = $_FILES['sizzle'];
+    $name = $vid['name'];
+    $uploads_dir = 'img/uploads/';
+    $uploads_file = $uploads_dir . basename($name);
+    if(move_uploaded_file($vid['tmp_name'], $uploads_file)){
+        if(mysqli_query($link, "update realtv_writers set sizzle_reel = '$name' where unique_id = '$unique_id'")){
+            set_message("success", "Success");
+        }
+    }
 
 }
 
@@ -94,6 +103,9 @@ if(isset($_GET['step'])){
     $step = 'bio';
 }
 ?>
+
+<?= get_message("success"); get_message("error"); ?>
+
 
 <style>
     .profile-body{
@@ -108,8 +120,7 @@ if(isset($_GET['step'])){
      .real-color{
          color : #004883;
      }.border-blue{
-         border-right : 1px solid #004883;
-         box-shadow : 3px 0px 3px #000;
+         border : 1px solid #004883;
      }
      .tab-pane{
         min-height : 20vh;
@@ -159,6 +170,32 @@ if(isset($_GET['step'])){
     }
 
 </style>
+<div class="modal fade" id="prevVideo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content text-light" style="background-color : black !important;">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="editProfileModalLabel">Video Preview</h5>
+        <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+            <div class="modal-body">
+               
+
+                <div class="form-group" style="height : 50vh">
+                    <video id="preview_sizzle" width="100%" height="100%" controls>
+                    </video>
+                </div>
+            
+            
+            </div>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+    </div>
+  </div>
+</div>
 
 <section class="profile-body p-2 mx-2">
 
@@ -273,7 +310,7 @@ if(isset($_GET['step'])){
             <div class="tab-pane <?= $step == 'sizzle' ? 'active' : '' ?>" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
             <div class="row">
                     <div class="col-12">
-                        <form action="" method="POST" class="mx-auto" enctype="multipart/form-data" autocomplete="off">
+                        <form action="" method="POST" class="mx-auto" id="editVideo" enctype="multipart/form-data" autocomplete="off">
                             <div class="form-row mt-3">
                                 <div class="col-6">
                                     <h3 class="real-color">Edit Sizzle Reel</h3>
@@ -285,13 +322,13 @@ if(isset($_GET['step'])){
                             <hr>
                             <div class="form-group">
                                 <video width="100%" height="100%" controls autoplay>
-                                    <source src="img/uploads/<?= $user_details->sizzle_reel ?>" type="video/mp4"></source>
+                                <source src="img/uploads/<?= $user_details->sizzle_reel ?>" type="video/mp4"></source>
                                 </video>
                             </div> 
                             <div class="form-group">
-                                <label for="upload_video">Upload Video</label>
-                                <input type="file" name="sizzle" id="upload_video" hidden>
-                                <label class="btn-danger"for="">Remove Video</label>
+                                <label for="sizzle">Upload Video</label>
+                                <input type="file" name="sizzle" id="sizzle" hidden>
+                                <label class="btn-danger"for="" onclick="removeVideo(event)" data-name="<?= $user_details->sizzle_reel ?>">Remove Video</label>
                             </div>   
                         </form>
                         </div>
@@ -310,6 +347,7 @@ if(isset($_GET['step'])){
 
 <script>
 
+let sizzlePreview = document.getElementById("preview_sizzle");
 
 $(document).ready(function(){
     let value = "<?= $user_details->country ?? "" ?>";
@@ -353,7 +391,11 @@ $(document).ready(function(){
         }
     })
     .catch(error => console.log('error', error));
+
+
+    
 });
+
 
 function getState(event){
     let country = event.target.value.split("-")[1].trim();
@@ -418,6 +460,86 @@ function getCity(event){
 
 }
 
+let sizzle = document.getElementById('sizzle');
+
+sizzle.addEventListener("change", function(){
+        let files = this.files[0];
+        //console.log(files);
+        let url = "handle_video.php";
+       
+        let formData = new FormData(); 
+        formData.append("file", files);
+        fetch(url, {
+            method: "POST", 
+            body: formData,
+        }).then(response => response.json()).then((data) => {
+            
+            if(data.msg == 'error1'){
+                sizzle.value = "";
+                toastr.error('File too Large',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                });
+            }else if(data.msg == 'error2'){
+                sizzle.value = "";
+                toastr.error('Invalid format',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                });
+            }else{
+
+                let src = URL.createObjectURL(files);   
+                
+                let format = data.format;
+
+                console.log(sizzlePreview);
+                sizzlePreview.innerHTML = "";
+                sizzlePreview.innerHTML += `<source src="${src}" type="video/${format}"></source>`;
+                sizzlePreview.load();
+
+                $("#prevVideo").modal('show');
+            }
+        });
+    });
+
+    function removeVideo(event){
+        let name = event.target.dataset.name;
+        let id = "<?= $unique_id ?>";
+
+
+        if(name !== ""){
+            let url = `unlink.php?pic=${name}`;
+
+            $.get(url, function(data){
+                if(data == "File Deleted"){
+                    event.target.dataset.name = "";
+                   let ur = `update_file.php?id=${id}&type=sizzle&name=${name}`;                      
+                    $.get(ur, function(dat){
+                        if(dat == 1){
+                            toastr.success("Removed",{
+                                'closeButton': true, 
+                                'showMethod' : 'slideDown', 
+                                'hideMethod' : 'slideUp'
+                            });
+                        }
+                    },'text');
+
+
+
+                }else{
+                    toastr.error('not found',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                    });
+                }
+            }, 'text');
+        }
+    }
+
+    
 </script>
 
 

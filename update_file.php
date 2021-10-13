@@ -31,6 +31,12 @@ if($type == "company_img"){
     }
 }
 
+if($type == "sizzle"){
+    if(mysqli_query($link, "update realtv_writers set sizzle_reel = '$name' where unique_id = '$id'")){
+        echo 1;
+    }
+}
+
 
 
 

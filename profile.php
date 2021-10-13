@@ -449,11 +449,6 @@ if(isset($_POST['save'])){
                     if(type == "pro_image"){
                         document.querySelector(tag).setAttribute("src", "img/man.png");
                     }
-                    // toastr.success('Removed',{
-                    //     'closeButton': true, 
-                    //     'showMethod' : 'slideDown', 
-                    //     'hideMethod' : 'slideUp'
-                    // });
                     
                     let name = "";
                     let ur = "";

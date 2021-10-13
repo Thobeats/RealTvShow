@@ -403,6 +403,8 @@ if(isset($_POST['reg'])){
                 let format = data.format;
                 sizzlePreview.innerHTML = "";
                 sizzlePreview.innerHTML += `<source src="${src}" type="video/${format}"></source>`;
+                sizzlePreview.load();
+
             }
         });
     });

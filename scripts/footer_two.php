@@ -176,7 +176,7 @@ if ( window.history.replaceState ) {
 }
 
 
-$(".form")[0].reset();
+//$(".form")[0].reset();
 
 </script>
 
