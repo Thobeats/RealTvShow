@@ -9,15 +9,15 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
 
-function connect(){ 
-    $link = mysqli_connect("127.0.0.1", "root", "", "realtvshow");
+// function connect(){ 
+//     $link = mysqli_connect("127.0.0.1", "root", "", "realtvshow");
 
-    if($link){
-        return $link;
-    }else {
-        return mysqli_connect_errno();
-    }
-}
+//     if($link){
+//         return $link;
+//     }else {
+//         return mysqli_connect_errno();
+//     }
+// }
 
 function connect(){ 
     $link = mysqli_connect("localhost", "realtv_db_user", "@lphA3ch0#", "realtv_show");
