@@ -13,7 +13,23 @@ $unique_id = unique_id();
 
 $tabl2 = get_table2_data($role);
 
-$user_details = mysqli_fetch_object(mysqli_query($link, "select * from realtv_users a inner join $tabl2 b on a.unique_id = b.unique_id where a.id= '$user_id'"));
+if(isset($_POST['save_sizzle'])){
+
+    $vid = $_FILES['sizzle'];
+   
+    $name = $vid['name'];
+    $tmp = $vid['tmp_name'];
+     //var_dump($name, $tmp);
+    $uploads_dir = 'img/uploads/';
+    $uploads_file = $uploads_dir . basename($name);
+    if(move_uploaded_file($tmp, $uploads_file)){
+        if(mysqli_query($link, "update realtv_writers set sizzle_reel = '$name' where unique_id = '$unique_id'")){
+            set_message("success", "Success");
+        }
+    }
+    echo mysqli_error($link);
+}
+
 
 if(isset($_POST['save'])){
     $first_name = $_POST['firstname'];
@@ -82,23 +98,8 @@ if(isset($_POST['save'])){
     }
   }
 
-if(isset($_POST['save_sizzle'])){
+$user_details = mysqli_fetch_object(mysqli_query($link, "select * from realtv_users a inner join $tabl2 b on a.unique_id = b.unique_id where a.id= '$user_id'"));
 
-    $vid = $_FILES['sizzle'];
-    var_dump($vid);
-    $name = $_POST['vidname'];
-    $tmp = $_POST['tmp'];
-    $uploads_dir = 'img/uploads/';
-    $uploads_file = $uploads_dir . basename($name);
-    // if(move_uploaded_file($vid['tmp_name'], $uploads_file)){
-    //     if(mysqli_query($link, "update realtv_writers set sizzle_reel = '$name' where unique_id = '$unique_id'")){
-    //         set_message("success", "Success");
-    //     }
-    // }else{
-    //     echo "kkk";
-    // }
-    // echo mysqli_error($link);
-}
 
 
 if(isset($_GET['step'])){
@@ -118,9 +119,8 @@ if(isset($_GET['step'])){
     }
      .tab-active{
          text-transform : uppercase;
-         border: 1px solid;
-         color : #004883;
-         border-left: 5px solid #004883;
+         color : #fff;
+         background-color : #004883;
      }
      .real-color{
          color : #004883;
@@ -129,10 +129,17 @@ if(isset($_GET['step'])){
      }
      .tab-pane{
         min-height : 20vh;
+     }.nav{
+        width : 80%;
+        padding  : 0px;
      }
     form{
         padding  : 20px 60px;
         width : 90%;
+    }.nav-link{
+        width : 200px;
+        text-align : center;
+        border : 1px solid #004883;
     }
     .realbtn{
         border : 1px solid;
@@ -204,9 +211,9 @@ if(isset($_GET['step'])){
 
 <section class="profile-body p-2 mx-2">
 
-    <div class="row">
-        <div class="col-2 border-blue pt-3">
-            <div class="nav nav-pills flex-column nav-fill d-flex justify-content-center mx-auto" id="v-pills-tab" role="tablist">
+    <!-- <div class="row"> -->
+        <!-- <div class="col-2 bg-light pt-3"> -->
+            <div class="nav nav-tabs text-center mx-auto" id="v-pills-tab" role="tablist">
                 <a class="nav-link <?= $step == 'bio' ? 'tab-active' : '' ?>" href="?step=bio">Bio</a>
                 <?php if(role() == 1): ?>
                 <a class="nav-link <?= $step == 'resume' ? 'tab-active' : '' ?>" href="?step=resume">Resume</a>
@@ -218,8 +225,8 @@ if(isset($_GET['step'])){
                 <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Company</a>
                 <?php endif; ?>
             </div>
-        </div>
-        <div class="col-10">
+        <!-- </div> -->
+        <!-- <div class="col-10"> -->
         <div class="tab-content" id="v-pills-tabContent">
             <div class="tab-pane <?= $step == 'bio' ? 'active' : '' ?>" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                 <div class="row">
@@ -344,8 +351,8 @@ if(isset($_GET['step'])){
             </div>
             <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
             </div>
-        </div>
-    </div>
+        <!-- </div> -->
+    <!-- </div> -->
     
     
 

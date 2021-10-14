@@ -23,9 +23,9 @@ $tabl2 = get_table2_data($role);
 
 $user_details = mysqli_fetch_object(mysqli_query($link, "select * from realtv_users a inner join $tabl2 b on a.unique_id = b.unique_id where a.id= '$user_id'"));
 
-if(role() ==  4){
-    $user_details = mysqli_fetch_object(mysqli_query($link, "select * from realtv_users where id= '$user_id'"));
-}
+// if(role() ==  4){
+//     $user_details = mysqli_fetch_object(mysqli_query($link, "select * from realtv_users where id= '$user_id'"));
+// }
 
 $no_cont = mysqli_fetch_object(mysqli_query($link, "select count(*) as cnt from realtv_contestants"))->cnt;
 $no_write = mysqli_fetch_object(mysqli_query($link, "select count(*) as cnt from realtv_writers"))->cnt;

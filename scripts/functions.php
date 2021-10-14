@@ -9,18 +9,8 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
 
-// function connect(){ 
-//     $link = mysqli_connect("127.0.0.1", "root", "", "realtvshow");
-
-//     if($link){
-//         return $link;
-//     }else {
-//         return mysqli_connect_errno();
-//     }
-// }
-
 function connect(){ 
-    $link = mysqli_connect("localhost", "realtv_db_user", "@lphA3ch0#", "realtv_show");
+    $link = mysqli_connect("127.0.0.1", "root", "", "realtvshow");
 
     if($link){
         return $link;
@@ -28,6 +18,16 @@ function connect(){
         return mysqli_connect_errno();
     }
 }
+
+// function connect(){ 
+//     $link = mysqli_connect("localhost", "realtv_db_user", "@lphA3ch0#", "realtv_show");
+
+//     if($link){
+//         return $link;
+//     }else {
+//         return mysqli_connect_errno();
+//     }
+// }
 
 function base_url(){
     return "https://" . $_SERVER['SERVER_NAME'] . "/test/";
@@ -655,6 +655,8 @@ function get_table2_data($role){
         return "realtv_writers";
     }else if($role == 1){
        return "realtv_contestants";
+    }else if($role == 4){
+       return "realtv_admin";
     }
 }
 
