@@ -2,7 +2,7 @@
 
 $pic = $_FILES['file'];
 $uploads_dir = 'img/uploads/';
-$extensions = ['jpg', 'png',"jpeg"];
+$extensions = ['jpg', 'png',"jpeg", "pdf", "doc", "docx"];
 $name = $pic['name'];
 $size = $pic['size']; 
 $tmp = explode(".", $name);

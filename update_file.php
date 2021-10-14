@@ -37,6 +37,12 @@ if($type == "sizzle"){
     }
 }
 
+if($type == "resume"){
+    if(mysqli_query($link, "update realtv_contestants set resume = '$name' where unique_id = '$id'")){
+        echo 1;
+    }
+}
+
 
 
 

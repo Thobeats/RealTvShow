@@ -115,9 +115,9 @@ $company = mysqli_fetch_assoc(mysqli_query($link, "select * from realtv_company 
             </div>
         </div>
     </div>
-</section>
-</form>
 
+</form>
+</section>
 <script>
 
     function removePic(event){

@@ -30,6 +30,47 @@ if(isset($_POST['save_sizzle'])){
     echo mysqli_error($link);
 }
 
+if(isset($_POST['save_company'])){
+    $date = date('Y-m-d h:i:s');
+    $id = $_POST['id'];
+    $co_name = $_POST['co_name'];
+    $co_address = $_POST['co_address'];
+    $co_phone = $_POST['co_phone'];
+    $co_email = $_POST['co_email'];
+    $co_web = $_POST['co_web'];
+
+    $uploads_dir = 'img/uploads/';
+    $uploads_file = $uploads_dir . basename($_FILES['co_img']['name']);  
+
+    move_uploaded_file($_FILES['co_img']['tmp_name'], $uploads_file);
+    $co_img = $_FILES['co_img']['name'] == "" ? $_POST['co_img'] : $_FILES['co_img']['name'];
+
+    if(mysqli_query($link, "UPDATE `realtv_company` SET `company_name`='$co_name',`co_address`='$co_address',`co_email`='$co_email',`co_phone`='$co_phone',`co_img`='$co_img',`date_updated`='$date',`co_web`='$co_web' WHERE id = '$id'")){
+        set_message("success", "Updated");
+      
+    }
+
+
+   
+
+}
+
+if(isset($_POST['save_resume'])){
+
+    $vid = $_FILES['resume'];
+   
+    $name = $vid['name'];
+    $tmp = $vid['tmp_name'];
+     //var_dump($name, $tmp);
+    $uploads_dir = 'img/uploads/';
+    $uploads_file = $uploads_dir . basename($name);
+    if(move_uploaded_file($tmp, $uploads_file)){
+        if(mysqli_query($link, "update realtv_contestants set resume = '$name' where unique_id = '$unique_id'")){
+            set_message("success", "Success");
+        }
+    }
+    echo mysqli_error($link);
+}
 
 if(isset($_POST['save'])){
     $first_name = $_POST['firstname'];
@@ -99,7 +140,8 @@ if(isset($_POST['save'])){
   }
 
 $user_details = mysqli_fetch_object(mysqli_query($link, "select * from realtv_users a inner join $tabl2 b on a.unique_id = b.unique_id where a.id= '$user_id'"));
-
+$companyid = $user_details->company_id;
+$company = mysqli_fetch_assoc(mysqli_query($link, "select * from realtv_company where id = '$companyid'"));
 
 
 if(isset($_GET['step'])){
@@ -209,6 +251,27 @@ if(isset($_GET['step'])){
   </div>
 </div>
 
+<div class="modal fade" id="prevRes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content text-light" style="background-color : black !important;">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="editProfileModalLabel">Resume Preview</h5>
+        <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <div class="modal-body">              
+            <div class="form-group resembed" style="height : 30vh">
+            </div>
+        </div>
+        <div class="modal-footer border-0">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+  </div>
+</div>
+
 <section class="profile-body p-2 mx-2">
 
     <!-- <div class="row"> -->
@@ -222,7 +285,7 @@ if(isset($_GET['step'])){
                 <a class="nav-link <?= $step == 'sizzle' ? 'tab-active' : '' ?>" href="?step=sizzle">Sizzle Reel</a>
                 <?php endif; ?>
                 <?php if(role() == 3): ?>
-                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Company</a>
+                <a class="nav-link <?= $step == 'company' ? 'tab-active' : '' ?>" href="?step=company">Company</a>
                 <?php endif; ?>
             </div>
         <!-- </div> -->
@@ -318,9 +381,36 @@ if(isset($_GET['step'])){
                     </div>
                 </div>
             </div>
-            <div class="tab-pane <?= $step == 'resume' ? 'active' : '' ?>" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+                <div class="tab-pane <?= $step == 'resume' ? 'active' : '' ?>" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                    <div class="row">
+                        <div class="col-12">
+                            <form action="" method="POST" class="mx-auto" enctype="multipart/form-data" autocomplete="off">
+                                <input type="hidden" name="tmp" id="tmp">
+                                <input type="hidden" name="tmp" id="vidname">
+                                <div class="form-row mt-3">
+                                    <div class="col-6">
+                                        <h3 class="real-color">Edit Resume</h3>
+                                    </div>
+                                    <div class="col-6 form-group text-right">
+                                        <button class="realbtn text-light" style="background-color: #004883; " type="submit" name="save_resume">Save</button>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group" id="rescont">
+                                    <embed type="text/pdf" src="img/uploads/<?= $user_details->resume ?>" width="100%" height="500">
+                                </div> 
+                                <div class="form-group">
+                                    <label for="resume">Upload Resume</label>
+                                    <input type="file" name="resume" id="resume" hidden>
+                                    <label class="btn-danger"for="" onclick="removeResume(event)" data-name="<?= $user_details->resume ?>">Remove Resume</label>
+                                </div>   
+                            </form>
+                        </div>
+                    </div>
+                </div>
+    
             <div class="tab-pane <?= $step == 'sizzle' ? 'active' : '' ?>" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-            <div class="row">
+                <div class="row">
                     <div class="col-12">
                         <form action="" method="POST" class="mx-auto" enctype="multipart/form-data" autocomplete="off">
                             <input type="hidden" name="tmp" id="tmp">
@@ -335,8 +425,8 @@ if(isset($_GET['step'])){
                             </div>
                             <hr>
                             <div class="form-group">
-                                <video width="100%" height="100%" controls autoplay>
-                                <source src="img/uploads/<?= $user_details->sizzle_reel ?>" type="video/mp4"></source>
+                                <video id="video" width="100%" height="100%" controls autoplay>
+                                <source id="vid" src="img/uploads/<?= $user_details->sizzle_reel ?>" type="video/mp4"></source>
                                 </video>
                             </div> 
                             <div class="form-group">
@@ -349,10 +439,56 @@ if(isset($_GET['step'])){
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+            <div class="tab-pane <?= $step == 'company' ? 'active' : '' ?>" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+            <div class="row">
+                    <div class="col-12">
+                        <form action="" method="POST" class="mx-auto" enctype="multipart/form-data" autocomplete="off">
+                            <div class="form-row mt-3">
+                                <div class="col-6">
+                                    <h3 class="real-color">Edit Company</h3>
+                                </div>
+                                <div class="col-6 form-group text-right">
+                                    <button class="realbtn text-light" style="background-color: #004883; " type="submit" name="save_company">Save</button>
+                                </div>
+                            </div>
+                            <hr>
+                            <input type="hidden" name="id" value="<?= $companyid ?>">
+                            <input type="hidden" name="co_img" value="<?=$company['co_img']?>">
+                            <div class="row mx-auto w-100 mb-3 mt-3">
+                                <div class="col-lg-1 col-sm-0"></div>
+                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <div class="company_img py-4">
+                                        <img class="cimg" src="<?= $company['co_img'] ? 'img/uploads/' . $company['co_img'] : 'img/logo-placeholder.png' ?>" width="100%" height="100%" alt="">
+                                    </div>
+                                    <div class="text-center">
+                                        <label for="company_img" class="badge badge-success p-2" style="cursor: pointer;"><i class="bi bi-brush text-light " title="change cover image"></i></label>
+                                        <input type="file" name="co_img" id="company_img" hidden>
+                                        <label for="" class="badge badge-danger p-2"><i class="bi bi-x-lg" data-id="<?= $id ?>" data-name="<?= $company['co_img'] ?>" data-type="company_img" data-tag=".cimg" onclick="removePic(event)" style="cursor:pointer;" title="Remove"></i></label> 
+                                    </div>  
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="company-name-and-website mt-3">
+                                        <h3 class="p-2"> <input type="text" placeholder="Company Name" class="form-control h3" name="co_name" value="<?= $company['company_name'] ?? "" ?>"></h3>
+                                        <h6 class="p-2"><input type="text" placeholder="Company Address"   class="form-control" name="co_address" value="<?= $company['co_address'] ?? "" ?>"></h6>
+                                        <h6 class="p-2"><input type="email" placeholder="Company Email"  class="form-control" name="co_email" value="<?= $company['co_email'] ?? "" ?>"></h6>
+                                        <h6 class="p-2"><input type="text" placeholder="Company Phone"  class="form-control" name="co_phone" value="<?= $company['co_phone'] ?? "" ?>"></h6>
+                                        
+                                        <div class="mt-2 p-2">
+                                        <input type="text"  placeholder="Company Web : https://example.com"  class="form-control" name="co_web" value="<?= $company['co_web'] ?? "" ?>"> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
             </div>
         <!-- </div> -->
-    <!-- </div> -->
+     </div>
     
     
 
@@ -507,8 +643,7 @@ let sizzle = document.getElementById('sizzle');
                 let src = URL.createObjectURL(files);   
                 
                 let format = data.format;
-                $("#vidname").val(data.name);
-                $("#tmp").val(data.tmp);
+               
 
                 console.log(sizzlePreview);
                 sizzlePreview.innerHTML = "";
@@ -516,6 +651,44 @@ let sizzle = document.getElementById('sizzle');
                 sizzlePreview.load();
 
                 $("#prevVideo").modal('show');
+            }
+        });
+    });
+
+    let resume = document.getElementById('resume');
+
+    resume.addEventListener("change", function(){
+        let files = this.files[0];
+        let url = "handle_file.php"; 
+
+        let formData = new FormData(); 
+        formData.append("file", files);
+        fetch(url, {
+            method: "POST", 
+            body: formData,
+        }).then(response => response.text()).then((data) => {
+            
+            if(data.msg == 'error1'){
+                resume.value = "";
+                toastr.error('File too Large',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                });
+            }else if(data.msg == 'error2'){
+                resume.value = "";
+                toastr.error("Invalid Format",{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                });
+            }else{
+
+                let src = URL.createObjectURL(files);   
+                console.log(files);                
+                document.querySelector(".resembed").innerHTML = `<embed type='text/pdf' src='${src}' width='100%' height='300'>`;
+
+                $("#prevRes").modal('show');
             }
         });
     });
@@ -531,7 +704,10 @@ let sizzle = document.getElementById('sizzle');
             $.get(url, function(data){
                 if(data == "File Deleted"){
                     event.target.dataset.name = "";
-                   let ur = `update_file.php?id=${id}&type=sizzle&name=`;                      
+                    document.querySelector("#vid").setAttribute("src", "");
+                    document.querySelector("#video").load();
+
+                   let ur = `update_file.php?id=${id}&type=sizzle&name=NULL`;                      
                     $.get(ur, function(dat){
                         if(dat == 1){
                             toastr.success("Removed",{
@@ -555,6 +731,131 @@ let sizzle = document.getElementById('sizzle');
         }
     }
 
+    function removeResume(event){
+        let name = event.target.dataset.name;
+        let id = "<?= $unique_id ?>";
+
+
+        if(name !== ""){
+            let url = `unlink.php?pic=${name}`;
+
+            $.get(url, function(data){
+                if(data == "File Deleted"){
+                    event.target.dataset.name = "";
+                    document.querySelector("#rescont").innerHTML = '';
+
+                   let ur = `update_file.php?id=${id}&type=resume&name=NULL`;                      
+                    $.get(ur, function(dat){
+                        if(dat == 1){
+                            toastr.success("Removed",{
+                                'closeButton': true, 
+                                'showMethod' : 'slideDown', 
+                                'hideMethod' : 'slideUp'
+                            });
+                        }
+                    },'text');
+
+
+
+                }else{
+                    toastr.error('not found',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                    });
+                }
+            }, 'text');
+        }
+    }
+    function removePic(event){
+        let name = event.target.dataset.name;
+        let tag = event.target.dataset.tag;
+        let type = event.target.dataset.type;
+
+
+        if(name !== ""){
+            let url = `unlink.php?pic=${name}`;
+
+            $.get(url, function(data){
+                if(data == "File Deleted"){
+                    console.log(tag);
+                    event.target.dataset.name = "";
+
+                        document.querySelector(tag).setAttribute("src", "img/logo-placeholder.png");
+                                      
+                    let name = "";
+                    let ur = "";
+                
+                        ur = `update_file.php?type=company_img&name=${name}&id=` + event.target.dataset.id; 
+                                       
+                    $.get(ur, function(dat){
+                        if(dat){
+                            toastr.success(dat,{
+                                'closeButton': true, 
+                                'showMethod' : 'slideDown', 
+                                'hideMethod' : 'slideUp'
+                            });
+                        }
+                    },'text');
+
+
+
+                }else{
+                    toastr.error('not found',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                    });
+                }
+            }, 'text');
+        }
+    }
+
+
+    document.getElementById("company_img").addEventListener("change", function(){
+        let files = this.files[0];
+        let url = "handle_file.php";
+
+        let user = "<?= $user_id ?>";
+
+        let formData = new FormData(); 
+        formData.append("file", files);
+        fetch(url, {
+            method: "POST", 
+            body: formData,
+        }).then(response => response.text()).then((data) => {
+            
+           console.log(data);
+            if(data == 'no'){
+                toastr.error('File exists',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                });
+            }else if(data == 'error1'){
+                toastr.error('File too Large',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                });
+            }else if(data == 'error2'){
+                toastr.error('Invalid format',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                });
+            }else{
+
+                console.log(data);
+
+                let src = URL.createObjectURL(files);  
+                
+                let cover = document.querySelector(".cimg");
+                cover.setAttribute("src", src);
+            }
+        });
+
+    })
     
 </script>
 
