@@ -83,16 +83,21 @@ if(isset($_POST['save'])){
   }
 
 if(isset($_POST['save_sizzle'])){
+
     $vid = $_FILES['sizzle'];
-    $name = $vid['name'];
+    var_dump($vid);
+    $name = $_POST['vidname'];
+    $tmp = $_POST['tmp'];
     $uploads_dir = 'img/uploads/';
     $uploads_file = $uploads_dir . basename($name);
-    if(move_uploaded_file($vid['tmp_name'], $uploads_file)){
-        if(mysqli_query($link, "update realtv_writers set sizzle_reel = '$name' where unique_id = '$unique_id'")){
-            set_message("success", "Success");
-        }
-    }
-
+    // if(move_uploaded_file($vid['tmp_name'], $uploads_file)){
+    //     if(mysqli_query($link, "update realtv_writers set sizzle_reel = '$name' where unique_id = '$unique_id'")){
+    //         set_message("success", "Success");
+    //     }
+    // }else{
+    //     echo "kkk";
+    // }
+    // echo mysqli_error($link);
 }
 
 
@@ -310,7 +315,9 @@ if(isset($_GET['step'])){
             <div class="tab-pane <?= $step == 'sizzle' ? 'active' : '' ?>" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
             <div class="row">
                     <div class="col-12">
-                        <form action="" method="POST" class="mx-auto" id="editVideo" enctype="multipart/form-data" autocomplete="off">
+                        <form action="" method="POST" class="mx-auto" enctype="multipart/form-data" autocomplete="off">
+                            <input type="hidden" name="tmp" id="tmp">
+                            <input type="hidden" name="tmp" id="vidname">
                             <div class="form-row mt-3">
                                 <div class="col-6">
                                     <h3 class="real-color">Edit Sizzle Reel</h3>
@@ -462,11 +469,11 @@ function getCity(event){
 
 let sizzle = document.getElementById('sizzle');
 
-sizzle.addEventListener("change", function(){
+    sizzle.addEventListener("change", function(){
         let files = this.files[0];
-        //console.log(files);
-        let url = "handle_video.php";
-       
+        console.log(files);
+        let url = "handle_video.php"; 
+
         let formData = new FormData(); 
         formData.append("file", files);
         fetch(url, {
@@ -493,6 +500,8 @@ sizzle.addEventListener("change", function(){
                 let src = URL.createObjectURL(files);   
                 
                 let format = data.format;
+                $("#vidname").val(data.name);
+                $("#tmp").val(data.tmp);
 
                 console.log(sizzlePreview);
                 sizzlePreview.innerHTML = "";
@@ -515,7 +524,7 @@ sizzle.addEventListener("change", function(){
             $.get(url, function(data){
                 if(data == "File Deleted"){
                     event.target.dataset.name = "";
-                   let ur = `update_file.php?id=${id}&type=sizzle&name=${name}`;                      
+                   let ur = `update_file.php?id=${id}&type=sizzle&name=`;                      
                     $.get(ur, function(dat){
                         if(dat == 1){
                             toastr.success("Removed",{

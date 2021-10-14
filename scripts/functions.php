@@ -19,15 +19,15 @@ function connect(){
     }
 }
 
-// function connect(){ 
-//     $link = mysqli_connect("localhost", "realtv_db_user", "@lphA3ch0#", "realtv_show");
+function connect(){ 
+    $link = mysqli_connect("localhost", "realtv_db_user", "@lphA3ch0#", "realtv_show");
 
-//     if($link){
-//         return $link;
-//     }else {
-//         return mysqli_connect_errno();
-//     }
-// }
+    if($link){
+        return $link;
+    }else {
+        return mysqli_connect_errno();
+    }
+}
 
 function base_url(){
     return "https://" . $_SERVER['SERVER_NAME'] . "/test/";
