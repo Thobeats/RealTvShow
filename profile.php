@@ -80,6 +80,8 @@ if(isset($_POST['save'])){
         font-family : 'Montserrat', serif;
         font-weight : 700;
         font-size : 45px;
+    }.bg-real{
+       background-color :  #004883;
     }
     .cover-image{
         background-image: linear-gradient(to bottom, rgba(36, 36, 36, 0.692),rgba(19, 19, 19, 0.692)),url(img/uploads/<?= $coverImg != '' ? $coverImg : 'Onboard1.jpg' ?>);
@@ -122,7 +124,7 @@ if(isset($_POST['save'])){
         text-transform: uppercase;
         font-family : 'Montserrat', serif;
 
-    }
+    }.sizzle-cont{ height : 40vh; }
     .bio-container{
         margin : 0px auto;
     }
@@ -137,7 +139,11 @@ if(isset($_POST['save'])){
     .social a{
         font-size : 18px;
     }
-     
+    .company_img{
+            width : 200px;
+            height : 250px;
+        }
+       
     @media only screen and (max-width: 768px) {
         .realbtn{
             padding : 8px;
@@ -153,7 +159,6 @@ if(isset($_POST['save'])){
         .dt{
             transform : translateY(-70px);
         }
-       
         .bio-container{
             margin : 0px 0px;
         }
@@ -402,9 +407,66 @@ if(isset($_POST['save'])){
 
 <?php if(role() == 2): ?>
     <div class="row p-3 bio-container mx-auto w-100 my-2 ">
-       <div class="col-12">
-
+        <div class="col-12">
+            <div class="bio p-2">
+                <h3 class="poppins ml-4">Sizzle Reel</h3>
+                <hr>
+            </div>
+        </div>
+       <div class="col-12 text-center">
+            <div class="sizzle-cont ">
+                <video id="video" width="100%" height="100%" controls autoplay>
+                 <source id="vid" src="img/uploads/<?= $user_details->sizzle_reel ?>" type="video/mp4"></source>
+                </video>
+            </div>
        </div>
+    </div>
+<?php endif; ?>
+
+<?php if(role() == 1): ?>
+    <div class="row p-3 bio-container mx-auto w-100 my-2 ">
+        <div class="col-12">
+            <div class="bio p-2">
+                <h3 class="poppins ml-4">Resume</h3>
+                <hr>
+            </div>
+        </div>
+       <div class="col-12 text-center">
+            <div class="sizzle-cont ">
+                <embed type="text/pdf" src="img/uploads/<?= $user_details->resume ?>" width="100%" height = "100%">
+            </div>
+       </div>
+    </div>
+<?php endif; ?>
+
+<?php if(role() == 3): ?>
+
+<?php $companyid = $user_details->company_id; $company = mysqli_fetch_assoc(mysqli_query($link, "select * from realtv_company where id = '$companyid'")); ?>
+    <div class="row mx-auto w-100 mb-3 mt-3">
+        <div class="col-12">
+            <div class="bio p-2">
+                <h3 class="poppins ml-4">Company</h3>
+                <hr>
+            </div>
+        </div>
+        <div class="col-lg-2 col-sm-"></div>
+        <div class="col-lg-4 col-md-6 col-sm-12 ">
+            <div class="company_img py-4 text-center w-100">
+                <img src="<?= $company['co_img'] ? 'img/uploads/' . $company['co_img'] : 'img/logo-placeholder.png' ?>" width="200px" alt="">
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+            <h2 class="p-2 mt-2"><?=  $company['company_name'] ?></h2>
+            <h5 class="p-2"><?= $company['co_email'] ?></h5>
+            <h5 class="p-2"><?= $company['co_address'] ?></h5>
+            <p class="p-2"><?= $company['co_phone'] ?></p>
+            <div class="mt-2">
+                    <a target="_blank" href="<?= $company['co_web'] ?>"><i class="bi bi-globe"></i> View Website</a> 
+                </div>
+
+        </div>
+           
+           
     </div>
 <?php endif; ?>
 </section>

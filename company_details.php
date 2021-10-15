@@ -69,12 +69,6 @@ $company = mysqli_fetch_assoc(mysqli_query($link, "select * from realtv_company 
                 <div class="mt-2">
                     <a target="_blank" href="<?= $company['co_web'] ?>"><i class="bi bi-globe"></i> View Website</a> 
                 </div>
-
-                <?php if(role() == 3): ?>
-                <div class="mt-5">
-                    <a href="edit_company_details.php?id=<?= $id ?>"  class="realbtn"><i class="bi bi-pencil-square"></i> Edit Company </a>
-                </div>
-                <?php endif; ?>
             </div>
         </div>
     </div>

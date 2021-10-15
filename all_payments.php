@@ -10,7 +10,7 @@ require "scripts/header_two.php";
 
 
 
-$query = mysqli_query($link, "Select * from realtv_writers");
+$query = mysqli_query($link, "Select * from realtv_reg");
 
 
 ?>
@@ -46,7 +46,7 @@ $query = mysqli_query($link, "Select * from realtv_writers");
 
         <div class="row my-4">
             <div class="col-12 p-2">
-                <h3 class="poppins ml-4">Writers</h3>
+                <h3 class="poppins ml-4">Payments</h3>
                 <hr>
             </div>
         </div>

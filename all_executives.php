@@ -45,6 +45,12 @@ $query = mysqli_query($link, "Select * from realtv_executives");
 </style>
 
 <section class="profile-body p-2 mx-2">
+<div class="row my-4">
+            <div class="col-12 p-2">
+                <h3 class="poppins ml-4">Executives</h3>
+                <hr>
+            </div>
+        </div>
 
     <table class="stripe compact hover table cell-border" id="contestants">
         <thead>

@@ -80,14 +80,7 @@
                  </ul>
             </div>
         </li>
-        <li class="option">
-            <div data-toggle="collapse" data-target="#collapseReel" aria-expanded="false" aria-controls="collapseDraft">  <i class="bi bi-film"></i> <span class="ml-2">Sizzle Reel</span></div>
-            <div class="collapse mt-2" id="collapseReel">
-                 <ul class="profile_option">
-                    <li class="pl-5 py-2  sub-option"><a href="reel.php"><i class="bi bi-sliders"></i> Manage</a></li>
-                 </ul>
-            </div>
-        </li>
+        
         <?php } ?>
         <?php if(role() == 1){ ?>
         <li class="option">
@@ -101,15 +94,7 @@
         </li>
         <?php } ?>
         <?php if(role() == 3){ ?>
-        <li class="option">
-            <div data-toggle="collapse" data-target="#collapseC" aria-expanded="false" aria-controls="collapseDraft"><i class="bi bi-building"></i> <span class="ml-2">Company Profile</span></div>
-            <div class="collapse mt-2" id="collapseC">
-                 <ul class="profile_option">
-                    <li class="pl-5 py-2  sub-option"><a href="company_details.php?id=<?=$user_details->company_id ?>"><i class="bi bi-building"></i> View Profile </a> </li>
-                    <li class="pl-5 py-2  sub-option"><a href="edit_company_details.php?id=<?=$user_details->company_id ?>"><i class="bi bi-building"></i> Edit Profile </a></li>
-                 </ul>
-            </div>
-        </li>
+        
         <li class="option">
             <div data-toggle="collapse" data-target="#collapseP" aria-expanded="false" aria-controls="collapseDraft"><i class="bi bi-film"></i> <span class="ml-2">Projects</span></div>
             <div class="collapse mt-2" id="collapseP">
@@ -126,6 +111,8 @@
         <li class="option"><i class="bi bi-pen"></i> <span class="ml-2"><a class="profile_link" href="all_writers.php">Writers</a></span></li>
         <li class="option"><i class="bi bi-people-fill"></i><span class="ml-2"><a class="profile_link" href="all_contestants.php">Contestants</a></span></li>
         <li class="option"><i class="bi bi-people-fill"></i><span class="ml-2"><a class="profile_link" href="all_executives.php">Executives</a></span></li>
+        <li class="option"><i class="bi bi-cash"></i><span class="ml-2"><a class="profile_link" href="all_payments.php">Payments</a></span></li>
+        <li class="option"><i class="bi bi-pen"></i><span class="ml-2"><a class="profile_link" href="all_pitches.php">Pitches and Proposals</a></span></li>
 
         <?php } ?>
         <li class="option"><a href="logout.php"><i class="bi bi-box-arrow-right"></i><span class="ml-2">Logout</span></a></li>

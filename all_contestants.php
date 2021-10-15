@@ -45,6 +45,13 @@ $query = mysqli_query($link, "Select * from realtv_contestants");
 
 <section class="profile-body p-2 mx-2">
 
+<div class="row my-4">
+            <div class="col-12 p-2">
+                <h3 class="poppins ml-4">Contestants</h3>
+                <hr>
+            </div>
+        </div>
+
     <table class="table-bordered table" id="contestants">
         <thead>
             <tr>
