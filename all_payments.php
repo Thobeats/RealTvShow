@@ -4,7 +4,7 @@ require "scripts/functions.php";
 
 if(is_loggedIn()){
 
-if(role() == 3 || role() == 4){
+if(role() == 4){
 $logo = true; $fixed = true;
 require "scripts/header_two.php"; 
 
@@ -55,18 +55,17 @@ $query = mysqli_query($link, "Select * from realtv_reg");
         <thead>
             <tr>
                 <th>SN</th>
-                <th>Profile Image</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Username</th>
+                <th>OrderId</th>
+                <th>Amount</th>
+                <th>Currency</th>
+                <th>Package</th>
+                <th>User Type</th>
+                <th>Country</th>
+                <th>Name</th>
                 <th>Email</th>
-                <th>Phone</th>
-                <th>Address</th>
-                <th>Sizzle</th>
-                <th>Status</th>
-               <?php if(role() == 4){ ?>
+                <th>Address</th>                
+                <th>Movie Title</th>
                 <th>Action</th>
-               <?php } ?>
             </tr>
         </thead>
         <tbody>
@@ -75,31 +74,33 @@ $query = mysqli_query($link, "Select * from realtv_reg");
 
             while($cont = mysqli_fetch_assoc($query)) : 
                 $contId = $cont['unique_id'];
+                $package = $cont['package'];
+                $user = $cont['user_type'];
 
             ?>
             <tr>
                 <td align="center"><?= $count ?></td>
-                <td align="center"><img src="<?= $cont['profile_img'] != "" ? 'img/uploads' . $cont['profile_img'] : 'img/man.png'; ?>" width="50px" height="45px" alt=""> </td>
-                <td align="center"><?= $cont['firstname'] ?></td>
-                <td align="center"><?= $cont['lastname'] ?></td>
-                <td align="center"><?= $cont['username'] ?></td>
+                <td align="center"><?= $cont['orderID'] ?></td>
+                <td align="center"><?= $cont['gross_amount'] ?></td>
+                <td align="center"><?= $cont['currency_code'] ?></td>
+                <td align="center"><?= (($package == 'standard') ? "<label class='badge badge-warning p-2' style='text-transform : uppercase'>$package</label" : $package == 'enhanced' ? "<label class='badge badge-success p-2' style='text-transform : uppercase'>$package</label" : "" )?></td>
+                <td align="center"><?= ($user == 'writer' ? "<label class='badge badge-warning p-2' style='text-transform : uppercase'>$user</label" : ($user == 'contestant' ? "<label class='badge badge-success p-2' style='text-transform : uppercase'>$user</label" : "" )) ?></td>
+                <td align="center"><?= $cont['name'] ?></td>
                 <td align="center"><?= $cont['email'] ?></td>
-                <td align="center"><?= $cont['phone_no'] ?></td>
-                <td align="center"><?= $cont['address'] ?></td>
-                <td align="center"><a class="badge badge-warning" href="<?= $cont['sizzle_reel'] != "" ? 'img/uploads/' . $cont['sizzle_reel'] : ''; ?>">View</a></td>
-                <td align="center"><?= isactive($contId) == 1 ? '<span class="badge badge-success">Active</span>' : '<span class="badge badge-danger">Inactive</span>' ?></td>
-                <?php if(role() == 4){ ?>
+                <td align="center"><?= $cont['address1'] ?></td>
+                <td align="center"><?= $cont['country_code'] ?></td>
+                <td align="center"><?= movie_title($cont['movie_id']) ?></td>
+
                 <td align="center">
                     <div class="btn-group">
                     <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Action
                     </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Activate</a>
-                        <a class="dropdown-item" href="#">Deactivate</a>                        
+                        <a class="dropdown-item" href="#">View</a>
+                        <a class="dropdown-item" href="#">View</a>                        
                     </div>
                 </td>
-               <?php } ?>
             </tr>
             
 

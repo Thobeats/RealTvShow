@@ -698,6 +698,14 @@ function isactive($id){
     return mysqli_fetch_assoc($check)['activated'];
 }
 
+function movie_title($id){
+    $link = connect();
+
+    $check = mysqli_query($link, "select movie_title from realtv_movies where id = '$id'");
+
+    return mysqli_fetch_assoc($check)['movie_title'];
+}
+
 $link = connect();
 
 ?>

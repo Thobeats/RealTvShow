@@ -142,6 +142,11 @@ if(isset($_POST['save'])){
     .company_img{
             width : 200px;
             height : 250px;
+        }.co_name{
+            font-size : 60px;
+            letter-spacing : 2px;
+        }.co{
+            font-size : 17px;
         }
        
     @media only screen and (max-width: 768px) {
@@ -456,10 +461,10 @@ if(isset($_POST['save'])){
             </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12 text-center">
-            <h2 class="p-2 mt-2"><?=  $company['company_name'] ?></h2>
-            <h5 class="p-2"><?= $company['co_email'] ?></h5>
-            <h5 class="p-2"><?= $company['co_address'] ?></h5>
-            <p class="p-2"><?= $company['co_phone'] ?></p>
+            <h2 class="mt-2 co_name"><?=  $company['company_name'] ?></h2>
+            <h5 class="p-2 co poppins"><?= $company['co_email'] ?></h5>
+            <h5 class="p-2 co poppins"><?= $company['co_address'] ?></h5>
+            <p class="p-2 co poppins"><?= $company['co_phone'] ?></p>
             <div class="mt-2">
                     <a target="_blank" href="<?= $company['co_web'] ?>"><i class="bi bi-globe"></i> View Website</a> 
                 </div>

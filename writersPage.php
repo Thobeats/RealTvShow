@@ -223,6 +223,16 @@ require "scripts/header_two.php";
                     </div> 
                 </div>                
             </div>
+            <?php }else{ ?>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="d-flex flex-column justify-content-center regnow">
+                        <a href="writer_edit.php" class="text-right regnow_link">
+                            Submit New Pitch
+                        </a>
+                    </div> 
+                </div>                
+            </div>
             <?php } ?>
         </div>
     </div>

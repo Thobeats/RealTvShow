@@ -5,7 +5,7 @@
     <div class="col-lg-6 col-md-12 col-sm-12 ">
         <div class="d-flex flex-column justify-content-center text-center">
             <img src="img/logo.png" class="mx-auto" alt="logo" id="footer-logo" width = "100%">
-            <p class="mt-2 text-center h3" style="color:rgb(240, 195, 80);">on location to a cache of unique formats & talent</p>
+            <p class="mt-2 text-center h3" style="color:#004883;">on location to a cache of unique formats & talent</p>
         </div>   
     </div>
 
