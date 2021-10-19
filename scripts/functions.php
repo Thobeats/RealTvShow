@@ -135,6 +135,83 @@ function send_mail($toEmail, $subject, $body){
     }
 }
 
+// function send_contact_mail($name, $email, $role, $message){
+//     $mail = new PHPMailer(true);
+//     try{
+//         $mail->isSMTP();
+//         $mail->Host = 'smtp.gmail.com';
+//         $mail->SMTPAuth = true;
+//         $mail->Username = "tobiy23@gmail.com";
+//         $mail->Password = "T3mil0luw4";
+//         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+//         $mail->Port = "465";
+
+//         //Receiver
+//         $mail->setFrom($email, $name);
+//         $mail->addAddress('tobiy23@gmail.com');
+    
+//         //Content
+//         $mail->isHTML(true);
+//         $mail->Subject = "Connect as $role";
+//         $mail->Body = $message;
+        
+//         if($mail->send()){
+//             return 1;
+//         }else{
+//             return 0;
+//         }
+       
+
+
+//     }
+//     catch(Exception $e){
+//         set_message("error" , $mail->ErrorInfo);
+//     }
+// }
+
+function send_contact_mail($name, $email, $role, $message){
+    $mail = new PHPMailer(true);
+    try{
+        //Settings
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+       
+        $mail->isSMTP();
+        $mail->Host = 'p3plzcpnl459190.prod.phx3.secureserver.net';
+        $mail->SMTPAuth = false;
+        $mail->SMTPAutoTLS = false; 
+        $mail->Port = 25; 
+        // $mail->isSMTP();
+        // $mail->Host = 'smtp.gmail.com';
+        // $mail->SMTPAuth = true;
+        $mail->Username = "welcome@realitytv-registry.com";
+        $mail->Password = "R34l1tytvr3g1stry";
+        $mail->SMTPSecure = 'none';
+        $mail->ENCRYPTION = "none";
+        //$mail->Port = "465";
+
+        //Receiver
+        $mail->setFrom($email, $name);
+        $mail->addAddress('admin@realitytv-registry.com');
+    
+        //Content
+        $mail->isHTML(true);
+        $mail->Subject = "Connect as $role";
+        $mail->Body = $message;
+        
+        if($mail->send()){
+            return 1;
+        }else{
+            return 0;
+        }
+       
+
+
+    }
+    catch(Exception $e){
+        set_message("error" , $mail->ErrorInfo);
+    }
+}
+
 function user_session($array){
     foreach($array as $key => $value){
         $_SESSION[$key] = $value;
@@ -704,6 +781,14 @@ function movie_title($id){
     $check = mysqli_query($link, "select movie_title from realtv_movies where id = '$id'");
 
     return mysqli_fetch_assoc($check)['movie_title'];
+}
+
+function get_role($roleid){
+    $link = connect();
+
+    $check = mysqli_query($link, "select role_name as r from realtv_roles where id = '$roleid'");
+
+    return mysqli_fetch_assoc($check)['r'];
 }
 
 $link = connect();

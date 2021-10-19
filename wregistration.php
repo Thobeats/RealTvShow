@@ -97,6 +97,12 @@ if(isset($_POST['reg'])){
         font-family : 'Poppins', serif;
         font-weight : 300;
     }
+    .editor{
+    max-height: 40vh; 
+    overflow-y:auto;
+    white-space: pre-wrap;
+    background-color: #eaeaff;
+    }
 
     @media only screen and (max-width: 768px) {
            
@@ -249,18 +255,24 @@ if(isset($_POST['reg'])){
                
             </div>            
 
-            <div class="row mt-3">        
-                <div class="col-12">
+            <div class="row mt-3 h-50">        
+                <div class="col-12" style="height: 55vh;">
+                    <input type="hidden" name="logline" id="inputLogline">
                     <label for="" class="h4">Logline <small> (Copy &amp; Paste Your Content)</small></label>
-                    <textarea name="logline" class="form-control text-editor" cols="5" rows="5"></textarea>
+                    <div class="form-control editor" id="logline-editor">
+                      <!-- <h1>Quill to HTML</h1><p><br></p><p>➡️ Modify this content to update HTML output 🔻.</p> -->
+                    </div>
                 </div>
-
             </div>            
 
             <div class="row mt-3">
-                <div class="col-12">
+                <div class="col-12" style="height: 55vh;">
+                <input type="hidden" name="synopsis" id="inputSynopsis">
+
                     <label class="h4" for="">Synopsis <small> (Copy &amp; Paste Your Content)</small></label>
-                    <textarea name="synopsis" class="form-control text-editor" cols="30" rows="10"></textarea>
+                    <div class="form-control editor" id="synopsis-editor">
+                      <!-- <h1>Quill to HTML</h1><p><br></p><p>➡️ Modify this content to update HTML output 🔻.</p> -->
+                    </div>                
                 </div>
             </div>
 
@@ -276,6 +288,7 @@ if(isset($_POST['reg'])){
                     
                     </div>                
                </div>
+
                 <div class="col-lg-6 col-md-6 col-sm-12">    
                     <div class="custom-file">                
                         <input type="file" name="sizzle" title="Select multiple images" style="font-weight: 300 !important;" class="custom-file-input" id="sizzle" aria-describedby="inputGroupFileAddon01">
@@ -333,7 +346,7 @@ if(isset($_POST['reg'])){
                     <input type="button" class="realbtn btn-warning prev writer-btn" value="Previous">
                 </div>
                 <div class="col-lg-6 writer-btn-reg col-sm-12">
-                  <input type="submit" class="realbtn btn-legit writer-btn" name="reg" value="Register">
+                  <input type="submit" class="realbtn btn-legit writer-btn reg-submit" name="reg" value="Register">
                 </div>
             </div>
 
@@ -344,6 +357,7 @@ if(isset($_POST['reg'])){
 </form>
 
 <script>
+   
     let next = document.querySelector(".next");
     let writerTitle = document.querySelector(".writer-title");
     next.addEventListener("click", function(){
@@ -425,14 +439,16 @@ if(isset($_POST['reg'])){
         }).then(response => response.text()).then((data) => {
             
            //alert(data);
-           if(data == 'no'){
-                home_page.value = "";
-                toastr.error('File exists',{
-                    'closeButton': true, 
-                    'showMethod' : 'slideDown', 
-                    'hideMethod' : 'slideUp'
-                });
-            }else if(data == 'error1'){
+        //    if(data == 'no'){
+        //         home_page.value = "";
+        //         toastr.error('File exists',{
+        //             'closeButton': true, 
+        //             'showMethod' : 'slideDown', 
+        //             'hideMethod' : 'slideUp'
+        //         });
+        //     }else 
+            
+            if(data == 'error1'){
                 home_page.value = "";
                 toastr.error('File too Large',{
                     'closeButton': true, 
@@ -489,14 +505,16 @@ if(isset($_POST['reg'])){
         }).then(response => response.text()).then((data) => {
             
            //alert(data);
-            if(data == 'no'){
-                home_page.value = "";
-                toastr.error('File exists',{
-                    'closeButton': true, 
-                    'showMethod' : 'slideDown', 
-                    'hideMethod' : 'slideUp'
-                });
-            }else if(data == 'error1'){
+            // if(data == 'no'){
+            //     home_page.value = "";
+            //     toastr.error('File exists',{
+            //         'closeButton': true, 
+            //         'showMethod' : 'slideDown', 
+            //         'hideMethod' : 'slideUp'
+            //     });
+            // }else 
+            
+            if(data == 'error1'){
                 home_page.value = "";
                 toastr.error('File too Large',{
                     'closeButton': true, 
@@ -517,7 +535,8 @@ if(isset($_POST['reg'])){
             //let src = URL.createObjectURL(files)
             home_contain.innerHTML = "";
             home_contain.innerHTML += `<div class="card p-0 border-0 mx-auto" style="width: 180px; height: 100%; background-color:inherit;">
-                                            <img src="img/uploads/${data}" width="100%" height="100%">  
+                                            <img src="img/uploads/${data}" width="50%" height="50%">  
+                                            <i class="bi bi-trash-fill" data-id="<?= $movie_id ?>" data-name="${data}" onclick="deletePic(event)"></i>                                      
                                       </div>`;
             }
 
@@ -552,7 +571,10 @@ if(isset($_POST['reg'])){
 
                     pitches.value = multi_array.toString();
 
-                }           
+                } else{
+                    home_page.value = "";
+                    home_contain.innerHTML = "";
+                }         
 
             
             event.target.value = "";

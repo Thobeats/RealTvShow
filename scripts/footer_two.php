@@ -70,6 +70,9 @@
 
 
  </div>
+ <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/quill-image-resize-module@3.0.0/image-resize.min.js"></script>
+
 
  <?php if(isset($paypal)): ?>
  <script src="https://www.paypal.com/sdk/js?client-id=AfgYATIfVWBGwQVce9ggpT8F3cpdMckdMmaf525u6IvyLjD1oL8RTiTqHVZrUWMvn7Un6r2q_qDehBJY&currency=USD"></script>
@@ -110,7 +113,70 @@ paypal.Buttons({
    let d = new Date();
    date.innerHTML = d.getFullYear();
    
-  let editor = CKEDITOR.replaceAll('text-editor');
+//  let editor = CKEDITOR.replaceAll('text-editor');
+
+var logline = new Quill('#logline-editor', {
+  modules: {
+    toolbar: [
+         [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+         ['bold', 'italic', 'underline', 'strike'],
+         [{ 'color': [] }, { 'background': [] }], 
+         [{ 'align': [] }],
+         ['link', 'image'],
+         
+         ['clean']  
+       ],
+        imageResize: {
+          displaySize: true
+        }
+  },
+  placeholder: 'Compose an epic...',
+  theme: 'snow'
+});
+
+var synopsis = new Quill('#synopsis-editor', {
+  modules: {
+    toolbar: [
+         [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+         ['bold', 'italic', 'underline', 'strike'],
+         [{ 'color': [] }, { 'background': [] }], 
+         [{ 'align': [] }],
+         ['link', 'image'],
+         
+         ['clean']  
+       ],
+        imageResize: {
+          displaySize: true
+        },history: {
+        delay: 0,
+        maxStack: 500,
+        userOnly: true
+        }
+  },
+  placeholder: 'Compose an epic...',
+  theme: 'snow'
+});
+
+$(".reg-submit").on("click", function(){
+    let html1  = logline.root.innerHTML;
+    let html2 = synopsis.root.innerHTML;
+
+    console.log(html1, html2);
+
+    $("#inputSynopsis").val(html2);
+    $("#inputLogline").val(html1);
+})
+
+$("#save").on("click", function(){
+    let html1  = logline.root.innerHTML;
+    let html2 = synopsis.root.innerHTML;
+
+    console.log(html1, html2);
+
+    $("#inputSynopsis").val(html2);
+    $("#inputLogline").val(html1);
+})
+
 
 </script>
 
@@ -164,8 +230,6 @@ formControl.forEach((formC)=>{
         $(writerForm).show(600);
       
     });
-
-    $('form').disableAutoFill();
 
 <?php endif; ?>
 </script>

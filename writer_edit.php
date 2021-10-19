@@ -126,6 +126,12 @@ if (isset($_POST['save'])){
 .synopsis_content{
     letter-spacing : 1px;
 }
+.editor{
+    max-height: 40vh; 
+    overflow-y:auto;
+    white-space: pre-wrap;
+    background-color: #eaeaff;
+    }
 
     @media only screen and (max-width: 768px) {
         .movie_img{
@@ -291,7 +297,7 @@ if (isset($_POST['save'])){
     <form action="" method="post" id="edit-form" enctype="multipart/form-data">
         <div class="form-group text-right">
             <button class="btn btn-primary" type="button" onclick="openModal()">Preview</button>
-            <button class="btn btn-success" type="submit" name="save">Save</button>
+            <button class="btn btn-success" type="submit" name="save" id="save">Save</button>
         </div>
         <hr>
         <div class="form-row my-2">
@@ -326,13 +332,19 @@ if (isset($_POST['save'])){
         </div>
        
         <div class="form-row">
-            <div class="mt-3 col-12">
+            <div class="mt-3 col-12" style="height: 55vh;">
+            <input type="hidden" name="logline" id="inputLogline">
                 <label for="logline">Logline</label>
-                <textarea id="logline" name="logline" class="form-control text-editor" cols="30" rows="10"><?= $getProject['logline'] ?? "" ?></textarea>
+                <div class="form-control editor" id="logline-editor">
+                      <!-- <h1>Quill to HTML</h1><p><br></p><p>➡️ Modify this content to update HTML output 🔻.</p> -->
+                </div>            
             </div>       
-            <div class="mt-3 col-12">
+            <div class="mt-3 col-12" style="height: 55vh;">
+            <input type="hidden" name="synopsis" id="inputSynopsis">
                 <label for="logline">Synopsis</label>
-                <textarea id="synopsis" name="synopsis" class="form-control text-editor" cols="30" rows="10"><?= $getProject['synopsis'] ?? "" ?></textarea>
+                <div class="form-control editor" id="synopsis-editor">
+                      <!-- <h1>Quill to HTML</h1><p><br></p><p>➡️ Modify this content to update HTML output 🔻.</p> -->
+                </div>             
             </div>          
         </div>
 
@@ -360,7 +372,9 @@ let img_contain = document.getElementById("show_img");
 let img_file = document.getElementById("img_file");
 
 
-
+<?php 
+if(isset($_GET['edit'])){
+?>
 
 window.addEventListener("load", function(){
     let lurl = "load_image.php?id=" + "<?= $movie_id ?>";
@@ -390,6 +404,9 @@ window.addEventListener("load", function(){
 
 });
 
+<?php 
+}
+?>
 
 function openModal(){
     let title = $("#title").val();

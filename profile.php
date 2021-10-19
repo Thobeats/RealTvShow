@@ -11,7 +11,7 @@ $user_id = user_id();
 $role = role(); 
 $unique_id = unique_id();
 
-function get_role(){
+function get_rol(){
     $l = connect();
     $r = role();
 
@@ -397,7 +397,7 @@ if(isset($_POST['save'])){
         </div>
         <div class="col-lg-6  col-md-6 col-sm-12 row poppins mx-auto">
             <p class="col-4 text-right">Role</p>
-            <p class="col-8">:  <?= get_role() ?></p>
+            <p class="col-8">:  <?= get_rol() ?></p>
         </div>
         <div class="col-lg-6  col-md-6 col-sm-12 row poppins mx-auto">
             <p class="col-4 text-right">Address</p>
