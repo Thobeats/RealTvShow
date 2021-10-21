@@ -337,6 +337,7 @@ if (isset($_POST['save'])){
                 <label for="logline">Logline</label>
                 <div class="form-control editor" id="logline-editor">
                       <!-- <h1>Quill to HTML</h1><p><br></p><p>➡️ Modify this content to update HTML output 🔻.</p> -->
+                      <?= $getProject['logline'] ?? "" ?>
                 </div>            
             </div>       
             <div class="mt-3 col-12" style="height: 55vh;">
@@ -344,6 +345,7 @@ if (isset($_POST['save'])){
                 <label for="logline">Synopsis</label>
                 <div class="form-control editor" id="synopsis-editor">
                       <!-- <h1>Quill to HTML</h1><p><br></p><p>➡️ Modify this content to update HTML output 🔻.</p> -->
+                      <?= $getProject['synopsis'] ?? "" ?>
                 </div>             
             </div>          
         </div>

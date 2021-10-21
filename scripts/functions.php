@@ -191,7 +191,7 @@ function send_contact_mail($name, $email, $role, $message){
 
         //Receiver
         $mail->setFrom($email, $name);
-        $mail->addAddress('admin@realitytv-registry.com');
+        $mail->addAddress('PaulM@RealityTVRegistry.com');
     
         //Content
         $mail->isHTML(true);
