@@ -126,7 +126,7 @@ function send_mail($toEmail, $subject, $body){
         
         $mail->send();
         set_message("success", "Confirmation email sent");        
-        header("location: confirm.php");
+        header("location: Confirm.php");
 
 
     }
@@ -789,6 +789,11 @@ function get_role($roleid){
     $check = mysqli_query($link, "select role_name as r from realtv_roles where id = '$roleid'");
 
     return mysqli_fetch_assoc($check)['r'];
+}
+
+function logout(){
+    $user_id = user_id();
+    mysqli_query($link, "update realtv_users set online = '0' where id = '$user_id'");
 }
 
 $link = connect();
