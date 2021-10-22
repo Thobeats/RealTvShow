@@ -265,7 +265,7 @@ function register_writer($firstname, $surname, $email, $password, $role_id, $add
 
         $body = "<div style='padding: 5px; text-transform: capitalize;'>";
         $body .= "<h4>Welcome to RealTv Show</h4>";
-        $body .= "<p>Confirm your email to activate your account. To confirm your email, click <a href='".base_url()."confirm.php?email=$email&pass=$token'>here</a> </p>";
+        $body .= "<p>Confirm your email to activate your account. To confirm your email, click <a href='".base_url()."Confirm.php?email=$email&pass=$token'>here</a> </p>";
         $body .= "</div>";
         send_mail($email, "Email Confirmation", $body);
     }else {
@@ -320,7 +320,7 @@ function register_contestant($firstname, $surname, $email, $password, $role_id, 
         }
         $body = "<div style='padding: 5px; text-transform: capitalize;'>";
         $body .= "<h4>Welcome to RealTv Show</h4>";
-        $body .= "<p>Confirm your email to activate your account. To confirm your email, click <a href='".base_url()."confirm.php?email=$email&pass=$token'>here</a> </p>";
+        $body .= "<p>Confirm your email to activate your account. To confirm your email, click <a href='".base_url()."Confirm.php?email=$email&pass=$token'>here</a> </p>";
         $body .= "</div>";
         send_mail($email, "Email Confirmation", $body);
     }else {
@@ -377,7 +377,7 @@ function register_executive($firstname, $surname, $email, $password, $role_id, $
 
         $body = "<div style='padding: 5px; text-transform: capitalize;'>";
         $body .= "<h4>Welcome to RealTv Show</h4>";
-        $body .= "<p>Confirm your email to activate your account. To confirm your email, click <a href='".base_url()."confirm.php?email=$email&pass=$token'>here</a> </p>";
+        $body .= "<p>Confirm your email to activate your account. To confirm your email, click <a href='".base_url()."Confirm.php?email=$email&pass=$token'>here</a> </p>";
         $body .= "</div>";
         send_mail($email, "Email Confirmation", $body);
     }else {
