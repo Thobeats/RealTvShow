@@ -130,7 +130,7 @@ var logline = new Quill('#logline-editor', {
           displaySize: true
         }
   },
-  placeholder: 'Compose an epic...',
+  placeholder: 'Paste your material here....',
   theme: 'snow'
 });
 
@@ -153,7 +153,7 @@ var synopsis = new Quill('#synopsis-editor', {
         userOnly: true
         }
   },
-  placeholder: 'Compose an epic...',
+  placeholder: 'Paste Your material here...',
   theme: 'snow'
 });
 

@@ -56,7 +56,7 @@ $auth = utf8_encode($_GET['pass']);
 
    <section class="bg-light d-flex flex-column justify-content-center border-bottom" style="height:70vh;">
      <div class="welcome text-center">
-       <p>Thank you for joining us <br> Kindly Check Your Email to Complete the Sign Up Process</p>
+       <p>Thank you for joining Reality TV Registry <br> Kindly Check Your Email to Complete the Sign Up Process</p>
      </div>
    </section>
 

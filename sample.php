@@ -43,8 +43,7 @@ require("scripts/header_two.php");
     font-size : 13pt;
     padding-left : 50px;
 }.feat_heading{
-    display:inline-block;
-    width : 180px;
+    width : 170px;
 }.synopsis{
     font-size : 14pt;
 }.synopsis img{
@@ -152,10 +151,10 @@ $movie_logline = isset($movie_data['logline']) ? $movie_data['logline'] : 'A tro
 $logline = preg_replace("/<p>/", "<p><b class='heading'>Logline:</b>  ",$movie_logline, 1);
 
 //Features
-$proposal = "<b class='feat_heading'>Proposal: </b>" . $movie_data['movie_title']; 
-$copyright = "<b class='feat_heading'>Copyright: </b>" . $movie_data['copyright']; 
-$reality = "<b class='feat_heading'>Reality: </b>" . $movie_data['reality']; 
-$option = "<b class='feat_heading'>Option/Acquisition: </b>" . $movie_data['acquisition'];
+$proposal = "<b class='feat_heading'>Proposal: </b> <span>" . $movie_data['movie_title'] . "</span>"; 
+$copyright = "<b class='feat_heading'>Copyright: </b> <span>" . $movie_data['copyright'] . "</span>"; 
+$reality = "<b class='feat_heading'>Reality: </b> <span>" . $movie_data['reality']. "</span>"; 
+$option = "<b class='feat_heading'>Option/Acquisition: </b> <span>" . $movie_data['acquisition']. "</span>";
 
 
 //Synopsis
@@ -184,23 +183,23 @@ $synopsis = preg_replace("/<p>/", "<p><b class='heading'>Synopsis:</b>  ",$trimm
     </div>
 
 
-            <div class="col-lg-12 col-md-12 col-sm-12 mt-4">                    
+            <div class="col-lg-12 col-md-12 col-sm-12 my-4">                    
                 <div class="row">
                     <div class="col-lg-7 col-md-6 col-sm-12 p-0">
                         <div class="row features">
-                            <p class="col-12">
+                            <p class="col-12 d-flex">
                                 <?= $proposal ?>
                             </p>
                             
-                            <p class="col-12">
+                            <p class="col-12 d-flex">
                             <?= $copyright ?>
                             </p>
                             
-                            <p class="col-12">
+                            <p class="col-12 d-flex">
                                 <?= $reality ?>
                             </p>
                             
-                            <p class="col-12">
+                            <p class="col-12 d-flex">
                                 <?= $option ?>
                             </p>
                            

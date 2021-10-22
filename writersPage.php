@@ -205,7 +205,7 @@ require "scripts/header_two.php";
                     <div class="d-flex flex-column">
                         <div class="sixth_post_pic"></div>
                         <div class="post_text d-flex flex-column justify-content-center pt-1">
-                            <a href="sample.php" class="post_link text-center">display listing and image pitch</a>
+                            <a href="sample.php" class="post_link text-center">SAMPLE DISPLAY LISTING AND IMAGE ENHANCED PITCH</a>
                         </div>
                     </div>
                 </div>
