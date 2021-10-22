@@ -792,6 +792,7 @@ function get_role($roleid){
 }
 
 function logout(){
+    $link = connect();
     $user_id = user_id();
     mysqli_query($link, "update realtv_users set online = '0' where id = '$user_id'");
 }
