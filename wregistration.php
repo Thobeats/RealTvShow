@@ -3,6 +3,8 @@ $navBar = true; $logo=true; $writerReg = true;
 require "scripts/functions.php";
 require "scripts/header_two.php"; 
 
+
+
 if(isset($_POST['reg'])){ 
     $firstname = trim($_POST['fname']);
     $lastname = trim($_POST['lname']);
@@ -13,16 +15,16 @@ if(isset($_POST['reg'])){
     $address = trim($_POST['address']);
     $role = 2;
     $video = $_FILES['sizzle'];
-    $cover_pic = $_FILES['cover_img'];
+    $cover_pic = $_POST['home'];
 
     //Movie Details....
    $movie_title = trim($_POST['project_title']);
    $genre = trim($_POST['genre']);
    $logline = trim($_POST['logline']);
    $synopsis = trim($_POST['synopsis']);
-   $other_img = $_FILES['other_img'];
+   $other_img = $_POST['pitches'];
 
-  // var_dump($other_img);
+  //var_dump($video);
 
     $checkEmail = mysqli_query($link, "select * from realtv_users where email = '$email'");
     if(mysqli_num_rows($checkEmail) == 1){
@@ -94,6 +96,12 @@ if(isset($_POST['reg'])){
         font-size : 12px;
         font-family : 'Poppins', serif;
         font-weight : 300;
+    }
+    .editor{
+    max-height: 40vh; 
+    overflow-y:auto;
+    white-space: pre-wrap;
+    background-color: #eaeaff;
     }
 
     @media only screen and (max-width: 768px) {
@@ -202,7 +210,7 @@ if(isset($_POST['reg'])){
 
             <div class="row">
                 <div class="col-12">
-                    <textarea name="address" id="" class="form-control" cols="30" rows="10" placeholder="Address"></textarea>
+                    <textarea name="address" class="form-control" cols="30" rows="10" placeholder="Address"></textarea>
                 </div>
             </div>
 
@@ -247,41 +255,62 @@ if(isset($_POST['reg'])){
                
             </div>            
 
-            <div class="row mt-3">        
-                <div class="col-12">
+            <div class="row mt-3 h-50">        
+                <div class="col-12" style="height: 55vh;">
+                    <input type="hidden" name="logline" id="inputLogline">
                     <label for="" class="h4">Logline <small> (Copy &amp; Paste Your Content)</small></label>
-                    <textarea name="logline" id="" class="form-control text-editor" cols="5" rows="5"></textarea>
+                    <div class="form-control editor" id="logline-editor">
+                      <!-- <h1>Quill to HTML</h1><p><br></p><p>➡️ Modify this content to update HTML output 🔻.</p> -->
+                    </div>
                 </div>
-
             </div>            
 
             <div class="row mt-3">
-                <div class="col-12">
+                <div class="col-12" style="height: 55vh;">
+                <input type="hidden" name="synopsis" id="inputSynopsis">
+
                     <label class="h4" for="">Synopsis <small> (Copy &amp; Paste Your Content)</small></label>
-                    <textarea name="synopsis" id="" class="form-control text-editor" cols="30" rows="10"></textarea>
+                    <div class="form-control editor" id="synopsis-editor">
+                      <!-- <h1>Quill to HTML</h1><p><br></p><p>➡️ Modify this content to update HTML output 🔻.</p> -->
+                    </div>                
                 </div>
             </div>
 
             <div class="row mt-3">
-                <div class="col-lg-6 col-md-6 col-sm-12">                    
-                        <div class="custom-file">
-                            <input type="file" name="cover_img" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                            <label class="custom-file-label" for="inputGroupFile01">Home Page</label>
-                        </div>
-                </div>
+               <div class="col-lg-6 col-md-6 col-sm-12">
+               <input type="hidden" name="home" id="home">               
+
+                    <div class="custom-file">                
+                        <input type="file" name="home_page" title="Select image" style="font-weight: 300 !important;" class="custom-file-input" id="home_page" aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile01" >Home Page</label>                      
+                    </div>  
+                    <div id="home_container" style="height: 20vh;" class="mt-2 border border-black">
                     
+                    </div>                
+               </div>
+
                 <div class="col-lg-6 col-md-6 col-sm-12">    
                     <div class="custom-file">                
-                        <input type="file" name="other_img[]" title="Select multiple images" style="font-weight: 300 !important;" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" multiple>
-                        <label class="custom-file-label" for="inputGroupFile01" >Image Enhanced Pitch up to 7 Images</label>                      
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-md-6 col-sm-12 mt-2">    
-                    <div class="custom-file">                
-                        <input type="file" name="sizzle" title="Select multiple images" style="font-weight: 300 !important;" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                        <input type="file" name="sizzle" title="Select multiple images" style="font-weight: 300 !important;" class="custom-file-input" id="sizzle" aria-describedby="inputGroupFileAddon01">
                         <label class="custom-file-label" for="inputGroupFile01" >Upload Sizzle Reel Video</label>                      
                     </div>
+                    <div id="sizzle_container" style="height: 20vh;" class="mt-2 border border-black">
+                        <video id="preview_sizzle" width="100%" height="100%" controls autoplay>
+                            
+                        </video>
+                    </div> 
+                </div>
+
+                <div class="col-12 mt-2">   
+                <input type="hidden" name="pitches" id="others">               
+ 
+                    <div class="custom-file"> 
+                        <input type="file" name="" id='multiple' title="Select multiple images" style="font-weight: 300 !important;" class="custom-file-input" aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile01" >Image Enhanced Pitch up to 7 Images</label>                      
+                    </div>
+                    <div id="pitch_container" style="height: 20vh;" class="pt-2 border border-black row">
+                    
+                    </div> 
                 </div>
 
             </div>
@@ -308,12 +337,16 @@ if(isset($_POST['reg'])){
                 </div>
             </div>
 
+            <div id="input_contain">
+
+            </div>
+
             <div class="row mt-5">
                 <div class="col-lg-6 writer-btn-prev col-sm-12">
                     <input type="button" class="realbtn btn-warning prev writer-btn" value="Previous">
                 </div>
                 <div class="col-lg-6 writer-btn-reg col-sm-12">
-                  <input type="submit" class="realbtn btn-legit writer-btn" name="reg" value="Register">
+                  <input type="submit" class="realbtn btn-legit writer-btn reg-submit" name="reg" value="Register">
                 </div>
             </div>
 
@@ -324,6 +357,7 @@ if(isset($_POST['reg'])){
 </form>
 
 <script>
+   
     let next = document.querySelector(".next");
     let writerTitle = document.querySelector(".writer-title");
     next.addEventListener("click", function(){
@@ -335,6 +369,219 @@ if(isset($_POST['reg'])){
         writerTitle.innerHTML = "writers and creators";
     });
 
+    let home_page = document.getElementById("home_page");
+    let home_contain = document.getElementById("home_container");
+    let multiple = document.getElementById("multiple");
+    let pitches = document.getElementById("others");
+    let home = document.getElementById("home");
+    let pitch_contain = document.getElementById("pitch_container");
+    let multi_array = [];
+    let input_contain = document.querySelector("#input_contain");
+    let sizzle = document.querySelector("#sizzle");
+    let sizzlePreview = document.querySelector("#preview_sizzle");
+
+
+    sizzle.addEventListener("change", function(){
+        let files = this.files[0];
+        //console.log(files);
+        let url = "handle_video.php";
+       
+        let formData = new FormData(); 
+        formData.append("file", files);
+        fetch(url, {
+            method: "POST", 
+            body: formData,
+        }).then(response => response.json()).then((data) => {
+            
+           console.log(data);
+            if(data.msg == 'error1'){
+                sizzle.value = "";
+                toastr.error('File too Large',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                });
+            }else if(data.msg == 'error2'){
+                sizzle.value = "";
+                toastr.error('Invalid format',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                });
+            }else{
+
+                console.log(data);
+
+                let src = URL.createObjectURL(files);     
+                
+                let format = data.format;
+                sizzlePreview.innerHTML = "";
+                sizzlePreview.innerHTML += `<source src="${src}" type="video/${format}"></source>`;
+                sizzlePreview.load();
+
+            }
+        });
+    });
+
+
+    //MultiUpload
+    multiple.addEventListener("change",function(){
+        let files = this.files[0];
+
+        let url = "upload_file.php";
+
+
+        let formData = new FormData(); 
+        formData.append("file", files);
+        fetch(url, {
+            method: "POST", 
+            body: formData,
+        }).then(response => response.text()).then((data) => {
+            
+           //alert(data);
+        //    if(data == 'no'){
+        //         home_page.value = "";
+        //         toastr.error('File exists',{
+        //             'closeButton': true, 
+        //             'showMethod' : 'slideDown', 
+        //             'hideMethod' : 'slideUp'
+        //         });
+        //     }else 
+            
+            if(data == 'error1'){
+                home_page.value = "";
+                toastr.error('File too Large',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                });
+            }else if(data == 'error2'){
+                home_page.value = "";
+                toastr.error('Invalid format',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                });
+            }else{
+            //console.log(imgArray);
+           // console.log(data)
+
+            //let src = URL.createObjectURL(file);
+           // multi_array.push(src);
+
+           multi_array.push(data);
+
+            console.log(multi_array)
+
+            pitch_contain.innerHTML = "";
+                for(dt of multi_array){
+                    pitch_contain.innerHTML += `<div class="mx-2 mt-1 col-2 card p-0 border-0" style="width: 20%; height: 40%; background-color:inherit;">
+                                                    <img src="img/uploads/${dt}" width="100%" height="100%">                                        
+                                                    <i class="bi bi-trash-fill" data-id="<?= $movie_id ?>" data-name="${dt}" onclick="deletePic(event)"></i>                                      
+                                                </div>`;
+
+               
+                }
+
+                pitches.value = multi_array.toString();
+
+            
+            }
+        });
+
+    })
+
+    // SIngle Upload
+    home_page.addEventListener("change", function(){
+        let files = this.files[0];
+        //console.log(files);
+        let url = "upload_file.php";
+       
+        let formData = new FormData(); 
+        formData.append("file", files);
+        fetch(url, {
+            method: "POST", 
+            body: formData,
+        }).then(response => response.text()).then((data) => {
+            
+           //alert(data);
+            // if(data == 'no'){
+            //     home_page.value = "";
+            //     toastr.error('File exists',{
+            //         'closeButton': true, 
+            //         'showMethod' : 'slideDown', 
+            //         'hideMethod' : 'slideUp'
+            //     });
+            // }else 
+            
+            if(data == 'error1'){
+                home_page.value = "";
+                toastr.error('File too Large',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                });
+            }else if(data == 'error2'){
+                home_page.value = "";
+                toastr.error('Invalid format',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                });
+            }else{
+            //console.log(imgArray);
+           // console.log(data)
+
+            //let src = URL.createObjectURL(files)
+            home_contain.innerHTML = "";
+            home_contain.innerHTML += `<div class="card p-0 border-0 mx-auto" style="width: 180px; height: 100%; background-color:inherit;">
+                                            <img src="img/uploads/${data}" width="50%" height="50%">  
+                                            <i class="bi bi-trash-fill" data-id="<?= $movie_id ?>" data-name="${data}" onclick="deletePic(event)"></i>                                      
+                                      </div>`;
+            }
+
+            home.value = data;
+        });
+    });
+
+
+    function deletePic(event){
+        let name = event.target.dataset.name;
+        let url = 'unlink.php?pic=' + name;
+
+        $.get(url, function(data){
+            toastr.error(data,{
+                'closeButton': true, 
+                'showMethod' : 'slideDown', 
+                'hideMethod' : 'slideUp'
+            });
+
+          
+                if(multi_array.includes(name)){
+                    let id = multi_array.indexOf(name);
+                    multi_array.splice(id, 1);
+                    
+                    pitch_contain.innerHTML = "";
+                    for(dt of multi_array){
+                    pitch_contain.innerHTML += `<div class="card p-0 border-0 mx-auto" style="width: 120px; background-color:inherit;">
+                                                    <img src="img/uploads/${dt}" width="100%" height="50%">                                        
+                                                    <div class="card-footer text-mute text-right"><i class="bi bi-trash-fill" data-id="<?= $movie_id ?>" data-name="${dt}" onclick="deletePic(event)"></i></div>                                        
+                                                </div>`;
+                    }
+
+                    pitches.value = multi_array.toString();
+
+                } else{
+                    home_page.value = "";
+                    home_contain.innerHTML = "";
+                }         
+
+            
+            event.target.value = "";
+
+
+        }, "text");
+    }
 </script>
 
 

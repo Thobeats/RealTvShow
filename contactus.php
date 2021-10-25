@@ -4,7 +4,26 @@ require "scripts/functions.php";
 require "scripts/header_two.php"; 
 
 //var_dump($_SESSION);
+
+if(isset($_POST['deliver'])){
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $role = $_POST['interested_as'];
+    $role = get_role($role);
+    $message = $_POST['message'];
+
+    $res = send_contact_mail($name, $email, $role, $message);
+
+    if($res == 1){
+        set_message("success", "Message Sent");
+    }else{
+        set_message("error", "Message Not Sent");
+    }
+}
 ?>
+
+<?= get_message("success"); get_message("error"); ?>
+
 <style>
 .about-us-wrapper{
     height : auto;
@@ -98,7 +117,7 @@ require "scripts/header_two.php";
                         <select name="interested_as" class="form-control" id="">
                             <option>Select Role</option>
                             <?php 
-                            $roleq = mysqli_query($link, "select * from realtv_roles");  
+                            $roleq = mysqli_query($link, "select * from realtv_roles where role_name <> 'admin'");  
 
                             while($role = mysqli_fetch_assoc($roleq)):
                             

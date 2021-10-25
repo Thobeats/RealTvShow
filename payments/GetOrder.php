@@ -19,6 +19,7 @@ if(isset($_GET['orderID'])){
   $user_type = $_GET['user_type'];
   $pac = $_GET['pac'];
   $user_id = $_GET['userid'];
+  $svdID = $_GET['savedID'];
 }
 
 
@@ -103,7 +104,7 @@ class GetOrder
    }
 
 
-   public static function updateCartStatus($user_id, $item_id, $user_type){
+   public static function updateStatus($user_id, $item_id, $user_type){
       require "db.php";
 
       if($user_type == "contestant"){
@@ -118,7 +119,7 @@ class GetOrder
 
    }
 
-   public static function getOrder($orderId, $mov, $pac = null, $user_id, $user_type)
+   public static function getOrder($orderId, $mov, $pac = null, $user_id, $user_type,$item_id=null)
   {
       $getOrder = new GetOrder();
     // 3. Call PayPal to get the transaction details
@@ -209,6 +210,9 @@ class GetOrder
             
         </table>
         ";
+        if($item_id != null){
+          $getOrder->updateStatus($user,$item_id, $user_type);
+        }
         $getOrder->send_confirmation_mail($email, 'RealTV Registry Movie Registration Payment', $body);
         header('Location:../payment-success.php');
     }
@@ -227,6 +231,6 @@ class GetOrder
  */
 if (!count(debug_backtrace()))
 {
-  GetOrder::getOrder($orderid,$mov_id,$pac,$user_id, $user_type);
+  GetOrder::getOrder($orderid,$mov_id,$pac,$user_id, $user_type,$svdID);
 }
 ?>

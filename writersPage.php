@@ -9,7 +9,7 @@ require "scripts/header_two.php";
 
 <style>
     .first_post_pic{
-        background-image : url(img/promotingyou.jpeg);
+        background-image : url(img/promotingyou.jpg);
         background-size : cover;
         height : 60vh;
     }
@@ -37,7 +37,7 @@ require "scripts/header_two.php";
     }
 
     .fifth_post_pic{
-        background-image : url(img/options.jpeg);
+        background-image : url(img/options.jpg);
         background-size : cover;
         background-position : center;
         height : 30vh;
@@ -205,7 +205,7 @@ require "scripts/header_two.php";
                     <div class="d-flex flex-column">
                         <div class="sixth_post_pic"></div>
                         <div class="post_text d-flex flex-column justify-content-center pt-1">
-                            <a href="sample.php" class="post_link text-center">display listing and image pitch</a>
+                            <a href="sample.php" class="post_link text-center">SAMPLE DISPLAY LISTING AND IMAGE ENHANCED PITCH</a>
                         </div>
                     </div>
                 </div>
@@ -219,6 +219,16 @@ require "scripts/header_two.php";
                     <div class="d-flex flex-column justify-content-center regnow">
                         <a href="wregistration.php" class="text-right regnow_link">
                             Submit Pitch & Register Now
+                        </a>
+                    </div> 
+                </div>                
+            </div>
+            <?php }else{ ?>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="d-flex flex-column justify-content-center regnow">
+                        <a href="writer_edit.php" class="text-right regnow_link">
+                            Submit New Pitch
                         </a>
                     </div> 
                 </div>                

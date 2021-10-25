@@ -17,8 +17,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.2.2/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
-    <script src="//cdn.ckeditor.com/4.16.2/basic/ckeditor.js"></script>   
+
+    <!-- <script src="//cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>     -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.js"></script>
+
+
+    <!-- Datatables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">  
  
 
     <link rel="stylesheet" href="css/style2.css">
@@ -35,6 +43,9 @@
      <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.2.2/js/fileinput.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
      <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+
+     <!-- <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script> -->
 
 </head>
 <body>
@@ -146,7 +157,7 @@
     <div class="container-fluid">
         <header class="border-bottom <?= isset($fixed) ? 'fixed-top' : ''; ?>">
             <?php if(isset($logo)){ ?>
-            <div class="row" style="width: 100%; background-color: rgb(218, 214, 214);">
+            <div class="row mx-auto" style="width: 100%; background-color: rgb(218, 214, 214);">
                 <div class="col-lg-12 col-md-12 col-sm-12" >
                     <div id="logo" class="d-flex justify-content-center">
                         <a href="<?= $_SESSION['index'] ?? 'index.php' ?>"><img src="img/logo.png" alt="logo" class="logo"></a>

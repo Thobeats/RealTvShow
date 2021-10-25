@@ -5,7 +5,7 @@
     <div class="col-lg-6 col-md-12 col-sm-12 ">
         <div class="d-flex flex-column justify-content-center text-center">
             <img src="img/logo.png" class="mx-auto" alt="logo" id="footer-logo" width = "100%">
-            <p class="mt-2 text-center h5 text-dark">on location to a cache of unique formats & talent</p>
+            <p class="mt-2 text-center h3" style="color:#004883;">on location to a cache of unique formats & talent</p>
         </div>   
     </div>
 
@@ -70,6 +70,9 @@
 
 
  </div>
+ <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/quill-image-resize-module@3.0.0/image-resize.min.js"></script>
+
 
  <?php if(isset($paypal)): ?>
  <script src="https://www.paypal.com/sdk/js?client-id=AfgYATIfVWBGwQVce9ggpT8F3cpdMckdMmaf525u6IvyLjD1oL8RTiTqHVZrUWMvn7Un6r2q_qDehBJY&currency=USD"></script>
@@ -88,7 +91,7 @@ paypal.Buttons({
      },
      onApprove: function(data, actions){
          return actions.order.capture().then(function (){
-          window.location = "payments/GetOrder.php?orderID=" + data.orderID + "&userid=" + '<?= $uni ?>' + "&mov_id=" + '<?= $mov_id ?> '+ "&pac=" + '<?= $pac ?>'+ "&user_type=" + '<?= $user_type ?>';
+          window.location = "payments/GetOrder.php?orderID=" + data.orderID + "&userid=" + '<?= $uni ?>' + "&mov_id=" + '<?= $mov_id ?> '+ "&pac=" + '<?= $pac ?>'+ "&user_type=" + '<?= $user_type ?>' + "&savedID=" + '<?= $svdID ?>';
          });
      },
      onCancel: function(){
@@ -110,7 +113,70 @@ paypal.Buttons({
    let d = new Date();
    date.innerHTML = d.getFullYear();
    
-  let editor = CKEDITOR.replaceAll('text-editor');
+//  let editor = CKEDITOR.replaceAll('text-editor');
+
+var logline = new Quill('#logline-editor', {
+  modules: {
+    toolbar: [
+         [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+         ['bold', 'italic', 'underline', 'strike'],
+         [{ 'color': [] }, { 'background': [] }], 
+         [{ 'align': [] }],
+         ['link', 'image'],
+         
+         ['clean']  
+       ],
+        imageResize: {
+          displaySize: true
+        }
+  },
+  placeholder: 'Paste your material here....',
+  theme: 'snow'
+});
+
+var synopsis = new Quill('#synopsis-editor', {
+  modules: {
+    toolbar: [
+         [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+         ['bold', 'italic', 'underline', 'strike'],
+         [{ 'color': [] }, { 'background': [] }], 
+         [{ 'align': [] }],
+         ['link', 'image'],
+         
+         ['clean']  
+       ],
+        imageResize: {
+          displaySize: true
+        },history: {
+        delay: 0,
+        maxStack: 500,
+        userOnly: true
+        }
+  },
+  placeholder: 'Paste Your material here...',
+  theme: 'snow'
+});
+
+$(".reg-submit").on("click", function(){
+    let html1  = logline.root.innerHTML;
+    let html2 = synopsis.root.innerHTML;
+
+    console.log(html1, html2);
+
+    $("#inputSynopsis").val(html2);
+    $("#inputLogline").val(html1);
+})
+
+$("#save").on("click", function(){
+    let html1  = logline.root.innerHTML;
+    let html2 = synopsis.root.innerHTML;
+
+    console.log(html1, html2);
+
+    $("#inputSynopsis").val(html2);
+    $("#inputLogline").val(html1);
+})
+
 
 </script>
 
@@ -165,9 +231,17 @@ formControl.forEach((formC)=>{
       
     });
 
-    $('form').disableAutoFill();
-
 <?php endif; ?>
+</script>
+
+<script>
+if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
+
+
+//$(".form")[0].reset();
+
 </script>
 
 

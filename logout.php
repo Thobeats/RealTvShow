@@ -1,6 +1,10 @@
 <?php
-session_start();
 
+require "scripts/functions.php";
+
+logout();
+
+echo mysqli_error($link);
 
 
 session_destroy();

@@ -80,7 +80,7 @@
         <a href="index.php"><img src="img/logo.png" alt="logo" width = "243px" height="90px"></a>
     </div>
     <ul class="writers_option">
-        <li class="option"><a class="option_link" href="promoteyou.php">Promoting You</a></li>
+        <li class="option"><a class="option_link" href="promotingmaterial.php">Promoting Your Material</a></li>
         <li class="option"><a class="option_link" href="business.php">Business of writing</a></li>
         <li class="option"><a class="option_link" href="pitching.php">Pitching Reality</a></li>
         <li class="option"><a class="option_link" href="sample.php">Display Listing and Image Pitch</a></li>

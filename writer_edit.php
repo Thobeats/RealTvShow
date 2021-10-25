@@ -96,7 +96,9 @@ if (isset($_POST['save'])){
  .poppins {
      font-weight : 800;
  }
- .movie-dets{
+
+
+.movie-dets{
     padding : 0px 15px;
     margin : 0px 15px;
 }
@@ -108,102 +110,62 @@ if (isset($_POST['save'])){
 .poppins{
     font-family: 'Poppins', sans-serif;
 }
-.movie-header{
-    font-family: 'Zilla Slab', serif;    
-    font-size : 60px;
-    font-weight : 800;
-    text-align : left;
-    color : #041e3c;
-    letter-spacing : 2px;
-    text-transform : uppercase;
+.title{
+    text-align : right;
 }
-
-.movie-title{
-    padding : 2px;
-    font-family: 'Zilla Slab', serif;    
-    font-size : 40px;
-    font-weight : 700;
-    color : #041e3c;
-    text-transform : uppercase;
-    letter-spacing : 2px;
+.movie_img{
     text-align : left;
 }
-
-.logline{
-    position : relative;
-    top : 70px;
+.movie_img img{
+    width : 70%;
 }
-
-.logline-header{
-    font-family: 'Zilla Slab', serif;    
-    font-size : 19px;
-    font-weight : 600;
-    letter-spacing : 2px;
-}
-
-.logline-para {
-    font-size : 17px;
-    font-weight : 400;
-    letter-spacing : 1px;
-}
-
-.logline-para p{
-    font-family: 'Zilla Slab', serif;  
-}
-
-.features {
-    list-style-type : none;
-    padding : 10px;
-    font-family: 'Zilla Slab', serif;   
-    letter-spacing : 2px;
-}
-
-.features-list{
-    margin : 2px;
-    width : 100%;
-}
-
-.features-title{
-    font-weight : 700;
-    font-size: 20px;
-}
-
-.features-detail{
-    width : 700px;
+.r{
+    text-align : right;
 }
 
 .synopsis_content{
     letter-spacing : 1px;
-    font-size : 18px;
 }
+.editor{
+    max-height: 40vh; 
+    overflow-y:auto;
+    white-space: pre-wrap;
+    background-color: #eaeaff;
+    }
 
-@media only screen and (max-width: 768px) {
-        .movie-title, .movie-header{
+    @media only screen and (max-width: 768px) {
+        .movie_img{
             text-align : center;
-            border: 1px: solid;
-        }.features{
+            
+        }
+        .movie_img img{
+            width : 70%;
+            margin-top: 35px;
+        }
+    }
+
+    @media only screen and (max-width: 425px) {
+        .title{
+            font-size : 20px;
+            text-align : left;
+        }
+        .synopsis{ font-size : 20px;}
+        .res{
+            font-size : 15px;
+        }
+        .features p{
+            font-size : 12px;
+        }.r{
+            text-align : center;
+        }.movie_img{
             text-align : center;
         }
     }
 
-@media only screen and (max-width: 425px) {
-
-body{
-    width : auto;
-}
-.movie-title, .movie-header{
-    text-align : center;
-    border: 1px: solid;
-}.features-list{
-    width: 100%;
-}
-
-}
 </style>
-
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
-    <div class="modal-content">
+    <div class="modal-content" style="background-color: rgb(218, 214, 214);">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Preview</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -211,134 +173,113 @@ body{
         </button>
       </div>
       <div class="modal-body">
-      <section class="row my-4 p-2 movie-dets bg-light">
+    
+
+
+        <section class="row my-4 p-2 movie-dets">
             <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="d-flex justify-content-center">
-                    <div class="row" style="width: 100%;">
-                        <div class="col-lg-12 col-md-12 col-sm-12 mt-5">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-12">
-                                    <h1 class="movie-header pt-2 text-center">
-                                        Title
-                                    </h1>
-                                </div>
-                                <div class="col-lg-8 col-md-12">
-                                    <h1 class="movie-title py-4">
-                                        No Title
-                                    </h1>
-                                </div>
-                            </div>
-                        </div> 
-
-                        <div class="col-lg-12 col-md-12 col-sm-12 mb-5">
-                            <div class="logline p-2">
-                                <h3 class="logline-header">
-                                    Logline
-                                    <hr>
-                                </h3>
-
-                                <div class="logline-para">
-                                 No logline 
-                                
-                                </div>
-                            </div> 
-                        </div>
-                                                
+                <div class="row" style="width: 100%;">                        
+                    <div class="col-lg-2 col-md-2 col-2 p-0">
+                        <h3 class="m-0 title movie-header">
+                            Title:
+                        </h3>
                     </div>
-                
-                </div>
+                    <div class="col-lg-10 col-md-10 col-10 p-0">
+                        <h5 class="mt-1 ml-3 res movie-title"> 
+                            <?= isset($movie_data['movie_title']) ? $movie_data['movie_title'] : 'Epic - Battles of Foreign Lands (Proposed filming in the US)' ?>                                    
+                        </h5>
+                    </div>                           
 
+                    <div class="col-lg-2 col-md-2 col-sm-12 mt-2 title p-0">                            
+                        <h3 class="m-0 title logline-header">
+                            Logline:
+                        </h3>
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-12 mt-2">
+                        <div class="res logline-para">
+                        <?= isset($movie_data['logline']) ? $movie_data['logline'] : 'A troop of 30 Roman Soldiers are led to battle against 30 Celti Gauls in this historically
+                                                                                        significant encounter that occured, circa 525 BC. Among the destruction and burning ruins of a
+                                                                                        Roman settlement, the Celtics are observed boasting until they see a troop of Roman Soldiers
+                                                                                        charging at them. Combat is certain snd an Epic Battle of revenge ensues. A man-to-man clash of
+                                                                                        soldiers wielding gladius type weaponry soon intensifies as antiquated pistols are drawn. In the end
+                                                                                        either the Roman Soldiers or Celtic Gauls, will be declared victorious, and advance to battle again.
+                                                                                        <b>Note:</b> Proprietary "BattleSafeWeaponry" is specially designed to insure non-injury conflicts)
+                                                                                        ' 
+                        ?>
+
+                        </div>
+                    </div>
+                                            
+                </div>
+                
             </div>
 
 
-                <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
-                    
-                        <div class="row">
-                            <div class="col-lg-7 col-md-12 col-sm-12">
-                                <ul class="features p-2">
-
-                                    <li class="features-list" >
-                                        <span class="features-title">
-                                            Proposal:
-                                        </span>
-
-                                        <span class="features-detail prop">
-                                        No title                                        
-                                        </span>
-
-
-                                    </li>
-
-
-                                    <li class="features-list" >
-                                        <span class="features-title">
-                                            Copyright:
-                                        </span>
-
-                                        <span class="features-detail cop">
-                                        No Copyright
-                                        
-                                        </span>
-
-
-                                    </li>
-
-
-                                    <li class="features-list" >
-                                        <span class="features-title">
-                                            Reality:
-                                        </span>
-
-                                        <span class="features-detail real">
-                                            No reality
-                                        
-                                        </span>
-
-
-                                    </li>
-
-                                    <li class="features-list" >
-                                        <span class="features-title">
-                                            Option/Acquisition:
-                                        </span>
-
-                                        <span class="features-detail aq">
-                                        No acquisition
-                                        
-                                        </span>
-
-
-                                    </li>
-
+            <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
+                <div class="col-lg-12 col-md-12 col-sm-12 mt-4">                    
+                    <div class="row">
+                        <div class="col-lg-7 col-md-6 col-sm-12 p-0">
+                            <div class="row features">
+                                <p class="col-4 r">
+                                    Proposal
+                                </p>
+                                <p class="col-8 prop">
+                                    : <?= isset($movie_data['movie_title']) ? $movie_data['movie_title'] : 'Epic - Battles on Foreign Lands [in the US]' ?>
+                                </p>
+                                <p class="col-4 r">
+                                    Copyright
+                                </p>
+                                <p class="col-8 cop">
+                                    : <?= isset($movie_data['copyright']) ? $movie_data['copyright'] : 'US Copywright Office Title 17 - April 27, 2021' ?>
+                                </p>
+                                <p class="col-4 r">
+                                    Reality
+                                </p>
+                                <p class="col-8 real">
+                                    : <?= isset($movie_data['reality']) ? $movie_data['reality'] : 'Unscripted Format/12-episodes arc series' ?>
+                                </p>
+                                <p class="col-4 r">
+                                    Option/Acquisition
+                                </p>
+                                <p class="col-8 aq">
+                                    : <?= isset($movie_data['acquisition']) ? $movie_data['acquisition'] : 'Negotiable/$300,000' ?>
+                                </p>
                                     
-                                </ul> 
-                            </div>
-
-                            <div class="col-lg-5 col-md-12 col-sm-6">
-                                <div class="movie_img text-center my-2">
-                                    <img id="img" src="" width="50%">
-                                </div>
-                            </div>
-                                                    
+                            </div> 
                         </div>
-                    
-                
-                </div>     
-                
-                <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
-                    <div class="synopsis p-2">
-                        <h3 class="logline-header">
-                            Synopsis
-                            <hr>
-                        </h3>
 
-                        <div class="synopsis_content zilla">
-                            synopsis
+                        <div class="col-lg-5 col-md-6 col-sm-6">
+                            <div class="movie_img">
+                            <img id="img" src="img/uploads/<?= $movie_data['movie_pic'] ?>">
+                            </div>
                         </div>
+                                                
+                    </div>            
+                </div>
+            </div>     
+            
+            <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
+                <div class="p-2">
+                    <h3 class="synopsis">
+                        Synopsis
+                        <hr>
+                    </h3>
+
+                    <div class="res synopsis_content">
+                        <?php
+                        
+                         $synopsis = $movie_data['synopsis'];
+
+                         $trimmed = str_replace(array('<p>&nbsp;</p>'), array(''), $synopsis);
+                         $trimmed = str_replace(array('&nbsp;'), array(''), $synopsis);
+                         echo $trimmed;
+                        
+                        ?>
                     </div>
                 </div>
+            </div>
 
-            </section>   
+        </section>        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -356,7 +297,7 @@ body{
     <form action="" method="post" id="edit-form" enctype="multipart/form-data">
         <div class="form-group text-right">
             <button class="btn btn-primary" type="button" onclick="openModal()">Preview</button>
-            <button class="btn btn-success" type="submit" name="save">Save</button>
+            <button class="btn btn-success" type="submit" name="save" id="save">Save</button>
         </div>
         <hr>
         <div class="form-row my-2">
@@ -391,13 +332,21 @@ body{
         </div>
        
         <div class="form-row">
-            <div class="mt-3 col-12">
+            <div class="mt-3 col-12" style="height: 55vh;">
+            <input type="hidden" name="logline" id="inputLogline">
                 <label for="logline">Logline</label>
-                <textarea id="logline" name="logline" class="form-control text-editor" cols="30" rows="10"><?= $getProject['logline'] ?? "" ?></textarea>
+                <div class="form-control editor" id="logline-editor">
+                      <!-- <h1>Quill to HTML</h1><p><br></p><p>➡️ Modify this content to update HTML output 🔻.</p> -->
+                      <?= $getProject['logline'] ?? "" ?>
+                </div>            
             </div>       
-            <div class="mt-3 col-12">
+            <div class="mt-3 col-12" style="height: 55vh;">
+            <input type="hidden" name="synopsis" id="inputSynopsis">
                 <label for="logline">Synopsis</label>
-                <textarea id="synopsis" name="synopsis" class="form-control text-editor" cols="30" rows="10"><?= $getProject['synopsis'] ?? "" ?></textarea>
+                <div class="form-control editor" id="synopsis-editor">
+                      <!-- <h1>Quill to HTML</h1><p><br></p><p>➡️ Modify this content to update HTML output 🔻.</p> -->
+                      <?= $getProject['synopsis'] ?? "" ?>
+                </div>             
             </div>          
         </div>
 
@@ -407,7 +356,6 @@ body{
             </div>
             <div class="mt-3 col-12">
                 <div class="custom-file">                
-                    <!-- <input type="file" name="img[]" id="input-id" class="file" data-preview-file-type="text" multiple>                    -->
                     <input type="file" id="file_upload" >
                 </div>
             </div> 
@@ -426,7 +374,9 @@ let img_contain = document.getElementById("show_img");
 let img_file = document.getElementById("img_file");
 
 
-
+<?php 
+if(isset($_GET['edit'])){
+?>
 
 window.addEventListener("load", function(){
     let lurl = "load_image.php?id=" + "<?= $movie_id ?>";
@@ -456,6 +406,9 @@ window.addEventListener("load", function(){
 
 });
 
+<?php 
+}
+?>
 
 function openModal(){
     let title = $("#title").val();
@@ -525,11 +478,35 @@ function openModal(){
             method: "POST", 
             body: formData,
         }).then(response => response.text()).then((data) => {
-            //console.log(data)
+            
+           // alert(data);
+            if(data == 'no'){
+                pic.value = "";
+                toastr.error('File exists',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                });
+           
 
-            if(data != 'no'){
-            imgArray.push(data);
+            }else if(data == 'error1'){
+                pic.value = "";
+                toastr.error('File too Large',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                });
+            }else if(data == 'error2'){
+                pic.value = "";
+                toastr.error('Invalid format',{
+                    'closeButton': true, 
+                    'showMethod' : 'slideDown', 
+                    'hideMethod' : 'slideUp'
+                });
+            }else{
+                imgArray.push(data);
             //console.log(imgArray);
+           // console.log(data)
             img_contain.innerHTML = "";
             for(dt of imgArray){
             img_contain.innerHTML += `<div class="mx-2 card p-0 border-0" style="width: 120px; height: 120px; background-color:inherit;">
@@ -538,14 +515,6 @@ function openModal(){
                                       </div>`;
             }
             img_file.value = imgArray.toString();
-
-            }else{
-                pic.value = "";
-                toastr.info('File exists',{
-                    'closeButton': true, 
-                    'showMethod' : 'slideDown', 
-                    'hideMethod' : 'slideUp'
-                });
             }
         });
     });

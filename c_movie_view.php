@@ -14,123 +14,52 @@ if(isset($_GET['id'])){
     $id = $_GET['id'];
     $movieQuery = mysqli_query($link, "select * from realtv_movies where id = '$id'");
     $movie_data = mysqli_fetch_assoc($movieQuery);
+
+    //Title 
+    $movie_title = isset($movie_data['movie_title']) ? $movie_data['movie_title'] : 'Epic - Battles of Foreign Lands (Proposed filming in the US)';
+    $title = "<b class='heading'>Title:</b> ". $movie_title;
+
+    //Logline
+    $movie_logline = isset($movie_data['logline']) ? $movie_data['logline'] : 'A troop of 30 Roman Soldiers are led to battle against 30 Celti Gauls in this historically
+                                                                                            significant encounter that occured, circa 525 BC. Among the destruction and burning ruins of a
+                                                                                            Roman settlement, the Celtics are observed boasting until they see a troop of Roman Soldiers
+                                                                                            charging at them. Combat is certain snd an Epic Battle of revenge ensues. A man-to-man clash of
+                                                                                            soldiers wielding gladius type weaponry soon intensifies as antiquated pistols are drawn. In the end
+                                                                                            either the Roman Soldiers or Celtic Gauls, will be declared victorious, and advance to battle again.
+                                                                                            <b>Note:</b> Proprietary "BattleSafeWeaponry" is specially designed to insure non-injury conflicts)
+                                                                                            ' ;
+    $logline = preg_replace("/<p>/", "<p><b class='heading'>Logline:</b>  ",$movie_logline, 1);
+
+    //Features
+    $proposal = "<b class='heading'>Proposal: </b>" . $movie_data['movie_title']; 
+    $copyright = "<b class='heading'>Copyright: </b>" . $movie_data['copyright']; 
+    $reality = "<b class='heading'>Reality: </b>" . $movie_data['reality']; 
+    $purpose = "<b class='heading'>Purpose: </b>" . $movie_data['purpose'];
+    $pay_range = "<b class='heading'>Pay Range: </b>" . $movie_data['pay_range']; 
+    $when_n_where = "<b class='heading'>When / Where: </b>" . $movie_data['when_and_where']; 
+    $limited_to = "<b class='heading'>Limited To: </b>" . $movie_data['limited_to']; 
+
 }
 
 ?>
 
 
 <style>
-.cover-image{
-    background-image: url(img/Onboard1.jpg);
-    height: 100vh;
-    background-size : cover;
-    background-position : top left;
-    color : white;
-    display: flex;
-    align-items : center;
-}
-
-.cover-wrapper{
-    text-align : center;
-    font-family: "Montserrat", sans-serif;
-    width : 100%;
-}
-
-.cover-wrapper h1{
-    font-weight : 600;
-    letter-spacing : 3px;
-    text-transform : uppercase;
-}
-
-.cover-wrapper p{
-    font-weight : 300;
-    letter-spacing : 3px;;
-    text-transform : uppercase;
-    width : 100%;
-}
-
 .movie-dets{
     padding : 0px 15px;
     margin : 0px 15px;
-}
-
-.zilla{
+}.zilla{
     font-family: 'Zilla Slab', serif;    
-}
-
-.poppins{
+}.poppins{
     font-family: 'Poppins', sans-serif;
 }
-.movie-header{
-    font-family: 'Zilla Slab', serif;    
-    font-size : 60px;
-    font-weight : 800;
-    text-align : left;
-    color : #041e3c;
-    letter-spacing : 2px;
-    text-transform : uppercase;
-}
-
-.movie-title{
-    padding : 2px;
-    font-family: 'Zilla Slab', serif;    
-    font-size : 40px;
-    font-weight : 700;
-    color : #041e3c;
-    text-transform : uppercase;
-    letter-spacing : 2px;
-    text-align : left;
-}
-
-.logline{
-    position : relative;
-    top : 70px;
-}
-
-.logline-header{
-    font-family: 'Zilla Slab', serif;    
-    font-size : 19px;
-    font-weight : 600;
-    letter-spacing : 2px;
-}
-
-.logline-para{
-    padding-top : 15px;
-    font-family: 'Zilla Slab', serif;    
-    font-size : 15px;
-    font-weight : 400;
-    letter-spacing : 2px;
-}
-
-.features {
-    list-style-type : none;
-    padding : 10px;
-    font-family: 'Zilla Slab', serif;   
-    letter-spacing : 2px;
-}
-
-.features-list{
-    margin : 2px;
-    width : 100%;
-}
-
-.features-title{
-    font-weight : 700;
-    font-size: 20px;
-}
-
-.features-detail{
-    width : 700px;
-}
-
-.member-benefits{
+.features p {
+    margin : 1px 0px;
+}.member-benefits{
     padding : 20px 0px;
-}
-
-.card{
+}.card{
     background-color : inherit;
 }
-
 .quotes{
     padding-top : 10px;
     padding-right : 10px;
@@ -139,83 +68,77 @@ if(isset($_GET['id'])){
     color : #004883;
     font-family: 'Poppins', sans-serif;
     font-weight : 400;
-    letter-spacing : 3px;
 }
 
 .m-title{
     font-size : 35px;
     letter-spacing : 2px;
     font-weight : 800;
+}.features{
+    margin-left : 150px;
+    font-size : 13pt;
+    padding-left : 50px;
 }
 
 .seeking{
-    padding-top : 10px;
-    font-family: 'Zilla Slab', serif;    
-    font-size : 15px;
-    font-weight : 400;
-    letter-spacing : 2px;
+   margin : 0px 30px;
+   font-size : larger;
+}
+.heading{
+    display:inline-block;
+    width : 100px;
+}
+
+.title{
+    font-size : 18pt;
+    font-weight : 800;
+    font-family : 'Poppins', serif;
+}
+.logline{
+    font-size : 18pt;
+    margin-top : 5px;
+}
+.movie_img{
+    text-align : left;
+}
+.movie_img img{
+    width : 100%;
+}.r{
+    text-align : right;
+}
+.top{
+    padding : 0 50px;
 }
 
     @media only screen and (max-width: 768px) {
-
-        .cover-image{
-            height: 50vh;
-            width : 100%;  
-            background-position : top right;  
-        }.cover-wrapper h1{ 
-            font-size : 40px;           
-            width : 100%;
-        }.cover-wrapper p{
-            width : 100%;
+        .movie_img{
+            text-align : center;
+            
         }
-        .movie-title, .movie-header{
-            text-align : center;
-            border: 1px: solid;
-        }.features{
-            text-align : center;
+        .movie_img img{
+            width : 70%;
+            margin-top: 35px;
         }
     }
 
     @media only screen and (max-width: 425px) {
-        .cover-image{
-            height : 50vh;
-            background-position : center right;
+        .carousel{
+            height : auto;
         }
-
-          .cover-wrapper{
-            width : 425px;
+        .title{
+            font-size : 20px;
         }
-        .cover-wrapper h1{ 
-            font-size : 25px; 
-            letter-spacing : 2px;
+        .res{
+            font-size : 16px;
         }
-
-        .cover-wrapper p{
-             font-size : 15px;
-             letter-spacing : 1px;
-        }
-
-        .movie-title, .movie-header{
+        .features p{
+            font-size : 12px;
+        }.r{
             text-align : center;
         }
-
-        .features-list{
-            width: 100%;
-        }
-
-        .carousel{
-            height : 50vh;
-        }
-
-       .carousel img{
-           padding-top : 35px;
-           width : 200px;
-           height : 150px;
-       }
-
        .quotes{
-        padding-top : 20px;
-        font-size: 14px;
+        font-size: 12px;
+        letter-spacing : 0px;
        }
 
        .card{
@@ -225,338 +148,271 @@ if(isset($_GET['id'])){
        .fa{
            font-size: 15px;
        }
+       .title{
+            text-align : left;
+        }.movie_img{
+            text-align : center;
+        }
+        .seeking{
+            margin : 0px 5px;
+            font-size : 13px;
+        }.member-benefits img{
+            display : none;
+        }.quotes{
+            width : 80%;
+            font-size : 10px;
+            font-weight : 300;
+        }
     }
 
 </style>
-        <section class="cover-image p-4">
-             <div class="cover-wrapper m-auto d-flex flex-column justify-content-center">                
-                <h1>Reality Tv</h1>
-                <p class="mr-auto ml-auto">on location to a cache of unique formats & talent</p>                  
-            </div>
-        </section>
         
-        <section class="row my-4 p-2 movie-dets">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="d-flex justify-content-center">
-                    <div class="row" style="width: 100%;">
-                        <div class="col-lg-12 col-md-12 col-sm-12 mt-5">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-12">
-                                    <h1 class="movie-header pt-2 text-center">
-                                        Title
-                                    </h1>
-                                </div>
-                                <div class="col-lg-8 col-md-12">
-                                    <h1 class="movie-title py-4">
-                                        <?= isset($movie_data['movie_title']) ? $movie_data['movie_title'] : 'Epic - Battles of Foreign Lands (Proposed filming in the US)' ?>                                    
-                                    </h1>
-                                </div>
-                            </div>
-                        </div> 
-
-                        <div class="col-lg-12 col-md-12 col-sm-12 mb-5">
-                            <div class="logline p-2">
-                                <h3 class="logline-header">
-                                    Logline
-                                    <hr>
-                                </h3>
-
-                                <div class="logline-para">
-
-
-                                    <?= isset($movie_data['logline']) ? $movie_data['logline'] : 'A troop of 30 Roman Soldiers are led to battle against 30 Celti Gauls in this historically
-                                                                                                    significant encounter that occured, circa 525 BC. Among the destruction and burning ruins of a
-                                                                                                    Roman settlement, the Celtics are observed boasting until they see a troop of Roman Soldiers
-                                                                                                    charging at them. Combat is certain snd an Epic Battle of revenge ensues. A man-to-man clash of
-                                                                                                    soldiers wielding gladius type weaponry soon intensifies as antiquated pistols are drawn. In the end
-                                                                                                    either the Roman Soldiers or Celtic Gauls, will be declared victorious, and advance to battle again.
-                                                                                                    <b>Note:</b> Proprietary "BattleSafeWeaponry" is specially designed to insure non-injury conflicts)
-                                                                                                    ' 
-                                    ?>
-                                
-                                </div>
-
-                                
-
-                            </div> 
-                        </div>
-                                                
-                    </div>
-                
+<section class="row my-5 p-2 movie-dets">
+    <div class="col-lg-12 col-md-12 col-sm-12 top">
+        <div class="row mx-auto" style="width: 100%;">                        
+            <div class="col-12 p-0">
+                <div class="mx-auto title"> 
+                    <?= $title ?>                                    
                 </div>
-            
-            </div>
+            </div>   
+        </div>
+        <div class="row mx-auto" style="width: 100%;"> 
+            <div class="col-12 mt-2 p-0">
+                <div class="logline">
+                    <?= $logline   ?>
+                </div>
+            </div>                              
+        </div>    
+    </div>
 
 
-            <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
-                
-                    <div class="row">
-                        <div class="col-lg-7 col-md-12 col-sm-12">
-                            <ul class="features p-2">
-
-                                <li class="features-list" >
-                                    <span class="features-title">
-                                        Proposal:
-                                    </span>
-
-                                    <span class="features-detail">
-                                    <?= isset($movie_data['movie_title']) ? $movie_data['movie_title'] : 'Epic - Battles on Foreign Lands [in the US]' ?>
-                                    
-                                    </span>
-
-
-                                </li>
-
-
-                                <li class="features-list" >
-                                    <span class="features-title">
-                                        Copyright:
-                                    </span>
-
-                                    <span class="features-detail">
-                                    <?= isset($movie_data['copyright']) ? $movie_data['copyright'] : 'US Copywright Office Title 17 - April 27, 2021' ?>
-                                    
-                                    </span>
-
-
-                                </li>
-
-
-                                <li class="features-list" >
-                                    <span class="features-title">
-                                        Reality:
-                                    </span>
-
-                                    <span class="features-detail">
-                                    <?= isset($movie_data['reality']) ? $movie_data['reality'] : 'Unscripted Format/12-episodes arc series' ?>
-                                    
-                                    </span>
-
-
-                                </li>
-
-                                <li class="features-list" >
-                                    <span class="features-title">
-                                        Purpose:
-                                    </span>
-
-                                    <span class="features-detail">
-                                    <?= isset($movie_data['purpose']) ? $movie_data['purpose'] : 'Filming pre-production sizzle reels & qualifying' ?>
-                                    
-                                    </span>
-
-
-                                </li>
-
-                                <li class="features-list" >
-                                    <span class="features-title">
-                                        When / Where:
-                                    </span>
-
-                                    <span class="features-detail">
-                                    <?= isset($movie_data['when_and_where']) ? $movie_data['when_and_where'] : 'July 2021 - Los Angeles and Las Vegas' ?>
-                                    
-                                    </span>
-
-
-                                </li>
-
-                                <li class="features-list" >
-                                    <span class="features-title">
-                                        Pay range:
-                                    </span>
-
-                                    <span class="features-detail">
-                                    <?= isset($movie_data['pay_range']) ? $movie_data['pay_range'] : 'Pre-production $50.00/hr.' ?> 
-                                    </span>
-
-
-                                </li>
-
-                                <li class="features-list" >
-                                    <span class="features-title">
-                                        Limited to:
-                                    </span>
-
-                                    <span class="features-detail">
-                                    <?= isset($movie_data['limited_to']) ? $movie_data['limited_to'] : '350 propective contestants' ?>
-                                    
-                                    </span>
-
-
-                                </li>
-
-                                
-                            
-
-                            </ul> 
-                        </div>
-
-                        <div class="col-lg-5 col-md-12 col-sm-6">
-                            <div class="movie_img text-center my-2">
-                              <img src="img/uploads/<?= $movie_data['movie_pic'] ?>" width="50%">
-                            </div>
-                        </div>
-                                                
-                    </div>
-                    <hr>
-                
-            
-            </div>
-
-            <div class="col-12">
-                <div class="d-flex justify-content-center seeking">
-                    <p class="mt-4 ">
-                        <?= $movie_data['seeking']; ?>
+    <div class="col-lg-12 col-md-12 col-sm-12 mt-4 feat">                    
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12 p-0">
+                <div class="row features">
+                    <p class="col-12">
+                        <?= $proposal ?>
                     </p>
-                </div>
-            </div>
-
-            <?php
-    
-                $pic_query = mysqli_query($link, "select * from realtv_movie_pics where movie_id = '$id'");
-            ?>
-
-            <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
-                <div class="d-flex justify-content-center mb-4">
-                    <div class="row">                           
-                        <div class="col-lg-4 col-md-4 col-sm-12 mt-3 text-center">
-                            <img src="img/uploads/<?= mysqli_fetch_object($pic_query)->movie_pic; ?>" width="80%">
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12 mt-3 text-center">
-                            <h4 class="text-center zilla">Join our team today!</h4>
-                            <a href="payment.php?contestant=<?= $uni ?>&id=<?= $movie_data['id'] ?>&price=<?= $movie_data['reg_fee'] ?>&sng=1" class="btn btn-warning mt-2">EZ $<?= $movie_data['reg_fee'] ?? "55" ?> to Register</a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12 mt-3 text-center">
-                            <img src="img/uploads/<?= mysqli_fetch_object($pic_query)->movie_pic; ?>" width="80%">
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-
-            <div class="col-lg-12 col-md-12 col-sm-12 mt-4 mb-3">
-                <div class="d-flex justify-content-center">
-                    <div class="row">                           
-                        <div class="col-lg-12 col-md-4 col-sm-12 mt-3 text-center" style="text-transform: uppercase;">
-                            <h4 class="text-center zilla"> As a Registered Member, We Campaign for Your Success</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 mt-5">
-                <div class="member-benefits">
-                    <h3 class="text-center my-4 m-title">MEMBER BENEFITS</h3>
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="card border-0">
-                                    <div class="card-body d-flex justify-content-center">
-                                        <div class="quotes zilla text-center">
-                                        
-                                            Big 93% advantage to be casted when promoted by a business 
-                                            
-                                        </div>
-                                            <img class="" src="img/write01.jpg" width="350px">
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="card border-0">
-                                    <div class="card-body d-flex justify-content-center">
-                                        <div class="quotes text-center">
-                                        
-                                            Priority status to participate in the production of your choice
-                                                                            
-                                        </div>
-                                            <img class="" src="img/shoot2.jpg" width="350px">
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="card border-0">
-                                    <div class="card-body d-flex justify-content-center">
-                                        <div class="quotes text-center">
-                                    
-                                            Your private account access, to view and edit your credentials 
-                                                                                
-                                        </div>
-                                            <img class="" src="img/Executive.jpg" width="350px">
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="card border-0">
-                                    <div class="card-body d-flex justify-content-center">
-                                        <div class="quotes text-center">
-                                        
-                                            Promote your individual talents to producers and TV executives 
-                                                                                
-                                        </div>
-                                            <img class="" src="img/act000.jpg" width="350px">
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="card border-0">
-                                    <div class="card-body d-flex justify-content-center">
-                                        <div class="quotes text-center">
-                                        
-                                            Casting companies access your info. and initiate contact
-                                                                                    
-                                        </div>
-                                            <img class="" src="img/studio0.jpg" width="350px">
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="card border-0">
-                                    <div class="card-body d-flex justify-content-center">
-                                        <div class="quotes text-center">
-                                    
-                                            Exposure to talent scouts with opportunity to be discovered
-                                                                                    
-                                        </div>
-                                            <img class="" src="img/write5.jpg" width="350px">
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="card border-0">
-                                    <div class="card-body d-flex justify-content-center">
-                                        <div class="quotes text-center">
-                                        
-                                            Keep you apprised of future reality productions
-                                                                                    
-                                        </div>
-                                            <img class="" src="img/write3.jpg" width="350px">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                            <span class="fa fa-arrow-circle-o-left fa-2x" aria-hidden="true" style="color : black"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                            <span class="fa fa-arrow-circle-o-right fa-2x" aria-hidden="true" style="color : black"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
                     
-                </div>
-                
-            
+                    <p class="col-12">
+                      <?= $copyright ?>
+                    </p>
+                    
+                    <p class="col-12">
+                        <?= $reality ?>
+                    </p>
+                    
+                    <p class="col-12">
+                        <?= $purpose ?>
+                    </p>
+                    
+                    <p class="col-12">
+                        <?= $when_n_where ?>
+                    </p>
+                    <p class="col-12">
+                        <?= $pay_range ?>
+                    </p>
+                    
+                    <p class="col-12">
+                        <?= $limited_to ?>
+                    </p>
+                        
+                </div> 
             </div>
 
-        </section>    
+            <div class="col-lg-5 col-md-6 col-sm-6">
+                <div class="movie_img">
+                    <img src="img/uploads/<?= $movie_data['movie_pic'] ?>">
+                </div>
+            </div>
+                                    
+        </div>            
+    </div>
+
+    <div class="col-12 mt-3 text-center seeking">
+        <p class="mt-4 ">
+            <?= $movie_data['seeking']; ?>
+        </p>
+    </div>
+
+    <?php
+
+        $pic_query = mysqli_query($link, "select * from realtv_movie_pics where movie_id = '$id'");
+    ?>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
+        <div class="d-flex justify-content-center mb-4">
+            <div class="row">                           
+                <div class="col-lg-4 col-md-4 col-sm-12 mt-3 text-center">
+                    <img src="img/uploads/<?= mysqli_fetch_object($pic_query)->movie_pic ?>" width="100%">
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 mt-3 text-center">
+                    <h4 class="text-center zilla">Join our team today!</h4>
+                    <a href="payment.php?contestant=<?= $uni ?>&id=<?= $movie_data['id'] ?>&price=<?= $movie_data['reg_fee'] ?>&sng=1" class="btn btn-warning mt-2">EZ $<?= $movie_data['reg_fee'] ?? "55" ?> to Register</a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 mt-3 text-center">
+                    <img src="img/uploads/<?= mysqli_fetch_object($pic_query)->movie_pic ?>" width="100%">
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 mt-4 mb-3">
+        <div class="d-flex justify-content-center">
+            <div class="row">                           
+                <div class="col-lg-12 col-md-4 col-sm-12 mt-3 text-center" style="text-transform: uppercase;">
+                    <h4 class="text-center zilla"> As a Registered Member, We Campaign for Your Success</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 mt-5">
+        <div class="member-benefits">
+            <h3 class="text-center my-4 m-title">MEMBER BENEFITS</h3>
+            <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
+                <div class="carousel-inner ">
+                    <div class="carousel-item active">
+                        <div class="card mt-0">
+                            <div class="card-body d-flex justify-content-center">
+                                <div class="quotes zilla text-center">
+                                
+                                    Big 93% advantage to be cast when promoted by a business 
+                                    
+                                </div>
+                                    <img class="" src="img/write01.jpg" width="350px">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card mt-0">
+                            <div class="card-body d-flex justify-content-center">
+                                <div class="quotes text-center">
+                                
+                                    Priority status to participate in the production of your choice
+                                                                    
+                                </div>
+                                    <img class="" src="img/shoot2.jpg" width="350px">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card mt-0">
+                            <div class="card-body d-flex justify-content-center">
+                                <div class="quotes text-center">
+                            
+                                    Your private account access, to view and edit your credentials 
+                                                                        
+                                </div>
+                                    <img class="" src="img/Executive.jpg" width="350px">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card mt-0">
+                            <div class="card-body d-flex justify-content-center">
+                                <div class="quotes text-center">
+                                
+                                    Promote your individual talents to producers and TV executives 
+                                                                        
+                                </div>
+                                    <img class="" src="img/act000.jpg" width="350px">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card mt-0">
+                            <div class="card-body d-flex justify-content-center">
+                                <div class="quotes text-center">
+                                
+                                    Casting companies access your info. and initiate contact
+                                                                            
+                                </div>
+                                    <img class="" src="img/studio0.jpg" width="350px">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card mt-0">
+                            <div class="card-body d-flex justify-content-center">
+                                <div class="quotes text-center">
+                            
+                                    Exposure to talent scouts with opportunity to be discovered
+                                                                            
+                                </div>
+                                    <img class="" src="img/write5.jpg" width="350px">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card mt-0">
+                            <div class="card-body d-flex justify-content-center">
+                                <div class="quotes text-center">
+                                
+                                    Keep you apprised of future reality productions
+                                                                            
+                                </div>
+                                    <img class="" src="img/write3.jpg" width="350px">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="fa fa-arrow-circle-o-left fa-2x" aria-hidden="true" style="color : black"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="fa fa-arrow-circle-o-right fa-2x" aria-hidden="true" style="color : black"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            
+        </div>
+        
+    
+    </div>
+
+    <div class="col-12 mt-4">
+        <div class="row p-2">
+            <h2 class="promote_you_header pl-3">Promoting You </h2>
+        </div>
+        <div class="row p-2">
+            <div class="col-12 pl-3">
+                <p class="writer_side_para">
+                    Diverse groups of industry professionals gather here, to explore the possibility of discovery and growth. Casting companies are able to review the credentials of individuals registered for their interest in casting assignments and prospective rolls. 
+                    Identified as television industry's marketplace for talent and creation, the Reality TV Registry platform is accessed by decision-makers of leading Production Companies and TV Networks seeking talent and original TV programming ideas and scripts. Their scope of interest embraces all genres of Reality TV programming. 
+                </p>
+
+                <p class="writer_side_para">
+                    From the RTVR platform we promote your individual talents to producers, talent scouts, and network executives for all major networks and cable networks. Individuals from these companies have active casting assignments for a diversity of rolls to fill. The Reality TV Registry platform is just one of the many mediums implemented in our strategic approach to promotional campaigns. Social Media is one our mediums to fill casting assignments and rolls. 
+                    Yes, it is true that at times, the likelihood of one’s success may be hinged on who you know. This reality cannot be truer, in the entertainment industry. With this in mind, your potential success is greatly leveraged when we campaign on your behalf.  
+                </p>
+
+                <p class="writer_side_para">
+                    Have you ever experienced someone of great talent performing in an obscure or tiny venue and thought to yourself; why aren’t they performing in Vegas or in a pack filled arena. Or maybe on TV. Most often, the reason is simply that their talent wasn’t adequately promoted. 
+                    Assuming one has great skill, success generally stems from PROMOTION. 
+                </p>
+
+                <p class="writer_side_para">
+                    Performers, whether it be actors, musicians, dancers, special acts or routines are rarely schooled in effective marketing and promotional techniques. Consequently, some of the greatest talent is never cast or seen in acting rolls. 
+                    There are tens-of-thousands of individuals who are yet to break through and achieve recognition and success in which they are so deserving. 
+                </p>
+
+                <p class="writer_side_para">
+                    Meeting your expectations: When you register to be a member of the RealityTVRegistry, you expect that our firm will deliver as promised. As the founder of this company, it is my personal belief that our success will be directly measured by your success. There rests, our duty to perform.
+                    The Reality TV Registry site has been developed as a promotional platform that lists promising reality shows by promising writers. As a member, talent or contestant, you have first priority and opportunity to be participate in their productions.  Producers and Networks seek fresh ideas in programming and the talent associated in support of a successful show. 
+                </p>
+            </div>
+        </div>
+    </div>
+</section>    
 
        <?php require "scripts/footer_two.php"; }?>
