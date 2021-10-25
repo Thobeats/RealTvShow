@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/pb230t8p8f32/public_html/realitytvregistry.com/test/
+    - export DEPLOYPATH=/home/pb230t8p8f32/public_html/realitytvregistry.com/
     - /bin/cp -R * $DEPLOYPATH
     
