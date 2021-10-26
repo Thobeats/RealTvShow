@@ -75,7 +75,8 @@
 
 
  <?php if(isset($paypal)): ?>
- <script src="https://www.paypal.com/sdk/js?client-id=AfgYATIfVWBGwQVce9ggpT8F3cpdMckdMmaf525u6IvyLjD1oL8RTiTqHVZrUWMvn7Un6r2q_qDehBJY&currency=USD"></script>
+ <!-- <script src="https://www.paypal.com/sdk/js?client-id=AfgYATIfVWBGwQVce9ggpT8F3cpdMckdMmaf525u6IvyLjD1oL8RTiTqHVZrUWMvn7Un6r2q_qDehBJY&currency=USD"></script> -->
+ <script src="https://www.paypal.com/sdk/js?client-id=Ab6HlNbUVsy9Qz90YXanfOquyv7qZdtHQxbrzqY5ZASTvZdm9bfRyHi72UrBwO6Q_hW8WtgeN0NnieGH&currency=USD"></script>
  <script>
 paypal.Buttons({
      style : {
