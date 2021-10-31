@@ -9,18 +9,8 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
 
-// function connect(){ 
-//     $link = mysqli_connect("127.0.0.1", "root", "", "realtvshow");
-
-//     if($link){
-//         return $link;
-//     }else {
-//         return mysqli_connect_errno();
-//     }
-// }
-
 function connect(){ 
-    $link = mysqli_connect("localhost", "realtv_db_user", "@lphA3ch0#", "realtv_show");
+    $link = mysqli_connect("127.0.0.1", "root", "", "realtvshow");
 
     if($link){
         return $link;
@@ -28,6 +18,16 @@ function connect(){
         return mysqli_connect_errno();
     }
 }
+
+// function connect(){ 
+//     $link = mysqli_connect("localhost", "realtv_db_user", "@lphA3ch0#", "realtv_show");
+
+//     if($link){
+//         return $link;
+//     }else {
+//         return mysqli_connect_errno();
+//     }
+// }
 
 function base_url(){
     return "https://" . $_SERVER['SERVER_NAME'] . "/test/";
@@ -264,7 +264,7 @@ function register_writer($firstname, $surname, $email, $password, $role_id, $add
   
 
         $body = "<div style='padding: 5px; text-transform: capitalize;'>";
-        $body .= "<h4>Welcome to RealTv Show</h4>";
+        $body .= "<h4>Welcome to RealTv Registry</h4>";
         $body .= "<p>Confirm your email to activate your account. To confirm your email, click <a href='".base_url()."Confirm.php?email=$email&pass=$token'>here</a> </p>";
         $body .= "</div>";
         send_mail($email, "Email Confirmation", $body);
@@ -319,7 +319,7 @@ function register_contestant($firstname, $surname, $email, $password, $role_id, 
             }
         }
         $body = "<div style='padding: 5px; text-transform: capitalize;'>";
-        $body .= "<h4>Welcome to RealTv Show</h4>";
+        $body .= "<h4>Welcome to RealTv Registry</h4>";
         $body .= "<p>Confirm your email to activate your account. To confirm your email, click <a href='".base_url()."Confirm.php?email=$email&pass=$token'>here</a> </p>";
         $body .= "</div>";
         send_mail($email, "Email Confirmation", $body);
@@ -376,7 +376,7 @@ function register_executive($firstname, $surname, $email, $password, $role_id, $
 
 
         $body = "<div style='padding: 5px; text-transform: capitalize;'>";
-        $body .= "<h4>Welcome to RealTv Show</h4>";
+        $body .= "<h4>Welcome to RealTv Registry</h4>";
         $body .= "<p>Confirm your email to activate your account. To confirm your email, click <a href='".base_url()."Confirm.php?email=$email&pass=$token'>here</a> </p>";
         $body .= "</div>";
         send_mail($email, "Email Confirmation", $body);
@@ -795,6 +795,18 @@ function logout(){
     $link = connect();
     $user_id = user_id();
     mysqli_query($link, "update realtv_users set online = '0' where id = '$user_id'");
+}
+
+function username($id = null){
+    $link = connect();
+
+    if($id == null){
+        $id = unique_id();
+    }
+
+    $check = mysqli_query($link, "select username as r from realtv_users where id = '$id'");
+
+    return mysqli_fetch_assoc($check)['r'];
 }
 
 $link = connect();

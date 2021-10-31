@@ -55,15 +55,11 @@ $query = mysqli_query($link, "Select * from realtv_movies");
         <thead>
             <tr>
                 <th>SN</th>
-                <th>Profile Image</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Address</th>
-                <th>Sizzle</th>
-                <th>Status</th>
+                <th>Title</th>
+                <th>Movie Cover</th>
+                <th>Author</th>
+                <th>Genre</th>
+                <th>Date Created</th>
                <?php if(role() == 4){ ?>
                 <th>Action</th>
                <?php } ?>
@@ -79,15 +75,13 @@ $query = mysqli_query($link, "Select * from realtv_movies");
             ?>
             <tr>
                 <td align="center"><?= $count ?></td>
-                <td align="center"><img src="<?= $cont['profile_img'] != "" ? 'img/uploads' . $cont['profile_img'] : 'img/man.png'; ?>" width="50px" height="45px" alt=""> </td>
-                <td align="center"><?= $cont['firstname'] ?></td>
-                <td align="center"><?= $cont['lastname'] ?></td>
-                <td align="center"><?= $cont['username'] ?></td>
-                <td align="center"><?= $cont['email'] ?></td>
-                <td align="center"><?= $cont['phone_no'] ?></td>
-                <td align="center"><?= $cont['address'] ?></td>
-                <td align="center"><a class="badge badge-warning" href="<?= $cont['sizzle_reel'] != "" ? 'img/uploads/' . $cont['sizzle_reel'] : ''; ?>">View</a></td>
-                <td align="center"><?= isactive($contId) == 1 ? '<span class="badge badge-success">Active</span>' : '<span class="badge badge-danger">Inactive</span>' ?></td>
+                <td align="center"><?= $cont['movie_title'] ?></td>
+                <td align="center"><img src="<?= $cont['movie_pic'] != "" ? 'img/uploads/' . $cont['movie_pic'] : 'img/man.png'; ?>" width="50px" height="45px" alt=""> </td>
+
+                <td align="center"><?= username($contId) ?></td>
+                <td align="center"><?= $cont['genre'] ?></td>
+                <td align="center"><?= $cont['created_at'] ?></td>
+                
                 <?php if(role() == 4){ ?>
                 <td align="center">
                     <div class="btn-group">

@@ -44,7 +44,7 @@ require "scripts/header_two.php";
 
 <section class="landing-image d-flex flex-column justify-content-start flex-column">
     <div class="landing-text text-white text-center">
-        <div class="" >
+        <div class="">
             <img src="img/newLogo.png" alt="" class="welcome-logo">
         </div>
         <h3 class="mt-2">on location to a cache of unique formats & talent</h3>        
